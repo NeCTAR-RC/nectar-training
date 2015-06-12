@@ -8,3 +8,76 @@ url: "http://yourdomain.com" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
+
+defaults:
+  -
+    scope:
+      path: "packageN"
+    values:
+      title: "Template Training Package"
+      number: "N"
+  -
+    scope:
+      path: "package01"
+    values:
+      title: "Overview of cloud computing and the NeCTAR services"
+      number: "1"
+  -
+    scope:
+      path: "package02"
+    values:
+      title: "Virtual Labs, eResearch Tools, and NeCTAR-ready Apps"
+      number: "2"
+  -
+    scope:
+      path: "package03"
+    values:
+      title: "Use Cases"
+      number: "3"
+  -
+    scope:
+      path: "package04"
+    values:
+      title: "From PC to Cloud or HPC"
+      number: "4"
+  -
+    scope:
+      path: "package05"
+    values:
+      title: "The Research Cloud lifecycle"
+      number: "5"
+  -
+    scope:
+      path: "package06"
+    values:
+      title: "Sizing a VM for compute and storage"
+      number: "6"
+  -
+    scope:
+      path: "package07"
+    values:
+      title: "Launching and Connecting"
+      number: "7"
+  -
+    scope:
+      path: "package08"
+    values:
+      title: "Securing a virtual machine"
+      number: "8"
+  -
+    scope:
+      path: "package09"
+    values:
+      title: "Backing up and packing up"
+      number: "9"
+
+  -
+    scope:
+      path: "package10"
+    values:
+      title: "Beyond the Dashboard"
+      number: "10"
+
+
+
+

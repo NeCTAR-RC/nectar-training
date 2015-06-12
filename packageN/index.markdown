@@ -1,8 +1,8 @@
 ---
 layout: package
-number: N
-title: Package Title
 ---
+
+{{site.packageN_title}}
 
 This training package consists of the following materials:
 

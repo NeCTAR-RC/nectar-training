@@ -1,7 +1,5 @@
 ---
 layout: package-part
-number: N
-title: Package Title
 part: Outline
 ---
 
