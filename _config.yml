@@ -16,60 +16,70 @@ defaults:
     values:
       title: "Template Training Package"
       number: "N"
+      contentspath: "/packageN/"
   -
     scope:
       path: "package01"
     values:
       title: "Overview of cloud computing and the NeCTAR services"
       number: "1"
+      contentspath: "/package01/"
   -
     scope:
       path: "package02"
     values:
       title: "Virtual Labs, eResearch Tools, and NeCTAR-ready Apps"
       number: "2"
+      contentspath: "/package02/"
   -
     scope:
       path: "package03"
     values:
       title: "Use Cases"
       number: "3"
+      contentspath: "/package03/"
   -
     scope:
       path: "package04"
     values:
       title: "From PC to Cloud or HPC"
       number: "4"
+      contentspath: "/package04/"
   -
     scope:
       path: "package05"
     values:
       title: "The Research Cloud lifecycle"
       number: "5"
+      contentspath: "/package05/"
   -
     scope:
       path: "package06"
     values:
       title: "Sizing a VM for compute and storage"
       number: "6"
+      contentspath: "/package06/"
   -
     scope:
       path: "package07"
     values:
       title: "Launching and Connecting"
       number: "7"
+      contentspath: "/package07/"
   -
     scope:
       path: "package08"
     values:
       title: "Securing a virtual machine"
       number: "8"
+      contentspath: "/package08/"
   -
     scope:
       path: "package09"
     values:
       title: "Backing up and packing up"
       number: "9"
+      contentspath: "/package09/"
 
   -
     scope:
@@ -77,6 +87,7 @@ defaults:
     values:
       title: "Beyond the Dashboard"
       number: "10"
+      contentspath: "/package10/"
 
 
 
