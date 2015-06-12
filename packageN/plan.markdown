@@ -1,6 +1,8 @@
 ---
-layout: post
-title: Training Package N - Session Plan
+layout: package-part
+number: N
+title: Package Title
+part: Plan
 ---
 
 This guide is intended to help trainers plan to present the training package.

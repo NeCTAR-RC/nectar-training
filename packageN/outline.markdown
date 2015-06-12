@@ -1,6 +1,8 @@
 ---
-layout: post
-title: Training Package N - Outline
+layout: package-part
+number: N
+title: Package Title
+part: Outline
 ---
 
 Duration: _N_ hours

@@ -1,9 +1,9 @@
 ---
-layout: post
-title: Training Package N
+layout: package-part
+number: N
+title: Package Title
+part: Video Content
 ---
-
-## Training Package Video Content
 
 The following videos have been created for the training package.
 

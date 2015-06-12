@@ -16,4 +16,4 @@ title: Home
 * [Training Package 9](package9/)
 * [Training Package 10](package10/)
 
-* [Training Package Template](package_template/)
+* [Training Package Template](packageN/)

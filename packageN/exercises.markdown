@@ -1,6 +1,8 @@
 ---
-layout: post
-title: Training Package N - Exercises
+layout: package-part
+number: N
+title: Package Title
+part: Exercises
 ---
 
 ### Learning Objectives

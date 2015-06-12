@@ -1,9 +1,10 @@
 ---
-layout: post
-title: Training Package N
+layout: package
+number: N
+title: Package Title
 ---
 
-The following materials:
+This training package consists of the following materials:
 
 * [Outline](outline.html)
 * [Session Plan](plan.html)

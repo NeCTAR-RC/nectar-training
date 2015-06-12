@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{page.number}}. &quot;{{ page.title }}&quot;</h1>
+    <h1>{{ page.part }}</h1>
+  </header>
+
+  <p><a href="/package{{page.number}}/">Back to training package contents</a></p>
+
+  <article class="post-content">
+    {{ content }}
+  </article>
+
+  <p><a href="/package{{page.number}}/">Back to training package contents</a></p>
+</div>

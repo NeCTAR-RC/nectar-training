@@ -1,6 +1,8 @@
 ---
-layout: post
-title: Training Package N - Speakers Notes
+layout: package-part
+number: N
+title: Package Title
+part: Speakers Notes
 ---
 
 This document contains notes and background information to help trainers speak to the slides.
