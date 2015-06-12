@@ -5,15 +5,16 @@ title: Home
 
 # Table of Contents
 
-* [Training Package 1](package01/)
-* [Training Package 2](package02/)
-* [Training Package 3](package03/)
-* [Training Package 4](package04/)
-* [Training Package 5](package05/)
-* [Training Package 6](package06/)
-* [Training Package 7](package07/)
-* [Training Package 8](package08/)
-* [Training Package 9](package09/)
-* [Training Package 10](package10/)
+1. [{{site.defaults[1].values.title}}](package01/)
+1. [{{site.defaults[2].values.title}}](package02/)
+1. [{{site.defaults[3].values.title}}](package03/)
+1. [{{site.defaults[4].values.title}}](package04/)
+1. [{{site.defaults[5].values.title}}](package05/)
+1. [{{site.defaults[6].values.title}}](package06/)
+1. [{{site.defaults[7].values.title}}](package07/)
+1. [{{site.defaults[8].values.title}}](package08/)
+1. [{{site.defaults[9].values.title}}](package09/)
+1. [{{site.defaults[10].values.title}}](package10/)
 
-* [Training Package Template](packageN/)
+* [{{site.defaults[0].values.title}}](packageN/)
+
