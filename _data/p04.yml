@@ -1,0 +1,8 @@
+- name: Introduction
+  file: intro.html
+- name: When to use HPC
+  file: useHPC.html
+- name: When to use the Cloud
+  file: useCloud.html
+- name: The Cloud - Pros and Cons
+  file: cloudProCons.html

@@ -1,0 +1,8 @@
+- name: Introduction
+  file: intro.html
+
+- name: Virtual Laboratories
+  file: vlabs.html
+
+- name: eResearch Tools
+  file: tools.html
