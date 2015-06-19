@@ -1,0 +1,23 @@
+- name: Introduction
+  file: intro.html
+  
+- name: What is Cloud Computing? 
+  file: cloud_computing.html
+
+- name: Cloud services
+  file: cloud_services.html
+
+- name: Common concerns
+  file: concerns.html
+
+- name: Virtualization
+  file: virtualization.html
+
+- name: History
+  file: history.html
+ 
+- name: NeCTAR Services
+  file: nectar.html
+
+- name: Benefits for your research
+  file: benefits_research.html

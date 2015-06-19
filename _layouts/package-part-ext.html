@@ -1,0 +1,130 @@
+---
+layout: default
+---
+<div class="post">
+
+  <header class="post-header">
+    <h1>{{page.number}}. {{ page.title }}</h1>
+    <h1>{{ page.part }}</h1>
+  </header>
+
+  <p><a href="{{page.contentspath}}">Back to training package contents</a></p>
+
+
+  <!-- 
+    Preprocessing: Determine which part number this is. To avoid having to set numbers 
+    manually on each page, determine this here by the file name. 
+    -->
+  {% assign pagedata_avail = false %}
+  {% assign pnum = page.number | plus:0 %}
+  {% case pnum %}
+  {% when 1 %}
+  {%   assign pagedata = site.data.p01 %}
+  {% when 2 %}
+  {%   assign pagedata = site.data.p02 %}
+  {% when 3 %}
+  {%   assign pagedata = site.data.p03 %}
+  {% when 4 %}
+  {%   assign pagedata = site.data.p04 %}
+  {% when 5 %}
+  {%   assign pagedata = site.data.p05 %}
+  {% when 6 %}
+  {%   assign pagedata = site.data.p06 %}
+  {% when 7 %}
+  {%   assign pagedata = site.data.p07 %}
+  {% when 8 %}
+  {%   assign pagedata = site.data.p08 %}
+  {% when 9 %}
+  {%   assign pagedata = site.data.p09 %}
+  {% when 10 %}
+  {%   assign pagedata = site.data.p10 %}
+  {% else %}
+  {%   assign pagedata_avail = false %}
+  {% endcase %}
+
+  {% assign psize = pagedata.size | plus:0%}
+  {% if psize == 0 %} 
+  {% assign pagedata_avail = false %}
+  {% else %}
+  {% assign pagedata_avail = true %}
+  {% endif %}
+
+  {% assign current_file_path = page.url | split:"/" %}
+  {% assign current_file = current_file_path.last %}
+  {% if pagedata_avail %}
+    {% for packagepart in pagedata %}
+      {% if current_file == packagepart.file  %}
+      {% assign current_index = forloop.index0  %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
+
+  {% if pagedata_avail %}
+  <!--
+    List of the individual parts of this module (so not all content gets crammed on one page).
+    Rendering this list first is necessary 
+  -->
+  <p> Sections of this module (eg put in navigation bar left):</p>
+  
+  <ul>
+	  {% for packagepart in pagedata %}
+	  <li>
+	  {% if current_file == packagepart.file  %}
+	  <b>
+	  {% endif %}
+	  <a href="{{page.contentspath}}/sections/{{ packagepart.file }}">{{ packagepart.name }}</a>
+	  {% if current_file == packagepart.file  %}
+  	  </b>
+	  {% endif %}
+	  </li>
+	  {% endfor %}
+  </ul>
+
+  <!--
+  Previous page / Next page links. Very simple design to start with.
+  -->
+  <p>
+  {% if current_file != pagedata.first.file  %}
+  	{% assign prev_index = current_index | minus:1 %}
+	<a href="{{page.contentspath}}/sections/{{pagedata[prev_index].file}}">Previous page</a>
+  {% endif %}
+  &nbsp; &nbsp; &nbsp;
+  {% if current_file != pagedata.last.file  %}
+  	{% assign next_index = current_index | plus:1 %}
+	<a href="{{page.contentspath}}/sections/{{pagedata[next_index].file}}">Next page</a>
+  {% endif %}
+  </p>
+
+
+  <h1> {{ pagedata[current_index].name }} </h1>
+
+  {% endif %} <!-- endif for pagedata_avail -->
+
+  <!--
+  Content of page
+  -->
+  <article class="post-content">
+    {{ content }}
+  </article>
+
+
+  {% if pagedata_avail %}
+  <!--
+  Previous page / Next page links. Very simple design to start with.
+  -->
+  <p>
+  {% if current_file != pagedata.first.file  %}
+  	{% assign prev_index = current_index | minus:1 %}
+	<a href="{{page.contentspath}}/sections/{{pagedata[prev_index].file}}">Previous page</a>
+  {% endif %}
+  &nbsp; &nbsp; &nbsp;
+  {% if current_file != pagedata.last.file  %}
+  	{% assign next_index = current_index | plus:1 %}
+	<a href="{{page.contentspath}}/sections/{{pagedata[next_index].file}}">Next page</a>
+  {% endif %}
+  </p>
+  {% endif %} <!-- endif for pagedata_avail -->
+
+  <p><a href="{{page.contentspath}}">Back to training package contents</a></p>
+</div>
