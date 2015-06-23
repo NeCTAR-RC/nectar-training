@@ -3,6 +3,8 @@ layout: package-part-ext
 part: Documentation 
 ---
 
+{% include /docLinks.markdown %}
+
 There are a number of common concerns among people who are about to make the decision whether to move their computing resources and storage to the cloud. Such concerns include
 
 * Privacy & Security	
@@ -13,6 +15,6 @@ There are a number of common concerns among people who are about to make the dec
 
 * Absence of software tools
 
-In this course we will discuss such concerns and how NeCTAR addresses them in order to make cloud computing more accessible to researchers. In particular, [Module 8](/package08/) is going to cover security related topics.
+In this course we will discuss such concerns and how NeCTAR addresses them in order to make cloud computing more accessible to researchers. In particular, [Module 8][ModDoc8] is going to cover security related topics.
 
 

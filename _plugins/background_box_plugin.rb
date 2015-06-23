@@ -6,6 +6,8 @@ module Jekyll
 	  # * info
 	  # * important or
 	  # * definition
+	  # * edit
+	  # * terminal
 	  # to create different types.
   	  class BackgroundBox < Liquid::Block
 		boxType = "notype"
@@ -33,21 +35,32 @@ module Jekyll
 				"<div markdown class='bgInfo'>
 			        	<img src='/images/info-32.png' align='left' 
 					style='width:32px; height:32px; 
-					  margin:0px; margin-right:10px; margin-bottom:10px;'/>
+					  margin:0px; margin-right:10px; margin-bottom:5px;'/>
 					#{output}
 				</div>"
 			when "important"
 				"<div markdown class='bgImportant'>
 			        	<img src='/images/exclamation-32.png' align='left' 
 					style='width:32px; height:32px; 
-					  margin:0px; margin-right:10px; margin-bottom:10px;'/>
+					  margin:0px; margin-right:10px; margin-bottom:5px;'/>
 					#{output}
 				</div>"
 			when "definition"
 				"<div markdown class='bgDefinition' style='min-height: 55px;'>
 			        	<img src='/images/definition-64.png' align='left' 
 					style='width:64px; height:50px;
-					margin:0px; margin-right:10px; margin-bottom:10px;'/>
+					margin:0px; margin-right:10px; margin-bottom:5px;'/>
+					#{output}
+				</div>"
+			when "edit"
+			        #<img src='/images/document-edit-48.png' align='left' 
+				#	style='width:24px; height:24px;
+				#	margin:0px; margin-right:5px; margin-bottom:5px;'/>
+				"<div markdown class='bgEdit'>
+					#{output}
+				</div>"
+			when "terminal"
+				"<div markdown class='bgTerminal'>
 					#{output}
 				</div>"
 			else 

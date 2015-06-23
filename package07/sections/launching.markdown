@@ -19,7 +19,7 @@ A **Security Group** opens up access to the instance from outside. Essentially, 
 [Module 5][ModDoc5] has already introduced the concept of *Ports*. Now we need to *free up* some Ports in order to be able to communicate with our instance. For example, we will first connect to our instance with a *SSH shell* from our terminal (Reminder: SSH encrypts our communication with the server). SSH uses *Port number 22*, so this has to be freed up. 
 
 {% BgBox info %}
-*Note*: All the pre-defined security groups mentioned in the instructions are available in Project Trials only. To learn how to create your own security group (or re-create the trial groups), refer to the  [Appendix](appendix.html) of this module.
+*Note*: All the pre-defined security groups mentioned in the instructions are available in Project Trials only. To learn how to create your own security group (or re-create the trial groups), refer to the  [Appendix](appendices.html) of this module.
 {% endBgBox %}
 
 The following steps will explain how to create an instance and how to make sure it has been assigned to the security groups we need to connect to it.
@@ -46,8 +46,7 @@ Go to **Dashboard >  Instances**. A list of your running instances will be liste
 
 {% img src=images/scrLaunchDialogue.png, w=350, dim=px, align=right, css=margin-left:20px; %}
 
-Choose the name of your instance and the "*flavour*". Different flavours allocate different amounts of memory and disk space for you. Select the flavours in the drop-down box and information about the resources are displayed on the right side of the window. You may select a few flavours to see the differences between the flavours. For this tutorial, choose the **flavour** “**m2.xsmall**”    
-*Note:* If you already have requested resources and are not using the trial account, choose *m1.small* instead in order to be able to follow all exercises about managing storage as well. 
+Choose the name of your instance and the "*flavour*". Different flavours allocate different amounts of memory and disk space for you. Select the flavours in the drop-down box and information about the resources are displayed on the right side of the window. You may select a few flavours to see the differences between the flavours. For this tutorial, choose the **flavour** "**m1.small**", which offers 30GB of ephemeral storage (we will need this [in a later section](manageStorage.html).
 
 You could launch several instances of the same flavour, but for now we will launch only 1, so leave "**Instance Count**" at **1**. Leave "**Instance Boot Source**" on "**Boot from Image**". Choose the most recent version of  “NeCTAR Ubuntu”  from the "**Image name**" list.
 

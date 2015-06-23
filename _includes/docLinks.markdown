@@ -9,3 +9,13 @@
 [ModDoc8]: {{site.defaults[8].values.docpath}} "Module 8"
 [ModDoc9]: {{site.defaults[9].values.docpath}} "Module 9"
 [ModDoc10]: {{site.defaults[10].values.docpath}} "Module 10"
+
+
+
+[Dashboard]: https://dashboard.rc.nectar.org.au 
+[Allocations]: http://support.rc.nectar.org.au/docs/allocations
+[Volumes]: http://support.rc.nectar.org.au/docs/volumes
+[NectarCyberduck]: http://support.rc.nectar.org.au/docs/object-storage#Cyberduck
+[OpenStackSecurityGuide]: http://docs.openstack.org/security-guide/content/hypervisor-selection.html
+
+

@@ -35,7 +35,7 @@ We will now log in to our instance using ssh with the private key (the username 
 
 Follow the instructions below for the operating system of your local computer.
 
-*Note:* If the ping has worked but the SSH connection does not work after following instructions below, follow the troubleshooting steps in the [Appendix](appendix.html).
+*Note:* If the ping has worked but the SSH connection does not work after following instructions below, follow the troubleshooting steps in the [Appendix](appendices.html).
 
 **Linux/Mac** 
 
@@ -102,9 +102,9 @@ Next, click on the "**SSH > Auth**" sub-category. There is a field labelled "**P
 In the browse window that comes up, select the private SSH key file that you saved on your computer earlier (we named it *Nectar_Key*)
 
 {% BgBox info %}
-*Note*: If you have generated your ssh key on a Linux system and now need to convert it to Windows, see how to do this in the [Appendix](appendix.html).
+*Note*: If you have generated your ssh key on a Linux system and now need to convert it to Windows, see how to do this in the [Appendix](appendices.html).
 
-Instead of converting keys, you can also simply create a separate set of keys to use with PuTTY. In this case, you have to add the new key as an authorized key on the instance. See the [Appendix](appendix.html) for instructions on how to do this. 
+Instead of converting keys, you can also simply create a separate set of keys to use with PuTTY. In this case, you have to add the new key as an authorized key on the instance. See the [Appendix](appendices.html) for instructions on how to do this. 
 {% endBgBox %}
 
 Now, return to the "**Session**" screen in the left navigation window. This is the screen we started at. We will save our settings (the "session"), so that in future we don’t need to type in all the details again. In the “**Saved Sessions**” section, choose any name for this session so that you can remember it, for example “*MyNeCTARInstance*”. Then, click on the "**Save**" button.

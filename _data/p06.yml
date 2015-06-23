@@ -1,2 +1,30 @@
 - name: Introduction
   file: intro.html
+  level: 1
+- name: Storage
+  file: storage.html
+  level: 1
+- name: On-Instance storage
+  file: ephemeralStorage.html
+  level: 2
+- name: Volume storage
+  file: volumeStorage.html
+  level: 2
+- name: Object storage
+  file: objectStorage.html
+  level: 2
+- name: Volume (block) vs Object storage
+  file: volumeVsObject.html
+  level: 2
+- name: RDSI storage
+  file: rdsiStorage.html
+  level: 2
+- name: How many cores do I need?
+  file: coreNumbers.html
+  level: 1
+- name: Can I benefit from several VMs?
+  file: instanceNumbers.html
+  level: 1
+- name: Literature
+  file: literature.html
+  level: 1

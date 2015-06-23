@@ -52,13 +52,13 @@ In this section, we are going to create an instance. Before we do this, we need 
 
 ### {% col 255,0,0 %} Additional notes for reviewers {% endcol %}
 
-1. it is possible to generate three versions of this document (e.g. by setting a flag) for the three platforms: Windows, Mac and Linux, so that people can choose their platform in the beginning and don’t need to skim through stuff that’s not relevant for them.
+1. it is possible to generate three versions of this document (e.g. by setting a flag) for the three platforms: Windows, Mac and Linux, so that people can choose their platform in the beginning and don’t need to skim through stuff that’s not relevant for them. This should not take up too much extra work.
 
 2. It should be easy to create a quick how-to for experienced users from this document. From our experience, most researchers feel more comfortable with detailed instructions though, so we will start with this and can then take it from there.
 
 3. The videos are designed to be more compact than the length of this document may suggest. Not everything is going to be covered in the videos (e.g. creating configuration files for convenience), but we will refer to this documentation for this in the videos.
 
-4. The screenshots will be refined to include highlights (e.g. boxes drawing attention to a section on the screen) in the final sweep of this document.
+4. The screenshots will be refined to include highlights (e.g. boxes drawing attention to a section on the screen) in the final sweep of this document. Also, screenshots will be replaced by new ones, showing the possible new Dashboard interface. Especially the [Volumes](volumeStorage.html) has only test screenshots in there for now.
 
 
 

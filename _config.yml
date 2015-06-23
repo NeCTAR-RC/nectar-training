@@ -9,6 +9,8 @@ url: "http://yourdomain.com" # the base hostname & protocol for your site
 # Build settings
 markdown: kramdown
 
+# Attention: Don't modify the order of this list, inlcuding removal of the
+# first entry, otherwise the links within the documents will be wrong.
 defaults:
   -
     scope:
@@ -17,6 +19,7 @@ defaults:
       title: "Template Training Package"
       number: "N"
       contentspath: "/packageN/"
+      docpath: "/packageN/sections/intro.html"
   -
     scope:
       path: "package01"
@@ -24,6 +27,7 @@ defaults:
       title: "Overview of cloud computing and the NeCTAR services"
       number: "1"
       contentspath: "/package01/"
+      docpath: "/package01/sections/intro.html"
   -
     scope:
       path: "package02"
@@ -31,6 +35,7 @@ defaults:
       title: "Virtual Labs, eResearch Tools, and NeCTAR-ready Apps"
       number: "2"
       contentspath: "/package02/"
+      docpath: "/package02/sections/intro.html"
   -
     scope:
       path: "package03"
@@ -38,6 +43,7 @@ defaults:
       title: "Use Cases"
       number: "3"
       contentspath: "/package03/"
+      docpath: "/package03/sections/intro.html"
   -
     scope:
       path: "package04"
@@ -45,6 +51,7 @@ defaults:
       title: "From PC to Cloud or HPC"
       number: "4"
       contentspath: "/package04/"
+      docpath: "/package04/sections/intro.html"
   -
     scope:
       path: "package05"
@@ -52,6 +59,7 @@ defaults:
       title: "The Research Cloud lifecycle"
       number: "5"
       contentspath: "/package05/"
+      docpath: "/package05/sections/intro.html"
   -
     scope:
       path: "package06"
@@ -59,6 +67,7 @@ defaults:
       title: "Sizing a VM for compute and storage"
       number: "6"
       contentspath: "/package06/"
+      docpath: "/package06/sections/intro.html"
   -
     scope:
       path: "package07"
@@ -66,13 +75,15 @@ defaults:
       title: "Launching and Connecting"
       number: "7"
       contentspath: "/package07/"
+      docpath: "/package07/sections/intro.html"
   -
     scope:
       path: "package08"
     values:
-      title: "Securing a virtual machine"
+      title: "Security"
       number: "8"
       contentspath: "/package08/"
+      docpath: "/package08/sections/intro.html"
   -
     scope:
       path: "package09"
@@ -80,6 +91,7 @@ defaults:
       title: "Backing up and packing up"
       number: "9"
       contentspath: "/package09/"
+      docpath: "/package09/sections/intro.html"
 
   -
     scope:
@@ -88,6 +100,7 @@ defaults:
       title: "Beyond the Dashboard"
       number: "10"
       contentspath: "/package10/"
+      docpath: "/package10/sections/intro.html"
 
 
 

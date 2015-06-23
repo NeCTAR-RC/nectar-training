@@ -3,6 +3,8 @@ layout: package-part-ext
 part: Documentation 
 ---
 
+{% include /docLinks.markdown %}
+
 Cloud providers offer a variety of services, the most common of which are:
 
 * Compute
@@ -16,7 +18,7 @@ We will talk more about such *virtual machines* in a moment.
 You can dynamically extend or decrease requirements.
 
     Storage includes the traditional "Volume storage" (which acts as a hard disk) and also “Object storage” (storage of individual files). 
-We will talk more about storage in the later training packages starting from [Module 6](/package06).
+We will talk more about storage in the later training packages starting from [Module 6][ModDoc6].
 
 * Networking
 

@@ -15,9 +15,8 @@ We will talk about security concerns in this Module and describe how NeCTAR addr
 
 # Note to reviewers
 
-Not much detail is known on our side on the exact measures NeCTAR takes to ensure security. Therefore, it would be great if a comment could be made on each of the described security issues on how NeCTAR handles this, and what the user will be responsible for (In particular in section [Main threats](#heading=h.obdjk82338nf)).
+Not much detail is known on our side on the exact measures NeCTAR takes to ensure security. Therefore, it would be great if a comment could be made on each of the described security issues on how NeCTAR handles this, and what the user will be responsible for (In particular in section [Main threats](concerns.html)).
 
-We can remove some security issues mentioned in [Main threats](#heading=h.obdjk82338nf) if you think it will scare people off and/or it is not a risk worth mentioning. Comments on which steps NeCTAR takes to avoid the security issues are more than welcome.
-
+We can remove some security issues mentioned in [Main threats](concerns.html) if you think it will scare people off and/or it is not a risk worth mentioning. Comments on which steps NeCTAR takes to avoid the security issues are more than welcome.
 
 

@@ -1,2 +1,8 @@
 - name: Introduction
   file: intro.html
+- name: Security concerns
+  file: concerns.html
+- name: Deployment Models
+  file: deployment.html
+- name: File and Volume Encryption
+  file: encryption.html

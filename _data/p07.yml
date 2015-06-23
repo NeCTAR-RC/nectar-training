@@ -1,2 +1,41 @@
 - name: Introduction
   file: intro.html
+- name: Create a ssh key
+  file: createSSHKey.html
+- name: Launching an instance
+  file: launching.html
+- name: Connect to the instance
+  file: connectViaSSH.html
+- name: Configuration and control 
+  file: firstSSHCommands.html
+- name: Connect to a remote desktop
+  file: remoteDesktop.html 
+- name: Install a desktop environment
+  file: installDesktopEnvironment.html
+  level: 2
+- name: Connect with X2Go
+  file: connectWithX2Go.html
+  level: 2
+- name: Connect with VNC
+  file: connectWithVNC.html
+  level: 2
+- name: Running several desktop environments
+  file: runSeveralDesktopEnvs.html
+  level: 2
+- name: Graphical Interfaces via ssh 
+  file: guiViaSSH.html
+- name: Install a web server
+  file: enableWebServer.html
+- name: Managing storage
+  file: manageStorage.html
+- name: On-instance storage
+  file: ephemeralStorage.html
+  level: 2
+- name: Object storage
+  file: objectStorage.html
+  level: 2
+- name: Volume storage
+  file: volumeStorage.html
+  level: 2
+- name: Appendices
+  file: appendices.html

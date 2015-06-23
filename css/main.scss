@@ -3,6 +3,100 @@
 ---
 @charset "utf-8";
 
+// to avoid cross-browser compatibility issues
+body {
+	margin: 0;
+	padding: 0;
+}
+
+// classes for background boxes
+div.bgInfo {
+	padding: 10px;
+	border: 3px solid gray;
+	margin: 10px;
+	margin-bottom:20px;
+	display:block;
+	background-color: rgb(245,245,245);
+	border-radius: 15px;
+	clear:both;
+}
+
+div.bgImportant {
+	padding: 10px;
+	border: 3px solid rgb(230,100,100);
+	margin: 10px;
+	margin-bottom:20px;
+	display:block;
+	background-color: rgb(250,245,245);
+	border-radius: 15px;
+	clear:both;
+}
+
+
+div.bgDefinition {
+	padding: 10px;
+	border: 3px solid rgb(150, 150, 255);
+	margin: 10px;
+	margin-bottom:20px;
+	display:block;
+	background-color: rgb(250,250,255);
+	border-radius: 15px;
+	clear:both;
+}
+
+div.bgEdit {
+	padding: 5px;
+	padding-left:10px;
+	border: 2px solid rgb(0, 150, 0);
+	margin: 10px;
+	margin-bottom:10px;
+	display:block;
+	background-color: rgb(250,250,250);
+	border-radius: 5px;
+	clear:both;
+	font-family: "Courier New", Courier, monospace;
+}
+
+div.bgTerminal {
+	padding: 5px;
+	border: 2px solid rgb(150, 150, 150);
+	margin: 10px;
+	margin-bottom:20px;
+	display:block;
+	background-color: rgb(250,250,250);
+	border-radius: 5px;
+	clear:both;
+	font-family: "Courier New", Courier, monospace;
+}
+
+
+
+img.alignleft {
+  display: inline; 
+  float:left; 
+  margin: 0 0 0 0; 
+  clear:both; 
+}
+
+img.alignright {
+  display: inline; 
+  float:right; 
+  margin: 0 0 0 0; 
+  clear:both; 
+}
+img.aligncenter {
+  display: block; 
+  margin: auto; 
+  clear:both; 
+}
+
+
+
+//Note for bg* classes: decided against css images because then the
+//text doesn't flow around it.
+//background-image: url("/images/info-32.png");
+//background-repeat: no-repeat;
+//background-position: 0px 0px;
 
 
 // Our variables

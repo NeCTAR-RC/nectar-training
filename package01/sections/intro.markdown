@@ -3,31 +3,10 @@ layout: package-part-ext
 part: Documentation
 ---
 
-
-
 This documentation provides a general introduction to cloud computing and an overview of the NeCTAR Research Cloud, Virtual Laboratories and eResearch tools which are available to researchers around Australia. 
 How can cloud computing benefit your research?
 
-
-## Disclaimer
-
-The notation throughout the training documents can be interpreted as follows:
-
-Words in *italics* are used for names and terminology, e.g. name of a software, or name of a computing concept. It may also just emphasise a word in the traditional way. Quotations are also written in italics and are put in between quotatioin marks.
-
-Words in **bold** are used to highlight words which identify important concepts of a paragraph, to make it easier for users to skim through the text to find a paragraph which explains a certain idea, concept or technology.
-
-{% BgBox info %}
-Additional information which is optional to read is displayed in *Info Boxes* like this one. 
-{% endBgBox %}
-
-{% BgBox important %}
-Important information is displayed in *Info Boxes* like this one. 
-{% endBgBox %}
-
-{% BgBox definition %} 
-Definition of terms are displayed in boxes of this style.
-{% endBgBox %}
+{% include /disclaimer.markdown %}
 
 
 ### {% col 255,0,0 %} Additional notes to reviewers {% endcol %}
@@ -51,7 +30,7 @@ In this module you will learn what cloud computing is, what types of services Ne
 
 Module 2: [{{site.defaults[2].values.title}}](/package02/)
 
-This module provides an overview of the* eResearch Tools* and the *Virtual Laboratories *that are offered by NeCTAR services. Both the tools and the virtual labs offer "ready to go" tools you may use.
+This module provides an overview of the *eResearch Tools* and the *Virtual Laboratories* that are offered by NeCTAR services. Both the tools and the virtual labs offer "ready to go" tools you may use.
 
 
 

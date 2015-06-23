@@ -3,6 +3,8 @@ layout: package-part-ext
 part: Documentation 
 ---
 
+{% include /docLinks.markdown %}
+
 Through a series of "town hall" meetings in 2010, the Australian research community voiced their need for a flexible, low cost computing resource that they could access on demand. A cloud solution quickly became the sought after approach, with its low barriers to entry well matched for the collaborative nature of academic research.
 
 The Australian government is now funding a cloud that is making it simple for researchers across disciplines to access IT resources, collaborate, and share their findings: **NeCTAR** (short for **N**ational **e**Research **C**ollaboration **T**ools and **R**esources) is an Australian Government project conducted as part of the Super Science initiative and financed by the Education Investment Fund. 
@@ -15,7 +17,7 @@ The NeCTAR project aims to support the connected researcher who has access to a 
 
 * The Australian Research Cloud
 
-We will talk about *Virtual Laboratories* and *eResearch Tools* in [Module 2](/package02/). 
+We will talk about *Virtual Laboratories* and *eResearch Tools* in [Module 2][ModDoc2]. 
 The majority of this course will deal with the *Australian Research Cloud*. So at this point let's have a glimpse at what the Research Cloud (RC) is. 
 The Australian Research Cloud is offering a *secure and robust hosting service*:
 

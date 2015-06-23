@@ -1,2 +1,12 @@
 - name: Introduction
   file: intro.html
+- name: Connecting and maintaining
+  file: connecting.html
+- name: Request resources
+  file: allocations.html
+- name: Mitigating risks
+  file: mitigating.html
+- name: Cleaning up
+  file: cleaning.html
+- name: Getting support
+  file: support.html

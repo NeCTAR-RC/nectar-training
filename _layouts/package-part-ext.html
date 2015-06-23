@@ -44,42 +44,68 @@ layout: default
 
   {% assign psize = pagedata.size | plus:0%}
   {% if psize == 0 %} 
-  {% assign pagedata_avail = false %}
+      {% assign pagedata_avail = false %}
   {% else %}
-  {% assign pagedata_avail = true %}
+      {% assign pagedata_avail = true %}
   {% endif %}
 
   {% assign current_file_path = page.url | split:"/" %}
   {% assign current_file = current_file_path.last %}
+  {% assign current_toplevel_index = 0 %}
+  {% assign last_toplevel_index = 0 %}
   {% if pagedata_avail %}
-    {% for packagepart in pagedata %}
-      {% if current_file == packagepart.file  %}
-      {% assign current_index = forloop.index0  %}
-      {% endif %}
-    {% endfor %}
+  	{% for packagepart in pagedata %}
+		{% assign level = packagepart.level | plus:0 %}
+		{% if level <= 1 %}
+			{% assign last_toplevel_index=forloop.index0 %}
+		{% endif %}
+		{% if current_file == packagepart.file  %}
+			{% assign current_index = forloop.index0  %}
+			{% assign current_toplevel_index=last_toplevel_index %}
+			{% break %}
+		{% endif %}
+	{% endfor %}
   {% endif %}
 
-
   {% if pagedata_avail %}
+
   <!--
     List of the individual parts of this module (so not all content gets crammed on one page).
     Rendering this list first is necessary 
   -->
   <p> Sections of this module (eg put in navigation bar left):</p>
   
-  <ul>
-	  {% for packagepart in pagedata %}
-	  <li>
-	  {% if current_file == packagepart.file  %}
-	  <b>
-	  {% endif %}
-	  <a href="{{page.contentspath}}/sections/{{ packagepart.file }}">{{ packagepart.name }}</a>
-	  {% if current_file == packagepart.file  %}
-  	  </b>
-	  {% endif %}
-	  </li>
-	  {% endfor %}
-  </ul>
+	{% assign activate_submenu = false %}
+	{% for packagepart in pagedata %}
+		{% assign level = packagepart.level | plus:0 %}
+	 
+		{% if forloop.index0 == current_toplevel_index  %}
+			{% assign activate_submenu = true %}
+		{% endif %}
+		{% if level <= 1 and forloop.index0 > current_toplevel_index  %}
+			{% assign activate_submenu = false %}
+		{% endif %}
+
+		{% assign indents = "" %}
+		{% if activate_submenu %}
+			{% for i in (2..level) %}
+				{% assign indents = indents |append:"&nbsp;&nbsp;" %}
+			{% endfor %}
+		{% endif %}
+
+		{% if level <= 1 or activate_submenu %}
+			{% if current_file == packagepart.file  %}
+				  <b>
+			{% endif %}
+			
+			<a href="{{page.contentspath}}/sections/{{ packagepart.file }}">{{indents}} {{ packagepart.name }}</a>
+			{% if current_file == packagepart.file  %}
+				</b>
+			{% endif %}
+			<br/>
+		{% endif %}
+	{% endfor %}
+  <br/>
 
   <!--
   Previous page / Next page links. Very simple design to start with.
@@ -100,6 +126,7 @@ layout: default
   <h1> {{ pagedata[current_index].name }} </h1>
 
   {% endif %} <!-- endif for pagedata_avail -->
+  
 
   <!--
   Content of page

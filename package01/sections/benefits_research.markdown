@@ -3,7 +3,7 @@ layout: package-part-ext
 part: Documentation 
 ---
 
-# Benefits for your research
+{% include /docLinks.markdown %}
 
 Researchers are free to concentrate on their work rather than on obtaining funding for the computing resources, and provisioning & maintenance of hardware. The shared environment means greater ease and opportunity to collaborate.
 
@@ -29,4 +29,4 @@ Last but certainly not least, the growth of cloud computing may lead to Universi
 
 *By taking this course, you are on your way to gain important skills of how to do research using the cloud services!*
 
-You are now finished with the first Module. You may continue with the [Next Module](/package02/).
+You are now finished with the first Module. You may continue with the [Next Module][ModDoc2]
