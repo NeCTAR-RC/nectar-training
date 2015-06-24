@@ -1,2 +1,10 @@
 - name: Introduction
   file: intro.html
+- name: Tracking utilization
+  file: utilization.html
+- name: Managing volumes
+  file: managingVolumes.html 
+- name: Object store
+  file: objectStore.html
+- name: Orchestration
+  file: orchestration.html

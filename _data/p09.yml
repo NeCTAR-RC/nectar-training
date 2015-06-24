@@ -1,2 +1,8 @@
 - name: Introduction
   file: intro.html
+- name: Creating a snapshot
+  file: snapshot.html
+- name: Backing up
+  file: backup.html
+- name: Cleaning up
+  file: cleanup.html

@@ -100,9 +100,29 @@ If you want to create a new user account on your VM, type in the following comma
 
 ```sudo adduser <username>```
 
-replacing &lt;username&gt; with the username you would like to create. It will prompt you to create a password for this user, and type in their name and contact details (Note: If you would like to just create the user without specifying password and details, use *sudo useradd &lt;username&gt;* instead). This will create a user with minimal privileges. For example, the user cannot perform administration tasks which require the *sudo* command prefix. If you would like to add privileges for this user, you can add it to certain *privileges groups*, e.g. the sudo group:
+replacing &lt;username&gt; with the username you would like to create. It will prompt you to create a password for this user, and type in their name and contact details.
+
+{% BgBox info %}
+If you would like to just create the user without specifying password and details, use
+
+```sudo useradd <username>```
+
+instead. You then can set the user password with:
+
+```sudo passwd <username>```
+
+{% endBgBox %}
+
+It is recommended you use a random password initially, and then give it to the user, with the **strong** recommendation of changing it (a user cannot set their own initial password themselves, hence this initial step is required). Users can change their own password with:
+
+```passwd```
+
+
+You have now created a user with minimal privileges. For example, the user cannot perform administration tasks which require the *sudo* command prefix. If you would like to add privileges for this user, you can add it to certain *privileges groups*, e.g. the sudo group:
 
 ```sudo adduser <username> sudo```
+
+The user can then use the *sudo* command to perform administrative tasks. They will have to type in *their own password* to execute sudo commands (this is a security measure in case they left their keyboard unattended).
 
 To check the right groups the user is assigned to, type
 
@@ -116,11 +136,20 @@ Each user should have their own ssh keys. Ask them to create it, using their pas
 TODO: Add document-internal link
 {% endcol %}
 
+
+
+
 ### Adding a new ssh key
 
-If you want to use a new key to connect to the instance, you have to add it to the file *authorized_keys* on your instance:
+If you want to use a new key to connect to the instance, you have to add it to the file *authorized_keys* on the user's account. If you are adding another key for the *ubuntu* user, the &lt;username&gt; in the command below is *ubuntu*, otherwise it is the user name you want to add a key for.
 
-```nano ~/.ssh/authorized_keys```
+First, create the *.ssh* directory for the user, if it does not exist yet (if it exists, this command will return an error):
+
+```sudo mkdir /home/<username>/.ssh```    
+
+Then, edit the file *authorized_keys*
+
+```sudo nano /home/<username>/.ssh/authorized_keys```
 
 Paste the contents of your public key as one line into this file.
 
@@ -129,6 +158,13 @@ Paste the contents of your public key as one line into this file.
 {% endBgBox %}
 
 Similarly, if you want to remove a key, you have to delete the line for that key from the *authorized_key* file on your instance.
+
+Make sure that the directories and files have the correct ownership and access:
+
+```sudo chown -R <username> /home/<username>/.ssh```    
+```sudo chgrp -R <username> /home/<username>/.ssh```    
+```sudo chmod 700 /home/<username>/.ssh```    
+```sudo chmod 500 /home/<username>/.ssh/authorized_keys```    
 
 
 ### SSH Tunnelling explained

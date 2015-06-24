@@ -29,7 +29,29 @@ RDSI is funding the setup of eight data centres or 'Nodes' as we call them, arou
 
 You may get access to data that other researchers have shared in *collections*. A large amount of discipline-specific collections are already available. To see the collections which are currently available, follow this link: [https://www.rdsi.edu.au/collections-stored](https://www.rdsi.edu.au/collections-stored) 
 
+
+If you have particularly high demands on the size of your storage, the NeCTAR storage may not be sufficient for your purposes. The largest 'flavour' will give your 480GB, and to get access to a large Volume storage, you need good reasons in your allocation request. 
+
+If you have high storage demands, an alternative to the NeCTAR storage may be to lodge a request for "Collection" storage through the RDSI merit allocation scheme. You will have to contact your local RDSI node to find out how you will be able to access your storage, as this varies between the nodes among the following:
+
+You may get access to:
+* an Object Storage.
+* a Volume Storage.
+* a specific VM which has access to the storage.
+* NFS storage which you can *mount* from your local instance.
+* or other forms of access.
+
 {% col 255,0,0 %}
-TODO: Find out how to get access to the RDSI storage
+TODO: Expand on this using the articles below, creating a short and crisp setup tutorial? 
 {% endcol %}
 
+
+If you need to add RDSI storage to a NeCTAR VM, here are a couple of articles describing how to do it:
+
+* Pierre Chaumeil's article ["How to mount RDSI storage on NeCTAR virtual machines"](http://www.qfab.org/2013/11/26/how-to-mount-rdsi-storage-on-nectar-virtual-machines/) which is on the QFAB Bioinformatics Blog.
+
+* Kim Olson's article ["NFS mounting collection storage in Linux"](https://qriscloud.zendesk.com/hc/en-us/articles/200106199-NFS-mounting-collection-storage-in-Linux) from the QRIScloud site.
+
+Note that some details in these articles may be specific to the respective NeCTAR nodes / providers. 
+
+Also note that NFS mounting a collection at one node from a virtuali machine in a *different* node will not work.  

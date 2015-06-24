@@ -6,6 +6,8 @@ part: Documentation
 
 After you have used the Project Trial to gain experience with virtual machines, you may want to request more resources on the Research Cloud. You will have to submit a request for this. 
 
+The NeCTAR Resource Allocation Committee (RAC) approves resource allocation on the basis of the scientific and technical merit of the application and its requirements. You are asked to specify some details about your research and how you plan to use the resources you are requesting.
+
 The following steps describe the process of submitting such a request.
 
 
@@ -22,6 +24,20 @@ Use the Allocation Request form from the left hand side menu of your [Dashboard]
 * On **Allocations > My Requests** you can **add resources** to your **existing project** (you will also see your previous requests here).    
 
 As a rule of thumb, the more resources you ask for, the more detail we require about your research. Requesting a few cores won’t be scrutinised as much as requesting tens or hundreds of cores.    
+
+{% BgBox important %}
+The amount of CPU hours you request is 
+
+{% col 255,0,0 %}  
+TODO: Which of these is it?
+{% endcol %}
+
+* the amount of time your instance will be running
+
+* the amount of time your instance will actually be using CPU time
+
+{% endBgBox %}
+
 
 {% BgBox info %}
 Within the Research Cloud resources are allocated to projects, not users. Projects can have one or more users.
