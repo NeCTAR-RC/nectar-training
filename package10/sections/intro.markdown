@@ -22,20 +22,17 @@ The following *clients* are available:
 | ------- | ------------------ | ---------------------------------------------- | ------- |
 | nova	  | python-novaclient  | https://github.com/openstack/python-novaclient	| Nova is the primary OpenStack cloud management API |
 | glance  | python-glanceclient| https://github.com/openstack/python-glanceclient | Glance is the OpenStack Image management API. |
-| keystone| python-keystoneclient | https://github.com/openstack/python-keystoneclient | Keystone is the OpenStack Authentication API. |
+| cinder | python-cinderclient | https://github.com/openstack/cinder | Cinder provides services and libraries for access to Block Storage. |
+| keystone | python-keystoneclient | https://github.com/openstack/python-keystoneclient | Keystone is the OpenStack Authentication API. |
 | swift	  | python-swiftclient  | https://github.com/openstack/python-swiftclient | Swift is the ObjectStack Object Store API. |
-
 | ------- | ------------------ | ---------------------------------------------- | ------- |
 
-Cover general installation here!!
+{% col 255,0,0 %}
+Cover general installation for all packages here!!
+{% endcol %}
 
-[http://espaces.edu.au/vwrangler/nectar-topics/nectar-how-tos/openstack-clients-for-nectar](http://espaces.edu.au/vwrangler/nectar-topics/nectar-how-tos/openstack-clients-for-nectar)
 
-### NCI NeCTAR node
 
-Discuss using the NCI nectar node?
-
-[http://nci.org.au/services-support/training/using-nci-nectar-node/](http://nci.org.au/services-support/training/using-nci-nectar-node/)
 
 
 
