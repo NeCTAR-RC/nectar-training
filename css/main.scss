@@ -9,6 +9,23 @@ body {
 	padding: 0;
 }
 
+table{
+	border-collapse: collapse;
+	border-spacing: 0;
+	border:2px solid #000000;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+th{
+	border:2px solid #000000;
+}
+
+td{
+	border:1px solid #000000;
+	padding:3px;
+}
+
 // classes for background boxes
 div.bgInfo {
 	padding: 10px;

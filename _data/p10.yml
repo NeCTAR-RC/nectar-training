@@ -1,5 +1,7 @@
 - name: Introduction
   file: intro.html
+- name: OpenStack clients
+  file: openstackClients.html
 - name: Tracking utilization
   file: utilization.html
 - name: Managing volumes
