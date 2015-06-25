@@ -94,6 +94,32 @@ You may also want to simply create a separate set of keys for PuTTY (see [this s
 TODO: Add document-internal link
 {% endcol %}
 
+
+### Windows: Using *Pageant* to handle your ssh key
+
+You may use a **SSH authentication agent**, which holds your private keys in memory, already decoded, so that you can use them without needing to type a passphrase.
+
+*PuTTY* also offers a tool called *Pageant*, which is the *PuTTY* SSH authentication agent. Download it on the [PuTTY website][PuTTY]. If you have not generated your ssh key with *PuTTY* in the first place, you will also need to convert it to the *PuTTY* format. You can do this using the tool *PuTTYgen* (you can find instructions on how to do this in this Appendix). 
+
+To load your ssh key with *Pageant*:
+
+
+Step 1.
+
+{% img src=images/scrPageant1.png, w=170, dim=px, align=right, css=margin-bottom:5px %}
+Start up *Pageant* (by clicking on *pageant.exe* which you downloaded). In your system tray, you'll see the *Pageant* icon appear: A computer symbol with a hat on. 
+
+Step 2.
+
+{% img src=images/scrPageant2.png, w=170, dim=px, align=right, css=margin-top:5px; margin-bottom:5px; %}
+Right-click the icon and select **Add Key** and select your private key (*PPK*) file. Enter your pass phrase. Now, your key is loaded in the Background and you can use FileZilla via the secure FTP protocol *SFTP* in the next step.
+
+{% BgBox important %} 
+Don't forget to **close Pageant** when you're done! Otherwise any user with access to your computer can easily gain access with your ssh key without having to type the ssh key passphrase. To close pageant, go to the system tray icon, right click and **Exit** pageant.
+{% endBgBox %}
+
+See also the [pageant tutorial on digitalocean](https://www.digitalocean.com/community/tutorials/how-to-use-pageant-to-streamline-ssh-key-authentication-with-putty). 
+
 ### Creating a new user account
 
 If you want to create a new user account on your VM, type in the following command in your ssh terminal:

@@ -21,6 +21,7 @@ Object Storage also scales up nicely, and it is easy to access your files from a
 While Object Storage has high data integrity through geographical distribution of files, it does *not* have a "traditional" dedicated backup system --- it merely provides a means to increase availability and integrity of your data by keeping multiple copies. 
 {% endBgBox %}
 
+In the OpenStack Object Store, you may get access to large amounts of storage. Ultimately, this is limited by the storage cluster size of about 40TB. You may upload as many files as you like, as long as your allocation is not exceeded. The size of the files is not limited, however due to limits in the *http* protocol it is not recommended to upload files larger than 1GB.
 
 ### Suitable use of object store
 

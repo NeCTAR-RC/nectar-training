@@ -18,21 +18,14 @@ Access to your object store requires your password, but this password may be sav
 
 ### Get your OpenStack credentials
 
-Before you start, you should get your login data from the [Dashboard][Dashboard]. Note that you will *not* need to do this if you just want to upload files via the Dashboard (as described in the next section). But if you want to use other tools, and to complete this tutorial, you should take note of your credentials now.
+Before you start, you should get your login details.
+Note that you will *not* need to do this if you just want to upload files via the Dashboard (as described in the next section). But if you want to use other tools, and to complete this tutorial, you should take note of your credentials now.
 
-1. Your **tenant ID** is the name of your project as reported in the left hand panel of the dashboard (e.g. *pt-12345*)
+{% include getCredentials.markdown %}
 
-2. Your **username** is reported at the top of the dashboard on the right (e.g, logged in as: *user@uni.edu.au*)
-
-3. Look up what is specified for the *'Identity'* Service in the[Dashboard API Tab](https://dashboard.rc.nectar.org.au/project/access_and_security/?tab=access_security_tabs__api_access_tab) (you can get there via *Compute >  Access & Security >  API Access*). This will be a URL like    
-    *https://**keystone.rc.nectar.org.au**:**5000**/v2.0/*     
-    Take note of the text between *https://* and the colon (*keystone.rc.nectar.org.au* in the example). This will be the **Server**. Take note of the number (*5000* in the example). This will be the **Port**. You will need the **Keystone Server and Port** to authenticate your access. Also take note of the keystone version which you are using, in this case its *v2.0*.
-
-4. For some access methods, you will also need the **credential files** (OpenRC for OpenStack, and EC2 for Amazon). You can download by clicking on the buttons on the top right on the same window (e.g. **Download OpenStack RC File**). Download the *OpenStack RC file* and save it somewhere on your computer where you can easily find it later.
-
-5. You will also need your **OpenStack password**. This is **not** the same password that you use to log in to the Dashboard! If you have never used the OpenStack password before, you need to generate it first. You can do this in the **Settings** of the Dashboard (click next to your user name (your e-mail) on the top right and a drop down menu will open. Click on *Settings*). You need to reset your password by clicking **Reset Password** on the left panel of the settings. A long combination of numbers and letters will be displayed. This is your OpenStack password. Copy the text and save it somewhere safe.    
-    {% BgBox info %} Your OpenStack password will be a long combination of numbers. At the time of writing, unfortunately this password cannot be changed yet, but this should be changed in a future update of OpenStack on NeCTAR.    
-    {% endBgBox %}
+{% BgBox info %}
+You will not need your OpenStack RC file in this Module, but you *will* need it later in Module 10. So while you are on the Dashboard API page already, you may download it now, and remember for later where you put it.
+{% endBgBox %}
 
 ### All platforms: Access via the Dashboard
 

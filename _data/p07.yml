@@ -37,5 +37,8 @@
 - name: Volume storage
   file: volumeStorage.html
   level: 2
+- name: Copying files across
+  file: copyFiles.html
+  level: 2
 - name: Appendices
   file: appendices.html

@@ -118,7 +118,7 @@ Now, connect to the instance by clicking the “**Open**” button. The first ti
 {% BgBox info %}
 Every time you connect to the instance via Putty, you will have to type in your passphrase. This may get a little cumbersome, so note that there is a tool called ***Pageant*** that you can get on the same page where you downloaded [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html). Pageant is an *SSH authentication agent*. It holds your private keys in memory, already decoded, so that you can use them often without needing to type the passphrase every time. It also eliminates the need to explicitly specify the relevant key to each user account, if you use more than one account to log into a server.
 
-We will *not* use pageant in this tutorial, but you may be interested to read up on how to use it. For instructions, see for example the [tutorial on digitalocean](https://www.digitalocean.com/community/tutorials/how-to-use-pageant-to-streamline-ssh-key-authentication-with-putty). 
+We will *not* use pageant in this tutorial, but you may be interested to read up on how to use it. You can find instruction in the [Appendix](appendices.html).
 {% endBgBox %}
 
 

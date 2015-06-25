@@ -11,7 +11,7 @@
 [ModDoc10]: {{site.defaults[10].values.docpath}} "Module 10"
 
 
-
+[PuTTY]: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 [Dashboard]: https://dashboard.rc.nectar.org.au 
 [Allocations]: http://support.rc.nectar.org.au/docs/allocations
 [Volumes]: http://support.rc.nectar.org.au/docs/volumes
