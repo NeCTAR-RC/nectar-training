@@ -27,6 +27,11 @@ td{
 }*/
 
 // classes for background boxes
+
+
+
+
+// classes for background boxes
 div.bgInfo {
 	padding: 10px;
 	border: 3px solid gray;
@@ -74,6 +79,16 @@ div.bgEdit {
 	font-family: "Courier New", Courier, monospace;
 }
 
+//overrides existing style for preformatted text within an "edit" box.
+pre.PreformatEdit {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	font-family: inherit;
+	background-color: inherit;
+	font-size: 75%;
+}
+
 div.bgTerminal {
 	padding: 5px;
 	border: 2px solid rgb(150, 150, 150);
@@ -85,6 +100,17 @@ div.bgTerminal {
 	clear:both;
 	font-family: "Courier New", Courier, monospace;
 }
+
+//overrides existing style for preformatted text within a "terminal" box.
+pre.PreformatTerminal {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	font-family: inherit;
+	font-size: 75%;
+	background-color: inherit;
+}
+
 
 
 

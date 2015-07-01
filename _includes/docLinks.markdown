@@ -17,5 +17,9 @@
 [Volumes]: http://support.rc.nectar.org.au/docs/volumes
 [NectarCyberduck]: http://support.rc.nectar.org.au/docs/object-storage#Cyberduck
 [OpenStackSecurityGuide]: http://docs.openstack.org/security-guide/content/hypervisor-selection.html
-
-
+[OpenStackClients]: https://wiki.openstack.org/wiki/OpenStackClients
+[OpenStackPythonBindings]: https://wiki.openstack.org/wiki/OpenStackClients
+[OpenStackSDKs]: https://wiki.openstack.org/wiki/SDKs
+[OpenStackClientInstallation]: http://docs.openstack.org/user-guide/common/cli_install_openstack_command_line_clients.html
+[SetupToolsWebsite]: https://pypi.python.org/pypi/setuptools
+[OpenStackClientDoc]: http://docs.openstack.org/developer/python-openstackclient/

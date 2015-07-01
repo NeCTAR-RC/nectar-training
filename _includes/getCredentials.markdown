@@ -6,7 +6,7 @@ You can download your **credentials** from the [Dashboard][Dashboard].
 
 3. Look up what is specified for the *'Identity'* Service in the [Dashboard API Tab](https://dashboard.rc.nectar.org.au/project/access_and_security/?tab=access_security_tabs__api_access_tab) (you can get there via *Compute >  Access & Security >  API Access*). This will be a URL like    
     *https://**keystone.rc.nectar.org.au**:**5000**/v2.0/*     
-    Take note of the text between *https://* and the colon (*keystone.rc.nectar.org.au* in the example). This will be the **Server**. Take note of the number (*5000* in the example). This will be the **Port**. You will need the **Keystone Server and Port** to authenticate your access. Also take note of the keystone version which you are using, in this case its *v2.0*.
+    Take note of the text between *https://* and the colon (*keystone.rc.nectar.org.au* in the example). This will be the **Server**. Take note of the number (*5000* in the example). This will be the **Port**. You will need the **Keystone Server and Port** to authenticate your access. Also take note of the keystone version which you are using, in this case its **v2.0**.
 
 4. Get your **credential file** (this is called the *OpenStack RC file* for OpenStack, and *EC2 file* for Amazon). You can download by clicking on the buttons on the top right on the same window: **Download OpenStack RC File**. Download it and save it somewhere on your computer where you can easily find it later.
 

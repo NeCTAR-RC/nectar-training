@@ -4,119 +4,178 @@ part: Documentation
 ---
 {% include /docLinks.markdown %}
 
-*Prerequisite*: You need to have installed the *python-novaclient* using the instructions given earlier.
+
+*Prerequisite*: You need to have installed the *python-openstackclient* using the instructions given earlier. You should also be familiar with the terminology and concepts involved for launching an instance, as described in [Module 7][ModDoc7]. You also must have *sourced* your OpenStack RC file on the command line you are using, as described [earlier in this module](openStackClients.html).
 
 
 You may display information about all the instances you are running:
 
-```nova list```
+```openstack server list```
 
 This will output a line like this one for each running instance:
 
-{% BgBox terminal %}
-|   |   |  |  |  |   |
-|--------------|-----------------|--------|------------|-------------|----------------------------|
-|\| ID           |\| Name            |\| Status |\| Task State |\| Power State |\| Networks                   |
-|\| be2ev... |\| MyInstance |\| ACTIVE |\| \-          |\| Running     |\| zone=&lt;your-ip&gt; |\|
-|-- | --|--|--|--|--|
+{% BgBox terminalPreformat %}
++--------------+----------------------+--------+----------------------------+
+| ID           | Name                 | Status | Networks                   |
++--------------+----------------------+--------+----------------------------+
+| be290858-... | MyFirstInstance      | ACTIVE | intersect-01=43.240.96.180 |
++--------------+----------------------+--------+----------------------------+
 {% endBgBox %}
 
 
 You can display more information about your instances with:
 
-```nova show <instance ID>```
+```openstack server show <instance ID>```
 
-Where the instance ID is the long combination of numbers, dashes and letters shown in the *nova list* command. Alternatively, you may use the *name* of the instance, e.g.:
+Where the instance ID is the long combination of numbers, dashes and letters shown in the *openstack server list* command. Alternatively, you may use the *name* of the instance, e.g.:
 
-```nova show MyInstance```
+```openstack server show MyFirstInstance```
 
 in the example above. This will display a lot of information about this particular instance.
 
-You can display help for the *nova* command with:
+You can display help for the *openstack* command with:
 
-``` nova help ```
+``` openstack help ```
 
-In the following, we are going to discuss *nova* commands for 
+And if you would like to see the help for a particular sub-tool, e.g. *server:*
+
+``` openstack help server ```
+
+In the following, we are going to discuss *openstack server* commands for 
 
 * Launching an instance
 
 * Taking a snapshot of an instance
 
-* Create an image from an instance
+* Launch the instance from a snapshot
 
-* Re-launch the instance from an image
 
-### Launch an instance with *nova*
+For supporting and further documentation, please refer to the [official openstack client documentation][OpenStackClientDoc]. 
 
-You can also launch an instance with *nova* instead of using the [Dashboard][Dashboard] as we have done in [Module 7][ModDoc7].
+### Launching an instance
+
+You can also launch an instance with *openstack server* instead of using the [Dashboard][Dashboard] as we have done in [Module 7][ModDoc7].
 
 First, you may want to take a look at the flavors which are available and pick the one you'd like:
 
-```nova flavor-list```
+```openstack flavor list```
 
-In this tutorial, let's pick the flavour *m1.small*.
-Take note of the ID (first column of the printed information). When compiling this tutorial, the ID for the flavor *m1.small* was *0*, but in your case it may also be a long string of characters. 
+In this tutorial, let's pick the flavor *m1.small*.
+Take note of the ID (first column of the printed information) and name. When compiling this tutorial, the ID for the flavor *m1.small* was *0*, but in your case it may also be a long string of characters.
 
 Now, you should pick an image to launch your instance from. Just as in [Module 7][ModDoc7], we will use the Ubuntu 14.10 image.
 
-```nova image-list```
+```openstack image list```
 
-Because there are a lot of images, the list will be very long. To make it easier to find the right Ubuntu 14.10 image, type:
+Because there are a lot of images, the list will be very long. To make it easier to find the right Ubuntu 14.10 image in the NeCTAR images, type:
 
-```nova image-list | grep 14.10```
+```openstack image list | grep 14.10```
 
 Find the image *NeCTAR Ubuntu 14.10 (Utopic) amd64" and take note of the ID, which may be a number or a long string of characters. When compiling this tutorial, the ID was *fc48b5bb-e67d-4e39-b9ba-b6725c8b0c88*.
 
 You now have to configure the ssh keys you want to use. Your *Nectar_Key* should show up in the following command (with another name if you chose another launching the instance in Module 7):
 
-```nova keypair-list```
+```openstack keypair list```
 
-We will use the same key in this tutorial, so take note of the *Name* (first column).
+We will use the same key in this tutorial, so take note that the **Keypair Name** (first column) is the one you chose for the key, i.e. *Nectar_Key*.
 
 {% BgBox info %}
 You may also add a new key. The command
 
-```nova keypair-add <name>```
+```openstack keypair create <name>```
 
 will generate a key with a &lt;name&gt; you may choose, and print the private key to the terminal. You have to copy and save this output **now** to a file and store it somewhere as your private key.
 
 If you want to select an existing key that you generated earlier, you have to specify the path to your *public* key, which you must be able to access from your terminal:
 
-```nova keypair-add --pub-key <path-to-your-pub-key> <name>```
+```openstack keypair create --public-key <path-to-your-pub-key> <name>```
 
-Display the help for *keypair-add* with
+Display the help for *keypair create* with
 
-``` nova help keypair-add```
+``` openstack help keypair create```
 {% endBgBox %}
 
 You may display information about a specific key with:
 
-```nova keypair-show <keypair-name>```
+```openstack keypair show <keypair-name>```
 
-using the keypair name which is displayed with the *nova keypair-list* command.
+using the keypair name for which you want to display the information.
 
-Now, you may launch your instance with the command:
+Let's now display information about the security groups:
 
-```nova boot --flavor <flavour-id> --key-name <keypair-name> --image <image-id> <name-of-instance>``` 
+```openstack security group list```
 
-As a name for the instance, choose *NovaLaunchedInstance*. At the time this tutorial was created, this was:
+This should display something like this:
 
-```nova boot --flavor 0 --key-name Nectar_Key --image fc48b5bb-e67d-4e39-b9ba-b6725c8b0c88 NovaLaunchedInstance```
+{% BgBox terminalPreformat %}
++-------+---------+-------------+
+|    ID | Name    | Description |
++-------+---------+-------------+
+| 86498 | default | default     |
+| 90284 | http    | Allow http  |
+| 86501 | icmp    | Allow icmp  |
+| 86504 | ssh     | Allow ssh   |
++-------+---------+-------------+
+{% endBgBox %} 
 
-It will display information about the instance being created. The state (*vm_state*) will probably still be *"building"*.
+Take note of the security group *names* (2nd column) for *icmp* and *ssh*.
 
-Once the instance has been created, it will show up in the output of *nova list* and details can be retrieved with *nova show*.
+The last thing we may need to specify before we launch an instance is the *Availability Zone*. List all the available zones with:
 
-Again, check if the instance is in status **Active** with the command:
+```openstack availability zone list```
 
-```nova list```
+Take note of your *Zone Name* (first column), if you want to use a particular zone. Otherwise, you won't need to specify the availability zone and you will be assigned the most suitable one automatically.
+
+Now, you may launch your instance with the command *openstack server create*. Display help about this command:
+
+```openstack help server create```
+
+which will describe the options available. Launch your instance:
+
+```openstack server create --flavor <flavor-id> --key-name <keypair-name> --image <image-id> --security-group <group name> --availability-zone <zone name> <name-of-instance>``` 
+
+As a name for the instance, choose *NovaLaunchedInstance*.
+For the flavor, you may specify either the *name* or the *id* of that flavor. 
+If you assign several security groups, you must repeat the *--security-group* argument before each group name. 
+If you don't want to use a specific availability zone, you may skip the *--availability-zone* argument.
+At the time this tutorial was created, the command (without availability zone) was:
+
+```openstack server create --flavor m1.small --key-name Nectar_Key 
+    --security-group icmp --security-group ssh --image fc48b5bb-e67d-4e39-b9ba-b6725c8b0c88 NovaLaunchedInstance```
+
+It will display information about the instance being created, similar to these *extracts* of output:
+{% BgBox terminalPreformat %}
++-------------------------------+--------------------------------------------+
+| Field                         | Value                                      |
++-------------------------------+--------------------------------------------+
+| OS-DCF:diskConfig             | MANUAL                                     |
+| OS-EXT-AZ:availability_zone   | intersect                                  |
+| OS-EXT-STS:power_state        | 0                                          |
+| OS-EXT-STS:task_state         | scheduling                                 |
+| OS-EXT-STS:vm_state           | building                                   |
+| flavor                        | m1.small (0)                               |
+| hostId                        |                                            |
+| id                            | b720630a-e0dd-4ecd-9ceb-5e3519e69edc       |
+| image                         | NeCTAR Ubuntu 14.10 (Utopic) amd64 (fc4..) |
+| key_name                      | Nectar_Key                                 |
+| name                          | NovaLaunchedInstance                       |
+| security_groups               | [{u'name': u'icmp'}, {u'name': u'ssh'}]    |
+| status                        | BUILD                                      |
++-------------------------------+--------------------------------------------+
+{% endBgBox %}
+
+The state (*vm_state*) will probably still be *"building"*.
+Once the instance has been created, it will show up in the output of *openstack server list* and *show*.
+Check if the instance is in status **Active** with the command:
+
+```openstack server list```
 
 Once it is active, you may look up the IP address for *NovaLaunchedInstance* with
 
-```nova show NovaLaunchedInstance```
+```openstack server show NovaLaunchedInstance```
 
 
-XXX security groups!
+**Congratulations!! You have now launched your instance.**
 
 
 You may now try to login to your instance with the SSH command, as described in [Module 7](/package07/sections/connectViaSSH.html). 
@@ -126,25 +185,77 @@ Use the IP address which is displayed for your new instance to login via ssh. Fo
 
 replacing the N's with the IP address. 
 
-For more information, display the help for *nova boot* with
+For more information, see also the [official OpenStack Client documentation][OpenStackClientDoc].
 
-``` nova help boot```
-
-XXX Insert link to OpenStack doco and official git
-
-XXX AVAILABILITY ZONE!
+You can now go to the Dashboard and observe that your new instance will be listed there as well.
 
 
-### Reboot
 
-nova reboot
+You may reboot the instance with
+
+```openstack server reboot <instance-name>```
+
+and *terminate* (delete) it with
+
+```openstack server delete <instance-name>```
 
 
-Also see this:
+If you want to add a new security group, you can easily do this after launching as well:
 
-https://espaces.edu.au/vwrangler/nectar-topics/nectar-how-tos/changing-a-nectar-virtuals-mac-address
+```openstack server add security group <group name>```
+
+To get more information about the *openstack server* command:
+
+```openstack help server```
 
 
-Using nova for rescue?
-https://espaces.edu.au/vwrangler/nectar-topics/nectar-how-tos/using-nova-rescue-to-repair-a-nectar-instance
+### Taking a snapshot of an instance
+
+Taking a snapshot of the instance is easy. Using your *Instance Name*:
+
+```openstack server image create --name <Image-Name> <Instance-Name>```
+
+The snapshot will be **saved as an Image** with the name you choose. In the example given in this tutorial, the command is:
+
+```openstack server image create --name NovaLaunchedSnapshot NovaLaunchedInstance```
+
+{% BgBox important %}
+This process may take a while. In the beginning, the 'status' of your snapshot will still be *queued*. Check on the status of your snapshot repeatedly with:
+
+```openstack image show <Image-Name>```
+{% endBgBox %}
+
+
+
+### Launch an instance from a snapshot
+
+
+Because your snapshot was saved as an *Image*, you can easily launch the instance from this image. Instead of the *NeCTAR Ubuntu Image* which we used earlier, you can now specify your own image to launch a new instance. The new instance will have all the software you installed before taking the snapshot, and all the data you saved the on-instance storage (on the primary disk, *not* the secondary!).
+
+You can print a list of all the images (instance and volume snapshots) you have created, if you need to get a reminder for the snapshot name:
+
+```openstack image list --private```
+
+And more details about the images can be displayed with
+
+```openstack image show <Image Name>```
+
+You may launch an instance from your own image with the same command we used earlier to launch an instance:
+
+```openstack server create --flavor <flavor-id> --key-name <keypair-name> --image <snapshot-name> --security-group <group name> --availability-zone <zone name> <name-of-instance>``` 
+
+In our particular example, the command instantiaties to:
+
+```openstack server create --flavor m1.small --key-name Nectar_Key 
+    --security-group icmp --security-group ssh --image NovaLaunchedSnapshot CopyOfNovaLaunchedInstance```
+
+List the details of your new instance with
+
+```openstack server show CopyOfNovaLaunchedInstance```
+
+You have now two copies of your original instance running. You may log in with ssh to *CopyOfNovaLaunchedInstance* as well.
+
+{% BgBox important %}
+Note that you may also choose a **different flavor** when you launch a new instance from the snapshot! This trick allows you to expand your resources. You should however not choose a flavor with less storage available on the primary on-instance disk, otherwise the launching of your instance may fail due to lack of disk space.
+{% endBgBox %}
 

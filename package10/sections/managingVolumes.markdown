@@ -5,172 +5,156 @@ part: Documentation
 {% include /docLinks.markdown %}
 
 
-Intro: "Managing volumes with nova and cinder"
+
+*Prerequisite*: You need to have installed the *python-openstackclient* using the instructions given earlier. You should also be familiar with the terminology and concepts involved for launching an instance, as described in [Module 7][ModDoc7]. You also must have *sourced* your OpenStack RC file on the command line you are using, as described [earlier in this module](openStackClients.html).
 
 
-Discuss how to manage volumes via command line
+In this section we are going to deal with managing *Volumes*:
 
-Before you can create a volume, you need to install cinder:
+* Creating and deleting volumes
 
-  sudo apt-get install python-cinderclient
+* Attaching and detaching volumes from instances
 
-You also need to download your OpenStack credentials (XXX COPY TEXT FROM Module 7) and your openrc file.
+* Taking snapshots of volumes and 
 
-Copy your OpenRC file to your instance
+* Creating volumes from snapshots
 
-  scp -i <yourkey> <path-to-your-openrc> ubuntu@<your-IP>:
 
-(or use an FTP client connected to your object store, then you have to have your object store mounted as well on your instance, see Module 7)
+You can list the volumes you already have with:
 
-On your VM:
+```openstack volume list```
 
-soucre <your-openrc.sh>
+{% BgBox terminalPreformat %}
++------------------+----------+--------------+------+-------------+----------+-----------------+
+|  ID              |  Status  | Display Name | Size | Volume Type | Bootable |  Attached to    |
++------------------+----------+--------------+------+-------------+----------+-----------------+
+| 494e6104-a282-...|  in-use  | MyVolume     |  1   |  intersect  |  false   | a87a...         |
++------------------+----------+--------------+------+-------------+----------+-----------------+
+{% endBgBox %}
 
-Now, you can list the volumes you already have with:
 
-  cinder list
+You can display help for the *openstack* command with:
 
-+--------------------------------------+----------+--------------+------+-------------+----------+--------------------------------------+
+``` openstack help ```
 
-|              	ID              	|  Status  | Display Name | Size | Volume Type | Bootable |         	Attached to          	|
+And if you would like to see the help for a particular sub-tool, e.g. *volume:*
 
-+--------------------------------------+----------+--------------+------+-------------+----------+--------------------------------------+
+``` openstack help volume```
 
-| 494e6104-a282-...            |  in-use  | AnotherTest      |  1     |  intersect         |  false        | a87a...                       |
+For supporting and further documentation, please refer to the [official openstack client documentation][OpenStackClientDoc]. 
 
-+--------------------------------------+----------+--------------+------+-------------+----------+--------------------------------------+
+
+
 
 #### Create a new volume
 
-Create a new volume using the "*cinder create*" command.
+Creating a new volume is easy using the *openstack volume create* command. You can display help for this command with
 
-You can type 
+```openstack help volume create``` 
 
-   cinder help create 
+to see the syntax of the command and some optional arguments.
 
-to see the syntax of the command and some optional switches you can use.
+Create a new Volume called *MyNewStorage* with the following command, choosing your availability zone and the size in GB you want to create:
 
-Create a volume:
+```openstack volume create --description "Description of this volume" --availability-zone <zone name> --size <size in GB> MyNewStorage```
 
- cinder create --display-name MyNewStorage --display-description "whats on this image" --availability-zone <eg melbourne-qh2> <size-in-GB>
+A summary will be printed which shows the details of the volume you are creating (extracts shown in output):
 
-(of course you can choose another name than MyNewStorage and add your own description)
+{% BgBox terminalPreformat %}
++---------------------+--------------------------------------+
+| Field               | Value                                |
++---------------------+--------------------------------------+
+| attachments         | []                                   |
+| availability_zone   | intersect                            |
+| bootable            | false                                |
+| display_description | Description of the Volumme           |
+| display_name        | MyNewStorage                         |
+| encrypted           | False                                |
+| id                  | 42385945-e2...                       |
+| properties          |                                      |
+| size                | 1                                    |
+| snapshot_id         | None                                 |
+| source_volid        | None                                 |
+| status              | creating                             |
+| type                | intersect                            |
++---------------------+--------------------------------------+
+{% endBgBox %}
 
-A summary will be printed which shows the details of the volume you have just created:
+The status of the volume should switch to 'Available' soon. Re-check the status with    
+```openstack volume show MyNewStorage```
 
-+---------------------+-----------------------------------------------------------------------+
-
-|   	Property  	|            	Value         			|
-
-+---------------------+-------------------------------------------------------------------------+
-
-| 	attachments 	|              	[]              			|
-
-|              availability_zone  |          	intersect				|
-
-|   	bootable  	|            	false     				|
-
-|  	created_at 	|  	2015-05-19T11:42:49.496209 	|
-
-|           display_description |     	whats on this image   		|
-
-| 	display_name	|         	MyNewStorage 			|
-
-|  	encrypted  	|            	False 				|
-
-|      	id     	                |               bc9df14c...            			|
-
-|   	metadata  	|              	{}              			|
-
-|     	size    	|              	2               				|
-
-| 	snapshot_id 	|             	None             			|
-
-| 	source_volid	|             	None             			|
-
-|    	status   	|           	creating           				|
-
-| 	volume_type 	|          	intersect           			|
-
-+---------------------+------------------------------------------------------------------------+
-
-Now when you type
-
-  cinder list
-
+After the volume has been created, when you type    
+```openstack volume list```    
 you should see your new volume in the list.
+
 
 #### Attaching/Detaching a volume to an instance
 
-To attach / detach a volume to an instance, you will use the command *nova volume-attach* and *nova volume-detach*.
+To attach and detach a volume to an instance, you will use the command tool *openstack server*.
 
-You will have to install the nova client on your VM:
+First, find the instance name that you want to attach the volume to by listing all your instances:
 
-  sudo apt-get install python-novaclient
+```openstack server list```
 
-Find the instance ID that you want to attach the volume to by listing all your instances:
+{% BgBox terminalPreformat %}
++-------------------+----------------------------+--------+----------------------------+
+| ID                | Name                       | Status | Networks                   |
++-------------------+----------------------------+--------+----------------------------+
+| af87a5c8-e751-... | CopyOfNovaLaunchedInstance | ACTIVE | intersect-02=137.92.56.42  |
+| b720630a-e0dd-... | NovaLaunchedInstance       | ACTIVE | intersect-02=137.92.56.36  |
++-------------------+----------------------------+--------+----------------------------+
+{% endBgBox %}
 
-  nova list
-
-+--------------------------------------+-----------------+-------------+----------------+---------------+----------------------------+
-
-| ID                              	| Name        	| Status  	| Task State     | Power State | Networks                  |
-
-+--------------------------------------+-----------------+-------------+----------------+---------------+----------------------------+
-
-| a87afa…		 | TestIntersect01 | ACTIVE  | -          	          | Running 	| intersect-01=XX.XX.XX.XX |
-
-+--------------------------------------+-----------------+-------------+----------------+---------------+----------------------------+
-
-Similarly, with 
-
-   cinder list
-
-( or nova volume-list )
-
-you can get the ID of the volume you want to attach.
-
-The ID is the long combination of letters and numbers.
 
 Now, to attach the volume:
 
-    nova volume-attach <Server> <Volume-ID> [<Device-ID>]
+```openstack server add volume  <Server-Name> <Volume-Name>```
 
-**Server **: the instance ID that you just looked up with *nova list*.
 
-**Volume-ID**: The volume ID that you just looked up with *cinder list* or *nova volume-list*.
+**Server-Name**: the name of instance that you just looked up with *nova list*. Let's attach it to the instance listed above which is named *NovaLaunchedInstance*.
 
-**Device-ID**: The name that the device will be named, e.g. /dev/mydevice. OpenStack currently ignores the specified device when attaching volumes, you can skip this option, or specify 'auto' to let openstack decide. OpenStack adds the volume as the lowest available device name: For a standard flavor VM (with a primary & secondary drive) the first volume will be attached as /dev/vdc.
+**Volume-Name**: The name of the volume you want to attach. We will attach the volume *MyNewStorage* which we just created.
 
-For example, type:
+{% BgBox info %}
+The *openstack server add volume* command also has an optional argument **--device**. This argument sets the name which will be used for the device mapping, e.g. */dev/mydevice*. OpenStack **currently ignores** the specified device when attaching volumes, so you should skip this option at this stage. 
+{% endBgBox %}
 
-   nova volume-attach a87a…  bc9df..
+The full command with the examples looks like this:
+```openstack server add volume NovaLaunchedInstance MyNewStorage```
 
-The command will take a while to execute.
+The command will take a while to execute.    
+Now, if you run
 
-Example output:
+``openstack volume list``` 
 
-+----------+-------------------------+| Property | Value                    |+----------+-------------------------+| device   | /dev/vdc 		|| serverId | a87a… 		|| id            | e19d0d2f-28b1-451c-ab60-e19d658df5d0 || volumeId |  bc9df..		|+----------+-------------------------+
+you should see the output which shows that your volume is attached:
+{% BgBox terminalPreformat %}
++--------------+--------------+--------+------+-----------------------------------------------+
+| ID           | Display Name | Status | Size | Attached to                                   |
++--------------+--------------+--------+------+-----------------------------------------------+
+| 42385945-... | MyNewStorage | in-use |    1 | Attached to NovaLaunchedInstance on /dev/vdc  |
++--------------+--------------+--------+------+-----------------------------------------------+
+{% endBgBox %}
 
-Now if you run the 
+OpenStack adds the volume as the lowest available device name: For a standard flavor VM (with a primary & secondary drive) the first volume will be attached as */dev/vdc*. You can see where your device has been mapped to in the last column of the output.
 
-  nova volume-list 
-
-command you should see the output which shows that your volume is attached:
-
-XXX insert example output
 
 To detach a volume, you will use a similar command:
 
-    nova volume-detach <Server> <Volume>.
+```openstack server remove volume <Server> <Volume>```
 
-**IMPORTANT**: Before you detach a volume, you have to unmount it! (See XXX on how to mount/unmount a drive).
 
-Now if you run the 
+{% BgBox important %}
+{% include /docLinks.markdown %}
+Before you detach a volume, you have to unmount it! (See [Module 7][ModDoc7] for how to mount/unmount a drive).
+{% endBgBox %}
 
-  nova volume-list 
+Now if you run
 
-command you will see that the status of the volume is not "in-use" any more, but now “avalibale” again.
+```openstack volume list```
+
+you will see that the status of the volume is not "in-use" any more, but now “avalibale” again.
+
 
 #### Backup a volume
 

@@ -59,13 +59,25 @@ module Jekyll
 				"<div markdown class='bgEdit'>
 					#{output}
 				</div>"
+			when "editpreformat"
+				"<div markdown class='bgEdit'>
+				        <pre class='PreformatEdit'>
+					#{content}
+					</pre>
+				</div>"
 			when "terminal"
 				"<div markdown class='bgTerminal'>
 					#{output}
 				</div>"
+			when "terminalpreformat"
+				"<div markdown class='bgTerminal'>
+				        <pre class='PreformatTerminal'>
+					#{content}
+					</pre>
+				</div>"
 			else 
 				sourcefile=context.registers[:site].source
-				raise "Unknown Background box type: "+sourcefile
+				raise "Unknown Background box type: "+@boxType+" - "+sourcefile
 			end
 		end
 
