@@ -28,3 +28,4 @@
 [OpenStackCinder]: http://docs.openstack.org/developer/cinder/
 [OpenStackNova]: http://docs.openstack.org/developer/nova/
 [OpenStackSwift]: http://docs.openstack.org/developer/swift/
+[OpenStackCeilometer]: http://docs.openstack.org/developer/ceilometer/
