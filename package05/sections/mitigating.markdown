@@ -68,7 +68,7 @@ If no server application is listening to the Port, it is also not possible to co
 You have to make sure that the server application which is "listening" for incoming connections on the Port is secure, or it could "leak" access to other parts than the website files to hackers.
 
 
-**Summary of points to take care of:**
+**Summary:**
 
 1. You should **only free up Ports which are required**, and not a whole set of ports.    
     Why? Say your VM gets infected and a malicious *server application* tries to open up access at some random Port, say 5000. If you have freed up all ports, the malicious application will be successful. Freeing up only the necessary ports increases security because the likelyhood of finding an open port is smaller. If, for example, you free up only port 70 (to name a random choice), and a server application is listening for connections on port 70, there will be *no* free port which allows access from outside (because port 70 is already busy)!

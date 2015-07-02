@@ -30,6 +30,7 @@ module Jekyll
 			converter = site.getConverterImpl(Jekyll::Converters::Markdown)
 			content=super(context)
 			output = converter.convert(super(context))
+			content=content.strip
 			case @boxType 
 			when "info"
 				"<div markdown class='bgInfo'>
@@ -61,9 +62,7 @@ module Jekyll
 				</div>"
 			when "editpreformat"
 				"<div markdown class='bgEdit'>
-				        <pre class='PreformatEdit'>
-					#{content}
-					</pre>
+				        <pre class='PreformatEdit'>#{content}</pre>
 				</div>"
 			when "terminal"
 				"<div markdown class='bgTerminal'>
@@ -71,9 +70,7 @@ module Jekyll
 				</div>"
 			when "terminalpreformat"
 				"<div markdown class='bgTerminal'>
-				        <pre class='PreformatTerminal'>
-					#{content}
-					</pre>
+				        <pre class='PreformatTerminal'>#{content}</pre>
 				</div>"
 			else 
 				sourcefile=context.registers[:site].source

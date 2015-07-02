@@ -7,6 +7,11 @@ part: Documentation
 
 *Prerequisite*: You need to have installed the *python-openstackclient* using the instructions given earlier. You should also be familiar with the terminology and concepts involved for launching an instance, as described in [Module 7][ModDoc7]. You also must have *sourced* your OpenStack RC file on the command line you are using, as described [earlier in this module](openStackClients.html).
 
+{% BgBox info %}
+{% include /docLinks.markdown %}
+Before the **openstack** client was introduced, managing compute services was done with the **nova** command, so you may still find references to it on the Internet. While you still can use *nova*, in this tutorial we stick to the more uniform and intuitive *openstack* client, which works very similar to the *nova* command.
+For more details, refer to the [official OpenStack nova][OpenStackNova] documentation.
+{% endBgBox %}
 
 You may display information about all the instances you are running:
 
@@ -37,7 +42,7 @@ You can display help for the *openstack* command with:
 
 ``` openstack help ```
 
-And if you would like to see the help for a particular sub-tool, e.g. *server:*
+This will print a list of options for this command. Each option listed can be seen as a 'sub-command'. You may print more information about usage of the particular sub-command, e.g. for *server* which we are going to use in this section:
 
 ``` openstack help server ```
 
@@ -134,14 +139,14 @@ which will describe the options available. Launch your instance:
 
 ```openstack server create --flavor <flavor-id> --key-name <keypair-name> --image <image-id> --security-group <group name> --availability-zone <zone name> <name-of-instance>``` 
 
-As a name for the instance, choose *NovaLaunchedInstance*.
+As a name for the instance, choose *ClientLaunchedInstance*.
 For the flavor, you may specify either the *name* or the *id* of that flavor. 
 If you assign several security groups, you must repeat the *--security-group* argument before each group name. 
 If you don't want to use a specific availability zone, you may skip the *--availability-zone* argument.
 At the time this tutorial was created, the command (without availability zone) was:
 
 ```openstack server create --flavor m1.small --key-name Nectar_Key 
-    --security-group icmp --security-group ssh --image fc48b5bb-e67d-4e39-b9ba-b6725c8b0c88 NovaLaunchedInstance```
+    --security-group icmp --security-group ssh --image fc48b5bb-e67d-4e39-b9ba-b6725c8b0c88 ClientLaunchedInstance```
 
 It will display information about the instance being created, similar to these *extracts* of output:
 {% BgBox terminalPreformat %}
@@ -158,7 +163,7 @@ It will display information about the instance being created, similar to these *
 | id                            | b720630a-e0dd-4ecd-9ceb-5e3519e69edc       |
 | image                         | NeCTAR Ubuntu 14.10 (Utopic) amd64 (fc4..) |
 | key_name                      | Nectar_Key                                 |
-| name                          | NovaLaunchedInstance                       |
+| name                          | ClientLaunchedInstance                       |
 | security_groups               | [{u'name': u'icmp'}, {u'name': u'ssh'}]    |
 | status                        | BUILD                                      |
 +-------------------------------+--------------------------------------------+
@@ -170,9 +175,9 @@ Check if the instance is in status **Active** with the command:
 
 ```openstack server list```
 
-Once it is active, you may look up the IP address for *NovaLaunchedInstance* with
+Once it is active, you may look up the IP address for *ClientLaunchedInstance* with
 
-```openstack server show NovaLaunchedInstance```
+```openstack server show ClientLaunchedInstance```
 
 
 **Congratulations!! You have now launched your instance.**
@@ -217,7 +222,7 @@ Taking a snapshot of the instance is easy. Using your *Instance Name*:
 
 The snapshot will be **saved as an Image** with the name you choose. In the example given in this tutorial, the command is:
 
-```openstack server image create --name NovaLaunchedSnapshot NovaLaunchedInstance```
+```openstack server image create --name ClientLaunchedSnapshot ClientLaunchedInstance```
 
 {% BgBox important %}
 This process may take a while. In the beginning, the 'status' of your snapshot will still be *queued*. Check on the status of your snapshot repeatedly with:
@@ -247,15 +252,15 @@ You may launch an instance from your own image with the same command we used ear
 In our particular example, the command instantiaties to:
 
 ```openstack server create --flavor m1.small --key-name Nectar_Key 
-    --security-group icmp --security-group ssh --image NovaLaunchedSnapshot CopyOfNovaLaunchedInstance```
+    --security-group icmp --security-group ssh --image ClientLaunchedSnapshot CopyOfClientLaunchedInstance```
 
 List the details of your new instance with
 
-```openstack server show CopyOfNovaLaunchedInstance```
+```openstack server show CopyOfClientLaunchedInstance```
 
-You have now two copies of your original instance running. You may log in with ssh to *CopyOfNovaLaunchedInstance* as well.
+You have now two copies of your original instance running. You may log in with ssh to *CopyOfClientLaunchedInstance* as well.
 
 {% BgBox important %}
-Note that you may also choose a **different flavor** when you launch a new instance from the snapshot! This trick allows you to expand your resources. You should however not choose a flavor with less storage available on the primary on-instance disk, otherwise the launching of your instance may fail due to lack of disk space.
+Note that you may also choose a **different flavor** when you launch a new instance from the snapshot! This allows you to expand your resources (though you can do this easier, see the options with *openstack help server resize*). You should not choose a flavor with less storage available on the primary on-instance disk, otherwise the launching of your instance may fail due to lack of disk space.
 {% endBgBox %}
 

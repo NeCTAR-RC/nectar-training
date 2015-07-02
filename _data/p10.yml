@@ -4,11 +4,9 @@
   file: openstackClients.html
 - name: Controlling an instance
   file: managingInstance.html
-- name: Managing volumes
-  file: managingVolumes.html 
 - name: Accessing the object store
   file: objectStore.html
+- name: Managing volumes
+  file: managingVolumes.html 
 - name: Tracking utilization
   file: utilization.html
-- name: Orchestration
-  file: orchestration.html
