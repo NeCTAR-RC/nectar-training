@@ -30,5 +30,11 @@ GERÄTEDATEI kann statt etwa einer Partition auch eine gewöhnliche Datei sein, 
 Bei sehr großen Containerdateien können sehr große bs-Werte wie 200M bei count=1 je nach System die Erzeugung der Datei in der gewünschten Größe stark beschleunigen. In diesem Beispiel wäre die Datei 200M * 1 = 200M groß. Alternativ beschleunigt auch die Verwendung von if=/dev/zero durch Nullen anstelle von Zufallszahlen wie bei urandom.
 
 
+### Terminating an instance
+
+{% BgBox important %}
+You must *detach* any Volumes from your instance before terminating it.  (There is a rather nasty bug in OpenStack that causes serious problems if you attempt to Terminate an Instance while it has Volumes attached. Recovering your volume requires the NeCTAR Node operation staff to manually patch a database, which is a messy and potentially risky procedure.)
+{% endBgBox %}
+
 
 This is the end of Module 9. Continue with [Module 10][ModDoc10].

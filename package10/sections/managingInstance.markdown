@@ -13,6 +13,11 @@ Before the **openstack** client was introduced, managing compute services was do
 For more details, refer to the [official OpenStack nova][OpenStackNova] documentation.
 {% endBgBox %}
 
+
+{% BgBox info %}
+The following instructions will assume that all the *Names* you choose for instances, volumes, etc. have **no whitespaces** in them. If the names *do* include white spaces, you have to put the name in quotation marks when using them in the commands, e.g. "Name of resource".
+{% endBgBox %}
+
 You may display information about all the instances you are running:
 
 ```openstack server list```
@@ -224,12 +229,19 @@ The snapshot will be **saved as an Image** with the name you choose. In the exam
 
 ```openstack server image create --name ClientLaunchedSnapshot ClientLaunchedInstance```
 
-{% BgBox important %}
 This process may take a while. In the beginning, the 'status' of your snapshot will still be *queued*. Check on the status of your snapshot repeatedly with:
 
 ```openstack image show <Image-Name>```
-{% endBgBox %}
 
+{% BgBox important %}
+It is possible to take a **"Live snapshot"** (take a snapshot of the machine that is currently running). In most cases, there should be no problem. However, if the instance is running while the snapshot is being taken, the resulting snapshot *may* be inconsistent. This is due to programs writing on the file system while a snapshot is taken. There are a few options to prevent this inconsistency from happening:
+
+* running "sync" before starting the snapshot, or
+* using a "file system freeze" utility which block programs writing on the filesystem,
+* shutting down or pausing the instance before snapshotting.
+
+The easiest option is probably to pause or shut down the instance and then take the snapshot. For more information, refer to the [OpenStack documentation](http://docs.openstack.org/trunk/openstack-ops/content/snapshots.html).
+{% endBgBox %}
 
 
 ### Launch an instance from a snapshot

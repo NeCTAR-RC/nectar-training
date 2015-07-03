@@ -37,6 +37,7 @@ https://wiki.openstack.org/wiki/Zabbix-agent-adoption
 http://www.zawmin.com/blog/?p=953
 
 https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux_OpenStack_Platform/3/html/Installation_and_Configuration_Guide/chap-Monitoring_OpenStack_using_Nagios.html
+https://wiki.openstack.org/wiki/Operations/Tools
 
 #### Ceilometer
 

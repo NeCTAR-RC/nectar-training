@@ -32,6 +32,10 @@ In this section, we are going to learn how to
 
 * Upload and download files
 
+{% BgBox info %}
+The following instructions will assume that all the *Names* you choose for containers and files have **no whitespaces** in them. If the names *do* include white spaces, you have to put the name in quotation marks when using them in the commands, e.g. "Name of container".
+{% endBgBox %}
+
 
 
 ### List your files

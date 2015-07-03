@@ -41,6 +41,10 @@ You cannot use Volumes if you are using the NeCTAR Trial Account. You need to su
 {% endBgBox %}
 
 
+{% BgBox info %}
+The following instructions will assume that all the *Names* you choose for instances, volumes, etc. have **no whitespaces** in them. If the names *do* include white spaces, you have to put the name in quotation marks when using them in the commands, e.g. "Name of resource".
+{% endBgBox %}
+
 
 
 #### Create a new volume
@@ -341,9 +345,9 @@ For example, we can create a new volume out of the snapshot *MyNewStorageSnapsho
 ```openstack volume create --snapshot <ID of MyNewStorageSnapshot1> --description "My restored Volume" --size 2 MyRestoredVolume```
 
 {% BgBox important %}
-The original volume that you want to take the Snapshot of **must still exist** when you create a new volume of the Snaphot! You cannot have deleted your Volume before.
+The original Volume on which the Snapshot was based *must still exist*, or the Snapshots of it become useless. 
 
-OpenStack does not let you delete Volumes which have "depending snapshots", so loosing the state of snapshots is not a worry. However you have to be aware that the Snapshots are only usable while you keep your Volume in existence. This is different to *Backups*.
+OpenStack does not let you delete Volumes which have "depending Snapshots", so losing Snapshots by accidently deleting a Volume is not a worry. However you have to be aware that the Snapshots are only usable while you keep your Volume in existence. This is different to *Backups*.
 {% endBgBox %}
 
 The new volume will now be listed with your other volumes:

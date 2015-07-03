@@ -1,6 +1,6 @@
 - name: Introduction
   file: intro.html
-- name: Creating a snapshot
+- name: Snapshots
   file: snapshot.html
 - name: Backing up
   file: backup.html

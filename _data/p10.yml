@@ -8,5 +8,3 @@
   file: objectStore.html
 - name: Managing volumes
   file: managingVolumes.html 
-- name: Tracking utilization
-  file: utilization.html

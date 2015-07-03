@@ -19,9 +19,9 @@ There are three different types of cloud storage available to you on the NeCTAR 
 
 * **On-Instance storage** --- this comes with your instance and is "*ephemeral"*: any files disappear when the VM is shut down. This storage is limited in size. There are two on-instance storage disks: The *primary* and *secondary* disk.
 
-* **Volume (or block) storage** - this is persistent, expandable storage that can be attached to a VM like one or more virtual hard disks.
+* **Volume (or block) storage** --- this is persistent, expandable storage that can be attached to a VM like one or more virtual hard disks.
 
-* **Object storage** - individual data files can be uploaded to the object store and accessed from the VM or from anywhere via the web (e.g. using a web browser).
+* **Object storage** --- individual data files can be uploaded to the object store and accessed from the VM or from anywhere via the web (e.g. using a web browser).
 
 The storage system is shared among instances. Not all storage is created equal, and the different types of storage differ according to performance, persistence and data safety.
 
@@ -31,11 +31,13 @@ This summary table provides a comparison of various data storage features.
 
 {% img src=images/storageTypes.png, w=95, dim=percent, align=center %}
 
-1. **Data Integrity**: how exposed your data is to hardware errors.
+1. **Saved in snapshot**: You may save the state of your instance with a "snapshot". However a snapshot does not include all types of storage.
 
-2. **Access**: there are two methods of access: either as a *BLOCK* level device (like attaching a hard drive to a computer) or *HTTP* where you use a client to *GET* or *POST* objects.
+2. **Data Integrity**: how exposed your data is to hardware errors.
 
-3. **Backed up**: is where there is a recoverable copy of a file available after a file is updated, deleted or damaged. Backup typically refers to maintaining a completely separate backup system, where, for example, the backup system runs nightly and takes an incremental backup of any new data.
+3. **Access**: there are two methods of access: either as a *BLOCK* level device (like attaching a hard drive to a computer) or *HTTP* where you use a client to *GET* or *POST* objects.
+
+4. **Backed up**: is where there is a recoverable copy of a file available after a file is updated, deleted or damaged. Backup typically refers to maintaining a completely separate backup system, where, for example, the backup system runs nightly and takes an incremental backup of any new data.
 
 As you can see, none of the data is backed up, so you will have to do backups yourself, which is subject to [Module 9][ModDoc9]. However, Object Storage has a high data integrity, which is a form of protection against data loss as well. We will learn more about Object Storage later in this Module. 
 
