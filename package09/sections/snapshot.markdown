@@ -72,7 +72,7 @@ The original Volume on which the Snapshot was based *must still exist*, or the S
 OpenStack does not let you delete Volumes which have "depending Snapshots", so losing Snapshots by accidently deleting a Volume is not a worry. However you have to be aware that the Snapshots are only usable while you keep your Volume in existence. This is different to *Backups*, which are discussed in the next section.
 {% endBgBox %}
 
-Before taking a snapshot, you have to make sure your Volume is not attached to an instance --- The volume has to be in the status *"Available"*.
+Before taking a snapshot, you have to make sure your Volume is *not attached* to an instance --- The volume has to be in the status *"Available"*.
 
 To take a Snapshot of a Volume, go to *Dashboard > Compute > Volumes* and find the Volume you want to take a Snapshot of in the list. On the right-hand side, select **Create Snapshot** from the drop-down box. 
 
@@ -91,3 +91,10 @@ Type in the name for the new Volume and a description. As **Volume Source**, sel
 {% img src=images/DashboardVolumeSnapshot3.png, w=500, dim=px, align=center %}
 
 After clicking on **Create Volume**, your new Volume will be created and should appear in the list of your existing Volumes. You may now *attach it* to an instance and *mount* it from this instance to access the data, as we have done in [Module 7][ModDoc7].
+
+
+{% BgBox important %}
+You cannot delete a Volume while you have Snapshots of if saved. If you want to free up the Volume resource for other researchers, you have to *delete all Snapshots* too. So other forms of *Backup* will need to be used before you delete a Volume. 
+
+The next section will discuss other forms of Backups. Alternatively, you can use a technique similar to Snapshots: You can **create an Image of the Volume**, which you can then use to restore the Volume even *after* you have deleted it. This works in the same fashion as Snapshots, it only is a bit slower: Instead of *Create Snaphot*, now you select *Upload to image*. Name your Image accordingly so you can easily identify it. Your Volume Image will now appear along with all the instance Snapshots on *Dahsboard > Compute > Images*. When you create a new Volume, then as *Volume Source*, select *Image*, and select your Image as the *Image as source*. 
+{% endBgBox %}
