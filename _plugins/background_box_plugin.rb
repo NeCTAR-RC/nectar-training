@@ -8,6 +8,7 @@ module Jekyll
 	  # * definition
 	  # * edit
 	  # * terminal
+	  # * prerequisite
 	  # to create different types.
   	  class BackgroundBox < Liquid::Block
 		boxType = "notype"
@@ -71,6 +72,13 @@ module Jekyll
 			when "terminalpreformat"
 				"<div markdown class='bgTerminal'>
 				        <pre class='PreformatTerminal'>#{content}</pre>
+				</div>"
+			when "prerequisite"
+				"<div markdown class='bgPrerequisite'>
+			        	<img src='/images/info-32.png' align='left' 
+					style='width:32px; height:32px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;'/>
+					#{output}
 				</div>"
 			else 
 				sourcefile=context.registers[:site].source

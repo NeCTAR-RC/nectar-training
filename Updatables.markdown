@@ -16,6 +16,8 @@
     - launching.html: We choose flavour m1.small, so that we can use the secondary disk. Update if this flavour (or name) changes. Date: June 2015
     - objectStorage.html: The OpenStack password cannot be changed. As soon as that's possible, update this documentation. Date: June 2015.
 
+5. Package09
+    - sections/backups.markdown: Mention that Backups are not available yet via the Dashboard. State: July 2015
 
 5. Package 10
   - openStackClients: Statement that Python 3 is not supported yet (Source: http://docs.openstack.org/user-guide/common/cli_install_openstack_command_line_clients.html). Date: July 2015
