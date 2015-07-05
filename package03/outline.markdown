@@ -3,7 +3,7 @@ layout: package-part
 part: Outline
 ---
 
-Duration: about 1/2 to 1 hour
+Duration: about 1/2 to 1 hour (video shorter than 1/2 hour)
 
 Level: **_Beginner_** / _Intermediate_ / _Advanced_
 
@@ -37,7 +37,7 @@ The attendee will have a better idea of what uses and benefits the Research Clou
 
 ### Course suitable for
 
-The researcher has eliminated "ready to go" options. Now they want to know what uses a VM on the Research Cloud can be put to.
+Beginners who have attended the previous modules. The researcher has eliminated "ready to go" options. Now they want to know what uses a VM on the Research Cloud can be put to.
 
 ### Before the course
 

@@ -3,7 +3,7 @@ layout: package-part
 part: Outline
 ---
 
-Duration: about 1/2 hour
+Duration: less than 1/2 hour
 
 Level: **_Beginner_** / _Intermediate_ / _Advanced_
 

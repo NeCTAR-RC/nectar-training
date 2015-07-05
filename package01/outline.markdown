@@ -3,7 +3,7 @@ layout: package-part
 part: Outline
 ---
 
-Duration: about 1 hour
+Duration: about 0.5 - 1 hour face-to-face (shorter video)
 
 Level: **_Beginner_** / _Intermediate_ / _Advanced_
 

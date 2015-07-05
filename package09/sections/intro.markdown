@@ -4,7 +4,7 @@ part: Documentation
 ---
 {% include /docLinks.markdown %}
 
-In this module we will discuss backup strategies for when things do go wrong. You will learn how to make snapshots and how to recover your virtual machine using this snapshot. You will also learn how to backup your data and how to terminate your virtual machine without losing anything.
+In this module we will discuss how you can back up your instance and your data. You will learn how to make snapshots and how to recover your virtual machine using this snapshot. You will also learn how to backup your data and how to terminate your virtual machine without losing anything.
 
 Not only is it important that you know about what measures are taken at NeCTAR to prevent data loss. Part of keeping your data safe is your responsibility: You should **create backups** at regular intervals. In this module, you will learn a few options how to back up your data.
 

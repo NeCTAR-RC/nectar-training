@@ -3,7 +3,7 @@ layout: package-part
 part: Outline
 ---
 
-Duration: about 1/2 to 1 hour
+Duration: about 1/2 to 1 hour (video under 1/2 hour)
 
 Level: **_Beginner_** / _Intermediate_ / _Advanced_
 
@@ -31,7 +31,7 @@ The researcher will know the difference between Cloud and HPC. They may have fou
 
 ### Course suitable for
 
-The researcher is using a PC for analysis. They want to know what they gain and lose by moving to centralised compute. They also want to know when to choose a VM over the other available option, HPC.
+Researchers who are currently using a PC for analysis. They want to know what they gain and lose by moving to centralised compute. They also want to know when to choose a VM over the other available option, HPC.
 
 ### Before the course
 

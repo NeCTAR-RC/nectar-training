@@ -4,7 +4,7 @@ part: Documentation
 ---
 {% include /docLinks.markdown %}
 
-In this module we are going to learn how to launch an instance and how to connect to it. We are going to see two ways to connect: (a) with the command line and (b) to a remote desktop so we have a graphical interface. Then, we will also take a look at how we can set up our storage so we can access it remotely and directly from our instance.
+In this module we are going to learn how to launch an instance and how to connect to it. We are going to discuss two ways to connect: (a) with the command line and (b) to a remote desktop, with the benefits of having a graphical interface. Then, we will also take a look at how we can set up our storage so we can access it remotely and directly from our instance.
 
 ### General notes
 

@@ -5,7 +5,7 @@ title: Notes for reviewers
 
 ### NeCTAR National Training Course Material
 
-All modules are ready for review. 
+All modules are ready for review. They will still be continuously improved and updated (e.g. phrasing, adding images, and other polishing and detailing). But feedback would be greatly appreciated at this point in order to shape the material accordingly.
 
 This document will in future contain "release notes", i.e. the current state / changes of the documentation.
 
@@ -17,15 +17,15 @@ See also the general [README](README.html) for more information.
 
 * The documentation can be seen as a **storyline for the videos and face-to-face training** --- although the videos/face-to-face training will not include everything, but sometimes refer to the online documentation for more detailed information.
 
-* All documents will still be enriched with graphics to describe concepts and ideas. The graphics are still in production.
+* All documents will still be enriched with **images and graphics** to describe concepts and ideas. The graphics are still in production and will be gradually added over the next week. A coarse image draft will be inserted as a placeholder first, then gradually being replaced by the final graphics.
 
-* All screenshots which are included so far will be refined to include highlights (e.g. boxes drawing attention to a section on the screen).
+* All **screenshots** which are included so far will be refined to include highlights (e.g. boxes drawing attention to a section on the screen).
 
-* The layout of all pages is still very crude --- for example, the navigation links for *sections* of a module is displayed on top of the page. It would be better to have this on the left-hand side.
+* Each module ("package") is split into several **sections** to make navigation within the  module easier. 
+
+* The **layout** of all pages is still very crude --- for example, the navigation links for *sections* of a module is displayed on top of the page. It would be better to have this on the left-hand side.
 
 * Notes in {% col 255,0,0 %} red {% endcol %} and/or marked with "TODO" are things that will be changed in near future, according to the description in the comment. 
-
-* Each module ("package") is split into several *sections* to make navigation within the  module easier. 
 
 * It will be possible to compact the length of the documentation by rendering different versions depending on the researchers operating system (e.g. one version of the documents for Windows only, another for Linux only, etc.). This should not take too much extra effort.
 
