@@ -151,11 +151,11 @@ Before we can use the command line client, we need to load the OpenStack RC file
 
 * **Windows**:
    Needs Powershell, so XP Service Pack 3 or later.
-    {% BgBox important %} TODO !!!! See also https://github.com/naturalis/openstack-docs/wiki/Howto:-Installing-and-configuring-the-OpenStack-commandline-tools-on-Windows    
-     and   http://information-technology.web.cern.ch/book/cern-cloud-infrastructure-user-guide/advanced-topics/installing-tools-client-machines
+    {% BgBox important %} TODO !!!! See also [this link](https://github.com/naturalis/openstack-docs/wiki/Howto:-Installing-and-configuring-the-OpenStack-commandline-tools-on-Windows)
+     and [this one]( http://information-technology.web.cern.ch/book/cern-cloud-infrastructure-user-guide/advanced-topics/installing-tools-client-machines)
     {% endBgBox %}
 
-{% BgBox editPreformat %}
+{% BgBox edit %}
 set OS_AUTH_URL=https://keystone.rc.nectar.org.au:5000/v2.0/
 set OS_TENANT_ID=f12d3486498d4af5be4c2ca36369487c
 set OS_TENANT_NAME="NeCTAR_Training"

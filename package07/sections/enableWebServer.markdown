@@ -25,16 +25,16 @@ the directory */var/www/html* is where your website lives by default, and the fi
 *Tipp*: Copy and paste will not work with many terminals. If the traditional copy & paste does not work, you can instaed try the following: copy the text as usual; then click with your mouse on the place you want to insert the text in your ssh terminal editor; Then, click the *right or middle* mouse button --- this will work on many systems to "paste" the contents of your clipboard.
 
 {% BgBox edit %}
-<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">    
+&lt;!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN"&gt;    
 &lt;HTML&gt;    
-&nbsp;&lt;HEAD&gt;    
-  &nbsp;&lt;TITLE&gt;    
-&nbsp;  &nbsp;A Small Hello    
-  &nbsp;&lt;/TITLE&gt;    
-&nbsp;&lt;/HEAD&gt;    
+  &lt;HEAD&gt;    
+    &lt;TITLE&gt;    
+      A Small Hello    
+    &lt;/TITLE&gt;    
+  &lt;/HEAD&gt;    
 &lt;BODY&gt;    
-&nbsp;&lt;H1&gt;Hi&lt;/H1&gt;    
-&nbsp;&lt;P&gt;This is very minimal "hello world" HTML document.&lt;/P&gt;    
+  &lt;H1&gt;Hi&lt;/H1&gt;    
+  &lt;P&gt;This is very minimal "hello world" HTML document.&lt;/P&gt;    
 &lt;/BODY&gt;    
 &lt;/HTML&gt;
 {% endBgBox %}

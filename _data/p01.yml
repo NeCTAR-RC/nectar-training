@@ -1,5 +1,8 @@
 - name: Introduction
   file: intro.html
+
+- name: Course overview
+  file: overview.html
   
 - name: What is Cloud Computing? 
   file: cloud_computing.html

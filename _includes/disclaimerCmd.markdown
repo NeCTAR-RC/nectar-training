@@ -12,21 +12,6 @@ Then you have to replace the second argument, &lt;yourfile&gt;, with the *file n
 
 ```the-command -f thefile.txt```
 
-When we edit a file, the contents of it will be displayed in a different font and with background colour as follows:
-
-{% BgBox edit %}
-   The content of the file
-
-   The next line in this file
-{% endBgBox %}
-
-Output on the command line terminal is printed in boxes formatted as follows:
-
-{% BgBox terminal %}
-NectarTrainingPC:~ Jennifer$ whoami
-
-Jennifer
-{% endBgBox %}
-
+{% include disclaimerEditAndTerminal.markdown %}
 
 

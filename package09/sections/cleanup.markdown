@@ -44,9 +44,9 @@ The option **bs** means *block size*, which is the number of bytes that are writ
 
 
 The process may take quite a while. It is finished when dd **reports the error** *"No space left on device"* (this is technically an error because **dd** tries to write beyond the end of the disk, which it cannot.
-{% BgBox terminalPreformat %}
-$ sudo dd if=/dev/urandom of=/dev/vdd bs=4K iflag=nocache oflag=direct
-dd: error writing ‘/dev/vdd’: No space left on device
+{% BgBox terminal %}
+$ sudo dd if=/dev/urandom of=/dev/vdc bs=4K iflag=nocache oflag=direct
+dd: error writing ‘/dev/vdc’: No space left on device
 262145+0 records in
 262144+0 records out
 1073741824 bytes (1.1 GB) copied, 293.366 s, 3.7 MB/s

@@ -55,22 +55,11 @@ module Jekyll
 					#{output}
 				</div>"
 			when "edit"
-			        #<img src='/images/document-edit-48.png' align='left' 
-				#	style='width:24px; height:24px;
-				#	margin:0px; margin-right:5px; margin-bottom:5px;'/>
-				"<div markdown class='bgEdit'>
-					#{output}
-				</div>"
-			when "editpreformat"
-				"<div markdown class='bgEdit'>
+				"<div class='bgEdit'>
 				        <pre class='PreformatEdit'>#{content}</pre>
 				</div>"
 			when "terminal"
-				"<div markdown class='bgTerminal'>
-					#{output}
-				</div>"
-			when "terminalpreformat"
-				"<div markdown class='bgTerminal'>
+				"<div class='bgTerminal'>
 				        <pre class='PreformatTerminal'>#{content}</pre>
 				</div>"
 			when "prerequisite"

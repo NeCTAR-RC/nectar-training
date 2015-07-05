@@ -12,6 +12,7 @@ We will talk about security concerns in this Module and describe how NeCTAR addr
 
 
 {% include /disclaimer.markdown %}
+{% include /disclaimerCmd.markdown %}
 
 # Note to reviewers
 

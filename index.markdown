@@ -5,6 +5,11 @@ title: Home
 
 # Table of Contents
 
+* [Notes for Reviewers](ReviewerNotes.html)
+* [README](README.html)
+
+Individual packages: 
+
 1. [{{site.defaults[1].values.title}}](package01/)
 1. [{{site.defaults[2].values.title}}](package02/)
 1. [{{site.defaults[3].values.title}}](package03/)
@@ -16,5 +21,3 @@ title: Home
 1. [{{site.defaults[9].values.title}}](package09/)
 1. [{{site.defaults[10].values.title}}](package10/)
 
-* [{{site.defaults[0].values.title}}](packageN/)
-* [README](README.html)

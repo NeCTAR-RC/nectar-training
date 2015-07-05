@@ -9,5 +9,4 @@ This training package consists of the following materials:
 * [Session Plan](plan.html)
 * [Slide Deck](slides.pptx) (_MS PowerPoint_)
 * [Speakers Notes](notes.html)
-* [Exercises](exercises.html)
 * [Videos](video.html)

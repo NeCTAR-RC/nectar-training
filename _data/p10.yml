@@ -2,9 +2,9 @@
   file: intro.html
 - name: OpenStack clients
   file: openstackClients.html
-- name: Controlling an instance
-  file: managingInstance.html
 - name: Accessing the object store
   file: objectStore.html
+- name: Controlling an instance
+  file: managingInstance.html
 - name: Managing volumes
   file: managingVolumes.html 

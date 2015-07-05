@@ -6,7 +6,10 @@ part: Documentation
 
 
 
+{% BgBox prerequisite %}
+{% include /docLinks.markdown %}
 *Prerequisite*: You need to have installed the *python-openstackclient* using the instructions given earlier. You should also be familiar with the terminology and concepts involved for managing volumes, as described in [Module 6][ModDoc6] and [Module 7][ModDoc7]. You also must have *sourced* your OpenStack RC file on the command line you are using, as described [earlier in this module](openStackClients.html).
+{% endBgBox %}
 
 {% BgBox info %}
 {% include /docLinks.markdown %}
@@ -55,7 +58,7 @@ You may list the volumes you already have with:
 ```openstack volume list```
 
 This will print information about your existing volumes (or print nothing if you don't have any volumes yet):
-{% BgBox terminalPreformat %}
+{% BgBox terminal %}
 +------------------+----------+--------------+------+-------------+----------+-----------------+
 |  ID              |  Status  | Display Name | Size | Volume Type | Bootable |  Attached to    |
 +------------------+----------+--------------+------+-------------+----------+-----------------+
@@ -84,7 +87,7 @@ To list all availability zones:
 
 A summary will be printed which shows the details of the volume you are creating (extracts shown in output):
 
-{% BgBox terminalPreformat %}
+{% BgBox terminal %}
 +---------------------+--------------------------------------+
 | Field               | Value                                |
 +---------------------+--------------------------------------+
@@ -133,7 +136,7 @@ First, find the instance name that you want to attach the volume to by listing a
 
 ```openstack server list```
 
-{% BgBox terminalPreformat %}
+{% BgBox terminal %}
 +-------------------+----------------------------+--------+----------------------------+
 | ID                | Name                       | Status | Networks                   |
 +-------------------+----------------------------+--------+----------------------------+
@@ -168,7 +171,7 @@ When it is finished, when you run
 ```openstack volume list``` 
 
 the output should show that your volume is attached:
-{% BgBox terminalPreformat %}
+{% BgBox terminal %}
 +--------------+--------------+--------+------+-----------------------------------------------+
 | ID           | Display Name | Status | Size | Attached to                                   |
 +--------------+--------------+--------+------+-----------------------------------------------+
@@ -235,7 +238,7 @@ After creating the backup, your volume will be in in the status *"backing-up"*, 
 
 to see the status of your Volume backup.
 
-{% BgBox terminalPreformat %}
+{% BgBox terminal %}
 +--------------------+---------+---------------------+-----------+------+
 | ID                 | Name    | Description         | Status    | Size |
 +--------------------+---------+---------------------+-----------+------+
@@ -259,7 +262,7 @@ You will need the *ID* (in this case, the *Name* does not work) to display some 
 
 ```openstack backup show <Backup-ID>```
 
-{% BgBox terminalPreformat %}
+{% BgBox terminal %}
 +-------------------+-----------------------+
 | Field             | Value                 |
 +-------------------+-----------------------+
@@ -354,7 +357,7 @@ The new volume will now be listed with your other volumes:
 
 ```openstack volume list```
 
-{% BgBox terminalPreformat %}
+{% BgBox terminal %}
 +------------------------+------------------+-----------+------+-------------+
 | ID                     | Display Name     | Status    | Size | Attached to |
 +------------------------+------------------+-----------+------+-------------+

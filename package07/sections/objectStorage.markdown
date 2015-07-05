@@ -81,26 +81,26 @@ If you wanted to download this file (e.g. when accessing the store from another 
     - On Windows, you will download an installer. You may keep the default options, if unsure. You don’t need to install Bonjour, if you are asked.
 
 3. Create a text file on your local computer (e.g. save it on the Desktop) with the following contents. Name it *NeCTARObjectStore.cyberduckprofile* (or any other name, it just has to end with .cyberduckprofile).    
-    {% BgBox edit %} &lt;?xml version="1.0" encoding="UTF-8"?&gt;    
-&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;    
-&lt;plist version="1.0"&gt;    
-&nbsp; &nbsp; &lt;dict&gt;    
-&nbsp; &nbsp; &nbsp; &nbsp; &lt;key&gt;Protocol&lt;/key&gt;    
-&nbsp; &nbsp; &nbsp; &nbsp; &lt;string&gt;swift&lt;/string&gt;    
-&nbsp; &nbsp; &nbsp; &nbsp; &lt;key&gt;Vendor&lt;/key&gt;    
-&nbsp; &nbsp; &nbsp; &nbsp; &lt;string&gt;NeCTAR Swift (Keystone)&lt;/string&gt;    
-&nbsp; &nbsp; &nbsp; &nbsp; &lt;key&gt;Context&lt;/key&gt;    
-&nbsp; &nbsp; &nbsp; &nbsp; &lt;string&gt;/v2.0/tokens&lt;/string&gt;    
-&nbsp; &nbsp; &lt;key&gt;Region&lt;/key&gt;    
-&nbsp; &nbsp; &lt;string&gt;Melbourne&lt;/string&gt;    
-&nbsp; &nbsp; &nbsp; &nbsp; &lt;key&gt;Description&lt;/key&gt;    
-&nbsp; &nbsp; &nbsp; &nbsp; &lt;string&gt;NeCTAR Swift Melbourne (Keystone)&lt;/string&gt;    
-&nbsp; &nbsp; &nbsp; &nbsp; &lt;key&gt;Username Placeholder&lt;/key&gt;    
-&nbsp; &nbsp; &nbsp; &nbsp; &lt;string&gt;tenantId:username&lt;/string&gt;    
-&nbsp; &nbsp; &nbsp; &nbsp; &lt;key&gt;Password Placeholder&lt;/key&gt;    
-&nbsp; &nbsp; &nbsp; &nbsp; &lt;string&gt;password&lt;/string&gt;    
-&nbsp; &nbsp; &lt;/dict&gt;    
- &lt;/plist&gt;
+    {% BgBox edit %} <?xml version="1.0" encoding="UTF-8"?>    
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">    
+<plist version="1.0">    
+      <dict>    
+            <key>Protocol</key>    
+            <string>swift</string>    
+            <key>Vendor</key>    
+            <string>NeCTAR Swift (Keystone)</string>    
+            <key>Context</key>    
+            <string>/v2.0/tokens</string>    
+      <key>Region</key>    
+      <string>Melbourne</string>    
+            <key>Description</key>    
+            <string>NeCTAR Swift Melbourne (Keystone)</string>    
+            <key>Username Placeholder</key>    
+            <string>tenantId:username</string>    
+            <key>Password Placeholder</key>    
+            <string>password</string>    
+      </dict>    
+ </plist>
 {% endBgBox %}
 
 3. Double-click on your file *NeCTARObjectStore.cyberduckprofile*.
@@ -251,9 +251,9 @@ To set up cloudfuse for access to your object store, launch a terminal on your l
 
 5. Put the following contents into your file (replace &lt;your-tenant-name&gt;, &lt;your-username&gt; and &lt;your-password&gt; with your own credentials):
     {% BgBox edit %} authurl=https://keystone.rc.nectar.org.au:5000/v2.0/    
-tenant=&lt;your-tenant-name&gt;    
-username=&lt;your-username&gt;    
-api_key=&lt;your-password&gt;    
+tenant=<your-tenant-name>    
+username=<your-username>    
+api_key=<your-password>    
 cache_timeout=60
 {% endBgBox %}
 

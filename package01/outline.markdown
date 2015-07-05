@@ -3,38 +3,43 @@ layout: package-part
 part: Outline
 ---
 
-Duration: _N_ hours
+Duration: about 1 hour
 
-Level: _Beginner_ / _Intermediate_ / _Advanced_
+Level: **_Beginner_** / _Intermediate_ / _Advanced_
 
 ### Synopsis
 
-_Brief description of training package_
+This module provides a general introduction to cloud computing and an overview of the NeCTAR Research Cloud, Virtual Laboratories and eResearch tools which are available to researchers around Australia. 
+What is Cloud Computing? 
+How can cloud computing benefit the users research? 
+What is NeCTAR, and which services does it provide for researchers?
+What are the common concerns when adopting cloud computing?
+This introduction module describes the structure of this course and provides an introduction to the Cloud terminology and concepts as well as the NeCTAR services available to researchers in Australia.
 
 ### Content
 
-_What specific topics will be covered in the course_
+* Course overview
+* Definition of cloud computing
+* Description of common cloud services
+* Common concerns of cloud computing
+* Description of *virtualization*
+* Cloud computing history
+* Description of NeCTAR and its services
+* How cloud computing benefits research
 
 ### Delivery
 
-_Mode of delivery - eg:_
-
 * _face to face_
-* _hands-on exercises_
+* _video_
 
 ### Outcomes
 
-_What new skills can the attendee expect to gain from the course_
+The attendee will know what cloud computing is, how it works, how it can benefit their research and what types of services NeCTAR offers. 
 
 ### Course suitable for
 
-_Description of the target audience and if the course is for beginner/intermediate/advanced users_
+Users who are not sure what cloud computing is and whether they may benefit from using the NeCTAR services for their research.
 
 ### Before the course
 
-_Anything the attendee needs to do in preparation for the course:_
-
-* _printing the exercises_
-* _pack and bring laptop, charger_
-* _installing X, Y, Z pieces of software_
-
+No preparation is needed for this module.

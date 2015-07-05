@@ -56,15 +56,11 @@ A plugin was developed to insert *Info boxes* with the block tag
 Replacing *&lt;type&gt;* with either
 
 * info
-
 * important 
-
 * definition
-
 * edit
-
 * terminal
-
+* prerequisite
 
 to create the following two styles:
 {% BgBox info %}
@@ -80,12 +76,16 @@ This is a box with a definition
 {% endBgBox %}
 
 {% BgBox edit %}
-   This formatting displays contents of a file   
+This formatting displays contents of a file   
 {% endBgBox %}
 
 {% BgBox terminal %}
 NectarTrainingPC:~ Jennifer$ whoami    
 Jennifer
+{% endBgBox %}
+
+{% BgBox prerequisite %}
+This is a box for a prerequisite
 {% endBgBox %}
 
 

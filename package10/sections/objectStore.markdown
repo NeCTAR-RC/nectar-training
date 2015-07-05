@@ -4,7 +4,10 @@ part: Documentation
 ---
 {% include /docLinks.markdown %}
 
+{% BgBox prerequisite %}
+{% include /docLinks.markdown %}
 *Prerequisite*: You need to have installed the *python-openstackclient* using the instructions given earlier. You should also be familiar with the terminology and concepts involved with the object store, as described in [Module 6][ModDoc6] and [Module 7][ModDoc7]. You also must have *sourced* your OpenStack RC file on the command line you are using, as described [earlier in this module](openStackClients.html).
+{% endBgBox %}
 
 {% BgBox info %}
 {% include /docLinks.markdown %}
@@ -46,7 +49,7 @@ Type
 
 and you should see the containers which you already have created.
 
-{% BgBox terminalPreformat %}
+{% BgBox terminal %}
 +-------------------+
 | Name              |
 +-------------------+
@@ -60,7 +63,7 @@ To display the contents of a container:
 
 will list the file(s) you have just uploaded to this container. If you have followed the tutorial in [Module 7][ModDoc7], you should see the file which you uploaded via the Dashboard.
 
-{% BgBox terminalPreformat %}
+{% BgBox terminal %}
 +------------------+
 | Name             |
 +------------------+
@@ -83,7 +86,7 @@ You can now see your new container is listed with
 ```openstack container list```
 
 
-{% BgBox terminalPreformat %}
+{% BgBox terminal %}
 +-------------------+
 | Name              |
 +-------------------+
@@ -106,7 +109,7 @@ This will have created a new container called *MyTestContainer* (unless you had 
 
 ```openstack object list MyTestContainer```
 
-{% BgBox terminalPreformat %}
+{% BgBox terminal %}
 +-----------------------------------+
 | Name                              |
 +-----------------------------------+
@@ -124,7 +127,7 @@ And list the files again to see that the file name stands alone now:
 
 ```openstack object list MyTestContainer```
 
-{% BgBox terminalPreformat %}
+{% BgBox terminal %}
 +-----------------------------------+
 | Name                              |
 +-----------------------------------+
@@ -138,7 +141,7 @@ You may display information about your file with:
 ```openstack object show MyTestContainer MyNewTextFile.txt```
 
 This will display properties and metadata of your file, e.g. *content-length* displays the length in bytes.
-{% BgBox terminalPreformat %}
+{% BgBox terminal %}
 +----------------+--------------------------+
 | Field          | Value                    |
 +----------------+--------------------------+

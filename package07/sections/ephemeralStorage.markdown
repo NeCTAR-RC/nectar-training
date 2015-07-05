@@ -37,16 +37,11 @@ Alternatively, try this command to check the *mount point* and size of your disk
 This should give you an output similar to this:
 
 {% BgBox terminal %}
-
 ubuntu@myfirstinstance:~$ sudo lsblk -l 
-
-| NAME | MAJ:MIN  | RM | SIZE | RO| TYPE| MOUNTPOINT |
-|------|----------|----|------|---| ----|-----------| 
-| vda  | 253:0    | 0  | 10G  | 0 | disk|           |  
-| vda1 | 253:1    | 0  | 10G  | 0 | part|          /|
-| vdb  | 253:16   | 0  | 30G  | 0 | disk|        /mnt|
-|------|----------|----|------|---| ----|------------| 
-
+NAME  MAJ:MIN   RM  SIZE  RO TYPE MOUNTPOINT 
+vda   253:0     0   10G   0  disk             
+vda1  253:1     0   10G   0  part        /
+vdb   253:16    0   30G   0  disk        /mnt
 {% endBgBox %}
 
 This tells us that we have two hard drives, **vda** and **vdb**, of sizes 10G and 30G respectively. The primary disk (*vda*) is further partitioned into a sub-disk called *vda1* (using the full 10G) and this is *mounted* under the *mountpoint "/"*. In Linux terms, this means this disk is used for the operating system. The secondary disk (vdb) has 30G and is mounted on */mnt*. Many OS, for example Ubuntu, already have mounted the secondary disk, but it may also not be mounted yet, in which case nothing is specified under MOUNTPOINT. 
@@ -82,16 +77,10 @@ which will print a different view of the information we have seen in the last co
 
 {% BgBox terminal %}
 ubuntu@myfirstinstance:~$ sudo lsblk -f
-
-|NAME   |FSTYPE |LABEL      |UUID          |  MOUNTPOINT |
-|-------|-------|-----------|------------- |-------------|  
-|vda    |       |           |              |             |           
-|-------|-------|-----------|------------- |-------------|  
-|└─vda1 |ext4   |           |1b85cad6-...  | /           |
-|-------|-------|-----------|--------------|-------------|  
-|vdb    |ext3   |ephemeral0 |24cf7b45-77...|       |
-|-------|-------|-----------|------------- |-------------|  
-
+NAME     FSTYPE   LABEL        UUID               MOUNTPOINT 
+vda                                                            
+└─vda1   ext4                  1b85cad6-...       /           
+vdb      ext3     ephemeral0   24cf7b45-77...       
 {% endBgBox %}
 
 From this, we can see that *vda1* is a *partition* of *vda*. We can also see that
@@ -119,7 +108,7 @@ One way to format the drive with the *ext4* file system type is:
 Confirm the formatting with *'y'*. You should see the status message
 
 {% BgBox terminal %}
-  Writing superblocks and filesystem accounting information:
+Writing superblocks and filesystem accounting information:
 {% endBgBox %}
 
 Wait a while until it says "done.", and then your hard-drive is formatted.
@@ -132,16 +121,10 @@ which prints information similar to this:
 
 {% BgBox terminal %}
 ubuntu@myfirstinstance:~$ sudo lsblk -f
-
-|NAME   |FSTYPE |LABEL      |UUID          |  MOUNTPOINT |
-|-------|-------|-----------|------------- |-------------|  
-|vda    |       |           |              |             |           
-|-------|-------|-----------|------------- |-------------|  
-|└─vda1 |ext4   |           |1b85cad6-...  | /           |
-|-------|-------|-----------|--------------|-------------|  
-|vdb    |ext4   |           |24cf7b45-77...|       |
-|-------|-------|-----------|------------- |-------------|  
-
+NAME    FSTYPE  LABEL       UUID               MOUNTPOINT  
+vda                                                                 
+└─vda1  ext4                1b85cad6-...       /            
+vdb     ext4                24cf7b45-77...         
 {% endBgBox %}
 
 You should now see that *vdb* is formatted with *ext4*. Only *vda* is mounted on *"/"*, and this should stay this way, because the OS is saved under *"/"*.

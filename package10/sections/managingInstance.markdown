@@ -5,7 +5,10 @@ part: Documentation
 {% include /docLinks.markdown %}
 
 
+{% BgBox prerequisite %}
+{% include /docLinks.markdown %}
 *Prerequisite*: You need to have installed the *python-openstackclient* using the instructions given earlier. You should also be familiar with the terminology and concepts involved for launching an instance, as described in [Module 7][ModDoc7]. You also must have *sourced* your OpenStack RC file on the command line you are using, as described [earlier in this module](openStackClients.html).
+{% endBgBox %}
 
 {% BgBox info %}
 {% include /docLinks.markdown %}
@@ -24,7 +27,7 @@ You may display information about all the instances you are running:
 
 This will output a line like this one for each running instance:
 
-{% BgBox terminalPreformat %}
+{% BgBox terminal %}
 +--------------+----------------------+--------+----------------------------+
 | ID           | Name                 | Status | Networks                   |
 +--------------+----------------------+--------+----------------------------+
@@ -117,7 +120,7 @@ Let's now display information about the security groups:
 
 This should display something like this:
 
-{% BgBox terminalPreformat %}
+{% BgBox terminal %}
 +-------+---------+-------------+
 |    ID | Name    | Description |
 +-------+---------+-------------+
@@ -154,7 +157,7 @@ At the time this tutorial was created, the command (without availability zone) w
     --security-group icmp --security-group ssh --image fc48b5bb-e67d-4e39-b9ba-b6725c8b0c88 ClientLaunchedInstance```
 
 It will display information about the instance being created, similar to these *extracts* of output:
-{% BgBox terminalPreformat %}
+{% BgBox terminal %}
 +-------------------------------+--------------------------------------------+
 | Field                         | Value                                      |
 +-------------------------------+--------------------------------------------+

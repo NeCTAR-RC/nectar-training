@@ -57,9 +57,9 @@ Additionally, make the following changes to the file, depending on your desktop 
 * Gnome :
     * Add the following lines at the bottom of the file:    
         {% BgBox edit %} metacity &    
-        gnome-settings-daemon &    
-        gnome-panel &    
-        {% endBgBox %}
+gnome-settings-daemon &    
+gnome-panel &    
+{% endBgBox %}
 
 * KDE:
     * Add the following line at the bottom of the file:    
@@ -69,14 +69,14 @@ Additionally, make the following changes to the file, depending on your desktop 
 * LXDE:
     * Add the following lines at the bottom of the file:
         {% BgBox edit %} lxterminal &
-        /usr/bin/lxsession -s LXDE &
-        {% endBgBox %}
+/usr/bin/lxsession -s LXDE &
+{% endBgBox %}
 
 * XFCE
     * Add the following lines at the bottom of the file:
         {% BgBox edit %} xrdb $HOME/.Xresources
-        startxfce4 &
-        {% endBgBox %}
+startxfce4 &
+{% endBgBox %}
 
 #### Step 3. Start the server
 

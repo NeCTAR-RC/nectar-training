@@ -21,5 +21,5 @@ It is not difficult to **save your instance and volumes** ("create a snapshot"),
 
 
 {% include /disclaimer.markdown %}
-
+{% include /disclaimerCmd.markdown %}
 
