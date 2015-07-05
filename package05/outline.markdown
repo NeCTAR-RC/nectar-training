@@ -5,11 +5,18 @@ part: Outline
 
 Duration: _N_ hours
 
-Level: _Beginner_ / _Intermediate_ / _Advanced_
+Level: _Beginner_ / **_Intermediate_** / _Advanced_
 
 ### Synopsis
 
-_Brief description of training package_
+This module provides a high-level overview of the processes involved when you are using the research cloud. We will go into more detail about the specific steps involved in the later modules, and only focus on an overview here.
+
+Topics will be: how to get onto the research cloud, necessary housekeeping you will need to do (e.g. updates, backups) and how to keep your VM secure. Finally, you will learn about terminating services without losing anything, and how to get support.
+
+“The Research Cloud lifecycle”. A high level overview of the end-to-end lifecycle of using the cloud. i.e. How to get onto the research cloud; how the merit allocation process works; how to select an image and launch an instance; how to get support (including when to go to NeCTAR central and when to the node); how to track utilisation; necessary housekeeping (e.g. updates, backups); how to terminate a VM (and not lose anything); mitigating risks.
+
+
+
 
 ### Content
 
@@ -28,7 +35,7 @@ _What new skills can the attendee expect to gain from the course_
 
 ### Course suitable for
 
-_Description of the target audience and if the course is for beginner/intermediate/advanced users_
+Having elected to move to a VM in the cloud (rather than sticking with their PC or opting for HPC), the researcher wants to know what they’re in for. What are the key activities?
 
 ### Before the course
 

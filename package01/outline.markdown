@@ -29,8 +29,8 @@ This introduction module describes the structure of this course and provides an 
 
 ### Delivery
 
-* _face to face_
-* _video_
+* face to face
+* video
 
 ### Outcomes
 
@@ -38,7 +38,8 @@ The attendee will know what cloud computing is, how it works, how it can benefit
 
 ### Course suitable for
 
-Users who are not sure what cloud computing is and whether they may benefit from using the NeCTAR services for their research.
+Beginner who are not sure what cloud computing is and whether they may benefit from using the NeCTAR services for their research.
+They want to know what cloud computing is all about and what NeCTAR services can do for them.
 
 ### Before the course
 

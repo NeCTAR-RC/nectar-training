@@ -3,7 +3,7 @@ layout: package-part-ext
 part: Documentation
 ---
 
-This module provides an overview of the *eResearch Tools* and the *Virtual Laboratories* that are offered by NeCTAR services. Both the eResearch Tools and the Virtual Labs offer "ready to go" tools you may use.
+This module provides an overview of the *eResearch Tools* and the *Virtual Laboratories* that are offered by NeCTAR services. Both the eResearch Tools and the Virtual Labs offer *"ready to go"* tools for researchers to use.
 
 {% include /disclaimer.markdown %}
 

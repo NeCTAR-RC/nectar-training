@@ -1,7 +1,7 @@
 - name: Introduction
   file: intro.html
-- name: Case 1 - EEP
-  file: eep.html
+- name: Case 1 - EPP
+  file: epp.html
 - name: Case 2 - Data Sharing
   file: datasharing.html
 - name: Case 3 - On-demand Computing

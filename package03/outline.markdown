@@ -3,38 +3,43 @@ layout: package-part
 part: Outline
 ---
 
-Duration: _N_ hours
+Duration: about 1/2 to 1 hour
 
-Level: _Beginner_ / _Intermediate_ / _Advanced_
+Level: **_Beginner_** / _Intermediate_ / _Advanced_
 
 ### Synopsis
 
-_Brief description of training package_
+This module will discuss five fast ways to make the cloud work for the attendees research. Common use cases for the NeCTAR Research Cloud and the research outcomes they can enable will be described.
 
 ### Content
 
 _What specific topics will be covered in the course_
 
+The following use cases will be discussed (5 out of the 8 will be picked):
+
+1. Embarassingly parallel problems (EPP) 
+2. Data Sharing with other researchers
+3. On-demand Computing for research and teaching 
+4. Remote Access to services from anywhere
+5. Developing a Research App 
+6. Reproducible Research 
+7. Teaching 
+8. Big Data demands 
+
 ### Delivery
 
-_Mode of delivery - eg:_
-
-* _face to face_
-* _hands-on exercises_
+* face to face
+* video
 
 ### Outcomes
 
-_What new skills can the attendee expect to gain from the course_
+The attendee will have a better idea of what uses and benefits the Research Cloud can have. They may have identified a use case that applies to their research. 
 
 ### Course suitable for
 
-_Description of the target audience and if the course is for beginner/intermediate/advanced users_
+The researcher has eliminated "ready to go" options. Now they want to know what uses a VM on the Research Cloud can be put to.
 
 ### Before the course
 
-_Anything the attendee needs to do in preparation for the course:_
-
-* _printing the exercises_
-* _pack and bring laptop, charger_
-* _installing X, Y, Z pieces of software_
+No preparation needed for this module.
 

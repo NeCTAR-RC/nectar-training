@@ -3,38 +3,36 @@ layout: package-part
 part: Outline
 ---
 
-Duration: _N_ hours
+Duration: about 1/2 hour
 
-Level: _Beginner_ / _Intermediate_ / _Advanced_
+Level: **_Beginner_** / _Intermediate_ / _Advanced_
 
 ### Synopsis
 
-_Brief description of training package_
+This module provides an overview of the *eResearch Tools* and the *Virtual Laboratories* that are offered by NeCTAR services. Both the eResearch Tools and the Virtual Labs offer *"ready to go"* tools for researchers to use.
 
 ### Content
 
-_What specific topics will be covered in the course_
+Introduction to
+
+* Virtual laboratories
+* eResearch tools
+
 
 ### Delivery
 
-_Mode of delivery - eg:_
-
-* _face to face_
-* _hands-on exercises_
+* face to face
+* video
 
 ### Outcomes
 
-_What new skills can the attendee expect to gain from the course_
+The attendee will know what eResearch tools and Virtual Laboratories are, and will have gotten an overview of the specific tools / vlabs available to them.
 
 ### Course suitable for
 
-_Description of the target audience and if the course is for beginner/intermediate/advanced users_
+Beginners who want to develop an awareness of "ready to go" systems that might save them the need to learn to use a virtual machine.
 
 ### Before the course
 
-_Anything the attendee needs to do in preparation for the course:_
-
-* _printing the exercises_
-* _pack and bring laptop, charger_
-* _installing X, Y, Z pieces of software_
+No preparation required for this module.
 
