@@ -23,4 +23,3 @@ NeCTAR has a great support team. There are several ways to get support:
 
 
 
-You are now at the end of Module 5. Continue with [Module 6][ModDoc6]

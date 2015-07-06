@@ -65,10 +65,10 @@ If you get the error:
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    
 @  WARNING: UNPROTECTED PRIVATE KEY FILE! @    
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    
-Permissions 0664 for '<yourkey>' are too open.    
+Permissions 0664 for '&lt;yourkey&gt;' are too open.    
 It is required that your private key files are NOT accessible by others.    
 This private key will be ignored.    
-bad permissions: ignore key: <yourkey>    
+bad permissions: ignore key: &lt;yourkey&gt;    
 Permission denied (publickey).
 {% endBgBox %}
 

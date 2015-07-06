@@ -2,7 +2,6 @@
 layout: package-part-ext
 part: Documentation
 ---
-
 {% include /docLinks.markdown %}
 
 NeCTAR eResearch Tools provide research software for the Australian research community and address specific research needs. The eResearch tools program has a strong focus on enhancing existing tools and applications to be more collaborative, accessible and support research workflows. 
@@ -26,8 +25,6 @@ TODO: Show slides that each eReserach tools group creates to present their tools
 * *Quadrant*: This cloud-based **project management and data collection** software tool enables participant-based researchers to work collaboratively and efficiently from a self-managed centralised site. Removes duplication from using disparate programs such as email, spreadsheets, and file sharing tools to share data, track and manage research. [Link to Quadrant](http://www.quadrant.edu.au/)	
 
 
-
 [Link to NeCTAR eResearch Tools](http://www.nectar.org.au/eresearch-tools)
 
 
-You are now finished with Module 2. Continue with [Module 3][ModDoc3] which will discuss a few common use cases.

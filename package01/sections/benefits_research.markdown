@@ -29,4 +29,3 @@ Last but certainly not least, the growth of cloud computing may lead to Universi
 
 *By taking this course, you are on your way to gain important skills of how to do research using the cloud services!*
 
-You are now finished with the first Module. You may continue with the [Next Module][ModDoc2]

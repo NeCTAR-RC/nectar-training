@@ -24,3 +24,6 @@
 
 - name: Benefits for your research
   file: benefits_research.html
+
+- name: Summary
+  file: summary.html

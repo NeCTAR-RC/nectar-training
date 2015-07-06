@@ -149,4 +149,6 @@ Your VM is already protected by a firewall, but you may also want to install an 
 Encrypt sensitive data before you upload or download it to or from your instance, unless you are using a secure connection to copy files (e.g. *scp* or *sftp*). This will slow down the process of copying files, because they have to be encrypted and decrypted, so only do this if your data is critical. Also, the risk is added of losing access to your data forever if you lose the encryption key or forget the passphrase.    
 In [Module 8][ModDoc8] we will go through a few tools you may use to encrypt your data.
 
+### NeCTAR security guidelines
 
+Please also read the [security guidelines on the NeCTAR support website](http://support.rc.nectar.org.au/docs/security-guidelines).

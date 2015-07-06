@@ -40,5 +40,7 @@
 - name: Copying files across
   file: copyFiles.html
   level: 2
-- name: Appendices
+- name: Summary
+  file: summary.html
+- name: Appendix
   file: appendices.html

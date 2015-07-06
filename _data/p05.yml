@@ -10,3 +10,5 @@
   file: cleaning.html
 - name: Getting support
   file: support.html
+- name: Summary
+  file: summary.html

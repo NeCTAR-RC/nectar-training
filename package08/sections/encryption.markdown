@@ -250,4 +250,3 @@ After every reboot of your instance, you will have to unlock the drive by typing
 
 
 
-Well done! You are now finished with [Module 8][ModDoc8] and can continue with [Module 9][ModDoc9].

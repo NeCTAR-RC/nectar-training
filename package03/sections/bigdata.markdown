@@ -11,5 +11,4 @@ When you process this data with your dedicated application, your running applica
 
 [Module 7][ModDoc7] will go into detail about creating a virtual machine, set up your storage, and hook it up with your VM.
 
-You have now finished reading the material of this Module. Continue with [Module 4][ModDoc4].
 

@@ -6,3 +6,5 @@
   file: deployment.html
 - name: File and Volume Encryption
   file: encryption.html
+- name: Summary
+  file: summary.html

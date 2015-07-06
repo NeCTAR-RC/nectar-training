@@ -52,4 +52,3 @@ part: Documentation
     * [Sahara Project](http://docs.openstack.org/developer/sahara/)
 
 
-Next: [Module 7][ModDoc7]

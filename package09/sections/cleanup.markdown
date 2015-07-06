@@ -107,8 +107,3 @@ You must *detach* any Volumes from your instance before terminating it --- There
 To delete a Volume, *after* you have securely erased your data, go to *Dashboard > Compute > Volumes* and find the volume you want to delete in the list. In the right-hand side drop-down menu, select *Delete Volume*.
 
 
-**Congratulations!!!**
-
-You have now learned how to back up your data and release it securely for other researchers.
-
-Continue with [Module 10][ModDoc10].

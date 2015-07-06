@@ -8,3 +8,7 @@
   file: managingInstance.html
 - name: Managing volumes
   file: managingVolumes.html 
+- name: Tracking utilization
+  file: utilization.html
+- name: Summary
+  file: summary.html

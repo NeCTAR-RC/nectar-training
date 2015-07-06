@@ -16,3 +16,5 @@
   file: teaching.html
 - name: Case 8 - Big Data demands
   file: bigdata.html
+- name: Summary
+  file: summary.html

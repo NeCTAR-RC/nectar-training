@@ -6,3 +6,5 @@
   file: useCloud.html
 - name: The Cloud - Pros and Cons
   file: cloudProCons.html
+- name: Summary
+  file: summary.html

@@ -25,7 +25,7 @@ The *openstack* client command line tool is going to be applied to the following
 * Creating and deleting volumes
 * Making backups and taking snapshots of volumes
 * Accessing the object store
-
+* Tracking utilization (ceilometer intro)
 
 ### Delivery
 

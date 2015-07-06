@@ -6,3 +6,6 @@
 
 - name: eResearch Tools
   file: tools.html
+
+- name: Summary
+  file: summary.html

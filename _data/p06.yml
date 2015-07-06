@@ -28,3 +28,5 @@
 - name: Literature
   file: literature.html
   level: 1
+- name: Summary
+  file: summary.html
