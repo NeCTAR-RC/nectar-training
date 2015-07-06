@@ -7,36 +7,30 @@ This guide is intended to help trainers plan to present the training package.
 
 ### Duration
 
-_How much time is needed for the course?_
+about 1/2 to 1 hour
 
 ### Venue
 
-_What kind of venue is required_
+Any type of venue will do which fits the number of participants:
 
-* _seminar room_
-* _tutorial room_
-* _computer lab_
-* _etc._
+* seminar room
+* tutorial room
+* lecture theatre
 
 ### Trainers and Capacity
 
-* _How many people can the course cater to?_
-* _How many trainers are required?_
+This module can be taught to any size of audience. It requires only one trainer talking through the material going through the slides.
 
-### Resources
+### Resources required
 
-_What resources are required to give the course, eg._
-
-* _projector_
-* _course materials_
-* _printed handouts_
-* _logins_
-* _software_
-* _data files_
+* Projector
+* Course materials (slides)
 
 ### Running a session
 
-_An overview of the various parts of the course, including:_
+_TBD with the slides_
+
+_Overview of the various parts of the course, including:_
 
 * _how much time to devote to each section_
 * _the activities done in each section of the course_

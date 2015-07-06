@@ -7,34 +7,47 @@ This guide is intended to help trainers plan to present the training package.
 
 ### Duration
 
-_How much time is needed for the course?_
+About 2-3 hours
 
 ### Venue
 
-_What kind of venue is required_
+Venue has to fit all participants either:
+* sitting on a table with their own laptops and access to electricity
+* in a lab where each participant can use their own computer
 
-* _seminar room_
-* _tutorial room_
-* _computer lab_
-* _etc._
+Operating systems supported in the course:
+* Linux
+* Windows
+* Mac OSX
 
 ### Trainers and Capacity
 
-* _How many people can the course cater to?_
-* _How many trainers are required?_
+It is suggested that not more than 20 people participate.
 
-### Resources
+For less than 5 participants, one trainer should be sufficient.
 
-_What resources are required to give the course, eg._
+For any additional 5-7 participants, one additional trainer should attend.
+Otherwise, the time taken to help participants with the exercises will drag out the
+length of this course and leave the quicker people bored while waiting for the others
+to catch up.
 
-* _projector_
-* _course materials_
-* _printed handouts_
-* _logins_
-* _software_
-* _data files_
+### Resources required
+
+* Projector
+* Course materials (slides)
+* Online documentation accessible from the lab
+* All participants must have access to the NeCTAR cloud via AAF
+* Participants should 
+    * have already logged onto the Dashboard once to activate their Trial Account
+    * be familiar will all terminology and steps involved in launching an instance and setting up NeCTAR storage
+    * have already set up an instance and can connect to it via ssh
+    * have set up one secondary ephemeral disk and mounted it on the instance; ideally, they have done the same with one Volume.
+    * have this instance and storage ready to go. They will create Snapshots of this instance and backups of the volume, and then **delete** this instance and volume --- so if they are concerned, they should set up an instance and volume exclusively for this tutorial which they can delete without being concerned.
+* Windows users will need access to the Windows command line (possibly has to be enabled by IT department, if course is held in a lab)
 
 ### Running a session
+
+_TBD with slides_
 
 _An overview of the various parts of the course, including:_
 

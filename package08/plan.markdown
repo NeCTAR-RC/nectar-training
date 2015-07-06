@@ -7,34 +7,47 @@ This guide is intended to help trainers plan to present the training package.
 
 ### Duration
 
-_How much time is needed for the course?_
+About 1 - 1.5 hours
 
 ### Venue
 
-_What kind of venue is required_
+Only the last part of the course (encrypting volumes) requires users to have their Laptop (or a Lab computer).
+It is possible to deliver this module with *no* hands-on exercises and only show the last
+part being done by the presenter. 
 
-* _seminar room_
-* _tutorial room_
-* _computer lab_
-* _etc._
+The course is a lot faster if the presenter just shows the steps.
+
+* If people should participate in exercises:
+    * Venue has to fit all participants either:
+        * sitting on a table with their own laptops and access to electricity
+        * in a lab where each participant can use their own computer
+     * Operating systems supported in the course:
+         * Linux
+         * Windows
+         * Mac OSX
+* If only presenter is demonstrating the last part:
+    * Venue can be any type which fits the number of participants
 
 ### Trainers and Capacity
 
-* _How many people can the course cater to?_
-* _How many trainers are required?_
+If presenter is demonstrating the last part (encryption), any number of participants is supported.
 
-### Resources
+If people participate in exercises, it is suggested that not more than 20 people participate.
+For less than 5 participants, one trainer should be sufficient.
+For any additional 5-7 participants, one additional trainer should attend to help people.
 
-_What resources are required to give the course, eg._
+### Resources required
 
-* _projector_
-* _course materials_
-* _printed handouts_
-* _logins_
-* _software_
-* _data files_
+* Projector
+* Course materials (slides)
+* Online documentation accessible from the lab
+* If participants do the exercises in the last part:
+    * All participants must have access to the NeCTAR cloud via AAF
+    * Participants should have logged onto the NeCTAR dashboard before, and ideally have an instance up an running already, with a volume (or secondary ephemeral drive)  mounted on it.
 
 ### Running a session
+
+_TBD with slides_
 
 _An overview of the various parts of the course, including:_
 
