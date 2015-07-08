@@ -15,7 +15,13 @@ NeCTAR experiences resource shortage problems from time to time, which is largel
 
 The problem is that many people want their compute resources to be available when *they* are ready to use them. They don't realise that while they are not using it, they are blocking resources to others. It is therefore important that everyone is aware of this and responsibly releases their resources when they don't need them any more. **Fair play!**
 
-It is not difficult to **save your instance and volumes** ("create a snapshot"), then terminate the VM and release the volumes, and **re-launch your instance and volumes** in exactly the same state at a later time, when you need it. In this module, we will show you how you can do this.
+{% BgBox important %}
+The amount of **CPU hours** you request in an allocation is the amount of time your instance will be in existence --- *not* the time the CPU is acually busy with your programs! That is, all time counts between when you *launch* the instance and *terminate* it --- regardless whether the CPU is idle the whole time, or the instance is shut down or suspended. While you have access to the instance, it counts as CPU hours!
+
+Consider this also when you plan on how to use your instance --- you can *back up* the state of your instance and then *"terminate"* it while you don't need it. It will be easy to restore it to the exact same state when you need it again. 
+{% endBgBox %}
+
+It is not difficult to **save your instance and volumes** ("create a snapshot"), then terminate the instance and release the volumes, and **re-launch your instance and volumes** in exactly the same state at a later time, when you need it. In this module, we will show you how you can do this.
 
 
 

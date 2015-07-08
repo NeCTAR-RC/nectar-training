@@ -11,20 +11,11 @@ Some basic command line usage skills are helpful for this section as well.
 {% endBgBox %}
 
 The NeCTAR instances and volumes are not backed up automatically. Managing the backups is your repsonsibility.
-However some types of NeCTAR storage use **RAID** storage, which protects your data somewhat against data loss (roughly speaking, if one harddrive fails, your data can probably be reconstructed from other drives). The *Object Store* is **replicated** across several physical locations, which is also a form of protection against data loss. The Table below shows which types of NeCTAR storage use RAID or are replicated:
+However some types of NeCTAR storage use **RAID** storage, which protects your data somewhat against data loss (roughly speaking, if one harddrive fails, your data can probably be reconstructed from other drives). 
+Volume storage is backed by a variety of backend technologies across the NeCTAR Nodes.
+The *Object Store* is **replicated** across several physical locations, which is also a form of protection against data loss. 
 
-| Storage   | Saved in <br> Snapshot | RAID  | Replicated | Backed up | 
-|---------- |----------|-------|------------|-----------|
-| Eph. 1st  | YES      | YES   |   NO       |  NO       |
-| Eph. 2nd  | NO       | YES   |   NO       |  NO       |
-| Volumes   | NO       | YES   |   NO       |  NO       |
-| Object    | NO       | NO    |   YES      |  NO       |
-|---------- |----------|-------|------------|-----------|
-
-{% col 255,0,0 %}
-TODO: Format this table, ensure information is correct. Source: [NeCTAR wiki](https://support.rc.nectar.org.au/wiki/ResearchCloudStorage#Summary)
-{% endcol %}
-
+Generally speaking, NeCTAR *does* take measures against data loss, but the guideline is "all care taken, no guarantees given" --- part of ensuring your data won't be lost is your responsibility: Back it up!
 
 It is recommended that you back up your important data at regular intervals. You may also feel more comfortable knowing that you have a copy of your data available off-line, maybe on your local office computer or a server at your research organistaion. There are lots of tools available to backup data --- in this section, we will discuss a few of them.
 
@@ -50,6 +41,9 @@ There are two ways to backup your data on the volume:
 
 The [last section](Snapshot.html) has discussed how to take a Snapshot of a Volume. To make a *Backup* instead, you will need to use the openstack command line client, as described in [Module 10](ModDoc10). Support to create Backups via the Dashboard will probably be added in the near future --- it will then work in a very similar fashion to taking Snapshots.
 
+{% BgBox important %}
+Note that when using Backups, you need to have enough quota on your Object Store to back up your data. You need to consider this when you request a resource allocation if you want to use OpenStack Backups --- if you don't request Object Store quota, you won't be given any allocation for it.
+{% endBgBox %}
 
 ### Rsync command line utility 
 

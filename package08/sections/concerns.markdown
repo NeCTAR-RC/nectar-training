@@ -86,7 +86,10 @@ Main threats to cloud computing are posed by the following (conforming with the 
 
 * **Data ownership**: Legal ownership of the data is a risk as well. Many Terms of Service agreements do not mention ownership! There is a high risk that end users don't know this, don't read the many pages of the terms of service agreement, and just click "Accept". Often, the data owner is actually the provider! There can also be a case that the data is owned by the provider only if it was created on the cloud (e.g. by a cloud application), but is owned by you if you have *uploaded* it. Make sure you know how your provider handles this.
 
-    {% col 255,0,0 %} Question: How does NeCTAR handle this? {% endcol %}
+    {% BgBox info%} NeCTAR *never* claims ownership of *any* data that is uploaded by you to the cloud. Data ownership is also completely retained by you when you create data directly on the cloud, e.g. via eResearch tools or Virtual Labs. **The only owner of the data is you.**     
+    However, NeCTAR and the Research Cloud software may need to move or isolate your data in the act of operating the infrastructure on which it
+resides, for example if your instance poses a security threat then the instance may be *suspended*, which means you'll be locked out of your data for however long it takes to deal with the incident. 
+{% endBgBox%}
 
 * **Access security**: This affects authentication, access control and data encryption. It is important that access is only possible via secure connections. Nobody else except you should be able to see or access your data. What happens when the data is deleted or not needed any more, are copies still kept? Many providers are not clear on that point. Is data encrypted? If so, are the private keys shared among tenants? Be aware also that governments may have the right to access your data even if they get a warrant.
     
