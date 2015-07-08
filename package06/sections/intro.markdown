@@ -8,14 +8,12 @@ The previous modules have discussed what the research cloud is, what a virtual m
 
 In this module we will discuss factors which help you determine the amount of resources (computing and storage) you require. We will take a look at the different types of storage that are available to you, which will help you decide which type is most suitable for your research purposes. 
 
-{% include /disclaimer.markdown %}
 
 ### {% col 255,0,0 %} Note for reviewers {% endcol %}
 
-When describing the different storage types, parts of the text have been taken from the nectar support website and extended with more details. If it is not the aim to replace that documentation with this one, the text below can be edited to not contain the same descriptions.
+This module only covers an *overview* of the storage types --- connecting and accessing to the storage are handled in the later modules.
 
-This module only covers an overview of the storage, connecting and accessing to the storage are handled in the later modules.
-
-The current state of the documentation assumes that users will be able to use Sahara (it is referenced from [Can I benefit from several instances?](instanceNumbers.html). Please notify us if this will not be possible.
+The current state of the documentation assumes that users will be able to use [Sahara](https://wiki.openstack.org/wiki/Sahara) (it is referenced from [Can I benefit from several instances?](instanceNumbers.html)) at some stage in the nearer future. 
 
 
+{% include /disclaimer.markdown %}

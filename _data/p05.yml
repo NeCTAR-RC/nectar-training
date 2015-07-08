@@ -2,7 +2,7 @@
   file: intro.html
 - name: Connecting and maintaining
   file: connecting.html
-- name: Request resources
+- name: Resource allocation requests
   file: allocations.html
 - name: Mitigating risks
   file: mitigating.html

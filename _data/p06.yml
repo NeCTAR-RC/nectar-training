@@ -19,14 +19,17 @@
 - name: RDSI storage
   file: rdsiStorage.html
   level: 2
+- name: Recommendations
+  file: storageRecommendations.html
+  level: 2
 - name: How many cores do I need?
   file: coreNumbers.html
   level: 1
 - name: Can I benefit from several VMs?
   file: instanceNumbers.html
   level: 1
+- name: Summary
+  file: summary.html
 - name: Literature
   file: literature.html
   level: 1
-- name: Summary
-  file: summary.html

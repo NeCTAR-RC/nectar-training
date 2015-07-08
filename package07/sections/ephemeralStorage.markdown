@@ -4,14 +4,14 @@ part: Documentation
 ---
 {% include /docLinks.markdown %}
 
-On-Instance storage appears as two separate hard disks. For example, in the flavour *"m1.small"* (you selected the *flavour* when launching the instance), this is 
+On-Instance storage appears as two separate hard disks. For example, in the flavor *"m1.small"* (you selected the *flavor* when launching the instance), this is 
 
 1. a **primary disk** (10GB) which is saved with snapshots you make of the instance (see Module 9 for details about snapshots), and 
 
 2. a **secondary disk** (30GB) which appears as a second hard disk on your instance, and is *not* backed up with snapshots. You will have to back up your data separately, which is a topic we will discuss later in [Module 9][ModDoc9].
 
 The primary disk (1) is usually used for the operating system, you should not use it primarily to store data. Your "home directory" is also located within this disk space (when you log on with ssh, you start off in your "home directory" */home/ubuntu/*). To store large and important files, you should use the secondary disk (2). The advantage of this disk, as opposed to the volume storage, is that you don’t have to create it separately: it already comes with your instance.
-Depending on the flavour you choose, you can get up to 480GB of storage for the secondary disk.
+Depending on the flavor you choose, you can get up to 480GB of storage for the secondary disk.
 
 To get access to the secondary disk, we will have to *"mount"* it first. *Mounting* is a technique which essentially makes your hard drive accessible to you at a certain location (in a folder). Usually, the secondary disk is available on your system path */dev/vdb*, but this is a *device path*, and you cannot read files there as if it was a folder. For this, we have to *"mount"* */dev/vdb* to another folder. 
 

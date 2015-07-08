@@ -7,15 +7,17 @@ This guide is intended to help trainers plan to present the training package.
 
 ### Duration
 
-About 2-3 hours
+About 1 - 1.5 hours
 
 ### Venue
 
 Venue has to fit all participants either:
+
 * sitting on a table with their own laptops and access to electricity
 * in a lab where each participant can use their own computer
 
 Operating systems supported in the course:
+
 * Linux
 * Windows
 * Mac OSX

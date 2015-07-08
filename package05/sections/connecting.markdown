@@ -5,10 +5,10 @@ part: Documentation
 
 {% include /docLinks.markdown %}
 
-First of all, you will need to get onto the research cloud, which is fairly simple. Then, you will create an virtual machine, which we will also refer to as an *instance*. You can connect to your instance and while you or your collaborators are using it, you may track utilization. You may also want to perform a number of maintenance tasks while your instance is in use. We will discuss the processes involved in the following.
+First of all, you will need to get onto the research cloud, which is fairly simple. Then, you will create an virtual machine, which we will also refer to as an *instance*. You can connect to your instance and while you or your collaborators are using it, you may track utilization of your resources. You should also perform a number of maintenance tasks while your instance is in use. We will discuss the processes involved in your virtual machine's *life cycle* in this section.
 
 {% BgBox definition %}
-An *instance* is your running virtual machine on the NeCTAR Research Cloud. Instances running inside the Research Cloud are just like real-life machines but in a remote location. Starting an instance is like booting the computer, and shutting it down closes is. 
+An **instance** is a *running virtual machine (VM)* on the NeCTAR Research Cloud. Instances (VMs) running inside the Research Cloud are just like real-life machines but in a remote location. *"Launching"* an instance is like booting the computer, and shutting it down closes it. While an instance is shut down, it still exists --- it may be *rebooted* any time. An instance can also be *terminated*, after which it is deleted (does not exist any more) and cannot be recovered, unless the state of it was saved in a *snapshot* before its termination.  
 
 *Note*: An instance is sometimes also a real computer, but in the NeCTAR Cloud, all instances are virtual machines.
 {% endBgBox %}
@@ -44,7 +44,7 @@ Copying the state of an instance is called taking a *Snapshot* of your instance.
 Taking a snapshot is very easy, you can do it from the Dashboard. In [Module 9][ModDoc9], we will discuss to do this.
 
 {% BgBox info %}
-The use of both terms "Snapshot" and “Image” can be a bit confusing sometimes. An “ instance snapshot” is essentially an Image. The snapshot may internally have a few additional properties (information attached to it), but the technical details are not important in the context of this course.
+The use of both terms "Snapshot" and "Image" can be a bit confusing sometimes. An *"instance snapshot"* is essentially an Image. The *snapshot* may internally have a few additional properties (information attached to it) than a regular image, but the technical details are not important in the context of this course.
 {% endBgBox %}
 
 Snapshotting works not only for an instance, but also for storage volumes. A volume Image can then be viewed as a "backup" of your data. This will be discussed in more detail in [Module 9][ModDoc9].

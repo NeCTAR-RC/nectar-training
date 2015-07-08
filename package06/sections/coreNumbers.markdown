@@ -12,7 +12,7 @@ Virtual machine (VM) instances in the Research Cloud are available in standard s
 
 You may be unsure how many CPU cores and how much memory you need for your instance. 
 
-**You will have to take a closer look at your application or data analyzer to find out how much you can benefit from several cores.**
+***You will have to take a closer look at your application or data analyzer to find out how much you can benefit from several cores.***
 
 Some applications are **single-threaded**, which means they only use one core anyway. In this case, you will not benefit from launching an instance with several cores.     
 However many applications are **multi-threaded**, and support a certain number of *threads* (you may regard a thread as a working process that can run on its own core). The documentation of your application should reveal more information about that. 
@@ -28,8 +28,9 @@ Say your application supports 6 threads. You may then select up to the same numb
 A computer (or a virtual machine) with several CPUs is a *shared memory system* when all CPUs may access the same memory.
 {% endBgBox %}
 
-OpenMP uses a set of compiler directives (within the C code) that generate a multi-threaded version of your code at compile time. You can think of OpenMP as a slightly more automated way to create multi-threaded programs than when low-level thread libraries as pthread were used.
+OpenMP uses a set of compiler directives (within the C code) that generate a multi-threaded version of your code at compile time. 
 
-As such, also OpenMP programs gain maximum performance when it is given the same amount of cores as it uses threads (the cores may be distributed over several CPUs of the same machine).
+You can think of OpenMP as a slightly more automated way to create multi-threaded programs than when low-level thread libraries as *pthread* were used.
+As such, also OpenMP programs gain maximum performance when it is given the same amount of cores as it uses threads (the cores may also be distributed over *several CPUs* of the same machine).
 
 

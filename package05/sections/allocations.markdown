@@ -8,6 +8,8 @@ After you have used the Project Trial to gain experience with virtual machines, 
 
 The NeCTAR Resource Allocation Committee (RAC) approves resource allocation on the basis of the scientific and technical merit of the application and its requirements. You are asked to specify some details about your research and how you plan to use the resources you are requesting.
 
+Before making an allocation request it is best to discuss your requirements with your local eResearch office or IT services. You may easily get access to resources available to your organisation.
+
 The following steps describe the process of submitting such a request.
 
 
@@ -26,16 +28,10 @@ Use the Allocation Request form from the left hand side menu of your [Dashboard]
 As a rule of thumb, the more resources you ask for, the more detail we require about your research. Requesting a few cores won’t be scrutinised as much as requesting tens or hundreds of cores.    
 
 {% BgBox important %}
-The amount of CPU hours you request is 
+{% include /docLinks.markdown %}
+The amount of **CPU hours** you request is the amount of time your instance will be in existence --- *not* the time the CPU is acually busy with your programs! That is, all time counts between when you *launch* the VM and *terminate* it --- regardless whether the CPU is idle the whole time, or the VM is shut down or suspended. While you have access to the VM, it counts as CPU hours!
 
-{% col 255,0,0 %}  
-TODO: Which of these is it?
-{% endcol %}
-
-* the amount of time your instance will be running
-
-* the amount of time your instance will actually be using CPU time
-
+Consider this when you request your allocation, and also when you use your VM --- you may *back up* the state of your VM and then *"terminate"* it while you don't need it. It will be easy to restore it to the exact same state when you need it again. More about this in [Module 9][ModDoc9].
 {% endBgBox %}
 
 

@@ -16,6 +16,13 @@ If you have sensitive data that requires encryption you must encrypt the data fi
 
 Access to your object store requires your password, but this password may be saved in a file that people who have access to your local computer can read. You must be careful to not give anyone access to your computer --- similarly, they would get access to your private ssh key that you save on your computer to log in to your instance, so be careful with giving people access to your computer.
 
+
+{% BgBox info %}
+The NeCTAR implementation of *Swift* is geodistributed across Nodes of the Research Cloud so that availability is not reliant on any one datacentre or network infrastructure. Each collection of Swift nodes/hardware is known as a *region*, which may or may not include a Swift proxy server (the Internet facing and serving component of Swift). With some Swift clients/APIs users can explicitly choose which proxy to connect to, this might be useful e.g. for speeding up writes to object storage by choosing the nearest proxy. Due to NeCTAR's Swift having multiple regions, some clients/APIs require explicit configuration of a default region, which should be "Melbourne" for most users (see e.g. the Cyberduck profile below).
+{% endBgBox %}
+
+
+
 ### Get your OpenStack credentials
 
 Before you start, you should get your login details.

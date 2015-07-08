@@ -5,7 +5,7 @@ part: Documentation
 {% include /docLinks.markdown %}
 
 
-You may also get access to the *Research Data Storage Infrastructure* (RDSI): [https://www.rdsi.edu.au/](https://www.rdsi.edu.au/). The aim of the RDSI Project is that researchers will be able to use and manipulate significant collections of data that were previously either unavailable or difficult to access and that there will be a consistent means of accessing this data. 
+You may also get access to the [Research Data Storage Infrastructure (RDSI)](https://www.rdsi.edu.au/). The aim of the RDSI Project is that researchers will be able to use and manipulate significant collections of data that were previously either unavailable or difficult to access and that there will be a consistent means of accessing this data. 
 
 The Project is realised through the creation and development of data storage infrastructure. Specifically, the intention is to increase the sharing and re-use of research related data.
 
@@ -25,26 +25,22 @@ The RDSI Project will deliver a national infrastructure able to hold significant
 
 RDSI is funding the setup of eight data centres or 'Nodes' as we call them, around Australia.  These Nodes are capable of storing petabytes of research data from researchers and institutions around the country. The map below shows the Node locations and the organisations who operate them:
 
-{% img src=images/RDSIAustralia.jpg, w=80, dim=percent, align=center %} 
+{% img src=images/RDSIAustralia.jpg, w=70, dim=percent, align=center %} 
 
-You may get access to data that other researchers have shared in *collections*. A large amount of discipline-specific collections are already available. To see the collections which are currently available, follow this link: [https://www.rdsi.edu.au/collections-stored](https://www.rdsi.edu.au/collections-stored) 
+You may get access to data that other researchers have shared in *collections*. A large amount of discipline-specific collections are already available. To see the collections which are currently available, follow this link: [https://www.rdsi.edu.au/collections-stored](https://www.rdsi.edu.au/collections-stored). 
 
 
-If you have particularly high demands on the size of your storage, the NeCTAR storage may not be sufficient for your purposes. The largest 'flavour' will give your 480GB, and to get access to a large Volume storage, you need good reasons in your allocation request. 
+If you have particularly high demands on the size of your storage, the NeCTAR storage may not be sufficient for your purposes. The largest "flavor" will give your 480GB of On-Instance storage, and to get access to a large Volume storage, you need good reasons in your allocation request. 
 
 If you have high storage demands, an alternative to the NeCTAR storage may be to lodge a request for "Collection" storage through the RDSI merit allocation scheme. You will have to contact your local RDSI node to find out how you will be able to access your storage, as this varies between the nodes among the following:
 
 You may get access to:
+
 * an Object Storage.
 * a Volume Storage.
 * a specific VM which has access to the storage.
 * NFS storage which you can *mount* from your local instance.
 * or other forms of access.
-
-{% col 255,0,0 %}
-TODO: Expand on this using the articles below, creating a short and crisp setup tutorial? 
-{% endcol %}
-
 
 If you need to add RDSI storage to a NeCTAR VM, here are a couple of articles describing how to do it:
 
@@ -54,4 +50,4 @@ If you need to add RDSI storage to a NeCTAR VM, here are a couple of articles de
 
 Note that some details in these articles may be specific to the respective NeCTAR nodes / providers. 
 
-Also note that NFS mounting a collection at one node from a virtuali machine in a *different* node will not work.  
+Also note that *mounting* (=setting up access) a collection with *NFS* from a virtual machine in a *different* node than the one where the RDSI collection resides will not work.  

@@ -46,9 +46,9 @@ Go to **Dashboard >  Instances**. A list of your running instances will be liste
 
 {% img src=images/scrLaunchDialogue.png, w=350, dim=px, align=right, css=margin-left:20px; %}
 
-Choose the name of your instance and the "*flavour*". Different flavours allocate different amounts of memory and disk space for you. Select the flavours in the drop-down box and information about the resources are displayed on the right side of the window. You may select a few flavours to see the differences between the flavours. For this tutorial, choose the **flavour** "**m1.small**", which offers 30GB of ephemeral storage (we will need this [in a later section](manageStorage.html).
+Choose the name of your instance and the "*flavor*". Different flavors allocate different amounts of memory and disk space for you. Select the flavors in the drop-down box and information about the resources are displayed on the right side of the window. You may select a few flavors to see the differences between the flavors. For this tutorial, choose the **flavor** "**m1.small**", which offers 30GB of ephemeral storage (we will need this [in a later section](manageStorage.html).
 
-You could launch several instances of the same flavour, but for now we will launch only 1, so leave "**Instance Count**" at **1**. Leave "**Instance Boot Source**" on "**Boot from Image**". Choose the most recent version of  “NeCTAR Ubuntu”  from the "**Image name**" list.
+You could launch several instances of the same flavor, but for now we will launch only 1, so leave "**Instance Count**" at **1**. Leave "**Instance Boot Source**" on "**Boot from Image**". Choose the most recent version of  “NeCTAR Ubuntu”  from the "**Image name**" list.
 
 {% BgBox important %}
 **_NOTE:_** At the time of writing the image "*NeCTAR Ubuntu 14.10 (Utopic) amd64*" was used. If you choose a version much newer than this, there may be some differences to the descriptions given in this tutorial. In general, a newer version should work fine with the exercises below. You may see different wordings of the output you receive from the command line. 

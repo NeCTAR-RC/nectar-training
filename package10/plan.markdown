@@ -12,10 +12,12 @@ About 1-2 hours
 ### Venue
 
 Venue has to fit all participants either:
+
 * sitting on a table with their own laptops and access to electricity
 * in a lab where each participant can use their own computer
 
 Operating systems supported in the course:
+
 * Linux
 * Windows
 * Mac OSX

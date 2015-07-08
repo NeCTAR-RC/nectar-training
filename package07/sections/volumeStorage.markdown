@@ -19,11 +19,7 @@ You can only use volume storage from instances running in the same *Availability
 
 There are two options how to manage volumes: (1) on the Dashboard or (2) via command line. 
 
-In this tutorial, we will only cover managing volumes via the Dashboard. Refer to the [NeCTAR support website][Volumes] to see how we can manage volumes with commands. 
-
-{% col 255,0.0 %}
-QUESTION: Will this be discussed in Module 10 also, maybe? So we could use the command line instead?
-{% endcol %}
+In this module, we will only cover managing volumes via the Dashboard. [Module 10][ModDoc10] will show how we can manage volumes with commands. 
 
 ### Step 1: Creating the volume.
 
@@ -66,6 +62,10 @@ A window will open in which you can select your instance. If you don’t see any
 {% img src=images/scrDashboardVolume4.png, w=80, dim=percent, align=center %}
 
 Select your instance and click **Attach Volume**. The status of your instance will switch to *"Attaching"*, and when it has been attached successfully, it should display *"In-Use"*. You should also see the Server and Device that the volume is attached to. In the example below, it is attached to *TestIntersect01* and to the device */dev/vdb*. 
+
+{% col 255,0,0 %}
+TODO: Redo the screenshots with other name (not TestIntersect01) and without the pending volumes
+{% endcol %}
 
 {% img src=images/scrDashboardVolume5.png, w=80, dim=percent, align=center %}
 
