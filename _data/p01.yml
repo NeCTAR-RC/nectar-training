@@ -10,11 +10,12 @@
 - name: Cloud services
   file: cloud_services.html
 
-- name: Common concerns
-  file: concerns.html
 
 - name: Virtualization
   file: virtualization.html
+
+- name: Common concerns
+  file: concerns.html
 
 - name: History
   file: history.html

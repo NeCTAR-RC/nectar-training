@@ -4,9 +4,6 @@ part: Documentation
 ---
 {% include /docLinks.markdown %}
 
-
-## Course Overview
-
 In this course we will introduce cloud computing, how it can benefit your research and how you can get started with using the cloud for your research.
 
 This course is structured in 10 separate Modules which are largely independent of each other. Depending on your existing level of expertise, you may select the Modules which discuss the relevant topics you want to learn about. Where relevant, references to other modules are given in order to point you to other modules where you can find more information about a certain topic.
@@ -41,5 +38,5 @@ Aside from tools which are ready to use for you on the NeCTAR cloud (discussed i
     In this module we will discuss backup strategies for when things do go wrong. You will learn how to make snapshots and how to recover your virtual machine using this snapshot. You will also learn how to backup your data and how to terminate your virtual machine without losing anything.
 
 * **Module** 10: [{{site.defaults[10].values.title}}](/package10/)    
-    This last module is designed for advanced users who want to learn more about command line tools you may use to help you automate things. Worked examples of the OpenStack command line tools *glance* and *cinder* are included.
-
+    This last module provides an overview of the OpenStack command line tools — how to configure them to interact with the cloud.
+This module is designed for advanced users who want to learn more about command line tools to control the NeCTAR resources. This can help to automate procedures, for example with scripts for backup processes. Worked examples of the OpenStack command line tool openstack are included in this Module.

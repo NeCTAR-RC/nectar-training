@@ -12,7 +12,7 @@ The servers and storage are hosted at the data center, or as is commonly said, t
 
 You can take advantage of powerful processing even if the university or research institution does not provide the large-scale compute and storage hardware that you require. You can easily share data with colleagues, simply by giving them access to the storage you maintain "in the cloud". 
 
-Simply put, cloud computing means storing and accessing data and programs over the Internet instead of your office computer's hard drive.
+Simply put, cloud computing means storing and accessing data and programs over the Internet instead of your office computers hard drive.
 
 {% BgBox definition %}
 The [National Institute of Standards and Technology](http://en.wikipedia.org/wiki/National_Institute_of_Standards_and_Technology) has defined Cloud computing as 
@@ -22,11 +22,34 @@ The [National Institute of Standards and Technology](http://en.wikipedia.org/wik
 
 It is not clear where the term "cloud" comes from. One popular explanation is that it stems from the way in which charts in network computing are drawn. Often, a set of servers accessible through the Internet are surrounded by a cloud-like shape, in order to illustrate that they are located at some remote place accessible through the Internet. Sometimes, in computer network diagrams the Internet itself is illustrated as a cloud-like shape.
 
+
+{% img src=images/CloudServices.png, w=80, dim=percent, align=center %}
 {% col 255,0,0 %} 
-TODO: Insert image for cloud services 
+TODO: Make an image of this draft
+{% endcol %}
+The image above shows how you connect to your cloud computing infrastructure (computers and storage) via the Internet.
+Your local computer is only used to control your resources from remote and display things on your screen — the data and compute servers are actually "in the cloud".
+
+**So why is this good?**
+
+Imagine your research software requires lots of resources to run optimally: Either more computers working in parallel, or a lot of storage. Your research organisation may not be able to provide such resources to you, or if you were to set up several computers in your office, that would incur lots of costs and maintenance. In the cloud, you can easily **scale up** to the resources you require at the time you need them, and **release** the resources when you don't need them any more, not incuring any more costs or maintenance activities. 
+
+{% img src=images/CloudServices2.png, w=80, dim=percent, align=center %}
+{% col 255,0,0 %} 
+TODO: Make an image of this draft
 {% endcol %}
 
-Cloud computing enables research infrastructure to be 	
+Another advantage is that the Cloud enables efficient *research collaboration*: Collaborators may be granted access to the same services, and you can work together on the same platform without the need for synchronization.
+
+{% img src=images/CloudServices3.png, w=80, dim=percent, align=center %}
+{% col 255,0,0 %} 
+TODO: Make an image of this draft
+{% endcol %}
+
+
+There are more advantages, and also some drawbacks, to migrating your research IT infrastructure to the cloud---but we shall talk about this later on in more depth. 
+
+To sum up, cloud computing enables research infrastructure to be 	
 
 * more flexible	
 

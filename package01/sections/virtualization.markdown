@@ -11,17 +11,22 @@ The main technology used to enable cloud computing is *virtualization*. This bas
 A **virtual machine (short: VM)** is a *software implementation* of a machine (for example, a computer) which executes programs just like a physical machine. The term *machine* most commonly refers to a *computer*, but it could also be another type of hardware. The virtual machine runs on a physical computer which may run several VMs at a time, distributing the workload of the VMs onto its physical CPUs and memory. A virtual machine appears to the user as a real computer. 
 {% endBgBox %}
 
-{% col 255,0,0 %}
-TODO Insert: Graphic that shows a computer within a computer
-{% endcol  %}
-
-**Example**  
-A physical server that is running *Microsoft Windows* may run a virtual machine with the *Ubuntu Linux* operating system, and another VM with *Windows*. The interface to each virtual computer looks like an actual computer to the user: Often, we can connect to it via a remote desktop, but at the very least command line support is available.
-
-We can run many of such virtual machines on just one (more powerful) physical machine. With several machines running on just one, idle computing resources can be allocated and used more efficiently. For example, we can exploit varying demands due to time zones: When some users, e.g. researchers in Perth, are not at work and are not using their virtual computers, researchers in NSW will be able to utilize the idle resources.
+The image below shows a symbolic physical computer with 4 CPUs, which runs two virtual machines: The first with two CPUs, the second with one. The virtual machines *share* the hardware on the physical computer to simulate their hardware. 
+{% img src=images/Virtualization.png, w=60, dim=percent, align=center %}
 
 {% BgBox info %}
-Not all computers are able to run a *full* virtualization of a virtual computer. *Full virtualization* is achieved when the virtual machine is identical to a real computer. Specialized hardware assistance is required for full virtualization, namely extensions of standard CPUs. So it is likely that your office computer cannot run a full virtualization of a VM. Cloud service providers usually are equipped with such specialised hardware.
+One physical computer can theoretically run a large number of virtual machines. One physical CPU can simulate *several* virtual CPUs, which then share the processing time. This is sometimes acceptable because often CPUs actually only use a small percentage of the CPU, when there is not much to compute at the time. So it is possible to simulate for example 4 virtual CPUs on one real CPU, and if 3 of them are idle (use 0% of the CPU), the 4th is able to use 100% of the processing capacity. Of course, if the several virtual CPUs share the processing power of one physical CPU, there is a *competition* and not all virtual CPUs can run at the same speed. Such competition is often referred to as **"noisy neighbours"**. To avoid this problem, NeCTAR *locks* eah virtual CPU to one physical CPU; so each virtual CPU is always guaranteed to have the full CPU capacity exclusively available, without facing competition.
+{% endBgBox %}
+
+Each virtual machine is a fully simulated computer which can have its own operating system and software running. For example, a physical computer that is operating on *Microsoft Windows* may run two virtual machines: (1) one with the *Ubuntu Linux* operating system, and (2) another VM with *Windows*. Each virtual machine looks like an actual computer to the user. They can *log on* to the computer and use it as if it was a real one. It is possible to connect via a *remote desktop* if it has been configured; or, connecting via a command line is possible too.
+
+We can run many of such virtual machines on just one (more powerful) physical machine. With several machines running on just one, idle computing resources can be allocated and used more efficiently. 
+{% comment %}
+For example, we can exploit varying demands due to time zones: When some users, e.g. researchers in Perth, are not at work and are not using their virtual computers, researchers in NSW will be able to utilize the idle resources.
+{% endcomment %}
+
+{% BgBox info %}
+Not all computers are able to run a *full* virtualization of a virtual computer. *Full virtualization* is achieved when the virtual machine is identical to a real computer. Specialized hardware assistance is required for full virtualization, namely extensions of standard CPUs. So it is likely that your regular office computer cannot run a full virtualization of a VM. Cloud service providers usually are equipped with such specialised hardware --- The NeCTAR infrastructure can run *full virtualizations*.
 {% endBgBox %}
 
 ### Virtual Machine *vs* Real Machine
