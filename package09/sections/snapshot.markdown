@@ -55,21 +55,12 @@ It is easy to launch a new instance from a Snapshot. Simply go on the *Dashboard
 
 ### Snapshots of volumes
 
-A Volume Snapshot creates a copy of the state of a Volume. It is similar to taking a Snaphshot of an instance in that it *creates an Image* of which you can then *create new Volumes*. This is not necessarily the most ideal form of Backup, because each Snapshot takes up **significant disk quota** the same size of your Volume --- even if the Volume still has lots of free space on it. Also, you have *limited quota* available specifically for Snapshots. The [next section](backup.html) will cover more suitable forms of *backup* for your data. However, there may be situations in which a Snaphot is more convenient, or more suitable:
-
-- You want to *share* the exact state of your Volume with a colleague, who then can easily create a duplicate of this Volume on their Dashboard.
-- You have set up the Volume such that it is in a state you may want to duplicate, or re-create at a later time. Creating a *new* Volume from an Image is your preferred choice to do this.
-
-{% col 255,0,0 %}
-Check:  (a) Can we use Backups also with encrypted Volumes, or do we NEED to do a Snapshot then?
-(b) Do Backups also save the file system, or can they be restored on a different file system?
-(c) Does a Snapshot save the file system?
-{% endcol %}
+A Volume Snapshot creates a copy of the state of a Volume. It is similar to taking a Snaphshot of an instance in that it *creates an Image* of which you can then *create new Volumes*. This is not necessarily the most ideal form of Backup, because each Snapshot takes up **significant disk quota** the same size of your Volume --- even if the Volume still has lots of free space on it. For example, if you have a 50GB volume, but only use 1GB of data on it, then your Snapshot will still be 50GB. Also, you have *limited quota* available specifically for Snapshots. The [next section](backup.html) will cover more suitable forms of *backup* for your data. However, you may still prefer to take a Snapshot of particular state of the volume, in order to easily create a *new* volume from it at a later time.
 
 {% BgBox important %}
 The original Volume on which the Snapshot was based *must still exist*, or the Snapshots of it become useless. 
 
-OpenStack does not let you delete Volumes which have "depending Snapshots", so losing Snapshots by accidently deleting a Volume is not a worry. However you have to be aware that the Snapshots are only usable while you keep your Volume in existence. This is different to *Backups*, which are discussed in the next section.
+OpenStack does *not* let you delete Volumes which have "depending Snapshots". So you have to be aware that the Snapshots are only usable while you keep your Volume in existence. This is different to *Backups*, which survive the deletion or a volume. Backups are are discussed in the [next section](backup.html).
 {% endBgBox %}
 
 Before taking a snapshot, you have to make sure your Volume is *not attached* to an instance --- The volume has to be in the status *"Available"*.
@@ -95,6 +86,10 @@ After clicking on **Create Volume**, your new Volume will be created and should 
 
 {% BgBox important %}
 You cannot delete a Volume while you have Snapshots of if saved. If you want to free up the Volume resource for other researchers, you have to *delete all Snapshots* too. So other forms of *Backup* will need to be used before you delete a Volume. 
+The next section will discuss other forms of Backups. 
 
-The next section will discuss other forms of Backups. Alternatively, you can use a technique similar to Snapshots: You can **create an Image of the Volume**, which you can then use to restore the Volume even *after* you have deleted it. This works in the same fashion as Snapshots, it only is a bit slower: Instead of *Create Snaphot*, now you select *Upload to image*. Name your Image accordingly so you can easily identify it. Your Volume Image will now appear along with all the instance Snapshots on *Dahsboard > Compute > Images*. When you create a new Volume, then as *Volume Source*, select *Image*, and select your Image as the *Image as source*. 
+Alternatively, you can use a technique similar to Snapshots: You can **create an Image of the Volume**, which you can then use to restore the Volume even *after* you have deleted it. This works in the same fashion as Snapshots, it only is a bit slower: Instead of *Create Snaphot*, now you select *Upload to image*. Name your Image accordingly so you can easily identify it. Your Volume Image will now appear along with all the instance Snapshots on *Dahsboard > Compute > Images*. When you create a new Volume, then as *Volume Source*, select *Image*, and select your Image as the *Image as source*. 
+
+Please be aware that "Upload to image" is **not a suitable way to create regular backups**, as it is slow and may take significant storage space on the Image Server. You should only use this for significant states of your Volumes, e.g. as a back-up just before you delete the Volume.
+
 {% endBgBox %}

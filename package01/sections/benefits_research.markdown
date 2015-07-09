@@ -2,7 +2,6 @@
 layout: package-part-ext
 part: Documentation 
 ---
-
 {% include /docLinks.markdown %}
 
 Researchers are free to concentrate on their work rather than on obtaining funding for the computing resources, and provisioning & maintenance of hardware. The shared environment means greater ease and opportunity to collaborate.

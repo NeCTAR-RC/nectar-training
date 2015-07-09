@@ -2,6 +2,7 @@
 layout: package-part-ext
 part: Documentation 
 ---
+{% include /docLinks.markdown %}
 
 Imagine several servers in some data center are analyzing your large research data set. 
 They are exchanging possibly huge amounts of data while they analyze your data in tandem. 

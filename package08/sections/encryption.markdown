@@ -201,8 +201,8 @@ Following the instructions will **erase all data** on the volume! If you have an
     ```sudo umount /dev/vdc```
 
 3. If you have data on the volume, now is a good time to securely erase them. We will talk about securely erasing all data in [Module 9][ModDoc9]. If in doubt, you should use an empty (newly created) volume for this tutorial. You can skip this step if you don't have data to securely erase --- a process which may take a long time depending on the size of your volume.  Erase your data with:    
-```sudo dd if=/dev/urandom bs=1M count=8 of=/dev/vdc```    
-    *Note:* Volume 9 explains more about how it can be sped up.
+```sudo dd if=/dev/urandom of=/dev/vdc```   
+   *Note:* [Module 9](/package09/sections/cleanup.html) provides more information about the *dd* command. 
 
 4. Now, install the file encryption package cryptsetup:    
     ```sudo apt-get install cryptsetup```    

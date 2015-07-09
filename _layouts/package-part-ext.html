@@ -8,9 +8,6 @@ layout: default
     <h1>{{ page.part }}</h1>
   </header>
 
-  <p><a href="{{page.contentspath}}">Back to training package contents</a></p>
-
-
   <!-- 
     Preprocessing: Determine which part number this is. To avoid having to set numbers 
     manually on each page, determine this here by the file name. 
@@ -73,7 +70,7 @@ layout: default
     List of the individual parts of this module (so not all content gets crammed on one page).
     Rendering this list first is necessary 
   -->
-  <p> Sections of this module (eg put in navigation bar left):</p>
+  <p> Sections of this module:</p>
   
 	{% assign activate_submenu = false %}
 	{% for packagepart in pagedata %}
@@ -107,22 +104,6 @@ layout: default
 	{% endfor %}
   <br/>
 
-  <!--
-  Previous page / Next page links. Very simple design to start with.
-  -->
-  <p>
-  {% if current_file != pagedata.first.file  %}
-  	{% assign prev_index = current_index | minus:1 %}
-	<a href="{{page.contentspath}}/sections/{{pagedata[prev_index].file}}">Previous page</a>
-  {% endif %}
-  &nbsp; &nbsp; &nbsp;
-  {% if current_file != pagedata.last.file  %}
-  	{% assign next_index = current_index | plus:1 %}
-	<a href="{{page.contentspath}}/sections/{{pagedata[next_index].file}}">Next page</a>
-  {% endif %}
-  </p>
-
-
   <h1> {{ pagedata[current_index].name }} </h1>
 
   {% endif %} <!-- endif for pagedata_avail -->
@@ -138,17 +119,17 @@ layout: default
 
   {% if pagedata_avail %}
   <!--
-  Previous page / Next page links. Very simple design to start with.
+  Previous section / Next section links. Very simple design to start with.
   -->
   <p>
   {% if current_file != pagedata.first.file  %}
   	{% assign prev_index = current_index | minus:1 %}
-	<a href="{{page.contentspath}}/sections/{{pagedata[prev_index].file}}">Previous page</a>
+	<a href="{{page.contentspath}}/sections/{{pagedata[prev_index].file}}">Previous section</a>
   {% endif %}
   &nbsp; &nbsp; &nbsp;
   {% if current_file != pagedata.last.file  %}
   	{% assign next_index = current_index | plus:1 %}
-	<a href="{{page.contentspath}}/sections/{{pagedata[next_index].file}}">Next page</a>
+	<a href="{{page.contentspath}}/sections/{{pagedata[next_index].file}}">Next section</a>
   {% endif %}
   </p>
   {% endif %} <!-- endif for pagedata_avail -->

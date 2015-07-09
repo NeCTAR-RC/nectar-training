@@ -39,7 +39,11 @@ Warning: This command will start erasing all data as soon as you start running i
 {% endBgBox %}
 
 {% BgBox info %}
-The option **bs** means *block size*, which is the number of bytes that are written at one time. The command is faster if you choose the block size used by your physical harddrive --- in case of doubt, just use *4k*. You may specify the size in bytes, or in *kilobytes* by appending *k*, or in Megabytes by appending *M*.
+The option **bs** means *block size*, which is the number of bytes that are written at one time. The command is faster if you choose the block size used by your physical harddrive --- in case of doubt, just use *4K*. You may specify the size in bytes, or in *kilobytes* by appending *k*, or in Megabytes by appending *M*.
+
+To find out the block size of */dev/vdc*:
+
+```sudo dumpe2fs /dev/vdc | grep 'Block size'```
 {% endBgBox %}
 
 

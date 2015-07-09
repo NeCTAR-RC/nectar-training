@@ -217,6 +217,9 @@ To manage your volume Backups, you will use the command set *openstack backup*:
 ```openstack help backup```   
 ```openstack help backup create```
 
+{% BgBox info %}
+Backups will back up the entire state of your Volume. If you volume is encrypted, the encryption will be backed up with it. So after you restore this backup onto a new volume, you will also need to install the volume encryption and activate it with your password!
+{% endBgBox %}
 
 Before you can create a Backup, you must *detach* the volume from any instances. You need to first *unmount* the device (if you have mounted it from an instance), and then detach it, as described earlier. A volume is *detached* when it is in the status *"available"*. Check this with
  
