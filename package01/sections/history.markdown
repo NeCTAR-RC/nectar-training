@@ -30,7 +30,7 @@ In 2008, *Microsoft Azure* became available. Azure provides a development platfo
 In July 2010, *Rackspace Hosting* and *NASA* jointly launched an open-source cloud-software initiative known as *OpenStack*. The OpenStack project intended to help organizations offer cloud-computing services running on standard hardware. 
 **NeCTAR also uses the OpenStack framework**.
 
-In 2011, IBM announced the *IBM SmartCloud *framework. 
+In 2011, IBM announced the *IBM SmartCloud* framework. 
 
 Mid 2012, Oracle announced the *Oracle Cloud*. This cloud provides users with access to an integrated set of IT solutions, including the *SaaS*, *PaaS* and *IaaS* services.
 

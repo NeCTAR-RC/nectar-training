@@ -27,14 +27,13 @@ The Australian Research Cloud is offering a *secure and robust hosting service*:
 
     * Access to the NeCTAR Cloud dashboard is done through the **Australian Access Federation (AAF)**. This allows you to login using your institiutional username and password.
 
-    * Any researcher who logs in to NeCTAR’s web Dashboard can immediately have access to a small Project Trial allocation (2 cores for 3 months)
+    * Any researcher who logs in to NeCTAR’s web Dashboard can immediately have access to a small Project Trial allocation (2 cores for 3 months).
 
     * To obtain a larger allocation you need to submit an allocation request through the web Dashboard.
 
 * The Cloud consists of **8** ***Nodes***  and around 32,000 processor cores distributed across all states in Australia
 
-    * A *Node* can be seen as a data center at a physical location which provides the services. All Nodes are part of a *federated cloud*. A user may specify the zone in which their virtual machines will be situated, so they can get the best network responsiveness.   
-
+    * A *Node* can be seen as a data center at a physical location which provides the services. All Nodes are part of a *federated cloud*. A user may specify the zone in which their virtual machines will be situated, so they can get the best network responsiveness.    
 
 * The completed cloud will be a very significant Australian resource and one of the largest *OpenStack* based clouds in production worldwide.
 
@@ -43,7 +42,7 @@ The Australian Research Cloud is offering a *secure and robust hosting service*:
 Today, NeCTAR enables Australian researchers to easily put their ideas, tools, research applications and data online. The new cloud capabilities have equipped researchers with the ability to easily share and manipulate their data, and publish it to other researchers anywhere around the world.
 
 For a more detailed story about NeCTAR using OpenStack, please refer to  
-[https://www.openstack.org/user-stories/nectar/](https://www.openstack.org/user-stories/nectar/)
+[the OpenStack NeCTAR user story](https://www.openstack.org/user-stories/nectar/).
 
 
 

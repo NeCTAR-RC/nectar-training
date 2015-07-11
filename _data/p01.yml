@@ -10,7 +10,6 @@
 - name: Cloud services
   file: cloud_services.html
 
-
 - name: Virtualization
   file: virtualization.html
 

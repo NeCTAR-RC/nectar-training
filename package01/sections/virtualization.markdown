@@ -44,6 +44,8 @@ The *Hypervisor* or *Virtual Machine Manager* is the software that manages commu
 
 When you want to create or destroy your virtual machine, the hypervisor takes care of that for you, and while your machine is running, the hypervisor manages the execution of your virtual machine. 
 
+{% img src=images/Hypervisor.png, w=60, dim=percent, align=center %}
+
 The downside to this virtual world is an increased opportunity for hackers to exploit vulnerabilities.
 The attack surface has increased because vulnerabilities may not only exist in the physical equipment, but also in the hypervisor. However such vulnerabilities can be addressed if proper care is taken. Security issues and how they can be addressed is subject to discussion in [Module 8][ModDoc8].
 
