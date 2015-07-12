@@ -37,37 +37,32 @@ There are a number of advantages and drawbacks to both local computing (the trad
     
     * the ability to scale up (and down) rapidly.    
 
+    While NeCTAR services are free to you, but you must request an allocation of a certain amount of maximum resources you will be using.
+
 + **Individual setup:** Users can configure their own server (eg choose the operating system and install software) and run it in a cloud whenever they need the computational resources.
 
 + **Access independence**: via the Internet, cloud computing can be done from anywhere (office, home, on conference travel, business trips etc) and with a variety of devices (laptop, smart phone, tablet..). There is no need to install (and maintain) the research applications on each device.
 
 + **Large computing capacity** can be accessed quickly, and only for the time you need it.
 
-+ "**Elasticity**"** **(Flexibility and scalability): Typically, a cloud consists of a dynamically assigned group of *virtual computers *that can scale up quickly at your request. This gives the users the ability to scale up or scale down technological infrastructure resources as required at the time.
++ **"Elasticity"** (Flexibility and scalability): Typically, a cloud consists of a dynamically assigned group of *virtual machines* that can scale up quickly at your request. This gives the users the ability to scale up or scale down technological infrastructure resources as required at the time.
 
 + **Resource sharing** is possible across many users. Multiple users can work on the same data simultaneously, which avoids having to wait for it to be emailed.
 
 + **Security** is often as good as or better than other traditional systems (more about this later). This is often mistakenly perceived as believed to be a risk of cloud computing.
 
-+ **Saving electricity** does not only save costs, it is good for the environment!
++ **Saving electricity** through shared infrastructure. This does not only save costs, it is good for the environment!
 
-+ **Cost savings** Using the Cloud may be cheaper than investing in local facilities. NeCTAR services are free to you, but you must request an allocation of a certain amount of maximum resources you will be using.
 
 **Cons:**
 
-- Requires the **Internet** to access.
+- Requires the **Internet** to access. If the Internet drops out, you lose access. However your services (e.g. your data analysis) will still be running---you just cannot access it.
 
 - **Indirect access control:** The ISPs, telecommunication and media companies control your access. Putting your faith in the cloud means you're also putting all your faith in continued, uninterrupted access. ISPs may even charge more for higher bandwidth demands.
 
 - **Service outage**: When there are problems at the cloud service provider, it can take out all your services. However usually such outages are for just hours.
 
-- **Concerns about ownership**: Who owns the data you store online: you, or the company storing it? There is also a difference between data which is uploaded, and the data created in the cloud itself (providers could have stronger claims on the latter). 
-Many times there has been widespread controversy over Facebook changing their terms of service in regards to what they can do with your photos.
-{% col 255,0,0 %} 
-Open question: How does NeCTAR address data ownership? Can we take this "fear" of users away right away?
-{% endcol %}
+- **Concerns about ownership**: Who owns the data you store online: you, or the company storing it? There is also a difference between data which is uploaded, and the data created in the cloud itself (providers could have stronger claims on the latter). Policies of cloud providers vary. NeCTAR never lays any claim on any of your data!
 
+ 
 - **Service charge** is based upon usage, which may come at a significant cost with some cloud providers. However NeCTAR services are free to you as an Australian Researcher.
-
-
-

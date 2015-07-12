@@ -5,12 +5,12 @@ part: Documentation
 
 {% include /docLinks.markdown %}
 
-First of all, you will need to get onto the research cloud, which is fairly simple. Then, you will create an virtual machine, which we will also refer to as an *instance*. You can connect to your instance and while you or your collaborators are using it, you may track utilization of your resources. You should also perform a number of maintenance tasks while your instance is in use. We will discuss the processes involved in your virtual machine's *life cycle* in this section.
+First of all, you will need to get onto the Research Cloud, which is fairly simple. Then, you will create an virtual machine, which we will also refer to as an *instance*. You can connect to your instance and while you or your collaborators are using it, you may track utilization of your resources. You should also perform a number of maintenance tasks while your instance is in use. We will discuss the processes involved in your virtual machine's *life cycle* in this section.
 
 {% BgBox definition %}
 An **instance** is a *running virtual machine (VM)* on the NeCTAR Research Cloud. Instances (VMs) running inside the Research Cloud are just like real-life machines but in a remote location. *"Launching"* an instance is like booting the computer, and shutting it down closes it. While an instance is shut down, it still exists --- it may be *rebooted* any time. An instance can also be *terminated*, after which it is deleted (does not exist any more) and cannot be recovered, unless the state of it was saved in a *snapshot* before its termination.  
 
-*Note*: An instance is sometimes also a real computer, but in the NeCTAR Cloud, all instances are virtual machines.
+*Note*: An instance is sometimes also one physical computer, but in the NeCTAR Cloud, all instances are virtual machines.
 {% endBgBox %}
 
 
@@ -24,10 +24,10 @@ You can log in with and your university or research institution username and pas
 You may access the Research Cloud from any account associated with the Australian Access Federation. You can see whether your institution is part of this in the drop-down list on the Dashboard login window.
 {% img src=images/dashboardLogin2.png, w=60, dim=percent, align=center, css=margin-top:20px; margin-bottom:20px; %}  
 
-* The Dashboard is used to start, copy and delete instances. Once you have logged on to the Dashboard, you can start setting up your VMs. We will do this in detail later in [Module 7][ModDoc7].
+* The Dashboard is used to start, copy and delete instances, and to manage your storage. Once you have logged on to the Dashboard, you can start setting up your VMs. We will do this in detail later in [Module 7][ModDoc7].
 {% img src=images/dashboard.png, w=60, dim=percent, align=center, css=margin-top:20px; margin-bottom:20px; %}  
 
-* You, and anyone else you allow access to the virtual machines, can then log in to them and use them just like standard compute servers.
+* You, and anyone else you allow access to the virtual machines, can then log in to them and use them just like regular servers.
 
 * Cloud VMs can be accessed using a *remote desktop* so they can be used just like they are a desktop machine. In [Module 7][ModDoc7] we will take a closer look at how to connect via an ssh terminal, and to a remote desktop. 
 
@@ -60,7 +60,7 @@ Virtual machine (VM) instances in the Research Cloud are available in standard s
 On the Dashboard, you can see the amount of resources you are using. You can also see how long your instances have been up and running. 
 
 {% img src=images/dashboardUtilization.png, w=70, dim=percent, align=center, css=margin-top:20px; margin-bottom:20px; %}  
-You may also want to *monitor* your virtual machine(s), i.e. keep track of CPU usage, memory usage, etc. You may also want to set up system alerts. The Dashboard does not provide any tools to do this; you will have to use tools for virtual machine *monitoring*. [Module 10][ModDoc10] will look into monitoring tools in more detail. 
+You may also want to *monitor* your virtual machine(s), i.e. keep track of CPU usage, memory usage, etc. You may also want to set up system alerts. The Dashboard does not provide any tools to do this; you will have to use tools for virtual machine *monitoring*. [Module 10][ModDoc10] will talks about VM monitoring.
 
 ### Housekeeping
 

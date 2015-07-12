@@ -35,14 +35,14 @@ TODO: Redo this graphic, taken from [here](http://cdn.katescomment.com/wordpress
 
 
 
-You will need to choose passphrases at several occasions. For example, before you can establish a connection to your virtual machine, you will have to generate keys which encrypt the connection between you and the virtual machine. We will do this in [Module 7][ModDoc7]. 
+You will need to choose passphrases at several occasions. For example, before you can establish a connection to your virtual machine, you will have to generate keys which encrypt the connection between you and the virtual machine. A *key* is associated with a passphrase and it is needed to access your instance. We will do this in [Module 7][ModDoc7]. 
 
-Evidently, **never share passwords or private keys** with anyone not trusted (*Note:* A *key* is needed to access some services. This will be discussed in Module 7). If you want to give someone access to your virtual machine, they should have their own keys to it, and not use yours. You can then block access to them any time by removing their key from your virtual machine. We will talk more about this in [Module 7][ModDoc7].
+Evidently, **never share passwords or private keys** with anyone not trusted. If you want to give someone access to your virtual machine, they should have their own keys to it, and not use yours. You can then block access to them any time by removing their key from your virtual machine. We will talk more about this in [Module 7][ModDoc7].
 
 ### Firewall protection 
 
 
-When you launch and manage your virtual machine, you will have to specify the *firewall rules* for it. You will use the Dashboard to create *security groups*, which basically are a collection of firewall rules. When you first create your virtual machine, the default firewall rules allows *no access* from remote by default --- so by default, your instance is secure. However you *will* need to allow certain forms of access, otherwise you won't be able to connect to the instance yourself.
+The NeCTAR instances come with a firewall protection already in place. When you launch and manage your virtual machine, you will have to specify the *firewall rules* for it. You will use the Dashboard to create *security groups*, which basically are a collection of firewall rules. When you first create your virtual machine, the default firewall rules allows *no access* from remote by default --- so by default, your instance is secure. However you *will* need to allow certain forms of access, otherwise you won't be able to connect to the instance yourself.
 
 While [Module 7][ModDoc7] will talk you through the steps of setting up the firewall rules, this is a good place to prime ourselves with some background knowledge.    
 To open up access to the virtual machine, you need to free up **Ports** in the firewall rules. 
@@ -50,11 +50,9 @@ To open up access to the virtual machine, you need to free up **Ports** in the f
 A **Port** is a communications endpoint to a logical connection between computers. 
 Typically, a computer is provided with several ports which can be used by applications to establish communications.
 {% endBgBox %}
-You can think of a Port like a plug: an internet connection between two applications is established when two such plugs are connected. Then, the two applications can talk to each other via this connection. 
+You can think of a Port like a plug: a network connection between two applications is established when two such plugs are connected. Then, the two applications can talk to each other via this connection. 
 
-{% col 255,0,0 %}
-TODO: Insert graphic which visualizes this
-{% endcol %}
+{% img src=images/PortCommunications.png, w=80, dim=percent, align=center %}
 
 On our local computer's end of the connection, our application running on our computer is used to send commands to the remote computer (e.g. the VM), and on the remote computer's side the commands are received and processed by a matching application. The application on the remote machine is commonly called the **server application**, while the application on our computer is the **client application**. We say that the  **"server application  is *listening*"** to incoming connections from client applications. After the connection is established, the applications can talk to each other.
 
@@ -64,14 +62,14 @@ On our local computer's end of the connection, our application running on our co
 *Note:* If somebody would spy on your connection through Port 80 (the default *http* port), they will be seeing the websites which are being transferred. However for public Websites (e.g. your homepage), this is not a concern, as they are public anyway. If you wanted to encrypt the data being transferred (e.g. for credit card payments), you would need to set up a *https* connection for your websites instead.
 {% endBgBox %}
 
-If no server application is listening to the Port, it is also not possible to connect to it.
-You have to make sure that the server application which is "listening" for incoming connections on the Port is secure, or it could "leak" access to other parts than the website files to hackers.
+Note that each Port that you free up is also a **potential entry point** to your instance. However, a *server application* needs to be "listening" to this port in order to establish a connection. If no server application is listening to the Port, it is also not possible to connect to it.
+You have to make sure that the server application which is "listening" for incoming connections on the Port is secure, or it could compromise your instance and make it vulnerable to hacking attempts.
 
 
 **Summary:**
 
 1. You should **only free up Ports which are required**, and not a whole set of ports.    
-    Why? Say your VM gets infected and a malicious *server application* tries to open up access at some random Port, say 5000. If you have freed up all ports, the malicious application will be successful. Freeing up only the necessary ports increases security because the likelyhood of finding an open port is smaller. If, for example, you free up only port 70 (to name a random choice), and a server application is listening for connections on port 70, there will be *no* free port which allows access from outside (because port 70 is already busy)!
+    Why? Say your VM gets infected and a malicious *server application* tries to open up access at some Port, say 5000. If you have freed up all ports, the malicious application will be successful. Freeing up only the necessary ports increases security because the likelyhood of finding an open port is smaller. If, for example, you free up only port 70 (to name a random choice), and a server application is listening for connections on port 70, there will be *no* free port which allows access from outside (because port 70 is already busy)!
 
 2. You should also make sure that the installed **server application is secure** (not some dubious software you downloaded from the internet) and that it is up and running, listening on this Port for incoming connections.
 
@@ -83,10 +81,18 @@ When you connect to your virtual machine, *always* use an encrypted connection. 
 To connect to the instance yourself, you should set up a **ssh connection** to the virtual machine or use other secure ways to connect. We will establish a ssh connection to the instance in [Module 7][ModDoc7].    
 
 {% BgBox definition %}    
-**SSH** (short for "Secure Shell") encrypts connections such that the data coming through can only be deciphered with the **ssh key**. By default, ssh uses *Port 22*. On the remote machine (the instance), an *ssh server* is be running which accepts connections from *ssh clients*. It is only possible to decypher the data going through an ssh connection with the **private ssh key** and the passphrase which was used to generate it. 
+**SSH** (short for "Secure Shell") encrypts connections such that the data coming through can only be deciphered with the **ssh key**. 
+
+To establish a ssh connection, two keys are required: The **private** and the **public** key. When the key pair is generated, a passphrase can be chosen for extra security. The private key resides on the users computer and should never be shared with anyone. The public key is added to the remote machine (the instance). Only when the two keys are present at both ends of the connection, then a connection can be established and the data going through the ssh connection will be deciphered with the keys and the passphrase which was used to generate it. 
+
+By default, ssh uses *Port 22*. On the remote machine (the instance), an *ssh server* is be running which accepts connections from *ssh clients*. 
 
 Many applications use **ssh** to encrypt connections. For example, if you copy files between your local computer and the virtual machine, you may use the command **scp** to copy the files, which also uses the ssh protocol. 
 {% endBgBox %}
+
+
+{% img src=images/SSHKeys.png, w=80, dim=percent, align=center %}
+The image above shows two connected computers: Your local computer and your instance. When establishing a connection, the *ssh client and server* are in charge for encrypting and decrypting the data packages which travel between the computers. The end client/server applications receive the unencrypted packages from the ssh server/client.
 
 **SSH Tunnelling**
 
@@ -104,51 +110,54 @@ SSH Tunnelling is best explained with an example. In [Module 7][ModDoc7], we wil
 
 * The *ssh client* will encrypt all data, and send it off through the encrypted connection to the server. The data then arrives at the remote computers's Port 22, where the *ssh server* receives it and redirects it to its port 5901, on which the *server application* (e.g. the VNC server) eventually receives our data. 
 
-{% img src=images/sshtunnel.png, w=50, dim=percent, align=center, css=margin-top:20px; margin-bottom: 20px; %}
-
-{% col 255,0,0 %}
-TODO: Redo this graphic which was taken from google image search. Remove the firewall bars, as firewalls are not relevant for this example. Simplify the graphics with IP addresses to only the port, so it’s simpler to read.
-{% endcol %}
-
-
+{% img src=images/SSHTunnel.png, w=70, dim=percent, align=center, css=margin-top:20px; margin-bottom: 20px; %}
+The figure above shows the two connected computers again, but this time with a *ssh tunnel* (symbolised by the blue lines): The connection is "deviated" from the ports that the client/server applications *think* they are communicating through---so the applications are not aware about the communication actually going through Port 22. The *tunnel* has been set up to automatically catch all communications from the client/server ports (e.g. 5900/5901) and deviate it through the ssh connection. Note that the blue lines in the graph are only symbolic---the actual ports are not open to the outside in the firewall settings (except the ssh port of course).
 
 The neat thing about this is that neither our client application nor the server application realise that the connection had been encrypted, so we don't need to configure anything complicated in the applications: Everything is handelled automatically by redirecting traffic through our ssh tunnel. 
-
-Now, the only thing you need to do is directing your client application to connect to the host *localhost* instead of the the server --- you usually specify the *host* as an URL, e.g. *http://www.server.com* or with the *IP address* of the server, and specify the *destination port* on this host. Instead, you now need to set it to *localhost* and the port you used for your ssh tunnel (5900 in the example above).
-     
+The only thing you need to do is directing your client application to connect to the host *localhost* instead of the the server. You usually specify the *host* as a URL, e.g. *http://www.server.com* or with the *IP address* of the server, and specify the *destination port* on this host. Instead, you now need to set it to *localhost* and the port you used for your ssh tunnel (5900 in the example above).
 You will also need to ensure that a ssh server is running on your virtual machine, but you will have one running already anyway, in order to connect to the server (we will do this in [Module 7][ModDoc7]).
 
 
 
 ### Limiting access
 
-You should only grant access to your virtual machine to people you trust. Each person should ideally have their own user account and password on the instance. You should keep the main user account, which we will be using in the exercises in [Module 7][ModDoc7], only for administration purposes. 
+You should only grant access to your virtual machine to people you trust. Each person should ideally have their own user account and password on the instance, and use their own ssh keys. You should keep the main user account, which we will be using in the exercises in [Module 7][ModDoc7], only for administration purposes. You can add other users public ssh keys to the instance so they can connect to it---[Module 7][ModDoc7] also will show you how to do this.
 
-When you create a new user, you can give them administration ("*root*") access by adding them to the user group *sudo*.
+*Note:* When you create a new user, you can give them administration ("*root*") access by adding them to the user group *sudo*.
 
-Each user should have their own ssh key that can be removed if necessary. [Module 7][ModDoc7] includes instructions on how to do this.
 
 ### Protection software
 
 Linux, Unix and other Unix-like computer operating systems are generally regarded as very well-protected against computer viruses, but they are not immune. There has *not yet* been a single widespread Linux virus/malware infection like on Windows. However, better safe than sorry. 
 
-Your VM is already protected by a firewall, but you may also want to install an Antivirus.
+Your VM is already protected by a firewall, but you may also want to install an AntiVirus protection.
 
 ### Know your virtual machine and keep things tidy
 
-* Many types of attacks specifically target Web servers. Use separate virtual machines for them, and keep your research work in a separate virutal machine.
+* Know your virtual machine! Monitor your system---you will then notice when something abnormal happens.
 
-* Monitor your system. [Module 10][ModDoc10] will discuss a few example tools.
+* Many types of attacks specifically target Web servers. Use separate virtual machines for them, and keep your research work in a separate virtual machine.
 
-* Purge (erase) residual data from your instance storage before you shut your instance down, and also purge your volumes before you erase them. [Module 9][ModDoc9] will show how you can do this.
+* Purge (erase) residual data from your storage before you shut your instance down or delete the storage. [Module 9][ModDoc9] will show how you can do this.
 
 * Don't re-provision virtual machines constantly, rather keep optimizing one and then make snapshots of it. Re-configuring the same type of instance many times (which is quite common) poses a risk for human error --- you might forget an important step when setting it up quickly. In [Module 9][ModDoc9] we will see how to make snapshots of our instance.
 
 ### Encrypting data
 
-Encrypt sensitive data before you upload or download it to or from your instance, unless you are using a secure connection to copy files (e.g. *scp* or *sftp*). This will slow down the process of copying files, because they have to be encrypted and decrypted, so only do this if your data is critical. Also, the risk is added of losing access to your data forever if you lose the encryption key or forget the passphrase.    
+Encrypt sensitive data before you upload or download it to or from your instance, unless you are already using an encrypted connection to copy files (e.g. *scp* or *sftp*). This will slow down the process of copying files, because they have to be encrypted and decrypted, so only do this if your data is critical. Also, the risk is added of losing access to your data forever if you lose the encryption key or forget the passphrase.    
 In [Module 8][ModDoc8] we will go through a few tools you may use to encrypt your data.
 
 ### NeCTAR security guidelines
 
 Please also read the [security guidelines on the NeCTAR support website](http://support.rc.nectar.org.au/docs/security-guidelines).
+
+### Summary
+
+In summary, things to watch out for to mitigate risks:
+
+* Use secure passphrases.
+* Carefully configure the firewall.
+* Always use secure methods of access (e.g. ssh logon terminals or ssh tunnelling).
+* Limit access only to trusted users.
+* Know your virtual machine and keep things tidy.
+* Encrypt your data.

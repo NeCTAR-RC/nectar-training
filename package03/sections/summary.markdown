@@ -18,4 +18,6 @@ The following use cases have been discussed:
 7. Teaching 
 8. Big Data demands 
 
+However there is a lot more to it---there are plenty more use cases. After following the next Modules, you will know enough about the Research Cloud to identify your very own and individual use case.
+
 You may now continue with [Module 4][ModDoc4].

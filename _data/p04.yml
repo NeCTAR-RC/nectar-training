@@ -1,5 +1,7 @@
 - name: Introduction
   file: intro.html
+- name: HPC vs Cloud computing
+  file: cloudVsHPC.html
 - name: When to use HPC
   file: useHPC.html
 - name: When to use the Cloud

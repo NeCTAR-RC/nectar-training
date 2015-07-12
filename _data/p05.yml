@@ -2,13 +2,13 @@
   file: intro.html
 - name: Connecting and maintaining
   file: connecting.html
-- name: Resource allocation requests
-  file: allocations.html
 - name: Mitigating risks
   file: mitigating.html
 - name: Cleaning up
   file: cleaning.html
 - name: Getting support
   file: support.html
+- name: Resource allocation requests
+  file: allocations.html
 - name: Summary
   file: summary.html

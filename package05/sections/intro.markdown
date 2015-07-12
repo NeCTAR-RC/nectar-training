@@ -15,9 +15,9 @@ Project Trials have names like *pt-8637*.
 Within your default allocation you can run:    
 
 * a medium (two core) VM, or
-* two small (single core) VM.
+* two small (single core) VMs.
 
-You can run VMs of various sizes in the cloud, from one to 16 cores, and from one instance to hundreds.
+You can run VMs of various sizes in the cloud, from one to 16 cores, and up to hundreds of VMs.
 However to obtain such a larger allocation you need to submit an allocation request through the web Dashboard. We will talk about this later in this Module.
 
 
