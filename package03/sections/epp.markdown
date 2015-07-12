@@ -9,13 +9,13 @@ You have an **"embarrassingly parallel problem" (short: EPP)**.  "Embarrassingly
 
 For example, a very large data set can be chopped into pieces which are then dispatched to various computers for processing; when finished, the resulting data is re-assembled. 
 
-Or in another example, copies of a smaller data set are distributed across computers to perform different computations on it, and when all the individual anaylises of the data are finished, the results are summarized. 
+Or in another example, copies of a smaller data set are distributed across computers to perform different computations on it, and when all the individual analyises of the data are finished, the results are summarized. 
 
 The individual computers don't have to be super fast, but instead the power lies in having a huge number of computers working at solving the problem simultaneously. 
 
 Software like *MapReduce* can be used to manage splitting the problem into several pieces and dispatching them to different computers.
 
-
-In [Module 7][ModDoc7], we will discuss how to set up and access a virtual machine. Using software like *MapReduce* is not part of this tutorial.
+Embarassingly parallel problems will be re-visited in [Module 4][ModDoc4].
+In [Module 7][ModDoc7], we will discuss how to set up and access a virtual machine. 
 
 
