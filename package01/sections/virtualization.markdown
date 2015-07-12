@@ -74,7 +74,7 @@ There are also hypervisors that are a blend of both types (a) and (b). The **Ker
 
 **Question**: How many VMs can run on one physical core?
 
-**Answer**: Normally, the hypervisor won't lock one VM's virtual processor to a specific physical core. Virtualization is done to allow better utilization of available hardware. If you only allocated one virtual processor to each physical processor, you would likely have lots of idle time, because each VM is unlikely be using 100 percent of its CPU.  
+**Answer**: Normally, the hypervisor won't lock one VM's virtual processor to a specific physical core. Virtualization is done to allow better utilization of available hardware. If you only allocated one virtual processor to each physical processor, you would likely have lots of idle time, because each VM is unlikely to be using 100 percent of its CPU.  
 Therefore, it is common to allocate a larger number of virtual processors to fewer physical processors. The hypervisor takes care of scheduling the CPU work across the physical cores.
 
 *Note:*

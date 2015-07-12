@@ -66,7 +66,7 @@ Some examples of cloud computing you are probably already using include
 
 ### Types of cloud services
 
-There are 3 different types of cloud services which can be distingueshed. They provide different levels of abstraction to computing services to the user.
+There are 3 different types of cloud services which can be distinguished. They provide different levels of abstraction to computing services to the user.
 
 
 **Software-as-a-Service (SaaS)**
