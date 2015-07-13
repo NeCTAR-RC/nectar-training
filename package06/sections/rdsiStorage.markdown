@@ -5,7 +5,7 @@ part: Documentation
 {% include /docLinks.markdown %}
 
 
-You may also get access to the [Research Data Storage Infrastructure (RDSI)](https://www.rdsi.edu.au/). The aim of the RDSI Project is that researchers will be able to use and manipulate significant collections of data that were previously either unavailable or difficult to access and that there will be a consistent means of accessing this data. 
+You may also get access to the [Research Data Storage Infrastructure (RDSI)](https://www.rdsi.edu.au/). The aim of the RDSI Project is that researchers will be able to use and manipulate significant collections of data that were previously either unavailable or difficult to access; and there will be a consistent means of accessing this data. 
 
 The Project is realised through the creation and development of data storage infrastructure. Specifically, the intention is to increase the sharing and re-use of research related data.
 
@@ -36,11 +36,13 @@ If you have high storage demands, an alternative to the NeCTAR storage may be to
 
 You may get access to:
 
-* an Object Storage.
-* a Volume Storage.
-* a specific VM which has access to the storage.
-* NFS storage which you can *mount* from your local instance.
+* an Object Storage
+* a Volume Storage
+* a specific VM which has access to the storage
+* NFS storage which you can *mount* (access) on your local instance
 * or other forms of access.
+
+Note that *mounting* (=setting up access) a collection with *NFS* from a virtual machine in a *different* node than the one where the RDSI collection resides will not work.  
 
 If you need to add RDSI storage to a NeCTAR VM, here are a couple of articles describing how to do it:
 
@@ -50,4 +52,3 @@ If you need to add RDSI storage to a NeCTAR VM, here are a couple of articles de
 
 Note that some details in these articles may be specific to the respective NeCTAR nodes / providers. 
 
-Also note that *mounting* (=setting up access) a collection with *NFS* from a virtual machine in a *different* node than the one where the RDSI collection resides will not work.  

@@ -10,7 +10,7 @@ You may think of *Volume Storage* (also referred to as *block storage*) as a *se
 You have to *request an allocation* (see [Module 5](/package05/sections/allocations.html)) to obtain access to Volume storage. Depending on your requirements and how you justify your needs, you may get access to very large Volumes.
 
 
-Volume storage can live outside your instance. It is appears as block storage which can be attached and then accessed from any of your instances. 
+Volume storage can live outside your instance. It appears as block storage which can be attached and then accessed from any of your instances. 
 You can attach the Volume to your instance, read and write data, detach it, and make it available to another instance. 
 Your data on a Volume is retained even when you terminate your instance. Volumes also offer a *Snapshot* feature which can be used to make convenient backups (this uses some of your overall Volume quota).
 

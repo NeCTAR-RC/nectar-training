@@ -6,7 +6,7 @@ part: Documentation
 
 In summary, here are a few recommendations on how you may use the different storage types:
 
-* Use On-Instance Storage as "scratch space" and/or to keep copies/clones of data (e.g. websites) which are mainly stored elsewhere. Because On-instance storage is *ephemereal*, you will lose access to your data when an unplanned restart of the hypervisor takes place, or after you terminate your instance. Therefore, the main motivation to use this storage should be to have it readily available on the instance without requiring extra Volumes, or using up your Volume storage quota for it. 
+* Use On-Instance Storage as "scratch space" and/or to keep copies/clones of data (e.g. websites) which are mainly stored elsewhere. Because On-instance storage is *ephemeral*, you will lose access to your data when an unplanned restart of the hypervisor takes place, or after you terminate your instance. Therefore, the main motivation to use this storage should be to have it readily available on the instance without requiring extra Volumes, or using up your Volume storage quota for it. 
 
 * Use Volumes or the Object Store for all data which should survive an instance termination (or an unplanned restart of hypervisor). 
 You may need *Volumes* for data access from your programs which require block storage, for example to read files from a disk and write results onto it. If you have control over the source code of your program, you may instead consider to use *object storage* instead of Volumes; APIs for many programming languages are available (more information in [Module 10][ModDoc10] and [the OpenStack SDKs website][OpenStackSDKs]). 

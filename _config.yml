@@ -64,7 +64,7 @@ defaults:
     scope:
       path: "package06"
     values:
-      title: "Resource requirements for compute and storage"
+      title: "Resource requirements for computing and storage"
       number: "6"
       contentspath: "/package06/"
       docpath: "/package06/sections/intro.html"

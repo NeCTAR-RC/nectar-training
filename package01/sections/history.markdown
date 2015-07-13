@@ -3,7 +3,7 @@ layout: package-part-ext
 part: Documentation 
 ---
 
-We will only take a brief look at the history of cloud computing in this course. If you are interested in more details, we refer for example to the Wikipedia page about cloud computing: [http://en.wikipedia.org/wiki/Cloud_computing](http://en.wikipedia.org/wiki/Cloud_computing)
+We will only take a brief look at the history of cloud computing in this course. If you are interested in more details, we refer for example to the [Wikipedia page](http://en.wikipedia.org/wiki/Cloud_computing).
 
 **The 1950s**
 

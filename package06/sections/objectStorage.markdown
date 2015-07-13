@@ -10,12 +10,15 @@ What if you try to expand a block-based storage system beyond multiple terabytes
 A per-file object-based storage instead is easier to manage and can be distributed. 
 
 {% BgBox definition %}
-An *object* in *Object Storage systems* is defined as *data* (typically a file) along with all its metadata, all bundled up as one *object*. Each object has a unique *ID* which is used by applications to retrieve the object. Unlike files in file systems, objects are stored in a *flat structure*. There is a pool of objects, and a given object is retrieved by presenting its object ID. Objects may be local or geographically distributed, but because they are in a flat structure (retrieved by their ID only), they are all retrieved exactly the same way. 
+An *object* in *Object Storage systems* is defined as *data* (typically a file) along with all its metadata, all bundled up as one *object*. Each object has a unique *ID* which is used by applications to retrieve the object. Unlike files in traditional hierarchical file systems, objects are stored in a *flat structure*. There is a pool of objects, and a given object is retrieved by presenting its object ID. Objects may be local or geographically distributed, but because they are in a flat structure (retrieved by their ID only), they are all retrieved exactly the same way. 
 {% endBgBox %}
 
 Multiple copies of all object data is stored over a distributed system, while the storage still acts as one. Object Storage is highly fault tolerant through redundancy and distribution of data: If one or more nodes fail, the data can still be available --- in most cases you as an end user will not even notice that a node was down. Object Storage therefore has a **great data integrity**! In most cases at least 3 copies of a file are stored across several nodes.
 You don't have to do anything to maintain the multiple copies, this is done automatically for you. 
 Object Storage also scales up nicely, and it is easy to access your files from anywhere with a variety of devices.
+
+{% img src=images/ObjectStorage.png, w=80, dim=percent, align=center %}
+The image above visualizes how 3 copies of your data are kept at different data centers, maybe even on different hard drives in the same data center. When you access the object store, you request a file by its ID, and it is automatically retrieved from the closest or more available data center.
 
 {% BgBox important %}
 While Object Storage has high data integrity through geographical distribution of files, it does *not* have a "traditional" dedicated backup system --- it merely provides a means to increase availability and integrity of your data by keeping multiple copies. 
@@ -27,6 +30,8 @@ In the OpenStack Object Store, you may get access to large amounts of storage. U
 The NeCTAR *trial account* has a default of 10GB object storage allocation. When you lodge an appication for resources, you have to specify the amount of object storage you require, otherwise you won't receive any allocation for object storage.
 {% endBgBox %}
 
+
+
 ### Suitable use of object store
 
 Object Storage is not a traditional file-system or real-time data storage system. It's designed for mostly static data that can be retrieved, leveraged, and then updated if necessary. It is independent of a particular instance and can be updated and used without having any instance running. It is designed to be redundant and scalable.
@@ -37,9 +42,9 @@ In general, the object store is great for data you write once and read many time
 
 ### Swift
 
-*Swift* is the component that provides object storage for the *OpenStack* framework which is used in the NeCTAR Research Cloud. With your credentials (which you can download from the Dashboard) you can request *Swift* to reserve and create storage (called *containers* or *buckets*). Files can then be uploaded and accessed similarly by your running instances. 
+*Swift* is the component that provides object storage for the *OpenStack* framework which is used in the NeCTAR Research Cloud. With your credentials (which you can download from the Dashboard) you can request *Swift* to reserve and create storage (called *containers* or *buckets*) and upload/download files. 
 
-*Swift* is used to access the object store via the *Dashboard*, as we will discuss in [Module 7][ModDoc7]. It is also possible to use a *command line client* to access the object store, which is subject to [Module 10][ModDoc10].
+The object store can be accessed via the Dashboard, which provides a UI for the *swift* component. There are also other graphical *clients* which can be used to access the store, as we shall see in [Module 7][ModDoc7]. It is also possible to use a *command line client* to access the object store, which is subject to [Module 10][ModDoc10].
 
 {% BgBox important %}
 **Security Warning:**

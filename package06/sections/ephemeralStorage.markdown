@@ -12,7 +12,7 @@ Each instance you start on the cloud comes with a certain amount of On-Instance 
 You can use the On-Instance storage as *block storage*, for example for your programs to read/write files to, or to operate your databases.
 
 {% BgBox important %}
-On-instance storage is regarded as *ephemeral* --- when you terminate your VM, or an unplanned re-start of the Hypervisor takes place in the NeCTAR Node, the data will be lost and cannot be recovered! You should treat it as **scratch space** and keep important data in either volumes or object store.
+On-instance storage is regarded as *ephemeral* --- when you terminate your VM, or an unplanned re-start of the Hypervisor takes place in the NeCTAR Node, the data will be lost and cannot be recovered! You should treat it as **scratch space** and keep important data in either volumes or the object store.
 {% endBgBox %}
 
 
