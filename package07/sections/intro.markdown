@@ -4,7 +4,7 @@ part: Documentation
 ---
 {% include /docLinks.markdown %}
 
-In this module we are going to learn how to launch an instance and how to connect to it. We are going to discuss two ways to connect: (a) with the command line and (b) to a remote desktop, with the benefits of having a graphical interface. Then, we will also take a look at how we can set up our storage so we can access it remotely and directly from our instance.
+In this module we are going to learn how to launch an instance and how to connect to it. We are going to discuss two ways to connect: (a) with the command line and (b) to a remote desktop, with the benefits of having a graphical interface. We will briefly take a look at how to run graphical applications via the command line (instead of the remote desktop), and we will also set up a web server to publish a very simple website. Finally, we will set up the different cloud storage types, so we can access the storage remotely and directly from our instance.
 
 ### General notes
 
@@ -37,13 +37,6 @@ On a **Mac**, you can open a terminal as follows:
 
 Alternatively, in the *Finder*, go to *Applications > Utilities* and you will find the Terminal app there.
 
- 
-
-### Overview
-
-{% col 255,0,0 %} TODO: Write a more detailed overview about the coming content {% endcol %}
-
-In this section, we are going to create an instance. Before we do this, we need to create an ssh key to allow encryption of our connection.
 
 {% include /disclaimer.markdown %}
 {% include /disclaimerCmd.markdown %}

@@ -5,7 +5,11 @@ part: Documentation
 {% include /docLinks.markdown %}
 
 
-In [Module 4][ModDoc4], we have discussed *horizontal scalability*. Horizontal scalability entails that you may run several instances of your application on separate virtual machines, all processing different parts of your data, or processing the same data in a different way (e.g. with different parameters). The Cloud is suitable for such a scenario. Distributing your problem over multiple instances is certainly an advanced topic as it requires knowledge about parallel programming. However this section will give a brief overview of the possibilities with the cloud and the key factors to look out for in your application. For more details, we refer to related [Literature](literature.html).
+In [Module 4][ModDoc4], we have discussed *horizontal scalability*. Horizontal scalability entails that you may run several instances of your application on separate virtual machines, all processing different parts of your data, or processing the same data in a different way (e.g. with different parameters). 
+
+{% img src=images/HorizontalScale.png, w=300, dim=px, align=center %}
+
+The Cloud is suitable for such a scenario. Distributing your problem over multiple instances is certainly an advanced topic as it requires knowledge about parallel programming. However this section will give a brief overview of the possibilities with the Cloud and the key factors to look out for in your application. For more details, we refer to related [Literature](literature.html).
 
 ### Data or problem partitioning
 
@@ -14,8 +18,7 @@ Or if your problem can be split into several operations (which may or may not us
 
 The instance which splits the problem set and dispatches the tasks is called the "Master", while the instances to which tasks are dispatched are called "*Workers*". A software framework like *MapReduce* can be used to split and dispatch your problem set. 
 
-{% img src=images/SplitProblemDataset.png, w=50, dim=percent, align=center %}
-{% col 255,0,0 %} TODO: Do a similar graphic to this, name it with "workers".. {% endcol %}
+{% img src=images/SplitProblemDataset.png, w=500, dim=px, align=center %}
 
 
 {% BgBox definition %}
@@ -25,32 +28,33 @@ The instance which splits the problem set and dispatches the tasks is called the
 {% endBgBox %}
 
 
-Whether you benefit from this model, depends on the problem that you are trying to solve: 
-
-* Into how many pieces can the data or problem be split? 
-
-* You should also consider the communication demands for distributing the problem to the workers: if you chop the problem or data into very small pieces, does it still pay off to distribute it to many compute nodes, considering communication demands for the distribution? 
-
-* The time to split the dataset is also a factor: You will *not* benefit from splitting the problem into many pieces if the process of splitting takes longer than solving the problem itself.
-
-* A limitation will also be the number of virtual machine instances that you have been granted in your resource allocation. 
-
 Detailed discussion of MapReduce frameworks or similar programming  models is not within the scope of this course. Instead, please refer to related [Literature](literature.html).
 
-For use with OpenStack, you may *Apache Hadoop* through the [Sahara Project](http://docs.openstack.org/developer/sahara/). *Apache Hadoop* is an industry standard and widely adopted MapReduce implementation. The aim of the Sahara project is to enable users to easily provision and manage Hadoop clusters on OpenStack. Using Sahara is not part of this course, we refer to the [on-line documentation](http://docs.openstack.org/developer/sahara/) at this place instead.
+For use with OpenStack, you may use *Apache Hadoop* through the [Sahara Project](http://docs.openstack.org/developer/sahara/). *Apache Hadoop* is an industry standard and widely adopted MapReduce implementation. The aim of the Sahara project is to enable users to easily provision and manage Hadoop clusters on OpenStack. Using Sahara is not part of this course, we refer to the [on-line documentation](http://docs.openstack.org/developer/sahara/) at this place instead.
 
-***Note:*** The use of *Sahara* in the NeCTAR cloud is ***currently not available yet***, but it will be coming soon.
+***Note:*** The use of *Sahara* in the NeCTAR Cloud is ***currently not available yet***, but it will be coming soon.
 
 {% BgBox info %}
 When using *Sahara*, you don't launch the instances manually on the Dashboard as we will do in Module 7. You specify *templates* for the virtual machines, and Sahara will launch the instances for you and set them up so they can be used with your application.
 {% endBgBox %}
 
 
+
+Whether you benefit from this model, depends on the problem that you are trying to solve. There are limitations and trade-offs: 
+
+* Into how many pieces can the data or problem be split? This limits the number of instances you can use. 
+
+* You should also consider the communication demands for distributing the problem to the workers: if you chop the problem or data into very small pieces, does it still pay off to distribute it to many compute nodes, considering communication demands for the distribution? 
+
+* The time to split the dataset is also a factor: You will *not* benefit from splitting the problem if the process of splitting, distributing to workers and then summarizing the results takes longer than solving the problem itself on only one instance.
+
+* A limitation will also be the number of virtual machine instances that you have been granted in your resource allocation. 
+
 ### Auto-scaling with OpenStack Heat
 
 Sometimes, you just need to *replicate* your resources at times when heavy workloads are experienced. For example, if you are deploying a webserver, and at a certain time lots of users access your website and create a lot of traffic and workload on your server, you can *scale up* and create a second (or third, etc.) webserver with the same configuration. The workload can then be distributed across the identical servers, and users don't experience delays any more. 
 
-The OpenStack framework (used by NeCTAR to run the cloud) provides a means to *orchestrate* your resources: You specify your resources in a human-readable text file, which is called a "template". *Heat* then manages the entire lifecylce of your infrastructure and applications, from creating the resources until deletion when your application has finished. The templates provide a lot of options to specify and configure your resources. It therefore has a bit of a learning curve, but it is worth the effort: After you have defined the template, you may launch your services within a matter of minutes, without having to go through the whole setup process again. You can repeatedly use the template to start up your services --- with the template, you have *automated* the process of setting up the resources you require for a particular research application.
+The OpenStack framework (used by NeCTAR to run the Cloud) provides a means to *orchestrate* your resources: The **Heat** project. You specify your resources in a human-readable text file, which is called a "template". *Heat* then manages the entire lifecycle of your infrastructure and applications, from creating the resources until deletion when your application has finished. The templates provide a lot of options to specify and configure your resources. It therefore has a bit of a learning curve, but it is worth the effort: After you have defined the template, you may launch your services within a matter of minutes, without having to go through the whole setup process again. You can repeatedly use the template to start up your services --- with the template, you have *automated* the process of setting up the resources you require for a particular research application.
 
 A *Heat* template can include the instances you want to launch (and which image they should be launched from), volumes to create, security groups to use, and more. It may also include applications to be installed on the servers, e.g. the webserver application.
 
@@ -80,4 +84,16 @@ You can run MPI programs across OpenStack instances as long as your instances ar
 There is however one exception: If your MPI application uses *broadast* or *multicast* in any form, it can not run on OpenStack. This is because some clouds do not support broadcast or multicast in any form (at the time of writing, neither Amazon EC2 nor OpenStack do).
 
 
+A detailed discussion of MPI is outside the scope of this course---setting up an MPI program on the cloud requires previous experience and in-depth knowledge of MPI and the application to run. Please refer to related [Literature](literature.html).
 
+### Summary: Using several instances
+
+In summary, you may use several instances, but it depends on the application whether this is beneficial.
+
+* You may **split the problem or data set** and distribute it, for example using *MapReduce* frameworks.
+
+* You may configure **auto-scaling** for your resources with *Heat* in order to adapt to current workload demands.
+
+* You may be able to run your **MPI** application on the NeCTAR Research Cloud.
+
+Distributing your application over several instances is an advanced topic which was only described on a high level in this course. For more details, please refer to the related [Literature](literature.html).

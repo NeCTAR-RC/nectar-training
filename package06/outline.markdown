@@ -26,7 +26,6 @@ This module covers the following topics:
 
 ### Delivery
 
-
 * face to face
 * video
 

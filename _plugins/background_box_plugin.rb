@@ -55,13 +55,9 @@ module Jekyll
 					#{output}
 				</div>"
 			when "edit"
-				"<div class='bgEdit'>
-				        <pre class='PreformatEdit'>#{content}</pre>
-				</div>"
+				"<div class='bgEdit'><pre class='PreformatEdit'>#{content}</pre></div>"
 			when "terminal"
-				"<div class='bgTerminal'>
-				        <pre class='PreformatTerminal'>#{content}</pre>
-				</div>"
+				"<div class='bgTerminal'><pre class='PreformatTerminal'>#{content}</pre></div>"
 			when "prerequisite"
 				"<div markdown class='bgPrerequisite'>
 			        	<img src='/images/info-32.png' align='left' 
