@@ -14,7 +14,7 @@ If you want to run a single graphical application, you can also do this without 
 
 
 {% BgBox info %}
-The security issue arising with running graphical applications via the ssh connection is that we have to **enable X11 Forwarding**. X11 is the base for the Linux graphical applications (e.g. opening windows). With X11 forwarding, the server is likely to gain shell access to the client (the ssh shell you are running on your computer): the server can send X11 commands back to the client. X11 was not designed with security in mind, it was designed with the idea that all programs that you're displaying are run by you and therefore trusted anyway. However ssh also has a SECURITY extension which disables some obvious attacks such as keyboard grabs and key injection. However it still allows other security issues like focus stealing.
+The **security issue** arising with running graphical applications via the ssh connection is that we have to **enable X11 Forwarding**. X11 is the base for the Linux graphical applications (e.g. opening windows). With X11 forwarding, the server is likely to gain shell access to the client (the ssh terminal you are running on your computer): the server can send X11 commands back to the client. X11 was not designed with security in mind, it was designed with the idea that all programs that you're displaying are run by you and therefore trusted anyway. However ssh also has a SECURITY extension which disables some obvious attacks such as keyboard grabs and key injection. However it still allows other security issues like focus stealing.
 
 *In simple terms:* Let's say you open a SSH connection to &lt;some-server&gt;, with X11 forwarding enabled. The primary risk is that if &lt;some-server&gt; is malicious, then &lt;some-server&gt; can do all sorts of things to the windows/applications you have open on your own computer.
 
@@ -26,7 +26,7 @@ In general, because you log on to your own remote machine and not just &lt;some-
 
 ### Step 1. Check that your Instance allows X11 Forwarding
 
-We have to enable *X11 forwarding*. It may already be enabled, but make sure it is. Go to your ssh shell and type:
+We have to enable *X11 forwarding*. It may already be enabled, but make sure it is. Go to your ssh terminal and type:
 
 ```sudo nano /etc/ssh/sshd_config```
 
@@ -79,7 +79,7 @@ If you use Windows you will need to install a X11 server locally on your windows
 
 Open your PuTTY session and load your settings that you previously saved (to do this, select **Session** in the navigation pane on the left, select your saved session from the list, and click **Load**).
 
-Then, go to "Connection > SSH > X11" in the navigation pane. you need to check **Enable X11 forwarding** and specify the X display location. If you did not change anything in the default configuration of Xming, then set the display location to "localhost:0".
+Then, go to "Connection > SSH > X11" in the navigation pane. You need to check **Enable X11 forwarding** and specify the X display location. If you did not change anything in the default configuration of Xming, then set the display location to "localhost:0".
 
 Otherwise, if you change the Xming configuration using the tool **Programs > Xming > XLaunch**, make sure to set the parameters for the display accordingly.
 
@@ -104,7 +104,7 @@ It is likely the xauth package (first command) already installed, but we are doi
 
 ## Step 4. Run a graphical application
 
-We will now test if this works. Go to your *ssh shell* (or on Windows, the PuTTY terminal) and type:
+We will now test if this works. Go to your *ssh terminal* (or on Windows, the PuTTY terminal) and type:
 
 ```xcalc &```
 
@@ -114,7 +114,7 @@ This should open up a simple calculator application that is installed by default
 *Note*: The & after the command causes the calculator to open up and detach from the terminal. If you skip it, the calculator will open, but you won’t be able to type other commands in the terminal.
 {% endBgBox %}
 
-If this worked, try a larger application, like firefox. Go to your *ssh shell* (or PuTTY on Windows) and type:
+If this worked, try a larger application, like firefox. Go to your *ssh terminal* (or PuTTY on Windows) and type:
 
 ```sudo apt-get install firefox```
 

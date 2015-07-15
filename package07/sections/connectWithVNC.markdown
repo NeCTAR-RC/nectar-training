@@ -113,7 +113,7 @@ One way to get access to our VNC server would be to open up this port in our fir
 
 The safe way to do this is to "tunnel" all our VNC communications through SSH, which then encrypts all communication. The following steps will explain how this is done.
 
-#### Step 1: Set up ssh tunnelling [SSHTunnelling]	
+#### Step 1: Set up ssh tunneling [SSHTunnelling]	
 
 Be sure you have the number (#) you were given in the above *vncserver* command. We will use this number to determine the **Destination Port**. Use your number and *add it* to 5900. For example, if your  number is 1, then **5901** will be you destination port.
 
@@ -134,7 +134,7 @@ The **-f -N** options in the above command cause the tunnel to run in the backgr
 
 ```ps aux | grep ssh```
 
-In the printed result, find your ssh tunnelling command and note the number on the left, which is displayed after your user name. One line of output for example looks like this:
+In the printed result, find your ssh tunneling command and note the number on the left, which is displayed after your user name. One line of output for example looks like this:
 
 ubuntu &nbsp; 52577 &nbsp;    0.0  &nbsp;  0.2  &nbsp;  2512756  &nbsp;  17076 ...
 
@@ -156,7 +156,7 @@ If you *don't* use the **-N -f** options, you will be logged into an ssh termina
     **Destination:** localhost:5901    
     Then, click the **Add** button. Your tunnel will now appear in the list, similar to the figure here.
 
-3. You can save the tunnelling along with your session by selecting **Session** in the left pane. Click on your session name in the **Saved Sessions** pane, then click **Save** (or create a new name instead by typing in a new name, e.g. called "*TunneledNectarSession*"). 
+3. You can save the tunneling along with your session by selecting **Session** in the left pane. Click on your session name in the **Saved Sessions** pane, then click **Save** (or create a new name instead by typing in a new name, e.g. called "*TunneledNectarSession*"). 
 
 4. Now you can click **Open** to start the SSH terminal. The tunnel will now be active as long as the PuTTY terminal window stays open. You can use this SSH terminal as a shell into the instance as well (as we have been doing the whole time), while simultaneously having your remote desktop open.
 
@@ -367,7 +367,7 @@ Of course, you won’t have to do all the above steps every day when you want to
 TODO: Create links within the document to refer to the steps
 {% endcol %}
 
-1. Start the ssh tunnel, as described above (Step 1: Set up ssh tunnelling). On Windows, if you are using PuTTY, you may have created a saved session which you can start easily.
+1. Start the ssh tunnel, as described above (Step 1: Set up ssh tunneling). On Windows, if you are using PuTTY, you may have created a saved session which you can start easily.
 
 2. Open your VNC client and connect, as described in (Step 3: Connect to the VNC server)
 
@@ -379,7 +379,7 @@ Now, do the above steps 1. and 2. above to get back to your remote desktop.
 
 *Troubleshooting on Windows/Putty:*
 
-If you are Windows and PuTTY, check whether you have properly saved your session last time. When you click on your session and then click "**Load**", you can check whether all the settings we have configured earlier ("Connect to the instance", and "Step 1: Set up ssh tunnelling") are still there. If you do not have all the details saved, change them now and save your session again (click on **Session** in the navigation panel on the left, select your session in the *Sessions* pane, and click *Save*).    
+If you are Windows and PuTTY, check whether you have properly saved your session last time. When you click on your session and then click "**Load**", you can check whether all the settings we have configured earlier ("Connect to the instance", and "Step 1: Set up ssh tunneling") are still there. If you do not have all the details saved, change them now and save your session again (click on **Session** in the navigation panel on the left, select your session in the *Sessions* pane, and click *Save*).    
 Then, try again. 
 
 ### Resources

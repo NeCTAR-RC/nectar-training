@@ -44,7 +44,7 @@ Some wide-spread protocols include:
 
 * RDP (Remote Desktop Protocol)
     * Originally developed by Microsoft to connect to Windows machines.
-    * The protocol is **not very secure**, therefore setting up *"tunnelling"* through a secure connection is required.
+    * The protocol is **not very secure**, therefore setting up *"tunneling"* through a secure connection is required.
 * NX
     * NX compresses the data to minimize the amount of information transmitted. NX also caches data to make the session as responsive as possible. For example the first time a menu is opened it may take a few seconds, but on each subsequent opening the menu will appear almost instantly. Therefore, NX allows **fast speed** even with slow internet connections.
     * NX uses the SSH protocol to send its data and is therefore **secure**.

@@ -96,7 +96,7 @@ The image above shows two connected computers: Your local computer and your inst
 
 **SSH Tunnelling**
 
-If you have an application which is not designed for a secure connection by default (e.g. the VNC servers we will set up in [Module 7][ModDoc7]), you can still make the connection secure through the use of *ssh tunnelling*. As the name suggests, this technique also uses the ssh protocol and operates through the ssh client and server applications communicating via Port 22. The nice thing about SSH tunnels is that they are encrypted. Nobody is going to see what sites you’re visiting, they’ll only see an SSH connection to your server.
+If you have an application which is not designed for a secure connection by default (e.g. the VNC servers we will set up in [Module 7][ModDoc7]), you can still make the connection secure through the use of *ssh tunneling*. As the name suggests, this technique also uses the ssh protocol and operates through the ssh client and server applications communicating via Port 22. The nice thing about SSH tunnels is that they are encrypted. Nobody is going to see what sites you’re visiting, they’ll only see an SSH connection to your server.
 
 {% BgBox important %}
 Whenever you want to run an application which does not have secure connections in-built, ensure security by setting up an ssh tunnel.
@@ -157,7 +157,7 @@ In summary, things to watch out for to mitigate risks:
 
 * Use secure passphrases.
 * Carefully configure the firewall.
-* Always use secure methods of access (e.g. ssh logon terminals or ssh tunnelling).
+* Always use secure methods of access (e.g. ssh logon terminals or ssh tunneling).
 * Limit access only to trusted users.
 * Know your virtual machine and keep things tidy.
 * Encrypt your data.

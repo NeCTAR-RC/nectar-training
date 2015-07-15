@@ -7,7 +7,7 @@ part: Documentation
 
 {% BgBox prerequisite %}
 *Prerequisite:* You should know what types of storage are available on the NeCTAR cloud. This was discussed in [Module 6](/package06/sections/storage.html).
-You should also be familiar with connecting to your instance via an ssh shell, as described in [an earlier section](connectViaSSH.html).
+You should also be familiar with connecting to your instance via an ssh terminal, as described in [an earlier section](connectViaSSH.html).
 {% endBgBox %}
 
 In this section, we will go through the steps to set up various types of storage on our instance.

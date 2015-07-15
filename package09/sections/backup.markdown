@@ -66,7 +66,7 @@ Rsync can also **compress and encrypt data streams** during the backup process, 
 RSync is a **good choice for you if:** 
 
 * you want to create a backup of the *most recent state* of your volume or secondary ephemeral drive 
-* and save the backup on your local computer, or another computer onto which you can log on to a terminal (e.g. via a ssh shell).
+* and save the backup on your local computer, or another computer onto which you can log on to a terminal (e.g. via a ssh terminal).
 
 
 RSync is great in that it does incremental per-file copies, so it makes it easy for you to access (and even edit) your files offline, and keep the most recent state of your data synchronized between your computer and the NeCTAR storage.

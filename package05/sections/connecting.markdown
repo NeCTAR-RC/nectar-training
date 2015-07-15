@@ -29,7 +29,9 @@ You may access the Research Cloud from any account associated with the Australia
 
 * You, and anyone else you allow access to the virtual machines, can then log in to them and use them just like regular servers.
 
-* Cloud VMs can be accessed using a *remote desktop* so they can be used just like they are a desktop machine. In [Module 7][ModDoc7] we will take a closer look at how to connect via an ssh terminal, and to a remote desktop. 
+* Cloud VMs can be accessed using either the *command line terminal*, or a *remote desktop*. In the latter case, they can be used almost like a regular desktop computer. In [Module 7][ModDoc7] we will take a closer look at how to connect via an *ssh terminal*, and to a *remote desktop*. 
+
+{% img src=images/scrTerminalOnRemoteDesktop.png, w=60, dim=percent, align=center %}
 
 ### Select an Image and launch an instance
 

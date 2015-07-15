@@ -92,7 +92,7 @@ click on "*Soft Reboot Instance*" (a *soft reboot* is what we know as a reboot. 
 
 **Step 2. Re-connect ssh client.**
 
-Your ssh session, or the PuTTY session if you are on Windows, will have disconnected now, so you have to re-connect. On **Windows** PuTTY, you should have your login session still saved so you just need to load these settings up. On **Mac and Linux**, simply re-run the ssh command (*Tipp:* you can browse the command line history with the "up/down" arrow keys in your ssh shell. Your ssh command should be in there so you don't have to type it again).
+Your ssh session, or the PuTTY session if you are on Windows, will have disconnected now, so you have to re-connect. On **Windows** PuTTY, you should have your login session still saved so you just need to load these settings up. On **Mac and Linux**, simply re-run the ssh command (*Tipp:* you can browse the command line history with the "up/down" arrow keys in your ssh terminal. Your ssh command should be in there so you don't have to type it again).
 
 ### Tipp for Unix/Mac
 
