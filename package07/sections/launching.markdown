@@ -51,7 +51,7 @@ Choose the name of your instance and the "*flavor*". Different flavors allocate 
 You could launch several instances of the same flavor, but for now we will launch only 1, so leave "**Instance Count**" at **1**. Leave "**Instance Boot Source**" on "**Boot from Image**". Choose the most recent version of  “NeCTAR Ubuntu”  from the "**Image name**" list.
 
 {% BgBox important %}
-**_NOTE:_** At the time of writing the image "*NeCTAR Ubuntu 14.10 (Utopic) amd64*" was used. If you choose a version much newer than this, there may be some differences to the descriptions given in this tutorial. In general, a newer version should work fine with the exercises below. You may see different wordings of the output you receive from the command line. 
+**_NOTE:_** At the time of writing the image "*NeCTAR Ubuntu 14.10 (Utopic) amd64*" was used. If you choose a version much newer than this, there may be some differences to the descriptions given in this tutorial. In general, a newer version should work fine with the exercises below, you may only see different text (phrasing) in the terminals command line output. 
 {% endBgBox %}
 
 Don’t click "Launch" just yet... we have to set the security settings first!

@@ -22,7 +22,7 @@
 - name: Running several desktop environments
   file: runSeveralDesktopEnvs.html
   level: 2
-- name: Graphical Interfaces via ssh 
+- name: Graphical Interfaces on the ssh terminal 
   file: guiViaSSH.html
 - name: Install a web server
   file: enableWebServer.html

@@ -6,6 +6,9 @@ part: Documentation
 
 First, we will need to create a **ssh key pair** for connecting to our instances. An ssh key pair is required to encrypt the data which is transferred to communicate with the instance. The pair consists of two keys: A *private* key, and a *public* key.  The public key is called "public" because that’s the one which is placed on the server and which you may upload online without worrying about security issues. It is useless without its counterpart, the *private* key. The private key is the secret key which you keep on your local computer so that you may connect to the instance. You should keep the private key very safe and never share it with anyone. Take care not to lose it, otherwise you won’t be able to connect to your machine. The connection to the machine only works with both keys.
 
+{% img src=images/sshKeys.png, w=70, dim=percent, align=center %}
+The image above shows two computers connected through their *ports*, with an ssh server and client encrypting the connection. Applications can use this secure ssh connection to exchange data. 
+
 We will first have to generate this key pair before we can proceed with launching an instance.
 
 The ssh keys will have a *name*. You should choose a name that you can associate with your instance, for example "*Nectar_Key"*. As a general rule of thumb, file names should consist of alphanumeric characters and underscores ( _ ) only. You should avoid white spaces. They makes working with files on Unix systems a bit clumsy.
@@ -50,27 +53,28 @@ If you are using another desktop environment we assume you are familiar with you
 
 ### Windows
 
+Open the **PuTTYgen** program by clicking on *PuTTYgen.exe* which you downloaded in the beginning of this tutorial.
 
-Download the file *PuTTYgen.exe* and the file *Putty.exe* from the following link:
+{% img src=images/scrPuttyGen1.png, w=350, align=right, css=margin-left:20px; %}
 
-[http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
-
-*Note:* You will need the *PuTTY ssh shell* (file *PuTTY.exe*) in the next section, but let’s download it already while we are at it.
-
-{% img src=images/scrPuttyGen.png, w=350, align=right, css=margin-left:20px; %}
-
-1. Open the **PuTTYgen** program by clicking on *PuTTYgen.exe.*
+1. Click on **Generate**. 
 
 2. For **Type of key to generate**, select **SSH-2 RSA**.
 
-3. Click the **Generate** button.
+3. Move your mouse in the area below the progress bar. When the progress bar is full, PuTTYgen generates your key pair.
 
-4. Move your mouse in the area below the progress bar. When the progress bar is full, PuTTYgen generates your key pair.
+<p style="clear:both"></p>
 
-5. Type a passphrase in the **Key passphrase** field. Choose a secure passphrase! Type the same passphrase in the **Confirm passphrase** field.
+{% img src=images/scrPuttyGen2.png, w=350, align=right, css=margin-left:20px; %}
 
-6. Click the **Save private key** button to save the private key. It is important that you save the key, because you will need the file later. So save it in a folder where you can find it again. In the following, we will assume you named your file *Nectar_Key*. Save your public key as well (click the **Save public key** button). As a file name, type *Nectar_Key.pub*.
+1. Type a passphrase in the **Key passphrase** field. Choose a secure passphrase! Type the same passphrase in the **Confirm passphrase** field.
 
-7. Right-click in the text field "**Public key for pasting into OpenSSH authorized_keys file**" and choose **Select All**. Right-click again in the same text field and choose **Copy**. This copies the content onto the clipboard, we will need to paste it somewhere else in one of the next steps.
+2. Right-click in the text field "**Public key for pasting into OpenSSH authorized_keys file**" and choose **Select All**. Right-click again in the same text field and choose **Copy**. This copies the content onto the clipboard, we will need to paste it somewhere else in one of the next steps.
+
+3. Click the **Save private key** button to save the private key. It is important that you save the key, because you will need the file later. So save it in a folder where you can find it again. In this exercise, we will name the file *Nectar_Key.ppk*. 
+
+4. Save your public key as well by clicking the **Save public key** button. As a file name, type *Nectar_Key.pub.txt*.
+
+
 
 

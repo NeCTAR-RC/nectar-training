@@ -17,7 +17,7 @@ In this tutorial, we will use the VNC Server called  *vnc4server* on our instanc
 
 #### Step 1. Install VNC server
 
-To install the server, type into your *ssh shell*:
+To install the server, type into your *ssh terminal*:
 
 ```sudo apt-get install vnc4server```
 
@@ -31,7 +31,7 @@ We will now have to edit a file in order to start up the right desktop environme
 The following instructions have been tested for **Ubuntu 14.04 and 14.10**. If you have another Ubuntu version on your instance, you may have to look online if the following instructions don't work. Some more information is given at [this link](http://www.havetheknowhow.com/Configure-the-server/Install-VNC.html).
 {% endBgBox %}
 
-First, we have to start up the vnc server once, in order to create a password and generate the configuration file. In your *ssh shell*, type:
+First, we have to start up the vnc server once, in order to create a password and generate the configuration file. In your *ssh terminal*, type:
 
 ```vncserver```
 
@@ -92,7 +92,7 @@ The result of the command will display a line similar to the following.
 
 where *hostname* and *username* are replaced by your instances values, and a number is displayed instead of the hash **#**. Take note of this **number following the colon (:).** This will be part of the **port number** you will need in the SSH tunnel setup, which we will do in the next step. This will also be the number you will need to use to eventually terminate the server when you are finished using it (if you want to shut it down at all).
 
-If you want to shut down the VNC server, type into your *ssh shell* (use the number you have taken note of instead of the #):
+If you want to shut down the VNC server, type into your *ssh terminal* (use the number you have taken note of instead of the #):
 
 ```vncserver -kill :#```
 
@@ -142,7 +142,7 @@ In this example, *52577* is the *process number*
 
 ```kill <the-ssh-tunnel-process-number>```
 
-If you *don't* use the **-N -f** options, you will be logged into an ssh shell to your instance, and can use it as usual to type commands on your instance. If you type *logout* or close the terminal, the ssh tunnel will close as well.
+If you *don't* use the **-N -f** options, you will be logged into an ssh terminal to your instance, and can use it as usual to type commands on your instance. If you type *logout* or close the terminal, the ssh tunnel will close as well.
 
 {% endBgBox %}
 
@@ -299,7 +299,7 @@ Make sure your ssh tunnel is open and you have set the right port numbers. On Wi
 
 With the current settings, you will have to manually re-start the Vnc server on your instance every time after you reboot the instance. We can automate this to save you this work, and start up the Vnc server automatically.
 
-The easiest way is to add an execution command in a file. Log into your instance (via ssh shell) and follow these instructions:
+The easiest way is to add an execution command in a file. Log into your instance (via ssh terminal) and follow these instructions:
 
 1. Verify the location of your VNC program by typing:    
     ```which vncserver```   

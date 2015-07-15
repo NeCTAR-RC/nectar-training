@@ -8,7 +8,7 @@ If you want to run a single graphical application, you can also do this without 
 
 **The advantage** is that you don't need to set up a remote desktop server on your instance and install a client on your local machine. 
 
-**The downsides** are (1) it introduces some **security issues**, which will not be discussed in detail here, and are usually not a big worry (see security note below for a few details). And (2), this is (perhaps surprisingly) **a lot slower **than a remote desktop solution. This is because of the way the communication is encoded. 
+**The downsides** are (1) it introduces some **security issues**, which will not be discussed in detail here, and are usually not a big worry (see security note below for a few details). And (2), this is (perhaps surprisingly) **a lot slower** than a remote desktop solution. This is because of the way the communication is encoded. 
 
 *Note*: This techniqe allows no desktop sharing, just remote application running (However you could use [XNest](http://en.wikipedia.org/wiki/Xnest), not discussed further at this point).
 
@@ -37,7 +37,7 @@ Scroll down until you find the line
 X11Forwarding yes
 {% endBgBox %}
 
-(it may be a *no *instead of the *yes*). If this line starts with a #, remove the #. Make sure it is set to *yes*. If you cannot find the line, add it at the end of the file, just as it is shown above.
+(it may be a *no* instead of the *yes*). If this line starts with a #, remove the #. Make sure it is set to *yes*. If you cannot find the line, add it at the end of the file, just as it is shown above.
 
 Scroll further to find the following line: 
 
@@ -79,7 +79,7 @@ If you use Windows you will need to install a X11 server locally on your windows
 
 Open your PuTTY session and load your settings that you previously saved (to do this, select **Session** in the navigation pane on the left, select your saved session from the list, and click **Load**).
 
-Then, go to "Connection > SSH > X11" in the navigation pane. you need to check **Enable X11 forwarding **and specify the X display location. If you did not change anything in the default configuration of Xming, then set the display location to "localhost:0".
+Then, go to "Connection > SSH > X11" in the navigation pane. you need to check **Enable X11 forwarding** and specify the X display location. If you did not change anything in the default configuration of Xming, then set the display location to "localhost:0".
 
 Otherwise, if you change the Xming configuration using the tool **Programs > Xming > XLaunch**, make sure to set the parameters for the display accordingly.
 
@@ -90,7 +90,9 @@ Otherwise, if you change the Xming configuration using the tool **Programs > Xmi
 
 Your instance still needs a concept of graphical interfaces, so we need to install it. 
 
-*NOTE:* If you already have previously installed a desktop environment (e.g. LXDE, Gnome, KDE, XFCE) as we have done in [an earlier section](installDesktopEnvironment.html), then you can **skip this step**, because the windowing system is already installed.
+{% BgBox info %}
+If you already have previously installed a desktop environment (e.g. LXDE, Gnome, KDE, XFCE) as we have done in [an earlier section](installDesktopEnvironment.html), then you can **skip this step**, because the windowing system is already installed.
+{% endBgBox %}
 
 To install the very basic windowing system, go to your ssh session into your instance and type:
 

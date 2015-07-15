@@ -14,7 +14,10 @@ To get a secure connection, we need to log on to the instance via ssh.
 
 #### Step 1: Test connectivity
 
-First, let’s do a little test to see if your instance is reachable. On Linux/Mac, you can use the command line shell that you have just opened.  On Windows, you can open the command line by going to the search field (on "Start" or on Windows 8 in the "App search" field) and type in “*cmd*”. This opens a command line shell similar to the one on Linux.From within your command line shell, type 
+First, let’s do a little test to see if your instance is reachable. On Linux/Mac, you can use the command line shell that you have just opened.  
+On Windows, open your *Windows command line*.
+
+Use the terminal to try to *"ping"* your instance (checking that you can reach it):
 
 ```ping NNN.NNN.NNN.NNN```
 

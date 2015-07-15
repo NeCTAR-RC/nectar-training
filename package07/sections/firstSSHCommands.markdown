@@ -71,11 +71,11 @@ and hit enter to confirm the command. Write a little story or anything you are j
 
 ```ls```
 
-and hit enter to confirm the command. You will see the list of files that are there. The list should contain a file "*MyFile.txt*". Open this file again by typing 
+and hit enter to confirm the command. You will see the list of files that are there. The list should contain a file "*MyFile.txt*". You may print the contents of the text file onto the terminal by typing:
 
-```nano MyFile.txt```
+```cat MyFile.txt```
 
-and you should be able to read your message again. Exit again with **Ctrl+X**.
+and you should be able to read your message in the terminal. Exit again with **Ctrl+X**.
 
 
 ## Restarting your instance

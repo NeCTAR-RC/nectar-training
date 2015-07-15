@@ -9,33 +9,47 @@ In this module we are going to learn how to launch an instance and how to connec
 ### General notes
 
 
-**What is an instance?**
+**What is an "instance"?**
 
-In Module 5 we have already discussed in more detail what an instance is, but let’s do a little recap at this point. Instances running inside the Research Cloud are just like real-life computers, except that they run remotely, in the "cloud". Here and when learning about them on the web, you will often find them referred to as "instances".
+In Module 5 we have already discussed in more detail what an instance is, but let’s do a little recap at this point. 
+In the NeCTAR Research Cloud, an instance is a virtual machine.
+Instances running inside the Research Cloud are just like real-life computers, except that they run remotely, "in the Cloud". Here and when learning about them on the web, you will often find them referred to as "instances". 
 
-**My instance vs. my local computer**
+**Instance _vs_ "local computer"**
 
 In this document we will often talk about the "local computer" as opposed to the “instance”. The local computer is the one you are probably sitting in front of right now: It is your home or office computer that you use to connect to the instance. The instance is your virtual machine that is running in the NeCTAR cloud.
 
-You may be familiar with connecting to remote computers already. Most likely you may have connected to a remote desktop. The same tools and techniques apply when connecting to running instances. Your instance has a public IP address and can be reached and controlled with any remote access tools you wish to use, after you have set it up for remote access. For example, you can use an SSH terminal, or alternatively connect to your remote desktop. 
+You may be familiar with connecting to remote computers already. You may have connected to a remote desktop, or used a command line. The same tools and techniques apply when connecting to running instances. Your instance has a public IP address and can be reached and controlled with any remote access tools you wish to use, after you have set it up for remote access. For example, you can use an SSH terminal, or alternatively connect to your remote desktop. 
 
 In this module we will create and launch an instance (a virtual machine, short: VM) and go through the two options on how you can connect to your instance (terminal and remote desktop). 
 
 **Use of Terminals**
 
-Throughout the exercises, we will use a Terminal to type in commands. On Windows, we will need to download a tool called "PuTTY" for this, which we will do in an exercise below.
+Throughout the exercises, we will use a Terminal to type commands. To prepare, make sure you know how to open your Terminal by following instructions below for your Operating System. 
 
-On Mac and Linux, there are built-in terminals available. You can access them as follows:
 
-On **Linux** Systems, depending on your desktop environment, opening a terminal is usually achieved by clicking on the terminal symbol, or by right click on the desktop and select "*Open Terminal*". 
+On **Windows**, you will use two terminals:
 
-On a **Mac**, you can open a terminal as follows: 
+* The **PuTTY** terminal to connect to and type commands for the instance. You will need to download PuTTY:
+You will need the files *PuTTYgen.exe* and the file *Putty.exe* from the
+[official PuTTY website](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
+This Terminal will be referred to as the **"ssh terminal"**.
 
-1. Bring up "Spotlight Search" by holding down the "Command" and Spacebar" keys simultaneously.
+* The **Windows command line** on your computer.  You can open it by typing "cmd" into the search field (on Windows < 8 on "Start"; on Windows 8 in the "App search" field). 
+This Terminal will be referred to as your **"local Terminal"**.
+ 
 
-2. In the search box that appears, type "Terminal" and press the Return key.
+On **Mac and Linux**, there are built-in terminals available. You can access them as follows:
 
-Alternatively, in the *Finder*, go to *Applications > Utilities* and you will find the Terminal app there.
+* On **Linux** Systems, depending on your desktop environment, opening a terminal is usually achieved by clicking on the terminal symbol, or by right click on the desktop and select "*Open Terminal*". 
+
+* On a **Mac**, you can open a terminal as follows: 
+
+    1. Bring up "Spotlight Search" by holding down the "Command" and Spacebar" keys simultaneously.
+
+    2. In the search box that appears, type "Terminal" and press the Return key.
+
+    Alternatively, in the *Finder*, go to *Applications > Utilities* and you will find the Terminal app there.
 
 
 {% include /disclaimer.markdown %}

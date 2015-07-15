@@ -18,7 +18,7 @@ Some remote desktop solutions allow only one user to see the desktop at the same
 
 To connect to a remote desktop, the remote machine (your instance) has to have a **remote desktop server** installed and running. On your home or office computer, you have to install a **remote desktop client** (sometimes called *"viewer"*) which connects to the remote desktop server on your instance. The client then displays the desktop of your remote machine. It is like a "window" into your instances desktop; The desktop environment itself is running on the instance.
 
-### Terminals on remote desktop *vs* SSH shell terminal
+### Terminals on remote desktop *vs* SSH terminal
 
 We have previously connected to the instance with via a *ssh terminal*. When we get a window into the desktop of our instance, we can open a terminal on the desktop as well. 
 
@@ -28,10 +28,10 @@ The image below shows both (1) a ssh terminal (left) and (2) a desktop with an o
 
 So what is the difference between the two terminals? When you type **commands** in either of them, it **will have the same effect**. They are both terminals that you can use to control your instance. However, the difference is that 
 
-1. is set up through a secure ssh communication line with your instance. If we use a ssh terminal, **only text** is being transferred (the commands you type and the responses you get). This is very fast, but you cannot run graphical applications, because you can only communicate with the instance via text.    
+1. The ssh terminal is set up through a secure ssh communication line with your instance. If we use a ssh terminal, **only text** is being transferred (the commands you type and the responses you get). This is very fast, but you cannot run graphical applications, because you can only communicate with the instance via text.    
 *Note*: it actually is possible to run graphical applications via the terminal as well, with some disadvantages. This is discussed [later in this module](guiViaSSH.html), but this is very slow and usually not recommended. 
 
-2. is connected securely as well (at least the way we will set it up in this tutorial). But instead, the communication includes graphical data and events (e.g your mouse clicks, and the windows displayed). This is slower than using the terminal only, but you may find it is still fast enough to work with. You can run graphical applications and use the OS menu to find programs and change settings, which may be easier for many of us.
+2. The terminal on the remote desktop is connected securely as well (at least the way we will set it up in this tutorial). But instead, the communication includes graphical data and events (e.g your mouse clicks, and the windows displayed). This is slower than using the terminal only, but you may find it is still fast enough to work with. You can run graphical applications and use the OS menu to find programs and change settings, which may be easier for many of us.
 
 ### Remote desktop protocols
 
