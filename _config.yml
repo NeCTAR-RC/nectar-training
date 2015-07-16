@@ -19,7 +19,7 @@ defaults:
       title: "Template Training Package"
       number: "N"
       contentspath: "/packageN/"
-      docpath: "/packageN/sections/intro.html"
+      docpath: "/packageN/sections/index.html"
   -
     scope:
       path: "package01"
@@ -27,7 +27,7 @@ defaults:
       title: "Overview of cloud computing and the NeCTAR services"
       number: "1"
       contentspath: "/package01/"
-      docpath: "/package01/sections/intro.html"
+      docpath: "/package01/sections/index.html"
   -
     scope:
       path: "package02"
@@ -35,7 +35,7 @@ defaults:
       title: "Virtual Laboratories and eResearch Tools"
       number: "2"
       contentspath: "/package02/"
-      docpath: "/package02/sections/intro.html"
+      docpath: "/package02/sections/index.html"
   -
     scope:
       path: "package03"
@@ -43,7 +43,7 @@ defaults:
       title: "Use Cases"
       number: "3"
       contentspath: "/package03/"
-      docpath: "/package03/sections/intro.html"
+      docpath: "/package03/sections/index.html"
   -
     scope:
       path: "package04"
@@ -51,7 +51,7 @@ defaults:
       title: "From PC to Cloud or HPC"
       number: "4"
       contentspath: "/package04/"
-      docpath: "/package04/sections/intro.html"
+      docpath: "/package04/sections/index.html"
   -
     scope:
       path: "package05"
@@ -59,7 +59,7 @@ defaults:
       title: "The Research Cloud lifecycle"
       number: "5"
       contentspath: "/package05/"
-      docpath: "/package05/sections/intro.html"
+      docpath: "/package05/sections/index.html"
   -
     scope:
       path: "package06"
@@ -67,7 +67,7 @@ defaults:
       title: "Resource requirements for computing and storage"
       number: "6"
       contentspath: "/package06/"
-      docpath: "/package06/sections/intro.html"
+      docpath: "/package06/sections/index.html"
   -
     scope:
       path: "package07"
@@ -75,7 +75,7 @@ defaults:
       title: "Launching and Connecting"
       number: "7"
       contentspath: "/package07/"
-      docpath: "/package07/sections/intro.html"
+      docpath: "/package07/sections/index.html"
   -
     scope:
       path: "package08"
@@ -83,7 +83,7 @@ defaults:
       title: "Security"
       number: "8"
       contentspath: "/package08/"
-      docpath: "/package08/sections/intro.html"
+      docpath: "/package08/sections/index.html"
   -
     scope:
       path: "package09"
@@ -91,7 +91,7 @@ defaults:
       title: "Backing up and packing up"
       number: "9"
       contentspath: "/package09/"
-      docpath: "/package09/sections/intro.html"
+      docpath: "/package09/sections/index.html"
 
   -
     scope:
@@ -100,7 +100,7 @@ defaults:
       title: "Beyond the Dashboard"
       number: "10"
       contentspath: "/package10/"
-      docpath: "/package10/sections/intro.html"
+      docpath: "/package10/sections/index.html"
 
 
 

@@ -38,11 +38,11 @@ You will not need your OpenStack RC file in this Module, but you *will* need it 
 
 We will upload some files to our Object Store using the Dashboard. This is probably the easiest method to upload files.
 
-#### Step 1: Create a container
-
 First, select any file on your computer --- some image, text file, or anything not so important. If you are unsure which to choose, just create a new text file, write something in it, and save it to the Desktop (or anywhere else where you can find it.
 
 In this example, we are using a file called *SampleObject.txt* with the text "I am a sample object file" in it, saved on the Desktop. 
+
+#### Step 1: Create a container
 
 Go to the [Dashboard][Dashboard] and then to *Object Store > Containers*. You will get to a page which shows the overwiew of your containers.
 
@@ -69,7 +69,7 @@ Click on **Upload Object** on the right side of your container overview. A windo
 
 {% img src=images/scrDashboardObjectStore4.png, w=70, dim=percent, align=center %}
 
-You may also rename it in the given text field if you wish, for now we are going to keep the name *SampleFile.txt*.
+You may also rename it in the given text field if you wish, for now we are going to keep the name *SampleObject.txt*.
 
 Click **Upload Object** to close the window and upload the file to your object store. It will now be displayed on the right side of the overview. We can see that it has 27 Bytes. 
 

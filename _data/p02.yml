@@ -1,5 +1,5 @@
 - name: Introduction
-  file: intro.html
+  file: index.html
 
 - name: Virtual Laboratories
   file: vlabs.html

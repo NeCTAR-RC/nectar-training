@@ -61,17 +61,13 @@ A window will open in which you can select your instance. If you don’t see any
 
 {% img src=images/scrDashboardVolume4.png, w=80, dim=percent, align=center %}
 
-Select your instance and click **Attach Volume**. The status of your instance will switch to *"Attaching"*, and when it has been attached successfully, it should display *"In-Use"*. You should also see the Server and Device that the volume is attached to. In the example below, it is attached to *TestIntersect01* and to the device */dev/vdb*. 
-
-{% col 255,0,0 %}
-TODO: Redo the screenshots with other name (not TestIntersect01) and without the pending volumes
-{% endcol %}
+Select your instance and click **Attach Volume**. The status of your instance will switch to *"Attaching"*, and when it has been attached successfully, it should display *"In-Use"*. You should also see the Server and Device that the volume is attached to. In the example below, it is attached to *MyFirstInstance* and to the device */dev/vdc*. 
 
 {% img src=images/scrDashboardVolume5.png, w=80, dim=percent, align=center %}
 
 In order to detach the volume again, you would go to the drop-down next to your volume again and select **Edit attachments**. A window opens in which you may detach the volume again. Your data won’t be lost, it will only be detached from the particular instance. You can re-attach it later again to any instance.
 
-{% img src=images/scrDashboardVolume6.png, w=80, dim=percent, align=center %}
+{% img src=images/scrDashboardVolume6.png, w=60, dim=percent, align=center %}
 
 ### Step 3: Preparing your volume for use.
 

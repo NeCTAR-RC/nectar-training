@@ -1,5 +1,5 @@
 - name: Introduction
-  file: intro.html
+  file: index.html
 - name: Snapshots
   file: snapshot.html
 - name: Backing up

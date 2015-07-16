@@ -14,7 +14,7 @@ In this section, we will go through the steps to set up various types of storage
 
 A brief recap of the available storage types:
 
-* **Object storage**: These are single files which you can upload on the server and which you can access from anywhere via a simple web interface.
+* **Object storage**: These are single files which you can upload on the server and which you can access from anywhere via a simple web interface or a suitable client application (of which this section will introduce a few).
 
 * **Volume Storage** (also called *Block Storage*) and **Ephemeral Storage** (also called *On-Instance storage*) are directly attached to your instance.
 

@@ -1,5 +1,5 @@
 - name: Introduction
-  file: intro.html
+  file: index.html
 - name: Connecting and maintaining
   file: connecting.html
 - name: Mitigating risks

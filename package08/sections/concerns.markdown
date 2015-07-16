@@ -132,15 +132,12 @@ For more information, refer to the [OpenStack security guide](OpenStackSecurityG
 
 Regular patching of the Hypervisor is important to refresh security. Also, appropriate security policies have to be applied. The NeCTAR cloud administration team is aware of the high security demands of Australia’s researchers and regularly updates the systems and applies a strict security policy to ensure maximum safety.
 {% col 255,0,0 %}
-TODO: Ask how to call the team if IT experts managing the cloud.
+TODO: Ask with which name to refer to the team of IT experts managing the cloud at NeCTAR.
 {% endcol %}
 
 In addition to the efforts the security team at NeCTAR are making, part of the security is also **your responsibility**, because not only the Hypervisor, but also your VM has to be secure (for example, to help prevent a *VM Escape* attack). 
 
- * Since it is easy to restore an infected VM,  many users do not go through the effort to secure them with an Anti Virus Protection. Linux, Unix and other Unix-like computer operating systems are generally regarded as very well-protected against computer viruses, but they are not immune. So better safe than sorry: **Install an Anti Virus Protection**.
-{% col 255,0,0 %}
-TODO: Recommend Anti-Virus for Linux! Maybe show the apt-get command to install it.
-{% endcol %}
+ * Since it is easy to restore an infected VM,  many users do not go through the effort to secure them with an Anti Virus Protection. Linux, Unix and other Unix-like computer operating systems are generally regarded as very well-protected against computer viruses, but they are not immune. So better safe than sorry: **Install an Anti Virus Protection**. On your Linux instance, you may install the popular [AVG Anti-Virus Software](www.avg.com), see for example [this Ubuntu help page](https://help.ubuntu.com/community/Antivirus/Avg) which includes instructions. See also [this page on ubuntu.com](https://help.ubuntu.com/community/Antivirus) for a list of AntiVirus software you may install.
 
 * It is also very important that you **regularly update your VM’s operating system** to ensure it has the newest security patches, eg. on Ubuntu this can be done with the command:    
     ```sudo apt-get dist-upgrade```

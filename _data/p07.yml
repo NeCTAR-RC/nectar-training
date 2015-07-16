@@ -1,5 +1,5 @@
 - name: Introduction
-  file: intro.html
+  file: index.html
 - name: Create a ssh key
   file: createSSHKey.html
 - name: Launching an instance

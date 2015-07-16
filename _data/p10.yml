@@ -1,5 +1,5 @@
 - name: Introduction
-  file: intro.html
+  file: index.html
 - name: OpenStack clients
   file: openstackClients.html
 - name: Accessing the object store

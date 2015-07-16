@@ -1,5 +1,5 @@
 - name: Introduction
-  file: intro.html
+  file: index.html
 - name: Security concerns
   file: concerns.html
 - name: Deployment Models

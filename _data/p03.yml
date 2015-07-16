@@ -1,5 +1,5 @@
 - name: Introduction
-  file: intro.html
+  file: index.html
 - name: Case 1 - EPP
   file: epp.html
 - name: Case 2 - Data Sharing

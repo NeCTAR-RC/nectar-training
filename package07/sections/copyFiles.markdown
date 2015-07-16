@@ -4,14 +4,12 @@ part: Documentation
 ---
 {% include /docLinks.markdown %}
 
-You may want to easily access files on your ephemeral or volume storage from your local office computer. There is two ways to do this:
-
+You may want to easily access files on your ephemeral or volume storage from your local office computer. We will discuss two ways to do this:
 
 1. Using a SFTP client
 
 2. On the command line, using a *secure copy*  command
 
-We will discuss both options in the following.
 
 ### Option 1: Using a SFTP client
 
@@ -27,10 +25,10 @@ You may use any FTP client which also supports the secure *SFTP* protocol, which
     ```sudo apt-get install filezilla```    
     Alternatively, you can also find FileZilla in the Ubuntu Software Center.
 
-**Step 2. Add your ssh key to FileZilla**
+**Step 2. Enable ssh agent to handle your private key.**
 
-It is possible to add a key file to the FileZilla client (On *Edit > Settings*, or a Mac, this is *FileZilla > Settings*, and then add the key file on *Connection > SFTP*), and then use the 'Interactive' logon type. However, the ssh key file is converted to an **unprotected** one. This is not recommended.
-
+It is possible to add a key file to the FileZilla client (On *Edit > Settings*, or a Mac, this is *FileZilla > Settings*, and then add the key file on *Connection > SFTP)*, and then use the 'Interactive' logon type. 
+However, when adding the key directly to FileZilla, it is converted to an **unprotected** one. This is not recommended.
 So we will use another method: We will use a **SSH authentication agent**, which holds your private keys in memory, already decoded, so that you can use them without needing to type a passphrase.
 
 - **Windows:**     
