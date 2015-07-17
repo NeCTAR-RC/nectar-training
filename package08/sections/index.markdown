@@ -4,6 +4,7 @@ part: Documentation
 ---
 {% include /docLinks.markdown %}
 
+
 This module provides an introduction to key security issues, dangers and consequences when running a virtual machine in the cloud. Practical advice for making your machine secure and preventing it from being hacked. An introduction to data encryption including usage of a variety of tools is also given.
 
 Cloud computing has grown exponentially over the last few years. However security concerns are still quite common amongst those who are reluctant to adopt it. Is cloud computing safe? What are the common security concerns, and how justified are they?

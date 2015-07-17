@@ -6,5 +6,11 @@
   file: deployment.html
 - name: File and Volume Encryption
   file: encryption.html
+- name: File encryption
+  file: fileEncryption.html
+  level: 2
+- name: Volume encryption on Ubuntu
+  file: volumeEncryption.html
+  level: 2
 - name: Summary
   file: summary.html

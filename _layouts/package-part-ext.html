@@ -8,6 +8,8 @@ layout: default
     <h1>{{ page.part }}</h1>
   </header>
 
+
+
   <!-- 
     Preprocessing: Determine which part number this is. To avoid having to set numbers 
     manually on each page, determine this here by the file name. 
@@ -135,4 +137,6 @@ layout: default
   {% endif %} <!-- endif for pagedata_avail -->
 
   <p><a href="{{page.contentspath}}">Back to training package contents</a></p>
+  
+  <p>Last updated: {{page.path | file_date}} </p>
 </div>

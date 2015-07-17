@@ -5,7 +5,7 @@ part: Documentation
 {% include /docLinks.markdown %}
 
 
-The widely spread perception is that cloud computing poses a whole lot of new risks. What is often overlooked however, is that security can improve with cloud computing: Security is often as good as or better than in traditional systems, because the provider’s data center is maintained by a team of experts which are looking after the data center security around the clock. Cloud providers are able to devote their resources to solving security issues that many of their customers could not afford --- and evidently it is the provider’s top priority to keep their data center safe, or they would lose their reputation and their customers. 
+The widely spread perception is that cloud computing poses a whole lot of new risks. But in fact, security can *improve* with cloud computing: Security is often as good as or better than in traditional systems, because the provider’s infrastructure is maintained by a team of experts which are looking after the data center security around the clock. Cloud providers are able to devote their resources to solving security issues that many of their customers could not afford --- and evidently it is the provider’s top priority to keep their data center safe, or they would lose their reputation and their customers. 
 
 More trust is needed in the competence of the administrators of cloud computing data centers in ensuring security with as much competence as any good IT department could do. Unfortunately, 100% security does not exist in IT --- a security breach can happen in any organisation, whether it is a cloud provider, a research organization or a business. It is a matter of trust in which IT department can ensure maximum security best.
 
