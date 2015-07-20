@@ -8,14 +8,14 @@ part: Documentation
 There are several deployment models for a cloud which all imply different levels of security 
 (Source: [NIST definition of cloud computing](http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf)):
 
-* **Private cloud:** Private cloud services are owned by an enterprise or organisation. A Private cloud can be built on existing on-premises computing infrastructure. Private cloud installations are in part motivated by users' desire to retain control over the infrastructure and avoid losing control of information security.
+* **Private cloud:** Private cloud services are owned by an enterprise or organisation. A Private cloud can be built on existing on-premises or off-premises computing infrastructure. Private cloud installations are in part motivated by users' desire to retain control over the infrastructure and avoid losing control of information security.
 
 * **Public cloud:** A public cloud provides computing services that are publicly accessible (with a login, of course) over the Internet.
 
 * **Hybrid cloud:** A Hybrid cloud is a mixed deployment model, employing both private and public infrastructures. A hybrid cloud is mostly used for outsourcing processes and/or data to a public cloud while maintaining sensitive data inside a local private cloud.
 
 * **Community cloud**: Multiple organisations with common concerns, such as security requirements, policy, interests, and/or missions, may share cloud infrastructures across administrative domains to form a community cloud. 
-{% col 255,0,0 %} NeCTAR is a community cloud. (???) {% endcol %}
+{% col 255,0,0 %} TODO: NeCTAR is a community cloud ??? {% endcol %}
 
 The private cloud is owned by a single organization and public clouds are shared on a larger scale.
 

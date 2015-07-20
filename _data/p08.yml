@@ -1,6 +1,6 @@
 - name: Introduction
   file: index.html
-- name: Security concerns
+- name: Security concerns and benefits
   file: concerns.html
 - name: Deployment Models
   file: deployment.html

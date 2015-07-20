@@ -35,9 +35,9 @@ More detailed instructions are given for *GnuPG*, while the description of the o
 
 The [official releases](https://www.gnupg.org/download/) can encrypt 
 
-* files 
+* Files 
 
-* entire volumes
+* Entire volumes
 
 * Disk images
 
@@ -55,7 +55,7 @@ All *GnuPG* tools support multiple encryption types and ciphers.
 
 **GnuPG Quick HowTo**
 
-You will have to generate a *key* before you can use GnuPG. In the process, you need to specify your E-Mail address (because you can use GnuPG for encrypting E-Mails). Choose the one you usually use, but you can also specify any address and change this later.
+You will have to generate a *key pair* before you can use GnuPG. In the process, you need to specify your E-Mail address (because you can use GnuPG for encrypting E-Mails). Choose the one you usually use, but you can also specify any address and change this later.
 
 * Mac OS X:
     {% img src=images/scrGPGCreateKeyMac.png, w=300, dim=px, align=right %} 
@@ -64,7 +64,7 @@ You will have to generate a *key* before you can use GnuPG. In the process, you 
     * Click on "New" to generate a new key and specify your name, E-Mail and passphrase.i
     * Hit "Generate". Your new key will be listed in *GPG Keychain* after it has been created.
 * Windows:
-    * Download and install the graphical interface to GnuPG *"GpGForWin"* from [www.gpg4win.org](www.gpg4win.org). Make sure *Kleopatra* and *GpgEx* are checked.
+    * Download and install the graphical interface to GnuPG *"GpGForWin"* from [www.gpg4win.org](www.gpg4win.org). Make sure *Kleopatra* is checked.
     * Open the *Kleopatra* application which you may find with the app search field or via *Start > Gpg4win > Kleopatra*.
     * Go to *File > New Certificate* and select to create a *personal OpenPGP key pair*. 
 * Linux:
@@ -117,7 +117,7 @@ To **decrypt** a file, you need to have the *private* key of the intended recipi
     * You will be asked for the passphrase.
     * You can find the decrypted file in the same folder; the name may have been extended with a number in order to prevent overwriting the original file.
 * Windows: 
-    * You may decrypt by right clicking on the file and selecting *Services > Decrypt and verify*. 
+    * You may decrypt by right clicking on the file and selecting *Decrypt and verify*. 
     * You will be asked for the passphrase.
     * *Note:* it is best if you change the *output folder* in order to prevent the original file to be overwritten.
     * You can find the decrypted file in the same folder (or specified output folder). 

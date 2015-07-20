@@ -7,7 +7,7 @@ part: Documentation
 
 The widely spread perception is that cloud computing poses a whole lot of new risks. But in fact, security can *improve* with cloud computing: Security is often as good as or better than in traditional systems, because the provider’s infrastructure is maintained by a team of experts which are looking after the data center security around the clock. Cloud providers are able to devote their resources to solving security issues that many of their customers could not afford --- and evidently it is the provider’s top priority to keep their data center safe, or they would lose their reputation and their customers. 
 
-More trust is needed in the competence of the administrators of cloud computing data centers in ensuring security with as much competence as any good IT department could do. Unfortunately, 100% security does not exist in IT --- a security breach can happen in any organisation, whether it is a cloud provider, a research organization or a business. It is a matter of trust in which IT department can ensure maximum security best.
+More trust is needed in that the administrators of cloud computing infrastructure ensure security with as much competence as any good IT department could do. Unfortunately, 100% security does not exist in IT --- a security breach can happen in any organisation, whether it is a cloud provider, a research organization or a business. It is a matter of trust in which IT department can ensure maximum security best.
 
 Perhaps the biggest security concern among cloud computing customers is *data loss*. Here are some figures from the [Databarracks 2014 Data Health report](http://www.databarracks.com)), in which a number of small and large organisations report the causes of data loss:
 
@@ -48,21 +48,17 @@ Main threats to cloud computing are posed by the following (conforming with the 
     * c) Phishing, fraud and exploitation of software vulnerabilities to get access to your data.
     Although most cloud providers have stringent security measures, as technology becomes more sophisticated, so do cyberattacks. Clouds also have additional vulnerabilities: Virtual switches and the hypervisor are two examples of points of attack that are not present in the traditional data center.    
    
-    *Protection from the provider:* The team of experts at the cloud’s data center have to take measures to protect against this extra risk. Traditional physical technical controls such as firewalls, Intrusion Detection Systems (IDS), Intrusion Prevention Systems (IPS) or Network Access Control (NAC) products that ensure access control continue to be critical components of the security architecture.   
+    *Protection from the provider:* The team of experts at the cloud’s data center have to take measures to protect against this extra risk. Traditional technical controls such as firewalls, Intrusion Detection Systems (IDS), Intrusion Prevention Systems (IPS) or Network Access Control (NAC) products that ensure access control continue to be critical components of the security architecture.   
 
-    *Protection from your side:* You should not install potentially harmful software on your virtual machine. Be sure you can trust the software vendor.
-
-* **Insecure Interfaces** and API's: 3rd parties can create an insecure application to interact with the cloud services, e.g. to provision, manage, orchestrate and monitor the VMs through such interfaces.     
-
-    *Protection from the provider:* Set up the cloud platform such that external software does not have privileges to provision, manage and orchestrate VMs (or only allow this for trusted software).
+    *Protection from your side:* You should not install potentially harmful software on your virtual machine. Be sure you can trust the software vendor. Also, only free up necessary ports in the firewall rules!
 
 * **Access to your Data:** The cloud provider can potentially access the data that is on the cloud at any time. They can even be obliged to share information with third parties if necessary for purposes of law and order, even without a warrant. 
 
     *Protection from you*: You can encrypt data that is processed or stored within the cloud to prevent unauthorized access.
 
-* **Data Loss & Leakage** **/ Risks of shared access (Multi-tenancy)**: In a cloud provider platform being shared by different users (a "*multi-tenant*" platform) it is possible that data belonging to different customers resides on same data server. A few issues arise from the fact that resources (CPU, memory, etc) are shared. (a) resources can be fully taken up by one virtual machine (also called a “**noisy neighbour**”), effectively creating a denial-of-service-attack to others sharing the same resources. (b) data can leak from one customer to another:  Researchers have been able to recover other tenants' data from what was supposed to be new storage space. (c) If a multi-tenant cloud is not properly set up, a flaw in one client’s application could allow an attacker access not only to that client’s data, but every other client’s data as well. 
+* **Data Loss & Leakage** **/ Risks of shared access (Multi-tenancy)**: In a cloud provider platform being shared by different users (a "*multi-tenant*" platform) it is possible that data belonging to different customers resides on the same server. A few issues arise from the fact that resources (CPU, memory, etc) are shared. (a) resources can be fully taken up by one virtual machine (also called a “**noisy neighbour**”), effectively creating a denial-of-service-attack to others sharing the same resources. (b) data can leak from one customer to another:  Researchers have been able to recover other tenants' data from what was supposed to be new storage space. (c) If a multi-tenant cloud is not properly set up, a flaw in one client’s application could allow an attacker access not only to that client’s data, but every other client’s data as well. 
 
-    *Protection from the provider*: Protecting the cloud platform with good software is a high priority.
+    *Protection from the provider*: Protecting the cloud platform with good protection software and setting it up securely is a high priority.
 
     * Transparent Cloud Protection System (TCPS) is a protection system which is effective in detecting most kind of attacks by monitoring the VMs. 
 
@@ -91,11 +87,11 @@ Main threats to cloud computing are posed by the following (conforming with the 
 resides, for example if your instance poses a security threat then the instance may be *suspended*, which means you'll be locked out of your data for however long it takes to deal with the incident. 
 {% endBgBox%}
 
-* **Access security**: This affects authentication, access control and data encryption. It is important that access is only possible via secure connections. Nobody else except you should be able to see or access your data. What happens when the data is deleted or not needed any more, are copies still kept? Many providers are not clear on that point. Is data encrypted? If so, are the private keys shared among tenants? Be aware also that governments may have the right to access your data even if they get a warrant.
+* **Access security**: This affects authentication, access control and data encryption. It is important that access is obtained via secure connections. Nobody else except you should be able to see or access your data. What happens when the data is deleted or not needed any more, are copies still kept? Many providers are not clear on that point. Is data encrypted? If so, are the private keys shared among tenants? Be aware also that governments may have the right to access your data even if they get a warrant.
     
     *Protection by the provider:* Encrypt the data and ensure complete deletion of data without keeping any copies. 
 
-    *Protection by you:* Never share your private key with anyone, and make sure you only use ssh keys which you have created yourself (see [Module 7][ModDoc7]). Be aware of whether several copies of your data are kept, and if so, request a complete deletion from the provider where necessary. Always choose secure passwords (see Module 5 "Mitigating risks")!
+    *Protection by you:* Access your resources via secure connections only. Never share your private key with anyone, and make sure you only use ssh keys which you have created yourself (see [Module 7][ModDoc7]). Be aware of whether several copies of your data are kept, and if so, request a complete deletion from the provider where necessary. Always choose secure passwords (see Module 5 "Mitigating risks")!
 
 * **Malicious insiders**: CERT defines a malicious insider as follows (source: [http://www.cert.org/](http://www.cert.org/insider_threat)): 
 
@@ -107,15 +103,22 @@ resides, for example if your instance poses a security threat then the instance 
 
     *Protection from you:* Choose a reliable Internet Provider.
 
+
+* **Insecure Interfaces** and API's: 3rd parties can create an insecure application to interact with the cloud services, e.g. to provision, manage, orchestrate and monitor the VMs through such interfaces.     
+
+    *Protection from the provider:* Set up the cloud platform such that external software does not have privileges to provision, manage and orchestrate VMs (or only allow this for trusted software).
+
+
+
 * **Lack of full control**: Especially in ready-to-use *SaaS* services, customers often have no control over updates or upgrades. They can find a new version of the service was provided overnight, removing a feature they needed, or adding one that raises new security issues.
 
 * **Insufficient knowledge**: Many organisations rush into the cloud without knowing about the potential issues and risks and how to mitigate them.
 
-    *Protection by you:* Pay attention in this Module and you will have the required knowledge.
+    *Protection by you:* Pay attention in this Module and you will have the required knowledge to protect your resources adequately.
 
 #### VM-specific vulnerabilities
 
-Virtual machines have a number of their own vulnerabilities. A malicious virtual machine can potentially access other instances through shared memory, network connections, and other shared resources. Fortunately, these security concerns are being addressed. Most intrusions can be prevented by the users applying traditional security measures, as we have discussed in Module 5 ("Mitigating Risks").
+Virtual machines have a number of their own vulnerabilities. A malicious virtual machine can potentially access other instances through shared memory, network connections, and other shared resources. Fortunately, these security concerns can be addressed effectively in a well-managed cloud. Most intrusions can be prevented by the users applying traditional security measures, as we have discussed in Module 5 ("Mitigating Risks").
 
 Most VM specific vulnerabilities stem from the *hypervisor*. There are a number of different types of security breaches on the hypervisor level:
 
@@ -142,7 +145,7 @@ In addition to the efforts the security team at NeCTAR are making, part of the s
 * It is also very important that you **regularly update your VM’s operating system** to ensure it has the newest security patches, eg. on Ubuntu this can be done with the command:    
     ```sudo apt-get dist-upgrade```
     {% BgBox important %} **Keep in mind:**    
-Most cloud vendors do a better job securing data than their customers do. But a lot of security issues are also up to you -- e.g. use a firewall and apply strict rules to it;  install an anti-virus protection on your VM; use secure passwords; don’t share your private key, etc. All factors you need to observe to ensure security have also been discussed on a more abstract level in Module 5 ("Mitigating Risks").
+Most cloud vendors do a better job securing data than their customers do. But a lot of security issues are also up to you---e.g. use a firewall and apply strict rules to it;  install an anti-virus protection on your VM; use secure passwords; don’t share your private key, etc. All factors you need to observe to ensure security have also been discussed on a more abstract level in Module 5 ("Mitigating Risks").
 {% endBgBox %}
 
 ### Security *benefits* of the cloud and virtual machines
@@ -167,22 +170,24 @@ The nice part is that using a the cloud and a virtual machine does also comes wi
 
 In summary, these are the things you need to look after:
 
+* Install an **Anti Virus Protection** on your instance.
+
+* Only free up necessary ports in the **firewall rules**.
+
+* Regularly **update your VMs operating system** to get the newest security updates.
+
 * Do not install potentially harmful software on your instance.
 
-* Encrypt sensitive data on the cloud storage to prevent unauthorized access.
+* **Encrypt sensitive data** on the cloud storage to prevent unauthorized access.
 
-* Regurarly back up your data.
+* Regularly **back up your data** (see [Module 9][ModDoc9]).
 
-* Securely erase all data when you release your storage resources (see [Module 9][ModDoc0]).
+* **Securely erase all data** when you release your storage resources (see [Module 9][ModDoc9]).
 
-* Always choose secure passwords! And *never* share your passwords or private ssh keys with anyone.
+* Always choose **secure passwords**! And *never* share your passwords or private ssh keys with anyone.
 
-* Be aware of the risks: Carefully read through the topics discussed in this Module to avoid potential security problems.
+* **Be aware** of the risks: Carefully read through the information and advise given in this Module which helps you to avoid potential security problems.
 
-* Install an Anti Virus Protection on your instance.
-
-* Regularly update your instances operating system to get the newest security updates.
-
-* [optional] Keep off-line backups of your important data, however only do this if you can store the backups at a safe place.
+* [optional] Keep **off-line backups** of your important data---however only do this if you can store the backups at a safe place.
 
  

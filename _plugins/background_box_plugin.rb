@@ -1,7 +1,7 @@
 module Jekyll
   module Tags
 
-	  # Usage: {% BgBox <type> %} Text of info box {% endBgBox %} {% endraw %}```
+	  # Usage: {% BgBox <type> %} Text of info box {% endBgBox %}```
 	  # Replacing <type> with either 
 	  # * info
 	  # * important or
