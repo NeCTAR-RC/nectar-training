@@ -11,7 +11,7 @@ Some basic command line usage skills are helpful for this section as well.
 {% endBgBox %}
 
 
-It is important that you **take responsibility** and have your instance and volume storage up and running **only** when you really need it, otherwise your resources will sit idle, and you will be using up the resources that other researchers may need. 
+It is important that you **take responsibility** and have your instance and volume storage up and running **only** when you really need it, or your resources will sit idle, and you will be using up your CPU hours and block the resources to other researchers.
 
 In the last sections you have learned how you can take Snapshots of your instances and easily re-launch them when you need them again; you can also take an Image of your Volumes and create backups to re-create the state of your Volume at a later time. Once you have your instance and data backed up, you are free to *terminate* your resources and free them up for others. 
 
@@ -20,13 +20,21 @@ Before you free up the resources, you should make sure that you **securely erase
 
 ### Securely ereasing data
 
-Just removing all files from your secondary ephemeral drive or your Volumes won't do the job --- this just removes the index of the files (think of it like a table of contents), but the actual bits of the files will still be on the harddrive, so it is possible to restore them when using special tools. To definitely erase the data, you have to *overwrite* the bits with other (random) bits. You even have to repeat the overwriting several times to be sure nothing can be recovered. Some people even argue the only way to really, really ensure the data is erased is to burn up the hard drive --- an option we don't have in this case, so we will have to be satisfied with overwriting the data several times.
+Just removing all files from your secondary ephemeral drive or your Volumes won't do the job --- this just removes the index of the files (think of it like a table of contents), but the actual bits of the files will still be on the harddrive, so it is possible to restore them when using special tools. To securely erase the data, you have to *overwrite* the bits with other (random) bits. You even have to repeat the overwriting several times to be sure nothing can be recovered. Some people even argue the only way to really, really ensure the data is erased is to burn up the hard drive --- an option we don't have in this case, so we will have to be satisfied with overwriting the data several times.
 
 If you are really concerned that overwriting your data several times may still not be enough, then **encrypt your volume**, as described [here in Module 8](/package08/sections/encryption.html), and then securely erase it afterwards. Even if someone was able to restore the data, it would be the encrypted data --- and they would still need your key!
 
 {% BgBox important %}
 Before you start erasing data, make sure that you **unmount** the drive from your instance!
 {% endBgBox %}
+
+You will need your *device file name* (e.g. */dev/vdc*). To find it, you may for example use   
+    ```sudo lsblk -l``` and/or     
+    ```sudo lsblk -f```    
+to print information about your drives. You can also see it on the Volumes overview in the Dashboard.    
+The following will assume your drive is located at **/dev/vdc**. If your is at another path, you will have to replace this in the following commands.    
+
+
 
 #### Using *dd*
 
@@ -102,7 +110,7 @@ For more details on the *shred* utility, refer to the man pages:
 
 Deleting your instance or volume and thereby freeing up resources for others is also called *terminating* your instance or volume. This can be done easily in the Dashboard.
 
-To terminate an instance, first make sure you have securely erased the data on the secondary ephemeral disk which you may have used (probably on */dev/vdb*). Then, go to *Dashboard > Compute > Instances* and find the instance you want to terminate in the list. On the right-hand side drop-box next to the instance, select *Terminate instance*.
+To terminate an instance, first make sure you have securely erased the data on the secondary ephemeral disk which you may have used (probably on */dev/vdb*). Then, go to *Dashboard > Compute > Instances* and find the instance you want to terminate in the list. In the right-hand side drop-box next to the instance, select *Terminate instance*.
 
 {% BgBox important %}
 You must *detach* any Volumes from your instance before terminating it --- There may be problems if you terminate an Instance while it has Volumes attached. Recovering your volume requires the NeCTAR technical staff to manually patch a database.

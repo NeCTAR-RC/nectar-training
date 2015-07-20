@@ -6,9 +6,9 @@ part: Documentation
 
 
 
-**Superb!!!**
+**Good on ya!!!**
 
-You have now learned how to back up your instances and your data and release it securely for other researchers. You have also learned how to recover your services after you have terminated or deleted them, without having lost anything.
+You have now learned how to back up your instances and your data and release it securely for other researchers. You have also learned how to recover your resources after you have terminated or deleted them, without having lost anything.
 
 In summary, this module has covered:
 

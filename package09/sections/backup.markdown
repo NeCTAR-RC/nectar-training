@@ -35,7 +35,7 @@ OpenStack offers tools to back up your Volumes (*not* your secondary ephemeral d
 There are two ways to backup your data on the volume:
 
 
-1. **Volume Snapshot**: This creates a copy of your entire volume, so if the volume is 5GB but you are only using 1GB of it, the Snapshot will still have a size of 5GB. The Snapshot is stored in the Image service, so you will be able to select it when you create a *new* volume. A volume from which Snapshots have been created cannot be deleted while any of these Snapshots still exists --- A Snapshot is *dependent* of the actual Volume. Creating Snapshots is fairly quick.
+1. **Volume Snapshot**: This creates a copy of your entire volume, so if the volume is 5GB but you are only using 1GB of it, the Snapshot will still have a size of 5GB. The Snapshot is stored as an *Image* on the NeCTAR Image Server, so you will be able to select it when you create a *new* volume. A volume from which Snapshots have been created cannot be deleted while any of these Snapshots still exists --- A Snapshot is *dependent* of the actual Volume. Creating Snapshots is fairly quick.
 
 2. **Volume Backup**: Your data will be backed up and placed in your *Object Storage*. You can later restore that backup onto a new *or* existing volume. Only the amount of storage you are currently using is being backed up: If you only have 1GB of data on a 5GB volume, the backup will only be about 1GB. Backups are independent of the original volume, but they are still full copies of the Volumes. Therefore, they take longer to create than Snapshots.  
 
@@ -43,7 +43,11 @@ The [last section](Snapshot.html) has discussed how to take a Snapshot of a Volu
 Please be aware that **Snapshots are not suitable to create regular backups**, as it takes a lot of storage space and uses up your quota. Snapshots are also only usable while the original Volume still exists, which limits your flexibility to delete the volume.
 You should only use snapshots for significant states for your Volumes which you want to use to easily create new volumes from.
 
-To make a *Backup* (not a *Snapshot*), you will need to use the openstack command line client, as described in [Module 10](ModDoc10). Support to create Backups via the Dashboard will probably be added in the near future --- it will then work in a very similar fashion to taking Snapshots.
+To make a *Backup* (not a *Snapshot*), you will need to use the **openstack command line client**, as described in [Module 10](ModDoc10). Support to create Backups via the Dashboard will probably be added in the near future --- it will then work in a very similar fashion to taking Snapshots.
+
+{% col 255,0,0 %}
+TODO: Update this with exercise as soon as backups are available on the Dashboard.
+{% endcol %}
 
 {% BgBox important %}
 Note that when using Backups, you need to have enough quota on your Object Store to back up your data. You need to consider this when you request a resource allocation if you want to use OpenStack Backups --- if you don't request Object Store quota, you won't be given any allocation for it.
@@ -55,7 +59,7 @@ Note that when using Backups, you need to have enough quota on your Object Store
 The contents of the two folders, which we call **source and destination folders are _synchronized_**. 
 The source and destination folders can be on the same computer, or they could be on separate computers that are accessible over a network or the Internet.
 
-In the most typical backup scenario, the *source* would be the disk which is *mounted* on your NeCTAR instance, and the *destination* would be your office computer or a server at your research organisation onto which the data will be backed up.
+In the most typical backup scenario, the *source* would be the disk which is *mounted* on your NeCTAR instance, and the *destination* would be a server at your research organisation onto which the data will be backed up. The *destination* folder can also be on your local computer, though this is not a robust backup location, so it is recommended to use a dedicated backup server.
 
 {% BgBox info %} 
 Rsync creates **incremental backups**, which means only what has changed in the directory since the last backup will be copied to the backup folder, so not every time a backup is performed all files have to be transferred again. This speeds up the backup process, especially with slow network connections.
@@ -66,7 +70,7 @@ Rsync can also **compress and encrypt data streams** during the backup process, 
 RSync is a **good choice for you if:** 
 
 * you want to create a backup of the *most recent state* of your volume or secondary ephemeral drive 
-* and save the backup on your local computer, or another computer onto which you can log on to a terminal (e.g. via a ssh terminal).
+* and save the backup on your local computer, or another computer onto which you can log on to with a terminal (e.g. via a ssh terminal).
 
 
 RSync is great in that it does incremental per-file copies, so it makes it easy for you to access (and even edit) your files offline, and keep the most recent state of your data synchronized between your computer and the NeCTAR storage.
