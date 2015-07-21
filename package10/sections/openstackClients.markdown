@@ -8,13 +8,13 @@ part: Documentation
 In the previous modules, we have used the NeCTAR Dashboard to perform simple management tasks such as launching instances, creating volumes, accessing the object store, etc. 
 In this module we are going to take a look at how you can do the same tasks with other *"clients"*. 
 
-* OpenStack provides **command line clients** which allow you to manage your instances, volumes and object store and more via command line tools only. In this tutorial, we will discuss usage of command line clients to control your services. 
+* OpenStack provides **command line clients** which allow you to manage your instances, volumes and object store and more via command line tools only. In this tutorial, we will discuss usage of command line clients to control your resources. 
 * There are also **application programming interfaces (APIs)** available, mainly for Python, but also for other programming languages like e.g. C++ and Java. This is not part of this tutorial --- for a list of known software development kits see [OpenStack Python API Bindings][OpenStackPythonBindings] and [other OpenStack SDKs][OpenStackSDKs].
 
 In a pervious version of OpenStack, command line clients were split into several tools, called **nova, glance, cinder, swift, keystone** and more. Each of the tools was dedicated to certain tasks, e.g. *nova* for compute services, *swift* for accessing the object store, etc. Refer to the [official OpenStack clients website][OpenStackClients] for more details.
 These tools have later been brought together to **one** command line tool called **openstack**, which brings command sets for Compute, Identity, Image, Object Store and Volume APIs together in a single command set with a uniform command structure.
 
-The next sections are going to discuss usage of the **_openstack_ command line client** with some working examples.
+The next sections are going to discuss installation and usage of the **_openstack_ command line client** with some working examples.
 
 {% BgBox info %}
 If you want to use the traditional OpenStack clients like *glance, cinder*, etc. you still can. The following instructions for installation and configuration also apply to the traditional clients. Only the name *openstack* in the packagename *python-openstackclient* has to be replaced by the respective tool's name in the installation command. For example, if you want to install *glance*, replace *python-openstackclient* by *python-glanceclient*.
@@ -133,29 +133,46 @@ You may use method to copy files on your instance, as discussed in [Module 7](/p
 Before we can use the command line client, we need to load the OpenStack RC file which contains our authentication details.
 
 * **Linux / Mac OSX:**
-    First, Make your OpenStack RC file executable:
-
-    ```chmod u+x <path-to-your-openrc-file>```
-
-    For example, if your RC file is called *pt-12345-openrc.sh* and is located in your *home* directory, type:    
-    ```chmod u+x ~/pt-12345-openrc.sh```
-
-    Then, load your credentials:
+    Load your credentials:
   
     ```source <path-to-your-openrc-file>```
 
     using the above example for the RC files, this would be:    
     ```source ~/pt-12345-openrc.sh```
 
-    You will be prompted for your OpenStack password.
+    You will be prompted for your OpenStack password.    
+    {% BgBox info %} You can try to copy and paste your password into the command line prompt. If this does not work in your command line, you may edit the OpenStack RC file and assign the password directly by replacing *$OS_PASSWORD_INPUT* by your password, and removing the line above (the *read* command). Then, do the *source* command above again.    
+    **Attention**: Be aware that if you do this, your OpenStack password will be openly stored in the OpenStack RC file which everyone who may gain access to your computer can read! You are creating a **potential security leak**, so do this only if you are absolutely sure your computer is well protected and nobody else can read the file from where it is stored. 
+The least you want to do is restrict the access to this file only to you.    
+```chmod 0600 <path-to-your-openrc-file>```
+{% endBgBox %}
 
-* **Windows**:
-   Needs Powershell, so XP Service Pack 3 or later.
-    {% BgBox important %} TODO !!!! See also [this link](https://github.com/naturalis/openstack-docs/wiki/Howto:-Installing-and-configuring-the-OpenStack-commandline-tools-on-Windows)
-     and [this one]( http://information-technology.web.cern.ch/book/cern-cloud-infrastructure-user-guide/advanced-topics/installing-tools-client-machines)
-    {% endBgBox %}
 
-{% BgBox edit %}
+
+
+* **Windows**:    
+    The OpenStack RC file is a script written for Unix/Mac OSX systems, so it would have to be *ported* for the Windows PowerShell. 
+    You will need the *Windows PowerShell* installed (available on Windows 7 and later, or on XP with Service Pack 3).
+    Open your OpenStack RC file in the NodePad or WordPad (**not** Word!!) and change it so it looks like the snipped below (with your own values from your OpenStack RC file).     
+    {% BgBox edit %}
+$env:OS_AUTH_URL="https://keystone.rc.nectar.org.au:5000/v2.0/"
+$env:OS_TENANT_ID="f12d34....c"
+$env:OS_TENANT_NAME="&lt;your-tentant-name&gt;"
+$env:OS_USERNAME="&lt;your-email&gt;"
+$env:OS_PASSWORD="&lt;Your-OpenStack-Password&gt;";
+$env:OS_REGION_NAME="&lt;Your-Preset-Region-Name&gt;"
+{% endBgBox %}
+    Make sure to save this as *a powershell* (*.ps1*) file in *plain text* (pre-select *.txt* if necessary and then change the suffix to *.ps1*). For simplicity, save the file as *openrc.ps1* in your user folder, which usually is *C:\Users\&lt;Your-User-Name&gt;*.    
+    Then, open the **Windows Powershell** by typing into the Windows Command line:    
+    ```powershell.exe```    
+    And load your credentials:    
+    ```C:\Users\<Your-User-Name>\openrc.ps1```    
+    *Note:* Alternatively, you may use the Windows PowerShell Terminal directly. Search for "powershell" in the App Search. 
+   {% BgBox important %} Make sure only you can read the *openrc.ps1* file, because the OpenStack password is readable on it.
+Right-click on the file, select "Properties", go to the "Security" Tab, click "Edit..." and remove all names but your own user name.
+{% endBgBox %}
+
+{% comment %}
 set OS_AUTH_URL=https://keystone.rc.nectar.org.au:5000/v2.0/
 set OS_TENANT_ID=f12d3486498d4af5be4c2ca36369487c
 set OS_TENANT_NAME="NeCTAR_Training"
@@ -168,23 +185,19 @@ set "psCommand=powershell -Command "$pword = read-host 'Enter Password' -AsSecur
 for /f "usebackq delims=" %%p in (`%psCommand%`) do set OS_PASSWORD_INPUT=%%p
 
 set OS_PASSWORD=%OS_PASSWORD_INPUT%
-{% endBgBox %}
 
+See also [this link](https://github.com/naturalis/openstack-docs/wiki/Howto:-Installing-and-configuring-the-OpenStack-commandline-tools-on-Windows)
+     and [this one]( http://information-technology.web.cern.ch/book/cern-cloud-infrastructure-user-guide/advanced-topics/installing-tools-client-machines)
+{% endcomment %}
 
-{% BgBox info %}
-You can try to copy and paste your password into the command line prompt. If this does not work in your command line, you may edit the OpenStack RC file and assign the password directly by replacing *$OS_PASSWORD_INPUT* by your password, and removing the line above (the *read* command). Then, do the *source* command above again.
-
-**Attention**: Be aware that if you do this, your OpenStack password will be openly stored in the OpenStack RC file which everyone who may gain access to your computer can read! You are creating a **potential security leak**, so do this only if you are absolutely sure your computer is well protected and nobody else can read the file from where it is stored. 
-The least you want to do is restrict the access to this file only to you. On Linux/Mac:    
-```chmod 0600 <path-to-your-openrc-file>```
-{% endBgBox %}
-
+ 
+ 
 
 You will have to load your credentials **every time** after you reboot your computer or open up a new terminal, otherwise you cannot use the clients. 
 Use the same *source* command as above to load them afresh.
 
 
-#### Step 5: use your OpenStack client
+#### Step 5: Use your OpenStack client
 
 You are now ready to use your OpenStack client on the command line which you have used to load your OpenStack RC file in the last step.
 
