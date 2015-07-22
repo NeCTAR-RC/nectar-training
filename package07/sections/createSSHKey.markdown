@@ -57,9 +57,10 @@ Open the **PuTTYgen** program by clicking on *PuTTYgen.exe* which you downloaded
 
 {% img src=images/scrPuttyGen1.png, w=350, align=right, css=margin-left:20px; %}
 
-1. Click on **Generate**. 
 
-2. For **Type of key to generate**, select **SSH-2 RSA**.
+1. For **Type of key to generate**, select **SSH-2 RSA**.
+
+2. Click on **Generate**. 
 
 3. Move your mouse in the area below the progress bar. When the progress bar is full, PuTTYgen generates your key pair.
 

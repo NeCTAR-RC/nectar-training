@@ -60,7 +60,7 @@ In the following, we are going to discuss *openstack server* commands for
 
 * Taking a snapshot of an instance
 
-* Launch the instance from a snapshot
+* Launching a new instance from a snapshot
 
 
 For supporting and further documentation, please refer to the [official openstack client documentation][OpenStackClientDoc]. 
