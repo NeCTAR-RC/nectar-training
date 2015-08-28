@@ -2,20 +2,43 @@
  * Site header
  */
 .site-header {
-    border-top: 5px solid $grey-color-dark;
-    border-bottom: 1px solid $grey-color-light;
-    min-height: 56px;
+    background-color: #efefef;
+    //border-top: 5px solid $grey-color-dark;
+    //border-bottom: 1px solid $grey-color-light;
+    min-height: 120px;
 
     // Positioning context for the mobile navigation icon
     position: relative;
 }
 
+.logo-container {
+  display: inline-block;
+  float: left;
+  width: 400px;
+  height: 120px;
+  vertical-align: middle;
+  background:url(https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/6002856672/logo/NECTAR_LOGO_143.png?AWSAccessKeyId=AKIAJ2JSYZ7O3I4JO6DA&Expires=1442976235&Signature=L4HQl14VC4QLjd%2FIh3wxW1dxMQI%3D) no-repeat center right;
+}
+
+.title-container {
+  float: left;
+  margin-left: 100px;
+  height: 120px;
+  line-height: 120px;
+}
+
+.title-container span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
 .site-title {
     font-size: 26px;
-    line-height: 56px;
+    //line-height: 56px;
     letter-spacing: -1px;
     margin-bottom: 0;
-    float: left;
+    //float: left;
 
     &,
     &:visited {

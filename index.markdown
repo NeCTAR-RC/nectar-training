@@ -3,21 +3,26 @@ layout: post
 title: Home
 ---
 
-# Table of Contents
+## Welcome to **Nectar training**
 
-* [Notes for Reviewers](ReviewerNotes.html)
-* [README](README.html)
+_Access training on the Nectar services you need in the format of your choice - self-paced tutorials, instructional videos, or face-to-face_
 
-Individual packages: 
+Learn what Nectar services are available and how they can be applied to your research:
 
-1. [{{site.defaults[1].values.title}}](package01/)
-1. [{{site.defaults[2].values.title}}](package02/)
-1. [{{site.defaults[3].values.title}}](package03/)
-1. [{{site.defaults[4].values.title}}](package04/)
-1. [{{site.defaults[5].values.title}}](package05/)
-1. [{{site.defaults[6].values.title}}](package06/)
-1. [{{site.defaults[7].values.title}}](package07/)
-1. [{{site.defaults[8].values.title}}](package08/)
-1. [{{site.defaults[9].values.title}}](package09/)
-1. [{{site.defaults[10].values.title}}](package10/)
+* [{{site.defaults[1].values.title}}]({{site.defaults[1].values.docpath}})
+* [{{site.defaults[2].values.title}}]({{site.defaults[2].values.docpath}})
+* [{{site.defaults[3].values.title}}]({{site.defaults[3].values.docpath}})
+* [{{site.defaults[4].values.title}}]({{site.defaults[4].values.docpath}})
+
+Learn how to work on the Nectar Cloud:
+
+* [{{site.defaults[5].values.title}}]({{site.defaults[5].values.docpath}})
+* [{{site.defaults[6].values.title}}]({{site.defaults[6].values.docpath}})
+* [{{site.defaults[7].values.title}}]({{site.defaults[7].values.docpath}})
+* [{{site.defaults[8].values.title}}]({{site.defaults[8].values.docpath}})
+* [{{site.defaults[9].values.title}}]({{site.defaults[9].values.docpath}})
+
+Take it further
+
+* [{{site.defaults[10].values.title}}]({{site.defaults[10].values.docpath}})
 

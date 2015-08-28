@@ -1,8 +1,8 @@
 # Site settings
-title: NeCTAR National Training
+title: Nectar Training
 email: no-reply@intersect.org.au
 description: > # this means to ignore newlines until "baseurl:"
-  NeCTAR National Training Resources
+  Nectar National Training Resources
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 
@@ -24,7 +24,7 @@ defaults:
     scope:
       path: "package01"
     values:
-      title: "Overview of cloud computing and the NeCTAR services"
+      title: "Overview of cloud computing and the Nectar services"
       number: "1"
       contentspath: "/package01/"
       docpath: "/package01/sections/index.html"
