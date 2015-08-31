@@ -5,10 +5,7 @@ layout: default
 
   <header class="post-header">
     <h1>{{page.number}}. {{ page.title }}</h1>
-    <h1>{{ page.part }}</h1>
   </header>
-
-
 
   <!-- 
     Preprocessing: Determine which part number this is. To avoid having to set numbers 
@@ -136,7 +133,5 @@ layout: default
   </p>
   {% endif %} <!-- endif for pagedata_avail -->
 
-  <p><a href="{{page.contentspath}}">Back to training package contents</a></p>
-  
   <p>Last updated: {{page.path | file_date}} </p>
 </div>
