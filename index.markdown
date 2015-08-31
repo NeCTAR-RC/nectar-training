@@ -22,7 +22,7 @@ Learn how to work on the Nectar Cloud:
 * [{{site.defaults[8].values.title}}]({{site.defaults[8].values.docpath}})
 * [{{site.defaults[9].values.title}}]({{site.defaults[9].values.docpath}})
 
-Take it further
+Take it further:
 
 * [{{site.defaults[10].values.title}}]({{site.defaults[10].values.docpath}})
 

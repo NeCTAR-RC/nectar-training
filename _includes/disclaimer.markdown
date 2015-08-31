@@ -1,4 +1,4 @@
-### Disclaimer
+### Conventions
 
 The notation throughout the training documents can be interpreted as follows:
 
