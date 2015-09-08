@@ -57,7 +57,7 @@ If you don't have Python yet, the following instructions cover the installation 
 
 * **Mac OSX**:    
     1. Install Python's package manager ***pip*** (unless you already have it). *pip* is a tool for easily installing and managing Python packages. It is recommended over *easy_install*. Python 2.7.9 and later include *pip* by default, so you may have *pip* already. Either of the three options work to get *pip*:
-        * If you have the homebrew package manager, *pip* installs together with the Python packages, and conveniently also installes the *setuptools* which you also need:    
+        * If you have the homebrew package manager, *pip* installs together with the Python packages, and conveniently also installs the *setuptools* which you also need:    
         ```brew install python```    
         * If you don't have homebrew, the [official Python download](https://www.python.org/downloads/mac-osx/) of package 2.7.10 or later also installs *pip* (*Note*: Python 3 is *not* supported yet). 
         * *Alternative:* if you already have Python, but not *pip*, you may use the ***easy_install*** command to install *pip* --- however there may be problems with running the clients when using this method. To install *pip* with *easy_install*:    
@@ -72,11 +72,11 @@ If you don't have Python yet, the following instructions cover the installation 
 
 * **Windows**:
     1. Install Python 2.7 or later (*Note*: Python 3 is not supported yet!) if you don't have it yet. You can download it on the official [Python Website](https://www.python.org/downloads/windows/). You may keep the default options in the installation wizard --- the following instructions assume that you keep the default installation path *C:\Python27*. It is recommended that you install **Python 2.7.10 or later** which includes the *pip* tool which you will need. 
-    2. Install *setuptools*: follow the documentation provided on the [setuptools website][SetupToolsWebsite] (the easiest is to download the [ez_setup.py](https://bootstrap.pypa.io/ez_setup.py) file an run it).
+    2. Install *setuptools*: follow the documentation provided on the [setuptools website][SetupToolsWebsite] (the easiest is to download the [ez_setup.py](https://bootstrap.pypa.io/ez_setup.py) file and run it).
     3. Open a Windows Command line terminal (in the "Search" field, type *cmd* --- on older Windows, you may find the search field when clicking on *Start*). 
     4. Make sure you have included the package **pyOpenSSL (version 0.13 or higher)** in your installation:
         ```pip install pyOpenSSL```
-    5. Ensure that the *C:\Python27\Scripts* directory is defined in the PATH environment variable. To do this only for the currently open terminal:     
+    5. Ensure that the *C:\Python27\Scripts* directory is defined in the PATH environment variable. To do this for the currently open terminal run the following command:     
         ```set PATH=%PATH%;C:\Python27\Scripts```
         {% BgBox info %} To *permanently* change an environment variable: On various Windows versions, this can be done in the **Advanced System Settings** (usually you can find it in *Control Panel* > *System* or similar), where you should find a button **Environment Variables**. Scroll through the *System variables* and find *PATH* (it's not case senstitive, so it may be *Path*). Select it and click on *"Edit..."*. At the end of the long text in the *Variable value* field, add the text *";C:Python27\Scripts"* (without the quotation marks). Close all windows with [OK].
 {% endBgBox %}
@@ -92,9 +92,10 @@ If you don't have Python yet, the following instructions cover the installation 
 
 ### Step 2. Get your OpenStack credentials 
 
-Before you can use any of the clients, you will need to get your *OpenStack credentials*. In particular, you will need a script filed called the *OpenStack RC file*. You will need to load the information from within this script before you can use the tools. While you are at it, you may also write down all your OpenStack login details.
+Before you can use any of the clients, you will need to get your *OpenStack credentials*. In particular, you will need a script file called the *OpenStack RC file*. You will need to load the information from within this script before you can use the tools. While you are at it, you may also write down all your OpenStack login details.
 
-You may already have done this in [Module 7][ModDoc7] when setting up access to your Object Store. In this case, make sure you have downloaded your *OpenStack RC file*, as you will need it now. You may then skip this step.
+You may already have done this in [Module 7][ModDoc7] when setting up access to your Object Store. In this case, make sure you have downloaded your *OpenStack RC file*, as you will need it now. You may then skip the following
+step.
 
 {% include getCredentials.markdown %}
 
@@ -106,25 +107,25 @@ If you are configuring the client access on your ***local computer***, you can *
 
 Before you continue, you need to copy the *OpenStack RC file* which you downloaded from the Dashboard to your instance. 
 
-You may use method to copy files on your instance, as discussed in [Module 7](/package07/sections/copyFiles.html), e.g. using the FTP client *FileZilla*. In the following instructions, we are going to apply the *command line* option to copy our OpenStack RC file accross.
+You may use any method to copy files to your instance, as discussed in [Module 7](/package07/sections/copyFiles.html), e.g. using the FTP client *FileZilla*. In the following instructions, we are going to apply the *command line* option to copy our OpenStack RC file accross.
 
 * On **Linux or Mac OSX**, you can use the *scp* command to do this:    
     
     ``` scp -i ~/.ssh/Nectar_Key <path-to-your-openrc-file> ubuntu@NNN.NNN.NNN.NNN:```
     
     replacing the N's with your IP address.
-    This will have copied your openrc file in your ubuntu instances *home* directory.
+    This will have copied your openrc file in your ubuntu instance's *home* directory.
 
 * On **Windows**, you may use the *PuTTY* command line tool *pscp*.  Please refer to instructions in [Module 7](/package07/sections/copyFiles.html) on how to install and use *pscp*. 
-    {% BgBox info %} If you don't feel comfortable using the command line, you may use an FTP client like *FileZilla* to drag and drop your file into your *ubuntu* users *home* directory (the *home* directory is the directory which opens up first when you connect with FileZilla). Instructions on how to use FileZilla are also included in [Module 7](/package07/sections/copyFiles.html). 
+    {% BgBox info %} If you don't feel comfortable using the command line, you may use an FTP client like *FileZilla* to drag and drop your file into your *ubuntu* user's *home* directory (the *home* directory is the directory which opens up first when you connect with FileZilla). Instructions on how to use FileZilla are also included in [Module 7](/package07/sections/copyFiles.html). 
 {% endBgBox %}
     
     Open the Windows Command prompt and type:
 
     ``` pscp.exe -i <path-to-ssh-key> <path-to-openrc-file> ubuntu@NNN.NNN.NNN.NNN:```
 
-    replacing the N's with your IP address. Specify path where you have saved to your nectar ssh key in &lt;path-to-ssh-key&gt; and the path to your *OpenStack RC* file in &lt;path-to-openrc-file&gt;.     
-    This will have copied your *OpenStack RC* file in your ubuntu instances *home* directory.
+    replacing the N's with your IP address. Specify the path where you have saved your nectar ssh key in &lt;path-to-ssh-key&gt; and the path to your *OpenStack RC* file in &lt;path-to-openrc-file&gt;.     
+    This will copy your *OpenStack RC* file to your ubuntu instance's *home* directory.
 
 
 
@@ -143,7 +144,7 @@ Before we can use the command line client, we need to load the OpenStack RC file
     You will be prompted for your OpenStack password.    
     {% BgBox info %} You can try to copy and paste your password into the command line prompt. If this does not work in your command line, you may edit the OpenStack RC file and assign the password directly by replacing *$OS_PASSWORD_INPUT* by your password, and removing the line above (the *read* command). Then, do the *source* command above again.    
     **Attention**: Be aware that if you do this, your OpenStack password will be openly stored in the OpenStack RC file which everyone who may gain access to your computer can read! You are creating a **potential security leak**, so do this only if you are absolutely sure your computer is well protected and nobody else can read the file from where it is stored. 
-The least you want to do is restrict the access to this file only to you.    
+At the very least, it is recommended that you restrict access to this file to your user account only:    
 ```chmod 0600 <path-to-your-openrc-file>```
 {% endBgBox %}
 
@@ -151,9 +152,11 @@ The least you want to do is restrict the access to this file only to you.
 
 
 * **Windows**:    
-    The OpenStack RC file is a script written for Unix/Mac OSX systems, so it would have to be *ported* for the Windows PowerShell. 
     You will need the *Windows PowerShell* installed (available on Windows 7 and later, or on XP with Service Pack 3).
-    Open your OpenStack RC file in the NodePad or WordPad (**not** Word!!) and change it so it looks like the snipped below (with your own values from your OpenStack RC file).     
+
+
+    The OpenStack RC file is a script written for Unix/Mac OSX systems, so it will need to be *modified* to work with the Windows PowerShell. 
+    Open your OpenStack RC file in NotePad or WordPad (**not** Word!!) and change it so it looks like the snippet below (with your own values from your OpenStack RC file).     
     {% BgBox edit %}
 $env:OS_AUTH_URL="https://keystone.rc.nectar.org.au:5000/v2.0/"
 $env:OS_TENANT_ID="f12d34....c"
@@ -194,12 +197,12 @@ See also [this link](https://github.com/naturalis/openstack-docs/wiki/Howto:-Ins
  
 
 You will have to load your credentials **every time** after you reboot your computer or open up a new terminal, otherwise you cannot use the clients. 
-Use the same *source* command as above to load them afresh.
+Use the same command as above to load them afresh.
 
 
 #### Step 5: Use your OpenStack client
 
-You are now ready to use your OpenStack client on the command line which you have used to load your OpenStack RC file in the last step.
+You are now ready to use your OpenStack client in the command line session in which you loaded your OpenStack RC file in the last step.
 
 Keep this terminal open to follow the instructions in the next sections.
 
