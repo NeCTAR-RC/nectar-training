@@ -13,7 +13,7 @@ part: Documentation
 
 {% BgBox info %}
 {% include /docLinks.markdown %}
-Before the **openstack** client was introduced, managing volumes was done with the **cinder** and **nova** commands, so you may still find references to it on the Internet. While you still can use *cinder* and *nova*, in this tutorial we stick to the more uniform and intuitive *openstack* client, which works very similar to the *cinder* and *nova* commands. 
+Before the **openstack** client was introduced, managing volumes was done with the **cinder** and **nova** commands, so you may still find references to it on the Internet. While you still can use *cinder* and *nova*, in this tutorial we stick to the more uniform and intuitive *openstack* client, which works similarly to the *cinder* and *nova* commands. 
 For more details, refer to the [official OpenStack cinder][OpenStackCinder] and [nova][OpenStackNova] documentation.
 {% endBgBox %}
 
@@ -34,7 +34,7 @@ In this section we are going to deal with managing *Volumes*:
 
 * Attaching and detaching volumes from instances
 
-* Taking snapshots and backups of volumes and 
+* Taking snapshots and backups of volumes, and
 
 * Restoring volumes from snapshots or backups
 
@@ -128,7 +128,7 @@ When you delete a volume, you will **lose all data and access** to this volume. 
 
 #### Attaching/Detaching a volume to an instance
 
-To attach and detach a volume to an instance, you will use the command tool *openstack server*. Display the help:
+To attach and detach a volume to an instance, you will use the command tool *openstack server*. You can display help about this command by running the following:
 
 ```openstack server help | grep volume```
 
@@ -156,7 +156,7 @@ To attach a volume, you may use this command:
 **Volume-Name**: The name (or ID) of the volume you want to attach. We will attach the volume *MyNewStorage* which we just created.
 
 
-with the examples used in this tutorial this command unfolds as:    
+with the examples used in this tutorial the command becomes:    
 
 ```openstack server add volume ClientLaunchedInstance MyNewStorage```
 
@@ -182,7 +182,7 @@ the output should show that your volume is attached:
 OpenStack adds the volume as the lowest available device name: For a standard flavor instance (with a primary & secondary drive) the first volume will be attached as */dev/vdc*. You can see where your device has been mapped to in the last column of the output.
 
 {% BgBox info %}
-You may attach *several* volumes to one instance. However you may only attach one volume to *one* instances at a time. 
+You may attach *several* volumes to one instance. However you may only attach one volume to *one* instance at a time. 
 {% endBgBox %}
 
 To **detach** a volume, use a similar command:
@@ -202,7 +202,7 @@ After detaching, if you run
 
 ```openstack volume list```
 
-you will see that the status of the volume is not in status *"in-use"* any more, but now *"avalibale"* again.
+you will see that the status of the volume is no longer *"in-use"*, instead it is *"available"*.
 
 
 ### Backups and Snapshots
@@ -225,17 +225,17 @@ Before you can create a Backup, you must *detach* the volume from any instances.
  
 ```openstack volume list```
 
-You will see *"Backup1"* listed and the status it is in.
+You will see *"Backup1"* listed along with its current status.
 
-To create a backup of the volume named *MyNewStorage*, and save it into the object store container *"Backups"* naming it *"Backup1"*:
+To create a backup of the volume named *MyNewStorage*, and save it into the object store container *"Backups"* naming it *"Backup1"* use the following command:
 
 ```openstack backup create --container Backups --name Backup1 --description "Backup MyNewStorage" MyNewStorage```
 
 While the argument ```--description``` is optional, it is recommended you fill in some meaningful information about this backup here, as it will make it
 easier to identify it when you want to restore it.
 
-If the container *"Backups"* did not exist yet, it will have been created. 
-After creating the backup, your volume will be in in the status *"backing-up"*, which can take a while. Type 
+If the container *"Backups"* did not already exist, it will have been created. 
+After creating the backup, your volume will be have the status *"backing-up"*, which can take a while. Type 
 
 ```openstack backup list```
 
@@ -255,7 +255,7 @@ After the backup has been done, you can see it listed in your Object Store:
 ```openstack container list```    
 ```openstack object list Backups```
 
-The Backups container has been created (unless you already had it). You will see a rather long list of files in the *Backups* container --- which means your Backup has been saved in several object files. This should not concern you however, as you can restore the data with only one command. 
+The Backups container has been created (unless you already had it). You will see a rather long list of files in the *Backups* container --- which means your Backup has been saved in several object files. This should not concern you, however, as you can restore the data with only one command. 
 
 To restore your Volume to the state we just saved in *Backup1*, first obtain the *ID* of this backup, which is displayed in the first column of the output:
 
@@ -284,10 +284,10 @@ You will need the *ID* (in this case, the *Name* does not work) to display some 
 {% endBgBox %}
 
 
-Note that the Volume ID (field *volume_id*) is displayed in the information to remind us which volume this is a backup from. The ID is not very intuitive, so it is a good idea to add a meaningful description to the backup when you create it.
+Note that the Volume ID (field *volume_id*) is displayed in the information to remind us which volume the backup is from. The ID is not very intuitive, so it is a good idea to add a meaningful description to the backup when you create it.
 
 
-To restore, display the help for the *backup restore* tool:
+To restore a backup, first display the help for the *backup restore* tool:
 
 ```openstack help backup restore```
 
@@ -301,7 +301,7 @@ You may also restore the backup to a volume other than the Volume you took the B
 
 When you restore to **any Volume**, you must keep the following in mind:
 
-* all data on the Volume you choose as restore target **will be lost**! The state of the Volume after the restore is going to be **exactly the state** which your Volume was in when you made the Backup.
+* all data on the Volume you choose as the restore target **will be lost**! The state of the Volume after the restore is going to be **exactly the state** which your Volume was in when you made the Backup.
 
 * the Volume needs to be large enough to fit your backup data. 
 
@@ -309,7 +309,7 @@ When you restore to **any Volume**, you must keep the following in mind:
 
 {% endBgBox %}
 
-Backups take space in your object store, so you may want to delete old Snapshots every now and then:
+Backups take space in your object store, so you may want to delete old Snapshots every now and then with:
 
 ```openstack backup delete <Backup-ID>```
 
@@ -325,8 +325,8 @@ To create a Snapshot of a volume:
 
 ```openstack snapshot create --name <Snapshot-Name> --description "Describe the snapshot" <Volume-Name>```
 
-As volume name you may specify the name or ID. You should name and describe the snapshot such that it makes sense to you.
-Let's for example create a snapshot of *MyNewStorage* and name it *MyNewStorageSnapshot1": 
+As the volume name you may specify the name or ID. You should name and describe the snapshot such that it makes sense to you.
+Let's for example create a snapshot of *MyNewStorage* and name it *MyNewStorageSnapshot1*: 
 
 ```openstack snapshot create --name MyNewStorageSnapshot1 --description "First snapshot" MyNewStorage```
 
@@ -344,9 +344,9 @@ You can create a *new* volume of this snapshot using the same command as describ
 
 ```openstack volume create --snapshot <snapshot-ID> --description "My restored Volume" --size <Size-in-GB> [--availability-zone <zone>] <New-Volume-Name> ```
 
-You may create a Volume which has a larger storage size than the original Snapshot, but it may not be less.
+You may create a Volume which has a larger storage size than the original Snapshot, but you cannot create one with less.
 
-For example, we can create a new volume out of the snapshot *MyNewStorageSnapshot1* and call it *"MyRestoredVolume"*, and set the size to 2GB this time:
+For example, we can create a new volume out of the snapshot *MyNewStorageSnapshot1* and call it *MyRestoredVolume*, and set the size to 2GB as follows:
 
 ```openstack volume create --snapshot <ID of MyNewStorageSnapshot1> --description "My restored Volume" --size 2 MyRestoredVolume```
 
