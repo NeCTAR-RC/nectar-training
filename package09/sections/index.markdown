@@ -6,14 +6,14 @@ part: Documentation
 
 In this module we will discuss how you can back up your instance and your data. You will learn how to make snapshots and how to recover your virtual machine using this snapshot. You will also learn how to terminate your virtual machine and release your storage without losing anything.
 
-Not only is it important that you know about what measures are taken at NeCTAR to prevent data loss. Part of keeping your data safe is your responsibility: You should **create backups** at regular intervals. In this module, you will learn a few options how to back up your data.
+Is is important to be aware of the measures taken by NeCTAR to prevent data loss. But an important part of keeping your data safe is your responsibility: You should **create backups** at regular intervals. In this module, you will learn several approaches to backing up your data.
 
-A very important issue is also that you **"clean up"** your resources after you have finished using them. This involves not only securely erasing data on your volumes or ephemeral storage. You should also "terminate" (delete) your instance and your storage as soon as you don't need it any more. Why is this so important? Because your running instance and your existing storage **take up resources which other researchers may need**. 
+Another very important activity is **"cleaning up"** your resources after you have finished using them. This involves not only securely erasing data on your volumes or ephemeral storage. You should also "terminate" (delete) your instance and your storage as soon as you don't need it any more. Why is this so important? Because your running instance and your existing storage **take up resources which other researchers may need**. 
 {% BgBox info %}
-NeCTAR experiences resource shortage problems from time to time, which is largely due to that most NeCTAR instances are seriously underutilized (they are *idle*). It has been observed that the average CPU utilization rate across the NeCTAR federation is less that **5%**, and many large instances sit idle for days, weeks or months at a time.
+NeCTAR experiences resource shortages from time to time, which could be avoided if unused (*idle*) or underutilised (*mostly idle*) NeCTAR instances were shut down, freeing up resources. It has been observed that the average CPU utilization rate across the NeCTAR federation is less than **5%**, and many large instances sit idle for days, weeks or months at a time.
 {% endBgBox %}
 
-The problem is that many people want their compute resources to be available when *they* are ready to use them. They don't realise that while they are not using it, they are blocking resources to others. It is therefore important that everyone is aware of this and responsibly releases their resources when they don't need them any more. **Fair play!**
+The problem is that many people want their compute resources to be available when *they* are ready to use them. They don't realise that while they are not using those resources, they are preventing others from accessing them. It is therefore important that everyone is aware of this and responsibly releases their resources when they don't need them any more. **Fair play!**
 
 {% BgBox important %}
 The amount of **CPU hours** you request in an allocation is the amount of time your instance will be in existence --- *not* the time the CPU is acually busy with your programs! That is, all time counts between when you *launch* the instance and *terminate* it --- regardless whether the CPU is idle the whole time, or the instance is shut down or suspended. While you have access to the instance, it counts as CPU hours!
