@@ -11,7 +11,7 @@ part: Documentation
 
 {% BgBox info %}
 {% include /docLinks.markdown %}
-Before the **openstack** client was introduced, access to the object store was managed with the **swift** command, so you may still find references to it on the Internet. While you still can use *swift*, in this tutorial we stick to the more uniform and intuitive *openstack* client, which works very similar to the *swift* command.
+Before the **openstack** client was introduced, access to the object store was managed with the **swift** command, so you may still find references to it on the Internet. While you still can use *swift*, in this tutorial we stick to the more uniform and intuitive *openstack* client, which works similarly to the *swift* command.
 For more details, refer to the [official OpenStack swift][OpenStackSwift] documentation.
 {% endBgBox %}
 
@@ -47,7 +47,7 @@ Type
 
 ```openstack container list```
 
-and you should see the containers which you already have created.
+and you should see the containers which you have already created.
 
 {% BgBox terminal %}
 +-------------------+
@@ -103,7 +103,7 @@ In the example, upload the file you have created to the new container *MyTestCon
 
 ```openstack object create MyTestContainer ~/MyNewTextFile.txt```
 
-*Note:* On **Windows**, you have to use the Windows command line syntax to specify the path to the file. This tutorial assumes you are familiar with how to modify the commands.
+*Note:* On **Windows**, you have to use the Windows command line syntax to specify the path to the file. This tutorial assumes you are familiar with how to modify the commands to use the conventions of the Windows command line.
 
 This will have created a new container called *MyTestContainer* (unless you had a container with this name already). List the files which are there now:
 
@@ -117,7 +117,7 @@ This will have created a new container called *MyTestContainer* (unless you had 
 +-----------------------------------+
 {% endBgBox %}
 
-Note that the path to your filename has been included in the name, which is not very convenient. Unfortunately, the only way around this is to upload a file which is in the *current working directory*. So lets delete the file, and then upload it without the path:
+Note that the path to your filename has been included in the name, which is not very convenient. Unfortunately, the only way around this is to upload a file which is in the *current working directory*. So let's delete the file, and then upload it without the path:
 
 ```openstack object delete MyTestContainer /home/yourname/MyNewTextFile.txt```    
 ```cd ~```    
@@ -159,18 +159,18 @@ This will display properties and metadata of your file, e.g. *content-length* di
 {% endBgBox %}
 
 
-Now, lets **download** that same file again and save it as another name, to see that it still has the right content:
+Now, let's **download** that same file again and save it as another name, to see that it still has the right content:
 
 ```openstack object save --file <destination path> <container name> <file name>```
 
 The argument ```--file``` specifies the destination path on your computer where you want to save the file. If you want to keep the name of the file, this path can be the destination folder only. If you want to rename the file at the same time, specify a file name also. 
-In our example, if we want to save the file as *MyDownloadedFile.txt* into our home directory, the command unfolds to:
+In our example, if we want to save the file as *MyDownloadedFile.txt* into our home directory, the command becomes:
 
 ```openstack object save --file ~/MyDownloadedFile.txt MyTestContainer MyNewTextFile.txt```
 
-You may now open the file *MyDownloadedFile.txt* in your home directory and see that it has the same text that you wrote into it in the beginning.
+You may now open the file *MyDownloadedFile.txt* in your home directory and see that it has the same text it contained originally.
 
-Finally, lets delete the container which we just used now for this example:
+Finally, let's delete the container which we used for this example:
 
 ```openstack container delete MyTestContainer```
 

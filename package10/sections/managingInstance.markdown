@@ -7,12 +7,12 @@ part: Documentation
 
 {% BgBox prerequisite %}
 {% include /docLinks.markdown %}
-*Prerequisite*: You need to have installed the *python-openstackclient* using the instructions given earlier. You should also be familiar with the terminology and concepts involved for launching an instance, as described in [Module 7][ModDoc7]. You also must have *sourced* your OpenStack RC file on the command line you are using, as described [earlier in this module](openStackClients.html).
+*Prerequisite*: You need to have installed the *python-openstackclient* using the instructions given earlier. You should also be familiar with the terminology and concepts involved in launching an instance, as described in [Module 7][ModDoc7]. You also must have *sourced* your OpenStack RC file on the command line you are using, as described [earlier in this module](openStackClients.html).
 {% endBgBox %}
 
 {% BgBox info %}
 {% include /docLinks.markdown %}
-Before the **openstack** client was introduced, managing compute services was done with the **nova** command, so you may still find references to it on the Internet. While you still can use *nova*, in this tutorial we stick to the more uniform and intuitive *openstack* client, which works very similar to the *nova* command.
+Before the **openstack** client was introduced, managing compute services was done with the **nova** command, so you may still find references to it on the Internet. While you still can use *nova*, in this tutorial we stick to the more uniform and intuitive *openstack* client, which works similarly to the *nova* command.
 For more details, refer to the [official OpenStack nova][OpenStackNova] documentation.
 {% endBgBox %}
 
@@ -97,13 +97,13 @@ You may also add a new key. The command
 
 ```openstack keypair create <name>```
 
-will generate a key with a &lt;name&gt; you may choose, and print the private key to the terminal. You have to copy and save this output **now** to a file and store it somewhere as your private key.
+will generate a key with the &lt;name&gt; of your choice, and print the private key to the terminal. You have to copy and save this output **now** to a file and store it somewhere as your private key.
 
 If you want to select an existing key that you generated earlier, you have to specify the path to your *public* key, which you must be able to access from your terminal:
 
 ```openstack keypair create --public-key <path-to-your-pub-key> <name>```
 
-Display the help for *keypair create* with
+You can display the help for *keypair create* with
 
 ``` openstack help keypair create```
 {% endBgBox %}
@@ -178,8 +178,9 @@ It will display information about the instance being created, similar to these *
 {% endBgBox %}
 
 The state (*vm_state*) will probably still be *"building"*.
-Once the instance has been created, it will show up in the output of *openstack server list* and *show*.
-Check if the instance is in status **Active** with the command:
+Once the instance has been created, it will show up in the output of *openstack server list* and *openstack server show*.
+
+You can check if the status of the instance is **Active** with the command:
 
 ```openstack server list```
 
@@ -232,7 +233,9 @@ The snapshot will be **saved as an Image** with the name you choose. In the exam
 
 ```openstack server image create --name ClientLaunchedSnapshot ClientLaunchedInstance```
 
-This process may take a while. In the beginning, the 'status' of your snapshot will still be *queued*. Check on the status of your snapshot repeatedly with:
+This process may take a while. In the beginning, the 'status' of your snapshot will be *queued*. 
+
+You can check on the status of your snapshot with:
 
 ```openstack image show <Image-Name>```
 
@@ -252,7 +255,7 @@ The easiest option is probably to pause or shut down the instance and then take 
 
 Because your snapshot was saved as an *Image*, you can easily launch the instance from this image. Instead of the *NeCTAR Ubuntu Image* which we used earlier, you can now specify your own image to launch a new instance. The new instance will have all the software you installed before taking the snapshot, and all the data you saved the on-instance storage (on the primary disk, *not* the secondary!).
 
-You can print a list of all the images (instance and volume snapshots) you have created, if you need to get a reminder for the snapshot name:
+You can print a list of all the images (instance and volume snapshots) you have created, if you would like a reminder for the snapshot name:
 
 ```openstack image list --private```
 
@@ -264,7 +267,7 @@ You may launch an instance from your own image with the same command we used ear
 
 ```openstack server create --flavor <flavor-id> --key-name <keypair-name> --image <snapshot-name> --security-group <group name> --availability-zone <zone name> <name-of-instance>``` 
 
-In our particular example, the command instantiaties to:
+In our particular example, the command becomes:
 
 ```openstack server create --flavor m1.small --key-name Nectar_Key 
     --security-group icmp --security-group ssh --image ClientLaunchedSnapshot CopyOfClientLaunchedInstance```
@@ -276,6 +279,6 @@ List the details of your new instance with
 You have now two copies of your original instance running. You may log in with ssh to *CopyOfClientLaunchedInstance* as well.
 
 {% BgBox important %}
-Note that you may also choose a **different flavor** when you launch a new instance from the snapshot! This allows you to expand your resources (though you can do this easier, see the options with *openstack help server resize*). You should not choose a flavor with less storage available on the primary on-instance disk, otherwise the launching of your instance may fail due to lack of disk space.
+Note that you may also choose a **different flavor** when you launch a new instance from the snapshot! This allows you to expand your resources (though you can do this more easily by following the process outlined in *openstack help server resize*). You should not choose a flavor with less storage available on the primary on-instance disk, otherwise the launching of your instance may fail due to lack of disk space.
 {% endBgBox %}
 
