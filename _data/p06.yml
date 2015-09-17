@@ -16,9 +16,6 @@
 - name: Volume (block) vs Object storage
   file: volumeVsObject.html
   level: 2
-- name: RDSI storage
-  file: rdsiStorage.html
-  level: 2
 - name: Recommendations
   file: storageRecommendations.html
   level: 2

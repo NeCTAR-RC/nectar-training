@@ -25,7 +25,7 @@ You may then choose a name for the Snapshot, and confirm with **Create Snapshot*
 This process may take a while. While the Snapshot is being made, it will be listed with the Status *"Queued"*, then *"Saving"*, and finally it will be finished and in status *"Active"*. In the top row of the *Images* tab you can filter the Images to display. The current setting is *"Project":* These are only your private Images. If you click on *"NeCTAR official"* you will see all the NeCTAR Images that are available to launch new instances. *"Public"* will show you even more Images you may use.
 
 {% BgBox info %}
-Instance Snapshots *do not* include the state of the secondary ephemeral drive, or of any volumes or RDSI storage, *even if* they are currently mounted, e.g. on */data* or */mnt*. 
+Instance Snapshots *do not* include the state of the secondary ephemeral drive, or of any volumes, *even if* they are currently mounted, e.g. on */data* or */mnt*. 
 {% endBgBox %}
 
 On the same *Images* Tab, you may also **delete your Snapshot** at a later time. This is something you may want to do --- keep in mind that your Snapshot is using up significant space of your disk quota. To delete a Snapshot, click on the right-hand side drop-down box of your Snapshot and select *Delete Image*.

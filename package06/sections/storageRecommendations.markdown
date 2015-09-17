@@ -13,8 +13,7 @@ You may need *Volumes* for data access from your programs which require block st
 
 * Use the Object Store for individual files which you want to have easy access to from many locations, or which you would like to easily share with collaborators.
 
-
-* For very large data demands, you may consider using Volumes, or try to get an RDSI allocation. Check with the individual RDSI node if the data is backed up, or if users need to take care of it themselves.
+* For very large data demands, you may also consider using Volumes.
 
 {% BgBox important %}
 {% include /docLinks.markdown %}
