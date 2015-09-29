@@ -154,7 +154,8 @@ If you *don't* use the **-N -f** options, you will be logged into an ssh termina
 2. Select **SSH > Tunnels** in the left pane. Enter these values:    
     **Source port**: 5900    
     **Destination:** localhost:5901    
-    Then, click the **Add** button. Your tunnel will now appear in the list, similar to the figure here.
+    Then, click the **Add** button. Your tunnel will now appear in the list.
+{% img src=images/scrPuttySSHTunnel.png, w=60, dim=percent, align=center %}
 
 3. You can save the tunneling along with your session by selecting **Session** in the left pane. Click on your session name in the **Saved Sessions** pane, then click **Save** (or create a new name instead by typing in a new name, e.g. called "*TunneledNectarSession*"). 
 
