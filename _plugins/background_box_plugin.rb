@@ -32,22 +32,23 @@ module Jekyll
 			content=super(context)
 			output = converter.convert(super(context))
 			content=content.strip
+      baseurl = context.registers[:site].baseurl
 			case @boxType 
 			when "info"
 				"<div markdown class='bgInfo'>
-			        	<img src='/images/glyphicons-196-circle-info.png' align='left' style='width:26px; height:26px; 
+			        	<img src='#{baseurl}/images/glyphicons-196-circle-info.png' align='left' style='width:26px; height:26px; 
 					  margin:0px; margin-right:10px; margin-bottom:5px;'/>
 					#{output}
 				</div>"
 			when "important"
 				"<div markdown class='bgImportant'>
-			        	<img src='/images/glyphicons-197-circle-exclamation-mark.png' align='left' style='width:26px; height:26px; 
+			        	<img src='#{baseurl}/images/glyphicons-197-circle-exclamation-mark.png' align='left' style='width:26px; height:26px; 
 					  margin:0px; margin-right:10px; margin-bottom:5px;'/>
 					#{output}
 				</div>"
 			when "definition"
 				"<div markdown class='bgDefinition' style='min-height: 55px;'>
-			        	<img src='/images/glyphicons-352-book-open.png' align='left' 
+			        	<img src='#{baseurl}/images/glyphicons-352-book-open.png' align='left' 
 					style='width:24px; height:22px;
 					margin:0px; margin-right:10px; margin-bottom:5px;'/>
 					#{output}
@@ -58,7 +59,7 @@ module Jekyll
 				"<div class='bgTerminal'><pre class='PreformatTerminal'>#{content}</pre></div>"
 			when "prerequisite"
 				"<div markdown class='bgPrerequisite'>
-			        	<img src='/images/glyphicons-333-certificate.png' align='left' style='width:17px; height:26px; 
+			        	<img src='#{baseurl}/images/glyphicons-333-certificate.png' align='left' style='width:17px; height:26px; 
 					  margin:0px; margin-right:10px; margin-bottom:5px;'/>
 					#{output}
 				</div>"

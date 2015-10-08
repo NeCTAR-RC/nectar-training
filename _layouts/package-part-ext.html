@@ -95,7 +95,7 @@ layout: default
 				  <b>
 			{% endif %}
 			
-			<a href="{{page.contentspath}}/sections/{{ packagepart.file }}">{{indents}} {{ packagepart.name }}</a>
+      <a href="{{site.baseurl}}{{page.contentspath}}sections/{{ packagepart.file }}">{{indents}} {{ packagepart.name }}</a>
 			{% if current_file == packagepart.file  %}
 				</b>
 			{% endif %}
@@ -124,12 +124,12 @@ layout: default
   <p>
   {% if current_file != pagedata.first.file  %}
   	{% assign prev_index = current_index | minus:1 %}
-	<a href="{{page.contentspath}}/sections/{{pagedata[prev_index].file}}">Previous section</a>
+    <a href="{{site.baseurl}}{{page.contentspath}}sections/{{pagedata[prev_index].file}}">Previous section</a>
   {% endif %}
   &nbsp; &nbsp; &nbsp;
   {% if current_file != pagedata.last.file  %}
   	{% assign next_index = current_index | plus:1 %}
-	<a href="{{page.contentspath}}/sections/{{pagedata[next_index].file}}">Next section</a>
+    <a href="{{site.baseurl}}{{page.contentspath}}sections/{{pagedata[next_index].file}}">Next section</a>
   {% endif %}
   </p>
   {% endif %} <!-- endif for pagedata_avail -->
