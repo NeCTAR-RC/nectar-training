@@ -201,7 +201,7 @@ $on-palm:          600px;
 $on-laptop:        800px;
 
 
-$base-url:  {{site.baseurl}};
+$base-url:  '{{site.baseurl}}';
 $logo-url:  '{{site.baseurl}}/images/nectar_logo.png';
 
 // Using media queries with like this:
