@@ -364,10 +364,6 @@ exit 0
 
 Of course, you won’t have to do all the above steps every day when you want to connect to your remote VNC desktop. The only things you need to do each time are:
 
-{% col 255,0,0 %}
-TODO: Create links within the document to refer to the steps
-{% endcol %}
-
 1. Start the ssh tunnel, as described above (Step 1: Set up ssh tunneling). On Windows, if you are using PuTTY, you may have created a saved session which you can start easily.
 
 2. Open your VNC client and connect, as described in (Step 3: Connect to the VNC server)

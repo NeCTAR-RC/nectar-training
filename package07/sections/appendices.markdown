@@ -8,10 +8,6 @@ A number of topics are covered in the appendices. Scroll through the document to
 
 ### Create a new security group
 
-{% col 255,0,0 %}
-TODO: Screenshots
-{% endcol %}
-
 On the Dashboard:
 
 1. Go to **Access and Security**
@@ -90,10 +86,6 @@ If you have generated your ssh key on a Linux system and now want to use it in P
 4. Click on the button **Save private key** and save your key file.
 
 You may also want to simply create a separate set of keys for PuTTY (see [this section](createSSHKey.html)). In this case, you have to add the new key as an authorized key on the instance. This is explained in (this section) of this Appendix.
-{% col 255,0,0 %}
-TODO: Add document-internal link
-{% endcol %}
-
 
 ### Windows: Using *Pageant* to handle your ssh key
 
@@ -158,12 +150,6 @@ To check the right groups the user is assigned to, type
 Each user should have their own ssh keys. Ask them to create it, using their passphrase of choice, and then send you their public key. Add their public key to your VM by following instructions in (this section) of this appendix.
 {% endBgBox %}
 
-{% col 255,0,0 %}
-TODO: Add document-internal link
-{% endcol %}
-
-
-
 
 ### Adding a new ssh key
 
@@ -198,11 +184,6 @@ Make sure that the directories and files have the correct ownership and access:
 SSH Tunnelling is best explained with an example. Imagine you're on a private network with very conservative firewall rules which don't allow connections to a specific server. For example, *blockedsite.com* is not accessible from your network. You can of course ask your system administrator to free up this site for you, but you may have to wait for the approval. To get around this firewall rule we can redirect our connection via a port that does not block this website: We can create a *tunnel* through a server which is not on our network and which can access *blockedsite.com*. We call this server the *gateway*. 
 
 {% img src=images/sshtunnel.png, w=50, dim=percent, align=center, css=margin-top:20px; margin-bottom: 20px; %}
-
-{% col 255,0,0 %}
-TODO: Redo this graphic which was taken from google image search. Label the "gateway" as well.
-Also, insert a graphic which shows the gateway when connecting to another destination server.
-{% endcol %}
 
 Let's say *blockedsite.com* uses the *http* protocol (as most websites do) through Port 80. Instead of connecting our port 80 to the *blocksite.com*'s port 80 (which would not work), we will redirect all traffic from our port 80 through the secure ssh port 22. This one will not be blocked by the firewall, and nobody will be able to decypher the traffic going through it (unless they get access to your private key and passphrase of course). On the gateway, our connection will come in at Port 22, and the ssh server will then redirect the traffic to port 80 on *blockedsite.com*. We call this technique *local port forwarding*. Of course, the connection between the gateway and the server of *blockedsite.com* is not encyrypted; only the tunnel between our computer and the gateway is.
 

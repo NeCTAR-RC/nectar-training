@@ -8,10 +8,6 @@ NeCTAR eResearch Tools provide research software for the Australian research com
 
 NeCTAR [eResearch Tools](http://www.nectar.org.au/eresearch-tools) are tools specifically developed for research. Some of them are provided on github servers which are hosted on the NeCTAR infrastructure, others are web-based. Many tools have integrated data sharing.
 
-{% col 255,0,0 %}
-TODO: Show slides that each eReserach tools group creates to present their tools, instead of the following examples
-{% endcol %}
-
 ### Examples
 
 * [Drishti and Voluminous](http://anusf.anu.edu.au/Vizlab/drishti/) are scientific **visualisation and analysis** tools. *Drishti* is a component of the NeCTAR Characterisation Virtual Laboratory and *Voluminous* is a web-based application. 

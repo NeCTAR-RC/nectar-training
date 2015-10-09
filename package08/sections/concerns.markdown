@@ -134,9 +134,6 @@ The NeCTAR cloud uses the *KVM* Hypervisor with *OpenStack*. *KVM* is a good cho
 For more information, refer to the [OpenStack security guide](OpenStackSecurityGuide).
 
 Regular patching of the Hypervisor is important to refresh security. Also, appropriate security policies have to be applied. The NeCTAR cloud administration team is aware of the high security demands of Australia’s researchers and regularly updates the systems and applies a strict security policy to ensure maximum safety.
-{% col 255,0,0 %}
-TODO: Ask with which name to refer to the team of IT experts managing the cloud at NeCTAR.
-{% endcol %}
 
 In addition to the efforts the security team at NeCTAR are making, part of the security is also **your responsibility**, because not only the Hypervisor, but also your VM has to be secure (for example, to help prevent a *VM Escape* attack). 
 

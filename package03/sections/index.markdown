@@ -26,15 +26,4 @@ The Research Cloud uses the successful, open-source *OpenStack* cloud computing 
 
 To illustrate a few examples in which you may benefit from using the Research Cloud, we will discuss a few common use cases in this Module.
 
-{% col 255,0,0 %}
-TODO to each of these following, create a little image or animation to explain the scenario or make it nicer to look at while the scenario is being explained.
-{% endcol %}
-
-### {% col 255,0,0 %} Note for Reviewers {% endcol%}
-
-There are 8 use cases instead of 5, we can pick any 3 to eliminate.
-
-
-
-
 {% include /disclaimer.markdown %}

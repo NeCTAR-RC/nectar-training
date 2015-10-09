@@ -23,9 +23,6 @@ There are a number of advantages and drawbacks to both local computing (the trad
 
 
 ### Pros and Cons of ***cloud*** computing
-    
-{% col 255,0,0 %} TODO: Draw a graphic with two scenarios and insert here: Instead of x users using x own computers (not requiring all compute power of it), all users may be sharing one big computer and still satisfy their needs in terms of computing power.
-{% endcol %}
 
 **Pros:**
 

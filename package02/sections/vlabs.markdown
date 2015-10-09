@@ -44,8 +44,6 @@ NeCTAR [Virtual Laboratories](https://nectar.org.au/virtual-laboratories-1) are 
 
     * Management of clusters (e.g. [www.genomics.edu.au](http://www.genomics.edu.au))
 
-{% col 255,0,0 %}TODO: Show slides that each VLab group creates to present their tools, instead of the following examples{% endcol %}
-
 **Examples include**
 
 * The [Climate and Weather Science](http://www.nectar.org.au/climate-and-weather-science-laboratory) Virtual Laboratory for studying and forecasting weather patterns.

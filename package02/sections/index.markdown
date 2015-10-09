@@ -13,12 +13,6 @@ In a few words,
 
 * *eResearch Tools* provide online **software tools** for common research tasks. 
 
-### {% col 255,0,0 %} Notes for reviewers {% endcol %}
-
-This module will include a short presentation (2 slides and a paragraph) of each virtual laboratory and eResearch tools platform which we will request from the people responsible for support of the respective VLab/eTool.
-
-
-
 {% include /disclaimer.markdown %}
 
 

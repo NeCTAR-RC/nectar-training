@@ -5,7 +5,7 @@ part: Documentation
 
 {% include /docLinks.markdown %}
 
-**Hurray!**
+**Hooray!**
 
 You should now have a good idea about the difference between Cloud and HPC. 
 

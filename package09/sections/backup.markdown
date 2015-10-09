@@ -45,10 +45,6 @@ You should only use snapshots for significant states for your Volumes which you 
 
 To make a *Backup* (not a *Snapshot*), you will need to use the **openstack command line client**, as described in [Module 10](ModDoc10). Support to create Backups via the Dashboard will probably be added in the near future --- it will then work in a very similar fashion to taking Snapshots.
 
-{% col 255,0,0 %}
-TODO: Update this with exercise as soon as backups are available on the Dashboard.
-{% endcol %}
-
 {% BgBox important %}
 Note that when using Backups, you need to have enough quota on your Object Store to back up your data. You need to consider this when you request a resource allocation if you want to use OpenStack Backups --- if you don't request Object Store quota, you won't be given any allocation for it.
 {% endBgBox %}

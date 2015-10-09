@@ -120,11 +120,7 @@ The 3 service types can be characterized with two properties:
 
 Services which are less constrained give the user more control, but instead also offer less automation, and more work is required to get the desired applications up and running. The figure below shows examples of services along the scales of constrainedness and automation. Services to the left are less constrained, but also provide less automation. Towards the right end of the scale, capabilities are provided "out of the box," but are also more constrained in how they can be used.
 
-![Constrainedness and Automation of service types](images/serviceTypesConstrainedness.png)
 
-{% col 255,0,0 %} 
-TODO: This graphic is taken from Uni Washington. It will have to be re-drawn to avoid copyright issues. 
-{% endcol %}
 
 
 

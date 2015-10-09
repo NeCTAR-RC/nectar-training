@@ -14,8 +14,7 @@ There are several deployment models for a cloud which all imply different levels
 
 * **Hybrid cloud:** A Hybrid cloud is a mixed deployment model, employing both private and public infrastructures. A hybrid cloud is mostly used for outsourcing processes and/or data to a public cloud while maintaining sensitive data inside a local private cloud.
 
-* **Community cloud**: Multiple organisations with common concerns, such as security requirements, policy, interests, and/or missions, may share cloud infrastructures across administrative domains to form a community cloud. 
-{% col 255,0,0 %} TODO: NeCTAR is a community cloud ??? {% endcol %}
+* **Community cloud**: Multiple organisations with common concerns, such as security requirements, policy, interests, and/or missions, may share cloud infrastructures across administrative domains to form a community cloud.
 
 The private cloud is owned by a single organization and public clouds are shared on a larger scale.
 

@@ -12,8 +12,8 @@
   file: researchApp.html
 - name: Case 6 - Reproducible Research
   file: reproducibleResearch.html
-- name: Case 7 - Teaching
-  file: teaching.html
+- name: Case 7 - Training
+  file: training.html
 - name: Case 8 - Big Data demands
   file: bigdata.html
 - name: Summary

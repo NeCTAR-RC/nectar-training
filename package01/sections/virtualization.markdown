@@ -56,14 +56,6 @@ There are two types of hypervisors:
 
 The difference is that (a) runs directly on the physical computer's hardware (the hypervisor is like an operating system for itself). Therefore, they are sometimes called **bare metal hypervisors**. Hypervisor (b) runs on top of an operating system, just like normal computer programs do, therefore it is referred to as **hosted hypervisor**. 
 
-![Type 1 hypervisor](images/Type1Hypervisor.png "Title")
-![Type 2 hypervisor](images/Type2Hypervisor.png)
-
-
-{% col 255,0,0 %} 
-TODO: Image taken from the web, redo it (and add transparancy) to avoid copyright issues 
-{% endcol %}
-
 There are also hypervisors that are a blend of both types (a) and (b). The **Kernel-based Virtual Machine (short: KVM)** for example, which is used in the NeCTAR cloud, is a modified version of the underlying linux operating system.
 
 {% endBgBox %}
@@ -78,7 +70,6 @@ There are also hypervisors that are a blend of both types (a) and (b). The **Ker
 Therefore, it is common to allocate a larger number of virtual processors to fewer physical processors. The hypervisor takes care of scheduling the CPU work across the physical cores.
 
 *Note:*
-{% col 255,0,0 %}(TODO: Confirm with NeCTAR!) {% endcol %} 
 At the time of writing, the NeCTAR cloud allocates one physical core to each virtual core, so users never share a core with others. However, this may change in future.
 
 **Question**: I have heard of the *Java virtual machine (JVM)* – what's the difference to a virtual computer?

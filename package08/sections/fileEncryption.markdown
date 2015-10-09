@@ -14,10 +14,6 @@ In the following we will discuss the following tools which support per-file encr
 
 * Mac: Disk Utility
 
-{% col 255,0,0 %}
-TODO: Insert internal document links
-{% endcol %}
-
 Other widely known tools which have recently received bad security audits (e.g. *EncFS, OpenSSL, TrueCrypt*) are not discussed in this course.
 
 More detailed instructions are given for *GnuPG*, while the description of the other tools refers to related documentation.

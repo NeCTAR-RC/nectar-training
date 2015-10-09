@@ -72,10 +72,6 @@ Try using *root* instead of *ubuntu* ("*root@NNN.NNN.NNN.NNN*") for other Operat
 
 Now, you should be connected to your instance and your ssh terminal command line is ready to use.
 
-{% col 255,0,0 %}
-TODO: Create a jekyll tag which brings you to the "next" page now, instead of at the bottom of the page.
-{% endcol %}
-
 **Windows**
 
 On a windows system, we will use the **PuTTY** terminal to connect to the instance. 

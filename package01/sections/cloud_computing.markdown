@@ -24,9 +24,6 @@ It is not clear where the term "cloud" comes from. One popular explanation is th
 
 
 {% img src=images/CloudServices.png, w=80, dim=percent, align=center %}
-{% col 255,0,0 %} 
-TODO: Make an image of this draft
-{% endcol %}
 The image above shows how you connect to your cloud computing infrastructure (computers and storage) via the Internet.
 Your local computer is only used to control your resources from remote and display things on your screen — the data and compute servers are actually "in the cloud".
 
@@ -35,17 +32,10 @@ Your local computer is only used to control your resources from remote and displ
 Imagine your research software requires lots of resources to run optimally: Either more computers working in parallel, or a lot of storage. Your research organisation may not be able to provide such resources to you, or if you were to set up several computers in your office, that would incur lots of costs and maintenance. In the cloud, you can easily **scale up** to the resources you require at the time you need them, and **release** the resources when you don't need them any more, not incuring any more costs or maintenance activities. 
 
 {% img src=images/CloudServices2.png, w=80, dim=percent, align=center %}
-{% col 255,0,0 %} 
-TODO: Make an image of this draft
-{% endcol %}
 
 Another advantage is that the Cloud enables efficient *research collaboration*: Collaborators may be granted access to the same services, and you can work together on the same platform without the need for synchronization.
 
 {% img src=images/CloudServices3.png, w=80, dim=percent, align=center %}
-{% col 255,0,0 %} 
-TODO: Make an image of this draft
-{% endcol %}
-
 
 There are more advantages, and also some drawbacks, to migrating your research IT infrastructure to the cloud---but we shall talk about this later on in more depth. 
 
