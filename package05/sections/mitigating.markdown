@@ -26,15 +26,6 @@ You should **never share your password** with anyone!
 
 To get an impression of how significant the difference between various password lenghts is, the graphic below shows how long it would to take to crack a password when using 1000 cloud servers together to do the cracking:
 
-{% img src=images/passwordStrength.png, w=50, dim=percent, align=center, css=margin-top:20px;margin-bottom:20px; %}
-
-{% col 255,0,0 %}
-TODO: Redo this graphic, taken from [here](http://cdn.katescomment.com/wordpress/wp-content/uploads/2013/01/Cloud-Security-Infographic-600px.jpg)
-{% endcol %}
-
-
-
-
 You will need to choose passphrases at several occasions. For example, before you can establish a connection to your virtual machine, you will have to generate keys which encrypt the connection between you and the virtual machine. A *key* is associated with a passphrase and it is needed to access your instance. We will do this in [Module 7][ModDoc7]. 
 
 Evidently, **never share passwords or private keys** with anyone not trusted. If you want to give someone access to your virtual machine, they should have their own keys to it, and not use yours. You can then block access to them any time by removing their key from your virtual machine. We will talk more about this in [Module 7][ModDoc7].
