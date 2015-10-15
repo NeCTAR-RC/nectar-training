@@ -4,6 +4,11 @@ part: Documentation
 ---
 {% include /docLinks.markdown %}
 
+{% youtube GCdLEI_t8HM %}
+
+{% youtube GZKtKNfzlv8 %}
+
+{% youtube __h99wjakbE %}
 
 This module is designed for advanced users who want to learn more about command line tools to control the NeCTAR resources. This can help to automate procedures, for example with scripts for backup processes. Worked examples of the OpenStack command line tool *openstack* are included in this Module. 
 
