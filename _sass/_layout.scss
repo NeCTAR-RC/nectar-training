@@ -2,7 +2,7 @@
  * Site header
  */
 .site-header {
-    background-color: #efefef;
+    background-color: white; //#efefef;
     //border-top: 5px solid $grey-color-dark;
     //border-bottom: 1px solid $grey-color-light;
     min-height: 120px;
@@ -14,10 +14,32 @@
 .logo-container {
   display: inline-block;
   float: left;
+  margin-left: 60px;
   width: 400px;
   height: 120px;
   vertical-align: middle;
-  background:url($logo-url) no-repeat center right;
+  background:url($logo-url) no-repeat center left;
+}
+
+/* unvisited link */
+.menu-container a:link {
+    color: black!important;
+}
+
+/* visited link */
+.menu-container a:visited {
+    color: black!important;
+}
+
+/* mouse over link */
+.menu-container a:hover {
+    color: black!important;
+    text-decoration: none!important;
+}
+
+/* selected link */
+.menu-container a:active {
+    color: black!important;
 }
 
 .title-container {
@@ -47,8 +69,12 @@
 }
 
 .menu-container {
+  background-color: #97C8C2;
   text-align: right;
-  padding: 4px 4px 4px 4px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-right: 60px;
+  font-size: 12px;
 }
 
 .site-nav {
