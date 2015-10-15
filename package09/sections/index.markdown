@@ -4,6 +4,10 @@ part: Documentation
 ---
 {% include /docLinks.markdown %}
 
+{% youtube 9sYuHXA1rjg %}
+
+{% youtube Bl5Z_kG5sgA %}
+
 In this module we will discuss how you can back up your instance and your data. You will learn how to make snapshots and how to recover your virtual machine using this snapshot. You will also learn how to terminate your virtual machine and release your storage without losing anything.
 
 Is is important to be aware of the measures taken by NeCTAR to prevent data loss. But an important part of keeping your data safe is your responsibility: You should **create backups** at regular intervals. In this module, you will learn several approaches to backing up your data.
