@@ -5,6 +5,9 @@ part: Documentation
 
 {% include /docLinks.markdown %}
 
+{% youtube PkYdBVnxniA %}
+
+
 > "The data tsunami is changing everything in science. Every discipline is now confronted with it—a vast exploration of data that comes from instruments, from online sources, from the web, from social media. Analyzing this data can’t be done on a PC."
 
 — Dennis Gannon, director of Cloud Research Strategy for Microsoft Research Connections
