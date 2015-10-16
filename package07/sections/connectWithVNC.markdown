@@ -123,7 +123,7 @@ Follow the steps below for your local computer's operating system:
 
 In a terminal on your local computer, create a tunnel from your local machine (Port 5900) to your instance (Port 5901) with this command:
 
-```ssh -i <path-to-your-keyfile> -L 5900:localhost:5901 -N** -**f -l ubuntu *NNN.NNN.NNN.NNN```
+```ssh -i <path-to-your-keyfile> -L 5900:localhost:5901 -N -f -l ubuntu NNN.NNN.NNN.NNN```
 
 where you should replace the NNN.NNN.NNN.NNN with yours instance’s IP address, and &lt;path-to-your-keyfile&gt; is the path to where you have saved your ssh key.
 
