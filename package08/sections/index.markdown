@@ -4,7 +4,12 @@ part: Documentation
 ---
 {% include /docLinks.markdown %}
 
+{% youtube iRyCkPVqgHA %}
+
+{% youtube eb73lFe4lvQ %}
+
 {% youtube emFRq7mXcbQ %}
+
 
 This module provides an introduction to key security issues, dangers and consequences when running a virtual machine in the cloud. Practical advice for making your machine secure and preventing it from being hacked. An introduction to data encryption including usage of a variety of tools is also given.
 

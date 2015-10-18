@@ -3,6 +3,10 @@ layout: package-part-ext
 part: Documentation
 ---
 
+{% youtube Sg2UMTU4IP8 %}
+
+{% youtube J2Y3s5Jkmmo %}
+
 This documentation provides a general introduction to cloud computing and an overview of the NeCTAR Research Cloud, Virtual Laboratories and eResearch tools which are available to researchers around Australia. 
 What is Cloud Computing? 
 How can cloud computing benefit your research? 
