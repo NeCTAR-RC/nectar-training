@@ -17,7 +17,7 @@ _What specific topics will be covered in the course_
 
 The following use cases will be discussed (5 out of the 8 will be picked):
 
-1. Embarassingly parallel problems (EPP) 
+1. Embarrassingly parallel problems (EPP) 
 2. Data Sharing with other researchers
 3. On-demand Computing for research and teaching 
 4. Remote Access to services from anywhere

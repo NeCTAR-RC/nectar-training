@@ -11,7 +11,7 @@ For example, a very large data set can be chopped into pieces which are then dis
 
 {% img src=images/EPP.png, w=70, dim=percent, align=center %}
 
-Or in another example, copies of a smaller data set are distributed across computers to perform different computations on it, and when all the individual analyises of the data are finished, the results are summarized. 
+Or in another example, copies of a smaller data set are distributed across computers to perform different computations on it, and when all the individual analyses of the data are finished, the results are summarized. 
 
 {% img src=images/EPP2.png, w=60, dim=percent, align=center %}
 

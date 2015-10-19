@@ -8,7 +8,7 @@ part: Documentation
 First of all, for either of the options (VNC or X2Go), we need to install a desktop environment on our instance (*Remember:* The desktop actually runs on the instance, you only get an *interactive window* to it on your local computer. So we need to install a desktop on your instance). 
 
 {% BgBox definition %}
-A *desktop environment* is what we use to graphically interact with a system (it provides the desktop, windows that open up and symbols you can click on to start a program). Windows and MacOS have only one desktop environment, but in most Unix-based systems you can choose from several environments. Popular choices are *Unity*, *Gnome* and *KDE*. There are also popular simple and light-weight environments called *LXDE*, *XFCE*, *Mate* and more.
+A *desktop environment* is what we use to graphically interact with a system (it provides the desktop, windows that open up and symbols you can click on to start a program). Windows and Mac OS have only one desktop environment, but in most Unix-based systems you can choose from several environments. Popular choices are *Unity*, *Gnome* and *KDE*. There are also popular simple and light-weight environments called *LXDE*, *XFCE*, *Mate* and more.
 {% endBgBox %}
 
 You may install several desktop environments, but you only need to choose one to start with.

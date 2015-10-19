@@ -16,13 +16,13 @@ Confirm installation of the package with **'Y'**.
 Now, open the web browser on your local computer, and type your instance's IP address in the URL field.
 We will see the default apache website of the browser.
 
-Let’s now start our own simple website. In your *ssh terminal*, type:
+Let's now start our own simple website. In your *ssh terminal*, type:
 
 ```nano /var/www/html/index.html```
 
 the directory */var/www/html* is where your website lives by default, and the file *index.html* is the start page which we want to edit. In the editor that comes up, remove all the text inside and replace it with the text below. 
 
-*Tipp*: Copy and paste will not work with many terminals. If the traditional copy & paste does not work, you can instaed try the following: copy the text as usual; then click with your mouse on the place you want to insert the text in your ssh terminal editor; Then, click the *right or middle* mouse button --- this will work on many systems to "paste" the contents of your clipboard.
+*Tip*: Copy and paste will not work with many terminals. If the traditional copy & paste does not work, you can instead try the following: copy the text as usual; then click with your mouse on the place you want to insert the text in your ssh terminal editor; Then, click the *right or middle* mouse button --- this will work on many systems to "paste" the contents of your clipboard.
 
 {% BgBox edit %}
 &lt;!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN"&gt;    

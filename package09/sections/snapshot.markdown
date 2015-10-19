@@ -10,11 +10,11 @@ You may *copy* the state of your instance, and later reboot it in this state. Co
 Snapshots only include data on your *primary* ephemeral drive. It is currently not possible to take Snapshots of the secondary ephemeral drive --- the only way to save your data on the secondary ephemeral drive is to use other forms of backup, as discussed in the next section.
 But it is also possible to take **Snapshots of Volumes**.
 
-In this section we are going to learn how to take Snapshots of instances and volumes. Then, we are going to re-create the state of the instances and volumes out of the snaphsots.
+In this section we are going to learn how to take Snapshots of instances and volumes. Then, we are going to re-create the state of the instances and volumes out of the snapshots.
 
 ### Snapshots of an instance
 
-Taking a Snapshot is simple: go to *Dashboard > Compute > Instances* and click *"Create Snapshot"* on the right hand sinde of the instance you wish to copy.
+Taking a Snapshot is simple: go to *Dashboard > Compute > Instances* and click *"Create Snapshot"* on the right hand side of the instance you wish to copy.
 
 {% img src=images/DashboardSnapshot.png, w=100, dim=percent, align=center %}
 
@@ -49,13 +49,13 @@ It is easy to launch a new instance from a Snapshot. Simply go on the *Dashboard
 * Choose an Instance Name,
 * Keep or change the flavor (don't pick a smaller though),
 * Access & Security: Select key pair and security groups,
-* Avaliablity Zone (optional): Choose your Availability Zone,
+* Availability Zone (optional): Choose your Availability Zone,
 * and possibly change other settings if you wish.
 
 
 ### Snapshots of volumes
 
-A Volume Snapshot creates a copy of the state of a Volume. It is similar to taking a Snaphshot of an instance in that it *creates an Image* of which you can then *create new Volumes*. This is not necessarily the most ideal form of Backup, because each Snapshot takes up **significant disk quota** the same size of your Volume --- even if the Volume still has lots of free space on it. For example, if you have a 50GB volume, but only use 1GB of data on it, then your Snapshot will still be 50GB. Also, you have *limited quota* available specifically for Snapshots. The [next section](backup.html) will cover more suitable forms of *backup* for your data. However, you may still prefer to take a Snapshot of particular state of the volume, in order to easily create a *new* volume from it at a later time.
+A Volume Snapshot creates a copy of the state of a Volume. It is similar to taking a Snapshot of an instance in that it *creates an Image* of which you can then *create new Volumes*. This is not necessarily the most ideal form of Backup, because each Snapshot takes up **significant disk quota** the same size of your Volume --- even if the Volume still has lots of free space on it. For example, if you have a 50GB volume, but only use 1GB of data on it, then your Snapshot will still be 50GB. Also, you have *limited quota* available specifically for Snapshots. The [next section](backup.html) will cover more suitable forms of *backup* for your data. However, you may still prefer to take a Snapshot of particular state of the volume, in order to easily create a *new* volume from it at a later time.
 
 {% BgBox important %}
 The original Volume on which the Snapshot was based *must still exist*, or the Snapshots of it become useless. 

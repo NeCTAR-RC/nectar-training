@@ -7,7 +7,7 @@ part: Documentation
 
 Because we base our instances in this course on Ubuntu, we shall also include instructions on how to encrypt a volume in your Ubuntu virtual machine.
 
-In [Module 7][ModDoc7], we have seen how we can use our secondary disk of our ephemeral storage to store our data (the secondary disk is essentially a volume storage which is included with the intance). We have also created a Volume storage and attached it to our instance. In both methods we have *mounted* the disk so that we can access it from our instance.    
+In [Module 7][ModDoc7], we have seen how we can use our secondary disk of our ephemeral storage to store our data (the secondary disk is essentially a volume storage which is included with the instance). We have also created a Volume storage and attached it to our instance. In both methods we have *mounted* the disk so that we can access it from our instance.    
 Disks which are *mounted* on the instance are suitable for Volume Encryption. You can encrypt the whole block of storage, and all files which are written on it will automatically be encrypted. Files on it will be unreadable to others which may gain access to it, even after you delete your storage (or discard your instance).
 
 You can think of volume encryption as happening in the background: You unlock it once with the password, and then use the drive as usual: editing, copying and moving files on it. All programs can access the drive as usual---Ubuntu takes care of automatic encryption and decryption in the background. 
@@ -78,7 +78,7 @@ It will ask you to confirm that you really want to do this, as all data will be 
 7. Now it is time to format your drive (again, replace *MySecureDrive* with your name, if you have chosen another).    
     ```sudo mkfs.ext4 /dev/mapper/MySecureDrive```
 
-8. That’s almost done! Now we can mount the drive to any directory. In this example, we will create a new one */MyMountedDriveedDrive*, but you can choose any other directory:    
+8. That's almost done! Now we can mount the drive to any directory. In this example, we will create a new one */MyMountedDriveedDrive*, but you can choose any other directory:    
      ```sudo mkdir /MyMountedDriveedDrive```    
     ```sudo mount /dev/mapper/MySecureDrive /MyMountedDriveedDrive```
 

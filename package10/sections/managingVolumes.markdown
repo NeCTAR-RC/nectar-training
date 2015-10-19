@@ -161,7 +161,7 @@ with the examples used in this tutorial the command becomes:
 ```openstack server add volume ClientLaunchedInstance MyNewStorage```
 
 {% BgBox info %}
-The ```openstack server add volume``` command also offers an argument ```--device```. This *optional* argument is intented to set the device mapping, e.g. */dev/mydevice*. OpenStack **currently ignores** this option when attaching volumes, so you should skip this option at this stage (it may be that your command does not work if you specify this option). 
+The ```openstack server add volume``` command also offers an argument ```--device```. This *optional* argument is intended to set the device mapping, e.g. */dev/mydevice*. OpenStack **currently ignores** this option when attaching volumes, so you should skip this option at this stage (it may be that your command does not work if you specify this option). 
 {% endBgBox %}
 
 
@@ -353,7 +353,7 @@ For example, we can create a new volume out of the snapshot *MyNewStorageSnapsho
 {% BgBox important %}
 The original Volume on which the Snapshot was based *must still exist*, or the Snapshots of it become useless. 
 
-OpenStack does not let you delete Volumes which have "depending Snapshots", so losing Snapshots by accidently deleting a Volume is not a worry. However you have to be aware that the Snapshots are only usable while you keep your Volume in existence. This is different to *Backups*.
+OpenStack does not let you delete Volumes which have "depending Snapshots", so losing Snapshots by accidentally deleting a Volume is not a worry. However you have to be aware that the Snapshots are only usable while you keep your Volume in existence. This is different to *Backups*.
 {% endBgBox %}
 
 The new volume will now be listed with your other volumes:

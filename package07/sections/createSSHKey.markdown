@@ -4,7 +4,7 @@ part: Documentation
 ---
 {% include /docLinks.markdown %}
 
-First, we will need to create a **ssh key pair** for connecting to our instances. An ssh key pair is required to encrypt the data which is transferred to communicate with the instance. The pair consists of two keys: A *private* key, and a *public* key.  The public key is called "public" because that’s the one which is placed on the server and which you may upload online without worrying about security issues. It is useless without its counterpart, the *private* key. The private key is the secret key which you keep on your local computer so that you may connect to the instance. You should keep the private key very safe and never share it with anyone. Take care not to lose it, otherwise you won’t be able to connect to your machine. The connection to the machine only works with both keys.
+First, we will need to create a **ssh key pair** for connecting to our instances. An ssh key pair is required to encrypt the data which is transferred to communicate with the instance. The pair consists of two keys: A *private* key, and a *public* key.  The public key is called "public" because that's the one which is placed on the server and which you may upload online without worrying about security issues. It is useless without its counterpart, the *private* key. The private key is the secret key which you keep on your local computer so that you may connect to the instance. You should keep the private key very safe and never share it with anyone. Take care not to lose it, otherwise you won't be able to connect to your machine. The connection to the machine only works with both keys.
 
 {% img src=images/sshKeys.png, w=70, dim=percent, align=center %}
 The image above shows two computers connected through their *ports*, with an ssh server and client encrypting the connection. Applications can use this secure ssh connection to exchange data. 
@@ -25,7 +25,7 @@ If you choose *Nectar_Key* as your key name, you will have two files after the g
 ```cd```    
 Now, check if you already have a directory called *.ssh*, by typing    
 ```ls -a```    
-A list of files in your home directory will be printed. If you don’t see the name *.ssh* in this list, create the directory (if you see the directory, skip this command):    
+A list of files in your home directory will be printed. If you don't see the name *.ssh* in this list, create the directory (if you see the directory, skip this command):    
 ```mkdir .ssh```    
 and change to this directory:    
 ```cd .ssh```     
@@ -38,7 +38,7 @@ You will be asked to specify a passphrase. Choose a secure passphrase! But make 
 ```ls```    
 Then you should see both files listed.
 
-3. Open the public key file with your favourite text editor. If you don’t have a favourite editor, here are some suggestions:    
+3. Open the public key file with your favourite text editor. If you don't have a favourite editor, here are some suggestions:    
 On a **Mac**, type    
 ```open -e Nectar_Key.pub```    
 which should open the key in TextEdit.     

@@ -6,7 +6,7 @@ part: Documentation
 
 To connect to your instance, you will need its IP address. You should have just written this down, or you can look it up on the Dashboard (*Compute > Instances*).
 
-In the following text, your **IP address** is described as **NNN.NNN.NNN.NNN**, which you will have to replace with your own instance’s IP address.
+In the following text, your **IP address** is described as **NNN.NNN.NNN.NNN**, which you will have to replace with your own instance's IP address.
 
 To get a secure connection, we need to log on to the instance via ssh. 
 
@@ -14,14 +14,14 @@ To get a secure connection, we need to log on to the instance via ssh.
 
 #### Step 1: Test connectivity
 
-First, let’s do a little test to see if your instance is reachable. On Linux/Mac, you can use the command line shell that you have just opened.  
+First, let's do a little test to see if your instance is reachable. On Linux/Mac, you can use the command line shell that you have just opened.  
 On Windows, open your *Windows command line*.
 
 Use the terminal to try to *"ping"* your instance (checking that you can reach it):
 
 ```ping NNN.NNN.NNN.NNN```
 
-replacing the N’s with the IP address of your NeCTAR instance you noted above.
+replacing the N's with the IP address of your NeCTAR instance you noted above.
 
 The *ping* command just sends a simple signal to your instance and checks whether it responds. If the ping does not work, then most likely neither will any of the following steps. The ping has worked if you get a response every few seconds, e.g. 
 
@@ -43,7 +43,7 @@ Follow the instructions below for the operating system of your local computer.
 **Linux/Mac** 
 
 We will need a command line shell (a "Terminal") in this exercise. 
-On **Linux and Mac**, you have a built-in terminal. Open it now (if you are unsure how, refer to [Notes / Disclaimers](#heading=h.7tnskttjeoet)).
+On **Linux and Mac**, you have a built-in terminal. Open it now (if you are unsure how, refer to the notes in the introduction).
 
 Go to your command line and type
 
@@ -54,7 +54,7 @@ The command line will ask you to establish the authenticity of the server. Type 
 
 You will then be asked for your passphrase (that's the one you chose when generating the SSH Key).
 
-*Note*: If you named your key other than *Nectar_Key*, you should replace this with your own private key file name here. If you saved the private key in another folder, you will have to specify the full path to it (e.g. *ssh -i /home/hans/yourkeyfolder/Nectar_Key NNN.NNN.NNN.NNN*). 
+*Note*: If you named your key other than *Nectar_Key*, you should replace this with your own private key file name here. If you saved the private key in another folder, you will have to specify the full path to it (e.g. *ssh -i /home/john/yourkeyfolder/Nectar_Key NNN.NNN.NNN.NNN*). 
 
 *On a Mac:*
 
@@ -79,7 +79,7 @@ We first have to set up our PuTTY session to include the details of our instance
 
 Double-click on the file "*PuTTY.exe*" which you downloaded when you created the SSH key.
 
-In your PuTTY Window, type your instance’s IP address into the "**Host**" field (you should have taken a note about the IP address earlier, if not you can find it on the Dashboard: Go to *Compute > Instances*).
+In your PuTTY Window, type your instance's IP address into the "**Host**" field (you should have taken a note about the IP address earlier, if not you can find it on the Dashboard: Go to *Compute > Instances*).
 
 {% img src=images/scrPutty1.png, w=50, dim=percent, align=center %}
 
@@ -106,7 +106,7 @@ In the browse window that comes up, select the private SSH key file that you sav
 Instead of converting keys, you can also simply create a separate set of keys to use with PuTTY. In this case, you have to add the new key as an authorized key on the instance. See the [Appendix](appendices.html) for instructions on how to do this. 
 {% endBgBox %}
 
-Now, return to the "**Session**" screen in the left navigation window. This is the screen we started at. We will save our settings (the "session"), so that in future we don’t need to type in all the details again. In the “**Saved Sessions**” section, choose any name for this session so that you can remember it, for example “*MyNeCTARInstance*”. Then, click on the "**Save**" button.
+Now, return to the "**Session**" screen in the left navigation window. This is the screen we started at. We will save our settings (the "session"), so that in future we don't need to type in all the details again. In the “**Saved Sessions**” section, choose any name for this session so that you can remember it, for example “*MyNeCTARInstance*”. Then, click on the "**Save**" button.
 
 
 {% img src=images/scrPutty4.png, w=50, dim=percent, align=center %}

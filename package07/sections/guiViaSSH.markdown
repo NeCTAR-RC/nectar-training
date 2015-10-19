@@ -4,13 +4,13 @@ part: Documentation
 ---
 {% include /docLinks.markdown %}
 
-If you want to run a single graphical application, you can also do this without setting up a remote desktop. You can do this via the ssh command line and start the application direclty.
+If you want to run a single graphical application, you can also do this without setting up a remote desktop. You can do this via the ssh command line and start the application directly.
 
 **The advantage** is that you don't need to set up a remote desktop server on your instance and install a client on your local machine. 
 
 **The downsides** are (1) it introduces some **security issues**, which will not be discussed in detail here, and are usually not a big worry (see security note below for a few details). And (2), this is (perhaps surprisingly) **a lot slower** than a remote desktop solution. This is because of the way the communication is encoded. 
 
-*Note*: This techniqe allows no desktop sharing, just remote application running (However you could use [XNest](http://en.wikipedia.org/wiki/Xnest), not discussed further at this point).
+*Note*: This technique allows no desktop sharing, just remote application running (However you could use [XNest](http://en.wikipedia.org/wiki/Xnest), not discussed further at this point).
 
 
 {% BgBox info %}
@@ -111,7 +111,7 @@ We will now test if this works. Go to your *ssh terminal* (or on Windows, the Pu
 This should open up a simple calculator application that is installed by default. You may have to wait quite a while until it opens up, as said earlier, this way to run graphical applications pretty slow. 
 
 {% BgBox info %}
-*Note*: The & after the command causes the calculator to open up and detach from the terminal. If you skip it, the calculator will open, but you won’t be able to type other commands in the terminal.
+*Note*: The & after the command causes the calculator to open up and detach from the terminal. If you skip it, the calculator will open, but you won't be able to type other commands in the terminal.
 {% endBgBox %}
 
 If this worked, try a larger application, like firefox. Go to your *ssh terminal* (or PuTTY on Windows) and type:

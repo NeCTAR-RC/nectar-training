@@ -29,5 +29,5 @@ The NeCTAR trial account only includes object storage and ephemeral storage. You
 The allocation process was described in [Module 5](/package05/sections/allocations.html), and more information can also be found on the [NeCTAR support website][Allocations].
 
 {% BgBox important %}
-If you don't have an allocation yet, you can complete the next section, [On-Instance storage](ephemeralStorage.html), and section [Object storage](objectStorage.html). You will have to wait for your allocation until you can follow instructions for [Volume Storage](volumeStorage.html). However you can still read through the Volume storage instructions to see that it is easy, and in parts very similar to handling the secondary disk with the On-Instance storge.
+If you don't have an allocation yet, you can complete the next section, [On-Instance storage](ephemeralStorage.html), and section [Object storage](objectStorage.html). You will have to wait for your allocation until you can follow instructions for [Volume Storage](volumeStorage.html). However you can still read through the Volume storage instructions to see that it is easy, and in parts very similar to handling the secondary disk with the On-Instance storage.
 {% endBgBox %}

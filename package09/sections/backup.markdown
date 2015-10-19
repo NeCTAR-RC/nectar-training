@@ -10,14 +10,14 @@ part: Documentation
 Some basic command line usage skills are helpful for this section as well.
 {% endBgBox %}
 
-The NeCTAR instances and volumes are not backed up automatically. Managing the backups is your repsonsibility.
+The NeCTAR instances and volumes are not backed up automatically. Managing the backups is your responsibility.
 However some types of NeCTAR storage use **RAID** storage, which protects your data somewhat against data loss (roughly speaking, if one harddrive fails, your data can probably be reconstructed from other drives). 
 Volume storage is backed by a variety of backend technologies across the NeCTAR Nodes.
 The *Object Store* is **replicated** across several physical locations, which is also a form of protection against data loss. 
 
 Generally speaking, NeCTAR *does* take measures against data loss, but the guideline is "all care taken, no guarantees given" --- part of ensuring your data won't be lost is your responsibility: Back it up!
 
-It is recommended that you back up your important data at regular intervals. You may also feel more comfortable knowing that you have a copy of your data available off-line, maybe on your local office computer or a server at your research organistaion. There are lots of tools available to backup data --- in this section, we will discuss a few of them.
+It is recommended that you back up your important data at regular intervals. You may also feel more comfortable knowing that you have a copy of your data available off-line, maybe on your local office computer or a server at your research organisation. There are lots of tools available to backup data --- in this section, we will discuss a few of them.
 
 
 Of all the storage types, probably **Object Storage** is the most robust against data loss due to the physical distribution of multiple copies of each file. However you may still prefer to keep a copy of a recent state of your files on your local premises.
@@ -83,8 +83,8 @@ You will have to install *rsync* on your local computer (or on any computer you 
 
 * On many Linux distributions, *rsync* is already installed. If it is not, you can install it using your package manager. For example on Ubuntu/Debian:    
    ```sudo apt-get install rsync```
-* On Mac OSX, *rsync* is available by default.
-* Under Windows, *rsync* can be installed as part of the [cygwin](https://www.cygwin.com/) package and used from the command line. This is a bit more compilicated, so if you are using a Windows system, *rsync* is maybe not the right choice.
+* On Mac OS X, *rsync* is available by default.
+* Under Windows, *rsync* can be installed as part of the [cygwin](https://www.cygwin.com/) package and used from the command line. This is a bit more complicated, so if you are using a Windows system, *rsync* is maybe not the right choice.
 
 You also have to make sure *rsync* is installed on the NeCTAR instance on which the disk to be backed up is *mounted* --- the image we used in [Module 7][ModDoc7] does already come with *rsync* on it.
 
@@ -134,7 +134,7 @@ For more information about *rsync*, please refer to the man pages:
 or visit the [rsync website](https://rsync.samba.org/). There are also many tutorials for rsync which you can find online.
 
 {% BgBox info %}
-If your private key is not in the directory *.ssh* and you don't have an ssh agent (or you are using Mac OSX which may not use *.ssh* as default), you will get a *Permission denied* error. Then, you need to specify the private key manually:
+If your private key is not in the directory *.ssh* and you don't have an ssh agent (or you are using Mac OS X which may not use *.ssh* as default), you will get a *Permission denied* error. Then, you need to specify the private key manually:
 
 ```rsync -av -e '-i <path-to-private-key>' <source> <destination>```
 
@@ -184,7 +184,7 @@ In case you need to **restore** your data, you will do the same thing.
 ### Unix *dd* utility 
 
 [Dd](https://en.wikipedia.org/wiki/Dd_(Unix)) is a low level command line utility that you can use create an *Image* of a volume. It is essentially a low level *byte-for-byte* copy utility. 
-*Dd* is installed by default on most Linux distributions (on Ubuntu/Debian as part of the *coreutils* package) and on Mac OSX. 
+*Dd* is installed by default on most Linux distributions (on Ubuntu/Debian as part of the *coreutils* package) and on Mac OS X. 
 
 
 Because dd is a lower-level backup tool, you need to have *sudo* privileges to perform a backup.  
@@ -207,17 +207,17 @@ To restore a volume/partition from the same file:
 When restoring the backup, the volume or partition needs to be the **same size** as the one you took the image from, so this limits your options in case of a restore. 
 {% endBgBox %}
 
-The advantage of this method is that it is easy to use and it takes a **1:1 copy of your volume**, preserving *everything* like file system, persmissions, etc. The disadvantage is that backups are not incremental (like *rsync*) and each image file takes up the **entire size of the volume** --- if your volume is 50GB, but you only use 1GB on it, the image file will still use 50GB. If you want to maintain several backups (e.g. snapshots of various stages of the volume state) and you have large volumes, *dd* is probably not the right choice.
+The advantage of this method is that it is easy to use and it takes a **1:1 copy of your volume**, preserving *everything* like file system, permissions, etc. The disadvantage is that backups are not incremental (like *rsync*) and each image file takes up the **entire size of the volume** --- if your volume is 50GB, but you only use 1GB on it, the image file will still use 50GB. If you want to maintain several backups (e.g. snapshots of various stages of the volume state) and you have large volumes, *dd* is probably not the right choice.
 
 ### BackupPC
 
 [BackupPC](http://backuppc.sourceforge.net/index.html)
-is a *web-based* system for managing backups of Unix, Linux, Windows and and Mac OSX computers. It allows you to configure automated *backup schedules* and offers a web-based interface which you can use from any computer to configure your backups.
-It can transfer *tar* archives over *ssh* or *nfs*, or use *rsync* (amonst other options). The backups are stored **incrementally** on a *backup server*.
+is a *web-based* system for managing backups of Unix, Linux, Windows and Mac OS X computers. It allows you to configure automated *backup schedules* and offers a web-based interface which you can use from any computer to configure your backups.
+It can transfer *tar* archives over *ssh* or *nfs*, or use *rsync* (amongst other options). The backups are stored **incrementally** on a *backup server*.
 
 The big advantage is that once you have the backup server running, you get a graphical web interface to configure your backups, and you can **create automated schedules** for your backups, so you don't have to regularly do this manually. You can still use BackupPC to run *manual* backups as well.
 
-The disadvantage is that you need a dedicated **backup server** which runs BackupPC. This server may also be a virtual machine. Maybe your research organistaion can provide you with access to a server on which you can install BackupPC.      
+The disadvantage is that you need a dedicated **backup server** which runs BackupPC. This server may also be a virtual machine. Maybe your research organisation can provide you with access to a server on which you can install BackupPC.      
 Another drawback is that while you can use BackupPC to back up *several* instances, unfortunately it will back up the *same* folder on *all* of them, e.g. */data*. So all your instances must have a */data* folder (or any other that you specify), and it has to be *mounted* on the instance at the time the Backup happens.
 
 {% BgBox info %}
@@ -230,7 +230,7 @@ It takes a bit of work to set up BackupPC, because you have to set up the server
 In this tutorial, only a quick *HowTo* is provided. On your backup server (ssh terminal to it):
 
 1. ```sudo apt-get install backuppc```     
-   This will install BackupPC and its dependencies (including apache) and also create a unix user *backuppc* which will be used to run BackupPC.    
+   This will install BackupPC and its dependencies (including apache) and also create a Unix user *backuppc* which will be used to run BackupPC.    
    Follow the installation wizard in the terminal: Choose 'OK' (hit Tab if OK is not selected), select 'Local only', and set 'System mail name' to *localhost*; Confirm other messages with 'OK'. The last message will display a generic password for the user *backuppc*, but you can set this separately later.
 
 2. You may want to change the password to something you may remember. Set password for the *user* and for the *web access*:    
@@ -260,7 +260,7 @@ In this tutorial, only a quick *HowTo* is provided. On your backup server (ssh t
     ```logout```    
     and exit the *backuppc* logon shell:     
     ```exit```
-6. Your BackupPC web interface will now be available on your webbrowser at the URL    
+6. Your BackupPC web interface will now be available on your web browser at the URL    
     ```<IP-of-Backupserver>/backuppc```     
     The user name is *backuppc* and the password the one you specified with the *htpasswd* command earlier (*Note:* Use Firefox! There may be problems with the Chrome browser).
 

@@ -9,7 +9,7 @@ This is the end of Module 3. You should now have a better idea of what uses and 
 
 The following use cases have been discussed:
 
-1. Embarassingly parallel problems (EPP) 
+1. Embarrassingly parallel problems (EPP) 
 2. Data Sharing with other researchers
 3. On-demand Computing for research and teaching 
 4. Remote Access to services from anywhere

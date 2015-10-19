@@ -25,11 +25,11 @@ Use the Allocation Request form from the left hand side menu of your [Dashboard]
 * On **Allocations > New Request** you can request to create a **new project** with the resources you need.    
 * On **Allocations > My Requests** you can **add resources** to your **existing project** (you will also see your previous requests here).    
 
-As a rule of thumb, the more resources you ask for, the more detail we require about your research. Requesting a few cores won’t be scrutinised as much as requesting tens or hundreds of cores.    
+As a rule of thumb, the more resources you ask for, the more detail we require about your research. Requesting a few cores won't be scrutinised as much as requesting tens or hundreds of cores.    
 
 {% BgBox important %}
 {% include /docLinks.markdown %}
-The amount of **CPU hours** you request is the amount of time your instance will be in existence --- *not* the time the CPU is acually busy with your programs! That is, all time counts between when you *launch* the VM and *terminate* it --- regardless whether the CPU is idle the whole time, or the VM is shut down or suspended. While you have access to the VM, it counts as CPU hours!
+The amount of **CPU hours** you request is the amount of time your instance will be in existence --- *not* the time the CPU is actually busy with your programs! That is, all time counts between when you *launch* the VM and *terminate* it --- regardless whether the CPU is idle the whole time, or the VM is shut down or suspended. While you have access to the VM, it counts as CPU hours!
 
 Consider this when you request your allocation, and also when you use your VM --- you may *back up* the state of your VM and then *"terminate"* it while you don't need it. It will be easy to restore it to the exact same state when you need it again. More about this in [Module 9][ModDoc9].
 {% endBgBox %}
@@ -52,7 +52,7 @@ If there are any issues with your request, we will get in touch with you.
 You may be asked to provide more detail about your research or to clarify your technical requirements.
 
 **4. Manage your allocation.**     
-When your application has been aproved, a *Research Cloud Project* will be created for you. When submitting the request, you have been given the chance to suggest a name (title) for the project. If this name was still available, that's what your project will be called.    
+When your application has been approved, a *Research Cloud Project* will be created for you. When submitting the request, you have been given the chance to suggest a name (title) for the project. If this name was still available, that's what your project will be called.    
 You will receive an email confirming everything is ready to go.
 You can now start using your resources allocated to the project. 
 {% BgBox info %}

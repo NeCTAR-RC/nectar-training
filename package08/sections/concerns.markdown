@@ -5,7 +5,7 @@ part: Documentation
 {% include /docLinks.markdown %}
 
 
-The widely spread perception is that cloud computing poses a whole lot of new risks. But in fact, security can *improve* with cloud computing: Security is often as good as or better than in traditional systems, because the provider’s infrastructure is maintained by a team of experts which are looking after the data center security around the clock. Cloud providers are able to devote their resources to solving security issues that many of their customers could not afford --- and evidently it is the provider’s top priority to keep their data center safe, or they would lose their reputation and their customers. 
+The widely spread perception is that cloud computing poses a whole lot of new risks. But in fact, security can *improve* with cloud computing: Security is often as good as or better than in traditional systems, because the providers infrastructure is maintained by a team of experts which are looking after the data center security around the clock. Cloud providers are able to devote their resources to solving security issues that many of their customers could not afford --- and evidently it is the providers top priority to keep their data center safe, or they would lose their reputation and their customers. 
 
 More trust is needed in that the administrators of cloud computing infrastructure ensure security with as much competence as any good IT department could do. Unfortunately, 100% security does not exist in IT --- a security breach can happen in any organisation, whether it is a cloud provider, a research organization or a business. It is a matter of trust in which IT department can ensure maximum security best.
 
@@ -29,7 +29,7 @@ Perhaps the biggest security concern among cloud computing customers is *data lo
 
 As the numbers show, human error is still a leading case of data loss! Internal and external security breaches are not far removed from the figures for natural disasters. 
 
-Let’s say you can trust your cloud provider in ensuring the best protection against software and hardware failures. This still leaves one very important factor in keeping your virtual machine and data safe: yourself! There are some parts which you are responsible for when ensuring the security of your virtual machine and data. This holds in particular for *IaaS* services (in *SaaS* services, the cloud provider is responsible for security control, *PaaS* services have shared responsibility between provider and customer). Your virtual machine is an *IaaS* Service, so there will be things you need to observe to make your services secure.
+Let's say you can trust your cloud provider in ensuring the best protection against software and hardware failures. This still leaves one very important factor in keeping your virtual machine and data safe: yourself! There are some parts which you are responsible for when ensuring the security of your virtual machine and data. This holds in particular for *IaaS* services (in *SaaS* services, the cloud provider is responsible for security control, *PaaS* services have shared responsibility between provider and customer). Your virtual machine is an *IaaS* Service, so there will be things you need to observe to make your services secure.
 
 There are a few security issues which are particular to cloud computing, but they are usually not a major security concern, if actions are taken by the cloud provider and yourself to protect against these threats.
 
@@ -56,7 +56,7 @@ Main threats to cloud computing are posed by the following (conforming with the 
 
     *Protection from you*: You can encrypt data that is processed or stored within the cloud to prevent unauthorized access.
 
-* **Data Loss & Leakage** **/ Risks of shared access (Multi-tenancy)**: In a cloud provider platform being shared by different users (a "*multi-tenant*" platform) it is possible that data belonging to different customers resides on the same server. A few issues arise from the fact that resources (CPU, memory, etc) are shared. (a) resources can be fully taken up by one virtual machine (also called a “**noisy neighbour**”), effectively creating a denial-of-service-attack to others sharing the same resources. (b) data can leak from one customer to another:  Researchers have been able to recover other tenants' data from what was supposed to be new storage space. (c) If a multi-tenant cloud is not properly set up, a flaw in one client’s application could allow an attacker access not only to that client’s data, but every other client’s data as well. 
+* **Data Loss & Leakage** **/ Risks of shared access (Multi-tenancy)**: In a cloud provider platform being shared by different users (a "*multi-tenant*" platform) it is possible that data belonging to different customers resides on the same server. A few issues arise from the fact that resources (CPU, memory, etc) are shared. (a) resources can be fully taken up by one virtual machine (also called a “**noisy neighbour**”), effectively creating a denial-of-service-attack to others sharing the same resources. (b) data can leak from one customer to another:  Researchers have been able to recover other tenants' data from what was supposed to be new storage space. (c) If a multi-tenant cloud is not properly set up, a flaw in one clients application could allow an attacker access not only to that clients data, but every other clients data as well. 
 
     *Protection from the provider*: Protecting the cloud platform with good protection software and setting it up securely is a high priority.
 
@@ -64,7 +64,7 @@ Main threats to cloud computing are posed by the following (conforming with the 
 
     * The hypervisor can be configured so that when it detects extreme resource consumption from one VM (the "noisy neighbour"), it can evaluate whether an attack is being made and automatically restart the problematic VM. Another way to protect against noisy neighbours is to set a resource limit (machines can only use so much) or a resource reservation (other machines cannot use resources that are reserved for another).
 
-    * A secure infrastructure is required that ensures customer’s virtual machines are isolated in a multi-tenant environment. Isolation can be achieved by using virtual switches and/or VLANs for the networks.
+    * A secure infrastructure is required that ensures customers virtual machines are isolated in a multi-tenant environment. Isolation can be achieved by using virtual switches and/or VLANs for the networks.
 
     *Protection from you*:
 
@@ -72,7 +72,7 @@ Main threats to cloud computing are posed by the following (conforming with the 
 
     * You can keep offline backups of your data to reduce the impact of a catastrophic data loss, however be aware that this increases your exposure to data breaches (because there is a security risk at *two* data centers). Nevertheless, keeping physically separate backups of important data is generally recommended, as you can not protect your data on the cloud against physical disasters as fires or earthquakes leading to the data centres being destroyed.
 
-    * When you release storage space because you don’t need it any more, make sure you securely erase all data (see also Module 9 for how to do this), so it does not leak to other tenants.
+    * When you release storage space because you don't need it any more, make sure you securely erase all data (see also Module 9 for how to do this), so it does not leak to other tenants.
 
 * **Hardware Failure and Data loss**: When the hardware fails, all data may be lost, if it has not been backed up. The state of the virtual machine may also be lost. Data loss by physical damage to the data storage is a risk which exists in any data centre.
 
@@ -104,7 +104,7 @@ resides, for example if your instance poses a security threat then the instance 
     *Protection from you:* Choose a reliable Internet Provider.
 
 
-* **Insecure Interfaces** and API's: 3rd parties can create an insecure application to interact with the cloud services, e.g. to provision, manage, orchestrate and monitor the VMs through such interfaces.     
+* **Insecure Interfaces** and APIs: 3rd parties can create an insecure application to interact with the cloud services, e.g. to provision, manage, orchestrate and monitor the VMs through such interfaces.     
 
     *Protection from the provider:* Set up the cloud platform such that external software does not have privileges to provision, manage and orchestrate VMs (or only allow this for trusted software).
 
@@ -133,23 +133,23 @@ Luckily, hypervisors are generally more secure than regular operating systems; T
 The NeCTAR cloud uses the *KVM* Hypervisor with *OpenStack*. *KVM* is a good choice in terms of security. The virtual machines managed by *KVM* run as unprivileged processes, which makes it safe. Techniques for Hypervisor protection include *sVirt, Intel TXT, and AppArmor, cgroups*, and *MAC Policy*. *KVM* has all these techniques in-built. 
 For more information, refer to the [OpenStack security guide](OpenStackSecurityGuide).
 
-Regular patching of the Hypervisor is important to refresh security. Also, appropriate security policies have to be applied. The NeCTAR cloud administration team is aware of the high security demands of Australia’s researchers and regularly updates the systems and applies a strict security policy to ensure maximum safety.
+Regular patching of the Hypervisor is important to refresh security. Also, appropriate security policies have to be applied. The NeCTAR cloud administration team is aware of the high security demands of Australias researchers and regularly updates the systems and applies a strict security policy to ensure maximum safety.
 
 In addition to the efforts the security team at NeCTAR are making, part of the security is also **your responsibility**, because not only the Hypervisor, but also your VM has to be secure (for example, to help prevent a *VM Escape* attack). 
 
  * Since it is easy to restore an infected VM,  many users do not go through the effort to secure them with an Anti Virus Protection. Linux, Unix and other Unix-like computer operating systems are generally regarded as very well-protected against computer viruses, but they are not immune. So better safe than sorry: **Install an Anti Virus Protection**. On your Linux instance, you may install the popular [AVG Anti-Virus Software](www.avg.com), see for example [this Ubuntu help page](https://help.ubuntu.com/community/Antivirus/Avg) which includes instructions. See also [this page on ubuntu.com](https://help.ubuntu.com/community/Antivirus) for a list of AntiVirus software you may install.
 
-* It is also very important that you **regularly update your VM’s operating system** to ensure it has the newest security patches, eg. on Ubuntu this can be done with the command:    
+* It is also very important that you **regularly update your VM’s operating system** to ensure it has the newest security patches, e.g. on Ubuntu this can be done with the command:    
     ```sudo apt-get dist-upgrade```
     {% BgBox important %} **Keep in mind:**    
-Most cloud vendors do a better job securing data than their customers do. But a lot of security issues are also up to you---e.g. use a firewall and apply strict rules to it;  install an anti-virus protection on your VM; use secure passwords; don’t share your private key, etc. All factors you need to observe to ensure security have also been discussed on a more abstract level in Module 5 ("Mitigating Risks").
+Most cloud vendors do a better job securing data than their customers do. But a lot of security issues are also up to you---e.g. use a firewall and apply strict rules to it;  install an anti-virus protection on your VM; use secure passwords; don't share your private key, etc. All factors you need to observe to ensure security have also been discussed on a more abstract level in Module 5 ("Mitigating Risks").
 {% endBgBox %}
 
 ### Security *benefits* of the cloud and virtual machines
 
-The nice part is that using a the cloud and a virtual machine does also comes with some security *benefits*.
+The nice part is that using the cloud and a virtual machine does also comes with some security *benefits*.
 
-* **Abstraction**: The hardware abstraction and isolation of the virtual machine makes it much more difficult for the attacker to gain unauthorized access on the physical machine. The OS and software running on the virtual machine are not even aware it is virtual, and does not know the cloud platform’s OS or hardware configuration. An attacker of the virtual machine does therefor also not know details of the cloud platform environment, therefore manipulating and compromising the machine is much more difficult.
+* **Abstraction**: The hardware abstraction and isolation of the virtual machine makes it much more difficult for the attacker to gain unauthorized access on the physical machine. The OS and software running on the virtual machine are not even aware it is virtual, and does not know the cloud platforms OS or hardware configuration. An attacker of the virtual machine does therefore also not know details of the cloud platform environment, therefore manipulating and compromising the machine is much more difficult.
 
 * **State restore**: It is easy to restore the state of a virtual machine: A Snapshot can be created and the virtual machine can be re-launched from this Snapshot, thereby returning to a state prior to attack or data loss. This is an easy method to remove malware and restore data. 
 
@@ -159,7 +159,7 @@ The nice part is that using a the cloud and a virtual machine does also comes wi
 
 * **Simplicity of Hypervisors:** Hypervisors are much simpler than traditional operating systems, and are therefore much easier to secure. This makes it easier for software developers to minimize bugs and vulnerabilities.
 
-* **Off-premise data storage:** Storing your data off-premise has it’s benefits too. If someone wanted to steal your data from the data center, they would have to break in there, which is a difficult task for itself, since data centers are well guarded. Also, they would be faced with banks of thousands of storage systems with meaningless lables on it, e.g. *1DC45-R7*. They would not know where your data is stored, and which machine to steal.
+* **Off-premise data storage:** Storing your data off-premise has its benefits too. If someone wanted to steal your data from the data center, they would have to break in there, which is a difficult task for itself, since data centers are well guarded. Also, they would be faced with banks of thousands of storage systems with meaningless labels on it, e.g. *1DC45-R7*. They would not know where your data is stored, and which machine to steal.
 
 * **Data availability:** Object Storage (described in [Module 6][ModDoc6]) has a great data integrity. Because copies of your files are spread over several physical locations, you will have access to it even if one data center has an outage.
 

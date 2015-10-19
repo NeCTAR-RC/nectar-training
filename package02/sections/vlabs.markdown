@@ -3,7 +3,7 @@ layout: package-part-ext
 part: Documentation
 ---
 
-NeCTAR's Virtual Laboratories are creating a new era of connectivity for Australian researchers. They aim at connecting researchers with existing and new research facilities, data repositories and computational tools and streamlining research workflows. They help to create new opportunities for collaboration, efficiencies and innovation.
+NeCTARs Virtual Laboratories are creating a new era of connectivity for Australian researchers. They aim at connecting researchers with existing and new research facilities, data repositories and computational tools and streamlining research workflows. They help to create new opportunities for collaboration, efficiencies and innovation.
 
 A Virtual Laboratory can be seen as a portal to several software tools, data, storage and documentation in an integrated and interactive environment, enabling researchers across the world to collaborate and share information.
 
@@ -21,7 +21,7 @@ NeCTAR [Virtual Laboratories](https://nectar.org.au/virtual-laboratories-1) are 
 
 * Provide remote-access to Labs to students and researchers.
 
-* Encourage students by arousing curiousity.
+* Encourage students by arousing curiosity.
 
 * Help students to learn basic and advanced concepts through remote experimentation and providing tools for learning (e.g. web-resources, video lectures and demonstrations).
 
@@ -63,7 +63,7 @@ In particular, it uses the Cloud or the National Computational Infrastructure (N
     
 * The [Humanities Virtual Lab](https://www.nectar.org.au/node/562) is integrating many important cultural data sets for researchers in the humanities.
 
-* The [Biodiversity and Climate Change Virtual Lab](https://nectar.org.au/node/778) provides integrated tools, data collections and access portals for modelling the potential responses of Australia’s biodiversity to climate change.
+* The [Biodiversity and Climate Change Virtual Lab](https://nectar.org.au/node/778) provides integrated tools, data collections and access portals for modelling the potential responses of Australias biodiversity to climate change.
 
 * .. and many more! Check it out on the [website for NeCTAR virtual laboratories](https://nectar.org.au/virtual-laboratories-1).
 

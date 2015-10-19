@@ -15,7 +15,7 @@ The image below shows a symbolic physical computer with 4 CPUs, which runs two v
 {% img src=images/Virtualization.png, w=60, dim=percent, align=center %}
 
 {% BgBox info %}
-One physical computer can theoretically run a large number of virtual machines. One physical CPU can simulate *several* virtual CPUs, which then share the processing time. This is sometimes acceptable because often CPUs actually only use a small percentage of the CPU, when there is not much to compute at the time. So it is possible to simulate for example 4 virtual CPUs on one real CPU, and if 3 of them are idle (use 0% of the CPU), the 4th is able to use 100% of the processing capacity. Of course, if the several virtual CPUs share the processing power of one physical CPU, there is a *competition* and not all virtual CPUs can run at the same speed. Such competition is often referred to as **"noisy neighbours"**. To avoid this problem, NeCTAR *locks* eah virtual CPU to one physical CPU; so each virtual CPU is always guaranteed to have the full CPU capacity exclusively available, without facing competition.
+One physical computer can theoretically run a large number of virtual machines. One physical CPU can simulate *several* virtual CPUs, which then share the processing time. This is sometimes acceptable because often CPUs actually only use a small percentage of the CPU, when there is not much to compute at the time. So it is possible to simulate for example 4 virtual CPUs on one real CPU, and if 3 of them are idle (use 0% of the CPU), the 4th is able to use 100% of the processing capacity. Of course, if the several virtual CPUs share the processing power of one physical CPU, there is a *competition* and not all virtual CPUs can run at the same speed. Such competition is often referred to as **"noisy neighbours"**. To avoid this problem, NeCTAR *locks* each virtual CPU to one physical CPU; so each virtual CPU is always guaranteed to have the full CPU capacity exclusively available, without facing competition.
 {% endBgBox %}
 
 Each virtual machine is a fully simulated computer which can have its own operating system and software running. For example, a physical computer that is operating on *Microsoft Windows* may run two virtual machines: (1) one with the *Ubuntu Linux* operating system, and (2) another VM with *Windows*. Each virtual machine looks like an actual computer to the user. They can *log on* to the computer and use it as if it was a real one. It is possible to connect via a *remote desktop* if it has been configured; or, connecting via a command line is possible too.
@@ -40,7 +40,7 @@ In short, the differences and similarities between a real and a virtual machine 
 
 ### Hypervisors
 
-The *Hypervisor* or *Virtual Machine Manager* is the software that manages communications between the physical machine's processor and memory, and the VMs running on it. The hypervisor is a piece of software that conceputally sits between your virtual machine and the physical computer and manages your virtual machine.
+The *Hypervisor* or *Virtual Machine Manager* is the software that manages communications between the physical machine's processor and memory, and the VMs running on it. The hypervisor is a piece of software that conceptually sits between your virtual machine and the physical computer and manages your virtual machine.
 
 When you want to create or destroy your virtual machine, the hypervisor takes care of that for you, and while your machine is running, the hypervisor manages the execution of your virtual machine. 
 
@@ -54,7 +54,13 @@ There are two types of hypervisors:
 (a) Type-1: native or bare-metal hypervisors and 
 (b) Type-2: hosted hypervisors. 
 
-The difference is that (a) runs directly on the physical computer's hardware (the hypervisor is like an operating system for itself). Therefore, they are sometimes called **bare metal hypervisors**. Hypervisor (b) runs on top of an operating system, just like normal computer programs do, therefore it is referred to as **hosted hypervisor**. 
+The difference is that (a) runs directly on the physical computer's hardware (the hypervisor is like an operating system for itself). Therefore, they are sometimes called **bare metal hypervisors**. 
+
+{% img src=images/Type1Hypervisor.png, w=250, dim=px %}
+
+Hypervisor (b) runs on top of an operating system, just like normal computer programs do, therefore it is referred to as **hosted hypervisor**. 
+
+{% img src=images/Type2Hypervisor.png, w=350, dim=px %}
 
 There are also hypervisors that are a blend of both types (a) and (b). The **Kernel-based Virtual Machine (short: KVM)** for example, which is used in the NeCTAR cloud, is a modified version of the underlying linux operating system.
 
@@ -66,7 +72,7 @@ There are also hypervisors that are a blend of both types (a) and (b). The **Ker
 
 **Question**: How many VMs can run on one physical core?
 
-**Answer**: Normally, the hypervisor won't lock one VM's virtual processor to a specific physical core. Virtualization is done to allow better utilization of available hardware. If you only allocated one virtual processor to each physical processor, you would likely have lots of idle time, because each VM is unlikely to be using 100 percent of its CPU.  
+**Answer**: Normally, the hypervisor won't lock one VMs virtual processor to a specific physical core. Virtualization is done to allow better utilization of available hardware. If you only allocated one virtual processor to each physical processor, you would likely have lots of idle time, because each VM is unlikely to be using 100 percent of its CPU.  
 Therefore, it is common to allocate a larger number of virtual processors to fewer physical processors. The hypervisor takes care of scheduling the CPU work across the physical cores.
 
 *Note:*

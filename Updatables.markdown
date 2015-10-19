@@ -2,6 +2,8 @@
 
 1. Package01
     - sections/cloud\_services.markdown: As soon as Chromebook has more off-line functionality, update statement about it. Last check: April 2015
+    - sections/virtualization.markdown: In the FAQ section - Note about that one virtual CPU is bound to one physical one (no CPU sharing) at the time of writing in the NeCTAR cloud.
+
 
 2. Package05
    - sections/connecting.markdown: Only Linux instances can be created on the NeCTAR cloud (mentioned in "Housekeeping"). Date: June 2015
@@ -18,7 +20,7 @@
     - objectStorage.html: The OpenStack password cannot be changed. As soon as that's possible, update this documentation. Date: June 2015.
 
 5. Package09
-    - sections/backups.markdown: Mention that Backups are not available yet via the Dashboard. State: July 2015
+    - sections/backups.markdown: There's a mention that Backups are not available yet via the Dashboard. As soon as they are, this has to be updated, and an exercise should be added. State: July 2015
 
 5. Package 10
   - openStackClients: Statement that Python 3 is not supported yet (Source: http://docs.openstack.org/user-guide/common/cli_install_openstack_command_line_clients.html). Date: July 2015

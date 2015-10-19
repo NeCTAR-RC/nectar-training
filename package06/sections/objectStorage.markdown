@@ -27,7 +27,7 @@ While Object Storage has high data integrity through geographical distribution o
 In the OpenStack Object Store, you may get access to large amounts of storage. Ultimately, this is limited by the storage cluster size of about 40TB. You may upload as many files as you like, as long as your allocation is not exceeded. The size of the files is not limited, however due to limits in the *http* protocol it is not recommended to upload files larger than 1GB.
 
 {% BgBox info %}
-The NeCTAR *trial account* has a default of 10GB object storage allocation. When you lodge an appication for resources, you have to specify the amount of object storage you require, otherwise you won't receive any allocation for object storage.
+The NeCTAR *trial account* has a default of 10GB object storage allocation. When you lodge an application for resources, you have to specify the amount of object storage you require, otherwise you won't receive any allocation for object storage.
 {% endBgBox %}
 
 

@@ -17,7 +17,7 @@ These tools have later been brought together to **one** command line tool called
 The next sections are going to discuss installation and usage of the **_openstack_ command line client** with some working examples.
 
 {% BgBox info %}
-If you want to use the traditional OpenStack clients like *glance, cinder*, etc. you still can. The following instructions for installation and configuration also apply to the traditional clients. Only the name *openstack* in the packagename *python-openstackclient* has to be replaced by the respective tool's name in the installation command. For example, if you want to install *glance*, replace *python-openstackclient* by *python-glanceclient*.
+If you want to use the traditional OpenStack clients like *glance, cinder*, etc. you still can. The following instructions for installation and configuration also apply to the traditional clients. Only the name *openstack* in the package name *python-openstackclient* has to be replaced by the respective tool's name in the installation command. For example, if you want to install *glance*, replace *python-openstackclient* by *python-glanceclient*.
 {% endBgBox %}
 
 {% BgBox important %}
@@ -55,7 +55,7 @@ If you don't have Python yet, the following instructions cover the installation 
      ```pip install --upgrade python-openstackclient```
     {% endBgBox %}
 
-* **Mac OSX**:    
+* **Mac OS X**:    
     1. Install Python's package manager ***pip*** (unless you already have it). *pip* is a tool for easily installing and managing Python packages. It is recommended over *easy_install*. Python 2.7.9 and later include *pip* by default, so you may have *pip* already. Either of the three options work to get *pip*:
         * If you have the homebrew package manager, *pip* installs together with the Python packages, and conveniently also installs the *setuptools* which you also need:    
         ```brew install python```    
@@ -107,9 +107,9 @@ If you are configuring the client access on your ***local computer***, you can *
 
 Before you continue, you need to copy the *OpenStack RC file* which you downloaded from the Dashboard to your instance. 
 
-You may use any method to copy files to your instance, as discussed in [Module 7](/package07/sections/copyFiles.html), e.g. using the FTP client *FileZilla*. In the following instructions, we are going to apply the *command line* option to copy our OpenStack RC file accross.
+You may use any method to copy files to your instance, as discussed in [Module 7](/package07/sections/copyFiles.html), e.g. using the FTP client *FileZilla*. In the following instructions, we are going to apply the *command line* option to copy our OpenStack RC file across.
 
-* On **Linux or Mac OSX**, you can use the *scp* command to do this:    
+* On **Linux or Mac OS X**, you can use the *scp* command to do this:    
     
     ``` scp -i ~/.ssh/Nectar_Key <path-to-your-openrc-file> ubuntu@NNN.NNN.NNN.NNN:```
     
@@ -133,7 +133,7 @@ You may use any method to copy files to your instance, as discussed in [Module 7
 
 Before we can use the command line client, we need to load the OpenStack RC file which contains our authentication details.
 
-* **Linux / Mac OSX:**
+* **Linux / Mac OS X:**
     Load your credentials:
   
     ```source <path-to-your-openrc-file>```

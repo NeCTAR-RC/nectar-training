@@ -27,7 +27,7 @@ The Australian Research Cloud is offering a *secure and robust hosting service*:
 
     * Access to the NeCTAR Cloud dashboard is done through the **Australian Access Federation (AAF)**. This allows you to login using your institiutional username and password.
 
-    * Any researcher who logs in to NeCTAR’s web Dashboard can immediately have access to a small Project Trial allocation (2 cores for 3 months).
+    * Any researcher who logs in to NeCTARs web Dashboard can immediately have access to a small Project Trial allocation (2 cores for 3 months).
 
     * To obtain a larger allocation you need to submit an allocation request through the web Dashboard.
 

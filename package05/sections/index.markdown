@@ -4,6 +4,16 @@ part: Documentation
 ---
 {% include /docLinks.markdown %}
 
+
+This module provides a high-level overview of the processes involved when using the Research Cloud. More details about the specific steps involved will be provided in the later modules --- this module will only focus on a high-level overview.
+
+Topics will include: how to get onto the research cloud, necessary housekeeping you will need to do (e.g. updates, backups) and how to keep your VM secure. Finally, you will learn about terminating services without losing anything, how to get support and how to request more resources.
+
+
+### Videos
+
+The following videos go through most of the content in this module and offer a less in-depth description of the subject than the documentation does.
+
 {% youtube 169yoRjEC9c %}
 
 {% youtube cbIElk1oFuQ %}
@@ -11,9 +21,7 @@ part: Documentation
 {% youtube grSHE8v3oEg %}
 
 
-This module provides a high-level overview of the processes involved when using the Research Cloud. More details about the specific steps involved will be provided in the later modules --- this module will only focus on a high-level overview.
 
-Topics will include: how to get onto the research cloud, necessary housekeeping you will need to do (e.g. updates, backups) and how to keep your VM secure. Finally, you will learn about terminating services without losing anything, how to get support and how to request more resources.
 
 ## Project trial
 

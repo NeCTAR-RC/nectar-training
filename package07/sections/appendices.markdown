@@ -75,7 +75,7 @@ Fix this with:
 
 ### Converting ssh keys from Linux for PuTTY
 
-If you have generated your ssh key on a Linux system and now want to use it in Putty, you have to convert the keys first. If you have generated your key file with putty, you *don’t need to do this*. To convert the key, follow these steps:
+If you have generated your ssh key on a Linux system and now want to use it in Putty, you have to convert the keys first. If you have generated your key file with putty, you *don't need to do this*. To convert the key, follow these steps:
 
 1. Start PuTTYGen.
 
@@ -85,7 +85,7 @@ If you have generated your ssh key on a Linux system and now want to use it in P
 
 4. Click on the button **Save private key** and save your key file.
 
-You may also want to simply create a separate set of keys for PuTTY (see [this section](createSSHKey.html)). In this case, you have to add the new key as an authorized key on the instance. This is explained in (this section) of this Appendix.
+You may also want to simply create a separate set of keys for PuTTY (see [this section](createSSHKey.html)). In this case, you have to add the new key as an authorized key on the instance. This is explained [here](#AddingSSH) in this Appendix.
 
 ### Windows: Using *Pageant* to handle your ssh key
 
@@ -147,11 +147,12 @@ To check the right groups the user is assigned to, type
 ```id <username>```
 
 {% BgBox important %}
-Each user should have their own ssh keys. Ask them to create it, using their passphrase of choice, and then send you their public key. Add their public key to your VM by following instructions in (this section) of this appendix.
+Each user should have their own ssh keys. Ask them to create it, using their passphrase of choice, and then send you their public key. Add their public key to your VM by following instructions [here](#AddingSSH) in this appendix.
 {% endBgBox %}
 
 
-### Adding a new ssh key
+### <a name="AddingSSH"></a> Adding a new ssh key
+
 
 If you want to use a new key to connect to the instance, you have to add it to the file *authorized_keys* on the user's account. If you are adding another key for the *ubuntu* user, the &lt;username&gt; in the command below is *ubuntu*, otherwise it is the user name you want to add a key for.
 
@@ -166,7 +167,7 @@ Then, edit the file *authorized_keys*
 Paste the contents of your public key as one line into this file.
 
 {% BgBox info %}
-**Tipp:** Copy the content of the public key by opening it with a text editor, marking all text and copying with **CTRL+C**. Then, go to your PuTTY Window which has the editor open for authorized_keys. Pasting the content will not work with **CTRL+V** on PuTTY, but instead, clicking the right or middle mouse button should paste the content.
+**Tip:** Copy the content of the public key by opening it with a text editor, marking all text and copying with **CTRL+C**. Then, go to your PuTTY Window which has the editor open for authorized_keys. Pasting the content will not work with **CTRL+V** on PuTTY, but instead, clicking the right or middle mouse button should paste the content.
 {% endBgBox %}
 
 Similarly, if you want to remove a key, you have to delete the line for that key from the *authorized_key* file on your instance.
@@ -185,7 +186,7 @@ SSH Tunnelling is best explained with an example. Imagine you're on a private ne
 
 {% img src=images/sshtunnel.png, w=50, dim=percent, align=center, css=margin-top:20px; margin-bottom: 20px; %}
 
-Let's say *blockedsite.com* uses the *http* protocol (as most websites do) through Port 80. Instead of connecting our port 80 to the *blocksite.com*'s port 80 (which would not work), we will redirect all traffic from our port 80 through the secure ssh port 22. This one will not be blocked by the firewall, and nobody will be able to decypher the traffic going through it (unless they get access to your private key and passphrase of course). On the gateway, our connection will come in at Port 22, and the ssh server will then redirect the traffic to port 80 on *blockedsite.com*. We call this technique *local port forwarding*. Of course, the connection between the gateway and the server of *blockedsite.com* is not encyrypted; only the tunnel between our computer and the gateway is.
+Let's say *blockedsite.com* uses the *http* protocol (as most websites do) through Port 80. Instead of connecting our port 80 to the *blocksite.com*'s port 80 (which would not work), we will redirect all traffic from our port 80 through the secure ssh port 22. This one will not be blocked by the firewall, and nobody will be able to decipher the traffic going through it (unless they get access to your private key and passphrase of course). On the gateway, our connection will come in at Port 22, and the ssh server will then redirect the traffic to port 80 on *blockedsite.com*. We call this technique *local port forwarding*. Of course, the connection between the gateway and the server of *blockedsite.com* is not encrypted; only the tunnel between our computer and the gateway is.
 
 The technique of local port forwarding through an ssh tunnel can also be used to create a secure connection all the way to the destination server, so that there is no point at which the connection is not encrypted. In this case, the gateway is also the destination server itself.   
 As an **example**, we are going to discuss the setup for ssh tunneling on port **5900** on our instance (the default VNC port), using the gateway *localhost*. The example is for Mac and Linux. Observe that the gateway is *localhost*, because when we specify the destination server, it is also the gateway in this case (this can be a bit confusing, because you would guess we specify the gateway first... but actually we first specify the destination server, and then the gateway through which we want to create the tunnel. From the gateway's point of view, the destination server is *localhost*). The tunnelled service will be available on *our* localhost, port **6000** (we use different numbers so you can distinguish it in the text below). We could do this for any other port numbers.

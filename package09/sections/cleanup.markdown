@@ -18,7 +18,7 @@ In the last sections you have learned how you can take Snapshots of your instanc
 Before you free up the resources, you should make sure that you **securely erase all the data** on your volumes, to make sure nobody will be able to restore the data on the section of the hard-drive you were using. This section will show how you can securely erase data, and then **terminate your instances and volumes** so that the resources are freed up for other researchers.
 
 
-### Securely ereasing data
+### Securely erasing data
 
 Just removing all files from your secondary ephemeral drive or your Volumes won't do the job --- this just removes the index of the files (think of it like a table of contents), but the actual bits of the files will still be on the harddrive, so it is possible to restore them when using special tools. To securely erase the data, you have to *overwrite* the bits with other (random) bits. You even have to repeat the overwriting several times to be sure nothing can be recovered. Some people even argue the only way to really, really ensure the data is erased is to burn up the hard drive --- an option we don't have in this case, so we will have to be satisfied with overwriting the data several times.
 
@@ -38,7 +38,7 @@ The following will assume your drive is located at **/dev/vdc**. If your is at a
 
 #### Using *dd*
 
-Using the *dd* unix command line utility, wiping your disk is easy. Say your *device location* is your volume */dev/vdc*, or your secondary ephemeral storage */dev/vdb*, you can securely erase it with the *dd* command (we already encountered *dd* in the last section):
+Using the *dd* Unix command line utility, wiping your disk is easy. Say your *device location* is your volume */dev/vdc*, or your secondary ephemeral storage */dev/vdb*, you can securely erase it with the *dd* command (we already encountered *dd* in the last section):
 
 ```sudo dd if=/dev/urandom of=<device file> bs=4K```
 

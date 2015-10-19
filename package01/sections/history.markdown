@@ -19,7 +19,7 @@ Scientists and technologists explored ways to make large-scale computing power a
 
 Cloud computing comes into existence, and many services for cloud computing are launched. 
 
-In 2006, *Amazon Web Services (AWS)* was one of the first to provide storage space and computing resources accoring to the cloud computing model. AWS provides online services for businesses to help meet their demands in regards to computing, storage and more. The most well-known amazon services are Amazon EC2 (for computing services) and Amazon S3 (for storage). AWS is now one of the biggest cloud computing providers.
+In 2006, *Amazon Web Services (AWS)* was one of the first to provide storage space and computing resources according to the cloud computing model. AWS provides online services for businesses to help meet their demands in regards to computing, storage and more. The most well-known amazon services are Amazon EC2 (for computing services) and Amazon S3 (for storage). AWS is now one of the biggest cloud computing providers.
 
 In early 2008, *OpenNebula* became the first open-source software for deploying clouds.
 

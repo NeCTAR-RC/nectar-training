@@ -18,7 +18,7 @@ Access to your object store requires your password, but this password may be sav
 
 
 {% BgBox info %}
-The NeCTAR implementation of *Swift* is geodistributed across Nodes of the Research Cloud so that availability is not reliant on any one datacentre or network infrastructure. Each collection of Swift nodes/hardware is known as a *region*, which may or may not include a Swift proxy server (the Internet facing and serving component of Swift). With some Swift clients/APIs users can explicitly choose which proxy to connect to, this might be useful e.g. for speeding up writes to object storage by choosing the nearest proxy. Due to NeCTAR's Swift having multiple regions, some clients/APIs require explicit configuration of a default region, which should be "Melbourne" for most users (see e.g. the Cyberduck profile below).
+The NeCTAR implementation of *Swift* is geodistributed across Nodes of the Research Cloud so that availability is not reliant on any one datacentre or network infrastructure. Each collection of Swift nodes/hardware is known as a *region*, which may or may not include a Swift proxy server (the Internet facing and serving component of Swift). With some Swift clients/APIs users can explicitly choose which proxy to connect to, this might be useful e.g. for speeding up writes to object storage by choosing the nearest proxy. Due to NeCTARs Swift having multiple regions, some clients/APIs require explicit configuration of a default region, which should be "Melbourne" for most users (see e.g. the Cyberduck profile below).
 {% endBgBox %}
 
 
@@ -44,13 +44,13 @@ In this example, we are using a file called *SampleObject.txt* with the text "I 
 
 #### Step 1: Create a container
 
-Go to the [Dashboard][Dashboard] and then to *Object Store > Containers*. You will get to a page which shows the overwiew of your containers.
+Go to the [Dashboard][Dashboard] and then to *Object Store > Containers*. You will get to a page which shows the overview of your containers.
 
 {% img src=images/scrDashboardObjectStore1.png, w=70, dim=percent, align=center %}
 
 First of all, you will have to create a *Container*. 
 {% BgBox definition %}
-A **Container** is like a folder in which you can put files. The difference to a normal folder is that a Container is intendet for a flat hierarchy, so you cannot create containers within a container --- however you may create "Pseudo Containers" within the Container, so you can still organize your files hierarchically.
+A **Container** is like a folder in which you can put files. The difference to a normal folder is that a Container is intended for a flat hierarchy, so you cannot create containers within a container --- however you may create "Pseudo Containers" within the Container, so you can still organize your files hierarchically.
 {% endBgBox %}
 Click on **Create Container**. As a **Name**, type in  *MyObjectContainer* (or you may use your own container name, in which case you have to consider this in the instructions below). Keep the access on **private**.
 
@@ -85,7 +85,7 @@ If you wanted to download this file (e.g. when accessing the store from another 
 
 2. Install Cyberduck. 
     - On a Mac, you will download a .zip file which contains the app. Save it to the Desktop (or any other folder). Extract the zip file by double-clicking on it.
-    - On Windows, you will download an installer. You may keep the default options, if unsure. You don’t need to install Bonjour, if you are asked.
+    - On Windows, you will download an installer. You may keep the default options, if unsure. You don't need to install Bonjour, if you are asked.
 
 3. Create a text file on your local computer (e.g. save it on the Desktop) with the following contents. Name it *NeCTARObjectStore.cyberduckprofile* (or any other name, it just has to end with .cyberduckprofile).    
     {% BgBox edit %} <?xml version="1.0" encoding="UTF-8"?>    
@@ -117,7 +117,7 @@ If you wanted to download this file (e.g. when accessing the store from another 
 
 5. Choose *NeCTAR Swift Melbourne (Keystone)* from the drop-down box, if it is not selected yet. If it does not exist, something has gone wrong in importing the NeCTAR profile (your file *NeCTARObjectSTore.cyberduckprofile*). The image shows how it looks on a Mac, on Windows your interface will look a bit different, but the fields are the same.    
 
-6. **Nickname**: give the connection a name of your choice, e.g. ‘*NeCTAR Object Store*’
+6. **Nickname**: give the connection a name of your choice, e.g. ‘*NeCTAR Object Store*'
 
 7. As **Server** and **Port**, fill in what you took note of before when looking up the details in the dashboard. (This is probably *keystone.rc.nectar.org.au* and *5000*)
 
@@ -170,7 +170,7 @@ by clicking on **More Options**. You can choose a **Download Folder** to which y
 
 9. Select the *Tenant name* option from the drop-down menu and insert your *tenant ID* (e.g., *pt-12345*)
 
-10. Close the Window with ‘**OK**’, and close the next Window with "**Close**".
+10. Close the Window with ‘**OK**', and close the next Window with "**Close**".
 
 11. On the right window, select your display name from the drop down box. CloudBerry will connect to your object store. On the left window, you see your files of your local computer.     
     {% img src=images/scrCloudBerry.png, w=400, dim=px, align=center, css=margin-top:10px %}
@@ -184,9 +184,9 @@ by clicking on **More Options**. You can choose a **Download Folder** to which y
 *Prerequisite*: You should know how to use an FTP client.
 
 
-You can use any FTP client, for example *Filezilla*. For this, we will have to run a program that acts like a FTP server on our own local machine. This FTP server will then communicate with the the SWIFT object storage on our cloud and provide the file exchange via the FTP service.
+You can use any FTP client, for example *Filezilla*. For this, we will have to run a program that acts like a FTP server on our own local machine. This FTP server will then communicate with the SWIFT object storage on our cloud and provide the file exchange via the FTP service.
 
-The following instructions are for a Debian based distribution, e.b. *Ubuntu*.
+The following instructions are for a Debian based distribution, e.g. *Ubuntu*.
 For more information, refer to the [official project page](https://pypi.python.org/pypi/ftp-cloudfs/).
 
 Open a Terminal on your local computer to type in the following commands.
@@ -212,7 +212,7 @@ Open a Terminal on your local computer to type in the following commands.
  2.  Start the local FTP server   
 ```ftpcloudfs --foreground --keystone-auth --auth-url https://keystone.rc.nectar.org.au:5000/v2.0 --keystone-tenant-separator=: &```
 
-3. Start your favourite FTP client, for example FileZilla. If you don’t have FileZilla, you can install it with     
+3. Start your favourite FTP client, for example FileZilla. If you don't have FileZilla, you can install it with     
 ```sudo apt-get install filezilla```    
 Your login details for the FTP client are as follows:    
     * **Server (or Host):** 127.0.0.1    
@@ -233,7 +233,7 @@ You will have to do steps 2 and 3 every time you restart your local computer.
 
 ### Linux [Advanced]: Access with CloudFuse
 
-*CloudFuse* is a lightweight open source application that may be installed on Linux servers to create a local mount point to a customer’s existing Cloud Files container. 
+*CloudFuse* is a lightweight open source application that may be installed on Linux servers to create a local mount point to a customers existing Cloud Files container. 
 
 You can find more information and documentation about cloudfuse on the [cloudfuse github page](http://redbo.github.io/cloudfuse/) 
 
@@ -289,9 +289,9 @@ Your username (of your local computer) may need to be part of the *fuse* user gr
 ```sudo usermod -a -G fuse <username>```
 
 
-### All platforms: Access with the *swift* command
+### All platforms: Access with the *openstack* command
 
-You may also use the *swift* command to list the files in our object storage that we just created.
+You may also use the *openstack* command to list the files in our object storage that we just created.
 This will be discussed in [Module 10][ModDoc10].
 
 

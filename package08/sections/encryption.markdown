@@ -7,7 +7,7 @@ part: Documentation
 
 For several reasons discussed earlier, you may want to encrypt your file. We can broadly distinguish two types of file encryption: 1) encrypting an entire volume and 2) encrypting individual files. 
 
-Object storage (discussed in [Module 6][ModDoc6]) is very useful for ease of access and data integrity.  Because several copies of your data is kept, availability is very good: The NeCTAR Object Store is geo-distributed across Nodes of the Research Cloud so that availability is not reliant on any one datacentre or network infrastructure. *Only you* have access to your object store using your OpenStack credentials, so only you can select files to download, or upload files to a container. 
+Object storage (discussed in [Module 6][ModDoc6]) is very useful for ease of access and data integrity.  Because several copies of your data is kept, availability is very good: The NeCTAR Object Store is geodistributed across Nodes of the Research Cloud so that availability is not reliant on any one datacentre or network infrastructure. *Only you* have access to your object store using your OpenStack credentials, so only you can select files to download, or upload files to a container. 
 
 While *access* to your Object Store is secured with your credentials, the *transfer* of your files via the network is not necessarily secure: When you upload and download files, it happens via an unencrypted connection (unless you explicitly use a secure client, e.g. an *SFTP* client). At the time when you download or upload your files, somebody could catch the data you are transferring via the Internet. Also, when your files are replicated across NeCTAR nodes, this happens without encryption.
 

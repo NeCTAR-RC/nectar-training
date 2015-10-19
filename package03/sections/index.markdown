@@ -5,14 +5,21 @@ part: Documentation
 
 {% include /docLinks.markdown %}
 
-{% youtube PkYdBVnxniA %}
 
 
-> "The data tsunami is changing everything in science. Every discipline is now confronted with it—a vast exploration of data that comes from instruments, from online sources, from the web, from social media. Analyzing this data can’t be done on a PC."
+> "The data tsunami is changing everything in science. Every discipline is now confronted with it—a vast exploration of data that comes from instruments, from online sources, from the web, from social media. Analyzing this data can't be done on a PC."
 
 — Dennis Gannon, director of Cloud Research Strategy for Microsoft Research Connections
 
 This module will discuss five fast ways to make the cloud work for your research. Common use cases for the NeCTAR Research Cloud and the research outcomes they can enable will be described.
+
+
+### Video
+
+The following video goes through the content in this module.
+
+{% youtube PkYdBVnxniA %}
+
 
 ### The Research Cloud
 

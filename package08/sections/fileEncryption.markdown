@@ -6,13 +6,11 @@ part: Documentation
 
 In the following we will discuss the following tools which support per-file encryption:
 
-* GnuPG
+* [GnuPG](#GnuPG)
 
-* AESCrypt
+* [AESCrypt](#AESCrypt)
 
-* Encrypted zip file
-
-* Mac: Disk Utility
+* [Encrypted zip file](#EncryptedZIP)
 
 Other widely known tools which have recently received bad security audits (e.g. *EncFS, OpenSSL, TrueCrypt*) are not discussed in this course.
 
@@ -20,7 +18,7 @@ More detailed instructions are given for *GnuPG*, while the description of the o
 
 
 
-#### GnuPG
+#### <a name="GnuPG"></a> GnuPG
 
 *GnuPG* is an implementation of Pretty Good Privacy (PGP). PGP has excellent security: 
 
@@ -57,7 +55,7 @@ You will have to generate a *key pair* before you can use GnuPG. In the process,
     {% img src=images/scrGPGCreateKeyMac.png, w=300, dim=px, align=right %} 
     * Download *GnuPG* from the [official website](https://www.gnupg.org/download/index.html). Download the *"binary release" installer* (or get the *"source release"* and follow installation instructions on the website). If you have the choice, select the *GnuPG stable or modern* installer and install the software.
     * Open the *"GPG Keychain"* application (find it with spotlight search). 
-    * Click on "New" to generate a new key and specify your name, E-Mail and passphrase.i
+    * Click on "New" to generate a new key and specify your name, E-Mail and passphrase.
     * Hit "Generate". Your new key will be listed in *GPG Keychain* after it has been created.
 * Windows:
     * Download and install the graphical interface to GnuPG *"GpGForWin"* from [www.gpg4win.org](www.gpg4win.org). Make sure *Kleopatra* is checked.
@@ -86,7 +84,7 @@ Two keys will have been generated: A *public* key which is used for encryption, 
 
 To **encrypt** a file, you must have the *public* key which you want to use for encryption. You have just generated one in the last step.
    
-* Mac OSX: 
+* Mac OS X: 
     {% img src=images/scrGPGEncryptFileMac.png, w=280, dim=px, align=right %} 
     * Open the *Finder* and right-click on the file you would like to encrypt.
     * Select *Services > OpenPGP: Encrypt file*.
@@ -105,9 +103,9 @@ To **encrypt** a file, you must have the *public* key which you want to use for 
     ```gpg --output <encrypted-file.gpg> --encrypt --recipient <user> <file-to-encrypt>```
 
 
-To **decrypt** a file, you need to have the *private* key of the intended recipient (when the file was encrypted). So the encrypted file will have to be encyrpted for the name associated with one of your private keys.
+To **decrypt** a file, you need to have the *private* key of the intended recipient (when the file was encrypted). So the encrypted file will have to be encrypted for the name associated with one of your private keys.
 
-* Mac OSX: 
+* Mac OS X: 
     * You just have to double click on the *.gpg* file and it will prompt for the password. 
     * Alternatively, you may decrypt it via *right click > Services > OpenPGP: Decrypt file*.
     * You will be asked for the passphrase.
@@ -124,17 +122,17 @@ To **decrypt** a file, you need to have the *private* key of the intended recipi
 
 You can find more useful information about file encryption on the [GnuPG manual pages](https://www.gnupg.org/gph/en/manual/x110.html).
 
-#### AESCrypt
+#### <a name="AESCrypt"></a> AESCrypt
 
 [AESCrypt](https://www.aescrypt.com/) is a free, open-source tool which is available for Mac, Linux and Windows. It provides a secure way to **encrypt individual files**, using the industry standard Advanced Encryption Standard (AES).
 
-*AESCrypt* is easy to use: On **Windows**, you only right-click on a file, select AES Encrypt (or Decrypt) and enter a password. On a **Mac**, you drag the file into the *AESCrypt* program and type in the password. On the **Linux** command line, you may use the command aescrypt along with the name of the file and the password.
+*AESCrypt* is easy to use: On **Windows**, you only right-click on a file, select AES Encrypt (or Decrypt) and enter a password. On a **Mac**, you drag the file into the *AESCrypt* program and type in the password. On the **Linux** command line, you may use the command *aescrypt* along with the name of the file and the password.
 
 The [AESCrypt website](https://www.aescrypt.com/) provides an excellent documentation on how to set up and use *AESCrypt*.
 
-#### Encrypted zip file
+#### <a name="EncryptedZIP"></a> Encrypted zip file
 
-Zip files can be password-protected, but the standard Zip encryption scheme is extremely weak. If your operating system has a built-in way to encrypt zip files, you probably shouldn’t use it. You should use *AES-256* encryption. The tools discussed in the following do support *AES-256* encryption.
+Zip files can be password-protected, but the standard Zip encryption scheme is extremely weak. If your operating system has a built-in way to encrypt zip files, you probably shouldn't use it. You should use *AES-256* encryption. The tools discussed in the following do support *AES-256* encryption.
 
 Zip files are archives containing individual files, so this cannot be used to encrypt entire volumes.
 

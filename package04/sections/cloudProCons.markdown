@@ -36,7 +36,7 @@ There are a number of advantages and drawbacks to both local computing (the trad
 
     While NeCTAR services are free to you, but you must request an allocation of a certain amount of maximum resources you will be using.
 
-+ **Individual setup:** Users can configure their own server (eg choose the operating system and install software) and run it in a cloud whenever they need the computational resources.
++ **Individual setup:** Users can configure their own server (e.g. choose the operating system and install software) and run it in a cloud whenever they need the computational resources.
 
 + **Access independence**: via the Internet, cloud computing can be done from anywhere (office, home, on conference travel, business trips etc) and with a variety of devices (laptop, smart phone, tablet..). There is no need to install (and maintain) the research applications on each device.
 

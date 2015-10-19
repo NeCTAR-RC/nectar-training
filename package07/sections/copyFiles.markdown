@@ -116,7 +116,7 @@ The *pscp.exe* command takes two *paths* as arguments:
 If you have another username than *ubuntu*, replace *ubuntu* in the following commands with your user name.
 {% endBgBox %}
 
-To copy the a file *to* your instance, go to your windows command prompt and type:
+To copy a file *to* your instance, go to your windows command prompt and type:
 
 ``` pscp.exe -i <path-to-ssh-key> <local-file-path> ubuntu@NNN.NNN.NNN.NNN:<instance-file-path>```
 
@@ -147,12 +147,12 @@ For example, if you want to copy the file */data/foo.txt* to your *C:\documents*
 ``` pscp.exe -i C:\documents\Nectar_Key.ppk ubuntu@NNN.NNN.NNN.NNN:/data/foo.txt C:\documents ```
 
 {% BgBox info %}
-If the *pscp* command is not working, make sure you have no error in the paths to your ssh key or your openRC file. On Windows, white spaces are problematic. If you path has white spaces, put the whole path in quotation marks, e.g. *"D:\My Files\pscp.exe"*. Also, note that you have to use the *backslash* \ in windows, instead of the forward slash / on Linux systems.
+If the *pscp* command is not working, make sure you have no error in the paths to your ssh key or your OpenRC file. On Windows, white spaces are problematic. If you path has white spaces, put the whole path in quotation marks, e.g. *"D:\My Files\pscp.exe"*. Also, note that you have to use the *backslash* \ in windows, instead of the forward slash / on Linux systems.
 {% endBgBox %}
 
 
 
-#### Linux or Mac OSX
+#### Linux or Mac OS X
 
 You can use the *scp* command to copy files across.
 

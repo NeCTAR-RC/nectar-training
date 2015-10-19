@@ -26,7 +26,7 @@ The [Image analysis and processing toolbox](http://www.nectar.org.au/cloud-based
 
 * [Federated Archaeological Information Management System](http://www.nectar.org.au/federated-archaeological-information-management-system): This eResearch tool includes [The Ark project](http://www.nectar.org.au/cloud-based-bio-informatics-tools) which provides tools to support medical studies and clinical trials.
 
-* The [SHaRED](http://www.nectar.org.au/submission-harmonisation-and-retrieval-ecological-data-shared) porject (submission, harmonisation and retrieval of ecological data) is a tool that provides an online questionnaire to help structure metadata when uploading data files.   
+* The [SHaRED](http://www.nectar.org.au/submission-harmonisation-and-retrieval-ecological-data-shared) project (submission, harmonisation and retrieval of ecological data) is a tool that provides an online questionnaire to help structure metadata when uploading data files.   
  
 
 * The [High-throughput Computing For Globally Connected Science](http://nectar.org.au/projects/high-throughput-computing-globally-connected-science#overlay-context=users/lyndae) eResearch Tools will provide tools and underlying infrastructure for high throughput projects across disciplines—initially only for processing high-energy physics data from the CERN Large Hadron Collider (LHC).

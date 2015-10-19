@@ -4,13 +4,8 @@ part: Documentation
 ---
 {% include /docLinks.markdown %}
 
-{% youtube bcRt_NKZ79s %}
-
-{% youtube 9sYuHXA1rjg %}
-
-{% youtube Bl5Z_kG5sgA %}
-
 In this module we will discuss how you can back up your instance and your data. You will learn how to make snapshots and how to recover your virtual machine using this snapshot. You will also learn how to terminate your virtual machine and release your storage without losing anything.
+
 
 Is is important to be aware of the measures taken by NeCTAR to prevent data loss. But an important part of keeping your data safe is your responsibility: You should **create backups** at regular intervals. In this module, you will learn several approaches to backing up your data.
 
@@ -22,12 +17,25 @@ NeCTAR experiences resource shortages from time to time, which could be avoided 
 The problem is that many people want their compute resources to be available when *they* are ready to use them. They don't realise that while they are not using those resources, they are preventing others from accessing them. It is therefore important that everyone is aware of this and responsibly releases their resources when they don't need them any more. **Fair play!**
 
 {% BgBox important %}
-The amount of **CPU hours** you request in an allocation is the amount of time your instance will be in existence --- *not* the time the CPU is acually busy with your programs! That is, all time counts between when you *launch* the instance and *terminate* it --- regardless whether the CPU is idle the whole time, or the instance is shut down or suspended. While you have access to the instance, it counts as CPU hours!
+The amount of **CPU hours** you request in an allocation is the amount of time your instance will be in existence --- *not* the time the CPU is actually busy with your programs! That is, all time counts between when you *launch* the instance and *terminate* it --- regardless whether the CPU is idle the whole time, or the instance is shut down or suspended. While you have access to the instance, it counts as CPU hours!
 
 Consider this also when you plan on how to use your instance --- you can *back up* the state of your instance and then *"terminate"* it while you don't need it. It will be easy to restore it to the exact same state when you need it again. 
 {% endBgBox %}
 
 It is not difficult to **save your instance and volumes** ("create a snapshot"), then terminate the instance and release the volumes, and **re-launch your instance and volumes** in exactly the same state at a later time, when you need it. In this module, we will show you how you can do this.
+
+
+### Videos
+
+The following videos go through most of the content in this module and offer a less in-depth description of the subject than the documentation does.
+
+{% youtube bcRt_NKZ79s %}
+
+{% youtube 9sYuHXA1rjg %}
+
+{% youtube Bl5Z_kG5sgA %}
+
+
 
 
 

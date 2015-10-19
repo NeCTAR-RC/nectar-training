@@ -13,7 +13,7 @@ This section is going to go through the steps required to use Volume storage fro
 {% BgBox info %}
 You need to submit an allocation request in order to be able to use volumes. The trial account does not include quota for volumes.
 
-You can only use volume storage from instances running in the same *Availability Zone* which you have also chosen with your allocation. Therefore, you need to select the same  *Availability Zone* when launching your instance. If you haven’t done so when launching the instance, you’ll have to launch a new one, as described in [this earlier section](launching.html), and select your allocation zone in the *Availability zone* tab.
+You can only use volume storage from instances running in the same *Availability Zone* which you have also chosen with your allocation. Therefore, you need to select the same  *Availability Zone* when launching your instance. If you haven't done so when launching the instance, you’ll have to launch a new one, as described in [this earlier section](launching.html), and select your allocation zone in the *Availability zone* tab.
 {% endBgBox %}
 
 
@@ -57,7 +57,7 @@ Select **Edit attachments**.
 
 {% img src=images/scrDashboardVolume3.png, w=80, dim=percent, align=center %}
 
-A window will open in which you can select your instance. If you don’t see any instance, you have no instance running in the same *Availability Zone*. In this case, create one as described in [this earlier section](launching.html).
+A window will open in which you can select your instance. If you don't see any instance, you have no instance running in the same *Availability Zone*. In this case, create one as described in [this earlier section](launching.html).
 
 {% img src=images/scrDashboardVolume4.png, w=80, dim=percent, align=center %}
 
@@ -65,7 +65,7 @@ Select your instance and click **Attach Volume**. The status of your instance wi
 
 {% img src=images/scrDashboardVolume5.png, w=80, dim=percent, align=center %}
 
-In order to detach the volume again, you would go to the drop-down next to your volume again and select **Edit attachments**. A window opens in which you may detach the volume again. Your data won’t be lost, it will only be detached from the particular instance. You can re-attach it later again to any instance.
+In order to detach the volume again, you would go to the drop-down next to your volume again and select **Edit attachments**. A window opens in which you may detach the volume again. Your data won't be lost, it will only be detached from the particular instance. You can re-attach it later again to any instance.
 
 {% img src=images/scrDashboardVolume6.png, w=60, dim=percent, align=center %}
 

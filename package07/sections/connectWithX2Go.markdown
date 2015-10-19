@@ -9,15 +9,15 @@ We will first install the **X2Go Server** on your instance, and afterwards the *
 ### Server installation
 
 {% BgBox important %}
-In this tutorial we are using Ubuntu Version 14.10 on our instance and the following instructions are going to assume this. If you are using an earlier version of Ubuntu, or another Linux distribution, you may need to do other steps. This will be commented upon in the following instructions at the relevant places. See the official [X2go documentation](http://wiki.x2go.org/doku.php/doc:installation:x2goserver) for details on the steps to perform.
+In this tutorial we are using Ubuntu Version 14.10 on our instance and the following instructions are going to assume this. If you are using an earlier version of Ubuntu, or another Linux distribution, you may need to do other steps. This will be commented upon in the following instructions at the relevant places. See the official [X2Go documentation](http://wiki.x2go.org/doku.php/doc:installation:x2goserver) for details on the steps to perform.
 {% endBgBox %}
 
-1. Add the x2go repository and refresh the software package system by typing into your *ssh terminal*:    
+1. Add the X2Go repository and refresh the software package system by typing into your *ssh terminal*:    
     ```sudo add-apt-repository ppa:x2go/stable```    
     and confirm this with **[Enter]**. Then, type:    
     ```sudo apt-get update```
 
-2. Install the x2Go server. Type into your *ssh terminal*:    
+2. Install the X2Go server. Type into your *ssh terminal*:    
     ```sudo apt-get install x2goserver x2goserver-xsession```    
     Confirm the question on whether to use up the said disk space with '**Y**'
 
@@ -37,14 +37,14 @@ In this tutorial we are using Ubuntu Version 14.10 on our instance and the follo
     ```service --status-all | grep x2go```    
     The result should show a line like this:
     {% BgBox terminal %} [ + ]  x2goserver {% endBgBox %}    
-    If the service is running. If it isn’t, you can start the server by typing:    
+    If the service is running. If it isn't, you can start the server by typing:    
     ```service x2goserver start```
 
 If in doubt, or anything is not working, try restarting your instance before you try anything else (we have already restarted the instance [here](firstSSHCommands.html)).
 
 ### Client installation
 
-You will now install the X2Go *client* on your local computer. Depending on which OS you are using, instructions will differ. Go to the instructions below for your OS. If you have a platform not listed here, you can find additional documentation on how to install the client on the official [x2go website](http://wiki.x2go.org/doku.php/doc:installation:x2goclient). A good instruction can also be found [here](https://wiki.physik.fu-berlin.de/it/services:remote-access:x2go).
+You will now install the X2Go *client* on your local computer. Depending on which OS you are using, instructions will differ. Go to the instructions below for your OS. If you have a platform not listed here, you can find additional documentation on how to install the client on the official [X2Go website](http://wiki.x2go.org/doku.php/doc:installation:x2goclient). A good instruction can also be found [here](https://wiki.physik.fu-berlin.de/it/services:remote-access:x2go).
 
 * **Ubuntu**: Install the client by typing into a terminal on your local computer:    
     ``` apt-get install x2goclient```
@@ -53,7 +53,7 @@ You will now install the X2Go *client* on your local computer. Depending on whic
 
 * **Max OS X**:
 
-    * The X2Go Mac client uses the OSX X11 server called *XQuartz*. If you don't have *Xquartz* yet, you can get it [on the XQuartz website](http://xquartz.macosforge.org/landing/).  Download and install it.    
+    * The X2Go Mac client uses the OS X X11 server called *XQuartz*. If you don't have *Xquartz* yet, you can get it [on the XQuartz website](http://xquartz.macosforge.org/landing/).  Download and install it.    
         *Note:* there is also a download of the file on [download.cnet.com](http://download.cnet.com/). Search there for "XQuartz". If the download speed on the original website is painfully slow, you may download *XQuartz* from here. Just make sure you download the newest version.
 
     * At the end of the installation, it will point out that you will have to log out and log back in again for changes to take effect. You can also do this after we have changed some settings in the next step.
@@ -65,7 +65,7 @@ You will now install the X2Go *client* on your local computer. Depending on whic
         *NOTE*: If you start XQuartz after already having logged out and in again, you can access the settings (or exit full screen mode) with *CMD + ,* (command and comma)  
         *Important:* Because above instructions may change any time, please refer to the most [current X2Go documentation](http://wiki.x2go.org/doku.php/doc:installation:x2goclient)
 
-    * Download and install the newest x2go client from [the X2Go Website](http://code.x2go.org/releases/binary-macosx/x2goclient/).
+    * Download and install the newest X2Go client from [the X2Go Website](http://code.x2go.org/releases/binary-macosx/x2goclient/).
 
 ### Connecting the X2Go client
 
@@ -84,7 +84,7 @@ On **Windows and Mac**, start the application as you do with any other program (
 The session settings should come up right away if you are using the client for the first time. If you are not, click on "New session", which is the top left button that looks like a blank sheet of paper. 
 
 {% BgBox info %}
-*Hint for Mac users:* the x2go windows may be sized too large for your screen initially, so you cannot see the usual "OK" and "Cancel" buttons in the dialogue windows. To resolve this, you simply have to select the window by clicking on the top window bar and holding the left mouse button to move the window a little bit. When you release the mouse button, the window should be automatically resized to fit your screen.
+*Hint for Mac users:* the X2Go windows may be sized too large for your screen initially, so you cannot see the usual "OK" and "Cancel" buttons in the dialogue windows. To resolve this, you simply have to select the window by clicking on the top window bar and holding the left mouse button to move the window a little bit. When you release the mouse button, the window should be automatically resized to fit your screen.
 {% endBgBox %}
 
 The session preferences window should look similar to this:
@@ -114,19 +114,19 @@ We will now connect to our remote desktop. You should now be seeing the *X2Go St
 
 On the right side of the Window, you can see a shortcut to your session. Note that you can quickly change the desktop environment and screen resolution in the box. Don't do this now however, let's first try to connect with the default. You can change this next time you log in.
 
-Click on the box with your session name, and the client is going to try to connect to your instance’s remote desktop. You will have to type in your ssh key passphrase. 
+Click on the box with your session name, and the client is going to try to connect to your instance's remote desktop. You will have to type in your ssh key passphrase. 
 
-This may take a while, especially if it is the first time you connect. Don’t get impatient. This is a good time to grab a cup of coffee.
+This may take a while, especially if it is the first time you connect. Don't get impatient. This is a good time to grab a cup of coffee.
 
 A window will then come up which shows your desktop. Below is an image of an example when XFCE was used:
 
 {% img src=images/scrX2GoXFCE.jpg, w=70, dim=percent, align=center %}
 
-You can increase the screen size and the resolution of your desktop should adapt to it. Resizing the window can sometimes be a bit slow, therefore you may try different screen resolutions in the login box (which displays your session name) so you don’t have to resize the window every time.
+You can increase the screen size and the resolution of your desktop should adapt to it. Resizing the window can sometimes be a bit slow, therefore you may try different screen resolutions in the login box (which displays your session name) so you don't have to resize the window every time.
 
 To close your remote desktop, you should *log off.* This is in most desktop environments a power button somewhere on the desktop, or it is accessible with a right click on the desktop. Choose "logout" as an option, not "restart" or "shutdown". If in doubt, just close the window in which the remote desktop is displayed (this is the "dirty" option, but it will also work).
 
-When you log back in, you don’t have to specify a password for the ubuntu user, as we are using your ssh key instead.
+When you log back in, you don't have to specify a password for the ubuntu user, as we are using your ssh key instead.
 
 {% BgBox important %}
 
@@ -140,7 +140,7 @@ KDE does not adapt the screen size that we set in the client. Therefore, we have
 
 3. Go to *System Settings > Startup and Shutdown > Service Manager*, and uncheck *"KScreen 2"*. 
 
-4. Log out (Right click on *Desktop >  Leave >  Log out*) and log back in again (You don't have to specify a password for the ubuntu user when you log back in, as we are using your ssh key instead). You should now see your full desktop. Your screen size should adapt to what you have set in the session settings of your X2go client (default is 800x600).
+4. Log out (Right click on *Desktop >  Leave >  Log out*) and log back in again (You don't have to specify a password for the ubuntu user when you log back in, as we are using your ssh key instead). You should now see your full desktop. Your screen size should adapt to what you have set in the session settings of your X2Go client (default is 800x600).
 
 {% endBgBox %}
 
@@ -148,11 +148,11 @@ KDE does not adapt the screen size that we set in the client. Therefore, we have
 
 One nice thing about X2Go is that you can do file sharing between your local computer and your instance easily on the desktop.
 
-Let’s now enable file sharing so we can drag and drop files between our computer to the instance’s desktop.
+Let's now enable file sharing so we can drag and drop files between our computer to the instance's desktop.
 
 #### Step 1. Enable file sharing
 
-We have to enable file sharing for our instance’s user "*ubuntu*". For this, you have to add the user to the group "fuse" on your instance. Go to your *ssh terminal* (or open a terminal on your remote desktop) and type:
+We have to enable file sharing for our instance's user "*ubuntu*". For this, you have to add the user to the group "fuse" on your instance. Go to your *ssh terminal* (or open a terminal on your remote desktop) and type:
 
 ```sudo adduser ubuntu fuse```
 
@@ -181,7 +181,7 @@ Think of this folder as a place where you can put files which you can then acces
 
 Close your remote desktop by logging off (or just shutting the window in which your remote desktop is displayed).
 
-Then, go back to the X2Go Start Window in the X2Go client (If you aren’t  there already, click ‘cancel’ button in the login field). You should now see this X2Go Start Window:
+Then, go back to the X2Go Start Window in the X2Go client (If you aren't  there already, click ‘cancel' button in the login field). You should now see this X2Go Start Window:
 
 {% img src=images/scrX2GoStartWindowPreferences.png, w=70, dim=percent, align=center %}
 
@@ -190,14 +190,14 @@ Here you can change preferences of your session. Go to the Tab *Shared folders*,
 
 {% img src=images/scrX2GoSelectSharedFolder.png, w=70, dim=percent, align=center %}
 
-When you have selected the folder, don’t forget to click on the "**Add**" button next to the path to your file. Next to the new element added to the box, enable the "**Automount**" check box. Finally, click "**OK**" to close the window. 
+When you have selected the folder, don't forget to click on the "**Add**" button next to the path to your file. Next to the new element added to the box, enable the "**Automount**" check box. Finally, click "**OK**" to close the window. 
 
 {% img src=images/scrX2GoSharedFolderSetup.png, w=60, dim=percent, align=center %}
 
 
 #### Step 2. Logging in.
 
-Now you can open your remote desktop by clicking on your session box and logging in again. You don’t have to specify a password for the ubuntu user, as we are using the ssh key instead. You will typically find the shared folder of your computer as a link on the remote desktop (see comments below for your desktop environment). 
+Now you can open your remote desktop by clicking on your session box and logging in again. You don't have to specify a password for the ubuntu user, as we are using the ssh key instead. You will typically find the shared folder of your computer as a link on the remote desktop (see comments below for your desktop environment). 
 
 #### Step 3. Remaining configurations for individual desktops.
 
@@ -215,7 +215,7 @@ To add the widget, right-click on the desktop and select "**Add widgets...**".
 
 *Note: You will need to have installed the plasma widget, which we did in a previous step with the command *sudo apt-get install plasma-widget-x2go*.
 
-In the search window that comes up, type x2go and the x2goplasmoid should come up in the list. Double-click on it to add it to the desktop. 
+In the search window that comes up, type "x2go" and the x2goplasmoid should come up in the list. Double-click on it to add it to the desktop. 
 {% img src=images/scrKDESearchX2GoWidget.png, w=100, dim=percent, align=center %}
 
 You can now access your shared folder on your local computer via the link on the plasmoid.
@@ -247,7 +247,7 @@ Right-click on the desktop and select "**Open Terminal Here**". Then, type
 
 ```ln -s /tmp/.x2go-ubuntu/media/disk/<your-folder-name> MySharedFolder```
 
-replacing *&lt;your-folder-name>&gt;* with the name you found above. Be careful with spelling (it’s case sensitive) ---  if you don’t get the path to the folder right, it will not work. You can also change the name *MySharedFolder* in the command to something else. When you click on the desktop again, the link to the shared folder should appear.
+replacing *&lt;your-folder-name>&gt;* with the name you found above. Be careful with spelling (it's case sensitive) ---  if you don't get the path to the folder right, it will not work. You can also change the name *MySharedFolder* in the command to something else. When you click on the desktop again, the link to the shared folder should appear.
 
 {% img src=images/scrX2GoXFCEConfigureSharedFolder.png, w=70, dim=percent, align=center %}
 
@@ -274,7 +274,7 @@ Now, go to your remote desktop. Open your shared folder (you should have found w
 
 {% img src=images/scrX2GoTestFileSharing2.png, w=70, dim=percent, align=center %}
 
-Now if you open the shared folder, you should see the text file you have just created. You may open it to see what’s in there:
+Now if you open the shared folder, you should see the text file you have just created. You may open it to see what's in there:
 
 {% img src=images/scrX2GoTestFileSharing3.png, w=70, dim=percent, align=center %}
 
@@ -306,7 +306,7 @@ It will have the new file in it! You may double-click on it to open it and find 
 
 ### Troubleshooting
 
-If you ever run into trouble with the desktop environment, try first to log out and log back in again. If that does not work, you may have to restart the X2go server. You can do this in the *ssh command line* of the instance (you may also open a terminal on your remote desktop to do this):
+If you ever run into trouble with the desktop environment, try first to log out and log back in again. If that does not work, you may have to restart the X2Go server. You can do this in the *ssh command line* of the instance (you may also open a terminal on your remote desktop to do this):
 
 ```sudo service x2goserver restart```    
 *or*

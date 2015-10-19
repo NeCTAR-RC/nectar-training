@@ -31,7 +31,7 @@ We will now have to edit a file in order to start up the right desktop environme
 The following instructions have been tested for **Ubuntu 14.04 and 14.10**. If you have another Ubuntu version on your instance, you may have to look online if the following instructions don't work. Some more information is given at [this link](http://www.havetheknowhow.com/Configure-the-server/Install-VNC.html).
 {% endBgBox %}
 
-First, we have to start up the vnc server once, in order to create a password and generate the configuration file. In your *ssh terminal*, type:
+First, we have to start up the VNC server once, in order to create a password and generate the configuration file. In your *ssh terminal*, type:
 
 ```vncserver```
 
@@ -113,7 +113,7 @@ One way to get access to our VNC server would be to open up this port in our fir
 
 The safe way to do this is to "tunnel" all our VNC communications through SSH, which then encrypts all communication. The following steps will explain how this is done.
 
-#### Step 1: Set up ssh tunneling [SSHTunnelling]	
+#### <a name="SSHTunnelling"></a> Step 1: Set up ssh tunneling	
 
 Be sure you have the number (#) you were given in the above *vncserver* command. We will use this number to determine the **Destination Port**. Use your number and *add it* to 5900. For example, if your  number is 1, then **5901** will be you destination port.
 
@@ -125,9 +125,9 @@ In a terminal on your local computer, create a tunnel from your local machine (P
 
 ```ssh -i <path-to-your-keyfile> -L 5900:localhost:5901 -N -f -l ubuntu NNN.NNN.NNN.NNN```
 
-where you should replace the NNN.NNN.NNN.NNN with yours instance’s IP address, and &lt;path-to-your-keyfile&gt; is the path to where you have saved your ssh key.
+where you should replace the NNN.NNN.NNN.NNN with yours instance's IP address, and &lt;path-to-your-keyfile&gt; is the path to where you have saved your ssh key.
 
-*Hint for Linux users:* If you copy your private key to the /home/<your-username>/.ssh folder, as we have done in this tutorial, you won’t have to specify the key every time and can skip the -i option.
+*Hint for Linux users:* If you copy your private key to the /home/<your-username>/.ssh folder, as we have done in this tutorial, you won't have to specify the key every time and can skip the -i option.
 
 {% BgBox info %}
 The **-f -N** options in the above command cause the tunnel to run in the background: once you have typed in the password, the command line prompt returns to your terminal. If you want to close your ssh connection, you have to *kill* it. In your terminal on your local computer, type:
@@ -161,7 +161,7 @@ If you *don't* use the **-N -f** options, you will be logged into an ssh termina
 
 4. Now you can click **Open** to start the SSH terminal. The tunnel will now be active as long as the PuTTY terminal window stays open. You can use this SSH terminal as a shell into the instance as well (as we have been doing the whole time), while simultaneously having your remote desktop open.
 
-5. The next time you run PuTTY, you must open these saved settings by selecting the name in the **Saved Sessions** pane and clicking **Load**, then clicking **Open**. O,r you can simply double-click the session name to load and run the saved session.
+5. The next time you run PuTTY, you must open these saved settings by selecting the name in the **Saved Sessions** pane and clicking **Load**, then clicking **Open**. Or, you can simply double-click the session name to load and run the saved session.
 
 See also the section about SSH Tunnelling in the [Appendix](appendices.html) for more information.
 
@@ -209,7 +209,7 @@ You can access it through the terminal (Applications Folder > Utilities > Termin
 
 ```open /System/Library/CoreServices```
 
-or on OSX greater than 10.10:
+or on OS X greater than 10.10:
 
 ```open /System/Library/CoreServices/Applications```
 
@@ -228,7 +228,7 @@ When you connect (we will do this in a moment), it asks you whether you accept a
 
 RealVNC by default compresses the colours to save bandwidth. To see your screen in full colour, you need to go to *Options in the initial window, then disable The checkbox for *Adapt to network speed*, and push up the slider to *Best quality*. 
 
-#### Step 3: Connect to the VNC server
+#### <a name="ConnectVNCServer"></a> Step 3: Connect to the VNC server
 
 Open your VNC client ("viewer") of choice. This will generally be a very simple interface with just a few fields to fill. The following instructions are *generic for all clients*. There are also some more detailed instructions given below for some examples.
 
@@ -241,7 +241,7 @@ Open your VNC client ("viewer") of choice. This will generally be a very simple 
 Now connect, and you should get a password prompt, in which you type the password you just chose for the VNC Server (not your ssh passphrase, unless you chose the same!). Then, you should get to the remote desktop.
 
 {% BgBox important %}
-Do *not* use any ssh or security options that clients may offer, because we have just done the ssh tunnel separately ourselves. Your connection will be secure. If you have followed the instructions above, your connection is secure, even if the vnc viewer says it isn’t (The VNC viewer does actually not realise it is running through the ssh tunnel).
+Do *not* use any ssh or security options that clients may offer, because we have just done the ssh tunnel separately ourselves. Your connection will be secure. If you have followed the instructions above, your connection is secure, even if the vnc viewer says it is not (The VNC viewer does actually not realise it is running through the ssh tunnel).
 {% endBgBox %}
 
 {% img src=images/scrTightVNC.png, w=70, dim=percent, align=center %}
@@ -254,7 +254,7 @@ To connect with the in-built *Screen Sharing* app, open it (Apple+Space and type
 
 {% img src=images/scrVNCMacScreenSharing.png, w=50, dim=percent, align=center %}
 
-You will be prompted for your password. That’s the password you selected when you set up the VNC Server in the previous step.
+You will be prompted for your password. That's the password you selected when you set up the VNC Server in the previous step.
 
 {% img src=images/scrVNCMacScreenSharing2.png, w=50, dim=percent, align=center %}
 
@@ -272,7 +272,7 @@ When it asks you whether you accept an insecure connection, say yes (it will in 
 
 {% img src=images/scrRealVNCViewer2.png, w=50, dim=percent, align=center %}
 
-You will now have to type in your password. That’s the password you chose when setting up the VNC server on your instance in the last step.
+You will now have to type in your password. That's the password you chose when setting up the VNC server on your instance in the last step.
 
 {% img src=images/scrRealVNCViewer3.png, w=50, dim=percent, align=center %}
 
@@ -362,13 +362,13 @@ exit 0
 
 ### Reconnect to the VNC afresh
 
-Of course, you won’t have to do all the above steps every day when you want to connect to your remote VNC desktop. The only things you need to do each time are:
+Of course, you won't have to do all the above steps every day when you want to connect to your remote VNC desktop. The only things you need to do each time are:
 
-1. Start the ssh tunnel, as described above (Step 1: Set up ssh tunneling). On Windows, if you are using PuTTY, you may have created a saved session which you can start easily.
+1. Start the ssh tunnel, as described [above in step 1](#SSHTunnelling). On Windows, if you are using PuTTY, you may have created a saved session which you can start easily.
 
-2. Open your VNC client and connect, as described in (Step 3: Connect to the VNC server)
+2. Open your VNC client and connect, as described [in step 3 above](#ConnectVNCServer). 
 
-Let’s do this now to see how easy this is. Close all your applications (all your terminals / PuTTY, and your open VNC viewer). 
+Let's do this now to see how easy this is. Close all your applications (all your terminals / PuTTY, and your open VNC viewer). 
 
 If on Unix/Mac, also kill your ssh tunnel (for instructions, see the notes about SSH tunneling in the [Appendix](appendices.html)).
 

@@ -14,7 +14,7 @@ Network-attached storage (NAS) is a great way to share files securely among user
 *Block storage* is the type of storage that is required for running things like databases, or as a storage required by applications (e.g. your data analysis software) which frequently access and write files. 
 
 
-Both of these storage types do not efficiently scale up. However, block storage may still be essential to your research applicatio: it is required for fast and efficient access from within applications; Many traditional applications only support file access in simple block storage systems.
+Both of these storage types do not efficiently scale up. However, block storage may still be essential to your research application it is required for fast and efficient access from within applications; Many traditional applications only support file access in simple block storage systems.
 A more *scalable* system has been designed which is better suited for Big Data demands: The *Object Storage* which is based on the principle of *filesystem storage*.
 
 Altogether, there are *three* different types of cloud storage available to you on the NeCTAR Research Cloud:

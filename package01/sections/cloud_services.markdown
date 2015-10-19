@@ -62,7 +62,7 @@ Some examples of cloud computing you are probably already using include
 
 **Facebook, Instagram** and other social media platforms.
 
-**Chromebook**: This is an example of a device that is *completely* based on the cloud. This is a kind of laptop which has very simple hardware: It runs the *Chrome OS*, but everything else is online: Apps and storage are in the cloud. The main fallback of such devices is that they are basically useless if there is no Internet connection. Currently, at the time of writing (*April 2015*), work is being done to address this issue by expanding the offline capabilities of the Chromebook.
+**Chromebook**: This is an example of a device that is *completely* based on the cloud. This is a kind of laptop which has very simple hardware: It runs the *Chrome OS*, but everything else is online: Apps and storage are in the cloud. The main drawback of such devices is that they are basically useless if there is no Internet connection. Currently, at the time of writing (*April 2015*), work is being done to address this issue by expanding the offline capabilities of the Chromebook.
 
 ### Types of cloud services
 
@@ -97,7 +97,7 @@ Computing resources are provided to the consumer. Users are free to set the reso
 –-- Definition of service types according to [ "The National Institute of Standards and Technology](http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf) (PDF, retrieved April 21st, 2015).
 
 *Software as a Service(SaaS).*  
-The capability provided to the consumer is to use the provider’s applications running on a cloud infrastructure. The applications are accessible from various client devices through either a thin client interface,such as a web browser (e.g., web-based email), or a program interface. The consumer does not manage or control the underlying cloud infrastructure including network, servers, operating systems, storage, or even individual application capabilities, with the possible exception of limited user-specific application configuration settings.
+The capability provided to the consumer is to use the providers applications running on a cloud infrastructure. The applications are accessible from various client devices through either a thin client interface,such as a web browser (e.g., web-based email), or a program interface. The consumer does not manage or control the underlying cloud infrastructure including network, servers, operating systems, storage, or even individual application capabilities, with the possible exception of limited user-specific application configuration settings.
 
 *Platform as a Service (PaaS).* 
 The capability provided to the consumer is to deploy onto the cloud infrastructure consumer-created or acquired applications created using programming languages, libraries, services,and tools supported by the provider (this capability does not necessarily preclude the use of compatible programming languages, libraries, services, and tools from other sources). The consumer does not manage or control the underlying cloud infrastructure including network, servers, operating systems, or storage, but has control over the deployed applications and possibly configuration settings for the application-hosting environment. 
@@ -120,6 +120,7 @@ The 3 service types can be characterized with two properties:
 
 Services which are less constrained give the user more control, but instead also offer less automation, and more work is required to get the desired applications up and running. The figure below shows examples of services along the scales of constrainedness and automation. Services to the left are less constrained, but also provide less automation. Towards the right end of the scale, capabilities are provided "out of the box," but are also more constrained in how they can be used.
 
+{% img src=images/serviceTypesConstrainedness.png, w=80, dim=percent, align=center %}
 
 
 

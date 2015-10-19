@@ -17,14 +17,17 @@ Secure passwords consist of a combination of alphanumeric characters (letters a-
  
 The password should be **at least 10 characters** long, and it should be hard to guess. 
 
-You should also be able to **remember it, or save it** in a secure place, to ensure you don’t lose access to your own services.
+You should also be able to **remember it, or save it** in a secure place, to ensure you don't lose access to your own services.
 
 You should **never share your password** with anyone!
 
-*Note:* You sould avoid exotic special characters (e.g. umlauts) and white spaces as they may cause problems on some systems.
+*Note:* You should avoid exotic special characters (e.g. umlauts) and white spaces as they may cause problems on some systems.
 {% endBgBox %}
 
-To get an impression of how significant the difference between various password lenghts is, the graphic below shows how long it would to take to crack a password when using 1000 cloud servers together to do the cracking:
+To get an impression of how significant the difference between various password lengths is, the figure below shows how long it would to take to crack a password when using 1000 cloud servers together to do the cracking:
+
+{% img src=images/passwordStrength.png, w=50, dim=percent, align=center, css=margin-top:20px;margin-bottom:20px; %}
+
 
 You will need to choose passphrases at several occasions. For example, before you can establish a connection to your virtual machine, you will have to generate keys which encrypt the connection between you and the virtual machine. A *key* is associated with a passphrase and it is needed to access your instance. We will do this in [Module 7][ModDoc7]. 
 
@@ -99,13 +102,13 @@ SSH Tunnelling is best explained with an example. In [Module 7][ModDoc7], we wil
 
 * To get around this, we can *redirect* all traffic between our Port 5900 and the server's Port 5901 through a *ssh tunnel*. So all traffic from our local Port 5900 will be *redirected* to our local Port 22, which is used by our *ssh client*. 
 
-* The *ssh client* will encrypt all data, and send it off through the encrypted connection to the server. The data then arrives at the remote computers's Port 22, where the *ssh server* receives it and redirects it to its port 5901, on which the *server application* (e.g. the VNC server) eventually receives our data. 
+* The *ssh client* will encrypt all data, and send it off through the encrypted connection to the server. The data then arrives at the remote computers Port 22, where the *ssh server* receives it and redirects it to its port 5901, on which the *server application* (e.g. the VNC server) eventually receives our data. 
 
 {% img src=images/SSHTunnel.png, w=70, dim=percent, align=center, css=margin-top:20px; margin-bottom: 20px; %}
 The figure above shows the two connected computers again, but this time with a *ssh tunnel* (symbolised by the blue lines): The connection is "deviated" from the ports that the client/server applications *think* they are communicating through---so the applications are not aware about the communication actually going through Port 22. The *tunnel* has been set up to automatically catch all communications from the client/server ports (e.g. 5900/5901) and deviate it through the ssh connection. Note that the blue lines in the graph are only symbolic---the actual ports are not open to the outside in the firewall settings (except the ssh port of course).
 
-The neat thing about this is that neither our client application nor the server application realise that the connection had been encrypted, so we don't need to configure anything complicated in the applications: Everything is handelled automatically by redirecting traffic through our ssh tunnel. 
-The only thing you need to do is directing your client application to connect to the host *localhost* instead of the the server. You usually specify the *host* as a URL, e.g. *http://www.server.com* or with the *IP address* of the server, and specify the *destination port* on this host. Instead, you now need to set it to *localhost* and the port you used for your ssh tunnel (5900 in the example above).
+The neat thing about this is that neither our client application nor the server application realise that the connection had been encrypted, so we don't need to configure anything complicated in the applications: Everything is handled automatically by redirecting traffic through our ssh tunnel. 
+The only thing you need to do is directing your client application to connect to the host *localhost* instead of the server. You usually specify the *host* as a URL, e.g. *http://www.server.com* or with the *IP address* of the server, and specify the *destination port* on this host. Instead, you now need to set it to *localhost* and the port you used for your ssh tunnel (5900 in the example above).
 You will also need to ensure that a ssh server is running on your virtual machine, but you will have one running already anyway, in order to connect to the server (we will do this in [Module 7][ModDoc7]).
 
 

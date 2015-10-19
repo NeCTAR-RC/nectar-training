@@ -31,7 +31,7 @@ So what is the difference between the two terminals? When you type **commands** 
 1. The ssh terminal is set up through a secure ssh communication line with your instance. If we use a ssh terminal, **only text** is being transferred (the commands you type and the responses you get). This is very fast, but you cannot run graphical applications, because you can only communicate with the instance via text.    
 *Note*: it actually is possible to run graphical applications via the terminal as well, with some disadvantages. This is discussed [later in this module](guiViaSSH.html), but this is very slow and usually not recommended. 
 
-2. The terminal on the remote desktop is connected securely as well (at least the way we will set it up in this tutorial). But instead, the communication includes graphical data and events (e.g your mouse clicks, and the windows displayed). This is slower than using the terminal only, but you may find it is still fast enough to work with. You can run graphical applications and use the OS menu to find programs and change settings, which may be easier for many of us.
+2. The terminal on the remote desktop is connected securely as well (at least the way we will set it up in this tutorial). But instead, the communication includes graphical data and events (e.g. your mouse clicks, and the windows displayed). This is slower than using the terminal only, but you may find it is still fast enough to work with. You can run graphical applications and use the OS menu to find programs and change settings, which may be easier for many of us.
 
 ### Remote desktop protocols
 

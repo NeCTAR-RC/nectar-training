@@ -5,7 +5,7 @@ part: Documentation
 {% include /docLinks.markdown %}
 
 
-We will now create an instance and choose the resources we require. For this tutorial, we don’t need a lot of resources. You may require more for your research. For more details about how to request an allocation, see [Module 5][ModDoc5]. 
+We will now create an instance and choose the resources we require. For this tutorial, we don't need a lot of resources. You may require more for your research. For more details about how to request an allocation, see [Module 5][ModDoc5]. 
 
 ### Security note 
 
@@ -54,16 +54,16 @@ You could launch several instances of the same flavor, but for now we will launc
 **_NOTE:_** At the time of writing the image "*NeCTAR Ubuntu 14.10 (Utopic) amd64*" was used. If you choose a version much newer than this, there may be some differences to the descriptions given in this tutorial. In general, a newer version should work fine with the exercises below, you may only see different text (phrasing) in the terminals command line output. 
 {% endBgBox %}
 
-Don’t click "Launch" just yet... we have to set the security settings first!
+Don't click "Launch" just yet... we have to set the security settings first!
 
 ### Step 4: Ensuring security
 
 Now, we will choose the security settings. Go to the tab "**Access & Security**".
 We can choose which **Security Groups** the instance will belong to (see above for explanation about security groups). 
 We will connect to the instance with *ssh*. Ssh uses port number 22, so this has to be freed up. Therefore, tick the "**ssh**" box. We will also publish a little website in a later exercise, which requires http, so tick the “**http**” box also. To test whether your instance is reachable, we will also need "**icmp**".    
-*Note:* We can also change the security groups of the instance later on, but it’s convenient to do this now.  
+*Note:* We can also change the security groups of the instance later on, but it's convenient to do this now.  
 
-Next, we will specify the key for connecting to this instance (that’s the one we just generated).
+Next, we will specify the key for connecting to this instance (that's the one we just generated).
 
 {% img src=images/scrSecurityGroup.png, w=350, dim=px, align=right, css=margin-left:20px;margin-top:10px; %}
 
