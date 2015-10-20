@@ -38,7 +38,7 @@ It is possible to take a **"Live Snapshot"** (take a Snapshot of the machine tha
 * using a "file system freeze" utility which block programs writing on the filesystem,
 * shutting down or pausing the instance before Snapshotting.
 
-The easiest option is probably to pause or shut down the instance (which we will do [later in this Module](cleanup.html)) and then take the Snapshot. For more information, refer to the [OpenStack documentation](http://docs.openstack.org/trunk/openstack-ops/content/Snapshots.html).
+The easiest option is probably to pause or shut down the instance (which we will do [later in this Module](cleanup.html)) and then take the Snapshot. For more information, refer to the [OpenStack documentation](http://docs.openstack.org/openstack-ops/content/snapshots.html).
 {% endBgBox %}
 
 

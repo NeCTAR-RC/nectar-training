@@ -34,7 +34,7 @@ So HPC and Cloud Computing try to achieve a different type of scalability. To ac
 {% BgBox info %}
 Some providers also offer HPC systems in the Cloud. HPC requires specialized hardware, so the provider must have such a specialized system as part of their infrastructure. Usage of *HPC in the Cloud* then works just as using HPC systems which your University may provide, only that the HPC System is located at the Cloud providers infrastructure instead of at your Universities data center.  
 
-Amazon, for example, offers *HPC in the Cloud*, as does [eResearch South Australia](http://support.ersa.edu.au/Cloud/cluster.html).
+Amazon, for example, offers *HPC in the Cloud*, as does [eResearch South Australia](http://www.ersa.edu.au/service/cloud/clusters-in-the-cloud/).
 {% endBgBox %}
 
 

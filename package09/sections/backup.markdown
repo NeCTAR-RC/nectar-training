@@ -39,11 +39,11 @@ There are two ways to backup your data on the volume:
 
 2. **Volume Backup**: Your data will be backed up and placed in your *Object Storage*. You can later restore that backup onto a new *or* existing volume. Only the amount of storage you are currently using is being backed up: If you only have 1GB of data on a 5GB volume, the backup will only be about 1GB. Backups are independent of the original volume, but they are still full copies of the Volumes. Therefore, they take longer to create than Snapshots.  
 
-The [last section](Snapshot.html) has discussed how to take a Snapshot of a Volume. 
+The [last section](snapshot.html) has discussed how to take a Snapshot of a Volume. 
 Please be aware that **Snapshots are not suitable to create regular backups**, as it takes a lot of storage space and uses up your quota. Snapshots are also only usable while the original Volume still exists, which limits your flexibility to delete the volume.
 You should only use snapshots for significant states for your Volumes which you want to use to easily create new volumes from.
 
-To make a *Backup* (not a *Snapshot*), you will need to use the **openstack command line client**, as described in [Module 10](ModDoc10). Support to create Backups via the Dashboard will probably be added in the near future --- it will then work in a very similar fashion to taking Snapshots.
+To make a *Backup* (not a *Snapshot*), you will need to use the **openstack command line client**, as described in [Module 10][ModDoc10]. Support to create Backups via the Dashboard will probably be added in the near future --- it will then work in a very similar fashion to taking Snapshots.
 
 {% BgBox important %}
 Note that when using Backups, you need to have enough quota on your Object Store to back up your data. You need to consider this when you request a resource allocation if you want to use OpenStack Backups --- if you don't request Object Store quota, you won't be given any allocation for it.

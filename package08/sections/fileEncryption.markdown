@@ -58,7 +58,7 @@ You will have to generate a *key pair* before you can use GnuPG. In the process,
     * Click on "New" to generate a new key and specify your name, E-Mail and passphrase.
     * Hit "Generate". Your new key will be listed in *GPG Keychain* after it has been created.
 * Windows:
-    * Download and install the graphical interface to GnuPG *"GpGForWin"* from [www.gpg4win.org](www.gpg4win.org). Make sure *Kleopatra* is checked.
+    * Download and install the graphical interface to GnuPG *"GpGForWin"* from [www.gpg4win.org](http://www.gpg4win.org). Make sure *Kleopatra* is checked.
     * Open the *Kleopatra* application which you may find with the app search field or via *Start > Gpg4win > Kleopatra*.
     * Go to *File > New Certificate* and select to create a *personal OpenPGP key pair*. 
 * Linux:

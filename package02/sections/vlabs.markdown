@@ -2,12 +2,13 @@
 layout: package-part-ext
 part: Documentation
 ---
+{% include /docLinks.markdown %}
 
 NeCTARs Virtual Laboratories are creating a new era of connectivity for Australian researchers. They aim at connecting researchers with existing and new research facilities, data repositories and computational tools and streamlining research workflows. They help to create new opportunities for collaboration, efficiencies and innovation.
 
 A Virtual Laboratory can be seen as a portal to several software tools, data, storage and documentation in an integrated and interactive environment, enabling researchers across the world to collaborate and share information.
 
-NeCTAR [Virtual Laboratories](https://nectar.org.au/virtual-laboratories-1) are developing online, **discipline-specific research environments** that integrate data repositories, computational tools and workflows.
+NeCTAR [Virtual Laboratories][NectarLabs] are developing online, **discipline-specific research environments** that integrate data repositories, computational tools and workflows.
 
 **Aims**
 
@@ -46,24 +47,24 @@ NeCTAR [Virtual Laboratories](https://nectar.org.au/virtual-laboratories-1) are 
 
 **Examples include**
 
-* The [Climate and Weather Science](http://www.nectar.org.au/climate-and-weather-science-laboratory) Virtual Laboratory for studying and forecasting weather patterns.
+* The [Climate and Weather Science](http://nectar.org.au/labs/climate-and-weather-science-laboratory/) Virtual Laboratory for studying and forecasting weather patterns.
 
-* The [Human Communication Science Virtual Laboratory](https://nectar.org.au/above-and-beyond-speech-language-and-music-virtual-laboratory) 
+* The [Human Communication Science Virtual Laboratory](http://nectar.org.au/humanities-virtual-laboratory/) 
 for cross-disciplinary interaction and information sharing between researchers. It is built for researchers from several disciplines: speech science, computer science, behavioural science, linguistics, music cognition and musicology, sonics and acoustics.
 
-* The [MARine Virtual Laboratory (MARVL)](https://www.nectar.org.au/marine-virtual-laboratory) can provide all the tools necessary to construct a virtual environment of a region of interest in marine environments.
+* The [MARine Virtual Laboratory (MARVL)](http://www.marvl.org.au/) can provide all the tools necessary to construct a virtual environment of a region of interest in marine environments.
 
-* The [Genomics Virtual Lab](https://www.nectar.org.au/node/587) is developing an online system for processing genomics workflows in the cloud.
+* The [Genomics Virtual Lab](http://nectar.org.au/labs/solving-endocrine-disorders-without-borders/) is developing an online system for processing genomics workflows in the cloud.
 
-* The [Geophysics Virtual Lab](https://www.nectar.org.au/node/575) has developed a portal, a workflow system and computational tools to access geological survey data in standard formats from multiple data providers.
+* The [Geophysics Virtual Lab](http://nectar.org.au/labs/virtual-geophysics-laboratory/) has developed a portal, a workflow system and computational tools to access geological survey data in standard formats from multiple data providers.
 It provides Geophysicists with access to an integrated environment that exploits eResearch tools and Cloud computing technology. 
 In particular, it uses the Cloud or the National Computational Infrastructure (NCI) supercomputer to run automated workflows constructed from standard analysis tools.
 
-* The [Characterisation Virtual Lab](https://www.nectar.org.au/node/607) has developed many tools, including a remote desktop for processing data from microscopes or the Australian Synchrotron on a supercomputer which has graphics processors (GPUs) for fast image processing.
+* The [Characterisation Virtual Lab](http://nectar.org.au/labs/characterisation-virtual-lab/) has developed many tools, including a remote desktop for processing data from microscopes or the Australian Synchrotron on a supercomputer which has graphics processors (GPUs) for fast image processing.
     
-* The [Humanities Virtual Lab](https://www.nectar.org.au/node/562) is integrating many important cultural data sets for researchers in the humanities.
+* The [Humanities Virtual Lab](http://nectar.org.au/humanities-virtual-laboratory/) is integrating many important cultural data sets for researchers in the humanities.
 
-* The [Biodiversity and Climate Change Virtual Lab](https://nectar.org.au/node/778) provides integrated tools, data collections and access portals for modelling the potential responses of Australias biodiversity to climate change.
+* The [Biodiversity and Climate Change Virtual Lab](http://nectar.org.au/labs/biodiversity-and-climate-change-virtual-lab/) provides integrated tools, data collections and access portals for modelling the potential responses of Australias biodiversity to climate change.
 
-* .. and many more! Check it out on the [website for NeCTAR virtual laboratories](https://nectar.org.au/virtual-laboratories-1).
+* .. and many more! Check it out on the [website for NeCTAR virtual laboratories](http://nectar.org.au/labs/).
 

@@ -15,8 +15,15 @@
 [Dashboard]: https://dashboard.rc.nectar.org.au 
 [Allocations]: http://support.rc.nectar.org.au/docs/allocations
 [Volumes]: http://support.rc.nectar.org.au/docs/volumes
+
+
 [NectarCyberduck]: http://support.rc.nectar.org.au/docs/object-storage#Cyberduck
+[NectarLabs]: http://nectar.org.au/labs/
+[NectarTools]: http://nectar.org.au/about/tools/
 [NectarObjectStorage]: http://support.rc.nectar.org.au/docs/object-storage
+
+
+
 [OpenStackSecurityGuide]: http://docs.openstack.org/security-guide/content/hypervisor-selection.html
 [OpenStackClients]: https://wiki.openstack.org/wiki/OpenStackClients
 [OpenStackPythonBindings]: https://wiki.openstack.org/wiki/OpenStackClients

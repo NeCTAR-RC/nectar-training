@@ -131,13 +131,13 @@ Most VM specific vulnerabilities stem from the *hypervisor*. There are a number 
 Luckily, hypervisors are generally more secure than regular operating systems; The Hypervisor is a fairly simple program, which helps to limit such vulnerabilities.
 
 The NeCTAR cloud uses the *KVM* Hypervisor with *OpenStack*. *KVM* is a good choice in terms of security. The virtual machines managed by *KVM* run as unprivileged processes, which makes it safe. Techniques for Hypervisor protection include *sVirt, Intel TXT, and AppArmor, cgroups*, and *MAC Policy*. *KVM* has all these techniques in-built. 
-For more information, refer to the [OpenStack security guide](OpenStackSecurityGuide).
+For more information, refer to the [OpenStack security guide][OpenStackSecurityGuide].
 
 Regular patching of the Hypervisor is important to refresh security. Also, appropriate security policies have to be applied. The NeCTAR cloud administration team is aware of the high security demands of Australias researchers and regularly updates the systems and applies a strict security policy to ensure maximum safety.
 
 In addition to the efforts the security team at NeCTAR are making, part of the security is also **your responsibility**, because not only the Hypervisor, but also your VM has to be secure (for example, to help prevent a *VM Escape* attack). 
 
- * Since it is easy to restore an infected VM,  many users do not go through the effort to secure them with an Anti Virus Protection. Linux, Unix and other Unix-like computer operating systems are generally regarded as very well-protected against computer viruses, but they are not immune. So better safe than sorry: **Install an Anti Virus Protection**. On your Linux instance, you may install the popular [AVG Anti-Virus Software](www.avg.com), see for example [this Ubuntu help page](https://help.ubuntu.com/community/Antivirus/Avg) which includes instructions. See also [this page on ubuntu.com](https://help.ubuntu.com/community/Antivirus) for a list of AntiVirus software you may install.
+ * Since it is easy to restore an infected VM,  many users do not go through the effort to secure them with an Anti Virus Protection. Linux, Unix and other Unix-like computer operating systems are generally regarded as very well-protected against computer viruses, but they are not immune. So better safe than sorry: **Install an Anti Virus Protection**. On your Linux instance, you may install the popular [AVG Anti-Virus Software](http://www.avg.com), see for example [this Ubuntu help page](https://help.ubuntu.com/community/Antivirus/Avg) which includes instructions. See also [this page on ubuntu.com](https://help.ubuntu.com/community/Antivirus) for a list of AntiVirus software you may install.
 
 * It is also very important that you **regularly update your VM’s operating system** to ensure it has the newest security patches, e.g. on Ubuntu this can be done with the command:    
     ```sudo apt-get dist-upgrade```

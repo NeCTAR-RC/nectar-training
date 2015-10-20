@@ -9,7 +9,7 @@ part: Documentation
 
     * Pattern: [Patterns for Parallel Programming](http://www.pearson.ch/Informatik/Softwareentwicklung/EntwurfsmusterPatterns/1471/9780321228116/Patterns-for-Parallel-Programming.aspx), Timothy G. Mattson, Beverly A. Sanders, and Berna L. Massingill, Addison-Wesley, 2005
 
-    * CDK4: [Distributed Systems, Concepts and Design](http://www.cdk4.net/contents/contents.html), George Coulouris, Jean Dollimore, and Tim Kindberg, Addison-Wesley, 2005
+    * CDK5: [Distributed Systems, Concepts and Design](http://www.cdk5.net/), George Coulouris, Jean Dollimore, and Tim Kindberg, Gordon Blair, Addison-Wesley, 2011
 
     * [Enterprise Integration Patterns](http://www.enterpriseintegrationpatterns.com/toc.html)
 
