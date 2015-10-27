@@ -1,0 +1,135 @@
+---
+layout: package-part-ext 
+---
+
+
+<div class="post">
+
+  <!-- get module number and data associated with it -->
+  {% assign pnum = page.number | plus:0 %}
+  {% case pnum %}
+  {% when 1 %}
+  {%   assign pagedata = site.data.p01 %}
+  {% when 2 %}
+  {%   assign pagedata = site.data.p02 %}
+  {% when 3 %}
+  {%   assign pagedata = site.data.p03 %}
+  {% when 4 %}
+  {%   assign pagedata = site.data.p04 %}
+  {% when 5 %}
+  {%   assign pagedata = site.data.p05 %}
+  {% when 6 %}
+  {%   assign pagedata = site.data.p06 %}
+  {% when 7 %}
+  {%   assign pagedata = site.data.p07 %}
+  {% when 8 %}
+  {%   assign pagedata = site.data.p08 %}
+  {% when 9 %}
+  {%   assign pagedata = site.data.p09 %}
+  {% when 10 %}
+  {%   assign pagedata = site.data.p10 %}
+  {% else %}
+  {%   assign pagedata_avail = false %}
+  {% endcase %}
+
+  {% assign psize = pagedata.size | plus:0%}
+  {% if psize == 0 %} 
+      {% assign pagedata_avail = false %}
+  {% else %}
+      {% assign pagedata_avail = true %}
+  {% endif %}
+
+
+  <!-- find out current top-level category -->
+  {% assign current_file_path = page.url | split:"/" %}
+  {% assign current_file = current_file_path.last %}
+  {% assign current_tl_index = -1 %}
+  {% assign current_extra_index = -1 %}
+  {% assign extra_avail = false %}
+  {% assign extra_size = -1 %}
+  {% if pagedata_avail %}
+  	<!-- first, find out whether we are currently viewing a file in the main hierarchy  -->
+  	{% for packagepart in pagedata %}
+		{% if current_file == packagepart.file  %}
+			{% assign extra_size = packagepart.extra.size | plus:0%}
+			{% if extra_size > 1 %}
+				{% assign extra_avail = true %}
+				{% assign extra_data = packagepart.extra %}
+				{% assign current_tl_index = forloop.index0  %}
+			{% endif %}
+			{% break %}
+		{% endif %}
+	{% endfor %}
+  	<!-- If we are not in the main hierarchy, we may be looking at a file of one of the sub-categories -->
+	{% if extra_avail == false %}
+  		{% for packagepart in pagedata %}
+			{% assign esize = packagepart.extra.size | plus:0%}
+			{% assign tl_index = forloop.index0  %}
+			{% if esize > 1 %}
+  				{% for extrapart in packagepart.extra %}
+					{% if current_file == extrapart.file  %}
+						{% assign current_tl_index = tl_index  %}
+						{% assign current_extra_index = forloop.index0  %}
+						{% assign extra_avail = true %}
+						{% assign extra_data = packagepart.extra %}
+						{% break %}
+					{% endif %}
+				{% endfor %}
+			{% endif %}
+		{% endfor %}
+	{% endif %}
+  {% endif %}
+
+  <!-- Display links to all the extra fields, once above the main content, and once below. -->
+  {% if extra_avail %}
+ 	{% for i in (1..2) %}
+	{% if pagedata[current_tl_index].extra_title.size > 0 %}
+		<b>{{pagedata[current_tl_index].extra_title}}</b><br/>
+	{% endif %}
+	{% assign cnt=0 %}
+	{% assign indent="&nbsp;&nbsp;&nbsp;" %}
+	{% assign link_columns=3 %}
+	<table>
+	<tr>
+	{% for data in extra_data %}
+		<td>
+		{% if forloop.index0 == current_extra_index %}
+			<b>
+		{% endif %}
+			<a href="{{site.baseurl}}{{page.contentspath}}sections/{{data.file}}">{{data.title_short}}</a>
+			{{indent}}
+		{% if forloop.index0 == current_extra_index %}
+			</b>
+		{% endif %}
+		</td>	
+
+  		{% assign cnt = cnt | plus:1 %}
+		{% if cnt == link_columns %}
+			</tr><tr>
+			{% assign cnt=0 %}
+		{% endif %}
+	{% endfor %}
+	</tr>
+	</table>
+	<br/>
+	{% if i == 1 %}
+	  <article class="post-content">
+  	    <h3>{{extra_data[current_extra_index].title}}</h3>
+	    {{ content }}
+	  </article>
+	{% endif %}
+ 	{% endfor %}
+  {% else %}	
+	  <article class="post-content">
+	    {{ content }}
+	  </article>
+  {% endif %}
+
+
+
+
+
+
+
+
+</div>

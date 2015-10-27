@@ -1,12 +1,6 @@
 ---
 layout: default
 ---
-<div class="post">
-
-  <header class="post-header">
-    <h3>Module {{page.number}}</h3>
-    <h1>{{ page.title }}</h1>
-  </header>
 
   <!-- 
     Preprocessing: Determine which part number this is. To avoid having to set numbers 
@@ -48,9 +42,10 @@ layout: default
 
   {% assign current_file_path = page.url | split:"/" %}
   {% assign current_file = current_file_path.last %}
-  {% assign current_toplevel_index = 0 %}
-  {% assign last_toplevel_index = 0 %}
+  {% assign current_toplevel_index = -1 %}
+  {% assign current_is_extra_menu_file = false %}
   {% if pagedata_avail %}
+  	{% assign last_toplevel_index = -1 %}
   	{% for packagepart in pagedata %}
 		{% assign level = packagepart.level | plus:0 %}
 		{% if level <= 1 %}
@@ -62,7 +57,41 @@ layout: default
 			{% break %}
 		{% endif %}
 	{% endfor %}
+  	<!-- If we are not in the main hierarchy, we may be looking at a file of one of the sub-categories -->
+	{% if current_toplevel_index < 0 %}
+		{% assign last_toplevel_index = -1 %}
+  		{% for packagepart in pagedata %}
+			{% assign index0 = forloop.index0  %}
+			{% assign esize = packagepart.extra.size | plus:0%}
+			{% if level <= 1 %}
+				{% assign last_toplevel_index=forloop.index0 %}
+			{% endif %}
+			{% if esize > 1 %}
+  				{% for extrapart in packagepart.extra %}
+					{% if current_file == extrapart.file  %}
+						{% assign current_index = index0  %}
+						{% assign current_toplevel_index = last_toplevel_index  %}
+  						{% assign current_is_extra_menu_file = true %}
+						{% break %}
+					{% endif %}
+				{% endfor %}
+			{% endif %}
+			{% if current_index >= 0 %}
+  				{% assign last_toplevel_index = forloop.index0 %}
+				{% break %}
+			{% endif %}
+		{% endfor %}
+	{% endif %}
   {% endif %}
+
+
+
+<div class="post">
+
+  <header class="post-header">
+    <h3>Module {{page.number}}</h3>
+    <h1>{{ page.title }}</h1>
+  </header>
 
   {% if pagedata_avail %}
 
@@ -89,14 +118,13 @@ layout: default
 				{% assign indents = indents |append:"&nbsp;&nbsp;" %}
 			{% endfor %}
 		{% endif %}
-
 		{% if level <= 1 or activate_submenu %}
-			{% if current_file == packagepart.file  %}
-				  <b>
+			{% if current_file == packagepart.file or (current_is_extra_menu_file and current_index == forloop.index0 %}
+				 <b>
 			{% endif %}
 			
       <a href="{{site.baseurl}}{{page.contentspath}}sections/{{ packagepart.file }}">{{indents}} {{ packagepart.name }}</a>
-			{% if current_file == packagepart.file  %}
+			{% if current_file == packagepart.file or (current_is_extra_menu_file and current_index == forloop.index0 %}
 				</b>
 			{% endif %}
 			<br/>

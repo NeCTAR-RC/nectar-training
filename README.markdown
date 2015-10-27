@@ -34,24 +34,32 @@ several sections. This avoids very long HTML pages which have to be
 scrolled through, and introduces the convenience of a navigation (in
 the style of table of contents) so that it is easy to jump to a certain
 part of the module.
-  The implementation is as follows:
-  - *_data/p01.yml .. _data/p10.yml (10 files, one for each package)* contains the structure of the
-  module as a YAML list. For each structure, <title> (name) and <file> name has to be given here.
-  Optionally, a field called <level> may be added, which will create a hierarchy (from top to bottom),
+
+The implementation is as follows:
+
+- *_data/p01.yml .. _data/p10.yml (10 files, one for each package)* contains the structure of the
+  module as a YAML list. Each list entry is a map with at least two keys: **title** and **file**.
+  Optionally, a field called **level** may be added, which will create a hierarchy (nesting of menu entries),
   starting with level 1 as top-level.
   The file name should be only the html file (without a path), and has to be located in a folder
-  named *sections* within the module, e.g. *package01/sections*. 
+  named *sections* within the module, e.g. *package01/sections*.    
+
+   Another optional field is **extra** (and extra_title along with it), which is to be a list of maps with two keys each: **title** and **file**, to link to another sub category. This is to generate an extra menu which is not part of the main contents list. Example given in _data/p02.yml.    
+
     This was found the most convenient to specify the structure in variables without having to specify them
   in each markup file (it is not possible to import yaml files from within the frontmatter).
-  - *_layout/package-part-ext.html* contains a simple first simple implementation of generating the
+
+- *_layout/package-part-ext.html* contains a simple first simple implementation of generating the
   navigation module. It uses the structure specified in the *_data/p0x.yml* file to generate the links.
   Levels higher than 1 are only displayed if one of the files under the top-level element are being displayed.
+
+- *_layout/package-part-ext-subcat.html* is inherited from package-part-ext.html, but supports the "extra" field to generate an extra menu.
 
 **Background boxes**
 
 A plugin was developed to insert *Info boxes* with the block tag
  
-```{% raw %} {% BgBox <type> %} Text of info box {% endBgBox %} {% endraw %}```
+```{% raw %} {% BgBox [type] %} Text of info box {% endBgBox %} {% endraw %}```
   
 Replacing *&lt;type&gt;* with either
 
@@ -99,7 +107,7 @@ The implementation is as follows:
 
 A plugin was developed to format images (e.g. width and alignment).     
 ```{% raw %} 
-{% img src=</path/to/image>, w=<width>, h=<height>, alt=<alt text> dim=<px|percent>, css=<extra css formatting> %}
+{% img src=[/path/to/image], w=[width], h=[height], alt=[alt text] dim=[px|percent], css=[extra css formatting] %}
 {% endraw %}```    
 All attributes except src are optional. Each argument has to be separated with a ','.
 The dimension (argument dim) defines whether width is specified in pixels or percent of 

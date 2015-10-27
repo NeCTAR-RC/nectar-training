@@ -4,6 +4,39 @@
 - name: Virtual Laboratories
   file: vlabs.html
 
+- name: Examples
+  file: exampleVLabs.html
+  level: 2
+  extra_title: Selection of virtual laboratories
+  extra:
+    - file: labAlveo.html
+      title: Alveo Virtual Laboratory
+      title_short: Alveo
+    - file: labBccvl.html 
+      title: Biodiversity and Climate Change Virtual Laboratory (BCCVL) 
+      title_short: BCCVL
+    - file: labCharacterisation.html
+      title: Characterisation Virtual Laboratory
+      title_short: Characterisation
+    - file: labGenomics.html
+      title: Genomics Virtual Laboratory
+      title_short: Genomics
+    - file: labHumanities.html
+      title: Humanities Virtual Laboratory
+      title_short: HuNY
+    - file: labIELab.html
+      title: Industrial Ecology Virtual Laboratory (IELab)
+      title_short: IELab
+    - file: labClimateWeather.html
+      title: Climate and Weather Science Laboratory
+      title_short: Climate & Weather
+    - file: labMARVL.html
+      title: MARine Virtual Laboratory (MARVL)
+      title_short: MARVL
+    - file: labGeophysics.html
+      title: Virtual Geophysics Laboratory
+      title_short: VGL 
+
 - name: eResearch Tools
   file: tools.html
 
