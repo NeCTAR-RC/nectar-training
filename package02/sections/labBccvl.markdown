@@ -1,19 +1,23 @@
 ---
-layout: package-part-ext-subcat
+layout: package-part-ext
 part: Documentation
 ---
 {% include /docLinks.markdown %}
 
-**Target fields(s):** Ecology, environmental and climate change sciencd, land use planning, natural resources. 
+**Target field(s):** Ecology, environmental and climate change sciencd, land use planning, natural resources. 
 
 **Website:** [http://www.bccvl.org.au/](http://www.bccvl.org.au/)
 
+{% img src=images/logoBccvl.png,align=left,w=70,dim=px,css=margin-right:20px; %}
 
-The Biodiversity and Climate Change Virtual Laboratory (BCCVL) is a decision support and scenario planning tool that simplifies the process of biodiversity and climate change modelling. It connects the research community to Australia’s national computation infrastructure by integrating a suite of tools in a coherent online environment. Users can access biodiversity, climate and environmental data from global online datasets or upload their own datasets, perform data analysis such as Species Distribution Models with a suite of 19 different algorithms, and easily visualise, interpret and evaluate the results of the models.  
+<br>
+
+The **Biodiversity and Climate Change Virtual Laboratory (BCCVL)** is a decision support and scenario planning tool that simplifies the process of biodiversity and climate change modelling. It connects the research community to Australia’s national computation infrastructure by integrating a suite of tools in a coherent online environment. Users can access biodiversity, climate and environmental data from global online datasets or upload their own datasets, perform data analysis such as Species Distribution Models with a suite of 19 different algorithms, and easily visualise, interpret and evaluate the results of the models.  
 
 ###Intended users
 
 The BCCVL is designed for ecologists, environmental and climate change scientists, students, and consultants. Beyond this, the BCCVL makes for a great training platform for both researchers, consultants and those involved in land use planning and require decision support tools to help mitigate risk and determine how to best use available natural resources. 
+
 
 ###Use Cases
 Species Distribution Model Experiments

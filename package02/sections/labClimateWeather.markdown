@@ -1,10 +1,10 @@
 ---
-layout: package-part-ext-subcat
+layout: package-part-ext
 part: Documentation
 ---
 {% include /docLinks.markdown %}
 
-**Target fields(s):** Climate and weather sciences, biodiversity, environmental research, geophysics, bioinformatics.
+**Target field(s):** Climate and weather sciences, biodiversity, environmental research, geophysics, bioinformatics.
 
 **Website:** [http://nectar.org.au/labs/climate-and-weather-science-laboratory/](http://nectar.org.au/labs/climate-and-weather-science-laboratory/)
 
@@ -14,10 +14,10 @@ The Bureau of Meteorology, CSIRO and the National Computational Infrastructure (
 
 The virtual laboratory's goal is to:
 
-* enrich scientists' access to resources,
-* reduce the technical barriers to using state of the art tools,
-* facilitate the sharing of experiments and results,
-* reduce the time to conduct scientific research studies, and
-* elevate the collaboration and contributions by the Australian research community to the development of the Australian Community Climate Earth-System Simulator (ACCESS).
+* Enrich scientists' access to resources,
+* Reduce the technical barriers to using state of the art tools,
+* Racilitate the sharing of experiments and results,
+* Reduce the time to conduct scientific research studies, and
+* Elevate the collaboration and contributions by the Australian research community to the development of the Australian Community Climate Earth-System Simulator (ACCESS).
 
 For more information please refer to the website.

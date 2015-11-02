@@ -1,14 +1,18 @@
 ---
-layout: package-part-ext-subcat
+layout: package-part-ext
 part: Documentation
 ---
 {% include /docLinks.markdown %}
+  
 
-**Target fields(s):** Industrial ecology (IE), regional economics, transition analysis, MRIO tables, 
+**Target field(s):** Industrial ecology (IE), regional economics, transition analysis, MRIO tables, 
 Hybrid LCA data, economic and environmental data.
 
-**Website:**  [www.ielab.info](www.ielab.info)
+**Website:**  [http://ielab.info](http://ielab.info)
 
+**See also:** [http://nectar.org.au/labs/tracking-the-global-supply-chain/](http://nectar.org.au/labs/tracking-the-global-supply-chain/)
+
+{% img src=images/logoIELab.png,align=left,w=70,dim=px,css=margin-right:10px; %}
 The **Industrial Ecology Virtual Laboratory (IELab)** is a cloud-based research platform 
 for enviro-socio-economic modelling. It provides the most comprehensive, 
 environmentally extended input-output model available for use in Australia. It 

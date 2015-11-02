@@ -15,6 +15,6 @@ In summary, Virtual Labs *vs* eResearch Tools:
     * offer a variety of research software for the Australian research community, often addressing researchers **across disciplines**.
     * focus on **enhancing existing tools** and applications.
 
-If you have not identified any tool or virtual lab that you may benefit from, there is still one major NeCTAR service which you will be interested in: The Research Cloud. The next modules will cover usage of Cloud Computing for your research.
+If you have not identified any tool or virtual lab that you may benefit from, there is still one major NeCTAR service which you will be interested in: **The Research Cloud**. The next modules will cover usage of Cloud Computing for your research.
 
 Continue with [Module 3][ModDoc3] which will discuss a few common use cases for the NeCTAR Research Cloud.

@@ -1,14 +1,17 @@
 ---
-layout: package-part-ext-subcat
+layout: package-part-ext
 part: Documentation
 ---
 {% include /docLinks.markdown %}
 
-
-**Target fields(s):** Bioinformatics, Human communication, Statistical Computing, Speech databases
+**Target field(s):** Human Communication Science, Statistical Computing, Speech databases
 
 **Website:** [http://alveo.edu.au/](http://alveo.edu.au/)
 
+**See also:** [http://nectar.org.au/labs/when-words-collide/](http://nectar.org.au/labs/when-words-collide/)
+
+{% img src=images/scrAlveo.png,align=right,w=300,dim=px %}
+Alveo provides on-line infrastructure for accessing human communication data sets (speech, texts, music, video, etc.) and for using specialised tools for searching, analysing and annotating that data.
 
 Alveo is a **web-based data discovery application** for examining collections of **human communication data**. It can be accessed using any web browser.
 There are a number of tools available:

@@ -3,42 +3,118 @@
 
 - name: Virtual Laboratories
   file: vlabs.html
-
-- name: Examples
-  file: exampleVLabs.html
+    
+- file: labAlveo.html
+  name: Alveo Virtual Laboratory
   level: 2
-  extra_title: Selection of virtual laboratories
-  extra:
-    - file: labAlveo.html
-      title: Alveo Virtual Laboratory
-      title_short: Alveo
-    - file: labBccvl.html 
-      title: Biodiversity and Climate Change Virtual Laboratory (BCCVL) 
-      title_short: BCCVL
-    - file: labCharacterisation.html
-      title: Characterisation Virtual Laboratory
-      title_short: Characterisation
-    - file: labGenomics.html
-      title: Genomics Virtual Laboratory
-      title_short: Genomics
-    - file: labHumanities.html
-      title: Humanities Virtual Laboratory
-      title_short: HuNY
-    - file: labIELab.html
-      title: Industrial Ecology Virtual Laboratory (IELab)
-      title_short: IELab
-    - file: labClimateWeather.html
-      title: Climate and Weather Science Laboratory
-      title_short: Climate & Weather
-    - file: labMARVL.html
-      title: MARine Virtual Laboratory (MARVL)
-      title_short: MARVL
-    - file: labGeophysics.html
-      title: Virtual Geophysics Laboratory
-      title_short: VGL 
+
+- file: labBccvl.html 
+  name: Biodiversity and Climate Change (BCCVL) 
+  level: 2
+
+- file: labCharacterisation.html
+  name: Characterisation Virtual Laboratory
+  level: 2
+
+- file: labGenomics.html
+  name: Genomics Virtual Laboratory
+  level: 2
+
+- file: labEndoGenomics.html
+  name: Endocrine Genomics (endoVL) 
+  level: 2
+
+- file: labHumanities.html
+  name: Humanities Virtual Laboratory (HuNI)
+  level: 2
+
+- file: labIELab.html
+  name: Industrial Ecology (IELab)
+  level: 2
+
+- file: labClimateWeather.html
+  name: Climate & Weather Science
+  level: 2
+
+- file: labMARVL.html
+  name: MARine Virtual Laboratory (MARVL)
+  level: 2
+
+- file: labGeophysics.html
+  name: Geophysics Virtual Laboratory (VGL) 
+  level: 2
+
+- file: labAllSky.html
+  name: All-Sky Virtual Observatory 
+  level: 2
 
 - name: eResearch Tools
   file: tools.html
+
+- file: toolHumanVariome.html
+  name: Human Variome Project
+  level: 2
+
+- file: toolHTC.html
+  name: High Throughput Computing
+  level: 2
+
+- file: toolDishtiVoluminous.html
+  name: Dishti and Voluminous
+  level: 2
+
+- file: toolTardis.html
+  name: TARDIS in the cloud
+  level: 2
+
+- file: toolGeologyGeodynamics.html
+  name: Geology from Geodynamics
+  level: 2
+
+- file: toolCATAMI.html
+  name: CATAMI
+  level: 2
+
+- file: toolUniCarbKB.html
+  name: UniCarbKB
+  level: 2
+
+- file: toolShARED.html
+  name: ShARED
+  level: 2
+
+- file: toolQuadrant.html
+  name: Quadrant
+  level: 2
+
+- file: toolZoaTrack.html
+  name: ZoaTrack
+  level: 2
+
+- file: toolCloudBioinformatics.html
+  name: The Ark - Cloud-based Bioinformatics Tools 
+  level: 2
+
+- file: toolAusSchizoBank.html
+  name: Ausralian Schizophrenia Research Bank
+  level: 2
+
+- file: toolCloudBasedIA.html
+  name: Cloud-based Image Analysis
+  level: 2
+
+- file: toolAustEse.html
+  name: The AustESE Project
+  level: 2
+
+
+- file: toolFAIMS.html
+  name: Archaeological Management System
+  level: 2
+
+- file: toolSynchotron.html
+  name: Australian Synchotron 
+  level: 2
 
 - name: Summary
   file: summary.html
