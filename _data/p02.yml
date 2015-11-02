@@ -48,6 +48,10 @@
   name: All-Sky Virtual Observatory 
   level: 2
 
+- file: labVhirl.html
+  name: Virtual Hazards, Impact and Risk Laboratory
+  level: 2
+
 - name: eResearch Tools
   file: tools.html
 
