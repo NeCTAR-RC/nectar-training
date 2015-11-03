@@ -11,9 +11,9 @@ part: Documentation
 **See also:** [http://nectar.org.au/labs/when-words-collide/](http://nectar.org.au/labs/when-words-collide/)
 
 {% img src=images/scrAlveo.png,align=right,w=300,dim=px %}
-Alveo provides on-line infrastructure for accessing human communication data sets (speech, texts, music, video, etc.) and for using specialised tools for searching, analysing and annotating that data.
 
 Alveo is a **web-based data discovery application** for examining collections of **human communication data**. It can be accessed using any web browser.
+It provides on-line infrastructure for accessing human communication data sets (speech, texts, music, video, etc.) and for using specialised tools for searching, analysing and annotating that data.
 There are a number of tools available:
 
 - The **Alveo Data Collections** are aggregated from other sources and are configured for quick searching. In particular, Alveo permits searching on the content of these data sets.
@@ -22,6 +22,6 @@ There are a number of tools available:
 
 - The **R Project** for Statistical Computing provides a free software environment for statistical computing and graphics.
 
-**EMU** is a collection of software tools for the creation, manipulation and analysis of speech databases.
+- **EMU** is a collection of software tools for the creation, manipulation and analysis of speech databases.
 
 For more information, please refer to the website. 

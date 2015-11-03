@@ -12,7 +12,7 @@ part: Documentation
 
 * [http://anusf.anu.edu.au/Vizlab/drishti/](http://anusf.anu.edu.au/Vizlab/drishti/) 
 
-* [Dishti YouTube playlist](https://www.youtube.com/playlist?list=PLlf0kdl6dSPopkxgSNafjQXL_v2sV12DZ)
+* [Drishti YouTube playlist](https://www.youtube.com/playlist?list=PLlf0kdl6dSPopkxgSNafjQXL_v2sV12DZ)
 
 * [NCI VizLab](http://nci.org.au/virtual-laboratories/scientific-visualisation/) 
 
@@ -26,14 +26,14 @@ part: Documentation
 <table align="center">
 <tr>
 <td>
-{% img src=images/scrDishti.png,align=center,w=150,dim=px,css=margin-right:20px; %}
+{% img src=images/scrDrishti.png,align=center,w=150,dim=px,css=margin-right:20px; %}
 </td><td>
-{% img src=images/scrDishti2.png,align=center,w=150,dim=px %}
+{% img src=images/scrDrishti2.png,align=center,w=150,dim=px %}
 </td></tr>
 </table>
 <br/>
 
-There is also a [YouTube playlist for Dishti](https://www.youtube.com/playlist?list=PLlf0kdl6dSPopkxgSNafjQXL_v2sV12DZ).
+There is also a [YouTube playlist for Drishti](https://www.youtube.com/playlist?list=PLlf0kdl6dSPopkxgSNafjQXL_v2sV12DZ).
 
 **Voluminous** is a web browser-based application to make data visualisation services accessible anytime, anywhere.
 Voluminous delivers the visualisation functionality of Drishti using NCI cloud technology, so users can access their images and videos from any computer that is connected to the internet.

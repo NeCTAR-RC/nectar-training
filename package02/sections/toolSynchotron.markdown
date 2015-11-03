@@ -11,7 +11,7 @@ part: Documentation
 **Maintained by:** Australian Synchroton
 
 {% img src=images/logoSynchotron.png,align=left,w=70,dim=px,css=margin-right:20px; %}
-This project comprises of tools for the **Australian Synchroton** community.
+This project comprises tools for the **Australian Synchroton** community.
 The *Australian Synchrotron* is a world-class national research facility that uses accelerator technology to produce a powerful source of light---x-rays and infrared radiation---a million times brighter than the sun.
 
 The facility has nine different experimental stations, or beamlines, which harness that light so researchers can see the fundamental structure and composition of materials, on scales ranging from the atomic to the macroscopic – with a level of detail, speed and accuracy not possible in conventional laboratories.
