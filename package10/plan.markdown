@@ -41,13 +41,3 @@ to catch up.
 * All participants must have access to the NeCTAR cloud via AAF
 * This course is suitable for advanced users who have experience with the research cloud, or have attended Modules 7-9. They should know the tasks involved in launching, configuring and managing instances, volumes, backups, snapshots etc. However they don't need to know how to use command line tools --- it is sufficient if they have done everything via the Dashboard before.
 
-### Running a session
-
-_TBD with slides_
-
-_An overview of the various parts of the course, including:_
-
-* _how much time to devote to each section_
-* _the activities done in each section of the course_
-* _suggested points for breaks_
-

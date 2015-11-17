@@ -47,13 +47,3 @@ to catch up.
     * have this instance and storage ready to go. They will create Snapshots of this instance and backups of the volume, and then **delete** this instance and volume --- so if they are concerned, they should set up an instance and volume exclusively for this tutorial which they can delete without being concerned.
 * Windows users will need access to the Windows command line (possibly has to be enabled by IT department, if course is held in a lab)
 
-### Running a session
-
-_TBD with slides_
-
-_An overview of the various parts of the course, including:_
-
-* _how much time to devote to each section_
-* _the activities done in each section of the course_
-* _suggested points for breaks_
-

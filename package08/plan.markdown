@@ -45,13 +45,3 @@ For any additional 5-7 participants, one additional trainer should attend to hel
     * All participants must have access to the NeCTAR cloud via AAF
     * Participants should have logged onto the NeCTAR dashboard before, and ideally have an instance up an running already, with a volume (or secondary ephemeral drive)  mounted on it.
 
-### Running a session
-
-_TBD with slides_
-
-_An overview of the various parts of the course, including:_
-
-* _how much time to devote to each section_
-* _the activities done in each section of the course_
-* _suggested points for breaks_
-
