@@ -14,9 +14,9 @@ This introduction describes the structure of this course and provides an introdu
 
 The following videos go through most of the content in this module and offer a less in-depth description of the subject than the documentation does.
 
-{% youtube Sg2UMTU4IP8 %}
+{% youtube OR9hMyom4gI %}
 
-{% youtube J2Y3s5Jkmmo %}
+{% youtube To3nUTwilCw %}
 
 
 
