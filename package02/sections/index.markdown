@@ -13,6 +13,12 @@ In a few words,
 
 * *eResearch Tools* provide online **software tools** for common research tasks. 
 
+### Video
+
+The following video goes through the content in this module.
+
+{% youtube -D3qocmejes %}
+
 {% include /disclaimer.markdown %}
 
 

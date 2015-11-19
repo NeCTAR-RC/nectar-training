@@ -5,26 +5,14 @@ part: Video Content
 
 The following videos have been created for the training package.
 
-### Video 1 - Title
+{% youtube Y9JVdyRPlcg %}
 
-_Video description_
+{% youtube cVX3e_bYee8 %}
 
-_Embedded link to youtube video_
+{% youtube eDDVUj1qyC0 %}
 
-_Link to raw mp4 content_
+{% youtube H3a9-QNQsZ4 %}
 
-### Video 2 - Title
+{% youtube XrlHNvQMTN4 %}
 
-_Video description_
-
-_Embedded link to youtube video_
-
-_Link to raw mp4 content_
-
-### Video N - Title
-
-_Video description_
-
-_Embedded link to youtube video_
-
-_Link to raw mp4 content_
+{% youtube 7V8XB6_qR98 %}

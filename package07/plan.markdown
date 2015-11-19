@@ -45,13 +45,3 @@ to catch up.
    * X2Go client and/or any VNC client/viewer
 * Windows users will need access to the Windows command line (possibly has to be enabled by IT department, if course is held in a lab)
 
-### Running a session
-
-_TBD with slides_
-
-_An overview of the various parts of the course, including:_
-
-* _how much time to devote to each section_
-* _the activities done in each section of the course_
-* _suggested points for breaks_
-

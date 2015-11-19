@@ -4,7 +4,7 @@ part: Documentation
 ---
 {% include /docLinks.markdown %}
 
-**Target field(s):** Ecology, environmental and climate change sciencd, land use planning, natural resources. 
+**Target field(s):** Ecology, environmental and climate change science, land use planning, natural resources. 
 
 **Website:** [http://www.bccvl.org.au/](http://www.bccvl.org.au/)
 

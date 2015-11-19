@@ -6,10 +6,7 @@ part: Documentation
 
 **Target field(s):** Geology, Geodynamics 
 
-**Website:** ?? 
-
 **Maintained by:** Monash University
-
 
 **Geology from Geodynamics**
 

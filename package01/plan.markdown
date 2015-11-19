@@ -25,14 +25,3 @@ This module can be taught to any size of audience. It requires only one trainer 
 
 * Projector
 * Course materials (slides)
-
-### Running a session
-
-_TBD with the slides_
-
-_Overview of the various parts of the course, including:_
-
-* _how much time to devote to each section_
-* _the activities done in each section of the course_
-* _suggested points for breaks_
-
