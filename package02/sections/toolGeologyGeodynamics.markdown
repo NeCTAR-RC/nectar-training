@@ -8,8 +8,6 @@ part: Documentation
 
 **Website:** ?? 
 
-**See also:** Contact: Louis Moresi, *louis.moresi at monash.edu*
-
 **Maintained by:** Monash University
 
 
