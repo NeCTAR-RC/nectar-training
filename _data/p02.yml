@@ -112,8 +112,8 @@
   level: 2
 
 
-- file: toolFAIMS.html
-  name: Archaeological Management System
+- file: toolFDMS.html
+  name: Field Data Management System
   level: 2
 
 - file: toolSynchotron.html
