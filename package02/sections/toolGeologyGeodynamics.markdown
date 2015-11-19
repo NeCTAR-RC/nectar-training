@@ -6,12 +6,7 @@ part: Documentation
 
 **Target field(s):** Geology, Geodynamics 
 
-**Website:** ?? 
-
-**See also:** Contact: Louis Moresi, *louis.moresi at monash.edu*
-
 **Maintained by:** Monash University
-
 
 **Geology from Geodynamics**
 
