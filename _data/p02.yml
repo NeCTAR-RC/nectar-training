@@ -83,8 +83,8 @@
   name: UniCarbKB
   level: 2
 
-- file: toolShARED.html
-  name: ShARED
+- file: toolSHaRED.html
+  name: SHaRED
   level: 2
 
 - file: toolQuadrant.html
