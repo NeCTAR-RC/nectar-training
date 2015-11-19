@@ -112,8 +112,8 @@
   level: 2
 
 
-- file: toolFDMS.html
-  name: Field Data Management System
+- file: toolFAIMS.html
+  name: Field Acquired Information Management Systems
   level: 2
 
 - file: toolSynchotron.html
