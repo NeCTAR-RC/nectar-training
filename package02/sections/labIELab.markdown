@@ -79,10 +79,10 @@ as well as the water-energy-carbon links project ARC LP120200745.
 ###How to get access
 
 There main information and collaboration website for the IELab project is the "IELab 
-Hub" at [www.ielab.info](www.ielab.info).
+Hub" at [www.ielab.info](http://www.ielab.info).
 From there users can access the data and tools of the virtual 
 laboratory through the "IELab Portal" which country-specific, e.g. 
-[www.ielab-aus.info](www.ielab-aus.info). 
+[www.ielab-aus.info](http://www.ielab-aus.info). 
 
 Access to the IELab is open to any registered user and free for basic/public data, 
 datafeeds and analytical functionality. Datafeed code is open source (subject to 
