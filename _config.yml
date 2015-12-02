@@ -7,7 +7,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://training.nectar.org.au" # the base hostname & protocol for your site
 
 # 20151117 Luc: exclude Gemfiles from the site built in _site
-exclude: ['Gemfile.lock', 'Gemfile']
+exclude: ['Gemfile.lock', 'Gemfile', 'vendor']
 
 # Build settings
 markdown: kramdown
