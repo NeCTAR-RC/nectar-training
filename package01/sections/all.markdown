@@ -8,5 +8,10 @@ part: Documentation
 ## {{ packagepart.name }}
   {% assign basename = packagepart.file | split: '.' %}
   {% assign basename = basename[0] | append: '.markdown' %}
-  {% include_relative {{basename}} %}
+
+  {% capture includedfile %}
+      {% include_relative {{basename}} %}
+  {% endcapture %}
+  {{ includedfile | stripfrontmatter }}
+  
 {% endfor %}

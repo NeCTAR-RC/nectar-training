@@ -32,7 +32,7 @@ module Jekyll
 			content=super(context)
 			output = converter.convert(super(context))
 			content=content.strip
-      baseurl = context.registers[:site].baseurl
+			baseurl = context.registers[:site].baseurl
 			case @boxType 
 			when "info"
 				"<div markdown class='bgInfo'>
