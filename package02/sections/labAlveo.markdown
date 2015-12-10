@@ -10,6 +10,8 @@ part: Documentation
 
 **See also:** [http://nectar.org.au/labs/when-words-collide/](http://nectar.org.au/labs/when-words-collide/)
 
+**For help visit:** [http://alveo.edu.au/help/](hpttp://alveo.edu.au/help/)
+
 {% img src=images/scrAlveo.png,align=right,w=300,dim=px %}
 
 Alveo is a **web-based data discovery application** for examining collections of **human communication data**. It can be accessed using any web browser.
