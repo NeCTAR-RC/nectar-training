@@ -17,7 +17,7 @@ In a few words,
 
 The following video goes through the content in this module.
 
-{% youtube -D3qocmejes %}
+{% youtube ScPVDa_EGWQ %}
 
 {% include /disclaimer.markdown %}
 
