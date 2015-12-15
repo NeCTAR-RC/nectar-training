@@ -7,7 +7,7 @@ part: Documentation
 
 In [Module 4][ModDoc4], we have discussed *horizontal scalability*. Horizontal scalability entails that you may run several instances of your application on separate virtual machines, all processing different parts of your data, or processing the same data in a different way (e.g. with different parameters). 
 
-{% img src=images/HorizontalScale.png, w=300, dim=px, align=center %}
+{% img src=images/HorizontalScale.png, w=300, dim=px, alt=image, align=center %}
 
 The Cloud is suitable for such a scenario. Distributing your problem over multiple instances is certainly an advanced topic as it requires knowledge about parallel programming. However this section will give a brief overview of the possibilities with the Cloud and the key factors to look out for in your application. For more details, we refer to related [Literature](literature.html).
 
@@ -18,7 +18,7 @@ Or if your problem can be split into several operations (which may or may not us
 
 The instance which splits the problem set and dispatches the tasks is called the "Master", while the instances to which tasks are dispatched are called "*Workers*". A software framework like *MapReduce* can be used to split and dispatch your problem set. 
 
-{% img src=images/SplitProblemDataset.png, w=500, dim=px, align=center %}
+{% img src=images/SplitProblemDataset.png, w=500, dim=px, alt=image, align=center %}
 
 
 {% BgBox definition %}

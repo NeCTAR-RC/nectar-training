@@ -98,12 +98,12 @@ To load your ssh key with *Pageant*:
 
 Step 1.
 
-{% img src=images/scrPageant1.png, w=170, dim=px, align=right, css=margin-bottom:5px %}
+{% img src=images/scrPageant1.png, w=170, dim=px, align=right, alt=image, css=margin-bottom:5px %}
 Start up *Pageant* (by clicking on *pageant.exe* which you downloaded). In your system tray, you'll see the *Pageant* icon appear: A computer symbol with a hat on. 
 
 Step 2.
 
-{% img src=images/scrPageant2.png, w=170, dim=px, align=right, css=margin-top:5px; margin-bottom:5px; %}
+{% img src=images/scrPageant2.png, w=170, dim=px, align=right, alt=image, css=margin-top:5px; margin-bottom:5px; %}
 Right-click the icon and select **Add Key** and select your private key (*PPK*) file. Enter your pass phrase. Now, your key is loaded in the Background and you can use FileZilla via the secure FTP protocol *SFTP* in the next step.
 
 {% BgBox important %} 
@@ -184,7 +184,7 @@ Make sure that the directories and files have the correct ownership and access:
 
 SSH Tunnelling is best explained with an example. Imagine you're on a private network with very conservative firewall rules which don't allow connections to a specific server. For example, *blockedsite.com* is not accessible from your network. You can of course ask your system administrator to free up this site for you, but you may have to wait for the approval. To get around this firewall rule we can redirect our connection via a port that does not block this website: We can create a *tunnel* through a server which is not on our network and which can access *blockedsite.com*. We call this server the *gateway*. 
 
-{% img src=images/sshtunnel.png, w=50, dim=percent, align=center, css=margin-top:20px; margin-bottom: 20px; %}
+{% img src=images/sshtunnel.png, w=50, dim=percent, align=center, alt=image, css=margin-top:20px; margin-bottom: 20px; %}
 
 Let's say *blockedsite.com* uses the *http* protocol (as most websites do) through Port 80. Instead of connecting our port 80 to the *blocksite.com*'s port 80 (which would not work), we will redirect all traffic from our port 80 through the secure ssh port 22. This one will not be blocked by the firewall, and nobody will be able to decipher the traffic going through it (unless they get access to your private key and passphrase of course). On the gateway, our connection will come in at Port 22, and the ssh server will then redirect the traffic to port 80 on *blockedsite.com*. We call this technique *local port forwarding*. Of course, the connection between the gateway and the server of *blockedsite.com* is not encrypted; only the tunnel between our computer and the gateway is.
 

@@ -9,11 +9,11 @@ You have an **"embarrassingly parallel problem" (short: EPP)**.  "Embarrassingly
 
 For example, a very large data set can be chopped into pieces which are then dispatched to various computers for processing; when finished, the resulting data is re-assembled. 
 
-{% img src=images/EPP.png, w=70, dim=percent, align=center %}
+{% img src=images/EPP.png, w=70, dim=percent, alt=image, align=center %}
 
 Or in another example, copies of a smaller data set are distributed across computers to perform different computations on it, and when all the individual analyses of the data are finished, the results are summarized. 
 
-{% img src=images/EPP2.png, w=60, dim=percent, align=center %}
+{% img src=images/EPP2.png, w=60, dim=percent, alt=image, align=center %}
 
 The individual computers don't have to be super fast, but instead the power lies in having a huge number of computers working at solving the problem simultaneously. 
 
