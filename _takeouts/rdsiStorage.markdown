@@ -25,7 +25,7 @@ The RDSI Project will deliver a national infrastructure able to hold significant
 
 RDSI is funding the setup of eight data centres or 'Nodes' as we call them, around Australia.  These Nodes are capable of storing petabytes of research data from researchers and institutions around the country. The map below shows the Node locations and the organisations who operate them:
 
-{% img src=images/RDSIAustralia.jpg, w=70, dim=percent, align=center %} 
+{% img src=images/RDSIAustralia.jpg, w=70, dim=percent, alt=image, align=center %} 
 
 You may get access to data that other researchers have shared in *collections*. A large amount of discipline-specific collections are already available. To see the collections which are currently available, follow this link: [https://www.rdsi.edu.au/collections-stored](https://www.rdsi.edu.au/collections-stored). 
 

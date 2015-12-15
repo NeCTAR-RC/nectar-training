@@ -81,11 +81,11 @@ Double-click on the file "*PuTTY.exe*" which you downloaded when you created the
 
 In your PuTTY Window, type your instance's IP address into the "**Host**" field (you should have taken a note about the IP address earlier, if not you can find it on the Dashboard: Go to *Compute > Instances*).
 
-{% img src=images/scrPutty1.png, w=50, dim=percent, align=center %}
+{% img src=images/scrPutty1.png, w=50, dim=percent, alt=image, align=center %}
 
 Then, select the “**Data**” category in the navigation window. Here, we will have to specify the **username**. Choose “*ubuntu*” as your username. Leave the other fields on default settings.
 
-{% img src=images/scrPutty2.png, w=50, dim=percent, align=center %}
+{% img src=images/scrPutty2.png, w=50, dim=percent, alt=image, align=center %}
 
 {% BgBox info %}
 Our instance has a default **username** that we need to specify when we log in. In this tutorial, we chose a Ubuntu Image when launching the instance. At the time of writing, the user name for Ubuntu is ***"ubuntu"***. Other NeCTAR images may expect different usernames. 
@@ -96,7 +96,7 @@ Try using *root* instead of *ubuntu* for other Operating Systems. For Fedora, th
 
 Next, click on the "**SSH > Auth**" sub-category. There is a field labelled "**Private key file for authentication**". Click on the "**Browse**" button:
 
-{% img src=images/scrPutty3.png, w=50, dim=percent, align=center %}
+{% img src=images/scrPutty3.png, w=50, dim=percent, alt=image, align=center %}
 
 In the browse window that comes up, select the private SSH key file that you saved on your computer earlier (we named it *Nectar_Key*)
 
@@ -109,7 +109,7 @@ Instead of converting keys, you can also simply create a separate set of keys to
 Now, return to the "**Session**" screen in the left navigation window. This is the screen we started at. We will save our settings (the "session"), so that in future we don't need to type in all the details again. In the “**Saved Sessions**” section, choose any name for this session so that you can remember it, for example “*MyNeCTARInstance*”. Then, click on the "**Save**" button.
 
 
-{% img src=images/scrPutty4.png, w=50, dim=percent, align=center %}
+{% img src=images/scrPutty4.png, w=50, dim=percent, alt=image, align=center %}
 
 Now, connect to the instance by clicking the “**Open**” button. The first time that you connect, you will be asked to verify the identity of the remote server. This is expected the first time you connect to a new server, so you can select "*Yes*" to continue. You will be prompted for a passphrase. Type in the passphrase that you used to create the SSH key earlier on. 
 

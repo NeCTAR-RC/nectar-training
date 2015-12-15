@@ -16,11 +16,11 @@ In this section we are going to learn how to take Snapshots of instances and vol
 
 Taking a Snapshot is simple: go to *Dashboard > Compute > Instances* and click *"Create Snapshot"* on the right hand sinde of the instance you wish to copy.
 
-{% img src=images/DashboardSnapshot.png, w=100, dim=percent, align=center %}
+{% img src=images/DashboardSnapshot.png, w=100, dim=percent, alt=image, align=center %}
 
 You may then choose a name for the Snapshot, and confirm with **Create Snapshot**. You will be redirected to the *Images* tab, which shows all your Images and Snapshots. In the list, you can see that your Snapshot is being created:
 
-{% img src=images/DashboardSnapshot2.png, w=100, dim=percent, align=center %}
+{% img src=images/DashboardSnapshot2.png, w=100, dim=percent, alt=image, align=center %}
 
 This process may take a while. While the Snapshot is being made, it will be listed with the Status *"Queued"*, then *"Saving"*, and finally it will be finished and in status *"Active"*. In the top row of the *Images* tab you can filter the Images to display. The current setting is *"Project":* These are only your private Images. If you click on *"NeCTAR official"* you will see all the NeCTAR Images that are available to launch new instances. *"Public"* will show you even more Images you may use.
 
@@ -67,11 +67,11 @@ Before taking a snapshot, you have to make sure your Volume is *not attached* to
 
 To take a Snapshot of a Volume, go to *Dashboard > Compute > Volumes* and find the Volume you want to take a Snapshot of in the list. On the right-hand side, select **Create Snapshot** from the drop-down box. 
 
-{% img src=images/DashboardVolumeSnapshot.png, w=100, dim=percent, align=center %}
+{% img src=images/DashboardVolumeSnapshot.png, w=100, dim=percent, alt=image, align=center %}
 
 A window will come up in which you type in a **Snapshot name** and a description. Confirm by clicking on *Create Volume Snapshot*. You will be redirected to the *Volume Snapshots* overview. You can get to this same page any time by via *Dashboard > Compute > Volumes* and then select the Tab *Volume Snapshots*. 
 
-{% img src=images/DashboardVolumeSnapshot2.png, w=100, dim=percent, align=center %}
+{% img src=images/DashboardVolumeSnapshot2.png, w=100, dim=percent, alt=image, align=center %}
 
 
 To create a *new* Volume of a Snapshot, go to *Dashboard > Compute > Volumes* (or if you are still on the *Volume Snapshots* overview, simply select the *Volumes* Tab on top). This now works as we already have done in [Module 7][ModDoc7]: Click on **Create Volume**. The *Create Volume* window will open.
@@ -79,7 +79,7 @@ To create a *new* Volume of a Snapshot, go to *Dashboard > Compute > Volumes* (o
 
 Type in the name for the new Volume and a description. As **Volume Source**, select *Snapshot*. In **Use snapshot as a source** you may select the Snapshot you want to create the Volume from. As **Size** you should specify *at least* as much as the original Volume. (The size should be automatically pre-filled when you select your Snapshot. If you are unsure about the original size, you can also look it up on the Tab *Volume Snapshots* by clicking on the Snapshot name).
 
-{% img src=images/DashboardVolumeSnapshot3.png, w=500, dim=px, align=center %}
+{% img src=images/DashboardVolumeSnapshot3.png, w=500, dim=px, alt=image, align=center %}
 
 After clicking on **Create Volume**, your new Volume will be created and should appear in the list of your existing Volumes. You may now *attach it* to an instance and *mount* it from this instance to access the data, as we have done in [Module 7][ModDoc7].
 

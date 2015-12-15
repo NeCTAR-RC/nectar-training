@@ -31,7 +31,7 @@ The storage system is shared among instances. Not all storage is created equal, 
 
 This summary table provides a comparison of various data storage features.
 
-{% img src=images/StorageTypes.png, w=95, dim=percent, align=center %}
+{% img src=images/StorageTypes.png, w=95, dim=percent, alt=image, align=center %}
 
 1. **Saved in snapshot**: You may save the state of your instance with a "snapshot". However a snapshot does not include all types of storage.
 

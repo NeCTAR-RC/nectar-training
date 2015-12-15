@@ -24,7 +24,7 @@ We have previously connected to the instance with via a *ssh terminal*. When we 
 
 The image below shows both (1) a ssh terminal (left) and (2) a desktop with an open terminal (right):
 
-{% img src=images/scrTerminalOnRemoteDesktop.png, w=80, dim=percent, align=center %}
+{% img src=images/scrTerminalOnRemoteDesktop.png, w=80, dim=percent, alt=image, align=center %}
 
 So what is the difference between the two terminals? When you type **commands** in either of them, it **will have the same effect**. They are both terminals that you can use to control your instance. However, the difference is that 
 
