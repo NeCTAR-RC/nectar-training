@@ -22,7 +22,7 @@ However many applications are **multi-threaded**, and support a certain number o
 **Example:**    
 Say your application supports 6 threads. You may then select up to the same number of cores --- with 6 cores, the application will run at maximum performance. If you choose more cores, you will not experience any performance gains. It is ok to select a lower number of cores: say, you choose 2 cores while your application supports 6 threads. In this case, the workload of the 6 threads will be distributed across the 2 cores, and your application will run *one third of its maximum performance* (2 cores / 6 threads).
 
-{% img src=images/MultiThreaded.png, w=400, dim=px, align=center %}
+{% img src=images/MultiThreaded.png, w=400, dim=px, alt=image, align=center %}
 
 ### Use of OpenMP
 
