@@ -23,7 +23,7 @@ The [National Institute of Standards and Technology](http://en.wikipedia.org/wik
 It is not clear where the term "cloud" comes from. One popular explanation is that it stems from the way in which charts in network computing are drawn. Often, a set of servers accessible through the Internet are surrounded by a cloud-like shape, in order to illustrate that they are located at some remote place accessible through the Internet. Sometimes, in computer network diagrams the Internet itself is illustrated as a cloud-like shape.
 
 
-{% img src=images/CloudServices.jpg, w=60, dim=percent, align=center %}
+{% img src=images/CloudServices.jpg, w=60, dim=percent, alt=, align=center %}
 
 The image above shows how you connect to your cloud computing infrastructure (computers and storage) via the Internet (Used resources are displayed in red --- here, only a virtual machine is in use).
 Your local computer is only used to control your resources from remote and display things on your screen — the data and compute servers are actually "in the cloud".
@@ -32,11 +32,11 @@ Your local computer is only used to control your resources from remote and displ
 
 Imagine your research software requires lots of resources to run optimally: Either more computers working in parallel, or a lot of storage. Your research organisation may not be able to provide such resources to you, or if you were to set up several computers in your office, that would incur lots of costs and maintenance. In the cloud, you can easily **scale up** to the resources you require at the time you need them (see image below), and **release** the resources when you don't need them any more. After resources have been released, they don't incur any more costs or maintenance activities. 
 
-{% img src=images/CloudServices2.jpg, w=60, dim=percent, align=center %}
+{% img src=images/CloudServices2.jpg, w=60, dim=percent, alt=, align=center %}
 
 Another advantage is that the Cloud enables efficient *research collaboration*: Collaborators may be granted access to the same services, and you can work together on the same platform without the need for synchronization.
 
-{% img src=images/CloudServices3.jpg, w=60, dim=percent, align=center %}
+{% img src=images/CloudServices3.jpg, w=60, dim=percent, alt=, align=center %}
 
 There are more advantages, and also some drawbacks, to migrating your research IT infrastructure to the cloud---but we shall talk about this later on in more depth. 
 

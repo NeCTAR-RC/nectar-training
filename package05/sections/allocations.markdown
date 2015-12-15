@@ -20,7 +20,7 @@ Otherwise, your request will be reviewed by the NeCTAR Allocation Committee.
 
 **2. Submit a request.**     
 Use the Allocation Request form from the left hand side menu of your [Dashboard](https://dashboard.rc.nectar.org.au).
-{% img src=images/requestAllocation.png, w=50, alt=Dashboard Allocations, dim=percent, align=center, css=margin-top:10px;margin-bottom:20px; %}
+{% img src=images/requestAllocation.png, w=50, alt=Dashboard Allocations, dim=percent, align=center, alt=, css=margin-top:10px;margin-bottom:20px; %}
 
 * On **Allocations > New Request** you can request to create a **new project** with the resources you need.    
 * On **Allocations > My Requests** you can **add resources** to your **existing project** (you will also see your previous requests here).    

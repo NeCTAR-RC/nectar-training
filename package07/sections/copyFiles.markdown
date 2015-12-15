@@ -55,7 +55,7 @@ and the *Nectar_Key* should not be listed.
 **Step 3. Configure your site in FileZilla**
 
 Open FileZilla and go to *File > Site Manager*.
-{% img src=images/scrFileZillaSiteManager1.png, w=80, dim=percent, align=center %}
+{% img src=images/scrFileZillaSiteManager1.png, w=80, dim=percent, alt=, align=center %}
 
 Specify the following details:
  
@@ -71,11 +71,11 @@ On the left-hand panel, you may **rename your site** to something more meaningfu
 Click **Connect** to connect to your instance and close the site manager. Whenever you want to reconnect, you have to open the *Site Manager* again. You can also access it via the symbol on the top right of the window.
 
 Then, you will be asked whether you want to trust the host. You can answer with **Yes**.
-{% img src=images/scrFileZillaSiteManager2.png, w=60, dim=percent, align=center %}
+{% img src=images/scrFileZillaSiteManager2.png, w=60, dim=percent, alt=, align=center %}
 
 You should now be connected to your instance and see your files:
 
-{% img src=images/scrFileZillaSiteManager3.png, w=80, dim=percent, align=center %}
+{% img src=images/scrFileZillaSiteManager3.png, w=80, dim=percent, alt=, align=center %}
 
 * in the left-hand pane, your local files are listed
 * on the right-hand pane, you will see the files on your instance.

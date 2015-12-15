@@ -14,7 +14,7 @@ part: Documentation
 
 Imaging techniques, broadly known as **"Characterisation"**, are used in a number of research fields, from structural biology, to neuroimaging, and the analysis of energy materials.
 
-{% img src=images/logoCVL.png,align=left,w=70,dim=px,css=margin-right:10px %}
+{% img src=images/logoCVL.png,align=left,w=70,dim=px, alt=,css=margin-right:10px %}
 The **Characterisation Virtual Lab** has developed many tools, including a remote desktop for processing data from microscopes or the Australian Synchrotron on a supercomputer which has graphics processors (GPUs) for fast image processing.
 
 In summary, what the Characterisation Virtual Lab does:

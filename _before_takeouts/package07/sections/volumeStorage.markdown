@@ -27,11 +27,11 @@ Before you can use a volume, you have to *create it*.
 
 Go to *Compute > Volumes* and click on the **+ Create Volume** button on the top right.
 
-{% img src=images/scrDashboardVolume1.png, w=80, dim=percent, align=center %}
+{% img src=images/scrDashboardVolume1.png, w=80, dim=percent, alt=, align=center %}
 
 A window opens in which you can give your Volume a name, and add a description.
 
-{% img src=images/scrDashboardVolume2.png, w=80, dim=percent, align=center %}
+{% img src=images/scrDashboardVolume2.png, w=80, dim=percent, alt=, align=center %}
 
 There are also other options which you can specify:
 
@@ -55,19 +55,19 @@ Click "**Create volume**" and you will see your new volume in the list of volume
 Before you can access the volume, you have to attach it to an instance. On the Dashboard, go to "Compute →  Volumes" in the left navigation pane if you are not already on the page which shows the list of your volumes. On the right side next to your volume there is a drop-down box.     
 Select **Edit attachments**.
 
-{% img src=images/scrDashboardVolume3.png, w=80, dim=percent, align=center %}
+{% img src=images/scrDashboardVolume3.png, w=80, dim=percent, alt=, align=center %}
 
 A window will open in which you can select your instance. If you don’t see any instance, you have no instance running in the same *Availability Zone*. In this case, create one as described in [this earlier section](launching.html).
 
-{% img src=images/scrDashboardVolume4.png, w=80, dim=percent, align=center %}
+{% img src=images/scrDashboardVolume4.png, w=80, dim=percent, alt=, align=center %}
 
 Select your instance and click **Attach Volume**. The status of your instance will switch to *"Attaching"*, and when it has been attached successfully, it should display *"In-Use"*. You should also see the Server and Device that the volume is attached to. In the example below, it is attached to *MyFirstInstance* and to the device */dev/vdc*. 
 
-{% img src=images/scrDashboardVolume5.png, w=80, dim=percent, align=center %}
+{% img src=images/scrDashboardVolume5.png, w=80, dim=percent, alt=, align=center %}
 
 In order to detach the volume again, you would go to the drop-down next to your volume again and select **Edit attachments**. A window opens in which you may detach the volume again. Your data won’t be lost, it will only be detached from the particular instance. You can re-attach it later again to any instance.
 
-{% img src=images/scrDashboardVolume6.png, w=60, dim=percent, align=center %}
+{% img src=images/scrDashboardVolume6.png, w=60, dim=percent, alt=, align=center %}
 
 ### Step 3: Preparing your volume for use.
 

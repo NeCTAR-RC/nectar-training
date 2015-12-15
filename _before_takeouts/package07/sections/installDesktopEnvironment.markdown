@@ -37,7 +37,7 @@ Unfortunately, there is no remote desktop solution that supports all desktop env
 
 This light-weight environment is easy to install and works well for remote connections.
 
-{% img src=images/LXDE.png, w=40, dim=percent, align=center %}
+{% img src=images/LXDE.png, w=40, dim=percent, alt=, align=center %}
 
 Install the LXDE environment on your instance by typing into your *ssh terminal*:
 
@@ -49,7 +49,7 @@ Install the XFCE environment by typing into your *ssh terminal*
 
 ```sudo apt-get install xfce4```
 
-{% img src=images/XFCE.png, w=50, dim=percent, align=center %}
+{% img src=images/XFCE.png, w=50, dim=percent, alt=, align=center %}
 
 ### GNOME
 
@@ -104,7 +104,7 @@ Confirm the installation of the package with '**Y**'. This may take a while as a
 Hit **[Enter]** to confirm the message about installing KDE. Then, you have to select the default display manager. It does not really matter which one you choose if there are several options. The correct display manager will be started by your remote destkop client anyway. *KDM* is the display manager for KDE, so if unsure, just select this one.
 
 
-{% img src=images/KDE.png, w=70, dim=percent, align=center %}
+{% img src=images/KDE.png, w=70, dim=percent, alt=, align=center %}
 
 
 ### Other desktop environments

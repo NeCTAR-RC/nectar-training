@@ -15,7 +15,7 @@ We may refer to both types as "*large scale computing*" – but what is the diff
 
 **Cloud computing** on the other hand targets "embarrassingly parallel problems" (EPP). An embarrassingly parallel problem is one for which little or no effort is required to separate the problem into a number of parallel tasks. This is often the case where there exists no dependency (or communication) between those parallel tasks. A common EPP problem is one in which a very large data set is chopped into pieces which are dispatched to various computers for processing; or, several copies a smaller data set is distributed across computers to perform different computations on it (e.g. running the application with different parameters). After the processing is finsihed, the resulting data is re-assembled or the results from all computers summarized. The individual computers don't have to be super fast, but instead the power lies in have a huge number of computers. *Several* applications (or, *copies* of the same application) run on a several nodes. We call this **horizontal scalability**.
 
-{% img src=images/CloudVsHPC.png, w=80, dim=percent, align=center %}
+{% img src=images/CloudVsHPC.png, w=80, dim=percent, alt=, align=center %}
 
 
 {% BgBox info %}

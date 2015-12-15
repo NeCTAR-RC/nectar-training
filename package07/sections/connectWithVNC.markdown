@@ -149,13 +149,13 @@ If you *don't* use the **-N -f** options, you will be logged into an ssh termina
 **Windows**
 
 1. Launch PuTTY and load your previously saved configuration by selecting the session name and clicking **Load**. (If you have Putty open, close it and then re-open it to get to this window).    
-{% img src=images/scrPuttySession.png, w=60, dim=percent, align=center %}
+{% img src=images/scrPuttySession.png, w=60, dim=percent, alt=, align=center %}
 
 2. Select **SSH > Tunnels** in the left pane. Enter these values:    
     **Source port**: 5900    
     **Destination:** localhost:5901    
     Then, click the **Add** button. Your tunnel will now appear in the list.
-{% img src=images/scrPuttySSHTunnel.png, w=60, dim=percent, align=center %}
+{% img src=images/scrPuttySSHTunnel.png, w=60, dim=percent, alt=, align=center %}
 
 3. You can save the tunneling along with your session by selecting **Session** in the left pane. Click on your session name in the **Saved Sessions** pane, then click **Save** (or create a new name instead by typing in a new name, e.g. called "*TunneledNectarSession*"). 
 
@@ -222,7 +222,7 @@ You can use the free [RealVNC Viewer](https://www.realvnc.com/). Continue with t
 
 Download the client (**the viewer**) from the [RealVNC website](https://www.realvnc.com/download/).  When downloading, it may ask for your E-Mail, but you can specify some random details, the viewer will still work. When installing, choose to only install the client (the viewer):
 
-{% img src=images/RealVNCInstallation.png, w=70, dim=percent, align=center %}
+{% img src=images/RealVNCInstallation.png, w=70, dim=percent, alt=, align=center %}
 
 When you connect (we will do this in a moment), it asks you whether you accept an insecure connection. Say yes (it will in fact be secure via our tunnel).
 
@@ -244,7 +244,7 @@ Now connect, and you should get a password prompt, in which you type the passwor
 Do *not* use any ssh or security options that clients may offer, because we have just done the ssh tunnel separately ourselves. Your connection will be secure. If you have followed the instructions above, your connection is secure, even if the vnc viewer says it is not (The VNC viewer does actually not realise it is running through the ssh tunnel).
 {% endBgBox %}
 
-{% img src=images/scrTightVNC.png, w=70, dim=percent, align=center %}
+{% img src=images/scrTightVNC.png, w=70, dim=percent, alt=, align=center %}
 
 Example on the image above: Connecting with TightVNC on a Windows machine. The Putty Terminal is displayed on the left.
 
@@ -252,11 +252,11 @@ Example on the image above: Connecting with TightVNC on a Windows machine. The P
 
 To connect with the in-built *Screen Sharing* app, open it (Apple+Space and type "screen sharing and open it up). Into the text field, type *localhost:5900 *and then click "connect":
 
-{% img src=images/scrVNCMacScreenSharing.png, w=50, dim=percent, align=center %}
+{% img src=images/scrVNCMacScreenSharing.png, w=50, dim=percent, alt=, align=center %}
 
 You will be prompted for your password. That's the password you selected when you set up the VNC Server in the previous step.
 
-{% img src=images/scrVNCMacScreenSharing2.png, w=50, dim=percent, align=center %}
+{% img src=images/scrVNCMacScreenSharing2.png, w=50, dim=percent, alt=, align=center %}
 
 Now a window should open to the remote desktop. 
 
@@ -266,19 +266,19 @@ Start the RealVNC client (on a Mac, you can find it via the spotlight search: Cm
 
 To launch a connection, type **"localhost:5900"** into the text field. Leave the encryption setting on "**Let VNC Server choose**" and click "**connect**".
 
-{% img src=images/scrRealVNCViewer.png, w=50, dim=percent, align=center %}
+{% img src=images/scrRealVNCViewer.png, w=50, dim=percent, alt=, align=center %}
 
 When it asks you whether you accept an insecure connection, say yes (it will in fact be secure via our ssh tunnel).
 
-{% img src=images/scrRealVNCViewer2.png, w=50, dim=percent, align=center %}
+{% img src=images/scrRealVNCViewer2.png, w=50, dim=percent, alt=, align=center %}
 
 You will now have to type in your password. That's the password you chose when setting up the VNC server on your instance in the last step.
 
-{% img src=images/scrRealVNCViewer3.png, w=50, dim=percent, align=center %}
+{% img src=images/scrRealVNCViewer3.png, w=50, dim=percent, alt=, align=center %}
 
 RealVNC by default compresses the colours to save bandwidth. To see your screen in full colour, you need to go to the realVNC "Options". You can either do this in the initial login window, or when your remote desktop is open, mouse over the top of the window and select "options".
 
-{% img src=images/scrRealVNCViewer4.png, w=70, dim=percent, align=center %}
+{% img src=images/scrRealVNCViewer4.png, w=70, dim=percent, alt=, align=center %}
 
 In the options, disable The checkbox for **Adapt to network speed**, and push up the slider to *Best quality* (better quality will be slower but mostly you may want it anyway). Also enable the checkbox **Scale to window size** if you have issues with the window being too large for your desktop.
 

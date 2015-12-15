@@ -23,7 +23,7 @@ The cloud's flexibility offers new **usage models** for computing in research:
 
 Cloud computing is a major technological development. As it continues to grow and develop in the next years, more and more researchers will adopt it, because of the benefits it provides for collaborative, reproducible and cost-effective research in the digital age. By sharing infrastructure efficiently and thereby saving electricity, researchers aim at *sustainable research* which demands a lighter load of the environment.
 
-{% img src=images/SustainableResearch.png, w=60, dim=percent, align=center %}
+{% img src=images/SustainableResearch.png, w=60, dim=percent, alt=, align=center %}
 
 Gaining the skills of using the cloud early on will give you expertise which will become increasingly relevant in the future. It will make your research more efficient, yielding outputs quicker and enabling collaborations which would otherwise take up a lot of time (e.g. due to exchange of many E-mails, communication, synchronization of results, etc).
 

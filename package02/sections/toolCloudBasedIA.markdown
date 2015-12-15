@@ -12,7 +12,7 @@ part: Documentation
 
 **Maintained by:** CSIRO
 
-{% img src=images/logoCloudIA.jpg,align=left,w=70,dim=px,css=margin-right:20px; %}
+{% img src=images/logoCloudIA.jpg,align=left,w=70,dim=px, alt=,css=margin-right:20px; %}
 
 
 The **Cloud-based Image Analysis and Processing Toolbox** (also known as *CloudImaging*) provides access to existing biomedical image processing and analysis tools via remote user‐interface using the NeCTAR cloud.

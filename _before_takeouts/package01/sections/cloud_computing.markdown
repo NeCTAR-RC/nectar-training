@@ -23,7 +23,7 @@ The [National Institute of Standards and Technology](http://en.wikipedia.org/wik
 It is not clear where the term "cloud" comes from. One popular explanation is that it stems from the way in which charts in network computing are drawn. Often, a set of servers accessible through the Internet are surrounded by a cloud-like shape, in order to illustrate that they are located at some remote place accessible through the Internet. Sometimes, in computer network diagrams the Internet itself is illustrated as a cloud-like shape.
 
 
-{% img src=images/CloudServices.png, w=80, dim=percent, align=center %}
+{% img src=images/CloudServices.png, w=80, dim=percent, alt=, align=center %}
 {% col 255,0,0 %} 
 TODO: Make an image of this draft
 {% endcol %}
@@ -34,14 +34,14 @@ Your local computer is only used to control your resources from remote and displ
 
 Imagine your research software requires lots of resources to run optimally: Either more computers working in parallel, or a lot of storage. Your research organisation may not be able to provide such resources to you, or if you were to set up several computers in your office, that would incur lots of costs and maintenance. In the cloud, you can easily **scale up** to the resources you require at the time you need them, and **release** the resources when you don't need them any more, not incuring any more costs or maintenance activities. 
 
-{% img src=images/CloudServices2.png, w=80, dim=percent, align=center %}
+{% img src=images/CloudServices2.png, w=80, dim=percent, alt=, align=center %}
 {% col 255,0,0 %} 
 TODO: Make an image of this draft
 {% endcol %}
 
 Another advantage is that the Cloud enables efficient *research collaboration*: Collaborators may be granted access to the same services, and you can work together on the same platform without the need for synchronization.
 
-{% img src=images/CloudServices3.png, w=80, dim=percent, align=center %}
+{% img src=images/CloudServices3.png, w=80, dim=percent, alt=, align=center %}
 {% col 255,0,0 %} 
 TODO: Make an image of this draft
 {% endcol %}

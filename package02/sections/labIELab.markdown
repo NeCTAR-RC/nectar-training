@@ -12,7 +12,7 @@ Hybrid LCA data, economic and environmental data.
 
 **See also:** [http://nectar.org.au/labs/tracking-the-global-supply-chain/](http://nectar.org.au/labs/tracking-the-global-supply-chain/)
 
-{% img src=images/logoIELab.png,align=left,w=70,dim=px,css=margin-right:10px; %}
+{% img src=images/logoIELab.png,align=left,w=70,dim=px, alt=,css=margin-right:10px; %}
 The **Industrial Ecology Virtual Laboratory (IELab)** is a cloud-based research platform 
 for enviro-socio-economic modelling. It provides the most comprehensive, 
 environmentally extended input-output model available for use in Australia. It 
@@ -74,7 +74,7 @@ industry\*\*.
 as well as the water-energy-carbon links project ARC LP120200745.
 
 
-{% img src=images/scrIELab.png, w=90, dim=percent, align=center%}
+{% img src=images/scrIELab.png, w=90, dim=percent, alt=, align=center%}
 
 ###How to get access
 

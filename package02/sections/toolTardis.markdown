@@ -12,7 +12,7 @@ part: Documentation
 
 **MyTardis** helps to solve the problem of users needing to store large datasets and share them with collaborators online. Its particular focus is on integration with scientific instruments, instrument facilities and research lab file storage. 
 
-{% img src=images/scrMyTardis.png,align=center,w=70,dim=percent %}
+{% img src=images/scrMyTardis.png,align=center,w=70, alt=,dim=percent %}
 
 For more information please refer to the website.
 

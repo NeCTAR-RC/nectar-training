@@ -8,7 +8,7 @@ part: Documentation
 
 **Website:** [http://www.bccvl.org.au/](http://www.bccvl.org.au/)
 
-{% img src=images/logoBccvl.png,align=left,w=70,dim=px,css=margin-right:20px; %}
+{% img src=images/logoBccvl.png,align=left,w=70,dim=px, alt=,css=margin-right:20px; %}
 
 <br>
 

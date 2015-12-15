@@ -10,7 +10,7 @@ part: Documentation
 
 **Maintained by:** Australian Synchroton
 
-{% img src=images/logoSynchotron.png,align=left,w=70,dim=px,css=margin-right:20px; %}
+{% img src=images/logoSynchotron.png,align=left,w=70,dim=px, alt=,css=margin-right:20px; %}
 This project comprises tools for the **Australian Synchroton** community.
 The *Australian Synchrotron* is a world-class national research facility that uses accelerator technology to produce a powerful source of light---x-rays and infrared radiation---a million times brighter than the sun.
 

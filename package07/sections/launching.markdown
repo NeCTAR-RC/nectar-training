@@ -30,7 +30,7 @@ First, we will have to log on to the *Dashboard*, which is our interface for man
 
 [https://dashboard.rc.nectar.org.au/](https://dashboard.rc.nectar.org.au/)
 
-{% img src=images/scrDashboardLogin.png, w=300, dim=px, align=right, css=margin-left:20px %}
+{% img src=images/scrDashboardLogin.png, w=300, dim=px, align=right, alt=, css=margin-left:20px %}
 
 Click "*Log in*" on the first window. Then, select your organisation from the drop-down menu (you may also type in the first characters of your organisation name in order to find it quicker). You will be redirected to a page where you can type in your username and password. This should in most cases be the username and password you usually use to access your account at your University or Research Organisation.
 
@@ -40,11 +40,11 @@ Click **OK** for all terms and conditions if logging in the first time (you will
 
 Go to **Dashboard >  Instances**. A list of your running instances will be listed. If this is the first time you are doing this, the list will be empty. Now click on **Launch instance** on the top right of the overview.
 
-{% img src=images/scrDashboardEmptyInstances.png, w=70, dim=percent, align=center %}
+{% img src=images/scrDashboardEmptyInstances.png, w=70, dim=percent, alt=, align=center %}
 
 ### Step 3: Selecting resources
 
-{% img src=images/scrLaunchDialogue.png, w=350, dim=px, align=right, css=margin-left:20px; %}
+{% img src=images/scrLaunchDialogue.png, w=350, dim=px, align=right, alt=, css=margin-left:20px; %}
 
 Choose the name of your instance and the "*flavor*". Different flavors allocate different amounts of memory and disk space for you. Select the flavors in the drop-down box and information about the resources are displayed on the right side of the window. You may select a few flavors to see the differences between the flavors. For this tutorial, choose the **flavor** "**m1.small**", which offers 30GB of ephemeral storage (we will need this [in a later section](manageStorage.html).
 
@@ -65,7 +65,7 @@ We will connect to the instance with *ssh*. Ssh uses port number 22, so this has
 
 Next, we will specify the key for connecting to this instance (that's the one we just generated).
 
-{% img src=images/scrSecurityGroup.png, w=350, dim=px, align=right, css=margin-left:20px;margin-top:10px; %}
+{% img src=images/scrSecurityGroup.png, w=350, dim=px, align=right, alt=, css=margin-left:20px;margin-top:10px; %}
 
 1. You should have the contents of your public key still in your clipboard, unless you have copied and pasted something else since we did this above. If you have, copy the contents of *Nectar_Key.pub* again. 
 
@@ -79,7 +79,7 @@ Next, we will specify the key for connecting to this instance (that's the one we
 
 ### Step 5 (optional): Choose your Availability zone
 
-{% img src=images/scrAvailabilityZone.png, w=350, dim=px, align=right, css=margin-left:20px; %}
+{% img src=images/scrAvailabilityZone.png, w=350, dim=px, align=right, alt=, css=margin-left:20px; %}
 If you need access to specific facilities (e.g. Volume storage), you can manually choose the location of your instance in the "**Availability Zone**" tab. The Availability Zone is where your instance will be running physically. Unless you know that you need access to specific services, it is recommended to leave this in the default setting, because then the location with the most available resources is chosen.
 
 ### Step 5: Launching the instance

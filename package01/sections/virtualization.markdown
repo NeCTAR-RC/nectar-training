@@ -12,7 +12,7 @@ A **virtual machine (short: VM)** is a *software implementation* of a machine (f
 {% endBgBox %}
 
 The image below shows a symbolic physical computer with 4 CPUs, which runs two virtual machines: The first with two CPUs, the second with one. The virtual machines *share* the hardware on the physical computer to simulate their hardware. 
-{% img src=images/Virtualization.png, w=60, dim=percent, align=center %}
+{% img src=images/Virtualization.png, w=60, dim=percent, alt=, align=center %}
 
 {% BgBox info %}
 One physical computer can theoretically run a large number of virtual machines. One physical CPU can simulate *several* virtual CPUs, which then share the processing time. This is sometimes acceptable because often CPUs actually only use a small percentage of the CPU, when there is not much to compute at the time. So it is possible to simulate for example 4 virtual CPUs on one real CPU, and if 3 of them are idle (use 0% of the CPU), the 4th is able to use 100% of the processing capacity. Of course, if the several virtual CPUs share the processing power of one physical CPU, there is a *competition* and not all virtual CPUs can run at the same speed. Such competition is often referred to as **"noisy neighbours"**. To avoid this problem, NeCTAR *locks* each virtual CPU to one physical CPU; so each virtual CPU is always guaranteed to have the full CPU capacity exclusively available, without facing competition.
@@ -44,7 +44,7 @@ The *Hypervisor* or *Virtual Machine Manager* is the software that manages commu
 
 When you want to create or destroy your virtual machine, the hypervisor takes care of that for you, and while your machine is running, the hypervisor manages the execution of your virtual machine. 
 
-{% img src=images/Hypervisor.png, w=60, dim=percent, align=center %}
+{% img src=images/Hypervisor.png, w=60, dim=percent, alt=, align=center %}
 
 The downside to this virtual world is an increased opportunity for hackers to exploit vulnerabilities.
 The attack surface has increased because vulnerabilities may not only exist in the physical equipment, but also in the hypervisor. However such vulnerabilities can be addressed if proper care is taken. Security issues and how they can be addressed is subject to discussion in [Module 8][ModDoc8].
@@ -56,11 +56,11 @@ There are two types of hypervisors:
 
 The difference is that (a) runs directly on the physical computer's hardware (the hypervisor is like an operating system for itself). Therefore, they are sometimes called **bare metal hypervisors**. 
 
-{% img src=images/Type1Hypervisor.png, w=250, dim=px %}
+{% img src=images/Type1Hypervisor.png, w=250, alt=, dim=px %}
 
 Hypervisor (b) runs on top of an operating system, just like normal computer programs do, therefore it is referred to as **hosted hypervisor**. 
 
-{% img src=images/Type2Hypervisor.png, w=350, dim=px %}
+{% img src=images/Type2Hypervisor.png, w=350, alt=, dim=px %}
 
 There are also hypervisors that are a blend of both types (a) and (b). The **Kernel-based Virtual Machine (short: KVM)** for example, which is used in the NeCTAR cloud, is a modified version of the underlying linux operating system.
 

@@ -17,7 +17,7 @@ Multiple copies of all object data is stored over a distributed system, while th
 You don't have to do anything to maintain the multiple copies, this is done automatically for you. 
 Object Storage also scales up nicely, and it is easy to access your files from anywhere with a variety of devices.
 
-{% img src=images/ObjectStorage.png, w=80, dim=percent, align=center %}
+{% img src=images/ObjectStorage.png, w=80, dim=percent, alt=, align=center %}
 The image above visualizes how 3 copies of your data are kept at different data centers, maybe even on different hard drives in the same data center. When you access the object store, you request a file by its ID, and it is automatically retrieved from the closest or more available data center.
 
 {% BgBox important %}
