@@ -13,7 +13,7 @@ part: Documentation
 **See also:** [http://nectar.org.au/labs/solving-endocrine-disorders-without-borders/](http://nectar.org.au/labs/solving-endocrine-disorders-without-borders/) 
 
 
-{% img src=images/logoEndoVL.png,align=left,w=70,dim=px,css=margin-right:20px; %}
+{% img src=images/logoEndoVL.png,align=left,w=70,dim=px, alt=image,css=margin-right:20px; %}
 The **Endocrine Virtual Laboratory (endoVL)** is a national initiative to establish a range of clinical registries supporting genetically focused clinical trials and studies targeted to the needs of the endocrine research communities, networks and societies across Australia.
 
 * Easily and securely access clinical and bioinformatics data sets.

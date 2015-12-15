@@ -52,7 +52,7 @@ All *GnuPG* tools support multiple encryption types and ciphers.
 You will have to generate a *key pair* before you can use GnuPG. In the process, you need to specify your E-Mail address (because you can use GnuPG for encrypting E-Mails). Choose the one you usually use, but you can also specify any address and change this later.
 
 * Mac OS X:
-    {% img src=images/scrGPGCreateKeyMac.png, w=300, dim=px, align=right %} 
+    {% img src=images/scrGPGCreateKeyMac.png, w=300, dim=px, alt=image, align=right %} 
     * Download *GnuPG* from the [official website](https://www.gnupg.org/download/index.html). Download the *"binary release" installer* (or get the *"source release"* and follow installation instructions on the website). If you have the choice, select the *GnuPG stable or modern* installer and install the software.
     * Open the *"GPG Keychain"* application (find it with spotlight search). 
     * Click on "New" to generate a new key and specify your name, E-Mail and passphrase.
@@ -62,7 +62,7 @@ You will have to generate a *key pair* before you can use GnuPG. In the process,
     * Open the *Kleopatra* application which you may find with the app search field or via *Start > Gpg4win > Kleopatra*.
     * Go to *File > New Certificate* and select to create a *personal OpenPGP key pair*. 
 * Linux:
-    {% img src=images/scrGnuPGKeyLinux.png, w=250, dim=px, align=right %} 
+    {% img src=images/scrGnuPGKeyLinux.png, w=250, dim=px, alt=image, align=right %} 
     * GnuPG may be available as a package in your distribution. For example in Ubuntu, you may install the *Gnu Privacy Assistant* in the package *gpa*, which includes GnuPG and a graphical interface:    
     ```sudo apt-get install gpa```    
     Or you may install command-line tools only:    
@@ -85,13 +85,13 @@ Two keys will have been generated: A *public* key which is used for encryption, 
 To **encrypt** a file, you must have the *public* key which you want to use for encryption. You have just generated one in the last step.
    
 * Mac OS X: 
-    {% img src=images/scrGPGEncryptFileMac.png, w=280, dim=px, align=right %} 
+    {% img src=images/scrGPGEncryptFileMac.png, w=280, dim=px, alt=image, align=right %} 
     * Open the *Finder* and right-click on the file you would like to encrypt.
     * Select *Services > OpenPGP: Encrypt file*.
     * Select your key in the list and click "Ok" (you may also choose several keys).
     * A new file with the same name but ending with *.gpg* will have been created in the same folder.
 * Windows: 
-    {% img src=images/scrGpgPGWin.png, w=200, dim=px, align=right, css=margin-top:20px;%} 
+    {% img src=images/scrGpgPGWin.png, w=200, dim=px, align=right, alt=image, css=margin-top:20px;%} 
     * Open the *Windows Explorer* and right-click on the file you would like to encrypt.
     * Select *Sign and encrypt*.
     * You may keep the default options in the dialogue, which is set on *Encrypt* by default. Confirm with *Next*. 

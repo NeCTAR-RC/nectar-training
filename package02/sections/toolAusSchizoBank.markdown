@@ -11,7 +11,7 @@ part: Documentation
 **Maintained by:** Schizophrenia Research Institute
 
 
-{% img src=images/logoAustSchizo.png,align=left,w=70,dim=px,css=margin-right:20px; %}
+{% img src=images/logoAustSchizo.png,align=left,w=70,dim=px, alt=image,css=margin-right:20px; %}
 
 The **Australian Schizophrenia Research Bank** is Australias largest ever "brain bank" research project, which is expected to play a crucial role in the international search for a schizophrenia cure.
 
