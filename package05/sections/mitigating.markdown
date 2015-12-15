@@ -26,7 +26,7 @@ You should **never share your password** with anyone!
 
 To get an impression of how significant the difference between various password lengths is, the figure below shows how long it would to take to crack a password when using 1000 cloud servers together to do the cracking:
 
-{% img src=images/passwordStrength.png, w=50, dim=percent, align=center, css=margin-top:20px;margin-bottom:20px; %}
+{% img src=images/passwordStrength.png, w=50, dim=percent, align=center, alt=image, css=margin-top:20px;margin-bottom:20px; %}
 
 
 You will need to choose passphrases at several occasions. For example, before you can establish a connection to your virtual machine, you will have to generate keys which encrypt the connection between you and the virtual machine. A *key* is associated with a passphrase and it is needed to access your instance. We will do this in [Module 7][ModDoc7]. 
@@ -46,7 +46,7 @@ Typically, a computer is provided with several ports which can be used by applic
 {% endBgBox %}
 You can think of a Port like a plug: a network connection between two applications is established when two such plugs are connected. Then, the two applications can talk to each other via this connection. 
 
-{% img src=images/PortCommunications.png, w=80, dim=percent, align=center %}
+{% img src=images/PortCommunications.png, w=80, dim=percent, alt=image, align=center %}
 
 On our local computer's end of the connection, our application running on our computer is used to send commands to the remote computer (e.g. the VM), and on the remote computer's side the commands are received and processed by a matching application. The application on the remote machine is commonly called the **server application**, while the application on our computer is the **client application**. We say that the  **"server application  is *listening*"** to incoming connections from client applications. After the connection is established, the applications can talk to each other.
 
@@ -85,7 +85,7 @@ Many applications use **ssh** to encrypt connections. For example, if you copy f
 {% endBgBox %}
 
 
-{% img src=images/SSHKeys.png, w=80, dim=percent, align=center %}
+{% img src=images/SSHKeys.png, w=80, dim=percent, alt=image, align=center %}
 The image above shows two connected computers: Your local computer and your instance. When establishing a connection, the *ssh client and server* are in charge for encrypting and decrypting the data packages which travel between the computers. The end client/server applications receive the unencrypted packages from the ssh server/client.
 
 **SSH Tunnelling**
@@ -104,7 +104,7 @@ SSH Tunnelling is best explained with an example. In [Module 7][ModDoc7], we wil
 
 * The *ssh client* will encrypt all data, and send it off through the encrypted connection to the server. The data then arrives at the remote computers Port 22, where the *ssh server* receives it and redirects it to its port 5901, on which the *server application* (e.g. the VNC server) eventually receives our data. 
 
-{% img src=images/sshtunnel.png, w=70, dim=percent, align=center, css=margin-top:20px; margin-bottom: 20px; %}
+{% img src=images/sshtunnel.png, w=70, dim=percent, align=center, alt=image, css=margin-top:20px; margin-bottom: 20px; %}
 The figure above shows the two connected computers again, but this time with a *ssh tunnel* (symbolised by the blue lines): The connection is "deviated" from the ports that the client/server applications *think* they are communicating through---so the applications are not aware about the communication actually going through Port 22. The *tunnel* has been set up to automatically catch all communications from the client/server ports (e.g. 5900/5901) and deviate it through the ssh connection. Note that the blue lines in the graph are only symbolic---the actual ports are not open to the outside in the firewall settings (except the ssh port of course).
 
 The neat thing about this is that neither our client application nor the server application realise that the connection had been encrypted, so we don't need to configure anything complicated in the applications: Everything is handled automatically by redirecting traffic through our ssh tunnel. 
