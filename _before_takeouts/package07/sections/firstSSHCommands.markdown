@@ -86,7 +86,7 @@ Sometimes, you may want to restart your instance. For example, to make sure ever
 
 Go to the [Dashboard][Dashboard] and click on *Instances* on the navigation panel on the left to see your instance. On the right side of your instance, you can open up a drop-down box.
 
-{% img src=images/scrReboot.png, w=90, dim=percent, align=center %} 
+{% img src=images/scrReboot.png, w=90, dim=percent, alt=image, align=center %} 
 
 click on "*Soft Reboot Instance*" (a *soft reboot* is what we know as a reboot. A *hard reboot* forces the reboot in case the soft reboot does not react).
 
