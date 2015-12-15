@@ -26,9 +26,9 @@ part: Documentation
 <table align="center">
 <tr>
 <td>
-{% img src=images/scrDrishti.png,align=center,w=150,dim=px,css=margin-right:20px; %}
+{% img src=images/scrDrishti.png,align=center,w=150,dim=px, alt=image,css=margin-right:20px; %}
 </td><td>
-{% img src=images/scrDrishti2.png,align=center,w=150,dim=px %}
+{% img src=images/scrDrishti2.png,align=center,w=150, alt=image,dim=px %}
 </td></tr>
 </table>
 <br/>
@@ -38,7 +38,7 @@ There is also a [YouTube playlist for Drishti](https://www.youtube.com/playlist?
 **Voluminous** is a web browser-based application to make data visualisation services accessible anytime, anywhere.
 Voluminous delivers the visualisation functionality of Drishti using NCI cloud technology, so users can access their images and videos from any computer that is connected to the internet.
 
-{% img src=images/scrVoluminous.png,align=center,w=80,dim=percent %}
+{% img src=images/scrVoluminous.png,align=center,w=80, alt=image,dim=percent %}
 
 
 There are also two introductory videos for Voluminous:

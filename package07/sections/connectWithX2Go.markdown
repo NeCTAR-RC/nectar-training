@@ -60,7 +60,7 @@ You will now install the X2Go *client* on your local computer. Depending on whic
 
     * You have to enable a few settings for Mac. 
         * Start the XQuartz server. You can find it in the spotlight search (open it with *Cmd+Space*), and type in "xquartz" to find it. Click on it to start.
-        * {% img src=images/x2goX11PreferencesMac.png, w=50, dim=percent, align=right, css=margin-left:10px;%} 
+        * {% img src=images/x2goX11PreferencesMac.png, w=50, dim=percent, align=right, alt=image, css=margin-left:10px;%} 
         In the Preferences, go to the *Security* tab and enable "**allow connections from network clients**”.     
         *NOTE*: If you start XQuartz after already having logged out and in again, you can access the settings (or exit full screen mode) with *CMD + ,* (command and comma)  
         *Important:* Because above instructions may change any time, please refer to the most [current X2Go documentation](http://wiki.x2go.org/doku.php/doc:installation:x2goclient)
@@ -89,7 +89,7 @@ The session settings should come up right away if you are using the client for t
 
 The session preferences window should look similar to this:
 
-{% img src=images/scrX2GoSessionPrefs.png, w=70, dim=percent, align=center %}
+{% img src=images/scrX2GoSessionPrefs.png, w=70, dim=percent, alt=image, align=center %}
 
 1. Specify your **session name** in the first field (In the screenshot, we called it "NeCTAR Tutorial session").
 
@@ -110,7 +110,7 @@ The session preferences window should look similar to this:
 
 We will now connect to our remote desktop. You should now be seeing the *X2Go Start Window*: 
 
-{% img src=images/scrX2GoStartWindow.png, w=70, dim=percent, align=center %}
+{% img src=images/scrX2GoStartWindow.png, w=70, dim=percent, alt=image, align=center %}
 
 On the right side of the Window, you can see a shortcut to your session. Note that you can quickly change the desktop environment and screen resolution in the box. Don't do this now however, let's first try to connect with the default. You can change this next time you log in.
 
@@ -120,7 +120,7 @@ This may take a while, especially if it is the first time you connect. Don't get
 
 A window will then come up which shows your desktop. Below is an image of an example when XFCE was used:
 
-{% img src=images/scrX2GoXFCE.jpg, w=70, dim=percent, align=center %}
+{% img src=images/scrX2GoXFCE.jpg, w=70, dim=percent, alt=image, align=center %}
 
 You can increase the screen size and the resolution of your desktop should adapt to it. Resizing the window can sometimes be a bit slow, therefore you may try different screen resolutions in the login box (which displays your session name) so you don't have to resize the window every time.
 
@@ -163,11 +163,11 @@ You also have to enable remote login to support file sharing.
 
 To enable file sharing, you also have to change your system preferences. Go to the Apple (on top left of your screen) > *System preferences*, and then select "*Sharing*":
 
-{% img src=images/scrX2GoMacDesktopSharing.png, w=45, dim=percent, align=center %}
+{% img src=images/scrX2GoMacDesktopSharing.png, w=45, dim=percent, alt=image, align=center %}
 
 Activate the checkbox for "Remote login":
 
-{% img src=images/scrX2GoMacDesktopSharing2.png, w=45, dim=percent, align=center %}
+{% img src=images/scrX2GoMacDesktopSharing2.png, w=45, dim=percent, alt=image, align=center %}
 
 Should you have problems connecting in the following steps, try restarting your Mac computer for the changes to take effect.
 
@@ -183,16 +183,16 @@ Close your remote desktop by logging off (or just shutting the window in which y
 
 Then, go back to the X2Go Start Window in the X2Go client (If you aren't  there already, click ‘cancel' button in the login field). You should now see this X2Go Start Window:
 
-{% img src=images/scrX2GoStartWindowPreferences.png, w=70, dim=percent, align=center %}
+{% img src=images/scrX2GoStartWindowPreferences.png, w=70, dim=percent, alt=image, align=center %}
 
 Via the little arrow on the right bottom of your session box, select "**Session preferences**" as shown in the screenshot above.
 Here you can change preferences of your session. Go to the Tab *Shared folders*, and click on the little folder symbol to select a folder of your choice which you want to use for sharing (earlier we have named this "x2goSharedFolder" on our desktop):
 
-{% img src=images/scrX2GoSelectSharedFolder.png, w=70, dim=percent, align=center %}
+{% img src=images/scrX2GoSelectSharedFolder.png, w=70, dim=percent, alt=image, align=center %}
 
 When you have selected the folder, don't forget to click on the "**Add**" button next to the path to your file. Next to the new element added to the box, enable the "**Automount**" check box. Finally, click "**OK**" to close the window. 
 
-{% img src=images/scrX2GoSharedFolderSetup.png, w=60, dim=percent, align=center %}
+{% img src=images/scrX2GoSharedFolderSetup.png, w=60, dim=percent, alt=image, align=center %}
 
 
 #### Step 2. Logging in.
@@ -209,26 +209,26 @@ No extra settings required. Your shared folder should be on the desktop now.
 
 **If you are using KDE:**
 
-{% img src=images/scrX2GoAddWidget.png, w=200, dim=px, align=right %}
+{% img src=images/scrX2GoAddWidget.png, w=200, dim=px, alt=image, align=right %}
 Your shared folder will be visible on your remote machine by adding the "X2Go plasmoid applet" to the desktop. 
 To add the widget, right-click on the desktop and select "**Add widgets...**". 
 
 *Note: You will need to have installed the plasma widget, which we did in a previous step with the command *sudo apt-get install plasma-widget-x2go*.
 
 In the search window that comes up, type "x2go" and the x2goplasmoid should come up in the list. Double-click on it to add it to the desktop. 
-{% img src=images/scrKDESearchX2GoWidget.png, w=100, dim=percent, align=center %}
+{% img src=images/scrKDESearchX2GoWidget.png, w=100, dim=percent, alt=image, align=center %}
 
 You can now access your shared folder on your local computer via the link on the plasmoid.
 After you open the folder (double click), you should then see something like this on your desktop:
-{% img src=images/scrX2GoKDESharedFolder.png, w=70, dim=percent, align=center %}
+{% img src=images/scrX2GoKDESharedFolder.png, w=70, dim=percent, alt=image, align=center %}
 
 {% BgBox info %}
 You can change the size of the widget by dragging it if it looks graphically wrong. You need to hover over the right-hand  menu of the widget and click with your mouse on the little box in the top:
-{% img src=images/scrX2GoKDEWidgetResize.png, w=150, dim=px, align=center %}
+{% img src=images/scrX2GoKDEWidgetResize.png, w=150, dim=px, alt=image, align=center %}
 
 You can then drag it out to the right side:
 
-{% img src=images/scrX2GoKDEWidgetResize2.png, w=300, dim=px, align=center %}
+{% img src=images/scrX2GoKDEWidgetResize2.png, w=300, dim=px, alt=image, align=center %}
 {% endBgBox %}
 
 **If you are using XFCE**: 
@@ -249,7 +249,7 @@ Right-click on the desktop and select "**Open Terminal Here**". Then, type
 
 replacing *&lt;your-folder-name>&gt;* with the name you found above. Be careful with spelling (it's case sensitive) ---  if you don't get the path to the folder right, it will not work. You can also change the name *MySharedFolder* in the command to something else. When you click on the desktop again, the link to the shared folder should appear.
 
-{% img src=images/scrX2GoXFCEConfigureSharedFolder.png, w=70, dim=percent, align=center %}
+{% img src=images/scrX2GoXFCEConfigureSharedFolder.png, w=70, dim=percent, alt=image, align=center %}
 
 {% BgBox info %}
 You can verify where your shared folder has been made available by looking into the file "*/var/log/syslog*" on your instance. You should see a line that contains the following:*"… successfully mounted <username>@127.0.0.1:30003/<path-to-your-shared-folder> to /tmp/.x2go-ubuntu/media/disk/<path-to-your-shared-folder>*{% endBgBox %}
@@ -268,15 +268,15 @@ For example on a Mac:
 
 3. Click *"File > Save"* and select the shared folder as a place to save the file to. Name it for example "x2goTest".
 
-{% img src=images/scrX2GoTestFileSharing.png, w=70, dim=percent, align=center %}
+{% img src=images/scrX2GoTestFileSharing.png, w=70, dim=percent, alt=image, align=center %}
 
 Now, go to your remote desktop. Open your shared folder (you should have found where it is in the last step). For example, when you are using the LXDE desktop environment, your shared folder will be on your desktop.
 
-{% img src=images/scrX2GoTestFileSharing2.png, w=70, dim=percent, align=center %}
+{% img src=images/scrX2GoTestFileSharing2.png, w=70, dim=percent, alt=image, align=center %}
 
 Now if you open the shared folder, you should see the text file you have just created. You may open it to see what's in there:
 
-{% img src=images/scrX2GoTestFileSharing3.png, w=70, dim=percent, align=center %}
+{% img src=images/scrX2GoTestFileSharing3.png, w=70, dim=percent, alt=image, align=center %}
 
 Depending on which text editor you used to create your file, it may not look the same on the remote machine. This is because it uses a Linux Operating system, and the default editor on your instance may not open the file with the program which supports this file format. For example, in the screenshot above, you can see that the *RTF* file we created on a Mac contains formatting instructions as well (you can see it is an RTF file because it is called *x2goTest.rtf*). Because Linux opens it in a *"plain text editor"*, you can see the formatting instructions as well.    
 This should not worry you at this point, because we are just testing how to share files with your remote desktop, but this is a good place to notice some differences between operating systems and text files.
@@ -286,23 +286,23 @@ Now, we are going to do it the other way round: We are going to create a text fi
 On your remote desktop, **right click** on your desktop, and select "**Create new > empty file**" (This may be called different in your desktop environment, but it should not be too hard to find how to create a new file. If there is no such command on the desktop, open your file explorer, go to your Desktop in the navigation pane on the left, and try to do it there).    
 Name the file "*TestOnVM.txt*".
 
-{% img src=images/scrX2GoTestFileSharing4.png, w=70, dim=percent, align=center %}
+{% img src=images/scrX2GoTestFileSharing4.png, w=70, dim=percent, alt=image, align=center %}
 
 
 Open the file by double-clicking on it.
 A text editor will open. Write a message into the file, save it (File > Save), then close it.
 
-{% img src=images/scrX2GoTestFileSharing5.png, w=70, dim=percent, align=center %}
+{% img src=images/scrX2GoTestFileSharing5.png, w=70, dim=percent, alt=image, align=center %}
 
 Now, drag the file from the desktop to your shared folder. A message will appear that it is being copied, and then you should see it in your shared folder:
 
-{% img src=images/scrX2GoTestFileSharing6.png, w=70, dim=percent, align=center %}
+{% img src=images/scrX2GoTestFileSharing6.png, w=70, dim=percent, alt=image, align=center %}
 
 Now, you can open your shared folder on your *local machine* (the *x2goSharedFolder* on your desktop).
 
 It will have the new file in it! You may double-click on it to open it and find the message you typed on your remote desktop inside.
 
-{% img src=images/scrX2GoTestFileSharing7.png, w=70, dim=percent, align=center %}
+{% img src=images/scrX2GoTestFileSharing7.png, w=70, dim=percent, alt=image, align=center %}
 
 ### Troubleshooting
 
