@@ -43,6 +43,6 @@ NeCTAR [Virtual Laboratories][NectarLabs] are developing online, **discipline-sp
 
     * Tutorials
 
-    * Management of clusters (e.g. [www.genomics.edu.au](http://www.genomics.edu.au))
+    * Management of clusters (e.g. [http://www.genome.edu.au/](http://www.genome.edu.au/))
 
 

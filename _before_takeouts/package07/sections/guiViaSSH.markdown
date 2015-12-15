@@ -83,7 +83,7 @@ Then, go to "Connection > SSH > X11" in the navigation pane. You need to check *
 
 Otherwise, if you change the Xming configuration using the tool **Programs > Xming > XLaunch**, make sure to set the parameters for the display accordingly.
 
-{% img src=images/scrPuttyX11Forwarding.png, w=60, dim=percent, align=center %}
+{% img src=images/scrPuttyX11Forwarding.png, w=60, dim=percent, alt=image, align=center %}
 
 
 ## Step 3. Install X Windowing system on your instance

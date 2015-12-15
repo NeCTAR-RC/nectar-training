@@ -46,7 +46,7 @@ In this example, we are using a file called *SampleObject.txt* with the text "I 
 
 Go to the [Dashboard][Dashboard] and then to *Object Store > Containers*. You will get to a page which shows the overwiew of your containers.
 
-{% img src=images/scrDashboardObjectStore1.png, w=70, dim=percent, align=center %}
+{% img src=images/scrDashboardObjectStore1.png, w=70, dim=percent, alt=image, align=center %}
 
 First of all, you will have to create a *Container*. 
 {% BgBox definition %}
@@ -54,11 +54,11 @@ A **Container** is like a folder in which you can put files. The difference to a
 {% endBgBox %}
 Click on **Create Container**. As a **Name**, type in  *MyObjectContainer* (or you may use your own container name, in which case you have to consider this in the instructions below). Keep the access on **private**.
 
-{% img src=images/scrDashboardObjectStore2.png, w=70, dim=percent, align=center %}
+{% img src=images/scrDashboardObjectStore2.png, w=70, dim=percent, alt=image, align=center %}
 
 Click on **Create Container**. Your Container *MyObjectContainer* will then be listed on your Dashboard:
 
-{% img src=images/scrDashboardObjectStore3.png, w=90, dim=percent, align=center %}
+{% img src=images/scrDashboardObjectStore3.png, w=90, dim=percent, alt=image, align=center %}
 
 
 #### Step 2: Upload a file
@@ -67,13 +67,13 @@ Click on **Upload Object** on the right side of your container overview. A windo
 
 *Note:* If you cannot see the "Upload Object" field, you have to click on your container *MyObjectContainer* to select it.
 
-{% img src=images/scrDashboardObjectStore4.png, w=70, dim=percent, align=center %}
+{% img src=images/scrDashboardObjectStore4.png, w=70, dim=percent, alt=image, align=center %}
 
 You may also rename it in the given text field if you wish, for now we are going to keep the name *SampleObject.txt*.
 
 Click **Upload Object** to close the window and upload the file to your object store. It will now be displayed on the right side of the overview. We can see that it has 27 Bytes. 
 
-{% img src=images/scrDashboardObjectStore5.png, w=90, dim=percent, align=center %}
+{% img src=images/scrDashboardObjectStore5.png, w=90, dim=percent, alt=image, align=center %}
 
 If you wanted to download this file (e.g. when accessing the store from another computer), you can do this here by clicking on **Download**.
 
@@ -113,7 +113,7 @@ If you wanted to download this file (e.g. when accessing the store from another 
 3. Double-click on your file *NeCTARObjectStore.cyberduckprofile*.
 
 4. A Dialogue should open where you can specify Server etc. If it does not, open Cyberduck and go to **Bookmarks >  New Bookmark**.    
-    {% img src=images/scrCyberduckMac1.png, w=400, dim=px, align=right %}
+    {% img src=images/scrCyberduckMac1.png, w=400, dim=px, alt=image, align=right %}
 
 5. Choose *NeCTAR Swift Melbourne (Keystone)* from the drop-down box, if it is not selected yet. If it does not exist, something has gone wrong in importing the NeCTAR profile (your file *NeCTARObjectSTore.cyberduckprofile*). The image shows how it looks on a Mac, on Windows your interface will look a bit different, but the fields are the same.    
 
@@ -124,14 +124,14 @@ If you wanted to download this file (e.g. when accessing the store from another 
 8. **TenantID:Access ID** (or **username** on a Mac): Type in your tenant ID and username (you took note of this before) separated by a colon, for example *pt-12345:user@uni.edu.au*.
 
 9. Expand the window 
-{% img src=images/scrCyberduckWindows2.png, w=400, dim=px, align=right %}
+{% img src=images/scrCyberduckWindows2.png, w=400, dim=px, alt=image, align=right %}
 by clicking on **More Options**. You can choose a **Download Folder** to which your files will be downloaded by default. As Path you *can* (but do not have to) specify the version number of keystone, e.g. */v2.0/*. 
 
 10. Leave all other options in the default setting, and close the window (by clicking on the window cross)
 
 11. Double click on the symbol of your connection and Cyberduck will try to connect to your object store.     
     You will be asked to type your OpenStack password (not the password you use to login to the Dashboard!)    
-    {% img src=images/scrCyberduckMac3.png, w=400, dim=px, align=right %}
+    {% img src=images/scrCyberduckMac3.png, w=400, dim=px, alt=image, align=right %}
 
 12. You can now **drag and drop** files into your object store container (drag in on the folder symbol), and from the object store container to your local computer (onto your desktop or into an open folder in your file explorer). You can also right-click and **Download** (it will download into the folder you selected as *Download Folder* in the connection dialogue).
 
@@ -173,7 +173,7 @@ by clicking on **More Options**. You can choose a **Download Folder** to which y
 10. Close the Window with ‘**OK**’, and close the next Window with "**Close**".
 
 11. On the right window, select your display name from the drop down box. CloudBerry will connect to your object store. On the left window, you see your files of your local computer.     
-    {% img src=images/scrCloudBerry.png, w=400, dim=px, align=center, css=margin-top:10px %}
+    {% img src=images/scrCloudBerry.png, w=400, dim=px, align=center, alt=image, css=margin-top:10px %}
 
 12. You can drag and drop files between both windows.
 
@@ -226,7 +226,7 @@ Your login details for the FTP client are as follows:
 4. You can now browse your files and drag and drop them between both windows, as you are used to when using the FTP client. On the left side, you can see the file system of your local computer, and on the right side, you can see your object store.
 
 
-{% img src=images/scrFtpCloudFS.png, w=90, dim=percent, align=center %}
+{% img src=images/scrFtpCloudFS.png, w=90, dim=percent, alt=image, align=center %}
 
 
 You will have to do steps 2 and 3 every time you restart your local computer.
@@ -273,7 +273,7 @@ cache_timeout=60
     Of course you may choose another name instead of *cloudfiles*, and/or create the directory somewhere else.
 
 8. You should now be able to access your files on the directory /mnt/cloudfiles just as if they were on your local computer.    
-    {% img src=images/scrCloudFuse.png, w=400, dim=px, align=right, css=margin-left:10px; %}
+    {% img src=images/scrCloudFuse.png, w=400, dim=px, align=right, alt=image, css=margin-left:10px; %}
     ```ls -l /mnt/cloudfiles/```    
     Or open your file explorer to find your mounted drive there (see image to the right).
     You may even *drag and drop* files to and from your object storage, **as if it was a regular hard drive** or folder on your computer.

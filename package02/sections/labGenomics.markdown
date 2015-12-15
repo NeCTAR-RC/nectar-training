@@ -6,15 +6,15 @@ part: Documentation
   
 **Target field(s):** Genomics
 
-**Website:** [https://genome.edu.au](https://genome.edu.au)
+**Website:** [http://www.genome.edu.au/](http://www.genome.edu.au/)
 
 **See also:** [http://nectar.org.au/labs/taking-the-it-out-of-bioinformatics/](http://nectar.org.au/labs/taking-the-it-out-of-bioinformatics/)
 
-{% img src=images/logoGenomics.png,align=left,w=70,dim=px,css=margin-right:20px; %}
+{% img src=images/logoGenomics.png,align=left,w=70,dim=px, alt=image,css=margin-right:20px; %}
 The **Genomics Virtual Laboratory** takes the IT out of Bioinformatics. It provides a cloud-based suite of genomics analysis tools that would normally require specialist assistance.
 In particular, it provides:
 
-{% img src=images/scrLabGenomics.png,align=right,w=300,dim=px %}
+{% img src=images/scrLabGenomics.png,align=right,w=300, alt=image,dim=px %}
 
 * A web portal provides a growing suite of genomics analysis tools that biologists can start working with immediately, with no setup required.
 

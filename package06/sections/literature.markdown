@@ -35,7 +35,7 @@ part: Documentation
 
 4. MPI
 
-    * MPI:[ Parallel Programming with MPI](http://nexus.cs.usfca.edu/mpi/), Peter S. Pacheco, Morgan kaufmann, 1997 
+    * MPI:[Parallel Programming with MPI](http://www.cs.usfca.edu/mpi/), Peter S. Pacheco, Morgan kaufmann, 1997 
 
     * [The Message Passing Interface (MPI) Standard](http://www.mcs.anl.gov/research/projects/mpi/)
 

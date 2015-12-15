@@ -55,9 +55,9 @@ Visit [our Repository](https://repo.fedarch.org/) today!
 
 # A bibliography
 
-* [FAIMS Project](https://www.fedarch.org/wordpress/)
-* [Getting Started](https://www.fedarch.org/wordpress/support/#2)
-* [FAQ](https://www.fedarch.org/wordpress/support/#2)
+* [FAIMS Project](http://www.fedarch.org/wordpress/)
+* [Getting Started](http://www.fedarch.org/wordpress/support/#2)
+* [FAQ](http://www.fedarch.org/wordpress/support/#2)
 * (2015) [Building the Bazaar: Enhancing ArchaeologicalField Recording Through an Open Source Approach](https://www.academia.edu/18123736/Building_the_Bazaar_Enhancing_Archaeological_Field_Recording_Through_an_Open_Source_Approach)
 * (2015; podcast) [Indiana Jones: Myth, Reality and 21st Century Archaeology: The Federated Archaeological Information Management System (FAIMS) Project](http://www.podcastchart.com/podcasts/indiana-jones-myth-reality-and-21st-century-archaeology/episodes/the-federated-archaeological-information-management-system-faims-project)
 * (2015; podcast) [Archaeology Podcast Network: Archaeotech Podcast; FAIMS MOBILE RECORDING SOFTWARE - EPISODE 7](http://www.archaeologypodcastnetwork.com/archaeotech/7)
