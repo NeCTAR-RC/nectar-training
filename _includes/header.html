@@ -1,13 +1,31 @@
-<div class="menu-container">
-  <a href="{{site.baseurl}}/for-trainers.html">TRAINERS</a>
-</div>
-
 <header class="site-header">
-  <a class="logo-container" href="http://cloud.nectar.org.au">
-  </a>
-  <div class="title-container">
-    <span>
-      <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-    </span>
+<div class="nec-header">
+  <div class="header-top clear">
+    <div class="header-top-page">
+      <div class="nect-login">
+        <a>1300 080 431</a>
+        <a href="https://support.nectar.org.au/support/tickets/new" class="new-tick">Ask for help</a>
+        <b><a href="https://support.nectar.org.au/support/login"><b>Login</b></a></b>
+      </div>
+    </div>
   </div>
+
+  <div class="header-main">
+    <div class="header-main-page">
+      <div class="logo-nect">
+        <img src='{{ site.baseurl }}/images/nectar_cloud_logo.jpg' alt="Nectar" height="43", width"248">
+      </div>
+      <div class="menu-nect">
+        {% if page.url == "/for-trainers.html" %}
+          <a href="{{ site.baseurl }}/">Self-paced Training</a>
+          <a href="{{ site.baseurl }}/for-trainers.html" class="selected">Resources for Trainers</a>
+        {% else %}
+          <a href="{{ site.baseurl }}/" class="selected">Self-paced Training</a>
+          <a href="{{ site.baseurl }}/for-trainers.html">Resources for Trainers</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+</div>
 </header>

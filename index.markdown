@@ -3,8 +3,6 @@ layout: post
 title: Home
 ---
 
-## Welcome to **Nectar training**
-
 
 _Access training on the Nectar services you need in the format of your choice - self-paced tutorials, instructional videos, or face-to-face_
 

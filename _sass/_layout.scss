@@ -1,6 +1,132 @@
 /**
  * Site header
  */
+
+.nec-header {
+  box-sizing: border-box;
+  color: rgb(67,67,67);
+  display: block;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  line-height: 21.875px;
+}
+
+.header-top {
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-color: rgb(166, 210, 205);
+  background-image: none;
+  background-origin: padidng-box;
+  background-size: auto;
+  box-sizing: border-box;
+  color: rgb(67, 67, 67);
+  display: block;
+  font-size: 16px;
+  zoom: 1;
+  height: 36px
+}
+
+.header-top-page {
+  display: block;
+  margin-left: 142.5px;
+  margin-right: 142.5px;
+  max-width: 1140px;
+  padding: 0px 0px 0px 0px;
+  background-color: rgb(166, 210, 205);
+}
+
+.nect-login {
+  display: block;
+  box-sizing: border-box;
+  background-color: rgb(166, 210, 205);
+  float: right;
+}
+
+.nect-login a {
+  color: rgb(0,0,0);
+  box-sizing: border-box;
+  display: inline-block;
+  line-height: 36px;
+  text-transform: uppercase;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 12px;
+  font-weight: normal;
+  transition-delay: 0s;
+  transition-duration: 0.2s;
+  transition-property: all;
+  transition-timing-function: ease-in-out;
+  zoom: 1;
+}
+
+.nect-login a.new-tick {
+  margin-right: 15px;
+}
+
+.nect-login a:hover {
+  background-color: #CADFDB;
+}
+
+.header-main {
+  color: rgb(67,67,67);
+  display: block;
+  font-size: 16px;
+  line-height: 21.875px;
+}
+
+.header-main-page {
+  box-sizing: border-box;
+  color: rgb(67,67,67);
+  display: block;
+  font-size: 16px;
+  margin-left: 142.5px;
+  margin-right: 142.5px;
+  max-width: 1140px;
+  padding: 0px 0px 0px 0px;
+  zoom: 1;
+}
+
+.logo-nect {
+  box-sizing: border-box;
+  color: rgb(67,67,67);
+  display: block;
+  float: left;
+  padding: 30px 30px 30px 30px;
+  zoom: 1;
+}
+
+.menu-nect {
+  box-sizing: border-box;
+  color: rgb(67,67,67);
+  display: block;
+  float: right;
+  zoom: 1;
+}
+
+.menu-nect a {
+  box-sizing: border-box;
+  color: rgb(0,0,0);
+  cursor: auto;
+  display: inline;
+  font-size: 16px;
+  line-height: 103px;
+  padding-bottom: 0px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 0px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  zoom: 1;
+}
+
+.menu-nect a.selected {
+  color: #F7BB28!important;
+}
+
+
+
 .site-header {
     background-color: white; //#efefef;
     //border-top: 5px solid $grey-color-dark;

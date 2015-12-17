@@ -2,9 +2,7 @@
 layout: post
 ---
 
-# For Trainers
-
-This page contains materials that can be used when giving face-to-face training.
+Here you can access materials for use when giving face-to-face training.
 
 For each of the ten modules you will find:
 
