@@ -104,7 +104,7 @@ SSH Tunnelling is best explained with an example. In [Module 7][ModDoc7], we wil
 
 * The *ssh client* will encrypt all data, and send it off through the encrypted connection to the server. The data then arrives at the remote computers Port 22, where the *ssh server* receives it and redirects it to its port 5901, on which the *server application* (e.g. the VNC server) eventually receives our data. 
 
-{% img src=images/SSHTunnel.png, w=70, dim=percent, align=center, css=margin-top:20px; margin-bottom: 20px; %}
+{% img src=images/sshtunnel.png, w=70, dim=percent, align=center, css=margin-top:20px; margin-bottom: 20px; %}
 The figure above shows the two connected computers again, but this time with a *ssh tunnel* (symbolised by the blue lines): The connection is "deviated" from the ports that the client/server applications *think* they are communicating through---so the applications are not aware about the communication actually going through Port 22. The *tunnel* has been set up to automatically catch all communications from the client/server ports (e.g. 5900/5901) and deviate it through the ssh connection. Note that the blue lines in the graph are only symbolic---the actual ports are not open to the outside in the firewall settings (except the ssh port of course).
 
 The neat thing about this is that neither our client application nor the server application realise that the connection had been encrypted, so we don't need to configure anything complicated in the applications: Everything is handled automatically by redirecting traffic through our ssh tunnel. 

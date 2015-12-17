@@ -19,13 +19,13 @@ An **instance** is a *running virtual machine (VM)* on the NeCTAR Research Cloud
 In this section we will introduce the *Dashboard* which is used to manage your virtual machines. You will not have to follow the steps below now, because we will do this in detail in [Module 7][ModDoc7]. This module is intended to give you just an overview of the tasks involved.
 
 * You can access the cloud by first logging on to the **NeCTAR Dashboard** on [https://dashboard.rc.nectar.org.au](https://dashboard.rc.nectar.org.au) using your favourite Web Browser. 
-{% img src=images/dashboardLogin.png, w=60, dim=percent, align=center, css=margin-top:20px; margin-bottom:20px; %}  
+{% img src=images/DashboardLogin.png, w=60, dim=percent, align=center, css=margin-top:20px; margin-bottom:20px; %}  
 You can log in with and your university or research institution username and password.    
 You may access the Research Cloud from any account associated with the Australian Access Federation. You can see whether your institution is part of this in the drop-down list on the Dashboard login window.
-{% img src=images/dashboardLogin2.png, w=60, dim=percent, align=center, css=margin-top:20px; margin-bottom:20px; %}  
+{% img src=images/DashboardLogin2.png, w=60, dim=percent, align=center, css=margin-top:20px; margin-bottom:20px; %}  
 
 * The Dashboard is used to start, copy and delete instances, and to manage your storage. Once you have logged on to the Dashboard, you can start setting up your VMs. We will do this in detail later in [Module 7][ModDoc7].
-{% img src=images/dashboard.png, w=60, dim=percent, align=center, css=margin-top:20px; margin-bottom:20px; %}  
+{% img src=images/Dashboard.png, w=60, dim=percent, align=center, css=margin-top:20px; margin-bottom:20px; %}  
 
 * You, and anyone else you allow access to the virtual machines, can then log in to them and use them just like regular servers.
 
