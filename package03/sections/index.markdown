@@ -30,7 +30,7 @@ The NeCTAR National Research Cloud empowers researchers with new self-service ab
 The NeCTAR Research Cloud Services provide an **Infrastructure-as-a-Service (IaaS)**: Researchers can run their own virtual machines and manage their storage.
 
 {% BgBox info %}
-The Research Cloud uses the successful, open-source *OpenStack* cloud computing software platform. OpenStack APIs are compatible with *Amazon EC2* (Amazon's computing service) and *Amazon S3* (Amazon's object storage service) and thus client applications written for *Amazon Web Services (AWS)* can be used with OpenStack and NeCTAR Services with minimal porting effort. Conversely, you will be able to port to *AWS* after developing using the NeCTAR services.
+The Research Cloud uses the successful, open-source *OpenStack* cloud computing software platform. OpenStack includes compatibility with *Amazon EC2* (Amazon's computing service) and *Amazon S3* (Amazon's object storage service) APIs and thus client applications written for *Amazon Web Services* (AWS) can be used with OpenStack and NeCTAR Services with minimal porting effort, but it is recommended to use the native OpenStack APIs for access to all the NeCTAR cloud features.
 {% endBgBox %}
 
 
