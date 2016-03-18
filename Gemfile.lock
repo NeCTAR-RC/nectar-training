@@ -109,6 +109,3 @@ DEPENDENCIES
   jekyll
   rake
   therubyracer
-
-BUNDLED WITH
-   1.11.2

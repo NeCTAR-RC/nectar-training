@@ -1,11 +1,11 @@
 <header class="site-header">
 <div class="nec-header">
-  <div class="header-top clear">
+  <div class="header-top">
     <div class="header-top-page">
       <div class="nect-login">
-        <a href="tel:+611300080431">1300 080 431</a>
-        <a href="https://support.nectar.org.au/support/tickets/new" class="new-tick">Ask for help</a>
-        <b><a href="https://support.nectar.org.au/support/login"><b>Login</b></a></b>
+        <a href="https://support.nectar.org.au/support/home">Support</a>
+        <a href="http://cloud.nectar.org.au/contact/" class="new-tick">Contact</a>
+        <b><a href="https://dashboard.rc.nectar.org.au/"><b>Login</b></a></b>
       </div>
     </div>
   </div>
@@ -16,7 +16,7 @@
         <img src='{{ site.baseurl }}/images/nectar_cloud_logo.jpg' alt="Nectar" height="43", width"248">
       </div>
       <div class="menu-nect">
-        {% if page.url == "/for-trainers.html" %}
+        {% if (page.url == "/for-trainers.html") or (page.url contains "/video.html" or (page.url contains "/plan.html") or (page.url contains "/outline.html") %}
           <a href="{{ site.baseurl }}/">Self-paced Training</a>
           <a href="{{ site.baseurl }}/for-trainers.html" class="selected">Resources for Trainers</a>
         {% else %}
@@ -28,4 +28,15 @@
   </div>
 
 </div>
+
+<div class="normal-block">
+  <div class="normal-block-page">
+    {% if (page.url == "/for-trainers.html") or (page.url contains "/video.html" or (page.url contains "/plan.html") or (page.url contains "/outline.html") %}
+      <h3>Resources for Trainers</h3>
+    {% else %}
+      <h3>Self-paced Training</h3>
+    {% endif %}
+  </div>
+</div>
+
 </header>
