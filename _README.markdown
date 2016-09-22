@@ -14,9 +14,24 @@ Then:
 
 1. Install ```rbenv```
 2. Use ```rbenv``` to install ruby 2.2.2
-3. Then do:
+3. Use ```rbenv``` to make ruby 2.2.2 the active version
+4. Then do:
 
-```bundle install```
+```bash
+gem install bundler
+bundle install
+```
+
+A known issue when installing libv8 -v 3.16.14.7 on later versions of OSX is that the compiler chokes. 
+If you are on OSX and  seeing an exception and the message 
+```Make sure that `gem install libv8 -v '3.16.14.7'` succeeds before bundling.```
+you can run the following command to avoid the compilation step:
+
+```bash
+gem install libv8 -v '3.16.14.7' -- --with-system-v8
+``` 
+
+Don't forget re-run the ```bundle install``` command if you were forced to install libv8 manually. 
 
 To generate the html content use:
 
