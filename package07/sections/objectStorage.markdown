@@ -88,26 +88,37 @@ If you wanted to download this file (e.g. when accessing the store from another 
     - On Windows, you will download an installer. You may keep the default options, if unsure. You don't need to install Bonjour, if you are asked.
 
 3. Create a text file on your local computer (e.g. save it on the Desktop) with the following contents. Name it *NeCTARObjectStore.cyberduckprofile* (or any other name, it just has to end with .cyberduckprofile).    
-    {% BgBox edit %} <?xml version="1.0" encoding="UTF-8"?>    
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">    
-<plist version="1.0">    
-      <dict>    
-            <key>Protocol</key>    
-            <string>swift</string>    
-            <key>Vendor</key>    
-            <string>NeCTAR Swift (Keystone)</string>    
-            <key>Context</key>    
-            <string>/v2.0/tokens</string>    
-      <key>Region</key>    
-      <string>Melbourne</string>    
-            <key>Description</key>    
-            <string>NeCTAR Swift Melbourne (Keystone)</string>    
-            <key>Username Placeholder</key>    
-            <string>tenantId:username</string>    
-            <key>Password Placeholder</key>    
-            <string>password</string>    
-      </dict>    
- </plist>
+    {% BgBox edit %} 
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;    
+&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;    
+&lt;plist version="1.0"&gt;    
+      &lt;dict&gt;    
+         &lt;key&gt;Protocol&lt;/key&gt;    
+         &lt;string&gt;swift&lt;/string&gt;    
+         &lt;key&gt;Vendor&lt;/key&gt;    
+         &lt;string&gt;NeCTAR Swift (Keystone)&lt;/string&gt;    
+         &lt;key&gt;Context&lt;/key&gt;    
+         &lt;string&gt;/v2.0/tokens&lt;/string&gt;    
+         &lt;key&gt;Region&lt;/key&gt;    
+         &lt;string&gt;Melbourne&lt;/string&gt;    
+         &lt;key&gt;Description&lt;/key&gt;    
+         &lt;string&gt;NeCTAR Swift Melbourne (Keystone)&lt;/string&gt; 
+         &lt;key&gt;Scheme&lt;/key&gt;
+         &lt;string&gt;https&lt;/string&gt;
+         &lt;key&gt;Default Hostname&lt;/key&gt;
+         &lt;string&gt;keystone.rc.nectar.org.au&lt;/string&gt;
+         &lt;key&gt;Default Port&lt;/key&gt;
+         &lt;string&gt;5000&lt;/string&gt;
+         &lt;key&gt;Hostname Configurable&lt;/key&gt;
+         &lt;true/&gt;
+         &lt;key&gt;Port Configurable&lt;/key&gt;
+         &lt;true/&gt;
+         &lt;key&gt;Username Placeholder&lt;/key&gt;    
+         &lt;string&gt;tenantId:username&lt;/string&gt;    
+         &lt;key&gt;Password Placeholder&lt;/key&gt;    
+         &lt;string&gt;password&lt;/string&gt;      
+      &lt;/dict&gt;    
+ &lt;/plist&gt;
 {% endBgBox %}
 
 3. Double-click on your file *NeCTARObjectStore.cyberduckprofile*.
@@ -119,7 +130,7 @@ If you wanted to download this file (e.g. when accessing the store from another 
 
 6. **Nickname**: give the connection a name of your choice, e.g. ‘*NeCTAR Object Store*'
 
-7. As **Server** and **Port**, fill in what you took note of before when looking up the details in the dashboard. (This is probably *keystone.rc.nectar.org.au* and *5000*)
+7. Confirm that **Server** and **Port** match the [OpenStack credentials you took note of](#get-your-openstack-credentials). If they don't match use the values you took note of.
 
 8. **TenantID:Access ID** (or **username** on a Mac): Type in your tenant ID and username (you took note of this before) separated by a colon, for example *pt-12345:user@uni.edu.au*.
 
@@ -130,7 +141,9 @@ by clicking on **More Options**. You can choose a **Download Folder** to which y
 10. Leave all other options in the default setting, and close the window (by clicking on the window cross)
 
 11. Double click on the symbol of your connection and Cyberduck will try to connect to your object store.     
-    You will be asked to type your OpenStack password (not the password you use to login to the Dashboard!)    
+    You will be asked to type your OpenStack password (not the password you use to login to the Dashboard!) 
+    This is the password in the [OpenStack credentials you took note of](#get-your-openstack-credentials).
+    You might also be required to re-enter your tenant ID and username, again separated by a colon
     {% img src=images/scrCyberduckMac3.png, w=400, dim=px, alt=image, align=right %}
 
 12. You can now **drag and drop** files into your object store container (drag in on the folder symbol), and from the object store container to your local computer (onto your desktop or into an open folder in your file explorer). You can also right-click and **Download** (it will download into the folder you selected as *Download Folder* in the connection dialogue).
