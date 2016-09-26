@@ -1,22 +1,37 @@
 ---
 layout: post
-title: README 
+title: README
 ---
 
 # nectar-training
 
 To clone this repository use:
 
-```git clone git@github.com:IntersectAustralia/nectar-training.git```
+```git clone https://github.com/NeCTAR-RC/nectar-training.git```
 
 Then:
 
 
 1. Install ```rbenv```
 2. Use ```rbenv``` to install ruby 2.2.2
-3. Then do:
+3. Use ```rbenv``` to make ruby 2.2.2 the active version
+4. Then do:
 
-```bundle install```
+```bash
+gem install bundler
+bundle install
+```
+
+A known issue when installing libv8 -v 3.16.14.7 on later versions of OSX is that the compiler chokes.
+If you are on OSX and seeing an exception and the message
+```Make sure that `gem install libv8 -v '3.16.14.7'` succeeds before bundling.```
+you can run the following command to avoid the compilation step:
+
+```bash
+gem install libv8 -v '3.16.14.7' -- --with-system-v8
+```
+
+Don't forget re-run the ```bundle install``` command if you were forced to install libv8 manually.
 
 To generate the html content use:
 
@@ -27,7 +42,7 @@ Then browse to [http://localhost:4000](http://localhost:4000)
 
 # Notes for developers of the layouts and content
 
-**Sections** 
+**Sections**
 
 The documentation is built such that each package (module) can have
 several sections. This avoids very long HTML pages which have to be
@@ -42,9 +57,9 @@ The implementation is as follows:
   Optionally, a field called **level** may be added, which will create a hierarchy (nesting of menu entries),
   starting with level 1 as top-level.
   The file name should be only the html file (without a path), and has to be located in a folder
-  named *sections* within the module, e.g. *package01/sections*.    
+  named *sections* within the module, e.g. *package01/sections*.
 
-   Another optional field is **extra** (and extra_title along with it), which is to be a list of maps with two keys each: **title** and **file**, to link to another sub category. This is to generate an extra menu which is not part of the main contents list. This was only a trial and is not used at the moment any more. Implementation can be found in _layouts/package-part-ext-subcat.html.    
+   Another optional field is **extra** (and extra_title along with it), which is to be a list of maps with two keys each: **title** and **file**, to link to another sub category. This is to generate an extra menu which is not part of the main contents list. This was only a trial and is not used at the moment any more. Implementation can be found in _layouts/package-part-ext-subcat.html.
 
     This was found the most convenient to specify the structure in variables without having to specify them
   in each markup file (it is not possible to import yaml files from within the frontmatter).
@@ -58,13 +73,13 @@ The implementation is as follows:
 **Background boxes**
 
 A plugin was developed to insert *Info boxes* with the block tag
- 
+
 ```{% raw %} {% BgBox [type] %} Text of info box {% endBgBox %} {% endraw %}```
-  
+
 Replacing *&lt;type&gt;* with either
 
 * info
-* important 
+* important
 * definition
 * edit
 * terminal
@@ -72,23 +87,23 @@ Replacing *&lt;type&gt;* with either
 
 to create the following two styles:
 {% BgBox info %}
-This is an information box 
+This is an information box
 {% endBgBox %}
 
-{% BgBox important %} 
-This is a box with important information 
+{% BgBox important %}
+This is a box with important information
 {% endBgBox %}
 
-{% BgBox definition %} 
-This is a box with a definition 
+{% BgBox definition %}
+This is a box with a definition
 {% endBgBox %}
 
 {% BgBox edit %}
-This formatting displays contents of a file   
+This formatting displays contents of a file
 {% endBgBox %}
 
 {% BgBox terminal %}
-NectarTrainingPC:~ Jennifer$ whoami    
+NectarTrainingPC:~ Jennifer$ whoami
 Jennifer
 {% endBgBox %}
 
@@ -98,20 +113,20 @@ This is a box for a prerequisite
 
 
 The implementation is as follows:
- 
+
   - *css/main.scss* contains the style classes bgInfo and bgImportant which define some characteristics of the box.
   - *_plugins/background_box_plugin.rb* is the plugin. The little image is inserted here instead of in the style sheet, so that the text can flow around it.
 
 
 **Images**
 
-A plugin was developed to format images (e.g. width and alignment).     
-```{% raw %} 
+A plugin was developed to format images (e.g. width and alignment)
+```{% raw %}
 {% img src=[/path/to/image], w=[width], h=[height], alt=[alt text] dim=[px|percent], css=[extra css formatting] %}
-{% endraw %}```    
+{% endraw %}```
 All attributes except src are optional. Each argument has to be separated with a ','.
-The dimension (argument dim) defines whether width is specified in pixels or percent of 
-The page width (default: px). Height is always in pixels, unless unspecified (then it is autscaled with width)    
+The dimension (argument dim) defines whether width is specified in pixels or percent of
+The page width (default: px). Height is always in pixels, unless unspecified (then it is autscaled with width)
 See *_plugins/image.rb*.
 
 
