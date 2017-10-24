@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c01182e2_48efc350",
+        "filename": "package07/sections/connectWithX2Go.markdown",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000077
+      },
+      "writtenOn": "2017-10-24T22:36:31Z",
+      "side": 1,
+      "message": "LXDE",
+      "range": {
+        "startLine": 25,
+        "startChar": 10,
+        "endLine": 25,
+        "endChar": 11
+      },
+      "revId": "729f534cac7ac174dd1fee7efc01d4d872fa950e",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2182e909_730acb95",
+        "filename": "package07/sections/connectWithX2Go.markdown",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000077
+      },
+      "writtenOn": "2017-10-24T22:36:31Z",
+      "side": 1,
+      "message": "I\u0027m sure it\u0027s no big deal, but the indenting is off between LXDE, GNOME, KDE sections",
+      "range": {
+        "startLine": 28,
+        "startChar": 4,
+        "endLine": 28,
+        "endChar": 8
+      },
+      "revId": "729f534cac7ac174dd1fee7efc01d4d872fa950e",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "506d65f8_b4905b95",
+        "filename": "package07/sections/connectWithX2Go.markdown",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000077
+      },
+      "writtenOn": "2017-10-24T22:36:31Z",
+      "side": 1,
+      "message": "Linux should have it in the menu also. I\u0027d just simplify this by saying \u0027look in the menu, but if you can\u0027t find it, you can run x2goclient though your terminal\u0027",
+      "range": {
+        "startLine": 76,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 3
+      },
+      "revId": "729f534cac7ac174dd1fee7efc01d4d872fa950e",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "37535f85_58c356d7",
+        "filename": "package07/sections/connectWithX2Go.markdown",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1000077
+      },
+      "writtenOn": "2017-10-24T22:36:31Z",
+      "side": 1,
+      "message": "wow thats a nasty hack.\n\nto make it full proof, i\u0027d recommend using full paths:\nln -s ~/.ssh ~/ssh\ninstead",
+      "range": {
+        "startLine": 101,
+        "startChar": 24,
+        "endLine": 102,
+        "endChar": 4
+      },
+      "revId": "729f534cac7ac174dd1fee7efc01d4d872fa950e",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": false
+    }
+  ]
+}
