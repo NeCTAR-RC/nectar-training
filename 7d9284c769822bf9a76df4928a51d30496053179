@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "323bcd5f_b9ddc2d0",
+        "filename": "package01/sections/nectar.markdown",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000077
+      },
+      "writtenOn": "2017-12-12T23:20:34Z",
+      "side": 1,
+      "message": "did this want to be rephrased too? maybe *eligible* is a better choice?",
+      "range": {
+        "startLine": 26,
+        "startChar": 54,
+        "endLine": 26,
+        "endChar": 59
+      },
+      "revId": "7d9284c769822bf9a76df4928a51d30496053179",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ec9609c_0e58772c",
+        "filename": "package01/sections/nectar.markdown",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000077
+      },
+      "writtenOn": "2017-12-12T23:20:34Z",
+      "side": 1,
+      "message": "Two full stops",
+      "range": {
+        "startLine": 26,
+        "startChar": 93,
+        "endLine": 26,
+        "endChar": 95
+      },
+      "revId": "7d9284c769822bf9a76df4928a51d30496053179",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": false
+    }
+  ]
+}
