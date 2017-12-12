@@ -23,9 +23,9 @@ The Australian Research Cloud is offering a *secure and robust hosting service*:
 
 * The main function of the Research Cloud is to provide **"Infrastructure as a Service" (IaaS)**. **Virtual machines** and **cloud storage** can be provisioned on demand through a web Dashboard or an API.
 
-* The Research Cloud is available for research use to *any* academic researcher in Australia. Access is funded by the NeCTAR project and **free for researchers**.
+* The Research Cloud is available for research use to *any* academic researcher in Australia. .
 
-    * Access to the NeCTAR Cloud dashboard is done through the **Australian Access Federation (AAF)**. This allows you to login using your institiutional username and password.
+    * Access to the NeCTAR Cloud dashboard is done through the **Australian Access Federation (AAF)** (or Tuakiri in New Zealand). This allows you to login using your institiutional username and password.
 
     * Any researcher who logs in to NeCTARs web Dashboard can immediately have access to a small Project Trial allocation (2 cores for 3 months).
 
