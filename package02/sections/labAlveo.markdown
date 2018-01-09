@@ -8,9 +8,9 @@ part: Documentation
 
 **Website:** [http://alveo.edu.au/](http://alveo.edu.au/)
 
-**See also:** [http://nectar.org.au/labs/when-words-collide/](http://nectar.org.au/labs/when-words-collide/)
+**See also:** [http://alveo.edu.au/category/news/](http://alveo.edu.au/category/news/)
 
-**For help visit:** [http://alveo.edu.au/help/](hpttp://alveo.edu.au/help/)
+**For help visit:** [https://support.alveo.edu.au/support/home](https://support.alveo.edu.au/support/home)
 
 {% img src=images/scrAlveo.png,align=right,w=300,alt=image,dim=px %}
 

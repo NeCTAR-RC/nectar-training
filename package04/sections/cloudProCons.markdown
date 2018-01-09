@@ -26,7 +26,7 @@ There are a number of advantages and drawbacks to both local computing (the trad
 
 **Pros:**
 
-+ **Cost:** Cloud computing can be viewed as *pay-as-you-go* computing:  You pay only when you need the service (NeCTAR services are even *free* to you). This is usually much **cheaper** than building and maintaining an *on-premises* physical server farm.     
++ **Cost:** Cloud computing can be viewed as *pay-as-you-go* computing:  You pay only when you need the service. This is usually much **cheaper** than building and maintaining an *on-premises* physical server farm.     
     Shifting large infrastructure spendings to an operational expense has many advantages, including     
     * almost unlimited storage
 
@@ -34,7 +34,6 @@ There are a number of advantages and drawbacks to both local computing (the trad
     
     * the ability to scale up (and down) rapidly.    
 
-    While NeCTAR services are free to you, but you must request an allocation of a certain amount of maximum resources you will be using.
 
 + **Individual setup:** Users can configure their own server (e.g. choose the operating system and install software) and run it in a cloud whenever they need the computational resources.
 
@@ -62,4 +61,4 @@ There are a number of advantages and drawbacks to both local computing (the trad
 - **Concerns about ownership**: Who owns the data you store online: you, or the company storing it? There is also a difference between data which is uploaded, and the data created in the cloud itself (providers could have stronger claims on the latter). Policies of cloud providers vary. NeCTAR never lays any claim on any of your data!
 
  
-- **Service charge** is based upon usage, which may come at a significant cost with some cloud providers. However NeCTAR services are free to you as an Australian Researcher.
+- **Service charge** is based upon usage, which may come at a significant cost with some cloud providers. 
