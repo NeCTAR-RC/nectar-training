@@ -65,7 +65,7 @@ You may have to specify the full path to the key. If the above does not work, tr
 {% BgBox info %}
 Our instance has a default **username** that we need to specify when we log in. In this tutorial, we chose a Ubuntu Image when launching the instance. At the time of writing, the user name for Ubuntu is ***"ubuntu"***. Other NeCTAR images may expect different usernames. 
 
-Try using *root* instead of *ubuntu* ("*root@NNN.NNN.NNN.NNN*") for other Operating Systems. For Fedora, the user name may be *ec2-user*. The right user name for the image you chose is documented at the [NeCTAR Image_Catalog](https://wiki.rc.nectar.org.au/wiki/Image_Catalog).
+Try using *root* instead of *ubuntu* ("*root@NNN.NNN.NNN.NNN*") for other Operating Systems. For Fedora, the user name may be *ec2-user*. The right user name for the image you chose is documented in the [NeCTAR Image_Catalog](https://support.ehelp.edu.au/support/solutions/articles/6000106269-image-catalog).
 {% endBgBox %}
 
 *Well done!*
@@ -90,7 +90,7 @@ Then, select the “**Data**” category in the navigation window. Here, we will
 {% BgBox info %}
 Our instance has a default **username** that we need to specify when we log in. In this tutorial, we chose a Ubuntu Image when launching the instance. At the time of writing, the user name for Ubuntu is ***"ubuntu"***. Other NeCTAR images may expect different usernames. 
 
-Try using *root* instead of *ubuntu* for other Operating Systems. For Fedora, the user name may be *ec2-user*. The right user name for the image you chose is documented at the [NeCTAR Image_Catalog](https://wiki.rc.nectar.org.au/wiki/Image_Catalog).
+Try using *root* instead of *ubuntu* for other Operating Systems. For Fedora, the user name may be *ec2-user*. The right user name for the image you chose is documented at the [NeCTAR Image_Catalog](https://support.ehelp.edu.au/support/solutions/articles/6000106269-image-catalog).
 {% endBgBox %}
 
 
