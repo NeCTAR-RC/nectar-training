@@ -11,7 +11,7 @@ Is is important to be aware of the measures taken by NeCTAR to prevent data loss
 
 Another very important activity is **"cleaning up"** your resources after you have finished using them. This involves not only securely erasing data on your volumes or ephemeral storage. You should also "terminate" (delete) your instance and your storage as soon as you don't need it any more. Why is this so important? Because your running instance and your existing storage **take up resources which other researchers may need**. 
 {% BgBox info %}
-NeCTAR experiences resource shortages from time to time, which could be avoided if unused (*idle*) or underutilised (*mostly idle*) NeCTAR instances were shut down, freeing up resources. It has been observed that the average CPU utilization rate across the NeCTAR federation is less than **5%**, and many large instances sit idle for days, weeks or months at a time.
+NeCTAR experiences resource shortages from time to time, which could be avoided if unused (*idle*) or underutilised (*mostly idle*) NeCTAR instances were terminated, freeing up resources. It has been observed that the average CPU utilization rate across the NeCTAR federation is less than **5%**, and many large instances sit idle for days, weeks or months at a time.
 {% endBgBox %}
 
 The problem is that many people want their compute resources to be available when *they* are ready to use them. They don't realise that while they are not using those resources, they are preventing others from accessing them. It is therefore important that everyone is aware of this and responsibly releases their resources when they don't need them any more. **Fair play!**
