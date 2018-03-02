@@ -28,7 +28,7 @@ class YouTube < Liquid::Tag
     if context['page']['layout'] == 'print'
       "<a href=\"https://www.youtube.com/watch?v=#{@id}\">https://www.youtube.com/watch?v=#{@id}</a>"
     else
-      "<iframe width=\"#{@width}\" height=\"#{@height}\" src=\"http://www.youtube.com/embed/#{@id}?color=white&theme=light\"></iframe>"
+      "<iframe width=\"#{@width}\" height=\"#{@height}\" src=\"https://www.youtube.com/embed/#{@id}?color=white&theme=light\"></iframe>"
     end
   end
 
