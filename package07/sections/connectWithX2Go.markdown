@@ -23,7 +23,7 @@ In this tutorial we assume you are using the most recent release of the Nectar O
 
 3. We now have to install **extra bindings** for our desktop environment which add extra features for X2Go (e.g. file sharing). Follow the instructions for the environment you want to use (if it is not listed, see [official documentation](http://wiki.x2go.org/doku.php/wiki:advanced:desktopbindings))
     * **LXDE**: In your ssh terminal, type
-        ```sudo aptitude install lxde```
+        ```sudo apt install lxde```
          ```sudo apt-get install x2golxdebindings```
         *Note:* If the installer package complains about unmet dependencies and suggests to remove lxde, say yes to this. Afterwards, re-install lxde again with the command
 
