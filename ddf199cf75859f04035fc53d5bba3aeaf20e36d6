@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "be3aecea_e9177e52",
+        "filename": "package07/sections/index.markdown",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000130
+      },
+      "writtenOn": "2018-08-30T02:43:11Z",
+      "side": 1,
+      "message": "I\u0027d suggest remove the added \u0027data\u0027 from storage - not necessarily data storage, and pages like http://training.nectar.org.au/package06/sections/storage.html\nwould become horrible if we added data before every mention of storage.\nContractions like we\u0027ll are usually avoided in formal writing.",
+      "revId": "ddf199cf75859f04035fc53d5bba3aeaf20e36d6",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": false
+    }
+  ]
+}
