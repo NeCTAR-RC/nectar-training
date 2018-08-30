@@ -5,7 +5,7 @@ part: Documentation
 {% include /docLinks.markdown %}
 
 
-In this module we are going to learn how to launch an instance and how to connect to it. We are going to discuss two ways to connect: (a) with the command line and (b) to a remote desktop, with the benefits of having a graphical interface. We will briefly take a look at how to run graphical applications via the command line (instead of the remote desktop), and we will also set up a web server to publish a very simple website. Finally, we will set up the different cloud storage types, so we can access the storage remotely and directly from our instance.
+In this module you will learn how to launch an instance and how to connect to it. We'll discuss two ways to connect: (a) using the command line and (b) to a remote desktop, with the benefits of having a graphical user interface (GUI). We will briefly take a look at how to run graphical applications via the command line (instead of the remote desktop), and we will also set up a web server to publish a very simple website. Finally, we will set up the different cloud data storage types, so we can access the data storage remotely and directly from our instance.
 
 ### Videos
 
