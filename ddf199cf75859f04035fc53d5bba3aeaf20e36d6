@@ -16,6 +16,24 @@
       "revId": "ddf199cf75859f04035fc53d5bba3aeaf20e36d6",
       "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "59b06bf9_2e7283fe",
+        "filename": "package07/sections/index.markdown",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000131
+      },
+      "writtenOn": "2018-08-30T04:30:52Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "be3aecea_e9177e52",
+      "revId": "ddf199cf75859f04035fc53d5bba3aeaf20e36d6",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5",
+      "unresolved": false
     }
   ]
 }
