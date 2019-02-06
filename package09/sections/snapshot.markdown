@@ -28,7 +28,7 @@ This process may take a while. While the Snapshot is being made, it will be list
 Instance Snapshots *do not* include the state of the secondary ephemeral disk, or of any volumes, *even if* they are currently mounted, e.g. on */data* or */mnt*.
 {% endBgBox %}
 
-On the same *Images* Tab, you may also **delete your Snapshot** at a later time. This is something you may want to do --- keep in mind that your Snapshot is using up significant space of your disk quota. To delete a Snapshot, click on the right-hand side drop-down box of your Snapshot and select *Delete Image*.
+On the same *Images* Tab, you may also **delete your Snapshot** at a later time. To delete a Snapshot, click on the right-hand side drop-down box of your Snapshot and select *Delete Image*.
 
 
 {% BgBox important %}
