@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel='shortcut icon' href='/images/icon.png' />
+
+  <title>The Research Cloud lifecycle</title>
+  <meta name="description" content="Nectar National Training Resources
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://training.nectar.org.au/package05/sections/all.html">
+  <link rel="alternate" type="application/rss+xml" title="Nectar Training" href="http://training.nectar.org.au/feed.xml" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61845992-2', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+
+
+  <body>
+    <div class="page-content">
+      <div class="wrapper">
+        <p><a href="/"><img src="/images/nectar_cloud_logo.jpg" alt="Nectar"/></a></p>
+        <h3>Module 5</h3>
+        <h1>The Research Cloud lifecycle</h1>
+
+        
+<h2 id="introduction">Introduction</h2>
+
+<p>This module provides a high-level overview of the processes involved when using the Research Cloud. More details about the specific steps involved will be provided in the later modules — this module will only focus on a high-level overview.</p>
+
+<p>Topics will include: how to get onto the research cloud, necessary housekeeping you will need to do (e.g. updates, backups) and how to keep your VM secure. Finally, you will learn about terminating services without losing anything, how to get support and how to request more resources.</p>
+
+<h3 id="videos">Videos</h3>
+
+<p>The following videos go through most of the content in this module and offer a less in-depth description of the subject than the documentation does.</p>
+
+<p><a href="https://www.youtube.com/watch?v=169yoRjEC9c">https://www.youtube.com/watch?v=169yoRjEC9c</a></p>
+
+<p><a href="https://www.youtube.com/watch?v=cbIElk1oFuQ">https://www.youtube.com/watch?v=cbIElk1oFuQ</a></p>
+
+<p><a href="https://www.youtube.com/watch?v=grSHE8v3oEg">https://www.youtube.com/watch?v=grSHE8v3oEg</a></p>
+
+<h2 id="project-trial">Project trial</h2>
+
+<p>Any researcher who logs on to the web Dashboard can immediately have access to a small <strong>Project Trial</strong> allocation (2 instances and 2 cores for 3 months). A <em>Project</em> provides access to a certain allocation of resources.
+Project Trials have names like <em>pt-8637</em>. 
+Within your default allocation you can run:</p>
+
+<ul>
+  <li>a medium (two core) VM, or</li>
+  <li>two small (single core) VMs.</li>
+</ul>
+
+<p>You can run VMs of various sizes in the cloud, from one to 16 cores, and up to hundreds of VMs.
+However to obtain such a larger allocation you need to submit an allocation request through the web Dashboard. We will talk about this later in this Module.</p>
+
+<h3 id="conventions">Conventions</h3>
+
+<p>The notation throughout the training documents can be interpreted as follows:</p>
+
+<p>Words in <em>italics</em> are used for names and terminology, e.g. name of a software, or name of a computing concept. It may also just emphasise a word in the traditional way. Quotations are also written in italics and are put in between quotatioin marks.</p>
+
+<p>Words in <strong>bold</strong> are used to highlight words which identify important concepts of a paragraph, to make it easier for users to skim through the text to find a paragraph which explains a certain idea, concept or technology.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><strong>Additional information</strong> which is optional to read is displayed in <em>info boxes</em> like this one.</p>
+
+				</div>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><strong>Important information</strong> is displayed in boxes like this one.</p>
+
+				</div>
+
+<div class="bgDefinition" style="min-height: 55px;">
+					<img src="/images/glyphicons-352-book-open.png" alt="image" align="left" style="width:24px; height:22px;
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><strong>Definition of terms</strong> are displayed in boxes of this style.</p>
+
+				</div>
+
+<div class="bgPrerequisite">
+					<img src="/images/glyphicons-333-certificate.png" alt="image" align="left" style="width:17px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Possibly specific <strong>prerequisites</strong> for reading a particular section are contained in this type of box at the beginning of a section.</p>
+
+				</div>
+
+<h2 id="connecting-and-maintaining">Connecting and maintaining</h2>
+
+<p>First of all, you will need to get onto the Research Cloud, which is fairly simple. Then, you will create an virtual machine, which we will also refer to as an <em>instance</em>. You can connect to your instance and while you or your collaborators are using it, you may track utilization of your resources. You should also perform a number of maintenance tasks while your instance is in use. We will discuss the processes involved in your virtual machine’s <em>life cycle</em> in this section.</p>
+
+<div class="bgDefinition" style="min-height: 55px;">
+					<img src="/images/glyphicons-352-book-open.png" alt="image" align="left" style="width:24px; height:22px;
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>An <strong>instance</strong> is a <em>running virtual machine (VM)</em> on the NeCTAR Research Cloud. Instances (VMs) running inside the Research Cloud are just like real-life machines but in a remote location. <em>“Launching”</em> an instance is like booting the computer, and shutting it down closes it. While an instance is shut down, it still exists — it may be <em>rebooted</em> any time. An instance can also be <em>terminated</em>, after which it is deleted (does not exist any more) and cannot be recovered, unless the state of it was saved in a <em>snapshot</em> before its termination.</p>
+
+<p><em>Note</em>: An instance is sometimes also one physical computer, but in the NeCTAR Cloud, all instances are virtual machines.</p>
+
+				</div>
+
+<h3 id="how-to-get-onto-the-research-cloud">How to get onto the research cloud</h3>
+
+<p>In this section we will introduce the <em>Dashboard</em> which is used to manage your virtual machines. You will not have to follow the steps below now, because we will do this in detail in <a href="/package07/sections/index.html" title="Module 7">Module 7</a>. This module is intended to give you just an overview of the tasks involved.</p>
+
+<ul>
+  <li>
+    <p>You can access the cloud by first logging on to the <strong>NeCTAR Dashboard</strong> on <a href="https://dashboard.rc.nectar.org.au">https://dashboard.rc.nectar.org.au</a> using your favourite Web Browser. 
+<img src="images/DashboardLogin.png" class="aligncenter" style="width:60%; margin-top:20px; margin-bottom:20px;" alt="image" />
+You can log in with and your university or research institution username and password.  <br />
+You may access the Research Cloud from any account associated with the Australian Access Federation. You can see whether your institution is part of this in the drop-down list on the Dashboard login window.
+<img src="images/DashboardLogin2.png" class="aligncenter" style="width:60%; margin-top:20px; margin-bottom:20px;" alt="image" /></p>
+  </li>
+  <li>
+    <p>The Dashboard is used to start, copy and delete instances, and to manage your storage. Once you have logged on to the Dashboard, you can start setting up your VMs. We will do this in detail later in <a href="/package07/sections/index.html" title="Module 7">Module 7</a>.
+<img src="images/Dashboard.png" class="aligncenter" style="width:60%; margin-top:20px; margin-bottom:20px;" alt="image" /></p>
+  </li>
+  <li>
+    <p>You, and anyone else you allow access to the virtual machines, can then log in to them and use them just like regular servers.</p>
+  </li>
+  <li>
+    <p>Cloud VMs can be accessed using either the <em>command line terminal</em>, or a <em>remote desktop</em>. In the latter case, they can be used almost like a regular desktop computer. In <a href="/package07/sections/index.html" title="Module 7">Module 7</a> we will take a closer look at how to connect via an <em>ssh terminal</em>, and to a <em>remote desktop</em>.</p>
+  </li>
+</ul>
+
+<p><img src="images/scrTerminalOnRemoteDesktop.png" class="aligncenter" style="width:60%; " alt="image" /></p>
+
+<h3 id="select-an-image-and-launch-an-instance">Select an Image and launch an instance</h3>
+
+<p>Instances originate from <em>Images</em>. To create your virtual machine, you will have to select an Image.</p>
+<div class="bgDefinition" style="min-height: 55px;">
+					<img src="/images/glyphicons-352-book-open.png" alt="image" align="left" style="width:24px; height:22px;
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>An <em>Image</em> which can be used to launch <em>instances</em> captures the configuration of a computer system, including the Operating System, and stores it in an <em>Image file</em>. An Image can be a plain “off the shelf” Operating System or include software packages and configuration changes to suit a particular purpose (e.g. Web-serving).</p>
+
+				</div>
+<p>NeCTAR has a few pre-configured Images that can make the set-up of a new instance much easier. They already have been checked for security, and are ready for you to use. In <a href="/package07/sections/index.html" title="Module 7">Module 7</a>, we will use such a pre-configured Image to launch our first instance. You may also create your own Image — for more details, please refer you to the documentation at the <a href="http://support.rc.nectar.org.au/docs/images">NeCTAR support website</a>.</p>
+
+<p>You can use a pre-configured Image as a starting base. To suit your purposes, an instance may need some tweaking, configuration changes and installing of software. It is a good idea to make a <em>copy</em> of the instance you have configured for your purposes (e.g. by installing software). You can then start up a new instance from exactly this state in the future. This is useful in particular if you are experimenting and then wish to return to a previous state of your VM.  <br />
+Copying the state of an instance is called taking a <em>Snapshot</em> of your instance. You can create <em>Images</em> from this Snapshot and use this image to start up new instances. This will save you having to re-do all the configuration steps (e.g. choosing OS, software, etc.). You can also share this Image with somebody else, so they can easily launch up an instance with the same configuration.
+Taking a snapshot is very easy, you can do it from the Dashboard. In <a href="/package09/sections/index.html" title="Module 9">Module 9</a>, we will discuss to do this.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>The use of both terms “Snapshot” and “Image” can be a bit confusing sometimes. An <em>“instance snapshot”</em> is essentially an Image. The <em>snapshot</em> may internally have a few additional properties (information attached to it) than a regular image, but the technical details are not important in the context of this course.</p>
+
+				</div>
+
+<p>Snapshotting works not only for an instance, but also for storage volumes. A volume Image can then be viewed as a “backup” of your data. This will be discussed in more detail in <a href="/package09/sections/index.html" title="Module 9">Module 9</a>.</p>
+
+<p>Virtual machine (VM) instances in the Research Cloud are available in standard sizes:</p>
+
+<ul>
+  <li>
+    <p>Small (1 core), Medium (2 cores), Large (4 cores), Extra-large or XL (8 cores), XXL (16 cores)</p>
+  </li>
+  <li>
+    <p>Each VM core has 4 GB of memory (RAM) and 30 GB of local disk storage per core, so an XL VM instance has 8 processing cores, 32 GB RAM and 240 GB of local disk storage, called <em>instance storage</em>. You can get access to more than only the instance storage, which we will look at in <a href="/package06/sections/index.html" title="Module 6">Module 6</a>.</p>
+  </li>
+</ul>
+
+<h3 id="tracking-utilization">Tracking utilization</h3>
+
+<p>On the Dashboard, you can see the amount of resources you are using. You can also see how long your instances have been up and running.</p>
+
+<p><img src="images/dashboardUtilization.png" class="aligncenter" style="width:70%; margin-top:20px; margin-bottom:20px;" alt="image" />
+You may also want to <em>monitor</em> your virtual machine(s), i.e. keep track of CPU usage, memory usage, etc. You may also want to set up system alerts. The Dashboard does not provide any tools to do this; you will have to use tools for virtual machine <em>monitoring</em>. <a href="/package10/sections/index.html" title="Module 10">Module 10</a> will talks about VM monitoring.</p>
+
+<h3 id="housekeeping">Housekeeping</h3>
+
+<p><em>Updates</em></p>
+
+<p>Just as you need to regularly update your local office computer to ensure the newest security updates are installed, you also need to maintain your virtual machine. On <em>Linux</em> systems, there are command line tools which allow an easy update and upgrade of your system. At the time of writing, only virtual machines running <em>Linux</em> can be created on the NeCTAR cloud, so it will be easy to upgrade your system at regular intervals. We will discuss how to do this in <a href="/package07/sections/index.html" title="Module 7">Module 7</a>.</p>
+
+<p><em>Backups</em></p>
+
+<p>Backups are an essential part of any IT infrastructure, especially when it comes to data storage. The NeCTAR cloud does not backup your data or your instance automatically. You will have to do this yourself. There are tools you may use for this, which we will discuss in <a href="/package09/sections/index.html" title="Module 9">Module 9</a>.</p>
+
+<h2 id="mitigating-risks">Mitigating risks</h2>
+
+<p>In this section you will guided through an <em>overview</em> of tasks involved in order to make your virtual machine secure and protect it against hacking attempts. 
+In <a href="/package08/sections/index.html" title="Module 8">Module 8</a>, we will be talking about security of cloud services and your virtual machine in more detail.</p>
+
+<h3 id="choose-secure-passphrases">Choose secure Passphrases</h3>
+
+<p>Whenever you are prompted to choose a password for your services, you should always choose a secure passphrase.</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Secure passwords consist of a combination of alphanumeric characters (letters a-Z and numbers 0-9), <strong>and special characters</strong> like the underscore _ and hash #. You should use a combination of all (a mix of uppercase and lowercase letters, numbers and special characters).</p>
+
+<p>The password should be <strong>at least 10 characters</strong> long, and it should be hard to guess.</p>
+
+<p>You should also be able to <strong>remember it, or save it</strong> in a secure place, to ensure you don’t lose access to your own services.</p>
+
+<p>You should <strong>never share your password</strong> with anyone!</p>
+
+<p><em>Note:</em> You should avoid exotic special characters (e.g. umlauts) and white spaces as they may cause problems on some systems.</p>
+
+				</div>
+
+<p>To get an impression of how significant the difference between various password lengths is, the figure below shows how long it would to take to crack a password when using 1000 cloud servers together to do the cracking:</p>
+
+<p><img src="images/passwordStrength.png" class="aligncenter" style="width:50%; margin-top:20px;margin-bottom:20px;" alt="image" /></p>
+
+<p>You will need to choose passphrases at several occasions. For example, before you can establish a connection to your virtual machine, you will have to generate keys which encrypt the connection between you and the virtual machine. A <em>key</em> is associated with a passphrase and it is needed to access your instance. We will do this in <a href="/package07/sections/index.html" title="Module 7">Module 7</a>.</p>
+
+<p>Evidently, <strong>never share passwords or private keys</strong> with anyone not trusted. If you want to give someone access to your virtual machine, they should have their own keys to it, and not use yours. You can then block access to them any time by removing their key from your virtual machine. We will talk more about this in <a href="/package07/sections/index.html" title="Module 7">Module 7</a>.</p>
+
+<h3 id="firewall-protection">Firewall protection</h3>
+
+<p>The NeCTAR instances come with a firewall protection already in place. When you launch and manage your virtual machine, you will have to specify the <em>firewall rules</em> for it. You will use the Dashboard to create <em>security groups</em>, which basically are a collection of firewall rules. When you first create your virtual machine, the default firewall rules allows <em>no access</em> from remote by default — so by default, your instance is secure. However you <em>will</em> need to allow certain forms of access, otherwise you won’t be able to connect to the instance yourself.</p>
+
+<p>While <a href="/package07/sections/index.html" title="Module 7">Module 7</a> will talk you through the steps of setting up the firewall rules, this is a good place to prime ourselves with some background knowledge.  <br />
+To open up access to the virtual machine, you need to free up <strong>Ports</strong> in the firewall rules.</p>
+<div class="bgDefinition" style="min-height: 55px;">
+					<img src="/images/glyphicons-352-book-open.png" alt="image" align="left" style="width:24px; height:22px;
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>A <strong>Port</strong> is a communications endpoint to a logical connection between computers. 
+Typically, a computer is provided with several ports which can be used by applications to establish communications.</p>
+
+				</div>
+<p>You can think of a Port like a plug: a network connection between two applications is established when two such plugs are connected. Then, the two applications can talk to each other via this connection.</p>
+
+<p><img src="images/PortCommunications.png" class="aligncenter" style="width:80%; " alt="image" /></p>
+
+<p>On our local computer’s end of the connection, our application running on our computer is used to send commands to the remote computer (e.g. the VM), and on the remote computer’s side the commands are received and processed by a matching application. The application on the remote machine is commonly called the <strong>server application</strong>, while the application on our computer is the <strong>client application</strong>. We say that the  <strong>“server application  is <em>listening</em>“</strong> to incoming connections from client applications. After the connection is established, the applications can talk to each other.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><strong><em>Example:</em></strong> our <em>client application</em> may be the <em>Firefox</em> browser, which we use to load a website; The <em>server application</em> on the instance may be the web-server <em>Apache</em>, which retrieves the requested website file and sends it back to us. Both applications may communicate through <em>Port 80</em>, which is the default port to use for the insecure <em>http</em> protocol. So in order to allow your virtual machine to be a webserver, you need to free up <em>Port 80</em> in your firewall rules (we will actually do this in Module 7). The <em>Apache</em> web server then “listens” on <em>Port 80</em> and handles <em>all</em> connections which come into Port 80.</p>
+
+<p><em>Note:</em> If somebody would spy on your connection through Port 80 (the default <em>http</em> port), they will be seeing the websites which are being transferred. However for public Websites (e.g. your homepage), this is not a concern, as they are public anyway. If you wanted to encrypt the data being transferred (e.g. for credit card payments), you would need to set up a <em>https</em> connection for your websites instead.</p>
+
+				</div>
+
+<p>Note that each Port that you free up is also a <strong>potential entry point</strong> to your instance. However, a <em>server application</em> needs to be “listening” to this port in order to establish a connection. If no server application is listening to the Port, it is also not possible to connect to it.
+You have to make sure that the server application which is “listening” for incoming connections on the Port is secure, or it could compromise your instance and make it vulnerable to hacking attempts.</p>
+
+<p><strong>Summary:</strong></p>
+
+<ol>
+  <li>
+    <p>You should <strong>only free up Ports which are required</strong>, and not a whole set of ports.  <br />
+ Why? Say your VM gets infected and a malicious <em>server application</em> tries to open up access at some Port, say 5000. If you have freed up all ports, the malicious application will be successful. Freeing up only the necessary ports increases security because the likelyhood of finding an open port is smaller. If, for example, you free up only port 70 (to name a random choice), and a server application is listening for connections on port 70, there will be <em>no</em> free port which allows access from outside (because port 70 is already busy)!</p>
+  </li>
+  <li>
+    <p>You should also make sure that the installed <strong>server application is secure</strong> (not some dubious software you downloaded from the internet) and that it is up and running, listening on this Port for incoming connections.</p>
+  </li>
+</ol>
+
+<h2 id="secure-access">Secure Access</h2>
+
+<p>When you connect to your virtual machine, <em>always</em> use an encrypted connection. It is possible to set up insecure connections if you allow this on your firewall rules of your virtual machine — however for obvious reasons, this is not recommended.</p>
+
+<p>To connect to the instance yourself, you should set up a <strong>ssh connection</strong> to the virtual machine or use other secure ways to connect. We will establish a ssh connection to the instance in <a href="/package07/sections/index.html" title="Module 7">Module 7</a>.</p>
+
+<div class="bgDefinition" style="min-height: 55px;">
+					<img src="/images/glyphicons-352-book-open.png" alt="image" align="left" style="width:24px; height:22px;
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><strong>SSH</strong> (short for “Secure Shell”) encrypts connections such that the data coming through can only be deciphered with the <strong>ssh key</strong>.</p>
+
+<p>To establish a ssh connection, two keys are required: The <strong>private</strong> and the <strong>public</strong> key. When the key pair is generated, a passphrase can be chosen for extra security. The private key resides on the users computer and should never be shared with anyone. The public key is added to the remote machine (the instance). Only when the two keys are present at both ends of the connection, then a connection can be established and the data going through the ssh connection will be deciphered with the keys and the passphrase which was used to generate it.</p>
+
+<p>By default, ssh uses <em>Port 22</em>. On the remote machine (the instance), an <em>ssh server</em> is be running which accepts connections from <em>ssh clients</em>.</p>
+
+<p>Many applications use <strong>ssh</strong> to encrypt connections. For example, if you copy files between your local computer and the virtual machine, you may use the command <strong>scp</strong> to copy the files, which also uses the ssh protocol.</p>
+
+				</div>
+
+<p><img src="images/SSHKeys.png" class="aligncenter" style="width:80%; " alt="image" />
+The image above shows two connected computers: Your local computer and your instance. When establishing a connection, the <em>ssh client and server</em> are in charge for encrypting and decrypting the data packages which travel between the computers. The end client/server applications receive the unencrypted packages from the ssh server/client.</p>
+
+<p><strong>SSH Tunnelling</strong></p>
+
+<p>If you have an application which is not designed for a secure connection by default (e.g. the VNC servers we will set up in <a href="/package07/sections/index.html" title="Module 7">Module 7</a>), you can still make the connection secure through the use of <em>ssh tunneling</em>. As the name suggests, this technique also uses the ssh protocol and operates through the ssh client and server applications communicating via Port 22. The nice thing about SSH tunnels is that they are encrypted. Nobody is going to see what sites you’re visiting, they’ll only see an SSH connection to your server.</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Whenever you want to run an application which does not have secure connections in-built, ensure security by setting up an ssh tunnel.</p>
+
+				</div>
+
+<p>SSH Tunnelling is best explained with an example. In <a href="/package07/sections/index.html" title="Module 7">Module 7</a>, we will then go through the specifics steps to establish an ssh tunnel.</p>
+
+<ul>
+  <li>
+    <p>Imagine you want to connect to a <em>server application</em> (e.g. a VNC server) which is running on your virtual machine. This server application listens for incoming connections on <em>Port 5901</em> and does not inherently support encryption. So if we connected our client application directly (e.g. our client application’s <em>Port 5900</em> to the server application’s <em>Port 5901</em>), it would go through an insecure connection, and other people could be reading our communication with the server application.</p>
+  </li>
+  <li>
+    <p>To get around this, we can <em>redirect</em> all traffic between our Port 5900 and the server’s Port 5901 through a <em>ssh tunnel</em>. So all traffic from our local Port 5900 will be <em>redirected</em> to our local Port 22, which is used by our <em>ssh client</em>.</p>
+  </li>
+  <li>
+    <p>The <em>ssh client</em> will encrypt all data, and send it off through the encrypted connection to the server. The data then arrives at the remote computers Port 22, where the <em>ssh server</em> receives it and redirects it to its port 5901, on which the <em>server application</em> (e.g. the VNC server) eventually receives our data.</p>
+  </li>
+</ul>
+
+<p><img src="images/sshtunnel.png" class="aligncenter" style="width:70%; margin-top:20px; margin-bottom: 20px;" alt="image" />
+The figure above shows the two connected computers again, but this time with a <em>ssh tunnel</em> (symbolised by the blue lines): The connection is “deviated” from the ports that the client/server applications <em>think</em> they are communicating through—so the applications are not aware about the communication actually going through Port 22. The <em>tunnel</em> has been set up to automatically catch all communications from the client/server ports (e.g. 5900/5901) and deviate it through the ssh connection. Note that the blue lines in the graph are only symbolic—the actual ports are not open to the outside in the firewall settings (except the ssh port of course).</p>
+
+<p>The neat thing about this is that neither our client application nor the server application realise that the connection had been encrypted, so we don’t need to configure anything complicated in the applications: Everything is handled automatically by redirecting traffic through our ssh tunnel. 
+The only thing you need to do is directing your client application to connect to the host <em>localhost</em> instead of the server. You usually specify the <em>host</em> as a URL, e.g. <em>http://www.server.com</em> or with the <em>IP address</em> of the server, and specify the <em>destination port</em> on this host. Instead, you now need to set it to <em>localhost</em> and the port you used for your ssh tunnel (5900 in the example above).
+You will also need to ensure that a ssh server is running on your virtual machine, but you will have one running already anyway, in order to connect to the server (we will do this in <a href="/package07/sections/index.html" title="Module 7">Module 7</a>).</p>
+
+<h3 id="limiting-access">Limiting access</h3>
+
+<p>You should only grant access to your virtual machine to people you trust. Each person should ideally have their own user account and password on the instance, and use their own ssh keys. You should keep the main user account, which we will be using in the exercises in <a href="/package07/sections/index.html" title="Module 7">Module 7</a>, only for administration purposes. You can add other users public ssh keys to the instance so they can connect to it—<a href="/package07/sections/index.html" title="Module 7">Module 7</a> also will show you how to do this.</p>
+
+<p><em>Note:</em> When you create a new user, you can give them administration (“<em>root</em>”) access by adding them to the user group <em>sudo</em>.</p>
+
+<h3 id="protection-software">Protection software</h3>
+
+<p>Linux, Unix and other Unix-like computer operating systems are generally regarded as very well-protected against computer viruses, but they are not immune. There has <em>not yet</em> been a single widespread Linux virus/malware infection like on Windows. However, better safe than sorry.</p>
+
+<p>Your VM is already protected by a firewall, but you may also want to install an AntiVirus protection.</p>
+
+<h3 id="know-your-virtual-machine-and-keep-things-tidy">Know your virtual machine and keep things tidy</h3>
+
+<ul>
+  <li>
+    <p>Know your virtual machine! Monitor your system—you will then notice when something abnormal happens.</p>
+  </li>
+  <li>
+    <p>Many types of attacks specifically target Web servers. Use separate virtual machines for them, and keep your research work in a separate virtual machine.</p>
+  </li>
+  <li>
+    <p>Purge (erase) residual data from your storage before you shut your instance down or delete the storage. <a href="/package09/sections/index.html" title="Module 9">Module 9</a> will show how you can do this.</p>
+  </li>
+  <li>
+    <p>Don’t re-provision virtual machines constantly, rather keep optimizing one and then make snapshots of it. Re-configuring the same type of instance many times (which is quite common) poses a risk for human error — you might forget an important step when setting it up quickly. In <a href="/package09/sections/index.html" title="Module 9">Module 9</a> we will see how to make snapshots of our instance.</p>
+  </li>
+</ul>
+
+<h3 id="encrypting-data">Encrypting data</h3>
+
+<p>Encrypt sensitive data before you upload or download it to or from your instance, unless you are already using an encrypted connection to copy files (e.g. <em>scp</em> or <em>sftp</em>). This will slow down the process of copying files, because they have to be encrypted and decrypted, so only do this if your data is critical. Also, the risk is added of losing access to your data forever if you lose the encryption key or forget the passphrase.  <br />
+In <a href="/package08/sections/index.html" title="Module 8">Module 8</a> we will go through a few tools you may use to encrypt your data.</p>
+
+<h3 id="nectar-security-guidelines">NeCTAR security guidelines</h3>
+
+<p>Please also read the <a href="http://support.rc.nectar.org.au/docs/security-guidelines">security guidelines on the NeCTAR support website</a>.</p>
+
+<h3 id="summary">Summary</h3>
+
+<p>In summary, things to watch out for to mitigate risks:</p>
+
+<ul>
+  <li>Use secure passphrases.</li>
+  <li>Carefully configure the firewall.</li>
+  <li>Always use secure methods of access (e.g. ssh logon terminals or ssh tunneling).</li>
+  <li>Limit access only to trusted users.</li>
+  <li>Know your virtual machine and keep things tidy.</li>
+  <li>Encrypt your data.</li>
+</ul>
+
+<h2 id="cleaning-up">Cleaning up</h2>
+
+<p>When you are finished with your work and don’t need the virtual machine any more, you should <em>terminate</em> it, so it does not take up any more of your allocated resources. By deleting the instance and volumes you don’t need any more, you <strong>free them up for other researchers</strong> to use. You can easily terminate an instance on the Dashboard.</p>
+
+<p>However before you terminate it, don’t forget to back up your data that is on the <em>on-instance storage</em> (<em>Note:</em> <a href="/package06/sections/index.html" title="Module 6">Module 6</a> will discuss the different storage types). Data on on-instance storage will be lost after you terminate your instance. You may also want to create a Snapshot of your instance before you terminate it, so you can re-launch it any time. <a href="/package09/sections/index.html" title="Module 9">Module 9</a> will discuss options to back up your data and how to take a Snapshot of your instance and later re-launch it from this snapshot.</p>
+
+<p>Similarly, if you don’t need your <em>volume data storage</em> (discussed in <a href="/package06/sections/index.html" title="Module 6">Module 6</a>) any more, you should delete it. You can also do this in the Dashboard. Before you delete it, you should <em>securely erase</em> all the data on it, so nobody else can restore it if they get access to the portion of the harddrive where your data was stored before.      <br />
+You will most likely want to back up your data on the storage, so you can restore it at a later time.   <br />
+<a href="/package09/sections/index.html" title="Module 9">Module 9</a> will show how to safely erase a hard-disk and how to create a backup of it and restore it at a later time.</p>
+
+<h2 id="getting-support">Getting support</h2>
+
+<p>NeCTAR has a great support team. There are several ways to get support:</p>
+
+<ul>
+  <li>
+    <p>If you need help with using the Research Cloud or advice on other cloud solutions, first contact your local eResearch office or IT services.</p>
+  </li>
+  <li>
+    <p>The NeCTAR project also offers online user guides and technical support through the <a href="http://support.nectar.org.au/">NeCTAR Research Cloud support site</a>.</p>
+  </li>
+  <li>
+    <p>Support for the NeCTAR Research Cloud is handled by NeCTAR and available weekdays 9am AEST to 5pm AEST. Before making a support request, try:</p>
+
+    <ol>
+      <li>
+        <p>Browsing the <a href="https://support.nectar.org.au/support/solutions/folders/6000206494">Status</a> page to be informed of any known issues.</p>
+      </li>
+      <li>
+        <p>Consulting the <a href="https://support.nectar.org.au/support/solutions">Knowledge Base</a>.</p>
+      </li>
+      <li>
+        <p>Searching the <a href="https://support.nectar.org.au/support/discussions/6000043424">Forums</a> for answers.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>To lodge a <em>support request</em> visit the <a href="https://support.nectar.org.au/support/solutions/folders/6000206821">Contact</a> page.</p>
+  </li>
+</ul>
+
+<h2 id="resource-allocation-requests">Resource allocation requests</h2>
+
+<p>After you have used the Project Trial to gain experience with virtual machines, you may want to request more resources on the Research Cloud. You will have to submit a request for this.</p>
+
+<p>The NeCTAR Resource Allocation Committee (RAC) approves resource allocation on the basis of the scientific and technical merit of the application and its requirements. You are asked to specify some details about your research and how you plan to use the resources you are requesting.</p>
+
+<p>Before making an allocation request it is best to discuss your requirements with your local eResearch office or IT services. You may easily get access to resources available to your organisation.</p>
+
+<p>The following steps describe the process of submitting such a request.</p>
+
+<p><strong>1. Assess your options.</strong>   <br />
+If you are associated with one of the <a href="http://support.rc.nectar.org.au/docs/building-nodes">cloud nodes</a> you may be eligible for access to a local allocation of cloud resource.
+So speak to your local node about this prior to submitting a resource request.
+Otherwise, your request will be reviewed by the NeCTAR Allocation Committee.</p>
+
+<p><strong>2. Submit a request.</strong>   <br />
+Use the Allocation Request form from the left hand side menu of your <a href="https://dashboard.rc.nectar.org.au">Dashboard</a>.
+<img src="images/requestAllocation.png" class="aligncenter" style="width:50%; margin-top:10px;margin-bottom:20px;" alt="Dashboard Allocations" /></p>
+
+<ul>
+  <li>On <strong>Allocations &gt; New Request</strong> you can request to create a <strong>new project</strong> with the resources you need.</li>
+  <li>On <strong>Allocations &gt; My Requests</strong> you can <strong>add resources</strong> to your <strong>existing project</strong> (you will also see your previous requests here).</li>
+</ul>
+
+<p>As a rule of thumb, the more resources you ask for, the more detail we require about your research. Requesting a few cores won’t be scrutinised as much as requesting tens or hundreds of cores.</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>The amount of <strong>CPU hours</strong> you request is the amount of time your instance will be in existence — <em>not</em> the time the CPU is actually busy with your programs! That is, all time counts between when you <em>launch</em> the VM and <em>terminate</em> it — regardless whether the CPU is idle the whole time, or the VM is shut down or suspended. While you have access to the VM, it counts as CPU hours!</p>
+
+<p>Consider this when you request your allocation, and also when you use your VM — you may <em>back up</em> the state of your VM and then <em>“terminate”</em> it while you don’t need it. It will be easy to restore it to the exact same state when you need it again. More about this in <a href="/package09/sections/index.html" title="Module 9">Module 9</a>.</p>
+
+				</div>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Within the Research Cloud resources are allocated to projects, not users. Projects can have one or more users.
+In the dashboard your single login will allow you to switch between all projects you have access to.</p>
+
+<p>Each project (other than “<em>Project Trials</em>” with names like pt-xxxx) has at least one Project Manager. Requests to join a project or become an Project Manager for a project should be directed to the management of that project.
+For more information about projects and how to manage them, see the <a href="http://support.rc.nectar.org.au/docs/managing-project">NeCTAR support website</a></p>
+
+				</div>
+
+<p><strong>3. Wait for application to be processed.</strong>   <br />
+After you submit a request, you will receive a confirmation email with all your details.
+View or edit your request by clicking on the ‘My Requests’ tab at the Dashboard.  <br />
+Your request will be reviewed by the your local node (if any) or the NeCTAR Allocation Committee.
+This can take <strong>up to four weeks</strong> to process.
+If there are any issues with your request, we will get in touch with you.
+You may be asked to provide more detail about your research or to clarify your technical requirements.</p>
+
+<p><strong>4. Manage your allocation.</strong>   <br />
+When your application has been approved, a <em>Research Cloud Project</em> will be created for you. When submitting the request, you have been given the chance to suggest a name (title) for the project. If this name was still available, that’s what your project will be called.  <br />
+You will receive an email confirming everything is ready to go.
+You can now start using your resources allocated to the project.</p>
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>As a user, you can be a member of more than one project.
+You select the current project to access at the Dashboard using a drop down menu on the left hand side.</p>
+
+				</div>
+
+<p>One more thing you may want to do is <strong>adding or removing users</strong> to the project.
+Users can be members of multiple Projects sharing each Projects resources with its members.
+To add other users as members of your Project(s), see the <a href="http://support.rc.nectar.org.au/docs/managing-project">NeCTAR support website</a></p>
+
+<p>You may also want to <strong>increase resources</strong> of your existing Project. You can make changes to your request at any time by clicking on ‘My Requests’ at the dashboard. This will show the requests you have made and you can update them.
+If you change and resubmit the request, it will go through the review process as outlined earlier.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>You can find more information about the allocation process on the <a href="http://support.rc.nectar.org.au/docs/allocations">NeCTAR support website for allocations</a>.</p>
+
+				</div>
+
+<h2 id="summary-1">Summary</h2>
+
+<p>You have now finished this module and should have a good idea of what is involved in working with the Research Cloud. You know which steps are necessary in order to get the Research Cloud working and keeping your VMs secure.</p>
+
+<p>In this module you have learned about processes to:</p>
+
+<ul>
+  <li>get onto the Research Cloud.</li>
+  <li>Launch an instance and connect to it.</li>
+  <li>Do housekeeping and take other measures to mitigate risks.</li>
+  <li>Clean up after you by terminating instances and deleting storage.</li>
+  <li>Get support.</li>
+  <li>File an allocation request.</li>
+</ul>
+
+<p>Are you curious about more details? Then the next modules will be exciting for you!</p>
+
+<p>Continue with <a href="/package06/sections/index.html" title="Module 6">Module 6</a>.</p>
+
+
+      </div>
+    </div>
+  </body>
+
+</html>

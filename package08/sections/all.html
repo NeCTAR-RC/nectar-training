@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel='shortcut icon' href='/images/icon.png' />
+
+  <title>Security</title>
+  <meta name="description" content="Nectar National Training Resources
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://training.nectar.org.au/package08/sections/all.html">
+  <link rel="alternate" type="application/rss+xml" title="Nectar Training" href="http://training.nectar.org.au/feed.xml" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61845992-2', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+
+
+  <body>
+    <div class="page-content">
+      <div class="wrapper">
+        <p><a href="/"><img src="/images/nectar_cloud_logo.jpg" alt="Nectar"/></a></p>
+        <h3>Module 8</h3>
+        <h1>Security</h1>
+
+        
+<h2 id="introduction">Introduction</h2>
+
+<p>This module provides an introduction to key security issues, dangers and consequences when running a virtual machine in the cloud. Practical advice for making your machine secure and preventing it from being hacked. An introduction to data encryption including usage of a variety of tools is also given.</p>
+
+<p>Cloud computing has grown exponentially over the last few years. However security concerns are still quite common amongst those who are reluctant to adopt it. Is cloud computing safe? What are the common security concerns, and how justified are they?</p>
+
+<p>We will talk about security concerns in this Module and describe how NeCTAR addresses security issues, and what you need to do to make your virtual machine safe and protect it.</p>
+
+<h3 id="videos">Videos</h3>
+
+<p>The following videos go through most of the content in this module and offer a less in-depth description of the subject than the documentation does.</p>
+
+<p><a href="https://www.youtube.com/watch?v=iRyCkPVqgHA">https://www.youtube.com/watch?v=iRyCkPVqgHA</a></p>
+
+<p><a href="https://www.youtube.com/watch?v=eb73lFe4lvQ">https://www.youtube.com/watch?v=eb73lFe4lvQ</a></p>
+
+<p><a href="https://www.youtube.com/watch?v=emFRq7mXcbQ">https://www.youtube.com/watch?v=emFRq7mXcbQ</a></p>
+
+<h3 id="conventions">Conventions</h3>
+
+<p>The notation throughout the training documents can be interpreted as follows:</p>
+
+<p>Words in <em>italics</em> are used for names and terminology, e.g. name of a software, or name of a computing concept. It may also just emphasise a word in the traditional way. Quotations are also written in italics and are put in between quotatioin marks.</p>
+
+<p>Words in <strong>bold</strong> are used to highlight words which identify important concepts of a paragraph, to make it easier for users to skim through the text to find a paragraph which explains a certain idea, concept or technology.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><strong>Additional information</strong> which is optional to read is displayed in <em>info boxes</em> like this one.</p>
+
+				</div>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><strong>Important information</strong> is displayed in boxes like this one.</p>
+
+				</div>
+
+<div class="bgDefinition" style="min-height: 55px;">
+					<img src="/images/glyphicons-352-book-open.png" alt="image" align="left" style="width:24px; height:22px;
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><strong>Definition of terms</strong> are displayed in boxes of this style.</p>
+
+				</div>
+
+<div class="bgPrerequisite">
+					<img src="/images/glyphicons-333-certificate.png" alt="image" align="left" style="width:17px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Possibly specific <strong>prerequisites</strong> for reading a particular section are contained in this type of box at the beginning of a section.</p>
+
+				</div>
+
+<p>The use of command line tools is part of this course. In a <em>Terminal</em>, you will be directed to type in <em>commands</em>. Commands are formatted as follows:</p>
+
+<p><code>command-name argument1 argument2 ... argumentn</code></p>
+
+<p>Throughout the exercises, when you see a word in pointed brackets, like &lt;<em>this-word</em>&gt;, it means that you have to replace everything inside the brackets, and <em>including the brackets</em>, with whatever is described within the brackets.</p>
+
+<p>For example, if you are prompted to run a command named <em>the-command</em> which takes two arguments:</p>
+
+<p><code>the-command -f &lt;yourfile&gt;</code></p>
+
+<p>Then you have to replace the second argument, &lt;yourfile&gt;, with the <em>file name</em> that is being referenced in the exercise. For example</p>
+
+<p><code>the-command -f thefile.txt</code></p>
+
+<p>When editing a file, the contents of it will be displayed in a different font and with background colour as follows:</p>
+
+<div class="bgEdit"><pre class="PreformatEdit">The content of the file
+The next line in this file</pre></div>
+
+<p>Output on the command line terminal is printed in boxes formatted as follows:</p>
+
+<div class="bgTerminal"><pre class="PreformatTerminal">NectarInstance:~ Jennifer$ whoami
+Jennifer</pre></div>
+
+<h2 id="security-concerns-and-benefits">Security concerns and benefits</h2>
+
+<p>The widely spread perception is that cloud computing poses a whole lot of new risks. But in fact, security can <em>improve</em> with cloud computing: Security is often as good as or better than in traditional systems, because the providers infrastructure is maintained by a team of experts which are looking after the data center security around the clock. Cloud providers are able to devote their resources to solving security issues that many of their customers could not afford — and evidently it is the providers top priority to keep their data center safe, or they would lose their reputation and their customers.</p>
+
+<p>More trust is needed in that the administrators of cloud computing infrastructure ensure security with as much competence as any good IT department could do. Unfortunately, 100% security does not exist in IT — a security breach can happen in any organisation, whether it is a cloud provider, a research organization or a business. It is a matter of trust in which IT department can ensure maximum security best.</p>
+
+<p>Perhaps the biggest security concern among cloud computing customers is <em>data loss</em>. Here are some figures from the <a href="http://www.databarracks.com">Databarracks 2014 Data Health report</a>), in which a number of small and large organisations report the causes of data loss:</p>
+
+<ul>
+  <li>
+    <p>21% Hardware failure</p>
+  </li>
+  <li>
+    <p>19% Software failure</p>
+  </li>
+  <li>
+    <p>18% Human error / accident</p>
+  </li>
+  <li>
+    <p>15% Corruption</p>
+  </li>
+  <li>
+    <p>7%  Theft</p>
+  </li>
+  <li>
+    <p>7%  Internal security breach</p>
+  </li>
+  <li>
+    <p>6%  External security breach</p>
+  </li>
+  <li>
+    <p>5%  Natural disaster</p>
+  </li>
+</ul>
+
+<p>As the numbers show, human error is still a leading case of data loss! Internal and external security breaches are not far removed from the figures for natural disasters.</p>
+
+<p>Let’s say you can trust your cloud provider in ensuring the best protection against software and hardware failures. This still leaves one very important factor in keeping your virtual machine and data safe: yourself! There are some parts which you are responsible for when ensuring the security of your virtual machine and data. This holds in particular for <em>IaaS</em> services (in <em>SaaS</em> services, the cloud provider is responsible for security control, <em>PaaS</em> services have shared responsibility between provider and customer). Your virtual machine is an <em>IaaS</em> Service, so there will be things you need to observe to make your services secure.</p>
+
+<p>There are a few security issues which are particular to cloud computing, but they are usually not a major security concern, if actions are taken by the cloud provider and yourself to protect against these threats.</p>
+
+<p>It is not difficult to ensure the best possible security for your virtual machine and data, but you have to be aware of which the tasks involved are. We will talk through this in this Module.</p>
+
+<h3 id="main-threats">Main threats</h3>
+
+<p>Main threats to cloud computing are posed by the following (conforming with the Cloud Security Alliance):</p>
+
+<ul>
+  <li>
+    <p><strong>Cyber attack</strong>: Risks include</p>
+
+    <ul>
+      <li>
+        <p>a) <em>nefarious</em> use of cloud computing: hackers can upload malware to a public cloud and use the power of the cloud to attack other computers. For example, they may use hundreds of cloud computers to hack passwords.</p>
+      </li>
+      <li>
+        <p>b) Distributed Denial of Service (<em>DDoS</em>) attacks. Denial-of-service attacks are attacks meant to prevent users of a cloud service from being able to access their data or their applications. Clouds are of particular interest to hackers because bringing down the services affects a wide group of people. Therefore, cloud providers must invest in robust measures to protect against such attacks.</p>
+      </li>
+      <li>
+        <p>c) Phishing, fraud and exploitation of software vulnerabilities to get access to your data.
+  Although most cloud providers have stringent security measures, as technology becomes more sophisticated, so do cyberattacks. Clouds also have additional vulnerabilities: Virtual switches and the hypervisor are two examples of points of attack that are not present in the traditional data center.</p>
+      </li>
+    </ul>
+
+    <p><em>Protection from the provider:</em> The team of experts at the cloud’s data center have to take measures to protect against this extra risk. Traditional technical controls such as firewalls, Intrusion Detection Systems (IDS), Intrusion Prevention Systems (IPS) or Network Access Control (NAC) products that ensure access control continue to be critical components of the security architecture.</p>
+
+    <p><em>Protection from your side:</em> You should not install potentially harmful software on your virtual machine. Be sure you can trust the software vendor. Also, only free up necessary ports in the firewall rules!</p>
+  </li>
+  <li>
+    <p><strong>Access to your Data:</strong> The cloud provider can potentially access the data that is on the cloud at any time. They can even be obliged to share information with third parties if necessary for purposes of law and order, even without a warrant.</p>
+
+    <p><em>Protection from you</em>: You can encrypt data that is processed or stored within the cloud to prevent unauthorized access.</p>
+  </li>
+  <li>
+    <p><strong>Data Loss &amp; Leakage</strong> <strong>/ Risks of shared access (Multi-tenancy)</strong>: In a cloud provider platform being shared by different users (a “<em>multi-tenant</em>” platform) it is possible that data belonging to different customers resides on the same server. A few issues arise from the fact that resources (CPU, memory, etc) are shared. (a) resources can be fully taken up by one virtual machine (also called a “<strong>noisy neighbour</strong>”), effectively creating a denial-of-service-attack to others sharing the same resources. (b) data can leak from one customer to another:  Researchers have been able to recover other tenants’ data from what was supposed to be new storage space. (c) If a multi-tenant cloud is not properly set up, a flaw in one clients application could allow an attacker access not only to that clients data, but every other clients data as well.</p>
+
+    <p><em>Protection from the provider</em>: Protecting the cloud platform with good protection software and setting it up securely is a high priority.</p>
+
+    <ul>
+      <li>
+        <p>Transparent Cloud Protection System (TCPS) is a protection system which is effective in detecting most kind of attacks by monitoring the VMs.</p>
+      </li>
+      <li>
+        <p>The hypervisor can be configured so that when it detects extreme resource consumption from one VM (the “noisy neighbour”), it can evaluate whether an attack is being made and automatically restart the problematic VM. Another way to protect against noisy neighbours is to set a resource limit (machines can only use so much) or a resource reservation (other machines cannot use resources that are reserved for another).</p>
+      </li>
+      <li>
+        <p>A secure infrastructure is required that ensures customers virtual machines are isolated in a multi-tenant environment. Isolation can be achieved by using virtual switches and/or VLANs for the networks.</p>
+      </li>
+    </ul>
+
+    <p><em>Protection from you</em>:</p>
+
+    <ul>
+      <li>
+        <p>You can encrypt your data to reduce the impact of a data breach. However be careful, because if you lose your encryption key, you’ll lose your data as well.</p>
+      </li>
+      <li>
+        <p>You can keep offline backups of your data to reduce the impact of a catastrophic data loss, however be aware that this increases your exposure to data breaches (because there is a security risk at <em>two</em> data centers). Nevertheless, keeping physically separate backups of important data is generally recommended, as you can not protect your data on the cloud against physical disasters as fires or earthquakes leading to the data centres being destroyed.</p>
+      </li>
+      <li>
+        <p>When you release storage space because you don’t need it any more, make sure you securely erase all data (see also Module 9 for how to do this), so it does not leak to other tenants.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Hardware Failure and Data loss</strong>: When the hardware fails, all data may be lost, if it has not been backed up. The state of the virtual machine may also be lost. Data loss by physical damage to the data storage is a risk which exists in any data centre.</p>
+
+    <p><em>Protection from the provider:</em> Create separate backups of all hard-drives.</p>
+
+    <p><em>Protection from you:</em> Backup your data at regular intervals and save it at a different physical location (e.g. your organisation’s data center). Similarly, take Snapshots of your virtual machine and save them as an image on a separate hard-drive, so you can easily re-launch it. <a href="/package09/sections/index.html" title="Module 9">Module 9</a> will discuss how you can do this.</p>
+  </li>
+  <li>
+    <p><strong>Data ownership</strong>: Legal ownership of the data is a risk as well. Many Terms of Service agreements do not mention ownership! There is a high risk that end users don’t know this, don’t read the many pages of the terms of service agreement, and just click “Accept”. Often, the data owner is actually the provider! There can also be a case that the data is owned by the provider only if it was created on the cloud (e.g. by a cloud application), but is owned by you if you have <em>uploaded</em> it. Make sure you know how your provider handles this.</p>
+
+    <div class="bgInfo">
+                  <img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+                      margin:0px; margin-right:10px; margin-bottom:5px;" />
+                  <p>NeCTAR <em>never</em> claims ownership of <em>any</em> data that is uploaded by you to the cloud. Data ownership is also completely retained by you when you create data directly on the cloud, e.g. via eResearch tools or Virtual Labs. <strong>The only owner of the data is you.</strong>   <br />
+  However, NeCTAR and the Research Cloud software may need to move or isolate your data in the act of operating the infrastructure on which it
+resides, for example if your instance poses a security threat then the instance may be <em>suspended</em>, which means you’ll be locked out of your data for however long it takes to deal with the incident.</p>
+
+              </div>
+  </li>
+  <li>
+    <p><strong>Access security</strong>: This affects authentication, access control and data encryption. It is important that access is obtained via secure connections. Nobody else except you should be able to see or access your data. What happens when the data is deleted or not needed any more, are copies still kept? Many providers are not clear on that point. Is data encrypted? If so, are the private keys shared among tenants? Be aware also that governments may have the right to access your data even if they get a warrant.</p>
+
+    <p><em>Protection by the provider:</em> Encrypt the data and ensure complete deletion of data without keeping any copies.</p>
+
+    <p><em>Protection by you:</em> Access your resources via secure connections only. Never share your private key with anyone, and make sure you only use ssh keys which you have created yourself (see <a href="/package07/sections/index.html" title="Module 7">Module 7</a>). Be aware of whether several copies of your data are kept, and if so, request a complete deletion from the provider where necessary. Always choose secure passwords (see Module 5 “Mitigating risks”)!</p>
+  </li>
+  <li>
+    <p><strong>Malicious insiders</strong>: CERT defines a malicious insider as follows (source: <a href="http://www.cert.org/insider_threat">http://www.cert.org/</a>):</p>
+
+    <blockquote>
+      <p>“A malicious insider threat to an organization is a current or former employee, contractor, or other business partner who has or had authorized access to an organization’s network, system, or data and intentionally exceeded or misused that access in a manner that negatively affected the confidentiality, integrity, or availability of the organization’s information or information systems.”</p>
+    </blockquote>
+  </li>
+  <li>
+    <p><strong>Availability / Lack of Internet</strong>: Service interruptions can happen and they can go for hours or in the worst case even days. Another factor for loss of availability can be lack of Internet.</p>
+
+    <p><em>Protection from the provider:</em> Ensure service availability best as possible.</p>
+
+    <p><em>Protection from you:</em> Choose a reliable Internet Provider.</p>
+  </li>
+  <li>
+    <p><strong>Insecure Interfaces</strong> and APIs: 3rd parties can create an insecure application to interact with the cloud services, e.g. to provision, manage, orchestrate and monitor the VMs through such interfaces.</p>
+
+    <p><em>Protection from the provider:</em> Set up the cloud platform such that external software does not have privileges to provision, manage and orchestrate VMs (or only allow this for trusted software).</p>
+  </li>
+  <li>
+    <p><strong>Lack of full control</strong>: Especially in ready-to-use <em>SaaS</em> services, customers often have no control over updates or upgrades. They can find a new version of the service was provided overnight, removing a feature they needed, or adding one that raises new security issues.</p>
+  </li>
+  <li>
+    <p><strong>Insufficient knowledge</strong>: Many organisations rush into the cloud without knowing about the potential issues and risks and how to mitigate them.</p>
+
+    <p><em>Protection by you:</em> Pay attention in this Module and you will have the required knowledge to protect your resources adequately.</p>
+  </li>
+</ul>
+
+<h4 id="vm-specific-vulnerabilities">VM-specific vulnerabilities</h4>
+
+<p>Virtual machines have a number of their own vulnerabilities. A malicious virtual machine can potentially access other instances through shared memory, network connections, and other shared resources. Fortunately, these security concerns can be addressed effectively in a well-managed cloud. Most intrusions can be prevented by the users applying traditional security measures, as we have discussed in Module 5 (“Mitigating Risks”).</p>
+
+<p>Most VM specific vulnerabilities stem from the <em>hypervisor</em>. There are a number of different types of security breaches on the hypervisor level:</p>
+
+<ul>
+  <li>
+    <p><strong>Hyperjacking</strong>: This involves modifying the hypervisor to be malicious, or inserting a malicious hypervisor (a “rogue” hypervisor). In theory, a hacker with control of the hypervisor could control any virtual machine running on the physical server.</p>
+  </li>
+  <li>
+    <p><strong>VM Escape</strong>: A malicious program manages to “escape” out of a virtual machine and compromising the hypervisor. Then the program can assume control over all other VMs running on the physical computer.</p>
+  </li>
+  <li>
+    <p><strong>VM Theft:</strong> This is the ability to steal a virtual machine file electronically, which can then be run elsewhere. It is an attack that is the equivalent of stealing a complete physical server without having to enter a secure data center and remove a piece of computing equipment.</p>
+  </li>
+</ul>
+
+<p>Luckily, hypervisors are generally more secure than regular operating systems; The Hypervisor is a fairly simple program, which helps to limit such vulnerabilities.</p>
+
+<p>The NeCTAR cloud uses the <em>KVM</em> Hypervisor with <em>OpenStack</em>. <em>KVM</em> is a good choice in terms of security. The virtual machines managed by <em>KVM</em> run as unprivileged processes, which makes it safe. Techniques for Hypervisor protection include <em>sVirt, Intel TXT, and AppArmor, cgroups</em>, and <em>MAC Policy</em>. <em>KVM</em> has all these techniques in-built. 
+For more information, refer to the <a href="http://docs.openstack.org/security-guide/content/hypervisor-selection.html">OpenStack security guide</a>.</p>
+
+<p>Regular patching of the Hypervisor is important to refresh security. Also, appropriate security policies have to be applied. The NeCTAR cloud administration team is aware of the high security demands of Australias researchers and regularly updates the systems and applies a strict security policy to ensure maximum safety.</p>
+
+<p>In addition to the efforts the security team at NeCTAR are making, part of the security is also <strong>your responsibility</strong>, because not only the Hypervisor, but also your VM has to be secure (for example, to help prevent a <em>VM Escape</em> attack).</p>
+
+<ul>
+  <li>
+    <p>Since it is easy to restore an infected VM,  many users do not go through the effort to secure them with an Anti Virus Protection. Linux, Unix and other Unix-like computer operating systems are generally regarded as very well-protected against computer viruses, but they are not immune. So better safe than sorry: <strong>Install an Anti Virus Protection</strong>. On your Linux instance, you may install the popular <a href="http://www.avg.com">AVG Anti-Virus Software</a>, see for example <a href="https://help.ubuntu.com/community/Antivirus/Avg">this Ubuntu help page</a> which includes instructions. See also <a href="https://help.ubuntu.com/community/Antivirus">this page on ubuntu.com</a> for a list of AntiVirus software you may install.</p>
+  </li>
+  <li>
+    <p>It is also very important that you <strong>regularly update your VM’s operating system</strong> to ensure it has the newest security patches, e.g. on Ubuntu this can be done with the command:  <br />
+  <code>sudo apt-get dist-upgrade</code></p>
+    <div class="bgImportant">
+                  <img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+                    margin:0px; margin-right:10px; margin-bottom:5px;" />
+                  <p><strong>Keep in mind:</strong>  <br />
+Most cloud vendors do a better job securing data than their customers do. But a lot of security issues are also up to you—e.g. use a firewall and apply strict rules to it;  install an anti-virus protection on your VM; use secure passwords; don’t share your private key, etc. All factors you need to observe to ensure security have also been discussed on a more abstract level in Module 5 (“Mitigating Risks”).</p>
+
+              </div>
+  </li>
+</ul>
+
+<h3 id="security-benefits-of-the-cloud-and-virtual-machines">Security <em>benefits</em> of the cloud and virtual machines</h3>
+
+<p>The nice part is that using the cloud and a virtual machine does also comes with some security <em>benefits</em>.</p>
+
+<ul>
+  <li>
+    <p><strong>Abstraction</strong>: The hardware abstraction and isolation of the virtual machine makes it much more difficult for the attacker to gain unauthorized access on the physical machine. The OS and software running on the virtual machine are not even aware it is virtual, and does not know the cloud platforms OS or hardware configuration. An attacker of the virtual machine does therefore also not know details of the cloud platform environment, therefore manipulating and compromising the machine is much more difficult.</p>
+  </li>
+  <li>
+    <p><strong>State restore</strong>: It is easy to restore the state of a virtual machine: A Snapshot can be created and the virtual machine can be re-launched from this Snapshot, thereby returning to a state prior to attack or data loss. This is an easy method to remove malware and restore data.</p>
+  </li>
+  <li>
+    <p><strong>External monitoring</strong>: The hypervisors runs outside the virtual machine and may also monitor for malware, in addition to the protection which is running inside the VM, e.g. the installed anti-virus protection. If the virtual machine is being monitored, and an attack is detected, then the instance can be shut down or disabled. The paradox of physical machines is that if they have a virus, they cannot reliably detect whether they have a virus. VMs do not have this problem.</p>
+  </li>
+  <li>
+    <p><strong>Transience</strong>: An advantage of a VM is that it may be started remotely only when they are needed. Physical servers on the other hand often run permanently, even if they are not in use. This increases their likelihood for a malicious attack.</p>
+  </li>
+  <li>
+    <p><strong>Simplicity of Hypervisors:</strong> Hypervisors are much simpler than traditional operating systems, and are therefore much easier to secure. This makes it easier for software developers to minimize bugs and vulnerabilities.</p>
+  </li>
+  <li>
+    <p><strong>Off-premise data storage:</strong> Storing your data off-premise has its benefits too. If someone wanted to steal your data from the data center, they would have to break in there, which is a difficult task for itself, since data centers are well guarded. Also, they would be faced with banks of thousands of storage systems with meaningless labels on it, e.g. <em>1DC45-R7</em>. They would not know where your data is stored, and which machine to steal.</p>
+  </li>
+  <li>
+    <p><strong>Data availability:</strong> Object Storage (described in <a href="/package06/sections/index.html" title="Module 6">Module 6</a>) has a great data integrity. Because copies of your files are spread over several physical locations, you will have access to it even if one data center has an outage.</p>
+  </li>
+</ul>
+
+<h3 id="summary-of-your-responsibilities">Summary of your responsibilities</h3>
+
+<p>In summary, these are the things you need to look after:</p>
+
+<ul>
+  <li>
+    <p>Install an <strong>Anti Virus Protection</strong> on your instance.</p>
+  </li>
+  <li>
+    <p>Only free up necessary ports in the <strong>firewall rules</strong>.</p>
+  </li>
+  <li>
+    <p>Regularly <strong>update your VMs operating system</strong> to get the newest security updates.</p>
+  </li>
+  <li>
+    <p>Do not install potentially harmful software on your instance.</p>
+  </li>
+  <li>
+    <p><strong>Encrypt sensitive data</strong> on the cloud storage to prevent unauthorized access.</p>
+  </li>
+  <li>
+    <p>Regularly <strong>back up your data</strong> (see <a href="/package09/sections/index.html" title="Module 9">Module 9</a>).</p>
+  </li>
+  <li>
+    <p><strong>Securely erase all data</strong> when you release your storage resources (see <a href="/package09/sections/index.html" title="Module 9">Module 9</a>).</p>
+  </li>
+  <li>
+    <p>Always choose <strong>secure passwords</strong>! And <em>never</em> share your passwords or private ssh keys with anyone.</p>
+  </li>
+  <li>
+    <p><strong>Be aware</strong> of the risks: Carefully read through the information and advise given in this Module which helps you to avoid potential security problems.</p>
+  </li>
+  <li>
+    <p>[optional] Keep <strong>off-line backups</strong> of your important data—however only do this if you can store the backups at a safe place.</p>
+  </li>
+</ul>
+
+<h2 id="deployment-models">Deployment Models</h2>
+
+<p>There are several deployment models for a cloud which all imply different levels of security 
+(Source: <a href="http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf">NIST definition of cloud computing</a>):</p>
+
+<ul>
+  <li>
+    <p><strong>Private cloud:</strong> Private cloud services are owned by an enterprise or organisation. A Private cloud can be built on existing on-premises or off-premises computing infrastructure. Private cloud installations are in part motivated by users’ desire to retain control over the infrastructure and avoid losing control of information security.</p>
+  </li>
+  <li>
+    <p><strong>Public cloud:</strong> A public cloud provides computing services that are publicly accessible (with a login, of course) over the Internet.</p>
+  </li>
+  <li>
+    <p><strong>Hybrid cloud:</strong> A Hybrid cloud is a mixed deployment model, employing both private and public infrastructures. A hybrid cloud is mostly used for outsourcing processes and/or data to a public cloud while maintaining sensitive data inside a local private cloud.</p>
+  </li>
+  <li>
+    <p><strong>Community cloud</strong>: Multiple organisations with common concerns, such as security requirements, policy, interests, and/or missions, may share cloud infrastructures across administrative domains to form a community cloud.</p>
+  </li>
+</ul>
+
+<p>The private cloud is owned by a single organization and public clouds are shared on a larger scale.</p>
+
+<p>Private and community clouds are regarded as more secure because they provide more control for the organisation(s). However setting up a private cloud infrastructure comes at a significant expense. A public cloud is instead more flexible and is often a more affordable investment for end users, however control of the cloud infrastructure is in the hands of the cloud provider, which can be seen as a security issue. Therefore, it is of high priority to public cloud providers to build and maintain strong management of secure services. Many small businesses cannot afford such efforts and therefore it is often safer for them to use the cloud services.</p>
+
+<p>The NeCTAR Research Cloud can be characterized as a <em>community cloud</em>.</p>
+
+<h2 id="file-and-volume-encryption">File and Volume Encryption</h2>
+
+<p>For several reasons discussed earlier, you may want to encrypt your file. We can broadly distinguish two types of file encryption: 1) encrypting an entire volume and 2) encrypting individual files.</p>
+
+<p>Object storage (discussed in <a href="/package06/sections/index.html" title="Module 6">Module 6</a>) is very useful for ease of access and data integrity.  Because several copies of your data is kept, availability is very good: The NeCTAR Object Store is geodistributed across Nodes of the Research Cloud so that availability is not reliant on any one datacentre or network infrastructure. <em>Only you</em> have access to your object store using your OpenStack credentials, so only you can select files to download, or upload files to a container.</p>
+
+<p>While <em>access</em> to your Object Store is secured with your credentials, the <em>transfer</em> of your files via the network is not necessarily secure: When you upload and download files, it happens via an unencrypted connection (unless you explicitly use a secure client, e.g. an <em>SFTP</em> client). At the time when you download or upload your files, somebody could catch the data you are transferring via the Internet. Also, when your files are replicated across NeCTAR nodes, this happens without encryption.</p>
+
+<p>The critical point is the moment of <em>data transfer</em>.</p>
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Extensions to <em>OpenStack</em> (the cloud software that NeCTAR is using) for object storage data encryption have been proposed and will probably be available at some point.</p>
+
+				</div>
+
+<p>For this reason, you may want to encrypt sensitive data before you upload it to the object storage. With the Object Storage, you upload individual files, so you should do a <strong>per-file encryption</strong>.</p>
+
+<p>If you want to protect your data on a Volume against <em>breaches</em> (someone gaining access to your volume), you may want to do an entire <strong>volume encryption</strong> on the volume which you have attached to your VM.</p>
+
+<p>There are many tools for data encryption available. Not all of them support both per-file <em>and</em> whole volume encryption. When choosing a tool for encryption, it is also important that the encryption algorithm used by the tool is secure and cannot be hacked easily.</p>
+
+<p>In this section, we will go through a few example tools for file and volume encryption.</p>
+
+<h2 id="file-encryption">File encryption</h2>
+
+<p>In the following we will discuss the following tools which support per-file encryption:</p>
+
+<ul>
+  <li>
+    <p><a href="#GnuPG">GnuPG</a></p>
+  </li>
+  <li>
+    <p><a href="#AESCrypt">AESCrypt</a></p>
+  </li>
+  <li>
+    <p><a href="#EncryptedZIP">Encrypted zip file</a></p>
+  </li>
+</ul>
+
+<p>Other widely known tools which have recently received bad security audits (e.g. <em>EncFS, OpenSSL, TrueCrypt</em>) are not discussed in this course.</p>
+
+<p>More detailed instructions are given for <em>GnuPG</em>, while the description of the other tools refers to related documentation.</p>
+
+<h4 id="a-namegnupga-gnupg"><a name="GnuPG"></a> GnuPG</h4>
+
+<p><em>GnuPG</em> is an implementation of Pretty Good Privacy (PGP). PGP has excellent security:</p>
+
+<blockquote>
+  <p>“To the best of publicly available information, there is no known method which will allow a person or group to break PGP encryption by cryptographic or computational means.”   <br />
+– source: <a href="http://en.wikipedia.org/wiki/Pretty_Good_Privacy#Security_quality">Wikipedia</a>.</p>
+</blockquote>
+
+<p><em>GnuPG</em> is open-source and accessible through a variety of different clients and tools. New versions of PGP are released periodically and vulnerabilities are fixed by developers as they come to light. There is a simple command line interface, but there are also <a href="https://www.gnupg.org/related_software/frontends.html">many graphical interfaces</a> available which are more popular.</p>
+
+<p>The <a href="https://www.gnupg.org/download/">official releases</a> can encrypt</p>
+
+<ul>
+  <li>
+    <p>Files</p>
+  </li>
+  <li>
+    <p>Entire volumes</p>
+  </li>
+  <li>
+    <p>Disk images</p>
+  </li>
+  <li>
+    <p>External drives</p>
+  </li>
+  <li>
+    <p>E-mails</p>
+  </li>
+  <li>
+    <p>and more.</p>
+  </li>
+</ul>
+
+<p>All <em>GnuPG</em> tools support multiple encryption types and ciphers.</p>
+
+<p><em>GnuPG</em> works very well on almost all 32 and 64 bit platforms. It has mainly been developed for Unix systems, but binaries available for <strong>Windows, OS X, Debian/Ubuntu, Android and more</strong> provided (with no guarantee that binary versions provided are current). Mac users may be interested in <a href="https://gpgtools.org/gpgsuite.html">GPGSuite</a>.</p>
+
+<p><em>GnuPG</em> is easy to use and if you keep your private key and the passphrase secret, it is a very secure way to encrypt files. <em>GnuPG</em> also has the advantage that no passwords will appear in any script files if you use your private key to encrypt files.</p>
+
+<p><strong>GnuPG Quick HowTo</strong></p>
+
+<p>You will have to generate a <em>key pair</em> before you can use GnuPG. In the process, you need to specify your E-Mail address (because you can use GnuPG for encrypting E-Mails). Choose the one you usually use, but you can also specify any address and change this later.</p>
+
+<ul>
+  <li>Mac OS X:
+  <img src="images/scrGPGCreateKeyMac.png" class="alignright" style="width:300px; " alt="image" />
+    <ul>
+      <li>Download <em>GnuPG</em> from the <a href="https://www.gnupg.org/download/index.html">official website</a>. Download the <em>“binary release” installer</em> (or get the <em>“source release”</em> and follow installation instructions on the website). If you have the choice, select the <em>GnuPG stable or modern</em> installer and install the software.</li>
+      <li>Open the <em>“GPG Keychain”</em> application (find it with spotlight search).</li>
+      <li>Click on “New” to generate a new key and specify your name, E-Mail and passphrase.</li>
+      <li>Hit “Generate”. Your new key will be listed in <em>GPG Keychain</em> after it has been created.</li>
+    </ul>
+  </li>
+  <li>Windows:
+    <ul>
+      <li>Download and install the graphical interface to GnuPG <em>“GpGForWin”</em> from <a href="http://www.gpg4win.org">www.gpg4win.org</a>. Make sure <em>Kleopatra</em> is checked.</li>
+      <li>Open the <em>Kleopatra</em> application which you may find with the app search field or via <em>Start &gt; Gpg4win &gt; Kleopatra</em>.</li>
+      <li>Go to <em>File &gt; New Certificate</em> and select to create a <em>personal OpenPGP key pair</em>.</li>
+    </ul>
+  </li>
+  <li>Linux:
+  <img src="images/scrGnuPGKeyLinux.png" class="alignright" style="width:250px; " alt="image" />
+    <ul>
+      <li>GnuPG may be available as a package in your distribution. For example in Ubuntu, you may install the <em>Gnu Privacy Assistant</em> in the package <em>gpa</em>, which includes GnuPG and a graphical interface:  <br />
+  <code>sudo apt-get install gpa</code>  <br />
+  Or you may install command-line tools only:  <br />
+  <code>sudo apt-get install gpnupg</code>  <br />
+  If it is not in your package manager, you can download <em>GnuPG</em> from the <a href="https://www.gnupg.org/download/index.html">official website</a>.</li>
+      <li>Start up <em>gpa</em>. You may receive an error about not having a key yet. Close this window and confirm to generate your first key now. Enter your details and follow the instructions in the wizard.</li>
+      <li>Alternatively, create a key in the command line.   <br />
+  <code>gpg --gen-key</code>
+        <ul>
+          <li>Specify your choices in the command line. Ideally, choose <em>RSA</em>, and a <em>“Real name”</em> without whitespaces.</li>
+          <li><strong><em>If</em></strong> there is an error about not enough random bytes, you may solve it by starting up an application which takes a lot of cpu time. Or, you can simulate “lots of work” with the <em>rngd</em> tool:  <br />
+  <code>sudo apt-get install rng-tools</code>  <br />
+  <code>sudo rngd -f -r /dev/random</code>  <br />
+  In a new terminal:  <br />
+  <code>gpg --gen-key</code>  <br />
+  When the key generation is finished, cancel the <em>rngd</em> application in the other terminal with [Ctr+C].</li>
+        </ul>
+      </li>
+      <li>You can find more useful information on the <a href="https://help.ubuntu.com/community/GnuPrivacyGuardHowto">ubuntu help page</a>.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Two keys will have been generated: A <em>public</em> key which is used for encryption, and a <em>private</em> which is used for decryption.</p>
+
+<p>To <strong>encrypt</strong> a file, you must have the <em>public</em> key which you want to use for encryption. You have just generated one in the last step.</p>
+
+<ul>
+  <li>Mac OS X: 
+  <img src="images/scrGPGEncryptFileMac.png" class="alignright" style="width:280px; " alt="image" />
+    <ul>
+      <li>Open the <em>Finder</em> and right-click on the file you would like to encrypt.</li>
+      <li>Select <em>Services &gt; OpenPGP: Encrypt file</em>.</li>
+      <li>Select your key in the list and click “Ok” (you may also choose several keys).</li>
+      <li>A new file with the same name but ending with <em>.gpg</em> will have been created in the same folder.</li>
+    </ul>
+  </li>
+  <li>Windows: 
+  <img src="images/scrGpgPGWin.png" class="alignright" style="width:200px; margin-top:20px;" alt="image" />
+    <ul>
+      <li>Open the <em>Windows Explorer</em> and right-click on the file you would like to encrypt.</li>
+      <li>Select <em>Sign and encrypt</em>.</li>
+      <li>You may keep the default options in the dialogue, which is set on <em>Encrypt</em> by default. Confirm with <em>Next</em>.</li>
+      <li>Select your key in the list and click “Add” to add it to the list (you may also choose several keys).</li>
+      <li>Click “Encrypt” to encrypt the file, and close the confirmation window with “Finish”.</li>
+      <li>A new file with the same name but ending with <em>.gpg</em> will have been created in the same folder.</li>
+    </ul>
+  </li>
+  <li>Linux:
+    <ul>
+      <li>Files are encrypted and decrypted in the command line. You have to specify a <em>recipient</em>, which is either you (<em>name</em> or <em>email</em> you chose for the key), or someone you want to send the file to (you need to have their <em>public</em> key then):  <br />
+  <code>gpg --output &lt;encrypted-file.gpg&gt; --encrypt --recipient &lt;user&gt; &lt;file-to-encrypt&gt;</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p>To <strong>decrypt</strong> a file, you need to have the <em>private</em> key of the intended recipient (when the file was encrypted). So the encrypted file will have to be encrypted for the name associated with one of your private keys.</p>
+
+<ul>
+  <li>Mac OS X:
+    <ul>
+      <li>You just have to double click on the <em>.gpg</em> file and it will prompt for the password.</li>
+      <li>Alternatively, you may decrypt it via <em>right click &gt; Services &gt; OpenPGP: Decrypt file</em>.</li>
+      <li>You will be asked for the passphrase.</li>
+      <li>You can find the decrypted file in the same folder; the name may have been extended with a number in order to prevent overwriting the original file.</li>
+    </ul>
+  </li>
+  <li>Windows:
+    <ul>
+      <li>You may decrypt by right clicking on the file and selecting <em>Decrypt and verify</em>.</li>
+      <li>You will be asked for the passphrase.</li>
+      <li><em>Note:</em> it is best if you change the <em>output folder</em> in order to prevent the original file to be overwritten.</li>
+      <li>You can find the decrypted file in the same folder (or specified output folder).</li>
+    </ul>
+  </li>
+  <li>Linux:
+    <ul>
+      <li>Similar to encryption of a file, using the command line.   <br />
+  <code>gpg --output &lt;decrypted-file.gpg&gt; --decrypt &lt;file-to-decrypt&gt;</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p>You can find more useful information about file encryption on the <a href="https://www.gnupg.org/gph/en/manual/x110.html">GnuPG manual pages</a>.</p>
+
+<h4 id="a-nameaescrypta-aescrypt"><a name="AESCrypt"></a> AESCrypt</h4>
+
+<p><a href="https://www.aescrypt.com/">AESCrypt</a> is a free, open-source tool which is available for Mac, Linux and Windows. It provides a secure way to <strong>encrypt individual files</strong>, using the industry standard Advanced Encryption Standard (AES).</p>
+
+<p><em>AESCrypt</em> is easy to use: On <strong>Windows</strong>, you only right-click on a file, select AES Encrypt (or Decrypt) and enter a password. On a <strong>Mac</strong>, you drag the file into the <em>AESCrypt</em> program and type in the password. On the <strong>Linux</strong> command line, you may use the command <em>aescrypt</em> along with the name of the file and the password.</p>
+
+<p>The <a href="https://www.aescrypt.com/">AESCrypt website</a> provides an excellent documentation on how to set up and use <em>AESCrypt</em>.</p>
+
+<h4 id="a-nameencryptedzipa-encrypted-zip-file"><a name="EncryptedZIP"></a> Encrypted zip file</h4>
+
+<p>Zip files can be password-protected, but the standard Zip encryption scheme is extremely weak. If your operating system has a built-in way to encrypt zip files, you probably shouldn’t use it. You should use <em>AES-256</em> encryption. The tools discussed in the following do support <em>AES-256</em> encryption.</p>
+
+<p>Zip files are archives containing individual files, so this cannot be used to encrypt entire volumes.</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>The older zip encryption is not secure! Several tools can create encrypted zip files (the older, insecure version).</p>
+
+<p>For example,</p>
+
+<ul>
+  <li>
+    <p>On <strong>Windows</strong>, you can right-click on a file and select <strong>Compress…</strong> to create a zip archive.</p>
+  </li>
+  <li>
+    <p>On <strong>Linux or Mac</strong>, this can be done via command line:  <br />
+  <code>zip -0 -e backup.zip &lt;yourfile&gt;</code>  <br />
+  The option <strong>-0</strong> means “store only” and don’t compress — this is faster. <strong>-e</strong> means encrypt archive.  <br />
+It will ask for the password.</p>
+  </li>
+</ul>
+
+<p>This is <strong><em>not secure!</em></strong></p>
+
+<p>Use the more secure methods described in this section.</p>
+
+
+				</div>
+
+<p><strong>Windows: 7-zip</strong></p>
+
+<p><a href="http://www.7-zip.org/">7-zip</a> is great for compressing files and is also a strong file encryption tool. It’s free even for commercial use and supports <em>256-bit AES</em> encryption. The official download is Windows only, but there are also unofficial Linux and OS X versions.</p>
+
+<p>In <em>7-Zip</em>, you can select files in the Windows Explorer window, right-click and select <strong>7-Zip &gt; Add to archive</strong>. You should make sure to select the <em>Add to archive</em> option in order to encrypt the file. You will be given the option to set a password, make sure you select one! Alternatively, you can open the <em>7-Zip</em> application and create the archive from there.</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><em>7-Zip</em> will create a <em>7z</em> archive by default, but you can also choose <em>Zip</em>. If you <em>do</em> opt to go with Zip, be sure to select the <em>AES-256</em> encryption method instead of the weaker <em>ZipCrypto</em> method.</p>
+
+				</div>
+
+<p><strong>Mac: Keka</strong></p>
+
+<p>With <a href="http://www.kekaosx.com/">Keka</a>, you compress individual files by dragging and dropping them to <em>Keka</em> in the Dock. You may drop multiple files at once, and they will be compressed as one zip file. You can get <em>Keka</em> from the Mac App Store, here is good documentation on the website on how to use it.</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><em>Keka</em> creates encrypted <em>7z</em> files.By default, the <em>7z *files will be encrypted using *AES-256</em>, which is secure. If the selected format is <em>Zip</em>, <em>Zip 2.0</em> legacy encryption will be used, so this is not recommended!</p>
+
+				</div>
+
+<p><strong>Linux: p7zip</strong></p>
+
+<p>The file explorer on your Linux desktop can be used to create encrypted <em>7z</em> archives. You first need to install the <em>p7zip-full</em> package (it may also simply be called <em>p7zip</em> on some Linux distributions). Installing <em>p7zip-full</em> allows your file explorer encrypt your files or folders in the <em>7z</em> compression format. You may find it in your package manager, e.g. on Ubuntu</p>
+
+<p><code>sudo apt-get install p7zip-full</code></p>
+
+<p>Then, open your file explorer, right click on the file and select <strong>Compress…</strong>. Be sure to select <em>7z</em> as a format! In the window that comes up, expand <strong>Other Options</strong>, tick <strong>encrypt the file list too</strong> and type in your password.</p>
+
+<p>You may also use <em>p7zip</em> in the command line. The command is simply called <em>7z</em>. Refer to the man pages for usage.</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><em>p7zip</em> does not store the owner and group of a file. So if you want to use it for backup purposes (or for other reasons want to preserve owner/group), you should pack your files in a <em>tar</em> archive first, and then encrypt the tar archive with <em>p7zip</em>.</p>
+
+<p>To create a tar archive:</p>
+
+<p><code>tar -cf &lt;tar-file-name&gt;.tar &lt;list of your files or folders&gt;</code></p>
+
+<p>To extract a tar archive:</p>
+
+<p><code>tar -xf &lt;tar-file-name.tar&gt;</code></p>
+
+<p>Then, compress the tar archive file with <em>p7zip</em> as described.</p>
+
+				</div>
+
+<h2 id="volume-encryption-on-ubuntu">Volume encryption on Ubuntu</h2>
+
+<p>Because we base our instances in this course on Ubuntu, we shall also include instructions on how to encrypt a volume in your Ubuntu virtual machine.</p>
+
+<p>In <a href="/package07/sections/index.html" title="Module 7">Module 7</a>, we have seen how we can use our secondary disk of our ephemeral storage to store our data (the secondary disk is essentially a volume storage which is included with the instance). We have also created a Volume storage and attached it to our instance. In both methods we have <em>mounted</em> the disk so that we can access it from our instance.  <br />
+Disks which are <em>mounted</em> on the instance are suitable for Volume Encryption. You can encrypt the whole block of storage, and all files which are written on it will automatically be encrypted. Files on it will be unreadable to others which may gain access to it, even after you delete your storage (or discard your instance).</p>
+
+<p>You can think of volume encryption as happening in the background: You unlock it once with the password, and then use the drive as usual: editing, copying and moving files on it. All programs can access the drive as usual—Ubuntu takes care of automatic encryption and decryption in the background.</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Before you decide to encrypt your Volume, you should consider carefully whether you want to do this. While encrypting the data <strong>adds security</strong> in terms of preservation of privacy, it also <strong>incurs new risks</strong>:</p>
+
+<ul>
+  <li>If you ever forget your password, access to your data will be lost forever.</li>
+  <li>It may also introduce difficulties with manual data recovery.</li>
+  <li>You can only unlock your drive using the same encryption algorithm/tool.</li>
+  <li>You should also take into account that performance of reading and writing to your Volume will degrade with the encryption.</li>
+</ul>
+
+				</div>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>You may ask yourself whether you will also be able to copy data onto the encrypted drive from remote, for example using the <em>scp</em> command or an <em>sftp client</em>.</p>
+
+<p>You can access the drive from remote as usual. This is because the file server on your instance (e.g. the scp server) takes care of transferring the files to your remote computer after you have requested them. Programs running on Ubuntu (including the file server) can read the files from the drive as usual, because Ubuntu automatically takes care of the encryption/decryption in the background.</p>
+
+<p>For this reason, you can access the files, even though they are encrypted on the actual harddrive.</p>
+
+<p>Note however, that if <em>you</em> can copy and read the files as usual from remote, so can <em>everyone who may gain access</em> to your private ssh key and passphrase! The volume encryption mainly serves as security in case the physical hard-drive gets stolen, or hacked into from outside your VM – then, nobody can ready your data, because they would have to type in your volume encryption password first.</p>
+
+				</div>
+
+<p>In the following, we will go through the steps required to encrypt your Volume storage on your Ubuntu instance. We will use a standard procedure on Linux to encrypt drives with the <strong>Linux Unified Key Setup (LUKS)</strong>.</p>
+
+<p><em>Tipp:</em> You can use the same instructions below to encrypt your external USB Drives from a Ubuntu system. However, note that your USB drive will most likely then only be readable from a Linux system!</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Following the instructions will <strong>erase all data</strong> on the volume! If you have any files on it, make sure to back them up first.</p>
+
+				</div>
+
+<ol>
+  <li>
+    <p>Find out the device name of your volume (e.g. <em>/dev/vdc</em>). You may for example use <br />
+<code>sudo lsblk -l</code> and/or   <br />
+<code>sudo lsblk -f</code>  <br />
+to print information about your drives. You can also see it on the Volumes overview in the Dashboard.  <br />
+The following will assume your drive is located at <strong>/dev/vdc</strong>. If your is at another path, you will have to replace this in the following commands.</p>
+  </li>
+  <li>
+    <p>Ensure your volume is <strong>attached</strong> to your instance, but <strong>not mounted</strong>.  <br />
+ Find out if your volume is mounted:   <br />
+ <code>mount | grep vdc</code>  <br />
+ If it is, <em>unmount</em> it with  <br />
+ <code>sudo umount /dev/vdc</code></p>
+  </li>
+  <li>
+    <p>If you have data on the volume, now is a good time to securely erase it. We will talk about securely erasing all data in <a href="/package09/sections/index.html" title="Module 9">Module 9</a>. If in doubt, you should use an empty (newly created) volume for this tutorial. You can skip this step if you don’t have data to securely erase — a process which may take a long time depending on the size of your volume.  Erase your data with:  <br />
+<code>sudo dd if=/dev/urandom of=/dev/vdc</code> <br />
+<em>Note:</em> <a href="/package09/sections/cleanup.html">Module 9</a> provides more information about the <em>dd</em> command.</p>
+  </li>
+  <li>
+    <p>Now, install the file encryption package cryptsetup:  <br />
+ <code>sudo apt-get install cryptsetup</code>  <br />
+ <code>sudo modprobe dm-crypt</code>  <br />
+ From now on, every time you restart your machine, the encryption software should start up automatically.</p>
+  </li>
+  <li>Now you can encrypt your Volume:  <br />
+<code>sudo cryptsetup luksFormat -c aes-xts-plain64 -s 512 -h sha512 -y /dev/vdc</code>  <br />
+It will ask you to confirm that you really want to do this, as all data will be erased. You should confirm this with typing <strong>“YES”</strong> (it needs to be <em>uppercase</em>! Or the command will do nothing).   <br />
+ You should then be prompted for a password – make sure to choose a secure password, otherwise the encryption will not be secure!
+    <div class="bgInfo">
+                 <img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+                     margin:0px; margin-right:10px; margin-bottom:5px;" />
+                 <p>The parameter <strong>-c</strong> is used to select the algorithm.  <strong>-y</strong> ensures that you are asked to verify the password, which is always a great idea, in case you have a typo in your first try. <strong>-s</strong> determines the length of the key — 512 actually corresponds to 256 bit encryption. The reason is that the maximum length of 256 bits is used for <em>both</em> <em>AES</em> and <em>XTS</em> encryption. The more bits are used for encryption, the more it will affect performance. If you would like to trade off a bit of security against performance, you can use <em>-s 256</em> instead, which then corresponds to 128 Bit encryption.</p>
+
+             </div>
+  </li>
+  <li>
+    <p>Now you can map your encrypted drive to a virtual drive with the following command (you may replace <em>MySecureDrive</em> with any name you want to assign to the drive):  <br />
+<code>sudo cryptsetup luksOpen /dev/vdc MySecureDrive</code>  <br />
+ This will ask for the volume encryption password which you just chose. After the command has been executed, your drive will be mapped to <em>/dev/mapper/MySecureDrive</em> (or other name instead of <em>MySecureDrive</em>, if you changed this in the command above).</p>
+  </li>
+  <li>
+    <p>Now it is time to format your drive (again, replace <em>MySecureDrive</em> with your name, if you have chosen another).  <br />
+ <code>sudo mkfs.ext4 /dev/mapper/MySecureDrive</code></p>
+  </li>
+  <li>
+    <p>That’s almost done! Now we can mount the drive to any directory. In this example, we will create a new one <em>/MyMountedDriveedDrive</em>, but you can choose any other directory:  <br />
+  <code>sudo mkdir /MyMountedDriveedDrive</code>  <br />
+ <code>sudo mount /dev/mapper/MySecureDrive /MyMountedDriveedDrive</code></p>
+  </li>
+  <li><em>Optional:</em> By default, you do not have write permissions on the secondary drive. We discussed how to change write permissions in <a href="/package07/sections/index.html" title="Module 7">Module 7</a>. Here a brief reminder: You can do this either with  <br />
+ <code>sudo chown ubuntu /data</code>  <br />
+ to allow access only to yourself, or  <br />
+ <code>sudo chgrp ubuntu /data</code>  <br />
+ <code>sudo chmod g+rwx /data</code>  <br />
+ to allow access to your whole user group.</li>
+</ol>
+
+<p><strong>You are all done!</strong></p>
+
+<p>You can now use this drive as normal without worrying about encryption, and your data is securely encrypted.</p>
+
+<p>To unmount and free up the volume, type the following commands:</p>
+
+<p><code>sudo umount /MyMountedDrive</code> <br />
+<code>sudo cryptsetup luksClose MySecureDrive</code></p>
+
+<p>After every reboot of your instance, you will have to unlock the drive by typing in your password and mount the drive again:</p>
+
+<p><code>sudo cryptsetup luksOpen /dev/vdc MySecureDrive</code>  <br />
+<code>sudo mount /dev/mapper/MySecureDrive /MyMountedDrive</code></p>
+
+<h2 id="summary">Summary</h2>
+
+<p><strong>Congratulations!</strong></p>
+
+<p>You are now finished with this Module. You should now be aware of general security concerns in the cloud, and know how risks can be mitigated by the cloud provider <em>and</em> by you. Deployment methods of cloud services (SaaS, PaaS, IaaS) and how they affect security have been introduced. Practical advice has been given for hardening a machine: passwords and passphrases, updates/patches, blocking ports, etc. Finally, this module has also provided some hands-on exercises on how to encrypt data (both individual files, and entire volumes on the instance).</p>
+
+<p>In summary, this module has covered:</p>
+
+<ul>
+  <li>Common security concerns when using the Cloud.</li>
+  <li>How cloud provider <em>and</em> the user can mitigate such risks</li>
+  <li>Cloud deployment models</li>
+  <li>File and Volume Encryption</li>
+</ul>
+
+<p>You are now ready to continue with <a href="/package09/sections/index.html" title="Module 9">Module 9</a>.</p>
+
+
+      </div>
+    </div>
+  </body>
+
+</html>

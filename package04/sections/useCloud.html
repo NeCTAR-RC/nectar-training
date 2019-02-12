@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel='shortcut icon' href='/images/icon.png' />
+
+  <title>From PC to Cloud or HPC</title>
+  <meta name="description" content="Nectar National Training Resources
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://training.nectar.org.au/package04/sections/useCloud.html">
+  <link rel="alternate" type="application/rss+xml" title="Nectar Training" href="http://training.nectar.org.au/feed.xml" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61845992-2', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+<div class="nec-header">
+  <div class="header-top">
+    <div class="header-top-page">
+      <div class="nect-login">
+        <a href="https://support.nectar.org.au/support/home">Support</a>
+        <a href="http://cloud.nectar.org.au/contact/" class="new-tick">Contact</a>
+        <b><a href="https://dashboard.rc.nectar.org.au/"><b>Login</b></a></b>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-main">
+    <div class="header-main-page">
+      <div class="logo-nect">
+        <img src='/images/nectar_cloud_logo.jpg' alt="Nectar" height="43", width"248">
+      </div>
+      <div class="menu-nect">
+        
+          <a href="/" class="selected">Self-paced Training</a>
+          <a href="/for-trainers.html">Resources for Trainers</a>
+        
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="normal-block">
+  <div class="normal-block-page">
+    
+      <h3>Self-paced Training</h3>
+    
+  </div>
+</div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+          <!-- 
+    Preprocessing: Determine which part number this is. To avoid having to set numbers 
+    manually on each page, determine this here by the file name. 
+    -->
+  
+  
+  
+  
+  
+
+  
+  
+      
+  
+
+  
+  
+  
+  
+  
+  	
+  	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+			
+			
+			
+  	<!-- If we are not in the main hierarchy, we may be looking at a file of one of the sub-categories -->
+	
+  
+
+
+
+<div class="post">
+
+  <header class="post-header">
+    <h3>Module 4</h3>
+    <h1>From PC to Cloud or HPC</h1>
+  </header>
+
+  
+
+  <!--
+    List of the individual parts of this module (so not all content gets crammed on one page).
+    Rendering this list first is necessary 
+  -->
+  <p> Sections of this module:</p>
+  
+	
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package04/sections/index.html"> Introduction</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package04/sections/cloudVsHPC.html"> HPC vs Cloud computing</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package04/sections/useHPC.html"> When to use HPC</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+			
+		
+		
+
+		
+		
+			
+		
+		
+			
+				 <b>
+			
+			
+      <a href="/package04/sections/useCloud.html"> When to use the Cloud</a>
+			
+				</b>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package04/sections/cloudProCons.html"> The Cloud - Pros and Cons</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package04/sections/summary.html"> Summary</a>
+			
+			<br/>
+		
+	
+  <br/>
+
+
+  <a href="/package04/sections/all.html" target="_blank">View all sections on one page (Printer friendly)</a>
+  <br/>
+  <br/>
+  <h1> When to use the Cloud </h1>
+
+   <!-- endif for pagedata_avail -->
+  
+
+  <!--
+  Content of page
+  -->
+  <article class="post-content">
+    
+<p>Using virtual machines (VM) in the Cloud is the right choice if you want to process one data set with a variety of parameters, or when you can split the data set into several pieces for parallel processing.</p>
+
+<p>In other words, you have an <strong>Embarassingly Parallel Problem (EEP)</strong>. The application does not rely on fast shared memory or storage so it can be distributed into many independent processing units. With the Cloud, you just use the resources you actually need at the time. You can’t do that in HPC, you reserve a large number of resources and use them (maybe pay for it) for the whole time.   <br />
+One often cited example is digital rendering, in which many non-interacting jobs can be distributed across a large number of nodes. These applications often work well with standard Ethernet and do not require a specialized interconnect for high performance.</p>
+
+<p>In HPC, we may need to wait for the resources to become available, in the Cloud they are typically <strong>instantly available</strong>. With Cloud computing, you can get a whole lot of resources for a time, without the need of big capital investments. With HPC on the other hand, you have a specialized machine with its limits, which can only do so much.</p>
+
+<p>Another reason to choose the Cloud can be the possibility of <strong>software choice</strong>: users can design virtual machines to suit their needs, including choice of OS and installed applications. In HPC, installing specialized software can be more problematic. On the other hand, on HPC systems, specialized software may already be pre-installed and ready to use for you, sometimes including the license to use it. When using the Cloud, you <em>can</em>, but also <em>have to</em> install the software yourself and pay for the license. You have to evaluate this depending on which software you require.</p>
+
+<p>Last but not least, your requirements may be a simple case of needing easy access to computing infrastructure (already connected to the Internet) which you cannot easily get at your research organisation. You may not even need to use a specialized application which runs across several computers, and only need access to one or a few computers that you can use for your research or teaching. Using the cloud will save you the need to invest in local facilities and configuring access from various remote locations. In such cases, the Cloud is the right choice for you: You get <strong>compute and storage infrastructure quickly and easily</strong>, and the virtual machines already are accessible over the Internet.</p>
+
+<p>There are a number of reasons why the Cloud may be the right choice. See also <a href="/package03/sections/index.html" title="Module 3">Module 3</a> for a discussion of common use cases.</p>
+
+
+  </article>
+
+
+  
+  <!--
+  Previous section / Next section links. Very simple design to start with.
+  -->
+  <p>
+  
+  	
+    <a href="/package04/sections/useHPC.html">Previous section</a>
+  
+  &nbsp; &nbsp; &nbsp;
+  
+  	
+    <a href="/package04/sections/cloudProCons.html">Next section</a>
+  
+  </p>
+   <!-- endif for pagedata_avail -->
+
+</div>
+
+      </div>
+    </div>
+
+    <div style="background-color: #0E0E0E; padding: 20px 20px 20px 60px; color: white; font-size: 12px">
+  <p>Copyright &copy;2015 NeCTAR</p>
+  <img src="/images/NCRIS_PROVIDER_rev.png" alt="NCRIS_PROVIDER_rev" width="132" height="63" />
+  <p><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png">
+  This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a></p>
+</div>
+
+
+  </body>
+
+</html>

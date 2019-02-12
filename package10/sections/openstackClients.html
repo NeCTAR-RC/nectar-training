@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel='shortcut icon' href='/images/icon.png' />
+
+  <title>Beyond the Dashboard</title>
+  <meta name="description" content="Nectar National Training Resources
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://training.nectar.org.au/package10/sections/openstackClients.html">
+  <link rel="alternate" type="application/rss+xml" title="Nectar Training" href="http://training.nectar.org.au/feed.xml" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61845992-2', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+<div class="nec-header">
+  <div class="header-top">
+    <div class="header-top-page">
+      <div class="nect-login">
+        <a href="https://support.nectar.org.au/support/home">Support</a>
+        <a href="http://cloud.nectar.org.au/contact/" class="new-tick">Contact</a>
+        <b><a href="https://dashboard.rc.nectar.org.au/"><b>Login</b></a></b>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-main">
+    <div class="header-main-page">
+      <div class="logo-nect">
+        <img src='/images/nectar_cloud_logo.jpg' alt="Nectar" height="43", width"248">
+      </div>
+      <div class="menu-nect">
+        
+          <a href="/" class="selected">Self-paced Training</a>
+          <a href="/for-trainers.html">Resources for Trainers</a>
+        
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="normal-block">
+  <div class="normal-block-page">
+    
+      <h3>Self-paced Training</h3>
+    
+  </div>
+</div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+          <!-- 
+    Preprocessing: Determine which part number this is. To avoid having to set numbers 
+    manually on each page, determine this here by the file name. 
+    -->
+  
+  
+  
+  
+  
+
+  
+  
+      
+  
+
+  
+  
+  
+  
+  
+  	
+  	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+			
+			
+			
+  	<!-- If we are not in the main hierarchy, we may be looking at a file of one of the sub-categories -->
+	
+  
+
+
+
+<div class="post">
+
+  <header class="post-header">
+    <h3>Module 10</h3>
+    <h1>Beyond the Dashboard</h1>
+  </header>
+
+  
+
+  <!--
+    List of the individual parts of this module (so not all content gets crammed on one page).
+    Rendering this list first is necessary 
+  -->
+  <p> Sections of this module:</p>
+  
+	
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package10/sections/index.html"> Introduction</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+			
+		
+		
+
+		
+		
+			
+		
+		
+			
+				 <b>
+			
+			
+      <a href="/package10/sections/openstackClients.html"> OpenStack clients</a>
+			
+				</b>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package10/sections/objectStore.html"> Accessing the object store</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package10/sections/managingInstance.html"> Controlling an instance</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package10/sections/managingVolumes.html"> Managing volumes</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package10/sections/utilization.html"> Tracking utilization</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package10/sections/summary.html"> Summary</a>
+			
+			<br/>
+		
+	
+  <br/>
+
+
+  <a href="/package10/sections/all.html" target="_blank">View all sections on one page (Printer friendly)</a>
+  <br/>
+  <br/>
+  <h1> OpenStack clients </h1>
+
+   <!-- endif for pagedata_avail -->
+  
+
+  <!--
+  Content of page
+  -->
+  <article class="post-content">
+    
+<p>In the previous modules, we have used the NeCTAR Dashboard to perform simple management tasks such as launching instances, creating volumes, accessing the object store, etc. 
+In this module we are going to take a look at how you can do the same tasks with other <em>“clients”</em>.</p>
+
+<ul>
+  <li>OpenStack provides <strong>command line clients</strong> which allow you to manage your instances, volumes and object store and more via command line tools only. In this tutorial, we will discuss usage of command line clients to control your resources.</li>
+  <li>There are also <strong>application programming interfaces (APIs)</strong> available, mainly for Python, but also for other programming languages like e.g. C++ and Java. This is not part of this tutorial — for a list of known software development kits see <a href="https://wiki.openstack.org/wiki/OpenStackClients">OpenStack Python API Bindings</a> and <a href="https://wiki.openstack.org/wiki/SDKs">other OpenStack SDKs</a>.</li>
+</ul>
+
+<p>In a previous version of OpenStack, command line clients were split into several tools, called <strong>nova, glance, cinder, swift, keystone</strong> and more. Each of the tools was dedicated to certain tasks, e.g. <em>nova</em> for compute services, <em>swift</em> for accessing the object store, etc. Refer to the <a href="https://wiki.openstack.org/wiki/OpenStackClients">official OpenStack clients website</a> for more details.
+These tools have later been brought together to <strong>one</strong> command line tool called <strong>openstack</strong>, which brings command sets for Compute, Identity, Image, Object Store and Volume APIs together in a single command set with a uniform command structure.</p>
+
+<p>The next sections are going to discuss installation and usage of the <strong><em>openstack</em> command line client</strong> with some working examples.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>If you want to use the traditional OpenStack clients like <em>glance, cinder</em>, etc. you still can. The following instructions for installation and configuration also apply to the traditional clients. Only the name <em>openstack</em> in the package name <em>python-openstackclient</em> has to be replaced by the respective tool’s name in the installation command. For example, if you want to install <em>glance</em>, replace <em>python-openstackclient</em> by <em>python-glanceclient</em>.</p>
+
+				</div>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>You may install the command line tools on <strong>any computer</strong> connected to the Internet — this may be a Linux, Mac or Windows computer. Windows users must have access to the Windows command line (it may sometimes be blocked to users without administrator privileges). The following instructions are going to assume you are familiar with using the command line.</p>
+
+<p>Of course, you may also install the clients on your <strong>Ubuntu instance</strong> — follow the instructions for a Linux system below and use the ssh terminal to your instance to type the commands.</p>
+
+				</div>
+
+<h3 id="step-1-installation-of-clients">Step 1. Installation of clients</h3>
+
+<p>This section is going to cover installation of the OpenStack command line clients. Installation for all packages is the same, only the package name has to be replaced.
+Please also refer to the <a href="http://docs.openstack.org/user-guide/common/cli_install_openstack_command_line_clients.html">Official OpenStack documentation</a> for more information about installation of the OpenStack command line clients.</p>
+
+<p>You will need to have Python installed to run the OpenStack command line clients. You may already have python installed. If you do,
+check your version:</p>
+
+<p><code>python --version</code></p>
+
+<p>You will need to have <strong>at least version 2.7</strong>, however <strong>python 3 is not supported</strong> yet!</p>
+
+<p>If you don’t have Python yet, the following instructions cover the installation as well. When using the Linux package managers, the right version will be installed automatically. On Mac/Windows, you have to manually install it.</p>
+
+<ul>
+  <li>
+    <p><strong>Linux</strong>: Installation of the OpenStack clients is simple via the built-in package manager: Ubuntu, RDO, openSUSE and SUSE Linux Enterprise have the client packages available through the package manager. For example, on Ubuntu, you may install the package with:</p>
+
+    <p><code>sudo apt-get install python-openstackclient</code></p>
+
+    <p>This will install the <em>openstack</em> client with all the depending packages.</p>
+    <div class="bgInfo">
+                  <img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+                      margin:0px; margin-right:10px; margin-bottom:5px;" />
+                  <p>If you need a newer version of an OpenStack client than is available on the Linux package manager, you can use Python’s package installer <strong><em>pip</em></strong> instead.  <em>pip</em> is a tool for easily installing and managing Python packages.   <br />
+  If you don’t have <em>pip</em> yet, do so with your package manager (search for <em>python-pip</em>). For example on Ubuntu:  <br />
+  <code>sudo apt-get install python-pip</code>  <br />
+  After installing <em>pip</em>, you can use <em>pip</em> to install the client package:  <br />
+  <code>sudo pip install python-openstackclient</code>    <br />
+   To upgrade the client at a later point:  <br />
+   <code>pip install --upgrade python-openstackclient</code></p>
+
+
+              </div>
+  </li>
+  <li><strong>Mac OS X</strong>:
+    <ol>
+      <li>Install Python’s package manager <strong><em>pip</em></strong> (unless you already have it). <em>pip</em> is a tool for easily installing and managing Python packages. It is recommended over <em>easy_install</em>. Python 2.7.9 and later include <em>pip</em> by default, so you may have <em>pip</em> already. Either of the three options work to get <em>pip</em>:
+        <ul>
+          <li>If you have the homebrew package manager, <em>pip</em> installs together with the Python packages, and conveniently also installs the <em>setuptools</em> which you also need:  <br />
+ <code>brew install python</code></li>
+          <li>If you don’t have homebrew, the <a href="https://www.python.org/downloads/mac-osx/">official Python download</a> of package 2.7.10 or later also installs <em>pip</em> (<em>Note</em>: Python 3 is <em>not</em> supported yet).</li>
+          <li><em>Alternative:</em> if you already have Python, but not <em>pip</em>, you may use the <strong><em>easy_install</em></strong> command to install <em>pip</em> — however there may be problems with running the clients when using this method. To install <em>pip</em> with <em>easy_install</em>:  <br />
+ <code>sudo easy_install pip</code></li>
+        </ul>
+      </li>
+      <li>Install <em>setuptools</em> if you don’t already have it (<em>Note</em>: If you used <em>homebrew</em> to install python in the last step, you will already have <em>setuptools</em>). Follow instructions on the <a href="https://pypi.python.org/pypi/setuptools">setuptools Website</a>.</li>
+      <li>Upgrade <em>setuptools</em>  <br />
+  <code>sudo pip install --upgrade setuptools</code></li>
+      <li>Install your client  <br />
+  <code>sudo pip install python-openstackclient</code>    <br />
+   To upgrade the client at a later point:  <br />
+   <code>pip install --upgrade python-openstackclient</code></li>
+    </ol>
+  </li>
+  <li><strong>Windows</strong>:
+    <ol>
+      <li>Install Python 2.7 or later (<em>Note</em>: Python 3 is not supported yet!) if you don’t have it yet. You can download it on the official <a href="https://www.python.org/downloads/windows/">Python Website</a>. You may keep the default options in the installation wizard — the following instructions assume that you keep the default installation path <em>C:\Python27</em>. It is recommended that you install <strong>Python 2.7.10 or later</strong> which includes the <em>pip</em> tool which you will need.</li>
+      <li>Install <em>setuptools</em>: follow the documentation provided on the <a href="https://pypi.python.org/pypi/setuptools">setuptools website</a> (the easiest is to download the <a href="https://bootstrap.pypa.io/ez_setup.py">ez_setup.py</a> file and run it).</li>
+      <li>Open a Windows Command line terminal (in the “Search” field, type <em>cmd</em> — on older Windows, you may find the search field when clicking on <em>Start</em>).</li>
+      <li>Make sure you have included the package <strong>pyOpenSSL (version 0.13 or higher)</strong> in your installation:
+ <code>pip install pyOpenSSL</code></li>
+      <li>Ensure that the <em>C:\Python27\Scripts</em> directory is defined in the PATH environment variable. To do this for the currently open terminal run the following command:   <br />
+ <code>set PATH=%PATH%;C:\Python27\Scripts</code>
+        <div class="bgInfo">
+             <img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+                 margin:0px; margin-right:10px; margin-bottom:5px;" />
+             <p>To <em>permanently</em> change an environment variable: On various Windows versions, this can be done in the <strong>Advanced System Settings</strong> (usually you can find it in <em>Control Panel</em> &gt; <em>System</em> or similar), where you should find a button <strong>Environment Variables</strong>. Scroll through the <em>System variables</em> and find <em>PATH</em> (it’s not case senstitive, so it may be <em>Path</em>). Select it and click on <em>“Edit…“</em>. At the end of the long text in the <em>Variable value</em> field, add the text <em>“;C:Python27\Scripts”</em> (without the quotation marks). Close all windows with [OK].</p>
+
+         </div>
+      </li>
+      <li>If you have <em>not</em> installed Python 2.7.10 or later <em>including the pip tool</em>, you will need to install <em>pip</em> separately. You can test whether you have <em>pip</em> by typing  <br />
+  <code>pip --version</code>  <br />
+   in your command line. If a version is printed, you have it. Otherwise, you may use the <em>easy_install</em> command from the <em>setuptools</em> package:  <br />
+ <code>easy_install pip</code></li>
+      <li>Install the client:<br />
+  <code>pip install python-openstackclient</code>     <br />
+   To upgrade the client at a later point:  <br />
+   <code>pip install --upgrade python-openstackclient</code></li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="step-2-get-your-openstack-credentials">Step 2. Get your OpenStack credentials</h3>
+
+<p>Before you can use any of the clients, you will need to get your <em>OpenStack credentials</em>. In particular, you will need a script file called the <em>OpenStack RC file</em>. You will need to load the information from within this script before you can use the tools. While you are at it, you may also write down all your OpenStack login details.</p>
+
+<p>You may already have done this in <a href="/package07/sections/index.html" title="Module 7">Module 7</a> when setting up access to your Object Store. In this case, make sure you have downloaded your <em>OpenStack RC file</em>, as you will need it now. You may then skip the following
+step.</p>
+
+<p>You can download your <strong>credentials</strong> from the <a href="https://dashboard.rc.nectar.org.au">Dashboard</a></p>
+
+<ol>
+  <li>
+    <p>Your <strong>tenant ID</strong> is the name of your project as reported in the left hand panel of the dashboard (e.g. <em>pt-12345</em>)</p>
+  </li>
+  <li>
+    <p>Your <strong>username</strong> is reported at the top of the dashboard on the right (e.g, logged in as: <em>user@uni.edu.au</em>)</p>
+  </li>
+  <li>
+    <p>Open the <em>Dashboard API</em> tab: get there via <em>Compute &gt;  Access &amp; Security &gt;  API Access</em>.</p>
+  </li>
+  <li>
+    <p>Look up what is specified for the <em>‘Identity’</em> Service in the <em>Dashboard API</em> tab. It will be a URL like  <br />
+ <em>https://<strong>keystone.rc.nectar.org.au</strong>:<strong>5000</strong>/v2.0/</em>   <br />
+ Take note of the text between <em>https://</em> and the colon (<em>keystone.rc.nectar.org.au</em> in the example). This will be the <strong>Server</strong>. Take note of the number (<em>5000</em> in the example). This will be the <strong>Port</strong>. You will need the <strong>Keystone Server and Port</strong> to authenticate your access. Also take note of the keystone version which you are using, in this case its <strong>v2.0</strong>.</p>
+  </li>
+  <li>
+    <p>Get your <strong>credential file</strong> (this is called the <em>OpenStack RC file</em> for OpenStack, and <em>EC2 file</em> for Amazon). You can download by clicking on the buttons on the top right on the same window: <strong>Download OpenStack RC File</strong>. Download it and save it somewhere on your computer where you can easily find it later.</p>
+  </li>
+  <li>
+    <p>You will also need your <strong>OpenStack password</strong>. This is <strong>not</strong> the same password that you use to log in to the Dashboard! If you have never used the OpenStack password before, you need to generate it first. You can do this in the <strong>Settings</strong> of the Dashboard: click next to your user name (your e-mail) on the top right and a drop down menu will open. Click on <em>Settings</em>. You need to reset your password by clicking <strong>Reset Password</strong> on the left panel of the settings. A long combination of numbers and letters will be displayed. This is your OpenStack password. Copy the text and save it somewhere safe.</p>
+    <div class="bgInfo">
+                 <img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+                     margin:0px; margin-right:10px; margin-bottom:5px;" />
+                 <p>Your OpenStack password will be a long combination of numbers. At the time of writing, unfortunately this password cannot be changed yet, but this should be changed in a future update of OpenStack on NeCTAR.</p>
+
+
+             </div>
+  </li>
+</ol>
+
+<h4 id="step-3-upload-your-rc-file-to-the-instance">Step 3: Upload your RC file to the instance</h4>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>If you are configuring the client access on your <strong><em>local computer</em></strong>, you can <strong><em>skip this step</em></strong>. If you are using the ssh terminal to your instance instead, you need to do this step.</p>
+
+				</div>
+
+<p>Before you continue, you need to copy the <em>OpenStack RC file</em> which you downloaded from the Dashboard to your instance.</p>
+
+<p>You may use any method to copy files to your instance, as discussed in <a href="/package07/sections/copyFiles.html">Module 7</a>, e.g. using the FTP client <em>FileZilla</em>. In the following instructions, we are going to apply the <em>command line</em> option to copy our OpenStack RC file across.</p>
+
+<ul>
+  <li>
+    <p>On <strong>Linux or Mac OS X</strong>, you can use the <em>scp</em> command to do this:</p>
+
+    <p><code>scp -i ~/.ssh/Nectar_Key &lt;path-to-your-openrc-file&gt; ubuntu@NNN.NNN.NNN.NNN:</code></p>
+
+    <p>replacing the N’s with your IP address.
+  This will have copied your openrc file in your ubuntu instance’s <em>home</em> directory.</p>
+  </li>
+  <li>
+    <p>On <strong>Windows</strong>, you may use the <em>PuTTY</em> command line tool <em>pscp</em>.  Please refer to instructions in <a href="/package07/sections/copyFiles.html">Module 7</a> on how to install and use <em>pscp</em>.</p>
+    <div class="bgInfo">
+                  <img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+                      margin:0px; margin-right:10px; margin-bottom:5px;" />
+                  <p>If you don’t feel comfortable using the command line, you may use an FTP client like <em>FileZilla</em> to drag and drop your file into your <em>ubuntu</em> user’s <em>home</em> directory (the <em>home</em> directory is the directory which opens up first when you connect with FileZilla). Instructions on how to use FileZilla are also included in <a href="/package07/sections/copyFiles.html">Module 7</a>.</p>
+
+              </div>
+
+    <p>Open the Windows Command prompt and type:</p>
+
+    <p><code>pscp.exe -i &lt;path-to-ssh-key&gt; &lt;path-to-openrc-file&gt; ubuntu@NNN.NNN.NNN.NNN:</code></p>
+
+    <p>replacing the N’s with your IP address. Specify the path where you have saved your nectar ssh key in &lt;path-to-ssh-key&gt; and the path to your <em>OpenStack RC</em> file in &lt;path-to-openrc-file&gt;.   <br />
+  This will copy your <em>OpenStack RC</em> file to your ubuntu instance’s <em>home</em> directory.</p>
+  </li>
+</ul>
+
+<h4 id="step-4-load-your-openstack-credentials-from-the-rc-file">Step 4: Load your OpenStack credentials from the RC file</h4>
+
+<p>Before we can use the command line client, we need to load the OpenStack RC file which contains our authentication details.</p>
+
+<ul>
+  <li>
+    <p><strong>Linux / Mac OS X:</strong>
+  Load your credentials:</p>
+
+    <p><code>source &lt;path-to-your-openrc-file&gt;</code></p>
+
+    <p>using the above example for the RC files, this would be:  <br />
+  <code>source ~/pt-12345-openrc.sh</code></p>
+
+    <p>You will be prompted for your OpenStack password.</p>
+    <div class="bgInfo">
+                  <img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+                      margin:0px; margin-right:10px; margin-bottom:5px;" />
+                  <p>You can try to copy and paste your password into the command line prompt. If this does not work in your command line, you may edit the OpenStack RC file and assign the password directly by replacing <em>$OS_PASSWORD_INPUT</em> by your password, and removing the line above (the <em>read</em> command). Then, do the <em>source</em> command above again.  <br />
+  <strong>Attention</strong>: Be aware that if you do this, your OpenStack password will be openly stored in the OpenStack RC file which everyone who may gain access to your computer can read! You are creating a <strong>potential security leak</strong>, so do this only if you are absolutely sure your computer is well protected and nobody else can read the file from where it is stored. 
+At the very least, it is recommended that you restrict access to this file to your user account only:  <br />
+<code>chmod 0600 &lt;path-to-your-openrc-file&gt;</code></p>
+
+              </div>
+  </li>
+  <li>
+    <p><strong>Windows</strong>:  <br />
+  You will need the <em>Windows PowerShell</em> installed (available on Windows 7 and later, or on XP with Service Pack 3).</p>
+
+    <p>The OpenStack RC file is a script written for Unix/Mac OSX systems, so it will need to be <em>modified</em> to work with the Windows PowerShell. 
+  Open your OpenStack RC file in NotePad or WordPad (<strong>not</strong> Word!!) and change it so it looks like the snippet below (with your own values from your OpenStack RC file).</p>
+    <div class="bgEdit"><pre class="PreformatEdit">$env:OS_AUTH_URL="https://keystone.rc.nectar.org.au:5000/v2.0/"
+$env:OS_TENANT_ID="f12d34....c"
+$env:OS_TENANT_NAME="&lt;your-tentant-name&gt;"
+$env:OS_USERNAME="&lt;your-email&gt;"
+$env:OS_PASSWORD="&lt;Your-OpenStack-Password&gt;";
+$env:OS_REGION_NAME="&lt;Your-Preset-Region-Name&gt;"</pre></div>
+    <p>Make sure to save this as <em>a powershell</em> (<em>.ps1</em>) file in <em>plain text</em> (pre-select <em>.txt</em> if necessary and then change the suffix to <em>.ps1</em>). For simplicity, save the file as <em>openrc.ps1</em> in your user folder, which usually is <em>C:\Users\&lt;Your-User-Name&gt;</em>.  <br />
+  Then, open the <strong>Windows Powershell</strong> by typing into the Windows Command line:  <br />
+  <code>powershell.exe</code>  <br />
+  And load your credentials:  <br />
+  <code>C:\Users\&lt;Your-User-Name&gt;\openrc.ps1</code>  <br />
+  <em>Note:</em> Alternatively, you may use the Windows PowerShell Terminal directly. Search for “powershell” in the App Search.</p>
+    <div class="bgImportant">
+                  <img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+                    margin:0px; margin-right:10px; margin-bottom:5px;" />
+                  <p>Make sure only you can read the <em>openrc.ps1</em> file, because the OpenStack password is readable on it.
+Right-click on the file, select “Properties”, go to the “Security” Tab, click “Edit…” and remove all names but your own user name.</p>
+
+              </div>
+  </li>
+</ul>
+
+<p>You will have to load your credentials <strong>every time</strong> after you reboot your computer or open up a new terminal, otherwise you cannot use the clients. 
+Use the same command as above to load them afresh.</p>
+
+<h4 id="step-5-use-your-openstack-client">Step 5: Use your OpenStack client</h4>
+
+<p>You are now ready to use your OpenStack client in the command line session in which you loaded your OpenStack RC file in the last step.</p>
+
+<p>Keep this terminal open to follow the instructions in the next sections.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Whenever you start over (e.g. after you close the terminal), you only need to load (<em>“source”</em>) your OpenStack RC file in order to get ready to use the OpenStack client, as described in the last step: <br />
+<code>source &lt;path-to-your-openrc-file&gt;</code></p>
+
+				</div>
+
+<p>You can display help for the <em>openstack</em> command with:</p>
+
+<p><code>openstack help</code></p>
+
+<p>And if you would like to see the more detailed help for a particular sub-tool, e.g. the <em>server</em> tool:</p>
+
+<p><code>openstack help server</code></p>
+
+<p>For supporting and further documentation throughout the next sections, please refer to the <a href="http://docs.openstack.org/developer/python-openstackclient/">official openstack client documentation</a>.</p>
+
+
+  </article>
+
+
+  
+  <!--
+  Previous section / Next section links. Very simple design to start with.
+  -->
+  <p>
+  
+  	
+    <a href="/package10/sections/index.html">Previous section</a>
+  
+  &nbsp; &nbsp; &nbsp;
+  
+  	
+    <a href="/package10/sections/objectStore.html">Next section</a>
+  
+  </p>
+   <!-- endif for pagedata_avail -->
+
+</div>
+
+      </div>
+    </div>
+
+    <div style="background-color: #0E0E0E; padding: 20px 20px 20px 60px; color: white; font-size: 12px">
+  <p>Copyright &copy;2015 NeCTAR</p>
+  <img src="/images/NCRIS_PROVIDER_rev.png" alt="NCRIS_PROVIDER_rev" width="132" height="63" />
+  <p><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png">
+  This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a></p>
+</div>
+
+
+  </body>
+
+</html>

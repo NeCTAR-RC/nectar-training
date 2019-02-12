@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel='shortcut icon' href='/images/icon.png' />
+
+  <title>Security</title>
+  <meta name="description" content="Nectar National Training Resources
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://training.nectar.org.au/package08/sections/volumeEncryption.html">
+  <link rel="alternate" type="application/rss+xml" title="Nectar Training" href="http://training.nectar.org.au/feed.xml" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61845992-2', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+<div class="nec-header">
+  <div class="header-top">
+    <div class="header-top-page">
+      <div class="nect-login">
+        <a href="https://support.nectar.org.au/support/home">Support</a>
+        <a href="http://cloud.nectar.org.au/contact/" class="new-tick">Contact</a>
+        <b><a href="https://dashboard.rc.nectar.org.au/"><b>Login</b></a></b>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-main">
+    <div class="header-main-page">
+      <div class="logo-nect">
+        <img src='/images/nectar_cloud_logo.jpg' alt="Nectar" height="43", width"248">
+      </div>
+      <div class="menu-nect">
+        
+          <a href="/" class="selected">Self-paced Training</a>
+          <a href="/for-trainers.html">Resources for Trainers</a>
+        
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="normal-block">
+  <div class="normal-block-page">
+    
+      <h3>Self-paced Training</h3>
+    
+  </div>
+</div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+          <!-- 
+    Preprocessing: Determine which part number this is. To avoid having to set numbers 
+    manually on each page, determine this here by the file name. 
+    -->
+  
+  
+  
+  
+  
+
+  
+  
+      
+  
+
+  
+  
+  
+  
+  
+  	
+  	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+		
+	
+		
+		
+		
+			
+			
+			
+  	<!-- If we are not in the main hierarchy, we may be looking at a file of one of the sub-categories -->
+	
+  
+
+
+
+<div class="post">
+
+  <header class="post-header">
+    <h3>Module 8</h3>
+    <h1>Security</h1>
+  </header>
+
+  
+
+  <!--
+    List of the individual parts of this module (so not all content gets crammed on one page).
+    Rendering this list first is necessary 
+  -->
+  <p> Sections of this module:</p>
+  
+	
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package08/sections/index.html"> Introduction</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package08/sections/concerns.html"> Security concerns and benefits</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package08/sections/deployment.html"> Deployment Models</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+			
+		
+		
+
+		
+		
+			
+		
+		
+			
+			
+      <a href="/package08/sections/encryption.html"> File and Volume Encryption</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+			
+				
+			
+		
+		
+			
+			
+      <a href="/package08/sections/fileEncryption.html">&nbsp;&nbsp; File encryption</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+			
+				
+			
+		
+		
+			
+				 <b>
+			
+			
+      <a href="/package08/sections/volumeEncryption.html">&nbsp;&nbsp; Volume encryption on Ubuntu</a>
+			
+				</b>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package08/sections/summary.html"> Summary</a>
+			
+			<br/>
+		
+	
+  <br/>
+
+
+  <a href="/package08/sections/all.html" target="_blank">View all sections on one page (Printer friendly)</a>
+  <br/>
+  <br/>
+  <h1> Volume encryption on Ubuntu </h1>
+
+   <!-- endif for pagedata_avail -->
+  
+
+  <!--
+  Content of page
+  -->
+  <article class="post-content">
+    
+<p>Because we base our instances in this course on Ubuntu, we shall also include instructions on how to encrypt a volume in your Ubuntu virtual machine.</p>
+
+<p>In <a href="/package07/sections/index.html" title="Module 7">Module 7</a>, we have seen how we can use our secondary disk of our ephemeral storage to store our data (the secondary disk is essentially a volume storage which is included with the instance). We have also created a Volume storage and attached it to our instance. In both methods we have <em>mounted</em> the disk so that we can access it from our instance.  <br />
+Disks which are <em>mounted</em> on the instance are suitable for Volume Encryption. You can encrypt the whole block of storage, and all files which are written on it will automatically be encrypted. Files on it will be unreadable to others which may gain access to it, even after you delete your storage (or discard your instance).</p>
+
+<p>You can think of volume encryption as happening in the background: You unlock it once with the password, and then use the drive as usual: editing, copying and moving files on it. All programs can access the drive as usual—Ubuntu takes care of automatic encryption and decryption in the background.</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Before you decide to encrypt your Volume, you should consider carefully whether you want to do this. While encrypting the data <strong>adds security</strong> in terms of preservation of privacy, it also <strong>incurs new risks</strong>:</p>
+
+<ul>
+  <li>If you ever forget your password, access to your data will be lost forever.</li>
+  <li>It may also introduce difficulties with manual data recovery.</li>
+  <li>You can only unlock your drive using the same encryption algorithm/tool.</li>
+  <li>You should also take into account that performance of reading and writing to your Volume will degrade with the encryption.</li>
+</ul>
+
+				</div>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>You may ask yourself whether you will also be able to copy data onto the encrypted drive from remote, for example using the <em>scp</em> command or an <em>sftp client</em>.</p>
+
+<p>You can access the drive from remote as usual. This is because the file server on your instance (e.g. the scp server) takes care of transferring the files to your remote computer after you have requested them. Programs running on Ubuntu (including the file server) can read the files from the drive as usual, because Ubuntu automatically takes care of the encryption/decryption in the background.</p>
+
+<p>For this reason, you can access the files, even though they are encrypted on the actual harddrive.</p>
+
+<p>Note however, that if <em>you</em> can copy and read the files as usual from remote, so can <em>everyone who may gain access</em> to your private ssh key and passphrase! The volume encryption mainly serves as security in case the physical hard-drive gets stolen, or hacked into from outside your VM – then, nobody can ready your data, because they would have to type in your volume encryption password first.</p>
+
+				</div>
+
+<p>In the following, we will go through the steps required to encrypt your Volume storage on your Ubuntu instance. We will use a standard procedure on Linux to encrypt drives with the <strong>Linux Unified Key Setup (LUKS)</strong>.</p>
+
+<p><em>Tipp:</em> You can use the same instructions below to encrypt your external USB Drives from a Ubuntu system. However, note that your USB drive will most likely then only be readable from a Linux system!</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Following the instructions will <strong>erase all data</strong> on the volume! If you have any files on it, make sure to back them up first.</p>
+
+				</div>
+
+<ol>
+  <li>
+    <p>Find out the device name of your volume (e.g. <em>/dev/vdc</em>). You may for example use <br />
+<code>sudo lsblk -l</code> and/or   <br />
+<code>sudo lsblk -f</code>  <br />
+to print information about your drives. You can also see it on the Volumes overview in the Dashboard.  <br />
+The following will assume your drive is located at <strong>/dev/vdc</strong>. If your is at another path, you will have to replace this in the following commands.</p>
+  </li>
+  <li>
+    <p>Ensure your volume is <strong>attached</strong> to your instance, but <strong>not mounted</strong>.  <br />
+ Find out if your volume is mounted:   <br />
+ <code>mount | grep vdc</code>  <br />
+ If it is, <em>unmount</em> it with  <br />
+ <code>sudo umount /dev/vdc</code></p>
+  </li>
+  <li>
+    <p>If you have data on the volume, now is a good time to securely erase it. We will talk about securely erasing all data in <a href="/package09/sections/index.html" title="Module 9">Module 9</a>. If in doubt, you should use an empty (newly created) volume for this tutorial. You can skip this step if you don’t have data to securely erase — a process which may take a long time depending on the size of your volume.  Erase your data with:  <br />
+<code>sudo dd if=/dev/urandom of=/dev/vdc</code> <br />
+<em>Note:</em> <a href="/package09/sections/cleanup.html">Module 9</a> provides more information about the <em>dd</em> command.</p>
+  </li>
+  <li>
+    <p>Now, install the file encryption package cryptsetup:  <br />
+ <code>sudo apt-get install cryptsetup</code>  <br />
+ <code>sudo modprobe dm-crypt</code>  <br />
+ From now on, every time you restart your machine, the encryption software should start up automatically.</p>
+  </li>
+  <li>Now you can encrypt your Volume:  <br />
+<code>sudo cryptsetup luksFormat -c aes-xts-plain64 -s 512 -h sha512 -y /dev/vdc</code>  <br />
+It will ask you to confirm that you really want to do this, as all data will be erased. You should confirm this with typing <strong>“YES”</strong> (it needs to be <em>uppercase</em>! Or the command will do nothing).   <br />
+ You should then be prompted for a password – make sure to choose a secure password, otherwise the encryption will not be secure!
+    <div class="bgInfo">
+                 <img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+                     margin:0px; margin-right:10px; margin-bottom:5px;" />
+                 <p>The parameter <strong>-c</strong> is used to select the algorithm.  <strong>-y</strong> ensures that you are asked to verify the password, which is always a great idea, in case you have a typo in your first try. <strong>-s</strong> determines the length of the key — 512 actually corresponds to 256 bit encryption. The reason is that the maximum length of 256 bits is used for <em>both</em> <em>AES</em> and <em>XTS</em> encryption. The more bits are used for encryption, the more it will affect performance. If you would like to trade off a bit of security against performance, you can use <em>-s 256</em> instead, which then corresponds to 128 Bit encryption.</p>
+
+             </div>
+  </li>
+  <li>
+    <p>Now you can map your encrypted drive to a virtual drive with the following command (you may replace <em>MySecureDrive</em> with any name you want to assign to the drive):  <br />
+<code>sudo cryptsetup luksOpen /dev/vdc MySecureDrive</code>  <br />
+ This will ask for the volume encryption password which you just chose. After the command has been executed, your drive will be mapped to <em>/dev/mapper/MySecureDrive</em> (or other name instead of <em>MySecureDrive</em>, if you changed this in the command above).</p>
+  </li>
+  <li>
+    <p>Now it is time to format your drive (again, replace <em>MySecureDrive</em> with your name, if you have chosen another).  <br />
+ <code>sudo mkfs.ext4 /dev/mapper/MySecureDrive</code></p>
+  </li>
+  <li>
+    <p>That’s almost done! Now we can mount the drive to any directory. In this example, we will create a new one <em>/MyMountedDriveedDrive</em>, but you can choose any other directory:  <br />
+  <code>sudo mkdir /MyMountedDriveedDrive</code>  <br />
+ <code>sudo mount /dev/mapper/MySecureDrive /MyMountedDriveedDrive</code></p>
+  </li>
+  <li><em>Optional:</em> By default, you do not have write permissions on the secondary drive. We discussed how to change write permissions in <a href="/package07/sections/index.html" title="Module 7">Module 7</a>. Here a brief reminder: You can do this either with  <br />
+ <code>sudo chown ubuntu /data</code>  <br />
+ to allow access only to yourself, or  <br />
+ <code>sudo chgrp ubuntu /data</code>  <br />
+ <code>sudo chmod g+rwx /data</code>  <br />
+ to allow access to your whole user group.</li>
+</ol>
+
+<p><strong>You are all done!</strong></p>
+
+<p>You can now use this drive as normal without worrying about encryption, and your data is securely encrypted.</p>
+
+<p>To unmount and free up the volume, type the following commands:</p>
+
+<p><code>sudo umount /MyMountedDrive</code> <br />
+<code>sudo cryptsetup luksClose MySecureDrive</code></p>
+
+<p>After every reboot of your instance, you will have to unlock the drive by typing in your password and mount the drive again:</p>
+
+<p><code>sudo cryptsetup luksOpen /dev/vdc MySecureDrive</code>  <br />
+<code>sudo mount /dev/mapper/MySecureDrive /MyMountedDrive</code></p>
+
+
+  </article>
+
+
+  
+  <!--
+  Previous section / Next section links. Very simple design to start with.
+  -->
+  <p>
+  
+  	
+    <a href="/package08/sections/fileEncryption.html">Previous section</a>
+  
+  &nbsp; &nbsp; &nbsp;
+  
+  	
+    <a href="/package08/sections/summary.html">Next section</a>
+  
+  </p>
+   <!-- endif for pagedata_avail -->
+
+</div>
+
+      </div>
+    </div>
+
+    <div style="background-color: #0E0E0E; padding: 20px 20px 20px 60px; color: white; font-size: 12px">
+  <p>Copyright &copy;2015 NeCTAR</p>
+  <img src="/images/NCRIS_PROVIDER_rev.png" alt="NCRIS_PROVIDER_rev" width="132" height="63" />
+  <p><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png">
+  This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a></p>
+</div>
+
+
+  </body>
+
+</html>

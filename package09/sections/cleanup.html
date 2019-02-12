@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel='shortcut icon' href='/images/icon.png' />
+
+  <title>Backing up and packing up</title>
+  <meta name="description" content="Nectar National Training Resources
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://training.nectar.org.au/package09/sections/cleanup.html">
+  <link rel="alternate" type="application/rss+xml" title="Nectar Training" href="http://training.nectar.org.au/feed.xml" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61845992-2', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+<div class="nec-header">
+  <div class="header-top">
+    <div class="header-top-page">
+      <div class="nect-login">
+        <a href="https://support.nectar.org.au/support/home">Support</a>
+        <a href="http://cloud.nectar.org.au/contact/" class="new-tick">Contact</a>
+        <b><a href="https://dashboard.rc.nectar.org.au/"><b>Login</b></a></b>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-main">
+    <div class="header-main-page">
+      <div class="logo-nect">
+        <img src='/images/nectar_cloud_logo.jpg' alt="Nectar" height="43", width"248">
+      </div>
+      <div class="menu-nect">
+        
+          <a href="/" class="selected">Self-paced Training</a>
+          <a href="/for-trainers.html">Resources for Trainers</a>
+        
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="normal-block">
+  <div class="normal-block-page">
+    
+      <h3>Self-paced Training</h3>
+    
+  </div>
+</div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+          <!-- 
+    Preprocessing: Determine which part number this is. To avoid having to set numbers 
+    manually on each page, determine this here by the file name. 
+    -->
+  
+  
+  
+  
+  
+
+  
+  
+      
+  
+
+  
+  
+  
+  
+  
+  	
+  	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+			
+			
+			
+  	<!-- If we are not in the main hierarchy, we may be looking at a file of one of the sub-categories -->
+	
+  
+
+
+
+<div class="post">
+
+  <header class="post-header">
+    <h3>Module 9</h3>
+    <h1>Backing up and packing up</h1>
+  </header>
+
+  
+
+  <!--
+    List of the individual parts of this module (so not all content gets crammed on one page).
+    Rendering this list first is necessary 
+  -->
+  <p> Sections of this module:</p>
+  
+	
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package09/sections/index.html"> Introduction</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package09/sections/snapshot.html"> Snapshots</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package09/sections/backup.html"> Backing up</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+			
+		
+		
+
+		
+		
+			
+		
+		
+			
+				 <b>
+			
+			
+      <a href="/package09/sections/cleanup.html"> Cleaning up</a>
+			
+				</b>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package09/sections/summary.html"> Summary</a>
+			
+			<br/>
+		
+	
+  <br/>
+
+
+  <a href="/package09/sections/all.html" target="_blank">View all sections on one page (Printer friendly)</a>
+  <br/>
+  <br/>
+  <h1> Cleaning up </h1>
+
+   <!-- endif for pagedata_avail -->
+  
+
+  <!--
+  Content of page
+  -->
+  <article class="post-content">
+    
+<div class="bgPrerequisite">
+					<img src="/images/glyphicons-333-certificate.png" alt="image" align="left" style="width:17px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><em>Prerequisite:</em> You should be familiar with all the storage terminology discussed in <a href="/package06/sections/storage.html">Module 6</a> and <a href="/package07/sections/manageStorage.html">Module 7</a>. You must know how to <em>mount</em> your secondary ephemeral drive on your instance, and how to <em>attach</em> and <em>mount</em> a Volume to your instance.</p>
+
+<p>Some basic command line usage skills are helpful for this section as well.</p>
+
+				</div>
+
+<p>It is important that you <strong>take responsibility</strong> and have your instance and volume storage up and running <strong>only</strong> when you really need it, or your resources will sit idle, and you will be using up your CPU hours and block the resources to other researchers.</p>
+
+<p>In the last sections you have learned how you can take Snapshots of your instances and easily re-launch them when you need them again; you can also take an Image of your Volumes and create backups to re-create the state of your Volume at a later time. Once you have your instance and data backed up, you are free to <em>terminate</em> your resources and free them up for others.</p>
+
+<p>Before you free up the resources, you should make sure that you <strong>securely erase all the data</strong> on your volumes, to make sure nobody will be able to restore the data on the section of the hard-drive you were using. This section will show how you can securely erase data, and then <strong>terminate your instances and volumes</strong> so that the resources are freed up for other researchers.</p>
+
+<h3 id="securely-erasing-data">Securely erasing data</h3>
+
+<p>Just removing all files from your secondary ephemeral drive or your Volumes won’t do the job — this just removes the index of the files (think of it like a table of contents), but the actual bits of the files will still be on the harddrive, so it is possible to restore them when using special tools. To securely erase the data, you have to <em>overwrite</em> the bits with other (random) bits. You even have to repeat the overwriting several times to be sure nothing can be recovered. Some people even argue the only way to really, really ensure the data is erased is to burn up the hard drive — an option we don’t have in this case, so we will have to be satisfied with overwriting the data several times.</p>
+
+<p>If you are really concerned that overwriting your data several times may still not be enough, then <strong>encrypt your volume</strong>, as described <a href="/package08/sections/encryption.html">here in Module 8</a>, and then securely erase it afterwards. Even if someone was able to restore the data, it would be the encrypted data — and they would still need your key!</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Before you start erasing data, make sure that you <strong>unmount</strong> the drive from your instance!</p>
+
+				</div>
+
+<p>You will need your <em>device file name</em> (e.g. <em>/dev/vdc</em>). To find it, you may for example use <br />
+    <code>sudo lsblk -l</code> and/or   <br />
+    <code>sudo lsblk -f</code>  <br />
+to print information about your drives. You can also see it on the Volumes overview in the Dashboard.  <br />
+The following will assume your drive is located at <strong>/dev/vdc</strong>. If your is at another path, you will have to replace this in the following commands.</p>
+
+<h4 id="using-dd">Using <em>dd</em></h4>
+
+<p>Using the <em>dd</em> Unix command line utility, wiping your disk is easy. Say your <em>device location</em> is your volume <em>/dev/vdc</em>, or your secondary ephemeral storage <em>/dev/vdb</em>, you can securely erase it with the <em>dd</em> command (we already encountered <em>dd</em> in the last section):</p>
+
+<p><code>sudo dd if=/dev/urandom of=&lt;device file&gt; bs=4K</code></p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Warning: This command will start erasing all data as soon as you start running it, with no further confirmation. Check that the correct drive or partition has been targeted: the of=… option has to point to your volume or ephemeral disk you want to erase. It should <em>not</em> point to a system disk!</p>
+
+				</div>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>The option <strong>bs</strong> means <em>block size</em>, which is the number of bytes that are written at one time. The command is faster if you choose the block size used by your physical harddrive — in case of doubt, just use <em>4K</em>. You may specify the size in bytes, or in <em>kilobytes</em> by appending <em>k</em>, or in Megabytes by appending <em>M</em>.</p>
+
+<p>To find out the block size of <em>/dev/vdc</em>:</p>
+
+<p><code>sudo dumpe2fs /dev/vdc | grep 'Block size'</code></p>
+
+				</div>
+
+<p>The process may take quite a while. It is finished when dd <strong>reports the error</strong> <em>“No space left on device”</em> (this is technically an error because <strong>dd</strong> tries to write beyond the end of the disk, which it cannot.</p>
+<div class="bgTerminal"><pre class="PreformatTerminal">$ sudo dd if=/dev/urandom of=/dev/vdc bs=4K iflag=nocache oflag=direct
+dd: error writing ‘/dev/vdc’: No space left on device
+262145+0 records in
+262144+0 records out
+1073741824 bytes (1.1 GB) copied, 293.366 s, 3.7 MB/s</pre></div>
+
+<p>Now if you wanted to be even more sure your data is erased, you repeat this process several times.</p>
+
+<p>After you have erased your disk, everything will be wiped — also the file system. If you wanted to re-use the volume, you have to format it again, as described in <a href="/package07/sections/manageStorage.html">Module 7</a>.</p>
+
+<p>To speed up the process, you may also overwrite the data with <em>only zeros</em> instead of random data (it is faster because the random generator can be switched off). This is a little less secure:
+while this will render any data irrecoverable by software, it still may be recoverable by <a href="https://en.wikipedia.org/wiki/Data_remanence">special laboratory techniques</a>. However for this, somebody would need to break into the NeCTAR data center, identify the section of the hard drive you have been using, and undergo significant efforts to restore your data, with no guaranteed outcome — unlikely! So let’s speed up the process:</p>
+
+<p><code>sudo dd if=/dev/uzero of=&lt;device file&gt; bs=4K iflag=nocache oflag=direct</code></p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Options <strong>iflag</strong> and <strong>oflag</strong> will try to disable buffering, which does not make sense in this case of a constant stream of zeros. The options should speed up the process.</p>
+
+				</div>
+
+<h4 id="using-shred">Using <em>shred</em></h4>
+
+<p>The <a href="https://en.wikipedia.org/wiki/Shred_(Unix)">shred</a> command line utility also provides a means to securely erase data. It is installed by default on most Linux distributions (e.g. on Debian/Ubuntu as part of the <em>coreutils</em> package).
+It is argued that <em>shred</em> is not as secure as the above <em>dd</em> command — shred securely deletes data, but in theory it can be recovered, albeit only with great difficulty using specialised hardware, if at all.</p>
+
+<p>To run <em>shred</em> with its default settings (overwrite with random data in 3 passes) to erase your device mapped on <em>device file</em> (e.g. <em>/dev/vdc</em>):</p>
+
+<p><code>sudo shred -v &lt;device file&gt;</code></p>
+
+<p>The option <strong>-v</strong> means <em>“verbose”</em>, it will print information while the process is ongoing. For overwriting with zeros instead of random data (which is faster but less secure), add the option <strong>-z</strong>.</p>
+
+<p>Shred also allows specification of a particular file instead of <em>&lt;device file&gt;</em>, but <em>this is not secure on journaling file systems</em> (which most modern Linux file systems are)! Be sure to choose your device mapping file.</p>
+
+<p>Shred by default uses three passes (overwriting your data three times), writing pseudo-random data. 
+Alternatively, shred can be instructed to do <em>X</em> number of passes with the same random source as used in the <em>dd</em> command described earlier:</p>
+
+<p><code>sudo shred -v --random-source=/dev/urandom -n&lt;X&gt; &lt;device file&gt;</code></p>
+
+<p>For example, say you want to erase your drive attached to <em>/dev/vdc</em>, use 5 passes and random data:</p>
+
+<p><code>sudo shred -v --random-source=/dev/urandom -n5 /dev/vdc</code></p>
+
+<p>After you have erased your disk, everything will be wiped — also the file system. If you wanted to re-use the volume, you have to format it again, as described in <a href="/package07/sections/manageStorage.html">Module 7</a>.</p>
+
+<p>For more details on the <em>shred</em> utility, refer to the man pages:</p>
+
+<p><code>man shred</code></p>
+
+<h3 id="terminating-an-instances-and-volumes">Terminating an instances and Volumes</h3>
+
+<p>Deleting your instance or volume and thereby freeing up resources for others is also called <em>terminating</em> your instance or volume. This can be done easily in the Dashboard.</p>
+
+<p>To terminate an instance, first make sure you have securely erased the data on the secondary ephemeral disk which you may have used (probably on <em>/dev/vdb</em>). Then, go to <em>Dashboard &gt; Compute &gt; Instances</em> and find the instance you want to terminate in the list. In the right-hand side drop-box next to the instance, select <em>Terminate instance</em>.</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>You must <em>detach</em> any Volumes from your instance before terminating it — There may be problems if you terminate an Instance while it has Volumes attached. Recovering your volume requires the NeCTAR technical staff to manually patch a database.</p>
+
+				</div>
+
+<p>To delete a Volume, <em>after</em> you have securely erased your data, go to <em>Dashboard &gt; Compute &gt; Volumes</em> and find the volume you want to delete in the list. In the right-hand side drop-down menu, select <em>Delete Volume</em>.</p>
+
+
+  </article>
+
+
+  
+  <!--
+  Previous section / Next section links. Very simple design to start with.
+  -->
+  <p>
+  
+  	
+    <a href="/package09/sections/backup.html">Previous section</a>
+  
+  &nbsp; &nbsp; &nbsp;
+  
+  	
+    <a href="/package09/sections/summary.html">Next section</a>
+  
+  </p>
+   <!-- endif for pagedata_avail -->
+
+</div>
+
+      </div>
+    </div>
+
+    <div style="background-color: #0E0E0E; padding: 20px 20px 20px 60px; color: white; font-size: 12px">
+  <p>Copyright &copy;2015 NeCTAR</p>
+  <img src="/images/NCRIS_PROVIDER_rev.png" alt="NCRIS_PROVIDER_rev" width="132" height="63" />
+  <p><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png">
+  This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a></p>
+</div>
+
+
+  </body>
+
+</html>

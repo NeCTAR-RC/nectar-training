@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel='shortcut icon' href='/images/icon.png' />
+
+  <title>Launching and Connecting</title>
+  <meta name="description" content="Nectar National Training Resources
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://training.nectar.org.au/package07/sections/objectStorage.html">
+  <link rel="alternate" type="application/rss+xml" title="Nectar Training" href="http://training.nectar.org.au/feed.xml" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61845992-2', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+<div class="nec-header">
+  <div class="header-top">
+    <div class="header-top-page">
+      <div class="nect-login">
+        <a href="https://support.nectar.org.au/support/home">Support</a>
+        <a href="http://cloud.nectar.org.au/contact/" class="new-tick">Contact</a>
+        <b><a href="https://dashboard.rc.nectar.org.au/"><b>Login</b></a></b>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-main">
+    <div class="header-main-page">
+      <div class="logo-nect">
+        <img src='/images/nectar_cloud_logo.jpg' alt="Nectar" height="43", width"248">
+      </div>
+      <div class="menu-nect">
+        
+          <a href="/" class="selected">Self-paced Training</a>
+          <a href="/for-trainers.html">Resources for Trainers</a>
+        
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="normal-block">
+  <div class="normal-block-page">
+    
+      <h3>Self-paced Training</h3>
+    
+  </div>
+</div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+          <!-- 
+    Preprocessing: Determine which part number this is. To avoid having to set numbers 
+    manually on each page, determine this here by the file name. 
+    -->
+  
+  
+  
+  
+  
+
+  
+  
+      
+  
+
+  
+  
+  
+  
+  
+  	
+  	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+		
+	
+		
+		
+		
+	
+		
+		
+		
+	
+		
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+		
+	
+		
+		
+		
+			
+			
+			
+  	<!-- If we are not in the main hierarchy, we may be looking at a file of one of the sub-categories -->
+	
+  
+
+
+
+<div class="post">
+
+  <header class="post-header">
+    <h3>Module 7</h3>
+    <h1>Launching and Connecting</h1>
+  </header>
+
+  
+
+  <!--
+    List of the individual parts of this module (so not all content gets crammed on one page).
+    Rendering this list first is necessary 
+  -->
+  <p> Sections of this module:</p>
+  
+	
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/index.html"> Introduction</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/createSSHKey.html"> Create a ssh key</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/launching.html"> Launching an instance</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/connectViaSSH.html"> Connect to the instance</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/firstSSHCommands.html"> Configuration and control</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/remoteDesktop.html"> Connect to a remote desktop</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/guiViaSSH.html"> Graphical Interfaces on the ssh terminal</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/enableWebServer.html"> Install a web server</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+			
+		
+		
+
+		
+		
+			
+		
+		
+			
+			
+      <a href="/package07/sections/manageStorage.html"> Managing storage</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+			
+				
+			
+		
+		
+			
+			
+      <a href="/package07/sections/ephemeralStorage.html">&nbsp;&nbsp; On-instance storage</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+			
+				
+			
+		
+		
+			
+				 <b>
+			
+			
+      <a href="/package07/sections/objectStorage.html">&nbsp;&nbsp; Object storage</a>
+			
+				</b>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+			
+				
+			
+		
+		
+			
+			
+      <a href="/package07/sections/volumeStorage.html">&nbsp;&nbsp; Volume storage</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+			
+				
+			
+		
+		
+			
+			
+      <a href="/package07/sections/copyFiles.html">&nbsp;&nbsp; Copying files across</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/summary.html"> Summary</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/appendices.html"> Appendix</a>
+			
+			<br/>
+		
+	
+  <br/>
+
+
+  <a href="/package07/sections/all.html" target="_blank">View all sections on one page (Printer friendly)</a>
+  <br/>
+  <br/>
+  <h1> Object storage </h1>
+
+   <!-- endif for pagedata_avail -->
+  
+
+  <!--
+  Content of page
+  -->
+  <article class="post-content">
+    
+<p>You can connect to your object store with a variety of clients, as long as they support <em>OpenStack Swift</em> or <em>Amazon S3</em>. We will discuss some example clients which support <em>Swift</em> in this section.</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><strong>Security Warning</strong></p>
+
+<p>Swift does NOT provide encryption of the data it stores.</p>
+
+<p>If you have sensitive data that requires encryption you must encrypt the data files <em>before</em> upload them to your object store.</p>
+
+				</div>
+
+<p>Access to your object store requires your password, but this password may be saved in a file that people who have access to your local computer can read. You must be careful to not give anyone access to your computer — similarly, they would get access to your private ssh key that you save on your computer to log in to your instance, so be careful with giving people access to your computer.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>The NeCTAR implementation of <em>Swift</em> is geodistributed across Nodes of the Research Cloud so that availability is not reliant on any one datacentre or network infrastructure. Each collection of Swift nodes/hardware is known as a <em>region</em>, which may or may not include a Swift proxy server (the Internet facing and serving component of Swift). With some Swift clients/APIs users can explicitly choose which proxy to connect to, this might be useful e.g. for speeding up writes to object storage by choosing the nearest proxy. Due to NeCTARs Swift having multiple regions, some clients/APIs require explicit configuration of a default region, which should be “Melbourne” for most users (see e.g. the Cyberduck profile below).</p>
+
+				</div>
+
+<h3 id="get-your-openstack-credentials">Get your OpenStack credentials</h3>
+
+<p>Before you start, you should get your login details.
+Note that you will <em>not</em> need to do this if you just want to upload files via the Dashboard (as described in the next section). But if you want to use other tools, and to complete this tutorial, you should take note of your credentials now.</p>
+
+<p>You can download your <strong>credentials</strong> from the <a href="https://dashboard.rc.nectar.org.au">Dashboard</a></p>
+
+<ol>
+  <li>
+    <p>Your <strong>tenant ID</strong> is the name of your project as reported in the left hand panel of the dashboard (e.g. <em>pt-12345</em>)</p>
+  </li>
+  <li>
+    <p>Your <strong>username</strong> is reported at the top of the dashboard on the right (e.g, logged in as: <em>user@uni.edu.au</em>)</p>
+  </li>
+  <li>
+    <p>Open the <em>Dashboard API</em> tab: get there via <em>Compute &gt;  Access &amp; Security &gt;  API Access</em>.</p>
+  </li>
+  <li>
+    <p>Look up what is specified for the <em>‘Identity’</em> Service in the <em>Dashboard API</em> tab. It will be a URL like  <br />
+ <em>https://<strong>keystone.rc.nectar.org.au</strong>:<strong>5000</strong>/v2.0/</em>   <br />
+ Take note of the text between <em>https://</em> and the colon (<em>keystone.rc.nectar.org.au</em> in the example). This will be the <strong>Server</strong>. Take note of the number (<em>5000</em> in the example). This will be the <strong>Port</strong>. You will need the <strong>Keystone Server and Port</strong> to authenticate your access. Also take note of the keystone version which you are using, in this case its <strong>v2.0</strong>.</p>
+  </li>
+  <li>
+    <p>Get your <strong>credential file</strong> (this is called the <em>OpenStack RC file</em> for OpenStack, and <em>EC2 file</em> for Amazon). You can download by clicking on the buttons on the top right on the same window: <strong>Download OpenStack RC File</strong>. Download it and save it somewhere on your computer where you can easily find it later.</p>
+  </li>
+  <li>
+    <p>You will also need your <strong>OpenStack password</strong>. This is <strong>not</strong> the same password that you use to log in to the Dashboard! If you have never used the OpenStack password before, you need to generate it first. You can do this in the <strong>Settings</strong> of the Dashboard: click next to your user name (your e-mail) on the top right and a drop down menu will open. Click on <em>Settings</em>. You need to reset your password by clicking <strong>Reset Password</strong> on the left panel of the settings. A long combination of numbers and letters will be displayed. This is your OpenStack password. Copy the text and save it somewhere safe.</p>
+    <div class="bgInfo">
+                 <img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+                     margin:0px; margin-right:10px; margin-bottom:5px;" />
+                 <p>Your OpenStack password will be a long combination of numbers. At the time of writing, unfortunately this password cannot be changed yet, but this should be changed in a future update of OpenStack on NeCTAR.</p>
+
+
+             </div>
+  </li>
+</ol>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>You will not need your OpenStack RC file in this Module, but you <em>will</em> need it later in Module 10. So while you are on the Dashboard API page already, you may download it now, and remember for later where you put it.</p>
+
+				</div>
+
+<h3 id="all-platforms-access-via-the-dashboard">All platforms: Access via the Dashboard</h3>
+
+<p>We will upload some files to our Object Store using the Dashboard. This is probably the easiest method to upload files.</p>
+
+<p>First, select any file on your computer — some image, text file, or anything not so important. If you are unsure which to choose, just create a new text file, write something in it, and save it to the Desktop (or anywhere else where you can find it.</p>
+
+<p>In this example, we are using a file called <em>SampleObject.txt</em> with the text “I am a sample object file” in it, saved on the Desktop.</p>
+
+<h4 id="step-1-create-a-container">Step 1: Create a container</h4>
+
+<p>Go to the <a href="https://dashboard.rc.nectar.org.au">Dashboard</a> and then to <em>Object Store &gt; Containers</em>. You will get to a page which shows the overview of your containers.</p>
+
+<p><img src="images/scrDashboardObjectStore1.png" class="aligncenter" style="width:70%; " alt="image" /></p>
+
+<p>First of all, you will have to create a <em>Container</em>.</p>
+<div class="bgDefinition" style="min-height: 55px;">
+					<img src="/images/glyphicons-352-book-open.png" alt="image" align="left" style="width:24px; height:22px;
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>A <strong>Container</strong> is like a folder in which you can put files. The difference to a normal folder is that a Container is intended for a flat hierarchy, so you cannot create containers within a container — however you may create “Pseudo Containers” within the Container, so you can still organize your files hierarchically.</p>
+
+				</div>
+<p>Click on <strong>Create Container</strong>. As a <strong>Name</strong>, type in  <em>MyObjectContainer</em> (or you may use your own container name, in which case you have to consider this in the instructions below). Keep the access on <strong>private</strong>.</p>
+
+<p><img src="images/scrDashboardObjectStore2.png" class="aligncenter" style="width:70%; " alt="image" /></p>
+
+<p>Click on <strong>Create Container</strong>. Your Container <em>MyObjectContainer</em> will then be listed on your Dashboard:</p>
+
+<p><img src="images/scrDashboardObjectStore3.png" class="aligncenter" style="width:90%; " alt="image" /></p>
+
+<h4 id="step-2-upload-a-file">Step 2: Upload a file</h4>
+
+<p>Click on <strong>Upload Object</strong> on the right side of your container overview. A window will open in which you can <strong>Browse</strong> for your file.</p>
+
+<p><em>Note:</em> If you cannot see the “Upload Object” field, you have to click on your container <em>MyObjectContainer</em> to select it.</p>
+
+<p><img src="images/scrDashboardObjectStore4.png" class="aligncenter" style="width:70%; " alt="image" /></p>
+
+<p>You may also rename it in the given text field if you wish, for now we are going to keep the name <em>SampleObject.txt</em>.</p>
+
+<p>Click <strong>Upload Object</strong> to close the window and upload the file to your object store. It will now be displayed on the right side of the overview. We can see that it has 27 Bytes.</p>
+
+<p><img src="images/scrDashboardObjectStore5.png" class="aligncenter" style="width:90%; " alt="image" /></p>
+
+<p>If you wanted to download this file (e.g. when accessing the store from another computer), you can do this here by clicking on <strong>Download</strong>.</p>
+
+<h3 id="windowsmac-access-with-cyberduck">Windows/Mac: Access with Cyberduck</h3>
+
+<ol>
+  <li>
+    <p>Download the newest version possible of the application <em>Cyberduck</em> (you need at least version 4.4): <a href="http://cyberduck.ch/">http://cyberduck.ch/</a></p>
+  </li>
+  <li>Install Cyberduck.
+    <ul>
+      <li>On a Mac, you will download a .zip file which contains the app. Save it to the Desktop (or any other folder). Extract the zip file by double-clicking on it.</li>
+      <li>On Windows, you will download an installer. You may keep the default options, if unsure. You don’t need to install Bonjour, if you are asked.</li>
+    </ul>
+  </li>
+  <li>Create a text file on your local computer (e.g. save it on the Desktop) with the following contents. Name it <em>NeCTARObjectStore.cyberduckprofile</em> (or any other name, it just has to end with .cyberduckprofile).
+    <div class="bgEdit"><pre class="PreformatEdit">&lt;?xml version="1.0" encoding="UTF-8"?&gt;    
+&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;    
+&lt;plist version="1.0"&gt;    
+   &lt;dict&gt;    
+      &lt;key&gt;Protocol&lt;/key&gt;    
+      &lt;string&gt;swift&lt;/string&gt;    
+      &lt;key&gt;Vendor&lt;/key&gt;    
+      &lt;string&gt;NeCTAR Swift (Keystone)&lt;/string&gt;    
+      &lt;key&gt;Context&lt;/key&gt;    
+      &lt;string&gt;/v2.0/tokens&lt;/string&gt;    
+      &lt;key&gt;Region&lt;/key&gt;    
+      &lt;string&gt;Melbourne&lt;/string&gt;    
+      &lt;key&gt;Description&lt;/key&gt;    
+      &lt;string&gt;NeCTAR Swift Melbourne (Keystone)&lt;/string&gt; 
+      &lt;key&gt;Scheme&lt;/key&gt;
+      &lt;string&gt;https&lt;/string&gt;
+      &lt;key&gt;Default Hostname&lt;/key&gt;
+      &lt;string&gt;keystone.rc.nectar.org.au&lt;/string&gt;
+      &lt;key&gt;Default Port&lt;/key&gt;
+      &lt;string&gt;5000&lt;/string&gt;
+      &lt;key&gt;Hostname Configurable&lt;/key&gt;
+      &lt;true/&gt;
+      &lt;key&gt;Port Configurable&lt;/key&gt;
+      &lt;true/&gt;
+      &lt;key&gt;Username Placeholder&lt;/key&gt;    
+      &lt;string&gt;tenantId:username&lt;/string&gt;    
+      &lt;key&gt;Password Placeholder&lt;/key&gt;    
+      &lt;string&gt;password&lt;/string&gt;      
+   &lt;/dict&gt;    
+ &lt;/plist&gt;</pre></div>
+  </li>
+  <li>
+    <p>Double-click on your file <em>NeCTARObjectStore.cyberduckprofile</em>.</p>
+  </li>
+  <li>
+    <p>A Dialogue should open where you can specify Server etc. If it does not, open Cyberduck and go to <strong>Bookmarks &gt;  New Bookmark</strong>.  <br />
+ <img src="images/scrCyberduckMac1.png" class="alignright" style="width:400px; " alt="image" /></p>
+  </li>
+  <li>
+    <p>Choose <em>NeCTAR Swift Melbourne (Keystone)</em> from the drop-down box, if it is not selected yet. If it does not exist, something has gone wrong in importing the NeCTAR profile (your file <em>NeCTARObjectSTore.cyberduckprofile</em>). The image shows how it looks on a Mac, on Windows your interface will look a bit different, but the fields are the same.</p>
+  </li>
+  <li>
+    <p><strong>Nickname</strong>: give the connection a name of your choice, e.g. ‘<em>NeCTAR Object Store</em>’</p>
+  </li>
+  <li>
+    <p>Confirm that <strong>Server</strong> and <strong>Port</strong> match the <a href="#get-your-openstack-credentials">OpenStack credentials you took note of</a>. If they don’t match use the values you took note of.</p>
+  </li>
+  <li>
+    <p><strong>TenantID:Access ID</strong> (or <strong>username</strong> on a Mac): Type in your tenant ID and username (you took note of this before) separated by a colon, for example <em>pt-12345:user@uni.edu.au</em>.</p>
+  </li>
+  <li>
+    <p>Expand the window 
+<img src="images/scrCyberduckWindows2.png" class="alignright" style="width:400px; " alt="image" />
+by clicking on <strong>More Options</strong>. You can choose a <strong>Download Folder</strong> to which your files will be downloaded by default. As Path you <em>can</em> (but do not have to) specify the version number of keystone, e.g. <em>/v2.0/</em>.</p>
+  </li>
+  <li>
+    <p>Leave all other options in the default setting, and close the window (by clicking on the window cross)</p>
+  </li>
+  <li>
+    <p>Double click on the symbol of your connection and Cyberduck will try to connect to your object store.   <br />
+You will be asked to type your OpenStack password (not the password you use to login to the Dashboard!) 
+This is the password in the <a href="#get-your-openstack-credentials">OpenStack credentials you took note of</a>.
+You might also be required to re-enter your tenant ID and username, again separated by a colon
+<img src="images/scrCyberduckMac3.png" class="alignright" style="width:400px; " alt="image" /></p>
+  </li>
+  <li>
+    <p>You can now <strong>drag and drop</strong> files into your object store container (drag in on the folder symbol), and from the object store container to your local computer (onto your desktop or into an open folder in your file explorer). You can also right-click and <strong>Download</strong> (it will download into the folder you selected as <em>Download Folder</em> in the connection dialogue).</p>
+  </li>
+  <li>You can synchronize files to a folder on your local computer. Right-click on the container you want to synchronize, and select <strong>Synchronize</strong>. You will be prompted to select a folder to synchronize into.
+    <div class="bgImportant">
+                <img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+                  margin:0px; margin-right:10px; margin-bottom:5px;" />
+                <p><strong>Attention!</strong> Do not select the same folder which you have specified as <em>Download Folder</em> in the connection dialogue! This will create duplicate and nested directories.</p>
+
+
+            </div>
+    <p>Select your folder, and it will start to synchronize your files. You can then access your object store files in this folder, edit them from there, synchronize with Cyberduck again (you have to select the same folder again), and your Object Store will be up-to-date!</p>
+  </li>
+  <li>You can edit files directly by right-clicking on them and select “<strong>Edit</strong>”. Then you may choose a program to edit it with.</li>
+</ol>
+
+<p><strong>Resources</strong></p>
+
+<p><a href="http://support.rc.nectar.org.au/docs/object-storage#Cyberduck">NeCTAR support website</a></p>
+
+<p><a href="https://trac.cyberduck.io/wiki/help/en/howto/openstack">Cyberduck and OpenStack HowTo</a></p>
+
+<h3 id="windows-only-access-with-cloudberry">Windows only: Access with Cloudberry</h3>
+
+<ol>
+  <li>
+    <p>If you do not already have <em>CloudBerry Explorer</em> then download and install it on your computer from the <a href="http://www.cloudberrylab.com/free-openstack-storage-explorer.aspx">official website</a>.</p>
+  </li>
+  <li>
+    <p>Open <em>CloudBerry Explorer</em></p>
+  </li>
+  <li>
+    <p>Click <em>File &gt; OpenStack &gt;  New Account</em>. Then, click <strong>Add</strong>.</p>
+  </li>
+  <li>
+    <p><strong>Display name:</strong> use a meaningful name to this account (e.g., the name you supplied as your container in the step above)</p>
+  </li>
+  <li>
+    <p><strong>User name:</strong> your username, which is your e-mail (e.g., <em>user@uni.edu.au</em>)</p>
+  </li>
+  <li>
+    <p><strong>API key:</strong> your OpenStack password</p>
+  </li>
+  <li>
+    <p><strong>Authentication Service:</strong> This is the server, port and version of keystone that you took note of with your credentials, e.g. <em>https://keystone.rc.nectar.org.au:5000/v2.0</em></p>
+  </li>
+  <li>
+    <p>Tick <strong>Use Keystone authentication</strong></p>
+  </li>
+  <li>
+    <p>Select the <em>Tenant name</em> option from the drop-down menu and insert your <em>tenant ID</em> (e.g., <em>pt-12345</em>)</p>
+  </li>
+  <li>
+    <p>Close the Window with ‘<strong>OK</strong>’, and close the next Window with “<strong>Close</strong>”.</p>
+  </li>
+  <li>
+    <p>On the right window, select your display name from the drop down box. CloudBerry will connect to your object store. On the left window, you see your files of your local computer.   <br />
+<img src="images/scrCloudBerry.png" class="aligncenter" style="width:400px; margin-top:10px" alt="image" /></p>
+  </li>
+  <li>
+    <p>You can drag and drop files between both windows.</p>
+  </li>
+  <li>
+    <p>You can directly edit a file by <strong>Right click &gt;  Open</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="linux-and-mac-os-x-using-any-ftp-client">Linux and Mac OS X: Using any FTP client</h3>
+
+<p><em>Prerequisite</em>: You should know how to use an FTP client.</p>
+
+<p>You can use any FTP client, for example <em>Filezilla</em>. For this, we will have to run a program that acts like a FTP server on our own local machine. This FTP server will then communicate with the SWIFT object storage on our cloud and provide the file exchange via the FTP service.</p>
+
+<p>The following instructions are for a Debian based distribution, e.g. <em>Ubuntu</em>.
+For more information, refer to the <a href="https://pypi.python.org/pypi/ftp-cloudfs/">official project page</a>.</p>
+
+<p>Open a Terminal on your local computer to type in the following commands.</p>
+
+<ol>
+  <li>Install the ftp server package  <br />
+<strong>Linux</strong>   <br />
+ <code>sudo apt-get install ftp-cloudfs</code>  <br />
+ or use your other package manager if you are on another distribution than ubuntu. <br />
+<strong>Mac OS X</strong>
+    <ul>
+      <li>Install python’s <em>pip</em> (unless you already have it) using the <em>homebrew</em> package manager:  <br />
+   <code>brew install python</code>
+        <div class="bgInfo">
+              <img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+                  margin:0px; margin-right:10px; margin-bottom:5px;" />
+              <p><em>Alternative:</em> If you don’t have homebrew, you may use the <em>easy_install</em> command, however there may be problems with running the <em>ftp-cloudfs</em> command with this. You may try anyway, and if it does not work, then uninstall pip again (<em>sudo pip uninstall python-swiftclient</em>) and get homebrew instead.  <br />
+  <code>sudo easy_install pip</code></p>
+
+
+          </div>
+      </li>
+      <li>Upgrade setuptools  <br />
+ <code>sudo pip install --upgrade setuptools</code></li>
+      <li>Install python-swiftclient  <br />
+ <code>sudo pip install python-swiftclient</code>  <br />
+ <code>sudo pip install python-keystoneclient</code></li>
+      <li>Install ftp-cloudfs
+ <code>pip install ftp-cloudfs</code></li>
+    </ul>
+  </li>
+  <li>
+    <p>Start the local FTP server <br />
+<code>ftpcloudfs --foreground --keystone-auth --auth-url https://keystone.rc.nectar.org.au:5000/v2.0 --keystone-tenant-separator=: &amp;</code></p>
+  </li>
+  <li>Start your favourite FTP client, for example FileZilla. If you don’t have FileZilla, you can install it with   <br />
+<code>sudo apt-get install filezilla</code>  <br />
+Your login details for the FTP client are as follows:
+    <ul>
+      <li><strong>Server (or Host):</strong> 127.0.0.1  <br />
+  This IP address is the one of your local computer (not an IP address you can use to access your computer from outside though) —  Remember, you are connecting to the FTP server we just launched on our local machine.</li>
+      <li><strong>User:</strong> &lt;tenant&gt;:&lt;username&gt;  <br />
+ Replace &lt;tenant&gt; and &lt;username&gt; with your OpenStack credentials.</li>
+      <li><strong>Password:</strong> Your OpenStack password</li>
+      <li><strong>Port:</strong> 2021</li>
+    </ul>
+  </li>
+  <li>You can now browse your files and drag and drop them between both windows, as you are used to when using the FTP client. On the left side, you can see the file system of your local computer, and on the right side, you can see your object store.</li>
+</ol>
+
+<p><img src="images/scrFtpCloudFS.png" class="aligncenter" style="width:90%; " alt="image" /></p>
+
+<p>You will have to do steps 2 and 3 every time you restart your local computer.</p>
+
+<h3 id="linux-advanced-access-with-cloudfuse">Linux [Advanced]: Access with CloudFuse</h3>
+
+<p><em>CloudFuse</em> is a lightweight open source application that may be installed on Linux servers to create a local mount point to a customers existing Cloud Files container.</p>
+
+<p>You can find more information and documentation about cloudfuse on the <a href="http://redbo.github.io/cloudfuse/">cloudfuse github page</a></p>
+
+<p>To set up cloudfuse for access to your object store, launch a terminal on your local computer and follow the steps below.</p>
+
+<ol>
+  <li>
+    <p>Install necessary packages  <br />
+<code>sudo apt-get install build-essential libcurl4-openssl-dev libxml2-dev libssl-dev libfuse-dev git</code></p>
+  </li>
+  <li>
+    <p>Clone the CloudFuse source  <br />
+<code>cd</code> <br />
+<code>git clone git://github.com/redbo/cloudfuse</code></p>
+  </li>
+  <li>
+    <p>Compile the source code and install it  <br />
+ <code>cd cloudfuse</code>  <br />
+ <code>./configure</code>  <br />
+ <code>make</code>  <br />
+ <code>sudo make install</code>   <br />
+ <code>modprobe fuse</code></p>
+  </li>
+  <li>
+    <p>Create a file called <em>$HOME/.cloudfuse</em>   <br />
+ <code>sudo nano $HOME/.cloudfuse</code></p>
+  </li>
+  <li>Put the following contents into your file (replace &lt;your-tenant-name&gt;, &lt;your-username&gt; and &lt;your-password&gt; with your own credentials):
+    <div class="bgEdit"><pre class="PreformatEdit">authurl=https://keystone.rc.nectar.org.au:5000/v2.0/    
+tenant=<your-tenant-name>    
+username=<your-username>    
+api_key=<your-password>    
+cache_timeout=60
+
+</your-password></your-username></your-tenant-name></pre></div>
+  </li>
+  <li>
+    <p>Set the right permissions:  <br />
+<code>chmod 600 $HOME/.cloudfuse</code></p>
+  </li>
+  <li>
+    <p>Mount your Swift storage with the following commands  <br />
+<code>sudo mkdir /mnt/cloudfiles/</code>  <br />
+<code>cloudfuse /mnt/cloudfiles/</code> <br />
+ Of course you may choose another name instead of <em>cloudfiles</em>, and/or create the directory somewhere else.</p>
+  </li>
+  <li>
+    <p>You should now be able to access your files on the directory /mnt/cloudfiles just as if they were on your local computer.  <br />
+ <img src="images/scrCloudFuse.png" class="alignright" style="width:400px; margin-left:10px;" alt="image" />
+ <code>ls -l /mnt/cloudfiles/</code>  <br />
+ Or open your file explorer to find your mounted drive there (see image to the right).
+ You may even <em>drag and drop</em> files to and from your object storage, <strong>as if it was a regular hard drive</strong> or folder on your computer.</p>
+  </li>
+  <li>Every time you restart your computer, you will have to re-connect the object store with the command:  <br />
+<code>cloudfuse /mnt/cloudfiles/</code></li>
+</ol>
+
+<p><strong>Troubleshooting:</strong></p>
+
+<p>Your username (of your local computer) may need to be part of the <em>fuse</em> user group. This can be accomplished with the following command in your computer’s terminal:</p>
+
+<p><code>sudo usermod -a -G fuse &lt;username&gt;</code></p>
+
+<h3 id="all-platforms-access-with-the-openstack-command">All platforms: Access with the <em>openstack</em> command</h3>
+
+<p>You may also use the <em>openstack</em> command to list the files in our object storage that we just created.
+This will be discussed in <a href="/package10/sections/index.html" title="Module 10">Module 10</a>.</p>
+
+<h3 id="access-via-apis">Access via APIs</h3>
+
+<p>We will discuss more options on how to connect to the object store in <a href="/package10/sections/index.html" title="Module 10">Module 10</a>.</p>
+
+
+  </article>
+
+
+  
+  <!--
+  Previous section / Next section links. Very simple design to start with.
+  -->
+  <p>
+  
+  	
+    <a href="/package07/sections/ephemeralStorage.html">Previous section</a>
+  
+  &nbsp; &nbsp; &nbsp;
+  
+  	
+    <a href="/package07/sections/volumeStorage.html">Next section</a>
+  
+  </p>
+   <!-- endif for pagedata_avail -->
+
+</div>
+
+      </div>
+    </div>
+
+    <div style="background-color: #0E0E0E; padding: 20px 20px 20px 60px; color: white; font-size: 12px">
+  <p>Copyright &copy;2015 NeCTAR</p>
+  <img src="/images/NCRIS_PROVIDER_rev.png" alt="NCRIS_PROVIDER_rev" width="132" height="63" />
+  <p><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png">
+  This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a></p>
+</div>
+
+
+  </body>
+
+</html>

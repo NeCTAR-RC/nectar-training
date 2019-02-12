@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel='shortcut icon' href='/images/icon.png' />
+
+  <title>The Research Cloud lifecycle</title>
+  <meta name="description" content="Nectar National Training Resources
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://training.nectar.org.au/package05/sections/cleaning.html">
+  <link rel="alternate" type="application/rss+xml" title="Nectar Training" href="http://training.nectar.org.au/feed.xml" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61845992-2', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+<div class="nec-header">
+  <div class="header-top">
+    <div class="header-top-page">
+      <div class="nect-login">
+        <a href="https://support.nectar.org.au/support/home">Support</a>
+        <a href="http://cloud.nectar.org.au/contact/" class="new-tick">Contact</a>
+        <b><a href="https://dashboard.rc.nectar.org.au/"><b>Login</b></a></b>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-main">
+    <div class="header-main-page">
+      <div class="logo-nect">
+        <img src='/images/nectar_cloud_logo.jpg' alt="Nectar" height="43", width"248">
+      </div>
+      <div class="menu-nect">
+        
+          <a href="/" class="selected">Self-paced Training</a>
+          <a href="/for-trainers.html">Resources for Trainers</a>
+        
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="normal-block">
+  <div class="normal-block-page">
+    
+      <h3>Self-paced Training</h3>
+    
+  </div>
+</div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+          <!-- 
+    Preprocessing: Determine which part number this is. To avoid having to set numbers 
+    manually on each page, determine this here by the file name. 
+    -->
+  
+  
+  
+  
+  
+
+  
+  
+      
+  
+
+  
+  
+  
+  
+  
+  	
+  	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+			
+			
+			
+  	<!-- If we are not in the main hierarchy, we may be looking at a file of one of the sub-categories -->
+	
+  
+
+
+
+<div class="post">
+
+  <header class="post-header">
+    <h3>Module 5</h3>
+    <h1>The Research Cloud lifecycle</h1>
+  </header>
+
+  
+
+  <!--
+    List of the individual parts of this module (so not all content gets crammed on one page).
+    Rendering this list first is necessary 
+  -->
+  <p> Sections of this module:</p>
+  
+	
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package05/sections/index.html"> Introduction</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package05/sections/connecting.html"> Connecting and maintaining</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package05/sections/mitigating.html"> Mitigating risks</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+			
+		
+		
+
+		
+		
+			
+		
+		
+			
+				 <b>
+			
+			
+      <a href="/package05/sections/cleaning.html"> Cleaning up</a>
+			
+				</b>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package05/sections/support.html"> Getting support</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package05/sections/allocations.html"> Resource allocation requests</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package05/sections/summary.html"> Summary</a>
+			
+			<br/>
+		
+	
+  <br/>
+
+
+  <a href="/package05/sections/all.html" target="_blank">View all sections on one page (Printer friendly)</a>
+  <br/>
+  <br/>
+  <h1> Cleaning up </h1>
+
+   <!-- endif for pagedata_avail -->
+  
+
+  <!--
+  Content of page
+  -->
+  <article class="post-content">
+    
+<p>When you are finished with your work and don’t need the virtual machine any more, you should <em>terminate</em> it, so it does not take up any more of your allocated resources. By deleting the instance and volumes you don’t need any more, you <strong>free them up for other researchers</strong> to use. You can easily terminate an instance on the Dashboard.</p>
+
+<p>However before you terminate it, don’t forget to back up your data that is on the <em>on-instance storage</em> (<em>Note:</em> <a href="/package06/sections/index.html" title="Module 6">Module 6</a> will discuss the different storage types). Data on on-instance storage will be lost after you terminate your instance. You may also want to create a Snapshot of your instance before you terminate it, so you can re-launch it any time. <a href="/package09/sections/index.html" title="Module 9">Module 9</a> will discuss options to back up your data and how to take a Snapshot of your instance and later re-launch it from this snapshot.</p>
+
+<p>Similarly, if you don’t need your <em>volume data storage</em> (discussed in <a href="/package06/sections/index.html" title="Module 6">Module 6</a>) any more, you should delete it. You can also do this in the Dashboard. Before you delete it, you should <em>securely erase</em> all the data on it, so nobody else can restore it if they get access to the portion of the harddrive where your data was stored before.      <br />
+You will most likely want to back up your data on the storage, so you can restore it at a later time.   <br />
+<a href="/package09/sections/index.html" title="Module 9">Module 9</a> will show how to safely erase a hard-disk and how to create a backup of it and restore it at a later time.</p>
+
+
+  </article>
+
+
+  
+  <!--
+  Previous section / Next section links. Very simple design to start with.
+  -->
+  <p>
+  
+  	
+    <a href="/package05/sections/mitigating.html">Previous section</a>
+  
+  &nbsp; &nbsp; &nbsp;
+  
+  	
+    <a href="/package05/sections/support.html">Next section</a>
+  
+  </p>
+   <!-- endif for pagedata_avail -->
+
+</div>
+
+      </div>
+    </div>
+
+    <div style="background-color: #0E0E0E; padding: 20px 20px 20px 60px; color: white; font-size: 12px">
+  <p>Copyright &copy;2015 NeCTAR</p>
+  <img src="/images/NCRIS_PROVIDER_rev.png" alt="NCRIS_PROVIDER_rev" width="132" height="63" />
+  <p><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png">
+  This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a></p>
+</div>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel='shortcut icon' href='/images/icon.png' />
+
+  <title>Launching and Connecting</title>
+  <meta name="description" content="Nectar National Training Resources
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://training.nectar.org.au/package07/sections/connectWithVNC.html">
+  <link rel="alternate" type="application/rss+xml" title="Nectar Training" href="http://training.nectar.org.au/feed.xml" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61845992-2', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+<div class="nec-header">
+  <div class="header-top">
+    <div class="header-top-page">
+      <div class="nect-login">
+        <a href="https://support.nectar.org.au/support/home">Support</a>
+        <a href="http://cloud.nectar.org.au/contact/" class="new-tick">Contact</a>
+        <b><a href="https://dashboard.rc.nectar.org.au/"><b>Login</b></a></b>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-main">
+    <div class="header-main-page">
+      <div class="logo-nect">
+        <img src='/images/nectar_cloud_logo.jpg' alt="Nectar" height="43", width"248">
+      </div>
+      <div class="menu-nect">
+        
+          <a href="/" class="selected">Self-paced Training</a>
+          <a href="/for-trainers.html">Resources for Trainers</a>
+        
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="normal-block">
+  <div class="normal-block-page">
+    
+      <h3>Self-paced Training</h3>
+    
+  </div>
+</div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+          <!-- 
+    Preprocessing: Determine which part number this is. To avoid having to set numbers 
+    manually on each page, determine this here by the file name. 
+    -->
+  
+  
+  
+  
+  
+
+  
+  
+      
+  
+
+  
+  
+  
+  
+  
+  	
+  	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+		
+	
+		
+		
+		
+	
+		
+		
+		
+			
+			
+			
+  	<!-- If we are not in the main hierarchy, we may be looking at a file of one of the sub-categories -->
+	
+  
+
+
+
+<div class="post">
+
+  <header class="post-header">
+    <h3>Module 7</h3>
+    <h1>Launching and Connecting</h1>
+  </header>
+
+  
+
+  <!--
+    List of the individual parts of this module (so not all content gets crammed on one page).
+    Rendering this list first is necessary 
+  -->
+  <p> Sections of this module:</p>
+  
+	
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/index.html"> Introduction</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/createSSHKey.html"> Create a ssh key</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/launching.html"> Launching an instance</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/connectViaSSH.html"> Connect to the instance</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/firstSSHCommands.html"> Configuration and control</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+			
+		
+		
+
+		
+		
+			
+		
+		
+			
+			
+      <a href="/package07/sections/remoteDesktop.html"> Connect to a remote desktop</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+			
+				
+			
+		
+		
+			
+			
+      <a href="/package07/sections/installDesktopEnvironment.html">&nbsp;&nbsp; Install a desktop environment</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+			
+				
+			
+		
+		
+			
+			
+      <a href="/package07/sections/connectWithX2Go.html">&nbsp;&nbsp; Connect with X2Go</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+			
+				
+			
+		
+		
+			
+				 <b>
+			
+			
+      <a href="/package07/sections/connectWithVNC.html">&nbsp;&nbsp; Connect with VNC</a>
+			
+				</b>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+			
+				
+			
+		
+		
+			
+			
+      <a href="/package07/sections/runSeveralDesktopEnvs.html">&nbsp;&nbsp; Running several desktop environments</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/guiViaSSH.html"> Graphical Interfaces on the ssh terminal</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/enableWebServer.html"> Install a web server</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/manageStorage.html"> Managing storage</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/summary.html"> Summary</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/appendices.html"> Appendix</a>
+			
+			<br/>
+		
+	
+  <br/>
+
+
+  <a href="/package07/sections/all.html" target="_blank">View all sections on one page (Printer friendly)</a>
+  <br/>
+  <br/>
+  <h1> Connect with VNC </h1>
+
+   <!-- endif for pagedata_avail -->
+  
+
+  <!--
+  Content of page
+  -->
+  <article class="post-content">
+    
+<h2 id="connecting-with-vnc">7.3.4. Connecting with VNC</h2>
+
+<p>We will now connect to our remote desktop using VNC. We will first install the <em>VNC Server</em> on the instance, and then use a <em>VNC Client</em> (also called <em>“viewer”</em>) on our local computer to connect to the remote desktop.</p>
+
+<h3 id="install-the-vnc-server-on-your-instance">Install the VNC Server on your instance</h3>
+
+<p>In this tutorial, we will use the VNC Server called  <em>vnc4server</em> on our instance. For an overview of other servers, refer to the <a href="https://help.ubuntu.com/community/VNC/Servers">Ubuntu help page</a>.</p>
+
+<h4 id="step-1-install-vnc-server">Step 1. Install VNC server</h4>
+
+<p>To install the server, type into your <em>ssh terminal</em>:</p>
+
+<p><code>sudo apt-get install vnc4server</code></p>
+
+<p>Confirm installation of the package with <strong>[Enter]</strong>.</p>
+
+<h4 id="step-2-configure-the-vnc-server">Step 2. Configure the VNC server</h4>
+
+<p>We will now have to edit a file in order to start up the right desktop environment.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>The following instructions have been tested for <strong>Ubuntu 14.04 and 14.10</strong>. If you have another Ubuntu version on your instance, you may have to look online if the following instructions don’t work. Some more information is given at <a href="http://www.havetheknowhow.com/Configure-the-server/Install-VNC.html">this link</a>.</p>
+
+				</div>
+
+<p>First, we have to start up the VNC server once, in order to create a password and generate the configuration file. In your <em>ssh terminal</em>, type:</p>
+
+<p><code>vncserver</code></p>
+
+<p>and you will be prompted to choose a password. This is a password which is used for the VNC server only — it is not the same as your ssh key (although you may of course choose the same passphrase)!</p>
+
+<p>After you finished typing and confirming your password, we will shut down the vnc server again and change some settings. To shut it down, type:</p>
+
+<p><code>vncserver -kill :1</code></p>
+
+<p>Then, open the settings file:</p>
+
+<p><code>nano .vnc/xstartup</code></p>
+
+<p>In the editor that comes up, make the following changes:</p>
+
+<p>Uncomment the following lines, by putting a ‘#’ in front of them:</p>
+<div class="bgEdit"><pre class="PreformatEdit"># x-terminal-emulator -geometry 80x24+10+10 -ls -title "$VNCDESKTOP Desktop" &amp;    
+# x-window-manager &amp;</pre></div>
+
+<p>Additionally, make the following changes to the file, depending on your desktop environment:</p>
+
+<ul>
+  <li>Gnome :
+    <ul>
+      <li>Add the following lines at the bottom of the file:
+        <div class="bgEdit"><pre class="PreformatEdit">metacity &amp;    
+gnome-settings-daemon &amp;    
+gnome-panel &amp;</pre></div>
+      </li>
+    </ul>
+  </li>
+  <li>KDE:
+    <ul>
+      <li>Add the following line at the bottom of the file:
+        <div class="bgEdit"><pre class="PreformatEdit">startkde &amp;</pre></div>
+      </li>
+    </ul>
+  </li>
+  <li>LXDE:
+    <ul>
+      <li>Add the following lines at the bottom of the file:
+        <div class="bgEdit"><pre class="PreformatEdit">lxterminal &amp;
+/usr/bin/lxsession -s LXDE &amp;</pre></div>
+      </li>
+    </ul>
+  </li>
+  <li>XFCE
+    <ul>
+      <li>Add the following lines at the bottom of the file:
+        <div class="bgEdit"><pre class="PreformatEdit">xrdb $HOME/.Xresources
+startxfce4 &amp;</pre></div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="step-3-start-the-server">Step 3. Start the server</h4>
+
+<p>To start the vnc server, you need to configure the resolution which your screen should have (You can change this to another resolution in the command below). To start with, choose a low resolution which will definitely fit into the screen on your local computer with some margin:</p>
+
+<p><code>vncserver -geometry 1024x768 -depth 24</code></p>
+
+<p>The result of the command will display a line similar to the following.</p>
+
+<div class="bgTerminal"><pre class="PreformatTerminal">New '*hostname*:#* (*username*)' desktop is *hostname*:**#**</pre></div>
+
+<p>where <em>hostname</em> and <em>username</em> are replaced by your instances values, and a number is displayed instead of the hash <strong>#</strong>. Take note of this <strong>number following the colon (:).</strong> This will be part of the <strong>port number</strong> you will need in the SSH tunnel setup, which we will do in the next step. This will also be the number you will need to use to eventually terminate the server when you are finished using it (if you want to shut it down at all).</p>
+
+<p>If you want to shut down the VNC server, type into your <em>ssh terminal</em> (use the number you have taken note of instead of the #):</p>
+
+<p><code>vncserver -kill :#</code></p>
+
+<p>For example, if your port number before was 1, type</p>
+
+<p><code>vncserver -kill :1</code></p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Whenever you want to change your desktop environment (e.g. from LXDE to KDE), you have to shut down (“kill”) the vnc server with these commands. Then, you have to edit your <em>.vnc/startup</em> file as discussed in the last step, following the instructions for your desktop environment. Then, restart the VNC server again, as you have done earlier.</p>
+
+				</div>
+
+<h3 id="connect-to-the-remote-desktop">Connect to the remote desktop</h3>
+
+<p>If you tried to use a VNC client right now, it would not be accessible from outside, because our instance is protected by a firewall. 
+When we launched our instance (as we did in <a href="launching.html">this section</a>), we have only allowed secure ssh connections on <em>Port 22</em> (and insecure connections to web services on <em>Port 80</em>). VNC servers usually provide their services on <em>Port 5900</em> (or 5901, 5902..). This Port is still being blocked by our firewall!</p>
+
+<p>One way to get access to our VNC server would be to open up this port in our firewall and allow an insecure connection (remember: VNC does not have in-build encryption). This is not desirable — we want a secure connection, of course.</p>
+
+<p>The safe way to do this is to “tunnel” all our VNC communications through SSH, which then encrypts all communication. The following steps will explain how this is done.</p>
+
+<h4 id="a-namesshtunnellinga-step-1-set-up-ssh-tunneling"><a name="SSHTunnelling"></a> Step 1: Set up ssh tunneling</h4>
+
+<p>Be sure you have the number (#) you were given in the above <em>vncserver</em> command. We will use this number to determine the <strong>Destination Port</strong>. Use your number and <em>add it</em> to 5900. For example, if your  number is 1, then <strong>5901</strong> will be you destination port.</p>
+
+<p>Follow the steps below for your local computer’s operating system:</p>
+
+<p><strong>Linux / Mac</strong></p>
+
+<p>In a terminal on your local computer, create a tunnel from your local machine (Port 5900) to your instance (Port 5901) with this command:</p>
+
+<p><code>ssh -i &lt;path-to-your-keyfile&gt; -L 5900:localhost:5901 -N -f -l ubuntu NNN.NNN.NNN.NNN</code></p>
+
+<p>where you should replace the NNN.NNN.NNN.NNN with yours instance’s IP address, and &lt;path-to-your-keyfile&gt; is the path to where you have saved your ssh key.</p>
+
+<p><em>Hint for Linux users:</em> If you copy your private key to the /home/<your-username>/.ssh folder, as we have done in this tutorial, you won't have to specify the key every time and can skip the -i option.</your-username></p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>The <strong>-f -N</strong> options in the above command cause the tunnel to run in the background: once you have typed in the password, the command line prompt returns to your terminal. If you want to close your ssh connection, you have to <em>kill</em> it. In your terminal on your local computer, type:</p>
+
+<p><code>ps aux | grep ssh</code></p>
+
+<p>In the printed result, find your ssh tunneling command and note the number on the left, which is displayed after your user name. One line of output for example looks like this:</p>
+
+<p>ubuntu   52577      0.0     0.2     2512756     17076 …</p>
+
+<p>In this example, <em>52577</em> is the <em>process number</em></p>
+
+<p><code>kill &lt;the-ssh-tunnel-process-number&gt;</code></p>
+
+<p>If you <em>don’t</em> use the <strong>-N -f</strong> options, you will be logged into an ssh terminal to your instance, and can use it as usual to type commands on your instance. If you type <em>logout</em> or close the terminal, the ssh tunnel will close as well.</p>
+
+
+				</div>
+
+<p><strong>Windows</strong></p>
+
+<ol>
+  <li>
+    <p>Launch PuTTY and load your previously saved configuration by selecting the session name and clicking <strong>Load</strong>. (If you have Putty open, close it and then re-open it to get to this window).  <br />
+<img src="images/scrPuttySession.png" class="aligncenter" style="width:60%; " alt="image" /></p>
+  </li>
+  <li>
+    <p>Select <strong>SSH &gt; Tunnels</strong> in the left pane. Enter these values:  <br />
+ <strong>Source port</strong>: 5900  <br />
+ <strong>Destination:</strong> localhost:5901  <br />
+ Then, click the <strong>Add</strong> button. Your tunnel will now appear in the list.
+<img src="images/scrPuttySSHTunnel.png" class="aligncenter" style="width:60%; " alt="image" /></p>
+  </li>
+  <li>
+    <p>You can save the tunneling along with your session by selecting <strong>Session</strong> in the left pane. Click on your session name in the <strong>Saved Sessions</strong> pane, then click <strong>Save</strong> (or create a new name instead by typing in a new name, e.g. called “<em>TunneledNectarSession</em>”).</p>
+  </li>
+  <li>
+    <p>Now you can click <strong>Open</strong> to start the SSH terminal. The tunnel will now be active as long as the PuTTY terminal window stays open. You can use this SSH terminal as a shell into the instance as well (as we have been doing the whole time), while simultaneously having your remote desktop open.</p>
+  </li>
+  <li>
+    <p>The next time you run PuTTY, you must open these saved settings by selecting the name in the <strong>Saved Sessions</strong> pane and clicking <strong>Load</strong>, then clicking <strong>Open</strong>. Or, you can simply double-click the session name to load and run the saved session.</p>
+  </li>
+</ol>
+
+<p>See also the section about SSH Tunnelling in the <a href="appendices.html">Appendix</a> for more information.</p>
+
+<h4 id="step-2-install-the-vnc-client-on-your-computer">Step 2: Install the VNC Client on your computer</h4>
+
+<p>We can connect to our desktop using a VNC Client (also often referred to as “VNC Viewer”). You may download any VNC viewer you want.</p>
+
+<p>Here, we’ll suggest the following, depending on which OS your home Computer runs:</p>
+
+<p><strong>Ubuntu</strong></p>
+
+<p>You can use the pre-installed <em>Remmina</em> client.</p>
+
+<p><em>Alternatively</em>, install <em>vinagre</em> with the command  <br />
+<code>sudo apt-get install vinagre</code>.</p>
+
+<p>You can use the free <a href="https://www.realvnc.com/">RealVNC Viewer</a>. Continue with the instructions below (Mac/Windows/Linux alternative client: RealVNC) if you would like to use RealVNC.</p>
+
+<p>We recommend you use the default <em>Remmina</em> client to start with.</p>
+
+<p><strong>Windows</strong></p>
+
+<p>You can use the free <a href="https://www.realvnc.com/">RealVNC Viewer</a>. Continue with the instructions below (Mac/Windows/Linux alternative client: RealVNC) if you would like to use RealVNC.</p>
+
+<p>Alternatively, you can also use <a href="http://www.uvnc.com/">UltraVNC</a> or <a href="http://www.tightvnc.com">TightVNC</a> (
+<em>Note for TightVNC:</em> Choose the “custom” installation mode and then select to only install the client, you may have to unselect the server).</p>
+
+<p>Choose the client you want and install it. We suggest you use <em>RealVNC</em> for this tutorial.</p>
+
+<p><strong>Mac OS X</strong></p>
+
+<p>OS X has a VNC client built in. It’s been installed in every version of OS X since 10.4. It’s called <em>Screen Sharing</em> and it’s located in your CoreServices folder, a difficult to find folder which is part of OS X.</p>
+
+<p>The easiest way to  find screen sharing via the “spotlight search”: Type Cmd+Space to bring it up. Type “screen sharing” and the app should be found.</p>
+
+<p>Or you can also find the application in this path:</p>
+
+<p><em>/System/Library/CoreServices/Screen Sharing.app</em></p>
+
+<p>or, as of OS X 10.10 Yosemite the containing folder is now located in</p>
+
+<p><em>/System/Library/CoreServices/Applications</em></p>
+
+<p>You can access it through the terminal (Applications Folder &gt; Utilities &gt; Terminal.app). In the terminal, type:</p>
+
+<p><code>open /System/Library/CoreServices</code></p>
+
+<p>or on OS X greater than 10.10:</p>
+
+<p><code>open /System/Library/CoreServices/Applications</code></p>
+
+<p>That will open a Finder window where you will see Screen Sharing and you can open it or create an alias if you want.</p>
+
+<p>You can use the free <a href="https://www.realvnc.com/">RealVNC Viewer</a>. Continue with the instructions below (Mac/Windows/Linux alternative client: RealVNC).</p>
+
+<p><strong>Mac/Windows/Linux alternative client: RealVNC</strong></p>
+
+<p>Download the client (<strong>the viewer</strong>) from the <a href="https://www.realvnc.com/download/">RealVNC website</a>.  When downloading, it may ask for your E-Mail, but you can specify some random details, the viewer will still work. When installing, choose to only install the client (the viewer):</p>
+
+<p><img src="images/RealVNCInstallation.png" class="aligncenter" style="width:70%; " alt="image" /></p>
+
+<p>When you connect (we will do this in a moment), it asks you whether you accept an insecure connection. Say yes (it will in fact be secure via our tunnel).</p>
+
+<p>RealVNC by default compresses the colours to save bandwidth. To see your screen in full colour, you need to go to <em>Options in the initial window, then disable The checkbox for *Adapt to network speed</em>, and push up the slider to <em>Best quality</em>.</p>
+
+<h4 id="a-nameconnectvncservera-step-3-connect-to-the-vnc-server"><a name="ConnectVNCServer"></a> Step 3: Connect to the VNC server</h4>
+
+<p>Open your VNC client (“viewer”) of choice. This will generally be a very simple interface with just a few fields to fill. The following instructions are <em>generic for all clients</em>. There are also some more detailed instructions given below for some examples.</p>
+
+<ul>
+  <li>
+    <p>Choose <em>VNC</em> as a <strong>protocol</strong>, if the viewer asks for it.</p>
+  </li>
+  <li>
+    <p>As <strong>server</strong> (or <strong>host</strong>), specify <em>“localhost”</em>.</p>
+  </li>
+  <li>
+    <p>If a <strong>port</strong> specification is required, choose <em>5900</em>. If you cannot find a port specification, you probably have to type <em>“localhost:5900”</em> instead of just <em>“localhost”</em> in the “server” (or “host”) field.</p>
+  </li>
+</ul>
+
+<p>Now connect, and you should get a password prompt, in which you type the password you just chose for the VNC Server (not your ssh passphrase, unless you chose the same!). Then, you should get to the remote desktop.</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Do <em>not</em> use any ssh or security options that clients may offer, because we have just done the ssh tunnel separately ourselves. Your connection will be secure. If you have followed the instructions above, your connection is secure, even if the vnc viewer says it is not (The VNC viewer does actually not realise it is running through the ssh tunnel).</p>
+
+				</div>
+
+<p><img src="images/scrTightVNC.png" class="aligncenter" style="width:70%; " alt="image" /></p>
+
+<p>Example on the image above: Connecting with TightVNC on a Windows machine. The Putty Terminal is displayed on the left.</p>
+
+<p><strong>Mac Example client: <em>Screen sharing</em></strong></p>
+
+<p>To connect with the in-built <em>Screen Sharing</em> app, open it (Apple+Space and type “screen sharing and open it up). Into the text field, type *localhost:5900 *and then click “connect”:</p>
+
+<p><img src="images/scrVNCMacScreenSharing.png" class="aligncenter" style="width:50%; " alt="image" /></p>
+
+<p>You will be prompted for your password. That’s the password you selected when you set up the VNC Server in the previous step.</p>
+
+<p><img src="images/scrVNCMacScreenSharing2.png" class="aligncenter" style="width:50%; " alt="image" /></p>
+
+<p>Now a window should open to the remote desktop.</p>
+
+<p><strong>Example client: RealVNC</strong></p>
+
+<p>Start the RealVNC client (on a Mac, you can find it via the spotlight search: Cmd+Space and then type “realVNC”. It will open a folder in which you find the executable).</p>
+
+<p>To launch a connection, type <strong>“localhost:5900”</strong> into the text field. Leave the encryption setting on “<strong>Let VNC Server choose</strong>” and click “<strong>connect</strong>”.</p>
+
+<p><img src="images/scrRealVNCViewer.png" class="aligncenter" style="width:50%; " alt="image" /></p>
+
+<p>When it asks you whether you accept an insecure connection, say yes (it will in fact be secure via our ssh tunnel).</p>
+
+<p><img src="images/scrRealVNCViewer2.png" class="aligncenter" style="width:50%; " alt="image" /></p>
+
+<p>You will now have to type in your password. That’s the password you chose when setting up the VNC server on your instance in the last step.</p>
+
+<p><img src="images/scrRealVNCViewer3.png" class="aligncenter" style="width:50%; " alt="image" /></p>
+
+<p>RealVNC by default compresses the colours to save bandwidth. To see your screen in full colour, you need to go to the realVNC “Options”. You can either do this in the initial login window, or when your remote desktop is open, mouse over the top of the window and select “options”.</p>
+
+<p><img src="images/scrRealVNCViewer4.png" class="aligncenter" style="width:70%; " alt="image" /></p>
+
+<p>In the options, disable The checkbox for <strong>Adapt to network speed</strong>, and push up the slider to <em>Best quality</em> (better quality will be slower but mostly you may want it anyway). Also enable the checkbox <strong>Scale to window size</strong> if you have issues with the window being too large for your desktop.</p>
+
+<p><strong>General troubleshooting</strong></p>
+
+<p><em>Your colours look a bit off?</em></p>
+
+<p>Some clients (e.g. RealVNC and Remmina) use fewer colours and higher compression in order to reduce latency of your remote desktop. You have to change this settings in the client - each client is different so you might have to find out where you can change this.</p>
+
+<p>In Remmina, you can create a saved session (by clicking on “new”) instead of using the default Quick Connect. You can change the settings for the colour quality there.</p>
+
+<p>RealVNC by default compresses the colours to save bandwidth. To see your screen in full colour, you need to go to <strong>Options</strong> in the initial login window, then disable the checkbox <strong>Adapt to network speed</strong>, and push up the slider to <em>Best quality</em>.</p>
+
+<p><em>Problems connecting?</em></p>
+
+<p>Make sure your ssh tunnel is open and you have set the right port numbers. On Windows, your PuTTY session must be open and you must have configured the tunnel as described above.</p>
+
+<h3 id="automatic-start-up-of-the-vnc-server">Automatic start-up of the VNC server</h3>
+
+<p>With the current settings, you will have to manually re-start the Vnc server on your instance every time after you reboot the instance. We can automate this to save you this work, and start up the Vnc server automatically.</p>
+
+<p>The easiest way is to add an execution command in a file. Log into your instance (via ssh terminal) and follow these instructions:</p>
+
+<ol>
+  <li>
+    <p>Verify the location of your VNC program by typing:  <br />
+ <code>which vncserver</code> <br />
+ Most likely you will see <em>/usr/bin/vncserver</em> as result. We will assume this in the following. If you get something else, you will have to use your own path instead of this one.</p>
+  </li>
+  <li>
+    <p>Create a file <em>startVNC.sh</em> (or call it whatever you want) in directory <em>/etc/init.d:</em>  <br />
+ <code>sudo nano /etc/init.d/startVNC.sh</code></p>
+  </li>
+  <li>The editor will open. Put the following contents in the file (Note: If your username is other than <em>ubuntu</em>, you have to replace it in the 3rd line):
+    <div class="bgEdit"><pre class="PreformatEdit">#!/bin/bash    
+PATH="$PATH:/usr/bin/"    
+export USER="ubuntu"    
+su ${USER} -c "/usr/bin/vncserver -geometry 1024x768 -depth 24"</pre></div>
+    <p><em>Note:</em> If your vncserver is located somewhere else, as you have found out in step 1, you have to use your own path here instead of <em>/usr/bin/vncserver</em></p>
+  </li>
+  <li>
+    <p>Close the editor with <strong>Ctrl + X</strong> (and confirm saving the file with <strong>“yes”</strong>).</p>
+  </li>
+  <li>
+    <p>Now we have to make this file executable  <br />
+ <code>sudo chmod +x /etc/init.d/startVNC.sh</code></p>
+  </li>
+  <li>Add this file to be executed at startup:   <br />
+ <code>sudo update-rc.d startVNC.sh defaults</code></li>
+</ol>
+
+<p><em>Optional:</em></p>
+
+<p>You may also set up a “service” out of the vnc server. After you have set it up, it allows you to start the vnc server any time with the following command:</p>
+
+<p><code>service startVNC.sh start</code></p>
+
+<p>(or shut it down with <em>stop</em> instead of <em>start</em>). This is probably the more proper way to do it, but the file <em>startVNC.sh</em> is a bit more complex:</p>
+
+<div class="bgEdit"><pre class="PreformatEdit">#!/bin/bash    
+PATH="$PATH:/usr/bin/"    
+export USER="ubuntu"    
+DISPLAY="1"    
+DEPTH="32"    
+GEOMETRY="1024x768"    
+OPTIONS="-depth ${DEPTH} -geometry ${GEOMETRY} :${DISPLAY} -localhost"    
+. /lib/lsb/init-functions    
+
+case "$1" in    
+&nbsp;  start)    
+&nbsp;  &nbsp;  log_action_begin_msg "Starting vncserver for user '${USER}' on localhost:${DISPLAY}"    
+&nbsp;  &nbsp;  su ${USER} -c "/usr/bin/vncserver ${OPTIONS}"    
+;;    
+&nbsp;  stop)    
+&nbsp; &nbsp;   log_action_begin_msg "Stopping vncserver for user '${USER}' on localhost:${DISPLAY}"    
+&nbsp; &nbsp;   su ${USER} -c "/usr/bin/vncserver -kill :${DISPLAY}"    
+;;    
+&nbsp;  restart)    
+&nbsp; &nbsp;   $0 stop    
+&nbsp; &nbsp;   $0 start    
+;;    
+esac   
+ 
+exit 0</pre></div>
+
+<h3 id="reconnect-to-the-vnc-afresh">Reconnect to the VNC afresh</h3>
+
+<p>Of course, you won’t have to do all the above steps every day when you want to connect to your remote VNC desktop. The only things you need to do each time are:</p>
+
+<ol>
+  <li>
+    <p>Start the ssh tunnel, as described <a href="#SSHTunnelling">above in step 1</a>. On Windows, if you are using PuTTY, you may have created a saved session which you can start easily.</p>
+  </li>
+  <li>
+    <p>Open your VNC client and connect, as described <a href="#ConnectVNCServer">in step 3 above</a>.</p>
+  </li>
+</ol>
+
+<p>Let’s do this now to see how easy this is. Close all your applications (all your terminals / PuTTY, and your open VNC viewer).</p>
+
+<p>If on Unix/Mac, also kill your ssh tunnel (for instructions, see the notes about SSH tunneling in the <a href="appendices.html">Appendix</a>).</p>
+
+<p>Now, do the above steps 1. and 2. above to get back to your remote desktop.</p>
+
+<p><em>Troubleshooting on Windows/Putty:</em></p>
+
+<p>If you are Windows and PuTTY, check whether you have properly saved your session last time. When you click on your session and then click “<strong>Load</strong>”, you can check whether all the settings we have configured earlier (“Connect to the instance”, and “Step 1: Set up ssh tunneling”) are still there. If you do not have all the details saved, change them now and save your session again (click on <strong>Session</strong> in the navigation panel on the left, select your session in the <em>Sessions</em> pane, and click <em>Save</em>).  <br />
+Then, try again.</p>
+
+<h3 id="resources">Resources</h3>
+
+<ul>
+  <li>
+    <p><a href="http://en.wikipedia.org/wiki/Virtual_Network_Computing">Wikipedia page on VNC</a></p>
+  </li>
+  <li>
+    <p><a href="https://help.ubuntu.com/community/VNC">Ubuntu Help page on VNC</a></p>
+  </li>
+  <li>
+    <p><a href="https://help.ubuntu.com/community/VNC/Servers">Ubuntu Help page on VNC Servers</a></p>
+  </li>
+  <li>
+    <p>An article on <a href="http://www.stuartellis.eu/articles/vnc-on-linux/">VNC on Linux</a></p>
+  </li>
+  <li>
+    <p>Article on how to install an configure <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-14-04">VNC on Ubuntu 14.04</a></p>
+  </li>
+  <li>
+    <p>Another article on how to install a <a href="http://www.havetheknowhow.com/Configure-the-server/Install-VNC.html">VNC server on Ubuntu 14.04</a></p>
+  </li>
+</ul>
+
+
+  </article>
+
+
+  
+  <!--
+  Previous section / Next section links. Very simple design to start with.
+  -->
+  <p>
+  
+  	
+    <a href="/package07/sections/connectWithX2Go.html">Previous section</a>
+  
+  &nbsp; &nbsp; &nbsp;
+  
+  	
+    <a href="/package07/sections/runSeveralDesktopEnvs.html">Next section</a>
+  
+  </p>
+   <!-- endif for pagedata_avail -->
+
+</div>
+
+      </div>
+    </div>
+
+    <div style="background-color: #0E0E0E; padding: 20px 20px 20px 60px; color: white; font-size: 12px">
+  <p>Copyright &copy;2015 NeCTAR</p>
+  <img src="/images/NCRIS_PROVIDER_rev.png" alt="NCRIS_PROVIDER_rev" width="132" height="63" />
+  <p><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png">
+  This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a></p>
+</div>
+
+
+  </body>
+
+</html>

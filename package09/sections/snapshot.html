@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel='shortcut icon' href='/images/icon.png' />
+
+  <title>Backing up and packing up</title>
+  <meta name="description" content="Nectar National Training Resources
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://training.nectar.org.au/package09/sections/snapshot.html">
+  <link rel="alternate" type="application/rss+xml" title="Nectar Training" href="http://training.nectar.org.au/feed.xml" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61845992-2', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+<div class="nec-header">
+  <div class="header-top">
+    <div class="header-top-page">
+      <div class="nect-login">
+        <a href="https://support.nectar.org.au/support/home">Support</a>
+        <a href="http://cloud.nectar.org.au/contact/" class="new-tick">Contact</a>
+        <b><a href="https://dashboard.rc.nectar.org.au/"><b>Login</b></a></b>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-main">
+    <div class="header-main-page">
+      <div class="logo-nect">
+        <img src='/images/nectar_cloud_logo.jpg' alt="Nectar" height="43", width"248">
+      </div>
+      <div class="menu-nect">
+        
+          <a href="/" class="selected">Self-paced Training</a>
+          <a href="/for-trainers.html">Resources for Trainers</a>
+        
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="normal-block">
+  <div class="normal-block-page">
+    
+      <h3>Self-paced Training</h3>
+    
+  </div>
+</div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+          <!-- 
+    Preprocessing: Determine which part number this is. To avoid having to set numbers 
+    manually on each page, determine this here by the file name. 
+    -->
+  
+  
+  
+  
+  
+
+  
+  
+      
+  
+
+  
+  
+  
+  
+  
+  	
+  	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+			
+			
+			
+  	<!-- If we are not in the main hierarchy, we may be looking at a file of one of the sub-categories -->
+	
+  
+
+
+
+<div class="post">
+
+  <header class="post-header">
+    <h3>Module 9</h3>
+    <h1>Backing up and packing up</h1>
+  </header>
+
+  
+
+  <!--
+    List of the individual parts of this module (so not all content gets crammed on one page).
+    Rendering this list first is necessary 
+  -->
+  <p> Sections of this module:</p>
+  
+	
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package09/sections/index.html"> Introduction</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+			
+		
+		
+
+		
+		
+			
+		
+		
+			
+				 <b>
+			
+			
+      <a href="/package09/sections/snapshot.html"> Snapshots</a>
+			
+				</b>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package09/sections/backup.html"> Backing up</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package09/sections/cleanup.html"> Cleaning up</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package09/sections/summary.html"> Summary</a>
+			
+			<br/>
+		
+	
+  <br/>
+
+
+  <a href="/package09/sections/all.html" target="_blank">View all sections on one page (Printer friendly)</a>
+  <br/>
+  <br/>
+  <h1> Snapshots </h1>
+
+   <!-- endif for pagedata_avail -->
+  
+
+  <!--
+  Content of page
+  -->
+  <article class="post-content">
+    
+<p>You may <em>copy</em> the state of your instance, and later reboot it in this state. Copies of instances are called <em>Snapshots</em>. <strong>Snapshots of an instance</strong> can be used like other Images (e.g. like the Ubuntu Image we used in <a href="/package07/sections/index.html" title="Module 7">Module 7</a>) to start new instances.</p>
+
+<p>Snapshots only include data on your primary <em>root disk</em>. It is currently not possible to take Snapshots of the secondary <em>ephemeral disk</em> — the only way to save your data on the secondary ephemeral disk is to use other forms of backup, as discussed in the next section.
+But it is also possible to take <strong>Snapshots of Volumes</strong>.</p>
+
+<p>In this section we are going to learn how to take Snapshots of instances and volumes. Then, we are going to re-create the state of the instances and volumes out of the snapshots.</p>
+
+<h3 id="snapshots-of-an-instance">Snapshots of an instance</h3>
+
+<p>Taking a Snapshot is simple: go to <em>Dashboard &gt; Compute &gt; Instances</em> and click <em>“Create Snapshot”</em> on the right hand side of the instance you wish to copy.</p>
+
+<p><img src="images/DashboardSnapshot.png" class="aligncenter" style="width:100%; " alt="image" /></p>
+
+<p>You may then choose a name for the Snapshot, and confirm with <strong>Create Snapshot</strong>. You will be redirected to the <em>Images</em> tab, which shows all your Images and Snapshots. In the list, you can see that your Snapshot is being created:</p>
+
+<p><img src="images/DashboardSnapshot2.png" class="aligncenter" style="width:100%; " alt="image" /></p>
+
+<p>This process may take a while. While the Snapshot is being made, it will be listed with the Status <em>“Queued”</em>, then <em>“Saving”</em>, and finally it will be finished and in status <em>“Active”</em>. In the top row of the <em>Images</em> tab you can filter the Images to display. The current setting is <em>“Project”:</em> These are only your private Images. If you click on <em>“NeCTAR official”</em> you will see all the NeCTAR Images that are available to launch new instances. <em>“Public”</em> will show you even more Images you may use.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Instance Snapshots <em>do not</em> include the state of the secondary ephemeral disk, or of any volumes, <em>even if</em> they are currently mounted, e.g. on <em>/data</em> or <em>/mnt</em>.</p>
+
+				</div>
+
+<p>On the same <em>Images</em> Tab, you may also <strong>delete your Snapshot</strong> at a later time. To delete a Snapshot, click on the right-hand side drop-down box of your Snapshot and select <em>Delete Image</em>.</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>It is possible to take a <strong>“Live Snapshot”</strong> (take a Snapshot of the machine that is currently running). In most cases, there should be no problem. However, if the instance is running while the Snapshot is being taken, the resulting Snapshot <em>may</em> be inconsistent. This is due to programs writing on the file system while a Snapshot is taken. There are a few options to prevent this inconsistency from happening:</p>
+
+<ul>
+  <li>running “sync” before starting the Snapshot, or</li>
+  <li>using a “file system freeze” utility which block programs writing on the filesystem,</li>
+  <li>shutting down or pausing the instance before Snapshotting.</li>
+</ul>
+
+<p>The easiest option is probably to pause or shut down the instance (which we will do <a href="cleanup.html">later in this Module</a>) and then take the Snapshot. For more information, refer to the <a href="http://docs.openstack.org/openstack-ops/content/snapshots.html">OpenStack documentation</a>.</p>
+
+				</div>
+
+<p><strong>Launch an instance from the Snapshot</strong></p>
+
+<p>It is easy to launch a new instance from a Snapshot. Simply go on the <em>Dashboard &gt; Compute &gt; Images</em>, select the <em>Project</em> filter on the top of the list, and you will get an overview of all your own Images. Find the Image you would like to launch a new instance from, and click <strong>Launch</strong>. The <em>Launch</em> window will come up, which is the same we already used in <a href="/package07/sections/index.html" title="Module 7">Module 7</a>. The Snapshot Image will be pre-selected, and also the flavor of the Snapshotted instance. But you will still need to specify a few more settings:</p>
+
+<ul>
+  <li>Choose an Instance Name,</li>
+  <li>Keep or change the flavor (don’t pick a smaller though),</li>
+  <li>Access &amp; Security: Select key pair and security groups,</li>
+  <li>Availability Zone (optional): Choose your Availability Zone,</li>
+  <li>and possibly change other settings if you wish.</li>
+</ul>
+
+<h3 id="snapshots-of-volumes">Snapshots of volumes</h3>
+
+<p>A Volume Snapshot creates a copy of the state of a Volume. It is similar to taking a Snapshot of an instance in that it <em>creates an Image</em> of which you can then <em>create new Volumes</em>. This is not necessarily the most ideal form of Backup, because each Snapshot takes up <strong>significant disk quota</strong> the same size of your Volume — even if the Volume still has lots of free space on it. For example, if you have a 50GB volume, but only use 1GB of data on it, then your Snapshot will still be 50GB. Also, you have <em>limited quota</em> available specifically for Snapshots. The <a href="backup.html">next section</a> will cover more suitable forms of <em>backup</em> for your data. However, you may still prefer to take a Snapshot of particular state of the volume, in order to easily create a <em>new</em> volume from it at a later time.</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>The original Volume on which the Snapshot was based <em>must still exist</em>, or the Snapshots of it become useless.</p>
+
+<p>OpenStack does <em>not</em> let you delete Volumes which have “depending Snapshots”. So you have to be aware that the Snapshots are only usable while you keep your Volume in existence. This is different to <em>Backups</em>, which survive the deletion or a volume. Backups are are discussed in the <a href="backup.html">next section</a>.</p>
+
+				</div>
+
+<p>Before taking a snapshot, you have to make sure your Volume is <em>not attached</em> to an instance — The volume has to be in the status <em>“Available”</em>.</p>
+
+<p>To take a Snapshot of a Volume, go to <em>Dashboard &gt; Compute &gt; Volumes</em> and find the Volume you want to take a Snapshot of in the list. On the right-hand side, select <strong>Create Snapshot</strong> from the drop-down box.</p>
+
+<p><img src="images/DashboardVolumeSnapshot.png" class="aligncenter" style="width:100%; " alt="image" /></p>
+
+<p>A window will come up in which you type in a <strong>Snapshot name</strong> and a description. Confirm by clicking on <em>Create Volume Snapshot</em>. You will be redirected to the <em>Volume Snapshots</em> overview. You can get to this same page any time by via <em>Dashboard &gt; Compute &gt; Volumes</em> and then select the Tab <em>Volume Snapshots</em>.</p>
+
+<p><img src="images/DashboardVolumeSnapshot2.png" class="aligncenter" style="width:100%; " alt="image" /></p>
+
+<p>To create a <em>new</em> Volume of a Snapshot, go to <em>Dashboard &gt; Compute &gt; Volumes</em> (or if you are still on the <em>Volume Snapshots</em> overview, simply select the <em>Volumes</em> Tab on top). This now works as we already have done in <a href="/package07/sections/index.html" title="Module 7">Module 7</a>: Click on <strong>Create Volume</strong>. The <em>Create Volume</em> window will open.</p>
+
+<p>Type in the name for the new Volume and a description. As <strong>Volume Source</strong>, select <em>Snapshot</em>. In <strong>Use snapshot as a source</strong> you may select the Snapshot you want to create the Volume from. As <strong>Size</strong> you should specify <em>at least</em> as much as the original Volume. (The size should be automatically pre-filled when you select your Snapshot. If you are unsure about the original size, you can also look it up on the Tab <em>Volume Snapshots</em> by clicking on the Snapshot name).</p>
+
+<p><img src="images/DashboardVolumeSnapshot3.png" class="aligncenter" style="width:500px; " alt="image" /></p>
+
+<p>After clicking on <strong>Create Volume</strong>, your new Volume will be created and should appear in the list of your existing Volumes. You may now <em>attach it</em> to an instance and <em>mount</em> it from this instance to access the data, as we have done in <a href="/package07/sections/index.html" title="Module 7">Module 7</a>.</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>You cannot delete a Volume while you have Snapshots of if saved. If you want to free up the Volume resource for other researchers, you have to <em>delete all Snapshots</em> too. So other forms of <em>Backup</em> will need to be used before you delete a Volume.
+The next section will discuss other forms of Backups.</p>
+
+<p>Alternatively, you can use a technique similar to Snapshots: You can <strong>create an Image of the Volume</strong>, which you can then use to restore the Volume even <em>after</em> you have deleted it. This works in the same fashion as Snapshots, it only is a bit slower: Instead of <em>Create Snaphot</em>, now you select <em>Upload to image</em>. Name your Image accordingly so you can easily identify it. Your Volume Image will now appear along with all the instance Snapshots on <em>Dahsboard &gt; Compute &gt; Images</em>. When you create a new Volume, then as <em>Volume Source</em>, select <em>Image</em>, and select your Image as the <em>Image as source</em>.</p>
+
+<p>Please be aware that “Upload to image” is <strong>not a suitable way to create regular backups</strong>, as it is slow and may take significant storage space on the Image Server. You should only use this for significant states of your Volumes, e.g. as a back-up just before you delete the Volume.</p>
+
+
+				</div>
+
+  </article>
+
+
+  
+  <!--
+  Previous section / Next section links. Very simple design to start with.
+  -->
+  <p>
+  
+  	
+    <a href="/package09/sections/index.html">Previous section</a>
+  
+  &nbsp; &nbsp; &nbsp;
+  
+  	
+    <a href="/package09/sections/backup.html">Next section</a>
+  
+  </p>
+   <!-- endif for pagedata_avail -->
+
+</div>
+
+      </div>
+    </div>
+
+    <div style="background-color: #0E0E0E; padding: 20px 20px 20px 60px; color: white; font-size: 12px">
+  <p>Copyright &copy;2015 NeCTAR</p>
+  <img src="/images/NCRIS_PROVIDER_rev.png" alt="NCRIS_PROVIDER_rev" width="132" height="63" />
+  <p><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png">
+  This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a></p>
+</div>
+
+
+  </body>
+
+</html>

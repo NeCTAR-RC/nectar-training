@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel='shortcut icon' href='/images/icon.png' />
+
+  <title>Resource requirements for computing and storage</title>
+  <meta name="description" content="Nectar National Training Resources
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://training.nectar.org.au/package06/sections/instanceNumbers.html">
+  <link rel="alternate" type="application/rss+xml" title="Nectar Training" href="http://training.nectar.org.au/feed.xml" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61845992-2', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+<div class="nec-header">
+  <div class="header-top">
+    <div class="header-top-page">
+      <div class="nect-login">
+        <a href="https://support.nectar.org.au/support/home">Support</a>
+        <a href="http://cloud.nectar.org.au/contact/" class="new-tick">Contact</a>
+        <b><a href="https://dashboard.rc.nectar.org.au/"><b>Login</b></a></b>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-main">
+    <div class="header-main-page">
+      <div class="logo-nect">
+        <img src='/images/nectar_cloud_logo.jpg' alt="Nectar" height="43", width"248">
+      </div>
+      <div class="menu-nect">
+        
+          <a href="/" class="selected">Self-paced Training</a>
+          <a href="/for-trainers.html">Resources for Trainers</a>
+        
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="normal-block">
+  <div class="normal-block-page">
+    
+      <h3>Self-paced Training</h3>
+    
+  </div>
+</div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+          <!-- 
+    Preprocessing: Determine which part number this is. To avoid having to set numbers 
+    manually on each page, determine this here by the file name. 
+    -->
+  
+  
+  
+  
+  
+
+  
+  
+      
+  
+
+  
+  
+  
+  
+  
+  	
+  	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+		
+	
+		
+		
+		
+	
+		
+		
+		
+	
+		
+		
+		
+	
+		
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+			
+			
+			
+  	<!-- If we are not in the main hierarchy, we may be looking at a file of one of the sub-categories -->
+	
+  
+
+
+
+<div class="post">
+
+  <header class="post-header">
+    <h3>Module 6</h3>
+    <h1>Resource requirements for computing and storage</h1>
+  </header>
+
+  
+
+  <!--
+    List of the individual parts of this module (so not all content gets crammed on one page).
+    Rendering this list first is necessary 
+  -->
+  <p> Sections of this module:</p>
+  
+	
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package06/sections/index.html"> Introduction</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package06/sections/storage.html"> Storage</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package06/sections/coreNumbers.html"> How many cores do I need?</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+			
+		
+		
+
+		
+		
+			
+		
+		
+			
+				 <b>
+			
+			
+      <a href="/package06/sections/instanceNumbers.html"> Can I benefit from several VMs?</a>
+			
+				</b>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package06/sections/summary.html"> Summary</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package06/sections/literature.html"> Literature</a>
+			
+			<br/>
+		
+	
+  <br/>
+
+
+  <a href="/package06/sections/all.html" target="_blank">View all sections on one page (Printer friendly)</a>
+  <br/>
+  <br/>
+  <h1> Can I benefit from several VMs? </h1>
+
+   <!-- endif for pagedata_avail -->
+  
+
+  <!--
+  Content of page
+  -->
+  <article class="post-content">
+    
+<p>In <a href="/package04/sections/index.html" title="Module 4">Module 4</a>, we have discussed <em>horizontal scalability</em>. Horizontal scalability entails that you may run several instances of your application on separate virtual machines, all processing different parts of your data, or processing the same data in a different way (e.g. with different parameters).</p>
+
+<p><img src="images/HorizontalScale.png" class="aligncenter" style="width:300px; " alt="image" /></p>
+
+<p>The Cloud is suitable for such a scenario. Distributing your problem over multiple instances is certainly an advanced topic as it requires knowledge about parallel programming. However this section will give a brief overview of the possibilities with the Cloud and the key factors to look out for in your application. For more details, we refer to related <a href="literature.html">Literature</a>.</p>
+
+<h3 id="data-or-problem-partitioning">Data or problem partitioning</h3>
+
+<p>If your data or your problem set can be split into separate units for processing, you may dispatch the processing to several instances. For example, if you can split the data set into several chunks, then you could send one chunk to one instance each, where each instance runs the same program to analyse a chunk in the same fashion; when all instances are finished, results are summarized. 
+Or if your problem can be split into several operations (which may or may not use the same data), for example different operations to perform on a dataset, each operational task can then be dispatched to one instance each.</p>
+
+<p>The instance which splits the problem set and dispatches the tasks is called the “Master”, while the instances to which tasks are dispatched are called “<em>Workers</em>”. A software framework like <em>MapReduce</em> can be used to split and dispatch your problem set.</p>
+
+<p><img src="images/SplitProblemDataset.png" class="aligncenter" style="width:500px; " alt="image" /></p>
+
+<div class="bgDefinition" style="min-height: 55px;">
+					<img src="/images/glyphicons-352-book-open.png" alt="image" align="left" style="width:24px; height:22px;
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><strong>MapReduce</strong> is a framework for processing parallelizable problems across huge datasets using a large number of computers (nodes).  MapReduce processes and generates large data sets with a parallel, distributed algorithm on a <em>cluster</em> (a collection of compute nodes). — Source, and more details: <a href="http://en.wikipedia.org/wiki/MapReduce">Wikipedia</a></p>
+
+
+				</div>
+
+<p>Detailed discussion of MapReduce frameworks or similar programming  models is not within the scope of this course. Instead, please refer to related <a href="literature.html">Literature</a>.</p>
+
+<p>For use with OpenStack, you may use <em>Apache Hadoop</em> through the <a href="http://docs.openstack.org/developer/sahara/">Sahara Project</a>. <em>Apache Hadoop</em> is an industry standard and widely adopted MapReduce implementation. The aim of the Sahara project is to enable users to easily provision and manage Hadoop clusters on OpenStack. Using Sahara is not part of this course, we refer to the <a href="http://docs.openstack.org/developer/sahara/">on-line documentation</a> at this place instead.</p>
+
+<p><strong><em>Note:</em></strong> The use of <em>Sahara</em> in the NeCTAR Cloud is <strong><em>currently not available yet</em></strong>, but it will be coming soon.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>When using <em>Sahara</em>, you don’t launch the instances manually on the Dashboard as we will do in Module 7. You specify <em>templates</em> for the virtual machines, and Sahara will launch the instances for you and set them up so they can be used with your application.</p>
+
+				</div>
+
+<p>Whether you benefit from this model, depends on the problem that you are trying to solve. There are limitations and trade-offs:</p>
+
+<ul>
+  <li>
+    <p>Into how many pieces can the data or problem be split? This limits the number of instances you can use.</p>
+  </li>
+  <li>
+    <p>You should also consider the communication demands for distributing the problem to the workers: if you chop the problem or data into very small pieces, does it still pay off to distribute it to many compute nodes, considering communication demands for the distribution?</p>
+  </li>
+  <li>
+    <p>The time to split the dataset is also a factor: You will <em>not</em> benefit from splitting the problem if the process of splitting, distributing to workers and then summarizing the results takes longer than solving the problem itself on only one instance.</p>
+  </li>
+  <li>
+    <p>A limitation will also be the number of virtual machine instances that you have been granted in your resource allocation.</p>
+  </li>
+</ul>
+
+<h3 id="auto-scaling-with-openstack-heat">Auto-scaling with OpenStack Heat</h3>
+
+<p>Sometimes, you just need to <em>replicate</em> your resources at times when heavy workloads are experienced. For example, if you are deploying a webserver, and at a certain time lots of users access your website and create a lot of traffic and workload on your server, you can <em>scale up</em> and create a second (or third, etc.) webserver with the same configuration. The workload can then be distributed across the identical servers, and users don’t experience delays any more.</p>
+
+<p>The OpenStack framework (used by NeCTAR to run the Cloud) provides a means to <em>orchestrate</em> your resources: The <strong>Heat</strong> project. You specify your resources in a human-readable text file, which is called a “template”. <em>Heat</em> then manages the entire lifecycle of your infrastructure and applications, from creating the resources until deletion when your application has finished. The templates provide a lot of options to specify and configure your resources. It therefore has a bit of a learning curve, but it is worth the effort: After you have defined the template, you may launch your services within a matter of minutes, without having to go through the whole setup process again. You can repeatedly use the template to start up your services — with the template, you have <em>automated</em> the process of setting up the resources you require for a particular research application.</p>
+
+<p>A <em>Heat</em> template can include the instances you want to launch (and which image they should be launched from), volumes to create, security groups to use, and more. It may also include applications to be installed on the servers, e.g. the webserver application.</p>
+
+<p>Most importantly for this section, Heat also provides an <strong>autoscaling service</strong>: You may include a “scaling group” in the template. This group is controlled by a set of <em>“alarms”</em> you define. For example, an alarm may be triggered if the CPU-workload exceeds a certain percentage. 
+In which case you specify to launch an additional server. Heat takes care of this type of autoscaling for you, according to what you specify in the template.</p>
+
+<p>A detailed discussion of <em>Heat</em> is not part of this tutorial, instead please refer to the <a href="https://wiki.openstack.org/wiki/Heat">OpenStack Heat wiki</a> and the <a href="http://support.rc.nectar.org.au/docs/heat">NeCTAR support website</a> which includes a lot of useful information and links.</p>
+
+<h3 id="use-of-message-passing-interface-mpi">Use of Message Passing Interface (MPI)</h3>
+
+<p>The <a href="http://en.wikipedia.org/wiki/Message_Passing_Interface">Message Passing Interface</a> (MPI) is a technique which is widely spread in parallel programming. MPI is a standard defining syntax and semantics of library routines that can be used to implement parallel programming in C and other languages. There are several implementations of MPI such as <a href="http://www.open-mpi.org/">Open MPI</a>, <a href="http://www.mcs.anl.gov/research/projects/mpich2/">MPICH2</a> and <a href="http://www.lam-mpi.org/">LAM/MPI</a>.</p>
+
+<p>With MPI, you can spread the processing of your application over several instances. Communication between nodes is handled in different ways. <em>Open MPI</em> facilitates secure communication between nodes via <em>ssh</em>.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>The MPI interface allows the programmer to manage allocation, communication, and synchronization of a set of processes that are distributed over multiple <em>Nodes</em>. Such <em>Nodes</em> may be:</p>
+
+<ul>
+  <li>the individual <strong>cores</strong> in one CPU, or</li>
+  <li>several <strong>CPUs</strong> in the <em>same</em> machine, or even</li>
+  <li><strong>separate machines</strong> which are connected in a network.</li>
+</ul>
+
+				</div>
+
+<p>If your application uses MPI to support parallelism, you may benefit from several instances. However, your better choice may be to go for a HPC solution (see discussion in <a href="/package04/sections/index.html" title="Module 4">Module 4</a>). MPI performs poorly on common OpenStack networks because communication between the nodes is slow.</p>
+
+<p>You can run MPI programs across OpenStack instances as long as your instances are allowed to communicate with each other over their fixed IPs, and your instances’ firewall settings allow traffic across the ports that your MPI implementation is using.
+There is however one exception: If your MPI application uses <em>broadast</em> or <em>multicast</em> in any form, it can not run on OpenStack. This is because some clouds do not support broadcast or multicast in any form (at the time of writing, neither Amazon EC2 nor OpenStack do).</p>
+
+<p>A detailed discussion of MPI is outside the scope of this course—setting up an MPI program on the cloud requires previous experience and in-depth knowledge of MPI and the application to run. Please refer to related <a href="literature.html">Literature</a>.</p>
+
+<h3 id="summary-using-several-instances">Summary: Using several instances</h3>
+
+<p>In summary, you may use several instances, but it depends on the application whether this is beneficial.</p>
+
+<ul>
+  <li>
+    <p>You may <strong>split the problem or data set</strong> and distribute it, for example using <em>MapReduce</em> frameworks.</p>
+  </li>
+  <li>
+    <p>You may configure <strong>auto-scaling</strong> for your resources with <em>Heat</em> in order to adapt to current workload demands.</p>
+  </li>
+  <li>
+    <p>You may be able to run your <strong>MPI</strong> application on the NeCTAR Research Cloud.</p>
+  </li>
+</ul>
+
+<p>Distributing your application over several instances is an advanced topic which was only described on a high level in this course. For more details, please refer to the related <a href="literature.html">Literature</a>.</p>
+
+  </article>
+
+
+  
+  <!--
+  Previous section / Next section links. Very simple design to start with.
+  -->
+  <p>
+  
+  	
+    <a href="/package06/sections/coreNumbers.html">Previous section</a>
+  
+  &nbsp; &nbsp; &nbsp;
+  
+  	
+    <a href="/package06/sections/summary.html">Next section</a>
+  
+  </p>
+   <!-- endif for pagedata_avail -->
+
+</div>
+
+      </div>
+    </div>
+
+    <div style="background-color: #0E0E0E; padding: 20px 20px 20px 60px; color: white; font-size: 12px">
+  <p>Copyright &copy;2015 NeCTAR</p>
+  <img src="/images/NCRIS_PROVIDER_rev.png" alt="NCRIS_PROVIDER_rev" width="132" height="63" />
+  <p><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png">
+  This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a></p>
+</div>
+
+
+  </body>
+
+</html>

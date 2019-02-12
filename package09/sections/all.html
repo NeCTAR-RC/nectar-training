@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel='shortcut icon' href='/images/icon.png' />
+
+  <title>Backing up and packing up</title>
+  <meta name="description" content="Nectar National Training Resources
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://training.nectar.org.au/package09/sections/all.html">
+  <link rel="alternate" type="application/rss+xml" title="Nectar Training" href="http://training.nectar.org.au/feed.xml" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61845992-2', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+
+
+  <body>
+    <div class="page-content">
+      <div class="wrapper">
+        <p><a href="/"><img src="/images/nectar_cloud_logo.jpg" alt="Nectar"/></a></p>
+        <h3>Module 9</h3>
+        <h1>Backing up and packing up</h1>
+
+        
+<h2 id="introduction">Introduction</h2>
+
+<p>In this module we will discuss how you can back up your instance and your data. You will learn how to make snapshots and how to recover your virtual machine using this snapshot. You will also learn how to terminate your virtual machine and release your storage without losing anything.</p>
+
+<p>Is is important to be aware of the measures taken by NeCTAR to prevent data loss. But an important part of keeping your data safe is your responsibility: You should <strong>create backups</strong> at regular intervals. In this module, you will learn several approaches to backing up your data.</p>
+
+<p>Another very important activity is <strong>“cleaning up”</strong> your resources after you have finished using them. This involves not only securely erasing data on your volumes or ephemeral storage. You should also “terminate” (delete) your instance and your storage as soon as you don’t need it any more. Why is this so important? Because your running instance and your existing storage <strong>take up resources which other researchers may need</strong>.</p>
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>NeCTAR experiences resource shortages from time to time, which could be avoided if unused (<em>idle</em>) or underutilised (<em>mostly idle</em>) NeCTAR instances were terminated, freeing up resources. It has been observed that the average CPU utilization rate across the NeCTAR federation is less than <strong>5%</strong>, and many large instances sit idle for days, weeks or months at a time.</p>
+
+				</div>
+
+<p>The problem is that many people want their compute resources to be available when <em>they</em> are ready to use them. They don’t realise that while they are not using those resources, they are preventing others from accessing them. It is therefore important that everyone is aware of this and responsibly releases their resources when they don’t need them any more. <strong>Fair play!</strong></p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>The amount of <strong>CPU hours</strong> you request in an allocation is the amount of time your instance will be in existence — <em>not</em> the time the CPU is actually busy with your programs! That is, all time counts between when you <em>launch</em> the instance and <em>terminate</em> it — regardless whether the CPU is idle the whole time, or the instance is shut down or suspended. While you have access to the instance, it counts as CPU hours!</p>
+
+<p>Consider this also when you plan on how to use your instance — you can <em>back up</em> the state of your instance and then <em>“terminate”</em> it while you don’t need it. It will be easy to restore it to the exact same state when you need it again.</p>
+
+				</div>
+
+<p>It is not difficult to <strong>save your instance and volumes</strong> (“create a snapshot”), then terminate the instance and release the volumes, and <strong>re-launch your instance and volumes</strong> in exactly the same state at a later time, when you need it. In this module, we will show you how you can do this.</p>
+
+<h3 id="videos">Videos</h3>
+
+<p>The following videos go through most of the content in this module and offer a less in-depth description of the subject than the documentation does.</p>
+
+<p><a href="https://www.youtube.com/watch?v=bcRt_NKZ79s">https://www.youtube.com/watch?v=bcRt_NKZ79s</a></p>
+
+<p><a href="https://www.youtube.com/watch?v=9sYuHXA1rjg">https://www.youtube.com/watch?v=9sYuHXA1rjg</a></p>
+
+<p><a href="https://www.youtube.com/watch?v=CuT4ddcghrM">https://www.youtube.com/watch?v=CuT4ddcghrM</a></p>
+
+<h3 id="conventions">Conventions</h3>
+
+<p>The notation throughout the training documents can be interpreted as follows:</p>
+
+<p>Words in <em>italics</em> are used for names and terminology, e.g. name of a software, or name of a computing concept. It may also just emphasise a word in the traditional way. Quotations are also written in italics and are put in between quotatioin marks.</p>
+
+<p>Words in <strong>bold</strong> are used to highlight words which identify important concepts of a paragraph, to make it easier for users to skim through the text to find a paragraph which explains a certain idea, concept or technology.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><strong>Additional information</strong> which is optional to read is displayed in <em>info boxes</em> like this one.</p>
+
+				</div>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><strong>Important information</strong> is displayed in boxes like this one.</p>
+
+				</div>
+
+<div class="bgDefinition" style="min-height: 55px;">
+					<img src="/images/glyphicons-352-book-open.png" alt="image" align="left" style="width:24px; height:22px;
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><strong>Definition of terms</strong> are displayed in boxes of this style.</p>
+
+				</div>
+
+<div class="bgPrerequisite">
+					<img src="/images/glyphicons-333-certificate.png" alt="image" align="left" style="width:17px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Possibly specific <strong>prerequisites</strong> for reading a particular section are contained in this type of box at the beginning of a section.</p>
+
+				</div>
+
+<p>The use of command line tools is part of this course. In a <em>Terminal</em>, you will be directed to type in <em>commands</em>. Commands are formatted as follows:</p>
+
+<p><code>command-name argument1 argument2 ... argumentn</code></p>
+
+<p>Throughout the exercises, when you see a word in pointed brackets, like &lt;<em>this-word</em>&gt;, it means that you have to replace everything inside the brackets, and <em>including the brackets</em>, with whatever is described within the brackets.</p>
+
+<p>For example, if you are prompted to run a command named <em>the-command</em> which takes two arguments:</p>
+
+<p><code>the-command -f &lt;yourfile&gt;</code></p>
+
+<p>Then you have to replace the second argument, &lt;yourfile&gt;, with the <em>file name</em> that is being referenced in the exercise. For example</p>
+
+<p><code>the-command -f thefile.txt</code></p>
+
+<p>When editing a file, the contents of it will be displayed in a different font and with background colour as follows:</p>
+
+<div class="bgEdit"><pre class="PreformatEdit">The content of the file
+The next line in this file</pre></div>
+
+<p>Output on the command line terminal is printed in boxes formatted as follows:</p>
+
+<div class="bgTerminal"><pre class="PreformatTerminal">NectarInstance:~ Jennifer$ whoami
+Jennifer</pre></div>
+
+<h2 id="snapshots">Snapshots</h2>
+
+<p>You may <em>copy</em> the state of your instance, and later reboot it in this state. Copies of instances are called <em>Snapshots</em>. <strong>Snapshots of an instance</strong> can be used like other Images (e.g. like the Ubuntu Image we used in <a href="/package07/sections/index.html" title="Module 7">Module 7</a>) to start new instances.</p>
+
+<p>Snapshots only include data on your primary <em>root disk</em>. It is currently not possible to take Snapshots of the secondary <em>ephemeral disk</em> — the only way to save your data on the secondary ephemeral disk is to use other forms of backup, as discussed in the next section.
+But it is also possible to take <strong>Snapshots of Volumes</strong>.</p>
+
+<p>In this section we are going to learn how to take Snapshots of instances and volumes. Then, we are going to re-create the state of the instances and volumes out of the snapshots.</p>
+
+<h3 id="snapshots-of-an-instance">Snapshots of an instance</h3>
+
+<p>Taking a Snapshot is simple: go to <em>Dashboard &gt; Compute &gt; Instances</em> and click <em>“Create Snapshot”</em> on the right hand side of the instance you wish to copy.</p>
+
+<p><img src="images/DashboardSnapshot.png" class="aligncenter" style="width:100%; " alt="image" /></p>
+
+<p>You may then choose a name for the Snapshot, and confirm with <strong>Create Snapshot</strong>. You will be redirected to the <em>Images</em> tab, which shows all your Images and Snapshots. In the list, you can see that your Snapshot is being created:</p>
+
+<p><img src="images/DashboardSnapshot2.png" class="aligncenter" style="width:100%; " alt="image" /></p>
+
+<p>This process may take a while. While the Snapshot is being made, it will be listed with the Status <em>“Queued”</em>, then <em>“Saving”</em>, and finally it will be finished and in status <em>“Active”</em>. In the top row of the <em>Images</em> tab you can filter the Images to display. The current setting is <em>“Project”:</em> These are only your private Images. If you click on <em>“NeCTAR official”</em> you will see all the NeCTAR Images that are available to launch new instances. <em>“Public”</em> will show you even more Images you may use.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Instance Snapshots <em>do not</em> include the state of the secondary ephemeral disk, or of any volumes, <em>even if</em> they are currently mounted, e.g. on <em>/data</em> or <em>/mnt</em>.</p>
+
+				</div>
+
+<p>On the same <em>Images</em> Tab, you may also <strong>delete your Snapshot</strong> at a later time. To delete a Snapshot, click on the right-hand side drop-down box of your Snapshot and select <em>Delete Image</em>.</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>It is possible to take a <strong>“Live Snapshot”</strong> (take a Snapshot of the machine that is currently running). In most cases, there should be no problem. However, if the instance is running while the Snapshot is being taken, the resulting Snapshot <em>may</em> be inconsistent. This is due to programs writing on the file system while a Snapshot is taken. There are a few options to prevent this inconsistency from happening:</p>
+
+<ul>
+  <li>running “sync” before starting the Snapshot, or</li>
+  <li>using a “file system freeze” utility which block programs writing on the filesystem,</li>
+  <li>shutting down or pausing the instance before Snapshotting.</li>
+</ul>
+
+<p>The easiest option is probably to pause or shut down the instance (which we will do <a href="cleanup.html">later in this Module</a>) and then take the Snapshot. For more information, refer to the <a href="http://docs.openstack.org/openstack-ops/content/snapshots.html">OpenStack documentation</a>.</p>
+
+				</div>
+
+<p><strong>Launch an instance from the Snapshot</strong></p>
+
+<p>It is easy to launch a new instance from a Snapshot. Simply go on the <em>Dashboard &gt; Compute &gt; Images</em>, select the <em>Project</em> filter on the top of the list, and you will get an overview of all your own Images. Find the Image you would like to launch a new instance from, and click <strong>Launch</strong>. The <em>Launch</em> window will come up, which is the same we already used in <a href="/package07/sections/index.html" title="Module 7">Module 7</a>. The Snapshot Image will be pre-selected, and also the flavor of the Snapshotted instance. But you will still need to specify a few more settings:</p>
+
+<ul>
+  <li>Choose an Instance Name,</li>
+  <li>Keep or change the flavor (don’t pick a smaller though),</li>
+  <li>Access &amp; Security: Select key pair and security groups,</li>
+  <li>Availability Zone (optional): Choose your Availability Zone,</li>
+  <li>and possibly change other settings if you wish.</li>
+</ul>
+
+<h3 id="snapshots-of-volumes">Snapshots of volumes</h3>
+
+<p>A Volume Snapshot creates a copy of the state of a Volume. It is similar to taking a Snapshot of an instance in that it <em>creates an Image</em> of which you can then <em>create new Volumes</em>. This is not necessarily the most ideal form of Backup, because each Snapshot takes up <strong>significant disk quota</strong> the same size of your Volume — even if the Volume still has lots of free space on it. For example, if you have a 50GB volume, but only use 1GB of data on it, then your Snapshot will still be 50GB. Also, you have <em>limited quota</em> available specifically for Snapshots. The <a href="backup.html">next section</a> will cover more suitable forms of <em>backup</em> for your data. However, you may still prefer to take a Snapshot of particular state of the volume, in order to easily create a <em>new</em> volume from it at a later time.</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>The original Volume on which the Snapshot was based <em>must still exist</em>, or the Snapshots of it become useless.</p>
+
+<p>OpenStack does <em>not</em> let you delete Volumes which have “depending Snapshots”. So you have to be aware that the Snapshots are only usable while you keep your Volume in existence. This is different to <em>Backups</em>, which survive the deletion or a volume. Backups are are discussed in the <a href="backup.html">next section</a>.</p>
+
+				</div>
+
+<p>Before taking a snapshot, you have to make sure your Volume is <em>not attached</em> to an instance — The volume has to be in the status <em>“Available”</em>.</p>
+
+<p>To take a Snapshot of a Volume, go to <em>Dashboard &gt; Compute &gt; Volumes</em> and find the Volume you want to take a Snapshot of in the list. On the right-hand side, select <strong>Create Snapshot</strong> from the drop-down box.</p>
+
+<p><img src="images/DashboardVolumeSnapshot.png" class="aligncenter" style="width:100%; " alt="image" /></p>
+
+<p>A window will come up in which you type in a <strong>Snapshot name</strong> and a description. Confirm by clicking on <em>Create Volume Snapshot</em>. You will be redirected to the <em>Volume Snapshots</em> overview. You can get to this same page any time by via <em>Dashboard &gt; Compute &gt; Volumes</em> and then select the Tab <em>Volume Snapshots</em>.</p>
+
+<p><img src="images/DashboardVolumeSnapshot2.png" class="aligncenter" style="width:100%; " alt="image" /></p>
+
+<p>To create a <em>new</em> Volume of a Snapshot, go to <em>Dashboard &gt; Compute &gt; Volumes</em> (or if you are still on the <em>Volume Snapshots</em> overview, simply select the <em>Volumes</em> Tab on top). This now works as we already have done in <a href="/package07/sections/index.html" title="Module 7">Module 7</a>: Click on <strong>Create Volume</strong>. The <em>Create Volume</em> window will open.</p>
+
+<p>Type in the name for the new Volume and a description. As <strong>Volume Source</strong>, select <em>Snapshot</em>. In <strong>Use snapshot as a source</strong> you may select the Snapshot you want to create the Volume from. As <strong>Size</strong> you should specify <em>at least</em> as much as the original Volume. (The size should be automatically pre-filled when you select your Snapshot. If you are unsure about the original size, you can also look it up on the Tab <em>Volume Snapshots</em> by clicking on the Snapshot name).</p>
+
+<p><img src="images/DashboardVolumeSnapshot3.png" class="aligncenter" style="width:500px; " alt="image" /></p>
+
+<p>After clicking on <strong>Create Volume</strong>, your new Volume will be created and should appear in the list of your existing Volumes. You may now <em>attach it</em> to an instance and <em>mount</em> it from this instance to access the data, as we have done in <a href="/package07/sections/index.html" title="Module 7">Module 7</a>.</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>You cannot delete a Volume while you have Snapshots of if saved. If you want to free up the Volume resource for other researchers, you have to <em>delete all Snapshots</em> too. So other forms of <em>Backup</em> will need to be used before you delete a Volume.
+The next section will discuss other forms of Backups.</p>
+
+<p>Alternatively, you can use a technique similar to Snapshots: You can <strong>create an Image of the Volume</strong>, which you can then use to restore the Volume even <em>after</em> you have deleted it. This works in the same fashion as Snapshots, it only is a bit slower: Instead of <em>Create Snaphot</em>, now you select <em>Upload to image</em>. Name your Image accordingly so you can easily identify it. Your Volume Image will now appear along with all the instance Snapshots on <em>Dahsboard &gt; Compute &gt; Images</em>. When you create a new Volume, then as <em>Volume Source</em>, select <em>Image</em>, and select your Image as the <em>Image as source</em>.</p>
+
+<p>Please be aware that “Upload to image” is <strong>not a suitable way to create regular backups</strong>, as it is slow and may take significant storage space on the Image Server. You should only use this for significant states of your Volumes, e.g. as a back-up just before you delete the Volume.</p>
+
+
+				</div>
+
+<h2 id="backing-up">Backing up</h2>
+
+<div class="bgPrerequisite">
+					<img src="/images/glyphicons-333-certificate.png" alt="image" align="left" style="width:17px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><em>Prerequisite:</em> You should be familiar with all the storage terminology discussed in <a href="/package06/sections/storage.html">Module 6</a> and <a href="/package07/sections/manageStorage.html">Module 7</a>. You must know how to <em>mount</em> your secondary ephemeral drive on your instance, and how to <em>attach</em> and <em>mount</em> a Volume to your instance.</p>
+
+<p>Some basic command line usage skills are helpful for this section as well.</p>
+
+				</div>
+
+<p>The NeCTAR instances and volumes are not backed up automatically. Managing the backups is your responsibility.
+However some types of NeCTAR storage use <strong>RAID</strong> storage, which protects your data somewhat against data loss (roughly speaking, if one harddrive fails, your data can probably be reconstructed from other drives). 
+Volume storage is backed by a variety of backend technologies across the NeCTAR Nodes.
+The <em>Object Store</em> is <strong>replicated</strong> across several physical locations, which is also a form of protection against data loss.</p>
+
+<p>Generally speaking, NeCTAR <em>does</em> take measures against data loss, but the guideline is “all care taken, no guarantees given” — part of ensuring your data won’t be lost is your responsibility: Back it up!</p>
+
+<p>It is recommended that you back up your important data at regular intervals. You may also feel more comfortable knowing that you have a copy of your data available off-line, maybe on your local office computer or a server at your research organisation. There are lots of tools available to backup data — in this section, we will discuss a few of them.</p>
+
+<p>Of all the storage types, probably <strong>Object Storage</strong> is the most robust against data loss due to the physical distribution of multiple copies of each file. However you may still prefer to keep a copy of a recent state of your files on your local premises.
+Probably the easiest way to keep backups of your objects is to use clients like <em>CyberDuck, CloudBerry</em> or FTP clients like <em>FileZilla</em> to copy your files across manually. This has been described <a href="/package07/sections/objectStorage.html">here in Module 7</a>. A more advanced way to automate backups from the object store is to write scripts which use the <em>openstack command line client</em> to download several object files. This is going to be subject to discussion in <a href="/package10/sections/index.html" title="Module 10">Module 10</a>.</p>
+
+<p>For backing up the <strong>secondary ephemeral disk and Volume storage</strong>, there are a number of different tools which have different characteristics in type and form of backup they achieve.
+Both secondary ephemeral disk and Volumes have one thing in common: They are <em>“mounted”</em> at one folder on your instance. Therefore, to back up your data, you can use most methods for both of the storage types, with one exception: The OpenStack Volume backup tools only work for Volumes.</p>
+
+<p>In the following, we will discuss a few options and tools to back up your data on the ephemeral disk and on Volumes.</p>
+
+<h3 id="backups-of-volumes-using-openstack-tools">Backups of Volumes using OpenStack tools</h3>
+
+<p>OpenStack offers tools to back up your Volumes (<em>not</em> your secondary ephemeral disk). They can be used from the Dashboard, or from the command line.</p>
+
+<p>There are two ways to backup your data on the volume:</p>
+
+<ol>
+  <li>
+    <p><strong>Volume Snapshot</strong>: This creates a copy of your entire volume, so if the volume is 5GB but you are only using 1GB of it, the Snapshot will still have a size of 5GB. The Snapshot is stored as an <em>Image</em> on the NeCTAR Image Server, so you will be able to select it when you create a <em>new</em> volume. A volume from which Snapshots have been created cannot be deleted while any of these Snapshots still exists — A Snapshot is <em>dependent</em> of the actual Volume. Creating Snapshots is fairly quick.</p>
+  </li>
+  <li>
+    <p><strong>Volume Backup</strong>: Your data will be backed up and placed in your <em>Object Storage</em>. You can later restore that backup onto a new <em>or</em> existing volume. Only the amount of storage you are currently using is being backed up: If you only have 1GB of data on a 5GB volume, the backup will only be about 1GB. Backups are independent of the original volume, but they are still full copies of the Volumes. Therefore, they take longer to create than Snapshots.</p>
+  </li>
+</ol>
+
+<p>The <a href="snapshot.html">last section</a> has discussed how to take a Snapshot of a Volume. 
+Please be aware that <strong>Snapshots are not suitable to create regular backups</strong>, as it takes a lot of storage space and uses up your quota. Snapshots are also only usable while the original Volume still exists, which limits your flexibility to delete the volume.
+You should only use snapshots for significant states for your Volumes which you want to use to easily create new volumes from.</p>
+
+<p>To make a <em>Backup</em> (not a <em>Snapshot</em>), you will need to use the <strong>openstack command line client</strong>, as described in <a href="/package10/sections/index.html" title="Module 10">Module 10</a>. Support to create Backups via the Dashboard will probably be added in the near future — it will then work in a very similar fashion to taking Snapshots.</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Note that when using Backups, you need to have enough quota on your Object Store to back up your data. You need to consider this when you request a resource allocation if you want to use OpenStack Backups — if you don’t request Object Store quota, you won’t be given any allocation for it.</p>
+
+				</div>
+
+<h3 id="rsync-command-line-utility">Rsync command line utility</h3>
+
+<p><a href="https://rsync.samba.org/">Rsync</a> is a Unix command line tool which maintains a copy of a local directory on a (typically) remote system, in a traditional “mirror” fashion. 
+The contents of the two folders, which we call <strong>source and destination folders are <em>synchronized</em></strong>. 
+The source and destination folders can be on the same computer, or they could be on separate computers that are accessible over a network or the Internet.</p>
+
+<p>In the most typical backup scenario, the <em>source</em> would be the disk which is <em>mounted</em> on your NeCTAR instance, and the <em>destination</em> would be a server at your research organisation onto which the data will be backed up. The <em>destination</em> folder can also be on your local computer, though this is not a robust backup location, so it is recommended to use a dedicated backup server.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Rsync creates <strong>incremental backups</strong>, which means only what has changed in the directory since the last backup will be copied to the backup folder, so not every time a backup is performed all files have to be transferred again. This speeds up the backup process, especially with slow network connections.</p>
+
+<p>Rsync can also <strong>compress and encrypt data streams</strong> during the backup process, which is important if the data being backed up has to travel through the internet to reach the server which maintains the backup copy.</p>
+
+				</div>
+
+<p>RSync is a <strong>good choice for you if:</strong></p>
+
+<ul>
+  <li>you want to create a backup of the <em>most recent state</em> of your volume or secondary ephemeral drive</li>
+  <li>and save the backup on your local computer, or another computer onto which you can log on to with a terminal (e.g. via a ssh terminal).</li>
+</ul>
+
+<p>RSync is great in that it does incremental per-file copies, so it makes it easy for you to access (and even edit) your files offline, and keep the most recent state of your data synchronized between your computer and the NeCTAR storage.</p>
+
+<p>The main <strong>drawbacks</strong> are:</p>
+
+<ul>
+  <li>it is difficult to maintain backups of multiple time points — e.g. if you wanted to keep a backup of every week that you can restore individually later on. Rsync is more suitable to keep a backup of the <em>most recent state</em>.</li>
+  <li>if something goes wrong while the <em>rsync</em> process in ongoing, the backup will contain a mix of old and new files, and the whole backup process should be repeated.</li>
+  <li>It is a bit more complicated to set up <em>automated backups</em> (you can do this using <em>cronjobs</em>); The easiest is if you do the backups manually each time you want to back up your data.</li>
+</ul>
+
+<h4 id="installation-of-rsync">Installation of Rsync</h4>
+
+<p>You will have to install <em>rsync</em> on your local computer (or on any computer you can logon to via a terminal, e.g. via ssh, and you want to use this computer for backups).</p>
+
+<ul>
+  <li>On many Linux distributions, <em>rsync</em> is already installed. If it is not, you can install it using your package manager. For example on Ubuntu/Debian:  <br />
+ <code>sudo apt-get install rsync</code></li>
+  <li>On Mac OS X, <em>rsync</em> is available by default.</li>
+  <li>Under Windows, <em>rsync</em> can be installed as part of the <a href="https://www.cygwin.com/">cygwin</a> package and used from the command line. This is a bit more complicated, so if you are using a Windows system, <em>rsync</em> is maybe not the right choice.</li>
+</ul>
+
+<p>You also have to make sure <em>rsync</em> is installed on the NeCTAR instance on which the disk to be backed up is <em>mounted</em> — the image we used in <a href="/package07/sections/index.html" title="Module 7">Module 7</a> does already come with <em>rsync</em> on it.</p>
+
+<h4 id="usage-of-rsync">Usage of Rsync</h4>
+
+<p>The rsync command copies files from the <em>source</em> directory to the <em>destination</em> directory, automatically using your ssh keys to encrypt the connection:</p>
+
+<p><code>rsync -av &lt;source directory&gt; &lt;destination directory&gt;</code></p>
+
+<p>Either the source <em>or</em> destination directory can be a remote directory on your NeCTAR instance. For example, it can be the folder which your Volume is <em>mounted</em> on, which we called <em>/data</em> in <a href="/package07/sections/index.html" title="Module 7">Module 7</a>. Or it can be any other folder on your NeCTAR instance.  <br />
+The other directory (source or destination) is then a directory on your local computer.</p>
+
+<p>The syntax to specify a <em>remote</em> directory is <em>&lt;username&gt;@&lt;IP-Address&gt;:&lt;Path-to-Folder&gt;</em></p>
+
+<p>Depending on which direction you want to do the synchronization:</p>
+
+<ul>
+  <li>
+    <p>If you want to synchronize the <em>/data</em> folder <em>from</em> your instance <em>onto</em> your local computer, and save the copy in folder <em>dataCopy</em>:  <br />
+  <code>rsync -av ubuntu@NNN.NNN.NNN.NNN:/data/ dataCopy/</code>  <br />
+  This is what you do when you <strong>backup</strong> the data on your instance onto your local computer.</p>
+  </li>
+  <li>
+    <p>If you want to synchronize a folder <em>dataCopy</em> from your local computer <em>onto</em> your instance, and save it there in the folder <em>/data</em>:   <br />
+  <code>rsync -av dataCopy/ ubuntu@NNN.NNN.NNN.NNN:/data/</code>  <br />
+  This is what you do to <strong>restore</strong> the data, or if you changed something in your <em>dataCopy</em> folder (e.g. edit a file) and want to apply the changes on your NeCTAR data copy as well.</p>
+  </li>
+</ul>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><strong>Caveat:</strong> You have to make sure the source and destination directory specifications in the command end with a slash <em>”/”</em> in order to get the expected synchronization behaviour (otherwise a new directory will be created in the destination directory instead).</p>
+
+				</div>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>The <strong>-a</strong> option in the command stands for “archive” — it synchronizes <em>recursively</em> (meaning it includes sub-directories) and preserves symbolic links, special and device files, modification times, group, owner, and permissions.</p>
+
+<p>The <strong>-v</strong> option means “verbose” and prints out status messages while the command is working.</p>
+
+<p>You may also be interested in using the option <strong>-z</strong> if you have large amounts of data to be backed up. This option <strong>compresses</strong> the data for transmission, which can speed up the backup process. 
+The amount of compression that can be achieved depends on the type of data being transferred, e.g. text files can be compressed efficiently, whereas binary files can’t be reduced much in size.
+To use compression:  <br />
+<code>rsync -avz &lt;source directory&gt; &lt;destination directory&gt;</code></p>
+
+				</div>
+
+<p>There are other tools related to or similar to <em>rsync</em>, for example <a href="http://www.nongnu.org/rdiff-backup/">rdiff-backup</a> or <a href="http://www.rsnapshot.org/">rsnapshot</a> which you may be interested in.
+For more information about <em>rsync</em>, please refer to the man pages:</p>
+
+<p><code>man rsync</code></p>
+
+<p>or visit the <a href="https://rsync.samba.org/">rsync website</a>. There are also many tutorials for rsync which you can find online.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>If your private key is not in the directory <em>.ssh</em> and you don’t have an ssh agent (or you are using Mac OS X which may not use <em>.ssh</em> as default), you will get a <em>Permission denied</em> error. Then, you need to specify the private key manually:</p>
+
+<p><code>rsync -av -e '-i &lt;path-to-private-key&gt;' &lt;source&gt; &lt;destination&gt;</code></p>
+
+<p>You have to specify the path to the private key in full, not using abbreviations such as <strong>~</strong>.</p>
+
+				</div>
+
+<h4 id="working-example">Working example</h4>
+
+<p>Lets try this out. First, make sure your Volume is attached to your instance and <em>mounted</em> on any directory, say for example <em>/data</em>.
+Then go to your <strong>ssh terminal</strong> and create a file in your instances <em>/data</em> directory:</p>
+
+<p><code>nano /data/testFile.txt</code></p>
+
+<p>Write some text into the file, for example <em>“This is my instance text file”</em>, and close the editor with <em>Ctrl+X</em>.</p>
+
+<p>Now, go to the <strong>terminal commanding your local computer</strong> and type (replacing N’s with your instances IP address):</p>
+
+<p><code>rsync -av ubuntu@NNN.NNN.NNN.NNN:/data/ dataCopy/</code></p>
+
+<p>List the contents of your current directory:</p>
+
+<p><code>ls</code></p>
+
+<p>and you will see that now there is a folder <em>dataCopy</em>. List the contents of it:</p>
+
+<p><code>ls dataCopy/</code></p>
+
+<p>and you should see that the file <em>testFile.txt</em> is there now. Open it, and <em>add</em> something new after the content you wrote in there before (e.g. <em>“This is a line added on my local computer”</em>):</p>
+
+<p><code>nano dataCopy/testFile.txt</code></p>
+
+<p>and exit the editor with <em>Ctrl+X</em>. You have just edited the <em>copy</em> of the file which you synchronized onto your local machine earlier! We want to apply the same changes on the file on the NeCTAR storage as well. So synchronize the two folders again, this time specifying your local directory <em>dataCopy</em> as <em>source folder</em>:</p>
+
+<p><code>rsync -av dataCopy/ ubuntu@NNN.NNN.NNN.NNN:/data/</code></p>
+
+<p>Now, you can switch back to your <strong>ssh terminal</strong> to your instance and check that the changes also have been applied there:</p>
+
+<p><code>nano /data/testFile.txt</code></p>
+
+<p>The text you added earlier should be visible here as well.</p>
+
+<p>While you will only need to perform the first <em>rsync</em> command to create a <strong>backup</strong>, it is also nice to know that you can do it the other way round, in case you change something on your local copy of the data and then want to apply the changes on your instance as well. 
+In case you need to <strong>restore</strong> your data, you will do the same thing.</p>
+
+<h3 id="unix-dd-utility">Unix <em>dd</em> utility</h3>
+
+<p><a href="https://en.wikipedia.org/wiki/Dd_(Unix)">Dd</a> is a low level command line utility that you can use create an <em>Image</em> of a volume. It is essentially a low level <em>byte-for-byte</em> copy utility. 
+<em>Dd</em> is installed by default on most Linux distributions (on Ubuntu/Debian as part of the <em>coreutils</em> package) and on Mac OS X.</p>
+
+<p>Because dd is a lower-level backup tool, you need to have <em>sudo</em> privileges to perform a backup.</p>
+
+<p>To back up a partition or a volume which is attached on <em>/dev/vdc</em> into an <em>Image file</em> called <em>volumeBackup.dd</em>, from the <strong>ssh terminal</strong> type:</p>
+
+<p><code>sudo dd if=/dev/vdc of=./volumeBackup.dd</code></p>
+
+<p>This process can take quite some time depending on the size of your volume.
+After the command has finished successfully, type  <br />
+<code>ls</code>  <br />
+to reveal that now you have a file <em>volumeBackup.dd</em> in your current directory. You now can copy this image file to any place you consider “safe”, e.g. a server in your research organisation. You may use  the instructions given <a href="/package07/sections/copyFiles.html">here in Module 7</a> to download the backup file <em>volumeBackup.dd</em> from your NeCTAR instance.</p>
+
+<p>When you want to <strong>restore</strong> a volume state you need to have the <em>.dd</em> image file on your NeCTAR instance again. 
+To restore a volume/partition from the same file:</p>
+
+<p><code>sudo dd if=./volumeBackup.dd of=/dev/vdc</code></p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>When restoring the backup, the volume or partition needs to be the <strong>same size</strong> as the one you took the image from, so this limits your options in case of a restore.</p>
+
+				</div>
+
+<p>The advantage of this method is that it is easy to use and it takes a <strong>1:1 copy of your volume</strong>, preserving <em>everything</em> like file system, permissions, etc. The disadvantage is that backups are not incremental (like <em>rsync</em>) and each image file takes up the <strong>entire size of the volume</strong> — if your volume is 50GB, but you only use 1GB on it, the image file will still use 50GB. If you want to maintain several backups (e.g. snapshots of various stages of the volume state) and you have large volumes, <em>dd</em> is probably not the right choice.</p>
+
+<h3 id="backuppc">BackupPC</h3>
+
+<p><a href="http://backuppc.sourceforge.net/index.html">BackupPC</a>
+is a <em>web-based</em> system for managing backups of Unix, Linux, Windows and Mac OS X computers. It allows you to configure automated <em>backup schedules</em> and offers a web-based interface which you can use from any computer to configure your backups.
+It can transfer <em>tar</em> archives over <em>ssh</em> or <em>nfs</em>, or use <em>rsync</em> (amongst other options). The backups are stored <strong>incrementally</strong> on a <em>backup server</em>.</p>
+
+<p>The big advantage is that once you have the backup server running, you get a graphical web interface to configure your backups, and you can <strong>create automated schedules</strong> for your backups, so you don’t have to regularly do this manually. You can still use BackupPC to run <em>manual</em> backups as well.</p>
+
+<p>The disadvantage is that you need a dedicated <strong>backup server</strong> which runs BackupPC. This server may also be a virtual machine. Maybe your research organisation can provide you with access to a server on which you can install BackupPC.    <br />
+Another drawback is that while you can use BackupPC to back up <em>several</em> instances, unfortunately it will back up the <em>same</em> folder on <em>all</em> of them, e.g. <em>/data</em>. So all your instances must have a <em>/data</em> folder (or any other that you specify), and it has to be <em>mounted</em> on the instance at the time the Backup happens.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Launching a separate instance on NeCTAR to handle the Backups of another NeCTAR instance is also possible. However, it contradicts the aim of having backups at a physically different locations — you would not even know if your Backup Volume is on the same hard drive as the Volume to be backed up. If that harddrive fails, or the whole data center burns down, all your backups are affected just as the original Volume. However you may only want additional <em>copies</em> of your data (at several stages of development), in which case BackupPC may still be an interesting option for you.</p>
+
+				</div>
+
+<p>It takes a bit of work to set up BackupPC, because you have to set up the server, and configure the Apache Webserver on it accordingly. But it is not a complicated process. Refer to the <a href="http://backuppc.sourceforge.net/faq/BackupPC.html">official documentation</a> or check out <a href="https://www.digitalocean.com/community/tutorials/how-to-use-backuppc-to-create-a-backup-server-on-an-ubuntu-12-04-vps">this tutorial on digitalocean</a> or <a href="https://wiki.archlinux.org/index.php/BackupPC">this page on archlinux</a> for detailed instructions on how to set it up.</p>
+
+<p>In this tutorial, only a quick <em>HowTo</em> is provided. On your backup server (ssh terminal to it):</p>
+
+<ol>
+  <li>
+    <p><code>sudo apt-get install backuppc</code>   <br />
+This will install BackupPC and its dependencies (including apache) and also create a Unix user <em>backuppc</em> which will be used to run BackupPC.  <br />
+Follow the installation wizard in the terminal: Choose ‘OK’ (hit Tab if OK is not selected), select ‘Local only’, and set ‘System mail name’ to <em>localhost</em>; Confirm other messages with ‘OK’. The last message will display a generic password for the user <em>backuppc</em>, but you can set this separately later.</p>
+  </li>
+  <li>
+    <p>You may want to change the password to something you may remember. Set password for the <em>user</em> and for the <em>web access</em>:  <br />
+ <code>sudo passwd backuppc</code>  <br />
+ <code>sudo htpasswd /etc/backuppc/htpasswd backuppc</code></p>
+  </li>
+  <li>
+    <p>Restart apache  <br />
+<code>sudo service apache2 restart</code></p>
+  </li>
+  <li>Generate a ssh key pair (with default name <em>id_rsa</em>, and <strong>no passphrase</strong>) for backup purposes only. Put the private key into the <em>/var/lib/backuppc/.ssh</em> directory, with the user <em>backuppc</em> being the owner of the key. Then, put the <em>public</em> key into the <em>authorized_key</em> file of <em>all</em> your instances you wish to back up. One way to do all this:  <br />
+ <code>cd .ssh</code>  <br />
+ <code>ssh-keygen -t rsa</code>  <br />
+ <code>sudo mkdir /var/lib/backuppc/.ssh</code>  <br />
+ <code>sudo cp id_rsa /var/lib/backuppc/.ssh/</code>  <br />
+ <code>sudo chown -R backuppc.backuppc /var/lib/backuppc/.ssh/</code>  <br />
+ <code>sudo chmod -R 700 /var/lib/backuppc/.ssh/</code>  <br />
+ Copy the public key onto any instance you want to back up. Because you are using a new set of ssh keys, the easiest is if you just copy the file onto your local computer, and then onto the target instance. From your <strong>local computers terminal</strong>:   <br />
+ <code>scp &lt;user-backup-srv&gt;@&lt;IP-backup-srv&gt;:.ssh/id_rsa.pub Backup_Key.pub</code>  <br />
+ <code>scp Backup_Key.pub ubuntu@&lt;IP-of-your-instance&gt;:.ssh/</code>  <br />
+ Logon to your <strong>NeCTAR instance</strong> (the one to be backed up) via ssh. In the ssh terminal, copy the public key into <em>authorized_keys</em>:  <br />
+ <code>cat .ssh/Backup_Key.pub &gt;&gt; .ssh/authorized_keys</code>  <br />
+ Switch back to your <strong>backup server ssh terminal</strong>, and test if you can connect to your ubuntu instance:  <br />
+ <code>su - backuppc</code>  <br />
+ <code>ssh ubuntu@&lt;IP-of-your-instance&gt;</code>  <br />
+ You should now be logged on to your NeCTAR instance. Log out again  <br />
+ <code>logout</code>  <br />
+ and exit the <em>backuppc</em> logon shell:   <br />
+ <code>exit</code></li>
+  <li>
+    <p>Your BackupPC web interface will now be available on your web browser at the URL  <br />
+ <code>&lt;IP-of-Backupserver&gt;/backuppc</code>   <br />
+ The user name is <em>backuppc</em> and the password the one you specified with the <em>htpasswd</em> command earlier (<em>Note:</em> Use Firefox! There may be problems with the Chrome browser).</p>
+  </li>
+  <li>Please refer to the online documentation mentioned earlier for further steps to set up your backups — only one thing to be noted here: In the <strong>Xfer</strong> Tab of the main configuration editor, you have to replace <em>root</em> by <em>ubuntu</em> in the following fields: <em>RsyncClientCmd</em>, <em>RsyncClientRestoreCmd</em>.  This is because we use the <strong>user <em>ubuntu</em> instead of <em>root</em></strong> to log on to the instance.  The <em>XferMethod</em> should be <em>rsync</em>, unless you specifically choose to use another option. Set the <em>RsyncShareName</em> to <em>/data</em> (or to the folder you mounted your volume or ephemeral drive to). Click “Save” to confirm.</li>
+</ol>
+
+<h3 id="other-tools-for-volume-backups">Other tools for Volume backups</h3>
+
+<p>There are a large number of tools for backup and restore which you may want to look into if the tools described in this section do not meet your requirements.</p>
+
+<p>Examples include:</p>
+
+<ul>
+  <li>
+    <p>You may use a <strong>secure copy (scp)</strong> command or a <strong>secure FTP client</strong> to copy your data manually to your local machine. 
+This has been described <a href="/package07/sections/copyFiles.html">here in Module 7</a>.
+Before you do this, you should create a <em>zip</em> or <em>tar</em> archive of all your files, so you only need to copy across one file:   <br />
+  <code>tar -czf &lt;NameOfArchive&gt;.tgz &lt;list of your files or folders&gt;</code></p>
+  </li>
+  <li>
+    <p>The <a href="http://dump.sourceforge.net/">dump and restore</a> command line utilities provide you the ability to backup and recover your data.
+They support full and incremental modes. Backups can be saved as a file, or directly uploaded to a server that supports the remote tape protocol (rmt). It is possible to restore an entire file system, or restore in <em>“interactive”</em> mode and manually select individual files to restore.
+Detailed instructions are out of scope of this tutorial.</p>
+  </li>
+  <li>
+    <p><a href="http://www.nongnu.org/duplicity/">Duplicity</a> is a simple command line utility which supports <em>encrypted and compressed, full or incremental</em> backup of a directory tree. The attractive thing about Duplicity is that the backups can be made to many types of storage, including scp, sftp, ftp, rsync, Amazon S3, Google Cloud Storage, Dropbox, OpenStack Object Storage, and more.
+For more information, refer to the <a href="http://duplicity.nongnu.org/duplicity.1.html">duplicity man pages</a>.</p>
+  </li>
+  <li>
+    <p><a href="http://clonezilla.org/">CloneZilla</a> is a free partition and disk imaging/cloning program, similar to the commercial <a href="https://en.wikipedia.org/wiki/Ghost_(software)">Ghost</a>.</p>
+  </li>
+  <li>
+    <p>This <a href="https://wiki.archlinux.org/index.php/Backup_programs">archlinux wiki</a> provides a good overview of many other Backup tools.</p>
+  </li>
+</ul>
+
+<h2 id="cleaning-up">Cleaning up</h2>
+
+<div class="bgPrerequisite">
+					<img src="/images/glyphicons-333-certificate.png" alt="image" align="left" style="width:17px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><em>Prerequisite:</em> You should be familiar with all the storage terminology discussed in <a href="/package06/sections/storage.html">Module 6</a> and <a href="/package07/sections/manageStorage.html">Module 7</a>. You must know how to <em>mount</em> your secondary ephemeral drive on your instance, and how to <em>attach</em> and <em>mount</em> a Volume to your instance.</p>
+
+<p>Some basic command line usage skills are helpful for this section as well.</p>
+
+				</div>
+
+<p>It is important that you <strong>take responsibility</strong> and have your instance and volume storage up and running <strong>only</strong> when you really need it, or your resources will sit idle, and you will be using up your CPU hours and block the resources to other researchers.</p>
+
+<p>In the last sections you have learned how you can take Snapshots of your instances and easily re-launch them when you need them again; you can also take an Image of your Volumes and create backups to re-create the state of your Volume at a later time. Once you have your instance and data backed up, you are free to <em>terminate</em> your resources and free them up for others.</p>
+
+<p>Before you free up the resources, you should make sure that you <strong>securely erase all the data</strong> on your volumes, to make sure nobody will be able to restore the data on the section of the hard-drive you were using. This section will show how you can securely erase data, and then <strong>terminate your instances and volumes</strong> so that the resources are freed up for other researchers.</p>
+
+<h3 id="securely-erasing-data">Securely erasing data</h3>
+
+<p>Just removing all files from your secondary ephemeral drive or your Volumes won’t do the job — this just removes the index of the files (think of it like a table of contents), but the actual bits of the files will still be on the harddrive, so it is possible to restore them when using special tools. To securely erase the data, you have to <em>overwrite</em> the bits with other (random) bits. You even have to repeat the overwriting several times to be sure nothing can be recovered. Some people even argue the only way to really, really ensure the data is erased is to burn up the hard drive — an option we don’t have in this case, so we will have to be satisfied with overwriting the data several times.</p>
+
+<p>If you are really concerned that overwriting your data several times may still not be enough, then <strong>encrypt your volume</strong>, as described <a href="/package08/sections/encryption.html">here in Module 8</a>, and then securely erase it afterwards. Even if someone was able to restore the data, it would be the encrypted data — and they would still need your key!</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Before you start erasing data, make sure that you <strong>unmount</strong> the drive from your instance!</p>
+
+				</div>
+
+<p>You will need your <em>device file name</em> (e.g. <em>/dev/vdc</em>). To find it, you may for example use <br />
+    <code>sudo lsblk -l</code> and/or   <br />
+    <code>sudo lsblk -f</code>  <br />
+to print information about your drives. You can also see it on the Volumes overview in the Dashboard.  <br />
+The following will assume your drive is located at <strong>/dev/vdc</strong>. If your is at another path, you will have to replace this in the following commands.</p>
+
+<h4 id="using-dd">Using <em>dd</em></h4>
+
+<p>Using the <em>dd</em> Unix command line utility, wiping your disk is easy. Say your <em>device location</em> is your volume <em>/dev/vdc</em>, or your secondary ephemeral storage <em>/dev/vdb</em>, you can securely erase it with the <em>dd</em> command (we already encountered <em>dd</em> in the last section):</p>
+
+<p><code>sudo dd if=/dev/urandom of=&lt;device file&gt; bs=4K</code></p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Warning: This command will start erasing all data as soon as you start running it, with no further confirmation. Check that the correct drive or partition has been targeted: the of=… option has to point to your volume or ephemeral disk you want to erase. It should <em>not</em> point to a system disk!</p>
+
+				</div>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>The option <strong>bs</strong> means <em>block size</em>, which is the number of bytes that are written at one time. The command is faster if you choose the block size used by your physical harddrive — in case of doubt, just use <em>4K</em>. You may specify the size in bytes, or in <em>kilobytes</em> by appending <em>k</em>, or in Megabytes by appending <em>M</em>.</p>
+
+<p>To find out the block size of <em>/dev/vdc</em>:</p>
+
+<p><code>sudo dumpe2fs /dev/vdc | grep 'Block size'</code></p>
+
+				</div>
+
+<p>The process may take quite a while. It is finished when dd <strong>reports the error</strong> <em>“No space left on device”</em> (this is technically an error because <strong>dd</strong> tries to write beyond the end of the disk, which it cannot.</p>
+<div class="bgTerminal"><pre class="PreformatTerminal">$ sudo dd if=/dev/urandom of=/dev/vdc bs=4K iflag=nocache oflag=direct
+dd: error writing ‘/dev/vdc’: No space left on device
+262145+0 records in
+262144+0 records out
+1073741824 bytes (1.1 GB) copied, 293.366 s, 3.7 MB/s</pre></div>
+
+<p>Now if you wanted to be even more sure your data is erased, you repeat this process several times.</p>
+
+<p>After you have erased your disk, everything will be wiped — also the file system. If you wanted to re-use the volume, you have to format it again, as described in <a href="/package07/sections/manageStorage.html">Module 7</a>.</p>
+
+<p>To speed up the process, you may also overwrite the data with <em>only zeros</em> instead of random data (it is faster because the random generator can be switched off). This is a little less secure:
+while this will render any data irrecoverable by software, it still may be recoverable by <a href="https://en.wikipedia.org/wiki/Data_remanence">special laboratory techniques</a>. However for this, somebody would need to break into the NeCTAR data center, identify the section of the hard drive you have been using, and undergo significant efforts to restore your data, with no guaranteed outcome — unlikely! So let’s speed up the process:</p>
+
+<p><code>sudo dd if=/dev/uzero of=&lt;device file&gt; bs=4K iflag=nocache oflag=direct</code></p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Options <strong>iflag</strong> and <strong>oflag</strong> will try to disable buffering, which does not make sense in this case of a constant stream of zeros. The options should speed up the process.</p>
+
+				</div>
+
+<h4 id="using-shred">Using <em>shred</em></h4>
+
+<p>The <a href="https://en.wikipedia.org/wiki/Shred_(Unix)">shred</a> command line utility also provides a means to securely erase data. It is installed by default on most Linux distributions (e.g. on Debian/Ubuntu as part of the <em>coreutils</em> package).
+It is argued that <em>shred</em> is not as secure as the above <em>dd</em> command — shred securely deletes data, but in theory it can be recovered, albeit only with great difficulty using specialised hardware, if at all.</p>
+
+<p>To run <em>shred</em> with its default settings (overwrite with random data in 3 passes) to erase your device mapped on <em>device file</em> (e.g. <em>/dev/vdc</em>):</p>
+
+<p><code>sudo shred -v &lt;device file&gt;</code></p>
+
+<p>The option <strong>-v</strong> means <em>“verbose”</em>, it will print information while the process is ongoing. For overwriting with zeros instead of random data (which is faster but less secure), add the option <strong>-z</strong>.</p>
+
+<p>Shred also allows specification of a particular file instead of <em>&lt;device file&gt;</em>, but <em>this is not secure on journaling file systems</em> (which most modern Linux file systems are)! Be sure to choose your device mapping file.</p>
+
+<p>Shred by default uses three passes (overwriting your data three times), writing pseudo-random data. 
+Alternatively, shred can be instructed to do <em>X</em> number of passes with the same random source as used in the <em>dd</em> command described earlier:</p>
+
+<p><code>sudo shred -v --random-source=/dev/urandom -n&lt;X&gt; &lt;device file&gt;</code></p>
+
+<p>For example, say you want to erase your drive attached to <em>/dev/vdc</em>, use 5 passes and random data:</p>
+
+<p><code>sudo shred -v --random-source=/dev/urandom -n5 /dev/vdc</code></p>
+
+<p>After you have erased your disk, everything will be wiped — also the file system. If you wanted to re-use the volume, you have to format it again, as described in <a href="/package07/sections/manageStorage.html">Module 7</a>.</p>
+
+<p>For more details on the <em>shred</em> utility, refer to the man pages:</p>
+
+<p><code>man shred</code></p>
+
+<h3 id="terminating-an-instances-and-volumes">Terminating an instances and Volumes</h3>
+
+<p>Deleting your instance or volume and thereby freeing up resources for others is also called <em>terminating</em> your instance or volume. This can be done easily in the Dashboard.</p>
+
+<p>To terminate an instance, first make sure you have securely erased the data on the secondary ephemeral disk which you may have used (probably on <em>/dev/vdb</em>). Then, go to <em>Dashboard &gt; Compute &gt; Instances</em> and find the instance you want to terminate in the list. In the right-hand side drop-box next to the instance, select <em>Terminate instance</em>.</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>You must <em>detach</em> any Volumes from your instance before terminating it — There may be problems if you terminate an Instance while it has Volumes attached. Recovering your volume requires the NeCTAR technical staff to manually patch a database.</p>
+
+				</div>
+
+<p>To delete a Volume, <em>after</em> you have securely erased your data, go to <em>Dashboard &gt; Compute &gt; Volumes</em> and find the volume you want to delete in the list. In the right-hand side drop-down menu, select <em>Delete Volume</em>.</p>
+
+<h2 id="summary">Summary</h2>
+
+<p><strong>Good on ya!!!</strong></p>
+
+<p>You have now learned how to back up your instances and your data and release it securely for other researchers. You have also learned how to recover your resources after you have terminated or deleted them, without having lost anything.</p>
+
+<p>In summary, this module has covered:</p>
+
+<ul>
+  <li>An introduction on why it is important to terminate/delete resources</li>
+  <li>Creating snapshots of a VM and of Volumes.</li>
+  <li>Launching a VM from a snapshot</li>
+  <li>Creating Images from a volume</li>
+  <li>Tools to use for backing up volumes
+    <ul>
+      <li>Difference between <em>Backup</em> and <em>Snapshot</em></li>
+      <li>Backups using OpenStack</li>
+      <li>Backups using RSync</li>
+      <li>Creating an image of a volume using <em>dd</em></li>
+      <li>Using <em>BackupPC</em> to install a backup server</li>
+      <li>Overview of other backup tools</li>
+    </ul>
+  </li>
+  <li>Cleaning up:
+    <ul>
+      <li>Securely erasing data with <em>dd</em> or <em>shred</em></li>
+      <li>Terminating instances and volumes via the Dashboard</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Modules 1-9 have covered all you need to know to get started with the Research Cloud using the Dashboard and other tools.</p>
+
+<p><strong>You are now ready to apply your knowledge about the Research Cloud to your research!</strong></p>
+
+<p>If you like using the command line to get things done, you will <em>love</em> the <strong>extra information</strong> given in the <a href="/package10/sections/index.html" title="Module 10">last Module</a>, which will show you how you can get everything we have learned so far done using <strong>command line only</strong>.</p>
+
+<p>We hope you have enjoyed this course. 
+Don’t hesitate to contact <a href="http://support.rc.nectar.org.au/docs/getting-support">NeCTAR support</a> if you have any further questions on how to set up and use the NeCTAR services.</p>
+
+<p>If you are interested in learning about the command line tools, continue now with <a href="/package10/sections/index.html" title="Module 10">Module 10</a>.</p>
+
+
+      </div>
+    </div>
+  </body>
+
+</html>

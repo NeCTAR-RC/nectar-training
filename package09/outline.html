@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel='shortcut icon' href='/images/icon.png' />
+
+  <title>Backing up and packing up</title>
+  <meta name="description" content="Nectar National Training Resources
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://training.nectar.org.au/package09/outline.html">
+  <link rel="alternate" type="application/rss+xml" title="Nectar Training" href="http://training.nectar.org.au/feed.xml" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61845992-2', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+<div class="nec-header">
+  <div class="header-top">
+    <div class="header-top-page">
+      <div class="nect-login">
+        <a href="https://support.nectar.org.au/support/home">Support</a>
+        <a href="http://cloud.nectar.org.au/contact/" class="new-tick">Contact</a>
+        <b><a href="https://dashboard.rc.nectar.org.au/"><b>Login</b></a></b>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-main">
+    <div class="header-main-page">
+      <div class="logo-nect">
+        <img src='/images/nectar_cloud_logo.jpg' alt="Nectar" height="43", width"248">
+      </div>
+      <div class="menu-nect">
+        
+          <a href="/">Self-paced Training</a>
+          <a href="/for-trainers.html" class="selected">Resources for Trainers</a>
+        
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="normal-block">
+  <div class="normal-block-page">
+    
+      <h3>Resources for Trainers</h3>
+    
+  </div>
+</div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1>9. Backing up and packing up</h1>
+    <h1>Outline</h1>
+  </header>
+
+  <article class="post-content">
+    <p>Duration: about 1 - 1.5 hours (video targeted at 0.5 hours)</p>
+
+<p>Level: <em>Beginner</em> / <strong><em>Intermediate</em></strong> / <strong><em>Advanced</em></strong></p>
+
+<h3 id="synopsis">Synopsis</h3>
+
+<p>This module discusses how to back up VMs and data on various storage types. The attendee will learn how to make snapshots and how to recover their virtual machine using this snapshot. They will also learn how to backup their data and how to terminate a virtual machine without losing anything.</p>
+
+<p>Emphasis is placed on how important it is to terminate/delete resources which are not needed any more: If resources are kept running idle, they are unavailable to other researchers. An appeal is made to play fair and use only the resources which are required at a time.</p>
+
+<h3 id="content">Content</h3>
+
+<p>This module covers:</p>
+
+<ul>
+  <li>An introduction on why it is important to create backups and terminate/delete resources which are not needed</li>
+  <li>Creating snapshots of a VM and of Volumes.</li>
+  <li>Launching a VM from a snapshot</li>
+  <li>Creating images from a volume</li>
+  <li>Tools to use for backing up volumes
+    <ul>
+      <li>Difference between <em>Backup</em> and <em>Snapshot</em></li>
+      <li>Backups using OpenStack</li>
+      <li>Backups using RSync</li>
+      <li>Creating an image of a volume using <em>dd</em></li>
+      <li>Using <em>BackupPC</em> to install a backup server</li>
+      <li>Overview of other backup tools</li>
+    </ul>
+  </li>
+  <li>Cleaning up:
+    <ul>
+      <li>Securely erasing data with <em>dd</em> or <em>shred</em></li>
+      <li>Terminating instances and volumes via the Dashboard</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="delivery">Delivery</h3>
+
+<ul>
+  <li>face to face</li>
+  <li>video</li>
+  <li>hands-on exercises</li>
+</ul>
+
+<h3 id="outcomes">Outcomes</h3>
+
+<p>The attendee will know how to back up their instance and data, how to securely erase a disk before releasing it, and how to terminate instances and volumes. They will know that it is important to release resources they don’t need any more so other researchers can use them.</p>
+
+<h3 id="course-suitable-for">Course suitable for</h3>
+
+<p>Intermediate to advanced users who have attended the previous modules or have equivalent knowledge.
+The researcher is concerned about data loss. They want to know what the cloud will do to protect their data. They also want to know what they need to do and how to do it. 
+They are done with a project but terminating a VM scares them - they want to know how to keep a copy of their VM for posterity.</p>
+
+<h3 id="before-the-course">Before the course</h3>
+
+<p>The attendee needs to bring their own laptop (and charger!) if there are no Lab computers available. Instructions in this Module cover Linux, Mac OSX and Windows systems.</p>
+
+<p>The user should have already logged onto the Dashboard once to activate their Trial Account. They should be familiar will all terminology and steps involved in launching an instance and setting up NeCTAR storage. They have already set up an instance and can connect to it via ssh; they have set up one secondary ephemeral disk and mounted it on the instance; ideally, they have done the same with one Volume.</p>
+
+<p>They should have this instance and storage ready to go. They will create Snapshots of this instance and backups of the volume, and then <strong>delete</strong> this instance and volume — so if they are concerned, they should set up an instance and volume exclusively for this tutorial which they can delete without being concerned.</p>
+
+<p>No software needs to be installed in advance, all of this is going to be covered in the exercises.</p>
+
+
+  </article>
+</div>
+
+      </div>
+    </div>
+
+    <div style="background-color: #0E0E0E; padding: 20px 20px 20px 60px; color: white; font-size: 12px">
+  <p>Copyright &copy;2015 NeCTAR</p>
+  <img src="/images/NCRIS_PROVIDER_rev.png" alt="NCRIS_PROVIDER_rev" width="132" height="63" />
+  <p><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png">
+  This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a></p>
+</div>
+
+
+  </body>
+
+</html>

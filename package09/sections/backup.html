@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel='shortcut icon' href='/images/icon.png' />
+
+  <title>Backing up and packing up</title>
+  <meta name="description" content="Nectar National Training Resources
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://training.nectar.org.au/package09/sections/backup.html">
+  <link rel="alternate" type="application/rss+xml" title="Nectar Training" href="http://training.nectar.org.au/feed.xml" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61845992-2', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+<div class="nec-header">
+  <div class="header-top">
+    <div class="header-top-page">
+      <div class="nect-login">
+        <a href="https://support.nectar.org.au/support/home">Support</a>
+        <a href="http://cloud.nectar.org.au/contact/" class="new-tick">Contact</a>
+        <b><a href="https://dashboard.rc.nectar.org.au/"><b>Login</b></a></b>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-main">
+    <div class="header-main-page">
+      <div class="logo-nect">
+        <img src='/images/nectar_cloud_logo.jpg' alt="Nectar" height="43", width"248">
+      </div>
+      <div class="menu-nect">
+        
+          <a href="/" class="selected">Self-paced Training</a>
+          <a href="/for-trainers.html">Resources for Trainers</a>
+        
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="normal-block">
+  <div class="normal-block-page">
+    
+      <h3>Self-paced Training</h3>
+    
+  </div>
+</div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+          <!-- 
+    Preprocessing: Determine which part number this is. To avoid having to set numbers 
+    manually on each page, determine this here by the file name. 
+    -->
+  
+  
+  
+  
+  
+
+  
+  
+      
+  
+
+  
+  
+  
+  
+  
+  	
+  	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+			
+			
+			
+  	<!-- If we are not in the main hierarchy, we may be looking at a file of one of the sub-categories -->
+	
+  
+
+
+
+<div class="post">
+
+  <header class="post-header">
+    <h3>Module 9</h3>
+    <h1>Backing up and packing up</h1>
+  </header>
+
+  
+
+  <!--
+    List of the individual parts of this module (so not all content gets crammed on one page).
+    Rendering this list first is necessary 
+  -->
+  <p> Sections of this module:</p>
+  
+	
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package09/sections/index.html"> Introduction</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package09/sections/snapshot.html"> Snapshots</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+			
+		
+		
+
+		
+		
+			
+		
+		
+			
+				 <b>
+			
+			
+      <a href="/package09/sections/backup.html"> Backing up</a>
+			
+				</b>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package09/sections/cleanup.html"> Cleaning up</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package09/sections/summary.html"> Summary</a>
+			
+			<br/>
+		
+	
+  <br/>
+
+
+  <a href="/package09/sections/all.html" target="_blank">View all sections on one page (Printer friendly)</a>
+  <br/>
+  <br/>
+  <h1> Backing up </h1>
+
+   <!-- endif for pagedata_avail -->
+  
+
+  <!--
+  Content of page
+  -->
+  <article class="post-content">
+    
+<div class="bgPrerequisite">
+					<img src="/images/glyphicons-333-certificate.png" alt="image" align="left" style="width:17px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><em>Prerequisite:</em> You should be familiar with all the storage terminology discussed in <a href="/package06/sections/storage.html">Module 6</a> and <a href="/package07/sections/manageStorage.html">Module 7</a>. You must know how to <em>mount</em> your secondary ephemeral drive on your instance, and how to <em>attach</em> and <em>mount</em> a Volume to your instance.</p>
+
+<p>Some basic command line usage skills are helpful for this section as well.</p>
+
+				</div>
+
+<p>The NeCTAR instances and volumes are not backed up automatically. Managing the backups is your responsibility.
+However some types of NeCTAR storage use <strong>RAID</strong> storage, which protects your data somewhat against data loss (roughly speaking, if one harddrive fails, your data can probably be reconstructed from other drives). 
+Volume storage is backed by a variety of backend technologies across the NeCTAR Nodes.
+The <em>Object Store</em> is <strong>replicated</strong> across several physical locations, which is also a form of protection against data loss.</p>
+
+<p>Generally speaking, NeCTAR <em>does</em> take measures against data loss, but the guideline is “all care taken, no guarantees given” — part of ensuring your data won’t be lost is your responsibility: Back it up!</p>
+
+<p>It is recommended that you back up your important data at regular intervals. You may also feel more comfortable knowing that you have a copy of your data available off-line, maybe on your local office computer or a server at your research organisation. There are lots of tools available to backup data — in this section, we will discuss a few of them.</p>
+
+<p>Of all the storage types, probably <strong>Object Storage</strong> is the most robust against data loss due to the physical distribution of multiple copies of each file. However you may still prefer to keep a copy of a recent state of your files on your local premises.
+Probably the easiest way to keep backups of your objects is to use clients like <em>CyberDuck, CloudBerry</em> or FTP clients like <em>FileZilla</em> to copy your files across manually. This has been described <a href="/package07/sections/objectStorage.html">here in Module 7</a>. A more advanced way to automate backups from the object store is to write scripts which use the <em>openstack command line client</em> to download several object files. This is going to be subject to discussion in <a href="/package10/sections/index.html" title="Module 10">Module 10</a>.</p>
+
+<p>For backing up the <strong>secondary ephemeral disk and Volume storage</strong>, there are a number of different tools which have different characteristics in type and form of backup they achieve.
+Both secondary ephemeral disk and Volumes have one thing in common: They are <em>“mounted”</em> at one folder on your instance. Therefore, to back up your data, you can use most methods for both of the storage types, with one exception: The OpenStack Volume backup tools only work for Volumes.</p>
+
+<p>In the following, we will discuss a few options and tools to back up your data on the ephemeral disk and on Volumes.</p>
+
+<h3 id="backups-of-volumes-using-openstack-tools">Backups of Volumes using OpenStack tools</h3>
+
+<p>OpenStack offers tools to back up your Volumes (<em>not</em> your secondary ephemeral disk). They can be used from the Dashboard, or from the command line.</p>
+
+<p>There are two ways to backup your data on the volume:</p>
+
+<ol>
+  <li>
+    <p><strong>Volume Snapshot</strong>: This creates a copy of your entire volume, so if the volume is 5GB but you are only using 1GB of it, the Snapshot will still have a size of 5GB. The Snapshot is stored as an <em>Image</em> on the NeCTAR Image Server, so you will be able to select it when you create a <em>new</em> volume. A volume from which Snapshots have been created cannot be deleted while any of these Snapshots still exists — A Snapshot is <em>dependent</em> of the actual Volume. Creating Snapshots is fairly quick.</p>
+  </li>
+  <li>
+    <p><strong>Volume Backup</strong>: Your data will be backed up and placed in your <em>Object Storage</em>. You can later restore that backup onto a new <em>or</em> existing volume. Only the amount of storage you are currently using is being backed up: If you only have 1GB of data on a 5GB volume, the backup will only be about 1GB. Backups are independent of the original volume, but they are still full copies of the Volumes. Therefore, they take longer to create than Snapshots.</p>
+  </li>
+</ol>
+
+<p>The <a href="snapshot.html">last section</a> has discussed how to take a Snapshot of a Volume. 
+Please be aware that <strong>Snapshots are not suitable to create regular backups</strong>, as it takes a lot of storage space and uses up your quota. Snapshots are also only usable while the original Volume still exists, which limits your flexibility to delete the volume.
+You should only use snapshots for significant states for your Volumes which you want to use to easily create new volumes from.</p>
+
+<p>To make a <em>Backup</em> (not a <em>Snapshot</em>), you will need to use the <strong>openstack command line client</strong>, as described in <a href="/package10/sections/index.html" title="Module 10">Module 10</a>. Support to create Backups via the Dashboard will probably be added in the near future — it will then work in a very similar fashion to taking Snapshots.</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Note that when using Backups, you need to have enough quota on your Object Store to back up your data. You need to consider this when you request a resource allocation if you want to use OpenStack Backups — if you don’t request Object Store quota, you won’t be given any allocation for it.</p>
+
+				</div>
+
+<h3 id="rsync-command-line-utility">Rsync command line utility</h3>
+
+<p><a href="https://rsync.samba.org/">Rsync</a> is a Unix command line tool which maintains a copy of a local directory on a (typically) remote system, in a traditional “mirror” fashion. 
+The contents of the two folders, which we call <strong>source and destination folders are <em>synchronized</em></strong>. 
+The source and destination folders can be on the same computer, or they could be on separate computers that are accessible over a network or the Internet.</p>
+
+<p>In the most typical backup scenario, the <em>source</em> would be the disk which is <em>mounted</em> on your NeCTAR instance, and the <em>destination</em> would be a server at your research organisation onto which the data will be backed up. The <em>destination</em> folder can also be on your local computer, though this is not a robust backup location, so it is recommended to use a dedicated backup server.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Rsync creates <strong>incremental backups</strong>, which means only what has changed in the directory since the last backup will be copied to the backup folder, so not every time a backup is performed all files have to be transferred again. This speeds up the backup process, especially with slow network connections.</p>
+
+<p>Rsync can also <strong>compress and encrypt data streams</strong> during the backup process, which is important if the data being backed up has to travel through the internet to reach the server which maintains the backup copy.</p>
+
+				</div>
+
+<p>RSync is a <strong>good choice for you if:</strong></p>
+
+<ul>
+  <li>you want to create a backup of the <em>most recent state</em> of your volume or secondary ephemeral drive</li>
+  <li>and save the backup on your local computer, or another computer onto which you can log on to with a terminal (e.g. via a ssh terminal).</li>
+</ul>
+
+<p>RSync is great in that it does incremental per-file copies, so it makes it easy for you to access (and even edit) your files offline, and keep the most recent state of your data synchronized between your computer and the NeCTAR storage.</p>
+
+<p>The main <strong>drawbacks</strong> are:</p>
+
+<ul>
+  <li>it is difficult to maintain backups of multiple time points — e.g. if you wanted to keep a backup of every week that you can restore individually later on. Rsync is more suitable to keep a backup of the <em>most recent state</em>.</li>
+  <li>if something goes wrong while the <em>rsync</em> process in ongoing, the backup will contain a mix of old and new files, and the whole backup process should be repeated.</li>
+  <li>It is a bit more complicated to set up <em>automated backups</em> (you can do this using <em>cronjobs</em>); The easiest is if you do the backups manually each time you want to back up your data.</li>
+</ul>
+
+<h4 id="installation-of-rsync">Installation of Rsync</h4>
+
+<p>You will have to install <em>rsync</em> on your local computer (or on any computer you can logon to via a terminal, e.g. via ssh, and you want to use this computer for backups).</p>
+
+<ul>
+  <li>On many Linux distributions, <em>rsync</em> is already installed. If it is not, you can install it using your package manager. For example on Ubuntu/Debian:  <br />
+ <code>sudo apt-get install rsync</code></li>
+  <li>On Mac OS X, <em>rsync</em> is available by default.</li>
+  <li>Under Windows, <em>rsync</em> can be installed as part of the <a href="https://www.cygwin.com/">cygwin</a> package and used from the command line. This is a bit more complicated, so if you are using a Windows system, <em>rsync</em> is maybe not the right choice.</li>
+</ul>
+
+<p>You also have to make sure <em>rsync</em> is installed on the NeCTAR instance on which the disk to be backed up is <em>mounted</em> — the image we used in <a href="/package07/sections/index.html" title="Module 7">Module 7</a> does already come with <em>rsync</em> on it.</p>
+
+<h4 id="usage-of-rsync">Usage of Rsync</h4>
+
+<p>The rsync command copies files from the <em>source</em> directory to the <em>destination</em> directory, automatically using your ssh keys to encrypt the connection:</p>
+
+<p><code>rsync -av &lt;source directory&gt; &lt;destination directory&gt;</code></p>
+
+<p>Either the source <em>or</em> destination directory can be a remote directory on your NeCTAR instance. For example, it can be the folder which your Volume is <em>mounted</em> on, which we called <em>/data</em> in <a href="/package07/sections/index.html" title="Module 7">Module 7</a>. Or it can be any other folder on your NeCTAR instance.  <br />
+The other directory (source or destination) is then a directory on your local computer.</p>
+
+<p>The syntax to specify a <em>remote</em> directory is <em>&lt;username&gt;@&lt;IP-Address&gt;:&lt;Path-to-Folder&gt;</em></p>
+
+<p>Depending on which direction you want to do the synchronization:</p>
+
+<ul>
+  <li>
+    <p>If you want to synchronize the <em>/data</em> folder <em>from</em> your instance <em>onto</em> your local computer, and save the copy in folder <em>dataCopy</em>:  <br />
+  <code>rsync -av ubuntu@NNN.NNN.NNN.NNN:/data/ dataCopy/</code>  <br />
+  This is what you do when you <strong>backup</strong> the data on your instance onto your local computer.</p>
+  </li>
+  <li>
+    <p>If you want to synchronize a folder <em>dataCopy</em> from your local computer <em>onto</em> your instance, and save it there in the folder <em>/data</em>:   <br />
+  <code>rsync -av dataCopy/ ubuntu@NNN.NNN.NNN.NNN:/data/</code>  <br />
+  This is what you do to <strong>restore</strong> the data, or if you changed something in your <em>dataCopy</em> folder (e.g. edit a file) and want to apply the changes on your NeCTAR data copy as well.</p>
+  </li>
+</ul>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><strong>Caveat:</strong> You have to make sure the source and destination directory specifications in the command end with a slash <em>”/”</em> in order to get the expected synchronization behaviour (otherwise a new directory will be created in the destination directory instead).</p>
+
+				</div>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>The <strong>-a</strong> option in the command stands for “archive” — it synchronizes <em>recursively</em> (meaning it includes sub-directories) and preserves symbolic links, special and device files, modification times, group, owner, and permissions.</p>
+
+<p>The <strong>-v</strong> option means “verbose” and prints out status messages while the command is working.</p>
+
+<p>You may also be interested in using the option <strong>-z</strong> if you have large amounts of data to be backed up. This option <strong>compresses</strong> the data for transmission, which can speed up the backup process. 
+The amount of compression that can be achieved depends on the type of data being transferred, e.g. text files can be compressed efficiently, whereas binary files can’t be reduced much in size.
+To use compression:  <br />
+<code>rsync -avz &lt;source directory&gt; &lt;destination directory&gt;</code></p>
+
+				</div>
+
+<p>There are other tools related to or similar to <em>rsync</em>, for example <a href="http://www.nongnu.org/rdiff-backup/">rdiff-backup</a> or <a href="http://www.rsnapshot.org/">rsnapshot</a> which you may be interested in.
+For more information about <em>rsync</em>, please refer to the man pages:</p>
+
+<p><code>man rsync</code></p>
+
+<p>or visit the <a href="https://rsync.samba.org/">rsync website</a>. There are also many tutorials for rsync which you can find online.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>If your private key is not in the directory <em>.ssh</em> and you don’t have an ssh agent (or you are using Mac OS X which may not use <em>.ssh</em> as default), you will get a <em>Permission denied</em> error. Then, you need to specify the private key manually:</p>
+
+<p><code>rsync -av -e '-i &lt;path-to-private-key&gt;' &lt;source&gt; &lt;destination&gt;</code></p>
+
+<p>You have to specify the path to the private key in full, not using abbreviations such as <strong>~</strong>.</p>
+
+				</div>
+
+<h4 id="working-example">Working example</h4>
+
+<p>Lets try this out. First, make sure your Volume is attached to your instance and <em>mounted</em> on any directory, say for example <em>/data</em>.
+Then go to your <strong>ssh terminal</strong> and create a file in your instances <em>/data</em> directory:</p>
+
+<p><code>nano /data/testFile.txt</code></p>
+
+<p>Write some text into the file, for example <em>“This is my instance text file”</em>, and close the editor with <em>Ctrl+X</em>.</p>
+
+<p>Now, go to the <strong>terminal commanding your local computer</strong> and type (replacing N’s with your instances IP address):</p>
+
+<p><code>rsync -av ubuntu@NNN.NNN.NNN.NNN:/data/ dataCopy/</code></p>
+
+<p>List the contents of your current directory:</p>
+
+<p><code>ls</code></p>
+
+<p>and you will see that now there is a folder <em>dataCopy</em>. List the contents of it:</p>
+
+<p><code>ls dataCopy/</code></p>
+
+<p>and you should see that the file <em>testFile.txt</em> is there now. Open it, and <em>add</em> something new after the content you wrote in there before (e.g. <em>“This is a line added on my local computer”</em>):</p>
+
+<p><code>nano dataCopy/testFile.txt</code></p>
+
+<p>and exit the editor with <em>Ctrl+X</em>. You have just edited the <em>copy</em> of the file which you synchronized onto your local machine earlier! We want to apply the same changes on the file on the NeCTAR storage as well. So synchronize the two folders again, this time specifying your local directory <em>dataCopy</em> as <em>source folder</em>:</p>
+
+<p><code>rsync -av dataCopy/ ubuntu@NNN.NNN.NNN.NNN:/data/</code></p>
+
+<p>Now, you can switch back to your <strong>ssh terminal</strong> to your instance and check that the changes also have been applied there:</p>
+
+<p><code>nano /data/testFile.txt</code></p>
+
+<p>The text you added earlier should be visible here as well.</p>
+
+<p>While you will only need to perform the first <em>rsync</em> command to create a <strong>backup</strong>, it is also nice to know that you can do it the other way round, in case you change something on your local copy of the data and then want to apply the changes on your instance as well. 
+In case you need to <strong>restore</strong> your data, you will do the same thing.</p>
+
+<h3 id="unix-dd-utility">Unix <em>dd</em> utility</h3>
+
+<p><a href="https://en.wikipedia.org/wiki/Dd_(Unix)">Dd</a> is a low level command line utility that you can use create an <em>Image</em> of a volume. It is essentially a low level <em>byte-for-byte</em> copy utility. 
+<em>Dd</em> is installed by default on most Linux distributions (on Ubuntu/Debian as part of the <em>coreutils</em> package) and on Mac OS X.</p>
+
+<p>Because dd is a lower-level backup tool, you need to have <em>sudo</em> privileges to perform a backup.</p>
+
+<p>To back up a partition or a volume which is attached on <em>/dev/vdc</em> into an <em>Image file</em> called <em>volumeBackup.dd</em>, from the <strong>ssh terminal</strong> type:</p>
+
+<p><code>sudo dd if=/dev/vdc of=./volumeBackup.dd</code></p>
+
+<p>This process can take quite some time depending on the size of your volume.
+After the command has finished successfully, type  <br />
+<code>ls</code>  <br />
+to reveal that now you have a file <em>volumeBackup.dd</em> in your current directory. You now can copy this image file to any place you consider “safe”, e.g. a server in your research organisation. You may use  the instructions given <a href="/package07/sections/copyFiles.html">here in Module 7</a> to download the backup file <em>volumeBackup.dd</em> from your NeCTAR instance.</p>
+
+<p>When you want to <strong>restore</strong> a volume state you need to have the <em>.dd</em> image file on your NeCTAR instance again. 
+To restore a volume/partition from the same file:</p>
+
+<p><code>sudo dd if=./volumeBackup.dd of=/dev/vdc</code></p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>When restoring the backup, the volume or partition needs to be the <strong>same size</strong> as the one you took the image from, so this limits your options in case of a restore.</p>
+
+				</div>
+
+<p>The advantage of this method is that it is easy to use and it takes a <strong>1:1 copy of your volume</strong>, preserving <em>everything</em> like file system, permissions, etc. The disadvantage is that backups are not incremental (like <em>rsync</em>) and each image file takes up the <strong>entire size of the volume</strong> — if your volume is 50GB, but you only use 1GB on it, the image file will still use 50GB. If you want to maintain several backups (e.g. snapshots of various stages of the volume state) and you have large volumes, <em>dd</em> is probably not the right choice.</p>
+
+<h3 id="backuppc">BackupPC</h3>
+
+<p><a href="http://backuppc.sourceforge.net/index.html">BackupPC</a>
+is a <em>web-based</em> system for managing backups of Unix, Linux, Windows and Mac OS X computers. It allows you to configure automated <em>backup schedules</em> and offers a web-based interface which you can use from any computer to configure your backups.
+It can transfer <em>tar</em> archives over <em>ssh</em> or <em>nfs</em>, or use <em>rsync</em> (amongst other options). The backups are stored <strong>incrementally</strong> on a <em>backup server</em>.</p>
+
+<p>The big advantage is that once you have the backup server running, you get a graphical web interface to configure your backups, and you can <strong>create automated schedules</strong> for your backups, so you don’t have to regularly do this manually. You can still use BackupPC to run <em>manual</em> backups as well.</p>
+
+<p>The disadvantage is that you need a dedicated <strong>backup server</strong> which runs BackupPC. This server may also be a virtual machine. Maybe your research organisation can provide you with access to a server on which you can install BackupPC.    <br />
+Another drawback is that while you can use BackupPC to back up <em>several</em> instances, unfortunately it will back up the <em>same</em> folder on <em>all</em> of them, e.g. <em>/data</em>. So all your instances must have a <em>/data</em> folder (or any other that you specify), and it has to be <em>mounted</em> on the instance at the time the Backup happens.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Launching a separate instance on NeCTAR to handle the Backups of another NeCTAR instance is also possible. However, it contradicts the aim of having backups at a physically different locations — you would not even know if your Backup Volume is on the same hard drive as the Volume to be backed up. If that harddrive fails, or the whole data center burns down, all your backups are affected just as the original Volume. However you may only want additional <em>copies</em> of your data (at several stages of development), in which case BackupPC may still be an interesting option for you.</p>
+
+				</div>
+
+<p>It takes a bit of work to set up BackupPC, because you have to set up the server, and configure the Apache Webserver on it accordingly. But it is not a complicated process. Refer to the <a href="http://backuppc.sourceforge.net/faq/BackupPC.html">official documentation</a> or check out <a href="https://www.digitalocean.com/community/tutorials/how-to-use-backuppc-to-create-a-backup-server-on-an-ubuntu-12-04-vps">this tutorial on digitalocean</a> or <a href="https://wiki.archlinux.org/index.php/BackupPC">this page on archlinux</a> for detailed instructions on how to set it up.</p>
+
+<p>In this tutorial, only a quick <em>HowTo</em> is provided. On your backup server (ssh terminal to it):</p>
+
+<ol>
+  <li>
+    <p><code>sudo apt-get install backuppc</code>   <br />
+This will install BackupPC and its dependencies (including apache) and also create a Unix user <em>backuppc</em> which will be used to run BackupPC.  <br />
+Follow the installation wizard in the terminal: Choose ‘OK’ (hit Tab if OK is not selected), select ‘Local only’, and set ‘System mail name’ to <em>localhost</em>; Confirm other messages with ‘OK’. The last message will display a generic password for the user <em>backuppc</em>, but you can set this separately later.</p>
+  </li>
+  <li>
+    <p>You may want to change the password to something you may remember. Set password for the <em>user</em> and for the <em>web access</em>:  <br />
+ <code>sudo passwd backuppc</code>  <br />
+ <code>sudo htpasswd /etc/backuppc/htpasswd backuppc</code></p>
+  </li>
+  <li>
+    <p>Restart apache  <br />
+<code>sudo service apache2 restart</code></p>
+  </li>
+  <li>Generate a ssh key pair (with default name <em>id_rsa</em>, and <strong>no passphrase</strong>) for backup purposes only. Put the private key into the <em>/var/lib/backuppc/.ssh</em> directory, with the user <em>backuppc</em> being the owner of the key. Then, put the <em>public</em> key into the <em>authorized_key</em> file of <em>all</em> your instances you wish to back up. One way to do all this:  <br />
+ <code>cd .ssh</code>  <br />
+ <code>ssh-keygen -t rsa</code>  <br />
+ <code>sudo mkdir /var/lib/backuppc/.ssh</code>  <br />
+ <code>sudo cp id_rsa /var/lib/backuppc/.ssh/</code>  <br />
+ <code>sudo chown -R backuppc.backuppc /var/lib/backuppc/.ssh/</code>  <br />
+ <code>sudo chmod -R 700 /var/lib/backuppc/.ssh/</code>  <br />
+ Copy the public key onto any instance you want to back up. Because you are using a new set of ssh keys, the easiest is if you just copy the file onto your local computer, and then onto the target instance. From your <strong>local computers terminal</strong>:   <br />
+ <code>scp &lt;user-backup-srv&gt;@&lt;IP-backup-srv&gt;:.ssh/id_rsa.pub Backup_Key.pub</code>  <br />
+ <code>scp Backup_Key.pub ubuntu@&lt;IP-of-your-instance&gt;:.ssh/</code>  <br />
+ Logon to your <strong>NeCTAR instance</strong> (the one to be backed up) via ssh. In the ssh terminal, copy the public key into <em>authorized_keys</em>:  <br />
+ <code>cat .ssh/Backup_Key.pub &gt;&gt; .ssh/authorized_keys</code>  <br />
+ Switch back to your <strong>backup server ssh terminal</strong>, and test if you can connect to your ubuntu instance:  <br />
+ <code>su - backuppc</code>  <br />
+ <code>ssh ubuntu@&lt;IP-of-your-instance&gt;</code>  <br />
+ You should now be logged on to your NeCTAR instance. Log out again  <br />
+ <code>logout</code>  <br />
+ and exit the <em>backuppc</em> logon shell:   <br />
+ <code>exit</code></li>
+  <li>
+    <p>Your BackupPC web interface will now be available on your web browser at the URL  <br />
+ <code>&lt;IP-of-Backupserver&gt;/backuppc</code>   <br />
+ The user name is <em>backuppc</em> and the password the one you specified with the <em>htpasswd</em> command earlier (<em>Note:</em> Use Firefox! There may be problems with the Chrome browser).</p>
+  </li>
+  <li>Please refer to the online documentation mentioned earlier for further steps to set up your backups — only one thing to be noted here: In the <strong>Xfer</strong> Tab of the main configuration editor, you have to replace <em>root</em> by <em>ubuntu</em> in the following fields: <em>RsyncClientCmd</em>, <em>RsyncClientRestoreCmd</em>.  This is because we use the <strong>user <em>ubuntu</em> instead of <em>root</em></strong> to log on to the instance.  The <em>XferMethod</em> should be <em>rsync</em>, unless you specifically choose to use another option. Set the <em>RsyncShareName</em> to <em>/data</em> (or to the folder you mounted your volume or ephemeral drive to). Click “Save” to confirm.</li>
+</ol>
+
+<h3 id="other-tools-for-volume-backups">Other tools for Volume backups</h3>
+
+<p>There are a large number of tools for backup and restore which you may want to look into if the tools described in this section do not meet your requirements.</p>
+
+<p>Examples include:</p>
+
+<ul>
+  <li>
+    <p>You may use a <strong>secure copy (scp)</strong> command or a <strong>secure FTP client</strong> to copy your data manually to your local machine. 
+This has been described <a href="/package07/sections/copyFiles.html">here in Module 7</a>.
+Before you do this, you should create a <em>zip</em> or <em>tar</em> archive of all your files, so you only need to copy across one file:   <br />
+  <code>tar -czf &lt;NameOfArchive&gt;.tgz &lt;list of your files or folders&gt;</code></p>
+  </li>
+  <li>
+    <p>The <a href="http://dump.sourceforge.net/">dump and restore</a> command line utilities provide you the ability to backup and recover your data.
+They support full and incremental modes. Backups can be saved as a file, or directly uploaded to a server that supports the remote tape protocol (rmt). It is possible to restore an entire file system, or restore in <em>“interactive”</em> mode and manually select individual files to restore.
+Detailed instructions are out of scope of this tutorial.</p>
+  </li>
+  <li>
+    <p><a href="http://www.nongnu.org/duplicity/">Duplicity</a> is a simple command line utility which supports <em>encrypted and compressed, full or incremental</em> backup of a directory tree. The attractive thing about Duplicity is that the backups can be made to many types of storage, including scp, sftp, ftp, rsync, Amazon S3, Google Cloud Storage, Dropbox, OpenStack Object Storage, and more.
+For more information, refer to the <a href="http://duplicity.nongnu.org/duplicity.1.html">duplicity man pages</a>.</p>
+  </li>
+  <li>
+    <p><a href="http://clonezilla.org/">CloneZilla</a> is a free partition and disk imaging/cloning program, similar to the commercial <a href="https://en.wikipedia.org/wiki/Ghost_(software)">Ghost</a>.</p>
+  </li>
+  <li>
+    <p>This <a href="https://wiki.archlinux.org/index.php/Backup_programs">archlinux wiki</a> provides a good overview of many other Backup tools.</p>
+  </li>
+</ul>
+
+
+  </article>
+
+
+  
+  <!--
+  Previous section / Next section links. Very simple design to start with.
+  -->
+  <p>
+  
+  	
+    <a href="/package09/sections/snapshot.html">Previous section</a>
+  
+  &nbsp; &nbsp; &nbsp;
+  
+  	
+    <a href="/package09/sections/cleanup.html">Next section</a>
+  
+  </p>
+   <!-- endif for pagedata_avail -->
+
+</div>
+
+      </div>
+    </div>
+
+    <div style="background-color: #0E0E0E; padding: 20px 20px 20px 60px; color: white; font-size: 12px">
+  <p>Copyright &copy;2015 NeCTAR</p>
+  <img src="/images/NCRIS_PROVIDER_rev.png" alt="NCRIS_PROVIDER_rev" width="132" height="63" />
+  <p><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png">
+  This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a></p>
+</div>
+
+
+  </body>
+
+</html>

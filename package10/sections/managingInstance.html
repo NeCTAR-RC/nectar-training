@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel='shortcut icon' href='/images/icon.png' />
+
+  <title>Beyond the Dashboard</title>
+  <meta name="description" content="Nectar National Training Resources
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://training.nectar.org.au/package10/sections/managingInstance.html">
+  <link rel="alternate" type="application/rss+xml" title="Nectar Training" href="http://training.nectar.org.au/feed.xml" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61845992-2', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+<div class="nec-header">
+  <div class="header-top">
+    <div class="header-top-page">
+      <div class="nect-login">
+        <a href="https://support.nectar.org.au/support/home">Support</a>
+        <a href="http://cloud.nectar.org.au/contact/" class="new-tick">Contact</a>
+        <b><a href="https://dashboard.rc.nectar.org.au/"><b>Login</b></a></b>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-main">
+    <div class="header-main-page">
+      <div class="logo-nect">
+        <img src='/images/nectar_cloud_logo.jpg' alt="Nectar" height="43", width"248">
+      </div>
+      <div class="menu-nect">
+        
+          <a href="/" class="selected">Self-paced Training</a>
+          <a href="/for-trainers.html">Resources for Trainers</a>
+        
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="normal-block">
+  <div class="normal-block-page">
+    
+      <h3>Self-paced Training</h3>
+    
+  </div>
+</div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+          <!-- 
+    Preprocessing: Determine which part number this is. To avoid having to set numbers 
+    manually on each page, determine this here by the file name. 
+    -->
+  
+  
+  
+  
+  
+
+  
+  
+      
+  
+
+  
+  
+  
+  
+  
+  	
+  	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+			
+			
+			
+  	<!-- If we are not in the main hierarchy, we may be looking at a file of one of the sub-categories -->
+	
+  
+
+
+
+<div class="post">
+
+  <header class="post-header">
+    <h3>Module 10</h3>
+    <h1>Beyond the Dashboard</h1>
+  </header>
+
+  
+
+  <!--
+    List of the individual parts of this module (so not all content gets crammed on one page).
+    Rendering this list first is necessary 
+  -->
+  <p> Sections of this module:</p>
+  
+	
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package10/sections/index.html"> Introduction</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package10/sections/openstackClients.html"> OpenStack clients</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package10/sections/objectStore.html"> Accessing the object store</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+			
+		
+		
+
+		
+		
+			
+		
+		
+			
+				 <b>
+			
+			
+      <a href="/package10/sections/managingInstance.html"> Controlling an instance</a>
+			
+				</b>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package10/sections/managingVolumes.html"> Managing volumes</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package10/sections/utilization.html"> Tracking utilization</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package10/sections/summary.html"> Summary</a>
+			
+			<br/>
+		
+	
+  <br/>
+
+
+  <a href="/package10/sections/all.html" target="_blank">View all sections on one page (Printer friendly)</a>
+  <br/>
+  <br/>
+  <h1> Controlling an instance </h1>
+
+   <!-- endif for pagedata_avail -->
+  
+
+  <!--
+  Content of page
+  -->
+  <article class="post-content">
+    
+<div class="bgPrerequisite">
+					<img src="/images/glyphicons-333-certificate.png" alt="image" align="left" style="width:17px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><em>Prerequisite</em>: You need to have installed the <em>python-openstackclient</em> using the instructions given earlier. You should also be familiar with the terminology and concepts involved in launching an instance, as described in <a href="/package07/sections/index.html" title="Module 7">Module 7</a>. You also must have <em>sourced</em> your OpenStack RC file on the command line you are using, as described <a href="openstackClients.html">earlier in this module</a>.</p>
+
+				</div>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Before the <strong>openstack</strong> client was introduced, managing compute services was done with the <strong>nova</strong> command, so you may still find references to it on the Internet. While you still can use <em>nova</em>, in this tutorial we stick to the more uniform and intuitive <em>openstack</em> client, which works similarly to the <em>nova</em> command.
+For more details, refer to the <a href="http://docs.openstack.org/developer/nova/">official OpenStack nova</a> documentation.</p>
+
+				</div>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>The following instructions will assume that all the <em>Names</em> you choose for instances, volumes, etc. have <strong>no whitespaces</strong> in them. If the names <em>do</em> include white spaces, you have to put the name in quotation marks when using them in the commands, e.g. “Name of resource”.</p>
+
+				</div>
+
+<p>You may display information about all the instances you are running:</p>
+
+<p><code>openstack server list</code></p>
+
+<p>This will output a line like this one for each running instance:</p>
+
+<div class="bgTerminal"><pre class="PreformatTerminal">+--------------+----------------------+--------+----------------------------+
+| ID           | Name                 | Status | Networks                   |
++--------------+----------------------+--------+----------------------------+
+| be290858-... | MyFirstInstance      | ACTIVE | intersect-01=43.240.96.180 |
++--------------+----------------------+--------+----------------------------+</pre></div>
+
+<p>You can display more information about your instances with:</p>
+
+<p><code>openstack server show &lt;instance ID&gt;</code></p>
+
+<p>Where the instance ID is the long combination of numbers, dashes and letters shown in the <em>openstack server list</em> command. Alternatively, you may use the <em>name</em> of the instance, e.g.:</p>
+
+<p><code>openstack server show MyFirstInstance</code></p>
+
+<p>in the example above. This will display a lot of information about this particular instance.</p>
+
+<p>You can display help for the <em>openstack</em> command with:</p>
+
+<p><code>openstack help</code></p>
+
+<p>This will print a list of options for this command. Each option listed can be seen as a ‘sub-command’. You may print more information about usage of the particular sub-command, e.g. for <em>server</em> which we are going to use in this section:</p>
+
+<p><code>openstack help server</code></p>
+
+<p>In the following, we are going to discuss <em>openstack server</em> commands for</p>
+
+<ul>
+  <li>
+    <p>Launching an instance</p>
+  </li>
+  <li>
+    <p>Taking a snapshot of an instance</p>
+  </li>
+  <li>
+    <p>Launching a new instance from a snapshot</p>
+  </li>
+</ul>
+
+<p>For supporting and further documentation, please refer to the <a href="http://docs.openstack.org/developer/python-openstackclient/">official openstack client documentation</a>.</p>
+
+<h3 id="launching-an-instance">Launching an instance</h3>
+
+<p>You can also launch an instance with <em>openstack server</em> instead of using the <a href="https://dashboard.rc.nectar.org.au">Dashboard</a> as we have done in <a href="/package07/sections/index.html" title="Module 7">Module 7</a>.</p>
+
+<p>First, you may want to take a look at the flavors which are available and pick the one you’d like:</p>
+
+<p><code>openstack flavor list</code></p>
+
+<p>In this tutorial, let’s pick the flavor <em>m1.small</em>.
+Take note of the ID (first column of the printed information) and name. When compiling this tutorial, the ID for the flavor <em>m1.small</em> was <em>0</em>, but in your case it may also be a long string of characters.</p>
+
+<p>Now, you should pick an image to launch your instance from. Just as in <a href="/package07/sections/index.html" title="Module 7">Module 7</a>, we will use the Ubuntu 14.10 image.</p>
+
+<p><code>openstack image list</code></p>
+
+<p>Because there are a lot of images, the list will be very long. To make it easier to find the right Ubuntu 14.10 image in the NeCTAR images, type:</p>
+
+<p><code>openstack image list | grep 14.10</code></p>
+
+<p>Find the image <em>NeCTAR Ubuntu 14.10 (Utopic) amd64” and take note of the ID, which may be a number or a long string of characters. When compiling this tutorial, the ID was *fc48b5bb-e67d-4e39-b9ba-b6725c8b0c88</em>.</p>
+
+<p>You now have to configure the ssh keys you want to use. Your <em>Nectar_Key</em> should show up in the following command (with another name if you chose another launching the instance in Module 7):</p>
+
+<p><code>openstack keypair list</code></p>
+
+<p>We will use the same key in this tutorial, so take note that the <strong>Keypair Name</strong> (first column) is the one you chose for the key, i.e. <em>Nectar_Key</em>.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>You may also add a new key. The command</p>
+
+<p><code>openstack keypair create &lt;name&gt;</code></p>
+
+<p>will generate a key with the &lt;name&gt; of your choice, and print the private key to the terminal. You have to copy and save this output <strong>now</strong> to a file and store it somewhere as your private key.</p>
+
+<p>If you want to select an existing key that you generated earlier, you have to specify the path to your <em>public</em> key, which you must be able to access from your terminal:</p>
+
+<p><code>openstack keypair create --public-key &lt;path-to-your-pub-key&gt; &lt;name&gt;</code></p>
+
+<p>You can display the help for <em>keypair create</em> with</p>
+
+<p><code>openstack help keypair create</code></p>
+
+				</div>
+
+<p>You may display information about a specific key with:</p>
+
+<p><code>openstack keypair show &lt;keypair-name&gt;</code></p>
+
+<p>using the keypair name for which you want to display the information.</p>
+
+<p>Let’s now display information about the security groups:</p>
+
+<p><code>openstack security group list</code></p>
+
+<p>This should display something like this:</p>
+
+<div class="bgTerminal"><pre class="PreformatTerminal">+-------+---------+-------------+
+|    ID | Name    | Description |
++-------+---------+-------------+
+| 86498 | default | default     |
+| 90284 | http    | Allow http  |
+| 86501 | icmp    | Allow icmp  |
+| 86504 | ssh     | Allow ssh   |
++-------+---------+-------------+</pre></div>
+
+<p>Take note of the security group <em>names</em> (2nd column) for <em>icmp</em> and <em>ssh</em>.</p>
+
+<p>The last thing we may need to specify before we launch an instance is the <em>Availability Zone</em>. List all the available zones with:</p>
+
+<p><code>openstack availability zone list</code></p>
+
+<p>Take note of your <em>Zone Name</em> (first column), if you want to use a particular zone. Otherwise, you won’t need to specify the availability zone and you will be assigned the most suitable one automatically.</p>
+
+<p>Now, you may launch your instance with the command <em>openstack server create</em>. Display help about this command:</p>
+
+<p><code>openstack help server create</code></p>
+
+<p>which will describe the options available. Launch your instance:</p>
+
+<p><code>openstack server create --flavor &lt;flavor-id&gt; --key-name &lt;keypair-name&gt; --image &lt;image-id&gt; --security-group &lt;group name&gt; --availability-zone &lt;zone name&gt; &lt;name-of-instance&gt;</code></p>
+
+<p>As a name for the instance, choose <em>ClientLaunchedInstance</em>.
+For the flavor, you may specify either the <em>name</em> or the <em>id</em> of that flavor. 
+If you assign several security groups, you must repeat the <em>–security-group</em> argument before each group name. 
+If you don’t want to use a specific availability zone, you may skip the <em>–availability-zone</em> argument.
+At the time this tutorial was created, the command (without availability zone) was:</p>
+
+<p><code>openstack server create --flavor m1.small --key-name Nectar_Key 
+    --security-group icmp --security-group ssh --image fc48b5bb-e67d-4e39-b9ba-b6725c8b0c88 ClientLaunchedInstance</code></p>
+
+<p>It will display information about the instance being created, similar to these <em>extracts</em> of output:</p>
+<div class="bgTerminal"><pre class="PreformatTerminal">+-------------------------------+--------------------------------------------+
+| Field                         | Value                                      |
++-------------------------------+--------------------------------------------+
+| OS-DCF:diskConfig             | MANUAL                                     |
+| OS-EXT-AZ:availability_zone   | intersect                                  |
+| OS-EXT-STS:power_state        | 0                                          |
+| OS-EXT-STS:task_state         | scheduling                                 |
+| OS-EXT-STS:vm_state           | building                                   |
+| flavor                        | m1.small (0)                               |
+| hostId                        |                                            |
+| id                            | b720630a-e0dd-4ecd-9ceb-5e3519e69edc       |
+| image                         | NeCTAR Ubuntu 14.10 (Utopic) amd64 (fc4..) |
+| key_name                      | Nectar_Key                                 |
+| name                          | ClientLaunchedInstance                       |
+| security_groups               | [{u'name': u'icmp'}, {u'name': u'ssh'}]    |
+| status                        | BUILD                                      |
++-------------------------------+--------------------------------------------+</pre></div>
+
+<p>The state (<em>vm_state</em>) will probably still be <em>“building”</em>.
+Once the instance has been created, it will show up in the output of <em>openstack server list</em> and <em>openstack server show</em>.</p>
+
+<p>You can check if the status of the instance is <strong>Active</strong> with the command:</p>
+
+<p><code>openstack server list</code></p>
+
+<p>Once it is active, you may look up the IP address for <em>ClientLaunchedInstance</em> with</p>
+
+<p><code>openstack server show ClientLaunchedInstance</code></p>
+
+<p><strong>Congratulations!! You have now launched your instance.</strong></p>
+
+<p>You may now try to login to your instance with the SSH command, as described in <a href="/package07/sections/connectViaSSH.html">Module 7</a>. 
+Use the IP address which is displayed for your new instance to login via ssh. For example, on a Linux or Mac:</p>
+
+<p><code>ssh -i .ssh/Nectar_Key ubuntu@NNN.NNN.NNN.NNN</code></p>
+
+<p>replacing the N’s with the IP address.</p>
+
+<p>For more information, see also the <a href="http://docs.openstack.org/developer/python-openstackclient/">official OpenStack Client documentation</a>.</p>
+
+<p>You can now go to the Dashboard and observe that your new instance will be listed there as well.</p>
+
+<p>You may reboot the instance with</p>
+
+<p><code>openstack server reboot &lt;instance-name&gt;</code></p>
+
+<p>and <em>terminate</em> (delete) it with</p>
+
+<p><code>openstack server delete &lt;instance-name&gt;</code></p>
+
+<p>If you want to add a new security group, you can easily do this after launching as well:</p>
+
+<p><code>openstack server add security group &lt;group name&gt;</code></p>
+
+<p>To get more information about the <em>openstack server</em> command:</p>
+
+<p><code>openstack help server</code></p>
+
+<h3 id="taking-a-snapshot-of-an-instance">Taking a snapshot of an instance</h3>
+
+<p>Taking a snapshot of the instance is easy. Using your <em>Instance Name</em>:</p>
+
+<p><code>openstack server image create --name &lt;Image-Name&gt; &lt;Instance-Name&gt;</code></p>
+
+<p>The snapshot will be <strong>saved as an Image</strong> with the name you choose. In the example given in this tutorial, the command is:</p>
+
+<p><code>openstack server image create --name ClientLaunchedSnapshot ClientLaunchedInstance</code></p>
+
+<p>This process may take a while. In the beginning, the ‘status’ of your snapshot will be <em>queued</em>.</p>
+
+<p>You can check on the status of your snapshot with:</p>
+
+<p><code>openstack image show &lt;Image-Name&gt;</code></p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>It is possible to take a <strong>“Live snapshot”</strong> (take a snapshot of the machine that is currently running). In most cases, there should be no problem. However, if the instance is running while the snapshot is being taken, the resulting snapshot <em>may</em> be inconsistent. This is due to programs writing on the file system while a snapshot is taken. There are a few options to prevent this inconsistency from happening:</p>
+
+<ul>
+  <li>running “sync” before starting the snapshot, or</li>
+  <li>using a “file system freeze” utility which block programs writing on the filesystem,</li>
+  <li>shutting down or pausing the instance before snapshotting.</li>
+</ul>
+
+<p>The easiest option is probably to pause or shut down the instance and then take the snapshot. For more information, refer to the <a href="http://docs.openstack.org/trunk/openstack-ops/content/snapshots.html">OpenStack documentation</a>.</p>
+
+				</div>
+
+<h3 id="launch-an-instance-from-a-snapshot">Launch an instance from a snapshot</h3>
+
+<p>Because your snapshot was saved as an <em>Image</em>, you can easily launch the instance from this image. Instead of the <em>NeCTAR Ubuntu Image</em> which we used earlier, you can now specify your own image to launch a new instance. The new instance will have all the software you installed before taking the snapshot, and all the data you saved the on-instance storage (on the primary disk, <em>not</em> the secondary!).</p>
+
+<p>You can print a list of all the images (instance and volume snapshots) you have created, if you would like a reminder for the snapshot name:</p>
+
+<p><code>openstack image list --private</code></p>
+
+<p>And more details about the images can be displayed with</p>
+
+<p><code>openstack image show &lt;Image Name&gt;</code></p>
+
+<p>You may launch an instance from your own image with the same command we used earlier to launch an instance:</p>
+
+<p><code>openstack server create --flavor &lt;flavor-id&gt; --key-name &lt;keypair-name&gt; --image &lt;snapshot-name&gt; --security-group &lt;group name&gt; --availability-zone &lt;zone name&gt; &lt;name-of-instance&gt;</code></p>
+
+<p>In our particular example, the command becomes:</p>
+
+<p><code>openstack server create --flavor m1.small --key-name Nectar_Key 
+    --security-group icmp --security-group ssh --image ClientLaunchedSnapshot CopyOfClientLaunchedInstance</code></p>
+
+<p>List the details of your new instance with</p>
+
+<p><code>openstack server show CopyOfClientLaunchedInstance</code></p>
+
+<p>You have now two copies of your original instance running. You may log in with ssh to <em>CopyOfClientLaunchedInstance</em> as well.</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Note that you may also choose a <strong>different flavor</strong> when you launch a new instance from the snapshot! This allows you to expand your resources (though you can do this more easily by following the process outlined in <em>openstack help server resize</em>). You should not choose a flavor with less storage available on the primary on-instance disk, otherwise the launching of your instance may fail due to lack of disk space.</p>
+
+				</div>
+
+
+  </article>
+
+
+  
+  <!--
+  Previous section / Next section links. Very simple design to start with.
+  -->
+  <p>
+  
+  	
+    <a href="/package10/sections/objectStore.html">Previous section</a>
+  
+  &nbsp; &nbsp; &nbsp;
+  
+  	
+    <a href="/package10/sections/managingVolumes.html">Next section</a>
+  
+  </p>
+   <!-- endif for pagedata_avail -->
+
+</div>
+
+      </div>
+    </div>
+
+    <div style="background-color: #0E0E0E; padding: 20px 20px 20px 60px; color: white; font-size: 12px">
+  <p>Copyright &copy;2015 NeCTAR</p>
+  <img src="/images/NCRIS_PROVIDER_rev.png" alt="NCRIS_PROVIDER_rev" width="132" height="63" />
+  <p><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png">
+  This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a></p>
+</div>
+
+
+  </body>
+
+</html>

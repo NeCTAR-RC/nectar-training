@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel='shortcut icon' href='/images/icon.png' />
+
+  <title>From PC to Cloud or HPC</title>
+  <meta name="description" content="Nectar National Training Resources
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://training.nectar.org.au/package04/sections/useHPC.html">
+  <link rel="alternate" type="application/rss+xml" title="Nectar Training" href="http://training.nectar.org.au/feed.xml" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61845992-2', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+<div class="nec-header">
+  <div class="header-top">
+    <div class="header-top-page">
+      <div class="nect-login">
+        <a href="https://support.nectar.org.au/support/home">Support</a>
+        <a href="http://cloud.nectar.org.au/contact/" class="new-tick">Contact</a>
+        <b><a href="https://dashboard.rc.nectar.org.au/"><b>Login</b></a></b>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-main">
+    <div class="header-main-page">
+      <div class="logo-nect">
+        <img src='/images/nectar_cloud_logo.jpg' alt="Nectar" height="43", width"248">
+      </div>
+      <div class="menu-nect">
+        
+          <a href="/" class="selected">Self-paced Training</a>
+          <a href="/for-trainers.html">Resources for Trainers</a>
+        
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="normal-block">
+  <div class="normal-block-page">
+    
+      <h3>Self-paced Training</h3>
+    
+  </div>
+</div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+          <!-- 
+    Preprocessing: Determine which part number this is. To avoid having to set numbers 
+    manually on each page, determine this here by the file name. 
+    -->
+  
+  
+  
+  
+  
+
+  
+  
+      
+  
+
+  
+  
+  
+  
+  
+  	
+  	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+			
+			
+			
+  	<!-- If we are not in the main hierarchy, we may be looking at a file of one of the sub-categories -->
+	
+  
+
+
+
+<div class="post">
+
+  <header class="post-header">
+    <h3>Module 4</h3>
+    <h1>From PC to Cloud or HPC</h1>
+  </header>
+
+  
+
+  <!--
+    List of the individual parts of this module (so not all content gets crammed on one page).
+    Rendering this list first is necessary 
+  -->
+  <p> Sections of this module:</p>
+  
+	
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package04/sections/index.html"> Introduction</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package04/sections/cloudVsHPC.html"> HPC vs Cloud computing</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+			
+		
+		
+
+		
+		
+			
+		
+		
+			
+				 <b>
+			
+			
+      <a href="/package04/sections/useHPC.html"> When to use HPC</a>
+			
+				</b>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package04/sections/useCloud.html"> When to use the Cloud</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package04/sections/cloudProCons.html"> The Cloud - Pros and Cons</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package04/sections/summary.html"> Summary</a>
+			
+			<br/>
+		
+	
+  <br/>
+
+
+  <a href="/package04/sections/all.html" target="_blank">View all sections on one page (Printer friendly)</a>
+  <br/>
+  <br/>
+  <h1> When to use HPC </h1>
+
+   <!-- endif for pagedata_avail -->
+  
+
+  <!--
+  Content of page
+  -->
+  <article class="post-content">
+    
+<p>HPC is the right choice if you have an application that pushes on <em>all</em> levels of performance:</p>
+
+<ul>
+  <li>
+    <p>computing</p>
+  </li>
+  <li>
+    <p>fast interconnects, and</p>
+  </li>
+  <li>
+    <p>high-performance storage</p>
+  </li>
+</ul>
+
+<p>This computing environment is not found in a typical Cloud and is unique to HPC.</p>
+
+<p><strong>Optimized HPC libraries</strong> (the result of years of research) may be required for your application, working closely with the hardware. The hardware can even be specialized “tuned” hardware which is not available on the simpler cloud computers.</p>
+
+<p>Some applications rely on a technology called <strong>MPI (Message Passing Interface)</strong> which explicitly handles communication between computing nodes within the program code. Such applications may not run efficiently in the Cloud because inter-node communication is slower. Also, some Clouds do not support a technique called <em>broadcast</em> or <em>multicast</em> in any form. So if your <em>MPI</em> implementation uses this, it cannot run in the Cloud. As a rule of thumb, if your application is using <em>MPI</em>, then HPC is probably the right choice.</p>
+
+<p>Some applications require very <strong>fast interconnects</strong> (e.g., <em>Infiniband</em> or <em>High-Performance Ethernet</em>) which require communication that bypasses the OS kernel. This makes the use of the Cloud very difficult because most virtualization schemes do not support this “<em>kernel bypass</em>”. If high-performance inter-connections are not available, the application runs slowly and get no performance gain when adding more nodes. So if your application demands high-performance inter-connections between the compute nodes, you should choose HPC over the Cloud.</p>
+
+<p>Other specialised hardware which your application may benefit from are <strong>performance accelerators</strong> or <em>SIMD</em> units (Single-Instruction Multiple Data processors), available from <em>NVidia</em> and <em>AMD/ATI</em>. This is not found on typical Cloud infrastructure — if your application makes use of such performance accelerators, you should choose an HPC infrastructure which provides this.</p>
+
+<p>Some HPC solutions already offer a set of pre-installed <strong>software packages</strong>, sometimes including the license, ready for you to use. When using the Cloud, you have to install specialized software yourself, and pay for the license.</p>
+
+
+  </article>
+
+
+  
+  <!--
+  Previous section / Next section links. Very simple design to start with.
+  -->
+  <p>
+  
+  	
+    <a href="/package04/sections/cloudVsHPC.html">Previous section</a>
+  
+  &nbsp; &nbsp; &nbsp;
+  
+  	
+    <a href="/package04/sections/useCloud.html">Next section</a>
+  
+  </p>
+   <!-- endif for pagedata_avail -->
+
+</div>
+
+      </div>
+    </div>
+
+    <div style="background-color: #0E0E0E; padding: 20px 20px 20px 60px; color: white; font-size: 12px">
+  <p>Copyright &copy;2015 NeCTAR</p>
+  <img src="/images/NCRIS_PROVIDER_rev.png" alt="NCRIS_PROVIDER_rev" width="132" height="63" />
+  <p><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png">
+  This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a></p>
+</div>
+
+
+  </body>
+
+</html>

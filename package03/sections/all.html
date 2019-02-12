@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel='shortcut icon' href='/images/icon.png' />
+
+  <title>Use Cases</title>
+  <meta name="description" content="Nectar National Training Resources
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://training.nectar.org.au/package03/sections/all.html">
+  <link rel="alternate" type="application/rss+xml" title="Nectar Training" href="http://training.nectar.org.au/feed.xml" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61845992-2', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+
+
+  <body>
+    <div class="page-content">
+      <div class="wrapper">
+        <p><a href="/"><img src="/images/nectar_cloud_logo.jpg" alt="Nectar"/></a></p>
+        <h3>Module 3</h3>
+        <h1>Use Cases</h1>
+
+        
+<h2 id="introduction">Introduction</h2>
+
+<blockquote>
+  <p>“The data tsunami is changing everything in science. Every discipline is now confronted with it—a vast exploration of data that comes from instruments, from online sources, from the web, from social media. Analyzing this data can’t be done on a PC.”</p>
+</blockquote>
+
+<p>— Dennis Gannon, director of Cloud Research Strategy for Microsoft Research Connections</p>
+
+<p>This module will discuss five fast ways to make the cloud work for your research. Common use cases for the NeCTAR Research Cloud and the research outcomes they can enable will be described.</p>
+
+<h3 id="video">Video</h3>
+
+<p>The following video goes through the content in this module.</p>
+
+<p><a href="https://www.youtube.com/watch?v=PkYdBVnxniA">https://www.youtube.com/watch?v=PkYdBVnxniA</a></p>
+
+<h3 id="the-research-cloud">The Research Cloud</h3>
+
+<p>The Research Cloud provides the necessary processing power and storage that is required for computationally and  storage intensive projects. That means the users of the application do not need to have huge processing power or storage capabilities locally. Cloud computing allows us to eliminate the use of standalone machines and provides all parties equal access to the models and data on a standard platform.</p>
+
+<p>The NeCTAR National Research Cloud empowers researchers with new self-service abilities to publish research data, share knowledge and rapidly deploy and access software applications without the burden of operating their own computer servers.</p>
+
+<p>The NeCTAR Research Cloud Services provide an <strong>Infrastructure-as-a-Service (IaaS)</strong>: Researchers can run their own virtual machines and manage their storage.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>The Research Cloud uses the successful, open-source <em>OpenStack</em> cloud computing software platform. OpenStack includes compatibility with <em>Amazon EC2</em> (Amazon’s computing service) and <em>Amazon S3</em> (Amazon’s object storage service) APIs and thus client applications written for <em>Amazon Web Services</em> (AWS) can be used with OpenStack and NeCTAR Services with minimal porting effort, but it is recommended to use the native OpenStack APIs for access to all the NeCTAR cloud features.</p>
+
+				</div>
+
+<p>To illustrate a few examples in which you may benefit from using the Research Cloud, we will discuss a few common use cases in this Module.</p>
+
+<h3 id="conventions">Conventions</h3>
+
+<p>The notation throughout the training documents can be interpreted as follows:</p>
+
+<p>Words in <em>italics</em> are used for names and terminology, e.g. name of a software, or name of a computing concept. It may also just emphasise a word in the traditional way. Quotations are also written in italics and are put in between quotatioin marks.</p>
+
+<p>Words in <strong>bold</strong> are used to highlight words which identify important concepts of a paragraph, to make it easier for users to skim through the text to find a paragraph which explains a certain idea, concept or technology.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><strong>Additional information</strong> which is optional to read is displayed in <em>info boxes</em> like this one.</p>
+
+				</div>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><strong>Important information</strong> is displayed in boxes like this one.</p>
+
+				</div>
+
+<div class="bgDefinition" style="min-height: 55px;">
+					<img src="/images/glyphicons-352-book-open.png" alt="image" align="left" style="width:24px; height:22px;
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><strong>Definition of terms</strong> are displayed in boxes of this style.</p>
+
+				</div>
+
+<div class="bgPrerequisite">
+					<img src="/images/glyphicons-333-certificate.png" alt="image" align="left" style="width:17px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Possibly specific <strong>prerequisites</strong> for reading a particular section are contained in this type of box at the beginning of a section.</p>
+
+				</div>
+
+<h2 id="case-1---epp">Case 1 - EPP</h2>
+
+<p>You have an <strong>“embarrassingly parallel problem” (short: EPP)</strong>.  “Embarrassingly parallel problems” are characterized by being trivially parallelizable: no complex methods have to be applied to solve the problem by means of parallel methods, for example solving each part of the problem in a separate computer. This may save you huge amounts of time for your results to be finished.</p>
+
+<p>For example, a very large data set can be chopped into pieces which are then dispatched to various computers for processing; when finished, the resulting data is re-assembled.</p>
+
+<p><img src="images/EPP.png" class="aligncenter" style="width:70%; " alt="image" /></p>
+
+<p>Or in another example, copies of a smaller data set are distributed across computers to perform different computations on it, and when all the individual analyses of the data are finished, the results are summarized.</p>
+
+<p><img src="images/EPP2.png" class="aligncenter" style="width:60%; " alt="image" /></p>
+
+<p>The individual computers don’t have to be super fast, but instead the power lies in having a huge number of computers working at solving the problem simultaneously.</p>
+
+<p>Software like <em>MapReduce</em> can be used to manage splitting the problem into several pieces and dispatching them to different computers.</p>
+
+<p>Embarrassingly parallel problems will be re-visited in <a href="/package04/sections/index.html" title="Module 4">Module 4</a>.
+In <a href="/package07/sections/index.html" title="Module 7">Module 7</a>, we will discuss how to set up and access a virtual machine.</p>
+
+<h2 id="case-2---data-sharing">Case 2 - Data Sharing</h2>
+
+<p>You want shared access to data to collaborate with other researchers. You may request the amount of storage you require and give collaborators access to the on-line storage.</p>
+
+<p>Depending on your needs, you may request a <em>block of storage</em>, which will be accessible as a hard drive. Collaborators will need access to the virtual machine which has the hard-drive attached to it, then they can copy files across. 
+An easier way is to use <em>object storage</em>, to which easy-to-use interfaces (e.g. via web browser) are available, which can be made available to collaborators to upload and download files.</p>
+
+<p>Types of storage and access to it will be introduced in <a href="/package06/sections/index.html" title="Module 6">Module 6</a> and further discussed in the later modules.</p>
+
+<h2 id="case-3---on-demand-computing">Case 3 - On-demand Computing</h2>
+
+<p>You need compute power only at a certain time (on-demand), e.g. when results for a paper need to be processed quickly. You don’t need to invest in a large amount of PCs which take up space in your office, sitting idle until they are needed, and becoming outdated within a few years.</p>
+
+<p>You can easily access the required amount of computing power and storage in the cloud, only for the time you need to run your experiments. You don’t have to worry about maintenance and re-investment in new, faster computers.</p>
+
+<p>In <a href="/package07/sections/index.html" title="Module 7">Module 7</a>, we will discuss how to set up and access a virtual machine.</p>
+
+<h2 id="case-4---remote-access">Case 4 - Remote Access</h2>
+
+<p>You want to access your large-scale computing resources, data and tools from any platform, and any location. For example, you want to check on the state of your running experiments while on conference travel, or using your laptop or tablet at home. In the Research Cloud, you can configure your own system: you may choose your OS and install the software you require. You can access this virtual computer from anywhere via the Internet.</p>
+
+<p><img src="images/RemoteAccessFromAnywhere.png" class="aligncenter" style="width:90%; " alt="image" /></p>
+
+<p>In <a href="/package07/sections/index.html" title="Module 7">Module 7</a>, we will discuss how to set up and access a virtual machine from a remote location, including access via a remote desktop.</p>
+
+<h2 id="case-5---research-app">Case 5 - Research App</h2>
+
+<p>You want to develop your own research app that can be accessed from a variety of devices and from anywhere, from several people simultaneously. For example, you want to undertake a field study. Your students and collaborators venture out to collect data and upload their results and materials directly to your app on the Research Cloud. There is no need to deal with a large amount of E-mails in which people send their results as attachments.</p>
+
+<p>You can install and run your app on a virtual machine. In <a href="/package07/sections/index.html" title="Module 7">Module 7</a>, we will discuss how to set up and access a virtual machine.</p>
+
+<h2 id="case-6---reproducible-research">Case 6 - Reproducible Research</h2>
+
+<p>You want to provide a snapshot of your virtual machine including all tools, data and documentation required to reproduce the results. You may even want to cite this snapshot in a paper, so other researchers who would like to to reproduce your experiments can launch the virtual machine and have access to your entire experimental environment: the code, the data, notes, etc. There is no need for them to install a set of complex, version-sensitive programs with inter-dependencies. Reproducibility is facilitated and this approach also takes a lot of work off the researcher.</p>
+
+<p><a href="/package09/sections/index.html" title="Module 9">Module 9</a> will discuss how you can create a snapshot of your VM and share it with others.</p>
+
+<h2 id="case-7---training">Case 7 - Training</h2>
+
+<p>You want to provide a platform for students to flexibly get access to materials from anywhere, e.g. their home PCs, laptop, etc. Universities will not have to invest in expensive laboratory facilities and staff.</p>
+
+<p>You can create a template virtual machines and install the required software on it. Then, you may launch several copies of this pre-configured virtual machine — if you launched only one for all students to share, the workload on it may be a bit high, and students may experience problems with the computer’s performance. So you should distribute the workload over several machines. For example, if the students work in groups, you can assign one virtual machine for each group, and each student may have their own login on their groups virtual machine. If you are allowed enough resources on the NeCTAR Research Cloud, you could even assign one VM per student.</p>
+
+<p>After the class is finished, you can shut down all the virtual machines and have no trouble with idle facilities or lost investment.</p>
+
+<p>In the next term or session, when you run the class again, you may use the same pre-configured VM again, without the need to set it up again.</p>
+
+<p>In <a href="/package07/sections/index.html" title="Module 7">Module 7</a>, we will discuss how to set up a virtual machine. Part of this tutorial will include you installing software on it. In <a href="/package09/sections/index.html" title="Module 9">Module 9</a> we will then see how to create a snapshot of the pre-configured VM, and how to launch a new VM from it again. It is very easy to launch several copies of the same VM.</p>
+
+<h2 id="case-8---big-data-demands">Case 8 - Big Data demands</h2>
+
+<p>You have “big data” demands: you need easy and quick access to large amounts of storage.</p>
+
+<p>When you process this data with your dedicated application, your running application should be “close to the data”: it should run on a computer which is directly attached to the storage via a faster connection than the Internet. Therefore, it is not a good solution to only request storage from some on-line storage provider and then hook up your office computer with the storage via the network and then process the from your office computer — this may take forever! So you need a computer running at the same facilities as your storage is physically located. The Research Cloud enables you to do that: you can request storage and a virtual machine at the same facilities and then analyze your data with your virtual machine.</p>
+
+<p><a href="/package07/sections/index.html" title="Module 7">Module 7</a> will go into detail about creating a virtual machine, set up your storage, and hook it up with your VM.</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>This is the end of Module 3. You should now have a better idea of what uses and benefits the Research Cloud can have. You may have identified one or a few use cases that apply to your research.</p>
+
+<p>The following use cases have been discussed:</p>
+
+<ol>
+  <li>Embarrassingly parallel problems (EPP)</li>
+  <li>Data Sharing with other researchers</li>
+  <li>On-demand Computing for research and teaching</li>
+  <li>Remote Access to services from anywhere</li>
+  <li>Developing a Research App</li>
+  <li>Reproducible Research</li>
+  <li>Teaching</li>
+  <li>Big Data demands</li>
+</ol>
+
+<p>However there is a lot more to it—there are plenty more use cases. After following the next Modules, you will know enough about the Research Cloud to identify your very own and individual use case.</p>
+
+<p>You may now continue with <a href="/package04/sections/index.html" title="Module 4">Module 4</a>.</p>
+
+
+      </div>
+    </div>
+  </body>
+
+</html>

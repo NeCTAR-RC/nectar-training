@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel='shortcut icon' href='/images/icon.png' />
+
+  <title>Launching and Connecting</title>
+  <meta name="description" content="Nectar National Training Resources
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://training.nectar.org.au/package07/sections/installDesktopEnvironment.html">
+  <link rel="alternate" type="application/rss+xml" title="Nectar Training" href="http://training.nectar.org.au/feed.xml" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61845992-2', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+<div class="nec-header">
+  <div class="header-top">
+    <div class="header-top-page">
+      <div class="nect-login">
+        <a href="https://support.nectar.org.au/support/home">Support</a>
+        <a href="http://cloud.nectar.org.au/contact/" class="new-tick">Contact</a>
+        <b><a href="https://dashboard.rc.nectar.org.au/"><b>Login</b></a></b>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-main">
+    <div class="header-main-page">
+      <div class="logo-nect">
+        <img src='/images/nectar_cloud_logo.jpg' alt="Nectar" height="43", width"248">
+      </div>
+      <div class="menu-nect">
+        
+          <a href="/" class="selected">Self-paced Training</a>
+          <a href="/for-trainers.html">Resources for Trainers</a>
+        
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="normal-block">
+  <div class="normal-block-page">
+    
+      <h3>Self-paced Training</h3>
+    
+  </div>
+</div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+          <!-- 
+    Preprocessing: Determine which part number this is. To avoid having to set numbers 
+    manually on each page, determine this here by the file name. 
+    -->
+  
+  
+  
+  
+  
+
+  
+  
+      
+  
+
+  
+  
+  
+  
+  
+  	
+  	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+		
+			
+			
+			
+  	<!-- If we are not in the main hierarchy, we may be looking at a file of one of the sub-categories -->
+	
+  
+
+
+
+<div class="post">
+
+  <header class="post-header">
+    <h3>Module 7</h3>
+    <h1>Launching and Connecting</h1>
+  </header>
+
+  
+
+  <!--
+    List of the individual parts of this module (so not all content gets crammed on one page).
+    Rendering this list first is necessary 
+  -->
+  <p> Sections of this module:</p>
+  
+	
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/index.html"> Introduction</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/createSSHKey.html"> Create a ssh key</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/launching.html"> Launching an instance</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/connectViaSSH.html"> Connect to the instance</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/firstSSHCommands.html"> Configuration and control</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+			
+		
+		
+
+		
+		
+			
+		
+		
+			
+			
+      <a href="/package07/sections/remoteDesktop.html"> Connect to a remote desktop</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+			
+				
+			
+		
+		
+			
+				 <b>
+			
+			
+      <a href="/package07/sections/installDesktopEnvironment.html">&nbsp;&nbsp; Install a desktop environment</a>
+			
+				</b>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+			
+				
+			
+		
+		
+			
+			
+      <a href="/package07/sections/connectWithX2Go.html">&nbsp;&nbsp; Connect with X2Go</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+			
+				
+			
+		
+		
+			
+			
+      <a href="/package07/sections/connectWithVNC.html">&nbsp;&nbsp; Connect with VNC</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+			
+				
+			
+		
+		
+			
+			
+      <a href="/package07/sections/runSeveralDesktopEnvs.html">&nbsp;&nbsp; Running several desktop environments</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/guiViaSSH.html"> Graphical Interfaces on the ssh terminal</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/enableWebServer.html"> Install a web server</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/manageStorage.html"> Managing storage</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/summary.html"> Summary</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/appendices.html"> Appendix</a>
+			
+			<br/>
+		
+	
+  <br/>
+
+
+  <a href="/package07/sections/all.html" target="_blank">View all sections on one page (Printer friendly)</a>
+  <br/>
+  <br/>
+  <h1> Install a desktop environment </h1>
+
+   <!-- endif for pagedata_avail -->
+  
+
+  <!--
+  Content of page
+  -->
+  <article class="post-content">
+    
+<p>First of all, for either of the options (VNC or X2Go), we need to install a desktop environment on our instance (<em>Remember:</em> The desktop actually runs on the instance, you only get an <em>interactive window</em> to it on your local computer. So we need to install a desktop on your instance).</p>
+
+<div class="bgDefinition" style="min-height: 55px;">
+					<img src="/images/glyphicons-352-book-open.png" alt="image" align="left" style="width:24px; height:22px;
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>A <em>desktop environment</em> is what we use to graphically interact with a system (it provides the desktop, windows that open up and symbols you can click on to start a program). Windows and Mac OS have only one desktop environment, but in most Unix-based systems you can choose from several environments. Popular choices are <em>Unity</em>, <em>Gnome</em> and <em>KDE</em>. There are also popular simple and light-weight environments called <em>LXDE</em>, <em>XFCE</em>, <em>Mate</em> and more.</p>
+
+				</div>
+
+<p>You may install several desktop environments, but you only need to choose one to start with.
+The following desktop environments are being discussed in this section:</p>
+
+<ul>
+  <li>
+    <p>LXDE</p>
+  </li>
+  <li>
+    <p>XFCE</p>
+  </li>
+  <li>
+    <p>Gnome</p>
+  </li>
+  <li>
+    <p>KDE</p>
+  </li>
+</ul>
+
+<p>If you are unsure which desktop environment to choose, we recommend you start with <em>LXDE</em>.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Unfortunately, there is no remote desktop solution that supports all desktop environments. The desktop environments which are currently not supported for remote connections are the ones using <em>3D desktop acceleration</em>. This affects e.g. <strong>Unity</strong> and <strong>Gnome3</strong>. All traditional remote desktop approaches (VNC, NX etc.) fail to work with this. Some versions of Gnome can be run in <em>“flashback”</em> Mode (with the 3D acceleration switched off), but that can be a bit tricky to set up and does not necessarily work. We will therefore discuss only the desktop environments which do work.</p>
+
+				</div>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><em>Note:</em> This tutorial is assuming you are using Ubuntu 14.10 (UTopic), however later versions may also work with the same instructions. When in doubt, links to external documentation are given at the relevant places.</p>
+
+				</div>
+
+<h3 id="lxde">LXDE</h3>
+
+<p>This light-weight environment is easy to install and works well for remote connections.</p>
+
+<p><img src="images/LXDE.png" class="aligncenter" style="width:40%; " alt="image" /></p>
+
+<p>Install the LXDE environment on your instance by typing into your <em>ssh terminal</em>:</p>
+
+<p><code>sudo apt-get install lxde</code></p>
+
+<h3 id="xfce">XFCE</h3>
+
+<p>Install the XFCE environment by typing into your <em>ssh terminal</em></p>
+
+<p><code>sudo apt-get install xfce4</code></p>
+
+<p><img src="images/XFCE.png" class="aligncenter" style="width:50%; " alt="image" /></p>
+
+<h3 id="gnome">GNOME</h3>
+
+<p>Gnome will have to be run in <strong>Flashback mode</strong> to disable the 3D acceleration which is not supported in VNC or X2Go (see for example <a href="https://wiki.gnome.org/Projects/GnomeFlashback">this official documentation</a> and <a href="http://wiki.ubuntuusers.de/GNOME_Flashback">this one on ubuntuusers.de</a>).  X2Go is only compatible with Gnome versions earlier than 3.12 (see <a href="http://wiki.x2go.org/doku.php/doc:de-compat">x2Go documentation</a>), and ideally earlier than 3.08. The Ubuntu version we use in this tutorial has Gnome 3.12.2, so you <strong>cannot use Gnome with X2Go with the Ubuntu version used in this tutorial</strong>. However, you may still get Gnome working with VNC by following the instructions below.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>You can find out your Gnome version (after you installed it with following instructions) by typing in your ssh command line:<br />
+<code>gnome-shell --version</code>  <br />
+If you are using a version older than 3.12, you cannot use Gnome with X2Go (you may run into trouble with versions older than 3.08 too). However, you may still get it working with VNC.</p>
+
+				</div>
+
+<p>To install gnome in “flashback mode”, follow these instructions:</p>
+
+<ol>
+  <li>
+    <p>Install the gnome environment by typing into your ssh terminal:  <br />
+ <code>sudo apt-get install gnome-core</code>  <br />
+ <em>Alternatively</em>, if you want to have some apps like Gimp, LibreOffice etc. pre-installed, <strong><em>instead</em></strong> of the command above, type:  <br />
+ <code>sudo apt-get install gnome</code>   <br />
+ <em>(this will take longer as more packages are downloaded).</em>  <br />
+ Confirm the installation of the package with ‘<strong>Y</strong>’.  <br />
+ Hit <strong>[Enter]</strong> to confirm the message that comes up.   <br />
+ Then, you have to select the default display manager. It does not really matter which one you choose. The correct display manager will be started by your remote client anyway. <em>LightDM</em> or <em>GDM</em> are display managers for Gnome. If unsure, just select <em>LightDM</em>.</p>
+  </li>
+  <li>
+    <p>To switch on flashback mode , we have to install a package and disable the newer scrollbars. Type:   <br />
+  <code>sudo apt-get install gnome-session-flashback</code></p>
+  </li>
+  <li>
+    <p>[This step is <em>not necessary</em> on the Ubuntu version used in this tutorial]  <br />
+ <code>sudo apt-get purge overlay-scrollbar gsettings set org.gnome.desktop.interface ubuntu-overlay-scrollbars false</code></p>
+  </li>
+  <li>
+    <p>[This step is <em>not necessary</em> on the Ubuntu version in this tutorial]  <br />
+ You might also need the following package on older Ubuntu versions (if in doubt, install it anyway, it should already be installed and then it does nothing)  <br />
+ <code>sudo apt-get install xfonts-base</code></p>
+  </li>
+</ol>
+
+<h3 id="kde">KDE</h3>
+
+<p><em>Note:</em> Only versions earlier than KDE 5 are supported in X2Go. With the ubuntu version used in this course, you may use KDE.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>You can find out your version of KDE (after you installed it with following instructions) with:  <br />
+     <code>kde4-config -v</code></p>
+
+				</div>
+
+<p>Install the desktop environment by typing into your <em>ssh terminal</em>:</p>
+
+<p><code>sudo apt-get install kde-plasma-desktop</code></p>
+
+<p><em>Alternatively</em>, if you want to have some more apps pre-installed (this will take longer and take up more space), <strong><em>instead</em></strong> of the command above, type:</p>
+
+<p><code>sudo apt-get install kde-full</code></p>
+
+<p>Confirm the installation of the package with ‘<strong>Y</strong>’. This may take a while as a lot of packages need to be downloaded.</p>
+
+<p>Hit <strong>[Enter]</strong> to confirm the message about installing KDE. Then, you have to select the default display manager. It does not really matter which one you choose if there are several options. The correct display manager will be started by your remote destkop client anyway. <em>KDM</em> is the display manager for KDE, so if unsure, just select this one.</p>
+
+<p><img src="images/KDE.png" class="aligncenter" style="width:70%; " alt="image" /></p>
+
+<h3 id="other-desktop-environments">Other desktop environments</h3>
+
+<p>There are also other desktop environments, for example <em>MATE</em>, which we will not discuss further in this tutorial.</p>
+
+
+  </article>
+
+
+  
+  <!--
+  Previous section / Next section links. Very simple design to start with.
+  -->
+  <p>
+  
+  	
+    <a href="/package07/sections/remoteDesktop.html">Previous section</a>
+  
+  &nbsp; &nbsp; &nbsp;
+  
+  	
+    <a href="/package07/sections/connectWithX2Go.html">Next section</a>
+  
+  </p>
+   <!-- endif for pagedata_avail -->
+
+</div>
+
+      </div>
+    </div>
+
+    <div style="background-color: #0E0E0E; padding: 20px 20px 20px 60px; color: white; font-size: 12px">
+  <p>Copyright &copy;2015 NeCTAR</p>
+  <img src="/images/NCRIS_PROVIDER_rev.png" alt="NCRIS_PROVIDER_rev" width="132" height="63" />
+  <p><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png">
+  This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a></p>
+</div>
+
+
+  </body>
+
+</html>

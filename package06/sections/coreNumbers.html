@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel='shortcut icon' href='/images/icon.png' />
+
+  <title>Resource requirements for computing and storage</title>
+  <meta name="description" content="Nectar National Training Resources
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://training.nectar.org.au/package06/sections/coreNumbers.html">
+  <link rel="alternate" type="application/rss+xml" title="Nectar Training" href="http://training.nectar.org.au/feed.xml" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61845992-2', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+<div class="nec-header">
+  <div class="header-top">
+    <div class="header-top-page">
+      <div class="nect-login">
+        <a href="https://support.nectar.org.au/support/home">Support</a>
+        <a href="http://cloud.nectar.org.au/contact/" class="new-tick">Contact</a>
+        <b><a href="https://dashboard.rc.nectar.org.au/"><b>Login</b></a></b>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-main">
+    <div class="header-main-page">
+      <div class="logo-nect">
+        <img src='/images/nectar_cloud_logo.jpg' alt="Nectar" height="43", width"248">
+      </div>
+      <div class="menu-nect">
+        
+          <a href="/" class="selected">Self-paced Training</a>
+          <a href="/for-trainers.html">Resources for Trainers</a>
+        
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="normal-block">
+  <div class="normal-block-page">
+    
+      <h3>Self-paced Training</h3>
+    
+  </div>
+</div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+          <!-- 
+    Preprocessing: Determine which part number this is. To avoid having to set numbers 
+    manually on each page, determine this here by the file name. 
+    -->
+  
+  
+  
+  
+  
+
+  
+  
+      
+  
+
+  
+  
+  
+  
+  
+  	
+  	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+		
+	
+		
+		
+		
+	
+		
+		
+		
+	
+		
+		
+		
+	
+		
+		
+		
+	
+		
+		
+			
+		
+		
+			
+			
+			
+  	<!-- If we are not in the main hierarchy, we may be looking at a file of one of the sub-categories -->
+	
+  
+
+
+
+<div class="post">
+
+  <header class="post-header">
+    <h3>Module 6</h3>
+    <h1>Resource requirements for computing and storage</h1>
+  </header>
+
+  
+
+  <!--
+    List of the individual parts of this module (so not all content gets crammed on one page).
+    Rendering this list first is necessary 
+  -->
+  <p> Sections of this module:</p>
+  
+	
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package06/sections/index.html"> Introduction</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package06/sections/storage.html"> Storage</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+	
+		
+	 
+		
+			
+		
+		
+
+		
+		
+			
+		
+		
+			
+				 <b>
+			
+			
+      <a href="/package06/sections/coreNumbers.html"> How many cores do I need?</a>
+			
+				</b>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package06/sections/instanceNumbers.html"> Can I benefit from several VMs?</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package06/sections/summary.html"> Summary</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package06/sections/literature.html"> Literature</a>
+			
+			<br/>
+		
+	
+  <br/>
+
+
+  <a href="/package06/sections/all.html" target="_blank">View all sections on one page (Printer friendly)</a>
+  <br/>
+  <br/>
+  <h1> How many cores do I need? </h1>
+
+   <!-- endif for pagedata_avail -->
+  
+
+  <!--
+  Content of page
+  -->
+  <article class="post-content">
+    
+<p>Virtual machine (VM) instances in the Research Cloud are available in “Standard” sizes:</p>
+
+<ul>
+  <li>
+    <p>Small (1 core), Medium (2 cores), Large (4 cores), Extra-large or XL (8 cores), XXL (16 cores)</p>
+  </li>
+  <li>
+    <p>Per core, a VM gets 4 GB of memory (RAM) and 30 GB of On-Instance Storage (On-Instance secondary drive).</p>
+  </li>
+  <li>
+    <p>Example: an XL VM instance has 8 processing cores, 32 GB RAM and 240 GB of On-Instance Storage.</p>
+  </li>
+</ul>
+
+<p>You may be unsure how many CPU cores you need for your instance: Which flavor to choose?</p>
+
+<p><strong><em>You will have to take a closer look at your application to find out how much you can benefit from several cores.</em></strong></p>
+
+<p>Some applications are <strong>single-threaded</strong>, which means they only use one core anyway. In this case, you will not benefit from launching an instance with several cores.   <br />
+However many applications are <strong>multi-threaded</strong>, and support a certain number of <em>threads</em> (you may regard a thread as a working process that can run on its own core). The documentation of your application should reveal more information about that.</p>
+
+<p><strong>Example:</strong>  <br />
+Say your application supports 6 threads. You may then select up to the same number of cores — with 6 cores, the application will run at maximum performance. If you choose more cores, you will not experience any performance gains. It is ok to select a lower number of cores: say, you choose 2 cores while your application supports 6 threads. In this case, the workload of the 6 threads will be distributed across the 2 cores, and your application will run <em>one third of its maximum performance</em> (2 cores / 6 threads).</p>
+
+<p><img src="images/MultiThreaded.png" class="aligncenter" style="width:400px; " alt="image" /></p>
+
+<h3 id="use-of-openmp">Use of OpenMP</h3>
+
+<p><em>OpenMP</em> is an API that can be used for multi-thread handling on <em>shared memory systems</em>.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>A computer (or a virtual machine) with several CPUs is a <strong>shared memory system</strong> when all CPUs access the <em>same</em> memory.</p>
+
+				</div>
+
+<p>OpenMP uses a set of compiler directives (within the C code) that generate a multi-threaded version of your code at compile time.</p>
+
+<p>You can think of OpenMP as a slightly more automated way to create multi-threaded programs than when low-level thread libraries as <em>pthread</em> were used.
+As such, also OpenMP programs gain maximum performance when it is given the same amount of cores as it uses threads (the cores may also be distributed over <em>several CPUs</em> of the same machine).</p>
+
+
+  </article>
+
+
+  
+  <!--
+  Previous section / Next section links. Very simple design to start with.
+  -->
+  <p>
+  
+  	
+    <a href="/package06/sections/storageRecommendations.html">Previous section</a>
+  
+  &nbsp; &nbsp; &nbsp;
+  
+  	
+    <a href="/package06/sections/instanceNumbers.html">Next section</a>
+  
+  </p>
+   <!-- endif for pagedata_avail -->
+
+</div>
+
+      </div>
+    </div>
+
+    <div style="background-color: #0E0E0E; padding: 20px 20px 20px 60px; color: white; font-size: 12px">
+  <p>Copyright &copy;2015 NeCTAR</p>
+  <img src="/images/NCRIS_PROVIDER_rev.png" alt="NCRIS_PROVIDER_rev" width="132" height="63" />
+  <p><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png">
+  This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a></p>
+</div>
+
+
+  </body>
+
+</html>

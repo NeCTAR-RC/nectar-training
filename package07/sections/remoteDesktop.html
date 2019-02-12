@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel='shortcut icon' href='/images/icon.png' />
+
+  <title>Launching and Connecting</title>
+  <meta name="description" content="Nectar National Training Resources
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://training.nectar.org.au/package07/sections/remoteDesktop.html">
+  <link rel="alternate" type="application/rss+xml" title="Nectar Training" href="http://training.nectar.org.au/feed.xml" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61845992-2', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+<div class="nec-header">
+  <div class="header-top">
+    <div class="header-top-page">
+      <div class="nect-login">
+        <a href="https://support.nectar.org.au/support/home">Support</a>
+        <a href="http://cloud.nectar.org.au/contact/" class="new-tick">Contact</a>
+        <b><a href="https://dashboard.rc.nectar.org.au/"><b>Login</b></a></b>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-main">
+    <div class="header-main-page">
+      <div class="logo-nect">
+        <img src='/images/nectar_cloud_logo.jpg' alt="Nectar" height="43", width"248">
+      </div>
+      <div class="menu-nect">
+        
+          <a href="/" class="selected">Self-paced Training</a>
+          <a href="/for-trainers.html">Resources for Trainers</a>
+        
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="normal-block">
+  <div class="normal-block-page">
+    
+      <h3>Self-paced Training</h3>
+    
+  </div>
+</div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+          <!-- 
+    Preprocessing: Determine which part number this is. To avoid having to set numbers 
+    manually on each page, determine this here by the file name. 
+    -->
+  
+  
+  
+  
+  
+
+  
+  
+      
+  
+
+  
+  
+  
+  
+  
+  	
+  	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+			
+			
+			
+  	<!-- If we are not in the main hierarchy, we may be looking at a file of one of the sub-categories -->
+	
+  
+
+
+
+<div class="post">
+
+  <header class="post-header">
+    <h3>Module 7</h3>
+    <h1>Launching and Connecting</h1>
+  </header>
+
+  
+
+  <!--
+    List of the individual parts of this module (so not all content gets crammed on one page).
+    Rendering this list first is necessary 
+  -->
+  <p> Sections of this module:</p>
+  
+	
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/index.html"> Introduction</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/createSSHKey.html"> Create a ssh key</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/launching.html"> Launching an instance</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/connectViaSSH.html"> Connect to the instance</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/firstSSHCommands.html"> Configuration and control</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+			
+		
+		
+
+		
+		
+			
+		
+		
+			
+				 <b>
+			
+			
+      <a href="/package07/sections/remoteDesktop.html"> Connect to a remote desktop</a>
+			
+				</b>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+			
+				
+			
+		
+		
+			
+			
+      <a href="/package07/sections/installDesktopEnvironment.html">&nbsp;&nbsp; Install a desktop environment</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+			
+				
+			
+		
+		
+			
+			
+      <a href="/package07/sections/connectWithX2Go.html">&nbsp;&nbsp; Connect with X2Go</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+			
+				
+			
+		
+		
+			
+			
+      <a href="/package07/sections/connectWithVNC.html">&nbsp;&nbsp; Connect with VNC</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+			
+				
+			
+		
+		
+			
+			
+      <a href="/package07/sections/runSeveralDesktopEnvs.html">&nbsp;&nbsp; Running several desktop environments</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/guiViaSSH.html"> Graphical Interfaces on the ssh terminal</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/enableWebServer.html"> Install a web server</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/manageStorage.html"> Managing storage</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/summary.html"> Summary</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package07/sections/appendices.html"> Appendix</a>
+			
+			<br/>
+		
+	
+  <br/>
+
+
+  <a href="/package07/sections/all.html" target="_blank">View all sections on one page (Printer friendly)</a>
+  <br/>
+  <br/>
+  <h1> Connect to a remote desktop </h1>
+
+   <!-- endif for pagedata_avail -->
+  
+
+  <!--
+  Content of page
+  -->
+  <article class="post-content">
+    
+<p>Using the command line may not feel very intuitive, especially for beginners. Aside from that, sometimes we need to run software that has a graphical interface.</p>
+
+<p>As an alternative to connecting with a ssh terminal, we can also connect to the <em>desktop</em> of our instance and get a graphical interface as we know it from our own computers. A <strong>remote desktop login</strong> allows users to connect to their desktop while being physically away from their computer.</p>
+
+<p>You can also connect to your own home computer’s desktop while you are away, if you set up your home computer accordingly with remote access. This may be a bit difficult to do from your organisation or from your home, as you need access to the computer via the internet from outside, which may require the permission of firewalls used on the premises, and you need a fixed IP address.</p>
+
+<p>However on your NeCTAR instance, it is easy to set up a remote desktop, because the instance is already accessible from outside.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Some remote desktop solutions allow only one user to see the desktop at the same time. Other software also allows <em>desktop sharing</em> in which several users can see a desktop simultaneously. Such a shared desktop can be used as a platform for <em>real-time collaboration</em>. This mostly requires a separate setup, which is not part of this tutorial.</p>
+
+				</div>
+
+<p>To connect to a remote desktop, the remote machine (your instance) has to have a <strong>remote desktop server</strong> installed and running. On your home or office computer, you have to install a <strong>remote desktop client</strong> (sometimes called <em>“viewer”</em>) which connects to the remote desktop server on your instance. The client then displays the desktop of your remote machine. It is like a “window” into your instances desktop; The desktop environment itself is running on the instance.</p>
+
+<h3 id="terminals-on-remote-desktop-vs-ssh-terminal">Terminals on remote desktop <em>vs</em> SSH terminal</h3>
+
+<p>We have previously connected to the instance with via a <em>ssh terminal</em>. When we get a window into the desktop of our instance, we can open a terminal on the desktop as well.</p>
+
+<p>The image below shows both (1) a ssh terminal (left) and (2) a desktop with an open terminal (right):</p>
+
+<p><img src="images/scrTerminalOnRemoteDesktop.png" class="aligncenter" style="width:80%; " alt="image" /></p>
+
+<p>So what is the difference between the two terminals? When you type <strong>commands</strong> in either of them, it <strong>will have the same effect</strong>. They are both terminals that you can use to control your instance. However, the difference is that</p>
+
+<ol>
+  <li>
+    <p>The ssh terminal is set up through a secure ssh communication line with your instance. If we use a ssh terminal, <strong>only text</strong> is being transferred (the commands you type and the responses you get). This is very fast, but you cannot run graphical applications, because you can only communicate with the instance via text.  <br />
+<em>Note</em>: it actually is possible to run graphical applications via the terminal as well, with some disadvantages. This is discussed <a href="guiViaSSH.html">later in this module</a>, but this is very slow and usually not recommended.</p>
+  </li>
+  <li>
+    <p>The terminal on the remote desktop is connected securely as well (at least the way we will set it up in this tutorial). But instead, the communication includes graphical data and events (e.g. your mouse clicks, and the windows displayed). This is slower than using the terminal only, but you may find it is still fast enough to work with. You can run graphical applications and use the OS menu to find programs and change settings, which may be easier for many of us.</p>
+  </li>
+</ol>
+
+<h3 id="remote-desktop-protocols">Remote desktop protocols</h3>
+
+<p>When you are connected to a remote desktop, everything you do to interact with the system, for example clicking the mouse, moving a window or typing on your keyboard, is communicated to the remote machine (in this case, your instance). For this kind of communication, computers use <em>“protocols”</em> which are designed for this purpose.</p>
+
+<p>The type of protocol determines properties of the remote desktop, for example how secure it is, how fast it works and what kind of desktop environments it supports. In this tutorial we will use two different protocols to connect to our remote desktop: <em>NX</em> and <em>VNC</em>.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Some wide-spread protocols include:</p>
+
+<ul>
+  <li>RDP (Remote Desktop Protocol)
+    <ul>
+      <li>Originally developed by Microsoft to connect to Windows machines.</li>
+      <li>The protocol is <strong>not very secure</strong>, therefore setting up <em>“tunneling”</em> through a secure connection is required.</li>
+    </ul>
+  </li>
+  <li>NX
+    <ul>
+      <li>NX compresses the data to minimize the amount of information transmitted. NX also caches data to make the session as responsive as possible. For example the first time a menu is opened it may take a few seconds, but on each subsequent opening the menu will appear almost instantly. Therefore, NX allows <strong>fast speed</strong> even with slow internet connections.</li>
+      <li>NX uses the SSH protocol to send its data and is therefore <strong>secure</strong>.</li>
+    </ul>
+  </li>
+  <li>VNC (Virtual Network Computing)
+    <ul>
+      <li>The VNC Protocol (called the RFB protocol) is very simple. It is based on graphic primitives from server to client (“Put a rectangle of pixel data at the specified X,Y position”) and event messages from client to server. This makes VNC <strong>a bit slow</strong>.</li>
+      <li>By default, this is <strong>no secure protocol</strong>. Therefore, you need to <em>“tunnel”</em> the connection via a secure SSH connection to make it secure. This may seem a bit complicated to achieve for beginners. Alternatively, some clients like <a href="http://www.uvnc.com/">UltraVNC</a>) support the use of an encryption plugin which encrypts the entire VNC session.</li>
+      <li>Because VNC is quite popular, the <strong>client software options</strong> are pretty good for Unix and Windows platforms.</li>
+      <li>VNC allows multiple users to see (share) the same desktop.</li>
+      <li>To transfer files, printing or audio requires separate services. The VNC only handles displays and inputs, such as interaction with keyboard and mouse.</li>
+      <li>Users may access desktops with VNC through their Web browser, without needing to install separate viewer applications. VNC displays a desktop within a browser window by running a Java applet, and this facility should work on any system that has a JVM installed.</li>
+      <li>VNC does not support the newer “3D desktops” (e.g. the newer GNOME/Unity or KDE desktops environments. The desktop environments have to be run in classical 2D mode for it to work (e.g. GNOME Flashback).</li>
+      <li>To learn more about VNC, here is a <a href="http://www.stuartellis.eu/articles/vnc-on-linux/">good article</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Free remote desktop client and server software</strong> includes:</p>
+
+<ul>
+  <li>Vnc4server
+    <ul>
+      <li>the main VNC server software for Linux.</li>
+    </ul>
+  </li>
+  <li>UltraVNC, RealVNC, TightVNC
+    <ul>
+      <li>popular clients for VNC sessions</li>
+    </ul>
+  </li>
+  <li>X2Go
+    <ul>
+      <li>An open source product which is pretty fast.</li>
+      <li>It uses the NX protocol and is operates through a secure SSH connection</li>
+      <li>Supports remote audio, printing, clipboard, file sharing etc.</li>
+      <li>Can share a user’s session remotely, but it has to be set up separately.</li>
+      <li>It is fairly easy to set up</li>
+      <li>There is even a readily available browser plugin to make remotely controlling another PC possible from a web browser. <em>But:</em> Port forwarding and Dynamic DNS are recommended if you’re using this over the Web.</li>
+      <li>Due to the use of older NX libraries, it has problems with the newer “3D Desktops”, e.g. Gnome/Unity and newer KDE desktop environments. Only the older environments are supported.</li>
+      <li>No Android / iOS client available, unless using the web interface</li>
+    </ul>
+  </li>
+  <li>NX Server, free edition
+    <ul>
+      <li>Easy to set up</li>
+      <li>Not very fast</li>
+      <li>Only free to 3 users</li>
+      <li>Can’t <em>share</em> a user’s session remotely.</li>
+    </ul>
+  </li>
+  <li>FreeNX Server
+    <ul>
+      <li>A Server for the NX protocol, similar to NX Server, but free.</li>
+      <li>No real good documentation, not easy to install</li>
+      <li>Can’t <em>share</em> a user’s session remotely.</li>
+    </ul>
+  </li>
+  <li><a href="https://www.nomachine.com/">NoMachine</a>)
+    <ul>
+      <li>A client to connect to an NX server (e.g. FreeNX).</li>
+      <li>Not free for commercial use (only private)</li>
+      <li>Simultaneous connections from only 2 users.</li>
+    </ul>
+  </li>
+  <li>NeatX (<em>outdated</em>)
+    <ul>
+      <li>Google has released NeatX, a complete independent implementation of the NX protocol.</li>
+      <li>Neatx was developed as part of an internal project which has now finished. It had no releases and is not being actively developed.</li>
+      <li>Can’t <em>share</em> a user’s session remotely.</li>
+    </ul>
+  </li>
+  <li>xrdp
+    <ul>
+      <li>uses the RDP protocol (which is not very secure)</li>
+      <li>Servers are also available for Unix and Mac.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Commercial products</strong> may be better and easier to set up than the free software listed above, but they come at a cost (at least for commercial use). Popular software includes:</p>
+
+<ul>
+  <li><a href="https://www.teamviewer.com/en/index.aspx">TeamViewer</a>
+    <ul>
+      <li>supports Windows, OS X, Linux, Android, and iOS</li>
+      <li>free for personal use</li>
+      <li>setup very easy</li>
+      <li>pretty expensive for commercial / business use</li>
+    </ul>
+  </li>
+  <li><a href="http://www.splashtop.com/">Splashtop</a>
+    <ul>
+      <li>supports Windows, OS X, Linux, Android, and iOS</li>
+      <li>allows you to stream audio and video across computers with minimal latency</li>
+      <li>very easy to use and set up</li>
+    </ul>
+  </li>
+  <li><a href="http://www.realvnc.com/">RealVNC</a>
+    <ul>
+      <li>The “Official” VNC software</li>
+      <li>Offers its client and server apps for Windows, OS X, Linux, Android, iOS, Chrome</li>
+      <li>free for basic individual private use, but added features and support come at an extra cost.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Wikipedia offers a good <a href="http://en.wikipedia.org/wiki/Comparison_of_remote_desktop_software">comparison of remote desktop software</a>.</p>
+
+
+				</div>
+
+<p>The options which are easiest to set up and provide a fairly good user experience are <strong>X2GO</strong> (using the NX protocol) and <strong>VNC</strong>. In the following exercises, we will see how we can set up both of these options using freely available software.</p>
+
+<p><strong>VNC vs X2Go</strong></p>
+
+<p>X2Go uses the NX protocol, and VNC the RFB protocol. This makes for different properties and advantages of each approach.</p>
+
+<p>The VNC protocol is pixel based. This can make it a bit slow. One advantage is that it is widely used, and several available remote desktop products use this network protocol. This means that you may use <em>any</em> VNC viewer (client) to connect to a system that offers remote access with the VNC protocol.</p>
+
+<p>The NX protocol (used by X2Go) has a better understanding of the underlying graphic layout than VNC (which is pixel-based). Therefore, it is often more efficient (faster).</p>
+
+<p><em>In summary:</em></p>
+
+<p>VNC:</p>
+
+<ul>
+  <li>inherent support of different platforms: you can install it on Unix and Windows servers</li>
+  <li>is widely used, hence there is a large number of tools</li>
+  <li>is slow</li>
+  <li>is inherently insecure, it takes a bit more work to set up a secure connection</li>
+</ul>
+
+<p>NX (X2Go):</p>
+
+<ul>
+  <li>is fast</li>
+  <li>easily integrates with security plugins</li>
+  <li>there are not many well-maintained servers and clients available (X2Go is one of the few)</li>
+  <li>Servers can only be installed on Unix servers, for Windows/Mac there are only clients (no servers)</li>
+  <li>On Mac computers, installation of the X2Go client is a bit more work than on Windows and Linux, and usage can also be a little slower.</li>
+</ul>
+
+
+  </article>
+
+
+  
+  <!--
+  Previous section / Next section links. Very simple design to start with.
+  -->
+  <p>
+  
+  	
+    <a href="/package07/sections/firstSSHCommands.html">Previous section</a>
+  
+  &nbsp; &nbsp; &nbsp;
+  
+  	
+    <a href="/package07/sections/installDesktopEnvironment.html">Next section</a>
+  
+  </p>
+   <!-- endif for pagedata_avail -->
+
+</div>
+
+      </div>
+    </div>
+
+    <div style="background-color: #0E0E0E; padding: 20px 20px 20px 60px; color: white; font-size: 12px">
+  <p>Copyright &copy;2015 NeCTAR</p>
+  <img src="/images/NCRIS_PROVIDER_rev.png" alt="NCRIS_PROVIDER_rev" width="132" height="63" />
+  <p><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png">
+  This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a></p>
+</div>
+
+
+  </body>
+
+</html>

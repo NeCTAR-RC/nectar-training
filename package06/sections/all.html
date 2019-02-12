@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel='shortcut icon' href='/images/icon.png' />
+
+  <title>Resource requirements for computing and storage</title>
+  <meta name="description" content="Nectar National Training Resources
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://training.nectar.org.au/package06/sections/all.html">
+  <link rel="alternate" type="application/rss+xml" title="Nectar Training" href="http://training.nectar.org.au/feed.xml" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61845992-2', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+
+
+  <body>
+    <div class="page-content">
+      <div class="wrapper">
+        <p><a href="/"><img src="/images/nectar_cloud_logo.jpg" alt="Nectar"/></a></p>
+        <h3>Module 6</h3>
+        <h1>Resource requirements for computing and storage</h1>
+
+        
+<h2 id="introduction">Introduction</h2>
+
+<p>The previous modules have discussed what the research cloud is, what a virtual machine is and how you can use it for your research. You may now ask yourself: How many instances do I require? How many CPU cores per instance? How much storage can I get, and what types of storage are available?</p>
+
+<p>In this module we will discuss factors which help you determine the amount of resources (computing and storage) you require. We will take a look at the different types of storage that are available to you, which will help you decide which type is most suitable for your research purposes.</p>
+
+<h3 id="videos">Videos</h3>
+
+<p>The following videos go through most of the content in this module and offer a less in-depth description of the subject than the documentation does.</p>
+
+<p><a href="https://www.youtube.com/watch?v=brAmLtNbK-w">https://www.youtube.com/watch?v=brAmLtNbK-w</a></p>
+
+<p><a href="https://www.youtube.com/watch?v=0kbL2NuF5ow">https://www.youtube.com/watch?v=0kbL2NuF5ow</a></p>
+
+<p><a href="https://www.youtube.com/watch?v=JKYZJWQZK5c">https://www.youtube.com/watch?v=JKYZJWQZK5c</a></p>
+
+<h3 id="conventions">Conventions</h3>
+
+<p>The notation throughout the training documents can be interpreted as follows:</p>
+
+<p>Words in <em>italics</em> are used for names and terminology, e.g. name of a software, or name of a computing concept. It may also just emphasise a word in the traditional way. Quotations are also written in italics and are put in between quotatioin marks.</p>
+
+<p>Words in <strong>bold</strong> are used to highlight words which identify important concepts of a paragraph, to make it easier for users to skim through the text to find a paragraph which explains a certain idea, concept or technology.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><strong>Additional information</strong> which is optional to read is displayed in <em>info boxes</em> like this one.</p>
+
+				</div>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><strong>Important information</strong> is displayed in boxes like this one.</p>
+
+				</div>
+
+<div class="bgDefinition" style="min-height: 55px;">
+					<img src="/images/glyphicons-352-book-open.png" alt="image" align="left" style="width:24px; height:22px;
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><strong>Definition of terms</strong> are displayed in boxes of this style.</p>
+
+				</div>
+
+<div class="bgPrerequisite">
+					<img src="/images/glyphicons-333-certificate.png" alt="image" align="left" style="width:17px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Possibly specific <strong>prerequisites</strong> for reading a particular section are contained in this type of box at the beginning of a section.</p>
+
+				</div>
+
+<h2 id="storage">Storage</h2>
+
+<p>The most commonly used storage systems that you are probably familiar with are <em>filesystem storage</em> (commonly deployed as <em>Network Attached Storage</em>, short <em>NAS</em>) and <em>block level storage</em>.</p>
+
+<ul>
+  <li>
+    <p><em>Filesystem storage</em> is used for transferring <strong>individual files</strong> over a network to or from the storage.
+In a file system, files are organized in a hierarchical way, so that an individual file can be located by describing the <em>path</em> to that file. 
+Network-attached storage (NAS) is a great way to share files securely among users on a network — it works well on a local network for a large number of files, but not so well over the Internet, and managing billions of files.</p>
+  </li>
+  <li>
+    <p><em>Block storage</em> appears to the system and the user as <strong>attached drives</strong>. A <em>Block</em> is a chunk of data which may contain several files. 
+<em>Block storage</em> is the type of storage that is required for running things like databases, or as a storage required by applications (e.g. your data analysis software) which frequently access and write files.</p>
+  </li>
+</ul>
+
+<p>Both of these storage types do not efficiently scale up. However, block storage may still be essential to your research application it is required for fast and efficient access from within applications; Many traditional applications only support file access in simple block storage systems.
+A more <em>scalable</em> system has been designed which is better suited for Big Data demands: The <em>Object Storage</em> which is based on the principle of <em>filesystem storage</em>.</p>
+
+<p>Altogether, there are <em>three</em> different types of cloud storage available to you on the NeCTAR Research Cloud:</p>
+
+<ul>
+  <li>
+    <p><strong>On-Instance storage</strong> — this comes with your instance and is <em>“ephemeral”</em>: any files disappear when the VM is terminated (completely shut down, or “deleted”). You may treat this storage as <em>block storage</em>. This storage is limited in size. There are two on-instance storage disks: The <em>primary</em> and <em>secondary</em> disk.</p>
+  </li>
+  <li>
+    <p><strong>Volume storage</strong> — this is persistent, expandable storage that can be attached to a VM like one or more virtual hard disks. It is independent of a VM.</p>
+  </li>
+  <li>
+    <p><strong>Object storage</strong> — individual data files can be uploaded to the object store and accessed from the VM or from anywhere via the web (e.g. using a web browser). Files are <em>replicated</em> across several physical locations in order to achieve good data integrity, protect against data loss and ensure fast access.</p>
+  </li>
+</ul>
+
+<p>The storage system is shared among instances. Not all storage is created equal, and the different types of storage differ according to performance, persistence and data safety.</p>
+
+<p>This summary table provides a comparison of various data storage features.</p>
+
+<p><img src="images/StorageTypes.png" class="aligncenter" style="width:95%; " alt="image" /></p>
+
+<ol>
+  <li>
+    <p><strong>Saved in snapshot</strong>: You may save the state of your instance with a “snapshot”. However a snapshot does not include all types of storage.</p>
+  </li>
+  <li>
+    <p><strong>Data Integrity</strong>: how exposed your data is to hardware errors.</p>
+  </li>
+  <li>
+    <p><strong>Access</strong>: there are two methods of access: either as a <em>BLOCK</em> level device (like attaching a hard drive to a computer) or <em>HTTP</em> where you use a client to <em>GET</em> or <em>POST</em> objects.</p>
+  </li>
+  <li>
+    <p><strong>Backed up</strong>: is where there is a recoverable copy of a file available after a file is updated, deleted or damaged. Backup typically refers to maintaining a completely separate backup system, where, for example, the backup system runs nightly and takes an incremental backup of any new data.</p>
+  </li>
+</ol>
+
+<p>As you can see, none of the data is backed up, so you will have to do backups yourself, which is subject to <a href="/package09/sections/index.html" title="Module 9">Module 9</a>. However, Object Storage has a high data integrity, which is a form of protection against data loss as well.</p>
+
+<h2 id="on-instance-storage">On-Instance storage</h2>
+
+<p>Each instance you start on the cloud comes with a certain amount of On-Instance storage, also called <strong>ephemeral storage</strong>, which appears as two separate hard disks: The <em>primary</em> and <em>secondary</em> disk. When you launch an instance (which you will do in <a href="/package07/sections/index.html" title="Module 7">Module 7</a>), you will choose a <em>“flavor”</em>. The flavor determines the number of CPUs of your VM and also the sizes of the two disks on the On-Instance storage. The primary disk is saved with Snapshots which you take of the instance. The secondary disk is <em>not</em> backed up with Snapshots!</p>
+
+<p><strong>Example:</strong> In the flavor <em>“m1.small”</em>, you get a primary disk of 10GB.  The secondary disk is 30GB—480GB depending on the flavor you select and your allocation. The first disk (10GB) is backed up when you take a Snapshot, whereas the second, larger disk is <em>not</em> included in the snapshot.</p>
+
+<p>You can use the On-Instance storage as <em>block storage</em>, for example for your programs to read/write files to, or to operate your databases.</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>On-instance storage is regarded as <em>ephemeral</em> — when you terminate your VM, or an unplanned re-start of the Hypervisor takes place in the NeCTAR Node, the data will be lost and cannot be recovered! You should treat it as <strong>scratch space</strong> and keep important data in either volumes or the object store.</p>
+
+				</div>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Not all flavors provide a secondary disk. At the time of writing, the following do:</p>
+
+<ul>
+  <li>Collection of images called <em>“standard-v2”</em>: Starting from flavor <em>m2.large</em> and bigger.</li>
+  <li>Collection of images called <em>“standard”</em>: Starting from flavor <em>m1.small</em> and bigger.</li>
+</ul>
+
+
+				</div>
+
+<p>For more information on on-instance storage, please refer to the <a href="http://support.rc.nectar.org.au/docs/instance-storage">NeCTAR support website</a></p>
+
+<h2 id="volume-storage">Volume storage</h2>
+
+<p>You may think of <em>Volume Storage</em> (also referred to as <em>block storage</em>) as a <em>section</em> of a large hard-drive which has been assigned for your use. Volume storage appears to the system and the user as <em>attached drives</em>. You will see it listed in your file explorer along with your other harddrives.</p>
+
+<p>You have to <em>request an allocation</em> (see <a href="/package05/sections/allocations.html">Module 5</a>) to obtain access to Volume storage. Depending on your requirements and how you justify your needs, you may get access to very large Volumes.</p>
+
+<p>Volume storage can live outside your instance. It appears as block storage which can be attached and then accessed from any of your instances. 
+You can attach the Volume to your instance, read and write data, detach it, and make it available to another instance. 
+Your data on a Volume is retained even when you terminate your instance. Volumes also offer a <em>Snapshot</em> feature which can be used to make convenient backups (this uses some of your overall Volume quota).</p>
+
+<p>You can use the Volume storage as regular <em>block storage</em>, for example for your programs to read/write files to from within a program, or to operate your databases. You may also store all your important files on the Volumes — however don’t forget to do regular backups (more about this in <a href="/package09/sections/index.html" title="Module 9">Module 9</a>)!</p>
+
+<p>It is also possible to boot an instance from a Volume. For more information, please refer to the <a href="http://support.rc.nectar.org.au/docs/volumes">NeCTAR support website</a>.</p>
+
+<p>In <a href="/package07/sections/index.html" title="Module 7">Module 7</a> we will learn how to attach and detach a Volume to an instance and access the data on it. <a href="/package09/sections/index.html" title="Module 9">Module 9</a> will discuss how to do Backups of Volumes.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Volumes are <em>local services</em> and only instances living in the same Node where the Volume has been created can access it.</p>
+
+				</div>
+
+<h2 id="object-storage">Object storage</h2>
+
+<p>Object storage targets the problem of data growth: As more and more data is generated, storage systems have to grow at the same pace. 
+What if you try to expand a block-based storage system beyond multiple terabytes? You may hit limitations with the storage infrastructure, and managing a huge storage becomes very complex. 
+A per-file object-based storage instead is easier to manage and can be distributed.</p>
+
+<div class="bgDefinition" style="min-height: 55px;">
+					<img src="/images/glyphicons-352-book-open.png" alt="image" align="left" style="width:24px; height:22px;
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>An <em>object</em> in <em>Object Storage systems</em> is defined as <em>data</em> (typically a file) along with all its metadata, all bundled up as one <em>object</em>. Each object has a unique <em>ID</em> which is used by applications to retrieve the object. Unlike files in traditional hierarchical file systems, objects are stored in a <em>flat structure</em>. There is a pool of objects, and a given object is retrieved by presenting its object ID. Objects may be local or geographically distributed, but because they are in a flat structure (retrieved by their ID only), they are all retrieved exactly the same way.</p>
+
+				</div>
+
+<p>Multiple copies of all object data is stored over a distributed system, while the storage still acts as one. Object Storage is highly fault tolerant through redundancy and distribution of data: If one or more nodes fail, the data can still be available — in most cases you as an end user will not even notice that a node was down. Object Storage therefore has a <strong>great data integrity</strong>! In most cases at least 3 copies of a file are stored across several nodes.
+You don’t have to do anything to maintain the multiple copies, this is done automatically for you. 
+Object Storage also scales up nicely, and it is easy to access your files from anywhere with a variety of devices.</p>
+
+<p><img src="images/ObjectStorage.png" class="aligncenter" style="width:80%; " alt="image" />
+The image above visualizes how 3 copies of your data are kept at different data centers, maybe even on different hard drives in the same data center. When you access the object store, you request a file by its ID, and it is automatically retrieved from the closest or more available data center.</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>While Object Storage has high data integrity through geographical distribution of files, it does <em>not</em> have a “traditional” dedicated backup system — it merely provides a means to increase availability and integrity of your data by keeping multiple copies.</p>
+
+				</div>
+
+<p>In the OpenStack Object Store, you may get access to large amounts of storage. Ultimately, this is limited by the storage cluster size of about 40TB. You may upload as many files as you like, as long as your allocation is not exceeded. The size of the files is not limited, however due to limits in the <em>http</em> protocol it is not recommended to upload files larger than 1GB.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>The NeCTAR <em>trial account</em> has a default of 10GB object storage allocation. When you lodge an application for resources, you have to specify the amount of object storage you require, otherwise you won’t receive any allocation for object storage.</p>
+
+				</div>
+
+<h3 id="suitable-use-of-object-store">Suitable use of object store</h3>
+
+<p>Object Storage is not a traditional file-system or real-time data storage system. It’s designed for mostly static data that can be retrieved, leveraged, and then updated if necessary. It is independent of a particular instance and can be updated and used without having any instance running. It is designed to be redundant and scalable.</p>
+
+<p>Think about that dataset comprised of 2GB files that you read in and analyse many times, but in general it doesn’t change. Or the images you want to use on the cloud. Those are a couple examples of what’s perfect for Object Storage.</p>
+
+<p>In general, the object store is great for data you write once and read many times, but not suitable for applications like databases. It’s the safest place to put your data on the NeCTAR Research Cloud as multiple redundant copies of your data are made, and it has great performance. You can access the object store from anywhere via the Internet, and data from Object Storage can be transferred to and from your instance with a variety of tools.</p>
+
+<h3 id="swift">Swift</h3>
+
+<p><em>Swift</em> is the component that provides object storage for the <em>OpenStack</em> framework which is used in the NeCTAR Research Cloud. With your credentials (which you can download from the Dashboard) you can request <em>Swift</em> to reserve and create storage (called <em>containers</em> or <em>buckets</em>) and upload/download files.</p>
+
+<p>The object store can be accessed via the Dashboard, which provides a UI for the <em>swift</em> component. There are also other graphical <em>clients</em> which can be used to access the store, as we shall see in <a href="/package07/sections/index.html" title="Module 7">Module 7</a>. It is also possible to use a <em>command line client</em> to access the object store, which is subject to <a href="/package10/sections/index.html" title="Module 10">Module 10</a>.</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><strong>Security Warning:</strong>
+Swift does NOT provide encryption of the data it stores. When you upload/download data to/from the object store, this will happen without encryption.
+If you have sensitive data that requires encryption you must encrypt the data files <em>before</em> upload.</p>
+
+				</div>
+
+<p>In <a href="/package07/sections/index.html" title="Module 7">Module 7</a> we will learn a few ways how to connect to your object storage and copy objects to and from our object store. <a href="/package08/sections/index.html" title="Module 8">Module 8</a> will introduce a few tools that can be used for data encryption, and <a href="/package10/sections/index.html" title="Module 10">Module 10</a> will discuss the more advanced use of command line tools to access the object store.</p>
+
+<p>For more information, please refer to the  <a href="http://support.rc.nectar.org.au/docs/object-storage">NeCTAR support website</a>.</p>
+
+<h2 id="volume-block-vs-object-storage">Volume (block) vs Object storage</h2>
+
+<p>In summary, the  main differences between <em>volume</em> and <em>object</em> store are:</p>
+
+<p><strong>File Access</strong>  <br />
+<em>Volume</em> or <em>Block</em> storage can be seen as what we know as a partition of a harddrive (or a whole hard drive), containing a lot of files in one continuous block. Files are accessed with traditional file access methods.
+In the <em>Object Storage</em>, files may be spread over several hard-drives. An <em>object</em> is accessed using a <em>http</em> based interface.</p>
+
+<p><strong>Distribution</strong>  <br />
+<em>Object Storage</em> is a per-file based storage system which stores each file at several locations — you won’t know where exactly the individual files are stored, they may even not all be on the same harddrive. In contrast, <em>Volume Storage</em> is one block of storage which contains <em>several</em> files, located at <em>one</em> location.</p>
+
+<h2 id="recommendations">Recommendations</h2>
+
+<p>In summary, here are a few recommendations on how you may use the different storage types:</p>
+
+<ul>
+  <li>
+    <p>Use On-Instance Storage as “scratch space” and/or to keep copies/clones of data (e.g. websites) which are mainly stored elsewhere. Because On-instance storage is <em>ephemeral</em>, you will lose access to your data when an unplanned restart of the hypervisor takes place, or after you terminate your instance. Therefore, the main motivation to use this storage should be to have it readily available on the instance without requiring extra Volumes, or using up your Volume storage quota for it.</p>
+  </li>
+  <li>
+    <p>Use Volumes or the Object Store for all data which should survive an instance termination (or an unplanned restart of hypervisor). 
+You may need <em>Volumes</em> for data access from your programs which require block storage, for example to read files from a disk and write results onto it. If you have control over the source code of your program, you may instead consider to use <em>object storage</em> instead of Volumes; APIs for many programming languages are available (more information in <a href="/package10/sections/index.html" title="Module 10">Module 10</a> and <a href="https://wiki.openstack.org/wiki/SDKs">the OpenStack SDKs website</a>).</p>
+  </li>
+  <li>
+    <p>Use the Object Store for individual files which you want to have easy access to from many locations, or which you would like to easily share with collaborators.</p>
+  </li>
+  <li>
+    <p>For very large data demands, you may also consider using Volumes.</p>
+  </li>
+</ul>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Especially with Volume storage, but also Object Storage (albeit with less urgency), you should <strong>back up your data</strong> at regular intervals, for example at important stages of its life cycle. If you use On-Instance storage for data which is <em>not</em> a copy of a dataset mainly kept elsewhere, backing up is extremely important.
+<a href="/package09/sections/index.html" title="Module 9">Module 9</a> will guide you through a few options to back up and restore your data.</p>
+
+				</div>
+
+<h2 id="how-many-cores-do-i-need">How many cores do I need?</h2>
+
+<p>Virtual machine (VM) instances in the Research Cloud are available in “Standard” sizes:</p>
+
+<ul>
+  <li>
+    <p>Small (1 core), Medium (2 cores), Large (4 cores), Extra-large or XL (8 cores), XXL (16 cores)</p>
+  </li>
+  <li>
+    <p>Per core, a VM gets 4 GB of memory (RAM) and 30 GB of On-Instance Storage (On-Instance secondary drive).</p>
+  </li>
+  <li>
+    <p>Example: an XL VM instance has 8 processing cores, 32 GB RAM and 240 GB of On-Instance Storage.</p>
+  </li>
+</ul>
+
+<p>You may be unsure how many CPU cores you need for your instance: Which flavor to choose?</p>
+
+<p><strong><em>You will have to take a closer look at your application to find out how much you can benefit from several cores.</em></strong></p>
+
+<p>Some applications are <strong>single-threaded</strong>, which means they only use one core anyway. In this case, you will not benefit from launching an instance with several cores.   <br />
+However many applications are <strong>multi-threaded</strong>, and support a certain number of <em>threads</em> (you may regard a thread as a working process that can run on its own core). The documentation of your application should reveal more information about that.</p>
+
+<p><strong>Example:</strong>  <br />
+Say your application supports 6 threads. You may then select up to the same number of cores — with 6 cores, the application will run at maximum performance. If you choose more cores, you will not experience any performance gains. It is ok to select a lower number of cores: say, you choose 2 cores while your application supports 6 threads. In this case, the workload of the 6 threads will be distributed across the 2 cores, and your application will run <em>one third of its maximum performance</em> (2 cores / 6 threads).</p>
+
+<p><img src="images/MultiThreaded.png" class="aligncenter" style="width:400px; " alt="image" /></p>
+
+<h3 id="use-of-openmp">Use of OpenMP</h3>
+
+<p><em>OpenMP</em> is an API that can be used for multi-thread handling on <em>shared memory systems</em>.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>A computer (or a virtual machine) with several CPUs is a <strong>shared memory system</strong> when all CPUs access the <em>same</em> memory.</p>
+
+				</div>
+
+<p>OpenMP uses a set of compiler directives (within the C code) that generate a multi-threaded version of your code at compile time.</p>
+
+<p>You can think of OpenMP as a slightly more automated way to create multi-threaded programs than when low-level thread libraries as <em>pthread</em> were used.
+As such, also OpenMP programs gain maximum performance when it is given the same amount of cores as it uses threads (the cores may also be distributed over <em>several CPUs</em> of the same machine).</p>
+
+<h2 id="can-i-benefit-from-several-vms">Can I benefit from several VMs?</h2>
+
+<p>In <a href="/package04/sections/index.html" title="Module 4">Module 4</a>, we have discussed <em>horizontal scalability</em>. Horizontal scalability entails that you may run several instances of your application on separate virtual machines, all processing different parts of your data, or processing the same data in a different way (e.g. with different parameters).</p>
+
+<p><img src="images/HorizontalScale.png" class="aligncenter" style="width:300px; " alt="image" /></p>
+
+<p>The Cloud is suitable for such a scenario. Distributing your problem over multiple instances is certainly an advanced topic as it requires knowledge about parallel programming. However this section will give a brief overview of the possibilities with the Cloud and the key factors to look out for in your application. For more details, we refer to related <a href="literature.html">Literature</a>.</p>
+
+<h3 id="data-or-problem-partitioning">Data or problem partitioning</h3>
+
+<p>If your data or your problem set can be split into separate units for processing, you may dispatch the processing to several instances. For example, if you can split the data set into several chunks, then you could send one chunk to one instance each, where each instance runs the same program to analyse a chunk in the same fashion; when all instances are finished, results are summarized. 
+Or if your problem can be split into several operations (which may or may not use the same data), for example different operations to perform on a dataset, each operational task can then be dispatched to one instance each.</p>
+
+<p>The instance which splits the problem set and dispatches the tasks is called the “Master”, while the instances to which tasks are dispatched are called “<em>Workers</em>”. A software framework like <em>MapReduce</em> can be used to split and dispatch your problem set.</p>
+
+<p><img src="images/SplitProblemDataset.png" class="aligncenter" style="width:500px; " alt="image" /></p>
+
+<div class="bgDefinition" style="min-height: 55px;">
+					<img src="/images/glyphicons-352-book-open.png" alt="image" align="left" style="width:24px; height:22px;
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><strong>MapReduce</strong> is a framework for processing parallelizable problems across huge datasets using a large number of computers (nodes).  MapReduce processes and generates large data sets with a parallel, distributed algorithm on a <em>cluster</em> (a collection of compute nodes). — Source, and more details: <a href="http://en.wikipedia.org/wiki/MapReduce">Wikipedia</a></p>
+
+
+				</div>
+
+<p>Detailed discussion of MapReduce frameworks or similar programming  models is not within the scope of this course. Instead, please refer to related <a href="literature.html">Literature</a>.</p>
+
+<p>For use with OpenStack, you may use <em>Apache Hadoop</em> through the <a href="http://docs.openstack.org/developer/sahara/">Sahara Project</a>. <em>Apache Hadoop</em> is an industry standard and widely adopted MapReduce implementation. The aim of the Sahara project is to enable users to easily provision and manage Hadoop clusters on OpenStack. Using Sahara is not part of this course, we refer to the <a href="http://docs.openstack.org/developer/sahara/">on-line documentation</a> at this place instead.</p>
+
+<p><strong><em>Note:</em></strong> The use of <em>Sahara</em> in the NeCTAR Cloud is <strong><em>currently not available yet</em></strong>, but it will be coming soon.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>When using <em>Sahara</em>, you don’t launch the instances manually on the Dashboard as we will do in Module 7. You specify <em>templates</em> for the virtual machines, and Sahara will launch the instances for you and set them up so they can be used with your application.</p>
+
+				</div>
+
+<p>Whether you benefit from this model, depends on the problem that you are trying to solve. There are limitations and trade-offs:</p>
+
+<ul>
+  <li>
+    <p>Into how many pieces can the data or problem be split? This limits the number of instances you can use.</p>
+  </li>
+  <li>
+    <p>You should also consider the communication demands for distributing the problem to the workers: if you chop the problem or data into very small pieces, does it still pay off to distribute it to many compute nodes, considering communication demands for the distribution?</p>
+  </li>
+  <li>
+    <p>The time to split the dataset is also a factor: You will <em>not</em> benefit from splitting the problem if the process of splitting, distributing to workers and then summarizing the results takes longer than solving the problem itself on only one instance.</p>
+  </li>
+  <li>
+    <p>A limitation will also be the number of virtual machine instances that you have been granted in your resource allocation.</p>
+  </li>
+</ul>
+
+<h3 id="auto-scaling-with-openstack-heat">Auto-scaling with OpenStack Heat</h3>
+
+<p>Sometimes, you just need to <em>replicate</em> your resources at times when heavy workloads are experienced. For example, if you are deploying a webserver, and at a certain time lots of users access your website and create a lot of traffic and workload on your server, you can <em>scale up</em> and create a second (or third, etc.) webserver with the same configuration. The workload can then be distributed across the identical servers, and users don’t experience delays any more.</p>
+
+<p>The OpenStack framework (used by NeCTAR to run the Cloud) provides a means to <em>orchestrate</em> your resources: The <strong>Heat</strong> project. You specify your resources in a human-readable text file, which is called a “template”. <em>Heat</em> then manages the entire lifecycle of your infrastructure and applications, from creating the resources until deletion when your application has finished. The templates provide a lot of options to specify and configure your resources. It therefore has a bit of a learning curve, but it is worth the effort: After you have defined the template, you may launch your services within a matter of minutes, without having to go through the whole setup process again. You can repeatedly use the template to start up your services — with the template, you have <em>automated</em> the process of setting up the resources you require for a particular research application.</p>
+
+<p>A <em>Heat</em> template can include the instances you want to launch (and which image they should be launched from), volumes to create, security groups to use, and more. It may also include applications to be installed on the servers, e.g. the webserver application.</p>
+
+<p>Most importantly for this section, Heat also provides an <strong>autoscaling service</strong>: You may include a “scaling group” in the template. This group is controlled by a set of <em>“alarms”</em> you define. For example, an alarm may be triggered if the CPU-workload exceeds a certain percentage. 
+In which case you specify to launch an additional server. Heat takes care of this type of autoscaling for you, according to what you specify in the template.</p>
+
+<p>A detailed discussion of <em>Heat</em> is not part of this tutorial, instead please refer to the <a href="https://wiki.openstack.org/wiki/Heat">OpenStack Heat wiki</a> and the <a href="http://support.rc.nectar.org.au/docs/heat">NeCTAR support website</a> which includes a lot of useful information and links.</p>
+
+<h3 id="use-of-message-passing-interface-mpi">Use of Message Passing Interface (MPI)</h3>
+
+<p>The <a href="http://en.wikipedia.org/wiki/Message_Passing_Interface">Message Passing Interface</a> (MPI) is a technique which is widely spread in parallel programming. MPI is a standard defining syntax and semantics of library routines that can be used to implement parallel programming in C and other languages. There are several implementations of MPI such as <a href="http://www.open-mpi.org/">Open MPI</a>, <a href="http://www.mcs.anl.gov/research/projects/mpich2/">MPICH2</a> and <a href="http://www.lam-mpi.org/">LAM/MPI</a>.</p>
+
+<p>With MPI, you can spread the processing of your application over several instances. Communication between nodes is handled in different ways. <em>Open MPI</em> facilitates secure communication between nodes via <em>ssh</em>.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>The MPI interface allows the programmer to manage allocation, communication, and synchronization of a set of processes that are distributed over multiple <em>Nodes</em>. Such <em>Nodes</em> may be:</p>
+
+<ul>
+  <li>the individual <strong>cores</strong> in one CPU, or</li>
+  <li>several <strong>CPUs</strong> in the <em>same</em> machine, or even</li>
+  <li><strong>separate machines</strong> which are connected in a network.</li>
+</ul>
+
+				</div>
+
+<p>If your application uses MPI to support parallelism, you may benefit from several instances. However, your better choice may be to go for a HPC solution (see discussion in <a href="/package04/sections/index.html" title="Module 4">Module 4</a>). MPI performs poorly on common OpenStack networks because communication between the nodes is slow.</p>
+
+<p>You can run MPI programs across OpenStack instances as long as your instances are allowed to communicate with each other over their fixed IPs, and your instances’ firewall settings allow traffic across the ports that your MPI implementation is using.
+There is however one exception: If your MPI application uses <em>broadast</em> or <em>multicast</em> in any form, it can not run on OpenStack. This is because some clouds do not support broadcast or multicast in any form (at the time of writing, neither Amazon EC2 nor OpenStack do).</p>
+
+<p>A detailed discussion of MPI is outside the scope of this course—setting up an MPI program on the cloud requires previous experience and in-depth knowledge of MPI and the application to run. Please refer to related <a href="literature.html">Literature</a>.</p>
+
+<h3 id="summary-using-several-instances">Summary: Using several instances</h3>
+
+<p>In summary, you may use several instances, but it depends on the application whether this is beneficial.</p>
+
+<ul>
+  <li>
+    <p>You may <strong>split the problem or data set</strong> and distribute it, for example using <em>MapReduce</em> frameworks.</p>
+  </li>
+  <li>
+    <p>You may configure <strong>auto-scaling</strong> for your resources with <em>Heat</em> in order to adapt to current workload demands.</p>
+  </li>
+  <li>
+    <p>You may be able to run your <strong>MPI</strong> application on the NeCTAR Research Cloud.</p>
+  </li>
+</ul>
+
+<p>Distributing your application over several instances is an advanced topic which was only described on a high level in this course. For more details, please refer to the related <a href="literature.html">Literature</a>.</p>
+
+<h2 id="summary">Summary</h2>
+
+<p><strong>And… we’re done! Ready for more?</strong></p>
+
+<p>This module has discussed factors which help determine the amount of resources (computing and storage) which may be required. Different types of storage that are available have been introduced, which should help you decide which type is most suitable for your research purposes.
+We have also discussed key factors which help determine how many cores you should choose for your instance. You may have found that it is worth doing a bit more reading to learn more about using several instances (e.g. using MapReduce style frameworks).</p>
+
+<p>You now have all the knowledge required to get started with using the NeCTAR research cloud: You know what a virtual machine is and what is required to keep it secure; you know the types of storage available to you, and you have at least a rough idea about how many cores, instances and which types of storage you will require.</p>
+
+<p>Before you continue, you may take a brief look at the <a href="literature.html">related literature</a> for this Module.</p>
+
+<p>Continue with <a href="/package07/sections/index.html" title="Module 7">Module 7</a> to start getting some hands-on experience with launching and using virtual machines.</p>
+
+<h2 id="literature">Literature</h2>
+
+<ol>
+  <li>
+    <p>Parallel Programming</p>
+
+    <ul>
+      <li>
+        <p>Pattern: <a href="http://www.pearson.ch/Informatik/Softwareentwicklung/EntwurfsmusterPatterns/1471/9780321228116/Patterns-for-Parallel-Programming.aspx">Patterns for Parallel Programming</a>, Timothy G. Mattson, Beverly A. Sanders, and Berna L. Massingill, Addison-Wesley, 2005</p>
+      </li>
+      <li>
+        <p>CDK5: <a href="http://www.cdk5.net/">Distributed Systems, Concepts and Design</a>, George Coulouris, Jean Dollimore, and Tim Kindberg, Gordon Blair, Addison-Wesley, 2011</p>
+      </li>
+      <li>
+        <p><a href="http://www.enterpriseintegrationpatterns.com/toc.html">Enterprise Integration Patterns</a></p>
+      </li>
+      <li>
+        <p>A good tutorial on parallel computing: <a href="https://computing.llnl.gov/tutorials/parallel_comp/">Introduction to Parallel Computing</a> by Blaise Barney, Lawrence Livermore National Laboratory</p>
+      </li>
+      <li>
+        <p>Another good on-line tutorial: <a href="http://www.gribblelab.org/CBootcamp/A2_Parallel_Programming_in_C.html">Parallel programming in C</a> by Paul Gribble at Western University in London, Ontario, Canada</p>
+      </li>
+      <li>
+        <p>Free eBook on parallel programming: <a href="http://heather.cs.ucdavis.edu/parprocbook">Programming on Parallel Machines</a> by Norm Matloff, University of California</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Grid and Cloud</p>
+
+    <ul>
+      <li>
+        <p>Grid-D: <a href="http://www.delmarlearning.com/browse_product_detail.aspx?catid=21270&amp;isbn=1584504242">Grid Computing for Developers</a>, Vladimir Silva, Charles River Media, Inc., 2006</p>
+      </li>
+      <li>
+        <p>Grid-2: <a href="http://www.elsevier.com/wps/find/bookdescription.cws_home/699905/description#description">The Grid 2</a>, 2nd Ed, Ian Foster and Carl Kesselman, Morgan Kaufmann, 2003</p>
+      </li>
+      <li>
+        <p>Cloud: <a href="http://oreilly.com/catalog/9780596156374">Cloud Application Architectures</a>, George Reese, O’Reilly, 2009</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>OpenMP</p>
+
+    <ul>
+      <li>
+        <p>OpenMP: <a href="http://mitpress.mit.edu/catalog/item/default.asp?ttype=2&amp;tid=11387">Using OpenMP</a>, Barbara Chapman et.al., The MIT Press, 2007</p>
+      </li>
+      <li>
+        <p><a href="http://openmp.org/wp/">The OpenMP API Specification for Parallel Programming</a></p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>MPI</p>
+
+    <ul>
+      <li>
+        <p>MPI:<a href="http://www.cs.usfca.edu/mpi/">Parallel Programming with MPI</a>, Peter S. Pacheco, Morgan kaufmann, 1997</p>
+      </li>
+      <li>
+        <p><a href="http://www.mcs.anl.gov/research/projects/mpi/">The Message Passing Interface (MPI) Standard</a></p>
+      </li>
+      <li>
+        <p><a href="http://www.hpjava.org/mpiJava.html">mpiJava Home Page</a></p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>MapReduce</p>
+
+    <ul>
+      <li>
+        <p>MapReduce: <a href="http://www.umiacs.umd.edu/%7Ejimmylin/book.html">Data-Intensive Text Processing with MapReduce</a>, Jimmy Lin and Chris Dyer, Morgan and Claypool, 2010</p>
+      </li>
+      <li>
+        <p>Hadoop: <a href="http://oreilly.com/catalog/9780596521981">Hadoop: The Definitive Guide, MapReduce for the Cloud</a>, Tom White, O’Reilly, 2009</p>
+      </li>
+      <li>
+        <p><a href="http://hadoop.apache.org/">Apache Hadoop</a></p>
+      </li>
+      <li>
+        <p><a href="http://docs.openstack.org/developer/sahara/">Sahara Project</a></p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p>Continue with <a href="/package07/sections/index.html" title="Module 7">Module 7</a>.</p>
+
+
+      </div>
+    </div>
+  </body>
+
+</html>

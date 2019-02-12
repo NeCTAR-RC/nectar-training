@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel='shortcut icon' href='/images/icon.png' />
+
+  <title>Beyond the Dashboard</title>
+  <meta name="description" content="Nectar National Training Resources
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://training.nectar.org.au/package10/sections/managingVolumes.html">
+  <link rel="alternate" type="application/rss+xml" title="Nectar Training" href="http://training.nectar.org.au/feed.xml" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61845992-2', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+<div class="nec-header">
+  <div class="header-top">
+    <div class="header-top-page">
+      <div class="nect-login">
+        <a href="https://support.nectar.org.au/support/home">Support</a>
+        <a href="http://cloud.nectar.org.au/contact/" class="new-tick">Contact</a>
+        <b><a href="https://dashboard.rc.nectar.org.au/"><b>Login</b></a></b>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-main">
+    <div class="header-main-page">
+      <div class="logo-nect">
+        <img src='/images/nectar_cloud_logo.jpg' alt="Nectar" height="43", width"248">
+      </div>
+      <div class="menu-nect">
+        
+          <a href="/" class="selected">Self-paced Training</a>
+          <a href="/for-trainers.html">Resources for Trainers</a>
+        
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="normal-block">
+  <div class="normal-block-page">
+    
+      <h3>Self-paced Training</h3>
+    
+  </div>
+</div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+          <!-- 
+    Preprocessing: Determine which part number this is. To avoid having to set numbers 
+    manually on each page, determine this here by the file name. 
+    -->
+  
+  
+  
+  
+  
+
+  
+  
+      
+  
+
+  
+  
+  
+  
+  
+  	
+  	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+			
+			
+			
+  	<!-- If we are not in the main hierarchy, we may be looking at a file of one of the sub-categories -->
+	
+  
+
+
+
+<div class="post">
+
+  <header class="post-header">
+    <h3>Module 10</h3>
+    <h1>Beyond the Dashboard</h1>
+  </header>
+
+  
+
+  <!--
+    List of the individual parts of this module (so not all content gets crammed on one page).
+    Rendering this list first is necessary 
+  -->
+  <p> Sections of this module:</p>
+  
+	
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package10/sections/index.html"> Introduction</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package10/sections/openstackClients.html"> OpenStack clients</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package10/sections/objectStore.html"> Accessing the object store</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package10/sections/managingInstance.html"> Controlling an instance</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+			
+		
+		
+
+		
+		
+			
+		
+		
+			
+				 <b>
+			
+			
+      <a href="/package10/sections/managingVolumes.html"> Managing volumes</a>
+			
+				</b>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package10/sections/utilization.html"> Tracking utilization</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package10/sections/summary.html"> Summary</a>
+			
+			<br/>
+		
+	
+  <br/>
+
+
+  <a href="/package10/sections/all.html" target="_blank">View all sections on one page (Printer friendly)</a>
+  <br/>
+  <br/>
+  <h1> Managing volumes </h1>
+
+   <!-- endif for pagedata_avail -->
+  
+
+  <!--
+  Content of page
+  -->
+  <article class="post-content">
+    
+<div class="bgPrerequisite">
+					<img src="/images/glyphicons-333-certificate.png" alt="image" align="left" style="width:17px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><em>Prerequisite</em>: You need to have installed the <em>python-openstackclient</em> using the instructions given earlier. You should also be familiar with the terminology and concepts involved for managing volumes, as described in <a href="/package06/sections/index.html" title="Module 6">Module 6</a> and <a href="/package07/sections/index.html" title="Module 7">Module 7</a>. You also must have <em>sourced</em> your OpenStack RC file on the command line you are using, as described <a href="openstackClients.html">earlier in this module</a>.</p>
+
+				</div>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Before the <strong>openstack</strong> client was introduced, managing volumes was done with the <strong>cinder</strong> and <strong>nova</strong> commands, so you may still find references to it on the Internet. While you still can use <em>cinder</em> and <em>nova</em>, in this tutorial we stick to the more uniform and intuitive <em>openstack</em> client, which works similarly to the <em>cinder</em> and <em>nova</em> commands. 
+For more details, refer to the <a href="http://docs.openstack.org/developer/cinder/">official OpenStack cinder</a> and <a href="http://docs.openstack.org/developer/nova/">nova</a> documentation.</p>
+
+				</div>
+
+<p>You can display help for the <em>openstack</em> command with:</p>
+
+<p><code>openstack help</code></p>
+
+<p>This will print a list of options for this command. Each option listed can be seen as a ‘sub-command’. You may print more information about usage of the particular sub-command, e.g. for <em>volume</em> which we are going to use in this section:</p>
+
+<p><code>openstack help volume</code></p>
+
+<p>For supporting and further documentation, please refer to the <a href="http://docs.openstack.org/developer/python-openstackclient/">official openstack client documentation</a>.</p>
+
+<p>In this section we are going to deal with managing <em>Volumes</em>:</p>
+
+<ul>
+  <li>
+    <p>Creating and deleting volumes</p>
+  </li>
+  <li>
+    <p>Attaching and detaching volumes from instances</p>
+  </li>
+  <li>
+    <p>Taking snapshots and backups of volumes, and</p>
+  </li>
+  <li>
+    <p>Restoring volumes from snapshots or backups</p>
+  </li>
+</ul>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>You cannot use Volumes if you are using the NeCTAR Trial Account. You need to submit an allocation request to get access to volume storage. You may read more about allocations in <a href="/package05/sections/allocations.html">Module 5</a>.</p>
+
+				</div>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>The following instructions will assume that all the <em>Names</em> you choose for instances, volumes, etc. have <strong>no whitespaces</strong> in them. If the names <em>do</em> include white spaces, you have to put the name in quotation marks when using them in the commands, e.g. “Name of resource”.</p>
+
+				</div>
+
+<h4 id="create-a-new-volume">Create a new volume</h4>
+
+<p>You may list the volumes you already have with:</p>
+
+<p><code>openstack volume list</code></p>
+
+<p>This will print information about your existing volumes (or print nothing if you don’t have any volumes yet):</p>
+<div class="bgTerminal"><pre class="PreformatTerminal">+------------------+----------+--------------+------+-------------+----------+-----------------+
+|  ID              |  Status  | Display Name | Size | Volume Type | Bootable |  Attached to    |
++------------------+----------+--------------+------+-------------+----------+-----------------+
+| 494e6104-a282-...|  in-use  | MyVolume     |  1   |  intersect  |  false   | a87a...         |
++------------------+----------+--------------+------+-------------+----------+-----------------+</pre></div>
+
+<p>Creating a new volume is easy using the <em>openstack</em> client. You can display help for volume creation with:</p>
+
+<p><code>openstack help volume create</code></p>
+
+<p>to see the syntax of the command and some optional arguments.</p>
+
+<p>Now, create a new Volume called <em>MyNewStorage</em> sized <em>1GB</em> with the following command (specifying your own availability zone):</p>
+
+<p><code>openstack volume create --description "Description of the volume" --availability-zone &lt;zone name&gt; --size 1 MyNewStorage</code></p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>You will need to specify the <em>same</em> availability zone in which the instance you want to attach it to is running, or you will not be able
+to attach the volume to the instance.</p>
+
+<p>To list all availability zones:  <br />
+<code>openstack availability zone list</code></p>
+
+				</div>
+
+<p>A summary will be printed which shows the details of the volume you are creating (extracts shown in output):</p>
+
+<div class="bgTerminal"><pre class="PreformatTerminal">+---------------------+--------------------------------------+
+| Field               | Value                                |
++---------------------+--------------------------------------+
+| attachments         | []                                   |
+| availability_zone   | intersect                            |
+| bootable            | false                                |
+| display_description | Description of the Volumme           |
+| display_name        | MyNewStorage                         |
+| encrypted           | False                                |
+| id                  | 42385945-e2...                       |
+| properties          |                                      |
+| size                | 1                                    |
+| snapshot_id         | None                                 |
+| source_volid        | None                                 |
+| status              | creating                             |
+| type                | intersect                            |
++---------------------+--------------------------------------+</pre></div>
+
+<p>The <em>status</em> of the volume should switch to <em>‘Available’</em> soon. Re-check the status with</p>
+
+<p><code>openstack volume show MyNewStorage</code></p>
+
+<p>After the volume has been created, when you type</p>
+
+<p><code>openstack volume list</code></p>
+
+<p>you should see your new volume in the list.</p>
+
+<p>If you want to <em>delete</em> a volume again, use this command:</p>
+
+<p><code>openstack volume delete &lt;volume name or ID&gt;</code></p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>When you delete a volume, you will <strong>lose all data and access</strong> to this volume. Make sure you <strong>back up</strong> all data, and <strong>securely erase</strong> the data on the volume (as described in <a href="/package09/sections/index.html" title="Module 9">Module 9</a>) <em>before</em> you delete it!</p>
+
+				</div>
+
+<h4 id="attachingdetaching-a-volume-to-an-instance">Attaching/Detaching a volume to an instance</h4>
+
+<p>To attach and detach a volume to an instance, you will use the command tool <em>openstack server</em>. You can display help about this command by running the following:</p>
+
+<p><code>openstack server help | grep volume</code></p>
+
+<p>First, find the instance name that you want to attach the volume to by listing all your instances:</p>
+
+<p><code>openstack server list</code></p>
+
+<div class="bgTerminal"><pre class="PreformatTerminal">+-------------------+----------------------------+--------+----------------------------+
+| ID                | Name                       | Status | Networks                   |
++-------------------+----------------------------+--------+----------------------------+
+| af87a5c8-e751-... | CopyOfClientLaunchedInstance | ACTIVE | intersect-02=137.92.56.42  |
+| b720630a-e0dd-... | ClientLaunchedInstance       | ACTIVE | intersect-02=137.92.56.36  |
++-------------------+----------------------------+--------+----------------------------+</pre></div>
+
+<p>To attach a volume, you may use this command:</p>
+
+<p><code>openstack server add volume  &lt;Server-Name&gt; &lt;Volume-Name&gt;</code></p>
+
+<p><strong>Server-Name</strong>: the name (or ID) of instance which you want to attach the volume to. Let’s attach it to the instance we launched in the last section, which is named <em>ClientLaunchedInstance</em>.</p>
+
+<p><strong>Volume-Name</strong>: The name (or ID) of the volume you want to attach. We will attach the volume <em>MyNewStorage</em> which we just created.</p>
+
+<p>with the examples used in this tutorial the command becomes:</p>
+
+<p><code>openstack server add volume ClientLaunchedInstance MyNewStorage</code></p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>The <code>openstack server add volume</code> command also offers an argument <code>--device</code>. This <em>optional</em> argument is intended to set the device mapping, e.g. <em>/dev/mydevice</em>. OpenStack <strong>currently ignores</strong> this option when attaching volumes, so you should skip this option at this stage (it may be that your command does not work if you specify this option).</p>
+
+				</div>
+
+<p>The command will take a while to execute. 
+When it is finished, when you run</p>
+
+<p><code>openstack volume list</code></p>
+
+<p>the output should show that your volume is attached:</p>
+<div class="bgTerminal"><pre class="PreformatTerminal">+--------------+--------------+--------+------+-----------------------------------------------+
+| ID           | Display Name | Status | Size | Attached to                                   |
++--------------+--------------+--------+------+-----------------------------------------------+
+| 42385945-... | MyNewStorage | in-use |    1 | Attached to ClientLaunchedInstance on /dev/vdc  |
++--------------+--------------+--------+------+-----------------------------------------------+</pre></div>
+
+<p>OpenStack adds the volume as the lowest available device name: For a standard flavor instance (with a primary &amp; secondary drive) the first volume will be attached as <em>/dev/vdc</em>. You can see where your device has been mapped to in the last column of the output.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>You may attach <em>several</em> volumes to one instance. However you may only attach one volume to <em>one</em> instance at a time.</p>
+
+				</div>
+
+<p>To <strong>detach</strong> a volume, use a similar command:</p>
+
+<p><code>openstack server remove volume &lt;Server-Name&gt; &lt;Volume-Name&gt;</code></p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Before you detach a volume, you have to <strong>unmount</strong> it! <a href="/package07/sections/index.html" title="Module 7">Module 7</a> includes information about mounting and unmounting drives.</p>
+
+				</div>
+
+<p>Now, detach the volume again that we have just attached:  <br />
+<code>openstack server remove volume ClientLaunchedInstance MyNewStorage</code></p>
+
+<p>After detaching, if you run</p>
+
+<p><code>openstack volume list</code></p>
+
+<p>you will see that the status of the volume is no longer <em>“in-use”</em>, instead it is <em>“available”</em>.</p>
+
+<h3 id="backups-and-snapshots">Backups and Snapshots</h3>
+
+<p>You may create a <em>Backup</em> of a volume, or take a <em>Snapshot</em> of it.
+The difference between Backup and Snapshot has been explained in <a href="/package09//sections/backup.html">Module 9</a>: The key difference is that a Snapshot creates an <em>Image</em> of the size your Volume has, whereas a Backup creates a <em>backup file</em> which has the size of your <em>used</em> storage, and saves it in the <em>Object Store</em>. Another important difference is that Backups can be used to restore the state onto an <em>existing</em> volume, whereas with a Snapshot, it is only possible to create an entirely <em>new</em> volume from it.</p>
+
+<p><strong>1. Backup and restore a volume</strong></p>
+
+<p>To manage your volume Backups, you will use the command set <em>openstack backup</em>:</p>
+
+<p><code>openstack help backup</code> <br />
+<code>openstack help backup create</code></p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>Backups will back up the entire state of your Volume. If you volume is encrypted, the encryption will be backed up with it. So after you restore this backup onto a new volume, you will also need to install the volume encryption and activate it with your password!</p>
+
+				</div>
+
+<p>Before you can create a Backup, you must <em>detach</em> the volume from any instances. You need to first <em>unmount</em> the device (if you have mounted it from an instance), and then detach it, as described earlier. A volume is <em>detached</em> when it is in the status <em>“available”</em>. Check this with</p>
+
+<p><code>openstack volume list</code></p>
+
+<p>You will see <em>“Backup1”</em> listed along with its current status.</p>
+
+<p>To create a backup of the volume named <em>MyNewStorage</em>, and save it into the object store container <em>“Backups”</em> naming it <em>“Backup1”</em> use the following command:</p>
+
+<p><code>openstack backup create --container Backups --name Backup1 --description "Backup MyNewStorage" MyNewStorage</code></p>
+
+<p>While the argument <code>--description</code> is optional, it is recommended you fill in some meaningful information about this backup here, as it will make it
+easier to identify it when you want to restore it.</p>
+
+<p>If the container <em>“Backups”</em> did not already exist, it will have been created. 
+After creating the backup, your volume will be have the status <em>“backing-up”</em>, which can take a while. Type</p>
+
+<p><code>openstack backup list</code></p>
+
+<p>to see the status of your Volume backup.</p>
+
+<div class="bgTerminal"><pre class="PreformatTerminal">+--------------------+---------+---------------------+-----------+------+
+| ID                 | Name    | Description         | Status    | Size |
++--------------------+---------+---------------------+-----------+------+
+| eb4d23e7-861e-4... | Backup1 | Backup MyNewStorage | available |    1 |
++--------------------+---------+---------------------+-----------+------+</pre></div>
+
+<p>After the backup has been done, you can see it listed in your Object Store:</p>
+
+<p><code>openstack container list</code>  <br />
+<code>openstack object list Backups</code></p>
+
+<p>The Backups container has been created (unless you already had it). You will see a rather long list of files in the <em>Backups</em> container — which means your Backup has been saved in several object files. This should not concern you, however, as you can restore the data with only one command.</p>
+
+<p>To restore your Volume to the state we just saved in <em>Backup1</em>, first obtain the <em>ID</em> of this backup, which is displayed in the first column of the output:</p>
+
+<p><code>openstack backup list</code></p>
+
+<p>You will need the <em>ID</em> (in this case, the <em>Name</em> does not work) to display some more information about this Backup:</p>
+
+<p><code>openstack backup show &lt;Backup-ID&gt;</code></p>
+
+<div class="bgTerminal"><pre class="PreformatTerminal">+-------------------+-----------------------+
+| Field             | Value                 |
++-------------------+-----------------------+
+| availability_zone | intersect             |
+| container         | Backups               |
+| created_at        | 2015-07-...           |
+| description       | Backup MyNewStorage   |
+| fail_reason       | None                  |
+| id                | eb4d23e7-8 ...        |
+| name              | Backup1               |
+| object_count      | 22                    |
+| size              | 1                     |
+| status            | available             |
+| volume_id         | 42385945-e2d2...      |
++-------------------+-----------------------+</pre></div>
+
+<p>Note that the Volume ID (field <em>volume_id</em>) is displayed in the information to remind us which volume the backup is from. The ID is not very intuitive, so it is a good idea to add a meaningful description to the backup when you create it.</p>
+
+<p>To restore a backup, first display the help for the <em>backup restore</em> tool:</p>
+
+<p><code>openstack help backup restore</code></p>
+
+<p>To restore the volume <em>MyNewStorage</em> to the state we saved in <em>Backup1</em>, use the command:</p>
+
+<p><code>openstack backup restore &lt;Backup-ID&gt; MyNewStorage</code></p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>You may also restore the backup to a volume other than the Volume you took the Backup of — the Backup is <strong>not bound to the original Volume</strong> you took the Backup of!</p>
+
+<p>When you restore to <strong>any Volume</strong>, you must keep the following in mind:</p>
+
+<ul>
+  <li>
+    <p>all data on the Volume you choose as the restore target <strong>will be lost</strong>! The state of the Volume after the restore is going to be <strong>exactly the state</strong> which your Volume was in when you made the Backup.</p>
+  </li>
+  <li>
+    <p>the Volume needs to be large enough to fit your backup data.</p>
+  </li>
+  <li>
+    <p>the Volume you restore the backup onto will get the name of the originally backed up Volume. For example if you did a Backup of <em>MyNewStorage</em>, then restored this backup onto the Volume <em>MySecondStorage</em>, the volume <em>MySecondStorage</em> will be renamed to <em>MyNewStorage</em> (however the original <em>ID</em> of the Volume will be kept).</p>
+  </li>
+</ul>
+
+
+				</div>
+
+<p>Backups take space in your object store, so you may want to delete old Snapshots every now and then with:</p>
+
+<p><code>openstack backup delete &lt;Backup-ID&gt;</code></p>
+
+<p><strong>2. Snapshot a volume and re-create it</strong></p>
+
+<p>Before taking a snapshot, you should make sure that your volume is detached from any instance: It has to be in in “<em>available</em>” status. You can check this with</p>
+
+<p><code>openstack volume list</code></p>
+
+<p>To create a Snapshot of a volume:</p>
+
+<p><code>openstack snapshot create --name &lt;Snapshot-Name&gt; --description "Describe the snapshot" &lt;Volume-Name&gt;</code></p>
+
+<p>As the volume name you may specify the name or ID. You should name and describe the snapshot such that it makes sense to you.
+Let’s for example create a snapshot of <em>MyNewStorage</em> and name it <em>MyNewStorageSnapshot1</em>:</p>
+
+<p><code>openstack snapshot create --name MyNewStorageSnapshot1 --description "First snapshot" MyNewStorage</code></p>
+
+<p>Now, you should be able to see your Snapshot in the list:</p>
+
+<p><code>openstack snapshot list</code></p>
+
+<p>Take note of the <em>ID</em> of your snapshot, you will need it to restore the snapshot state.</p>
+
+<div class="bgInfo">
+					<img src="/images/glyphicons-196-circle-info.png" alt="image" align="left" style="width:26px; height:26px; 
+						margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>When you want to restore the state of the snapshot, you need to create a <em>new</em> volume — it is not possible to restore the state onto an existing volume, as it can be done with a Backup.</p>
+
+				</div>
+
+<p>You can create a <em>new</em> volume of this snapshot using the same command as described earlier to create a volume, but adding the <code>--snapshot</code> argument to specify the ID (the <em>Name</em> will not work) of your snapshot.</p>
+
+<p><code>openstack volume create --snapshot &lt;snapshot-ID&gt; --description "My restored Volume" --size &lt;Size-in-GB&gt; [--availability-zone &lt;zone&gt;] &lt;New-Volume-Name&gt;</code></p>
+
+<p>You may create a Volume which has a larger storage size than the original Snapshot, but you cannot create one with less.</p>
+
+<p>For example, we can create a new volume out of the snapshot <em>MyNewStorageSnapshot1</em> and call it <em>MyRestoredVolume</em>, and set the size to 2GB as follows:</p>
+
+<p><code>openstack volume create --snapshot &lt;ID of MyNewStorageSnapshot1&gt; --description "My restored Volume" --size 2 MyRestoredVolume</code></p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>The original Volume on which the Snapshot was based <em>must still exist</em>, or the Snapshots of it become useless.</p>
+
+<p>OpenStack does not let you delete Volumes which have “depending Snapshots”, so losing Snapshots by accidentally deleting a Volume is not a worry. However you have to be aware that the Snapshots are only usable while you keep your Volume in existence. This is different to <em>Backups</em>.</p>
+
+				</div>
+
+<p>The new volume will now be listed with your other volumes:</p>
+
+<p><code>openstack volume list</code></p>
+
+<div class="bgTerminal"><pre class="PreformatTerminal">+------------------------+------------------+-----------+------+-------------+
+| ID                     | Display Name     | Status    | Size | Attached to |
++------------------------+------------------+-----------+------+-------------+
+| 9f8af2bd-d5d4-45d4-... | MyRestoredVolume | available |    2 |             |
+| 80cec22c-8c0c-4bd4-... | MyNewStorage     | available |    1 |             |
++------------------------+------------------+-----------+------+-------------+</pre></div>
+
+<p>Snapshots take a good amount of your storage capacity, because they have the same size as the volume that was snapshotted. So you may want to delete old Snapshots every now and then:</p>
+
+<p><code>openstack snapshot delete &lt;Snapshot Name&gt;</code></p>
+
+
+  </article>
+
+
+  
+  <!--
+  Previous section / Next section links. Very simple design to start with.
+  -->
+  <p>
+  
+  	
+    <a href="/package10/sections/managingInstance.html">Previous section</a>
+  
+  &nbsp; &nbsp; &nbsp;
+  
+  	
+    <a href="/package10/sections/utilization.html">Next section</a>
+  
+  </p>
+   <!-- endif for pagedata_avail -->
+
+</div>
+
+      </div>
+    </div>
+
+    <div style="background-color: #0E0E0E; padding: 20px 20px 20px 60px; color: white; font-size: 12px">
+  <p>Copyright &copy;2015 NeCTAR</p>
+  <img src="/images/NCRIS_PROVIDER_rev.png" alt="NCRIS_PROVIDER_rev" width="132" height="63" />
+  <p><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png">
+  This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a></p>
+</div>
+
+
+  </body>
+
+</html>

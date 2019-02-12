@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nectar Training</title>
+    <description>Nectar National Training Resources
+</description>
+    <link>http://training.nectar.org.au/</link>
+    <atom:link href="http://training.nectar.org.au/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 13 Feb 2019 09:16:53 +1100</pubDate>
+    <lastBuildDate>Wed, 13 Feb 2019 09:16:53 +1100</lastBuildDate>
+    <generator>Jekyll v2.5.3</generator>
+    
+  </channel>
+</rss>

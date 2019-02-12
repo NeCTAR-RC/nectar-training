@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel='shortcut icon' href='/images/icon.png' />
+
+  <title>Security</title>
+  <meta name="description" content="Nectar National Training Resources
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://training.nectar.org.au/package08/sections/fileEncryption.html">
+  <link rel="alternate" type="application/rss+xml" title="Nectar Training" href="http://training.nectar.org.au/feed.xml" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61845992-2', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+<div class="nec-header">
+  <div class="header-top">
+    <div class="header-top-page">
+      <div class="nect-login">
+        <a href="https://support.nectar.org.au/support/home">Support</a>
+        <a href="http://cloud.nectar.org.au/contact/" class="new-tick">Contact</a>
+        <b><a href="https://dashboard.rc.nectar.org.au/"><b>Login</b></a></b>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-main">
+    <div class="header-main-page">
+      <div class="logo-nect">
+        <img src='/images/nectar_cloud_logo.jpg' alt="Nectar" height="43", width"248">
+      </div>
+      <div class="menu-nect">
+        
+          <a href="/" class="selected">Self-paced Training</a>
+          <a href="/for-trainers.html">Resources for Trainers</a>
+        
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="normal-block">
+  <div class="normal-block-page">
+    
+      <h3>Self-paced Training</h3>
+    
+  </div>
+</div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+          <!-- 
+    Preprocessing: Determine which part number this is. To avoid having to set numbers 
+    manually on each page, determine this here by the file name. 
+    -->
+  
+  
+  
+  
+  
+
+  
+  
+      
+  
+
+  
+  
+  
+  
+  
+  	
+  	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+			
+		
+		
+	
+		
+		
+		
+			
+			
+			
+  	<!-- If we are not in the main hierarchy, we may be looking at a file of one of the sub-categories -->
+	
+  
+
+
+
+<div class="post">
+
+  <header class="post-header">
+    <h3>Module 8</h3>
+    <h1>Security</h1>
+  </header>
+
+  
+
+  <!--
+    List of the individual parts of this module (so not all content gets crammed on one page).
+    Rendering this list first is necessary 
+  -->
+  <p> Sections of this module:</p>
+  
+	
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package08/sections/index.html"> Introduction</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package08/sections/concerns.html"> Security concerns and benefits</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+		
+			
+			
+      <a href="/package08/sections/deployment.html"> Deployment Models</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+			
+		
+		
+
+		
+		
+			
+		
+		
+			
+			
+      <a href="/package08/sections/encryption.html"> File and Volume Encryption</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+			
+				
+			
+		
+		
+			
+				 <b>
+			
+			
+      <a href="/package08/sections/fileEncryption.html">&nbsp;&nbsp; File encryption</a>
+			
+				</b>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+
+		
+		
+			
+				
+			
+		
+		
+			
+			
+      <a href="/package08/sections/volumeEncryption.html">&nbsp;&nbsp; Volume encryption on Ubuntu</a>
+			
+			<br/>
+		
+	
+		
+	 
+		
+		
+			
+		
+
+		
+		
+		
+			
+			
+      <a href="/package08/sections/summary.html"> Summary</a>
+			
+			<br/>
+		
+	
+  <br/>
+
+
+  <a href="/package08/sections/all.html" target="_blank">View all sections on one page (Printer friendly)</a>
+  <br/>
+  <br/>
+  <h1> File encryption </h1>
+
+   <!-- endif for pagedata_avail -->
+  
+
+  <!--
+  Content of page
+  -->
+  <article class="post-content">
+    
+<p>In the following we will discuss the following tools which support per-file encryption:</p>
+
+<ul>
+  <li>
+    <p><a href="#GnuPG">GnuPG</a></p>
+  </li>
+  <li>
+    <p><a href="#AESCrypt">AESCrypt</a></p>
+  </li>
+  <li>
+    <p><a href="#EncryptedZIP">Encrypted zip file</a></p>
+  </li>
+</ul>
+
+<p>Other widely known tools which have recently received bad security audits (e.g. <em>EncFS, OpenSSL, TrueCrypt</em>) are not discussed in this course.</p>
+
+<p>More detailed instructions are given for <em>GnuPG</em>, while the description of the other tools refers to related documentation.</p>
+
+<h4 id="a-namegnupga-gnupg"><a name="GnuPG"></a> GnuPG</h4>
+
+<p><em>GnuPG</em> is an implementation of Pretty Good Privacy (PGP). PGP has excellent security:</p>
+
+<blockquote>
+  <p>“To the best of publicly available information, there is no known method which will allow a person or group to break PGP encryption by cryptographic or computational means.”   <br />
+– source: <a href="http://en.wikipedia.org/wiki/Pretty_Good_Privacy#Security_quality">Wikipedia</a>.</p>
+</blockquote>
+
+<p><em>GnuPG</em> is open-source and accessible through a variety of different clients and tools. New versions of PGP are released periodically and vulnerabilities are fixed by developers as they come to light. There is a simple command line interface, but there are also <a href="https://www.gnupg.org/related_software/frontends.html">many graphical interfaces</a> available which are more popular.</p>
+
+<p>The <a href="https://www.gnupg.org/download/">official releases</a> can encrypt</p>
+
+<ul>
+  <li>
+    <p>Files</p>
+  </li>
+  <li>
+    <p>Entire volumes</p>
+  </li>
+  <li>
+    <p>Disk images</p>
+  </li>
+  <li>
+    <p>External drives</p>
+  </li>
+  <li>
+    <p>E-mails</p>
+  </li>
+  <li>
+    <p>and more.</p>
+  </li>
+</ul>
+
+<p>All <em>GnuPG</em> tools support multiple encryption types and ciphers.</p>
+
+<p><em>GnuPG</em> works very well on almost all 32 and 64 bit platforms. It has mainly been developed for Unix systems, but binaries available for <strong>Windows, OS X, Debian/Ubuntu, Android and more</strong> provided (with no guarantee that binary versions provided are current). Mac users may be interested in <a href="https://gpgtools.org/gpgsuite.html">GPGSuite</a>.</p>
+
+<p><em>GnuPG</em> is easy to use and if you keep your private key and the passphrase secret, it is a very secure way to encrypt files. <em>GnuPG</em> also has the advantage that no passwords will appear in any script files if you use your private key to encrypt files.</p>
+
+<p><strong>GnuPG Quick HowTo</strong></p>
+
+<p>You will have to generate a <em>key pair</em> before you can use GnuPG. In the process, you need to specify your E-Mail address (because you can use GnuPG for encrypting E-Mails). Choose the one you usually use, but you can also specify any address and change this later.</p>
+
+<ul>
+  <li>Mac OS X:
+  <img src="images/scrGPGCreateKeyMac.png" class="alignright" style="width:300px; " alt="image" />
+    <ul>
+      <li>Download <em>GnuPG</em> from the <a href="https://www.gnupg.org/download/index.html">official website</a>. Download the <em>“binary release” installer</em> (or get the <em>“source release”</em> and follow installation instructions on the website). If you have the choice, select the <em>GnuPG stable or modern</em> installer and install the software.</li>
+      <li>Open the <em>“GPG Keychain”</em> application (find it with spotlight search).</li>
+      <li>Click on “New” to generate a new key and specify your name, E-Mail and passphrase.</li>
+      <li>Hit “Generate”. Your new key will be listed in <em>GPG Keychain</em> after it has been created.</li>
+    </ul>
+  </li>
+  <li>Windows:
+    <ul>
+      <li>Download and install the graphical interface to GnuPG <em>“GpGForWin”</em> from <a href="http://www.gpg4win.org">www.gpg4win.org</a>. Make sure <em>Kleopatra</em> is checked.</li>
+      <li>Open the <em>Kleopatra</em> application which you may find with the app search field or via <em>Start &gt; Gpg4win &gt; Kleopatra</em>.</li>
+      <li>Go to <em>File &gt; New Certificate</em> and select to create a <em>personal OpenPGP key pair</em>.</li>
+    </ul>
+  </li>
+  <li>Linux:
+  <img src="images/scrGnuPGKeyLinux.png" class="alignright" style="width:250px; " alt="image" />
+    <ul>
+      <li>GnuPG may be available as a package in your distribution. For example in Ubuntu, you may install the <em>Gnu Privacy Assistant</em> in the package <em>gpa</em>, which includes GnuPG and a graphical interface:  <br />
+  <code>sudo apt-get install gpa</code>  <br />
+  Or you may install command-line tools only:  <br />
+  <code>sudo apt-get install gpnupg</code>  <br />
+  If it is not in your package manager, you can download <em>GnuPG</em> from the <a href="https://www.gnupg.org/download/index.html">official website</a>.</li>
+      <li>Start up <em>gpa</em>. You may receive an error about not having a key yet. Close this window and confirm to generate your first key now. Enter your details and follow the instructions in the wizard.</li>
+      <li>Alternatively, create a key in the command line.   <br />
+  <code>gpg --gen-key</code>
+        <ul>
+          <li>Specify your choices in the command line. Ideally, choose <em>RSA</em>, and a <em>“Real name”</em> without whitespaces.</li>
+          <li><strong><em>If</em></strong> there is an error about not enough random bytes, you may solve it by starting up an application which takes a lot of cpu time. Or, you can simulate “lots of work” with the <em>rngd</em> tool:  <br />
+  <code>sudo apt-get install rng-tools</code>  <br />
+  <code>sudo rngd -f -r /dev/random</code>  <br />
+  In a new terminal:  <br />
+  <code>gpg --gen-key</code>  <br />
+  When the key generation is finished, cancel the <em>rngd</em> application in the other terminal with [Ctr+C].</li>
+        </ul>
+      </li>
+      <li>You can find more useful information on the <a href="https://help.ubuntu.com/community/GnuPrivacyGuardHowto">ubuntu help page</a>.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Two keys will have been generated: A <em>public</em> key which is used for encryption, and a <em>private</em> which is used for decryption.</p>
+
+<p>To <strong>encrypt</strong> a file, you must have the <em>public</em> key which you want to use for encryption. You have just generated one in the last step.</p>
+
+<ul>
+  <li>Mac OS X: 
+  <img src="images/scrGPGEncryptFileMac.png" class="alignright" style="width:280px; " alt="image" />
+    <ul>
+      <li>Open the <em>Finder</em> and right-click on the file you would like to encrypt.</li>
+      <li>Select <em>Services &gt; OpenPGP: Encrypt file</em>.</li>
+      <li>Select your key in the list and click “Ok” (you may also choose several keys).</li>
+      <li>A new file with the same name but ending with <em>.gpg</em> will have been created in the same folder.</li>
+    </ul>
+  </li>
+  <li>Windows: 
+  <img src="images/scrGpgPGWin.png" class="alignright" style="width:200px; margin-top:20px;" alt="image" />
+    <ul>
+      <li>Open the <em>Windows Explorer</em> and right-click on the file you would like to encrypt.</li>
+      <li>Select <em>Sign and encrypt</em>.</li>
+      <li>You may keep the default options in the dialogue, which is set on <em>Encrypt</em> by default. Confirm with <em>Next</em>.</li>
+      <li>Select your key in the list and click “Add” to add it to the list (you may also choose several keys).</li>
+      <li>Click “Encrypt” to encrypt the file, and close the confirmation window with “Finish”.</li>
+      <li>A new file with the same name but ending with <em>.gpg</em> will have been created in the same folder.</li>
+    </ul>
+  </li>
+  <li>Linux:
+    <ul>
+      <li>Files are encrypted and decrypted in the command line. You have to specify a <em>recipient</em>, which is either you (<em>name</em> or <em>email</em> you chose for the key), or someone you want to send the file to (you need to have their <em>public</em> key then):  <br />
+  <code>gpg --output &lt;encrypted-file.gpg&gt; --encrypt --recipient &lt;user&gt; &lt;file-to-encrypt&gt;</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p>To <strong>decrypt</strong> a file, you need to have the <em>private</em> key of the intended recipient (when the file was encrypted). So the encrypted file will have to be encrypted for the name associated with one of your private keys.</p>
+
+<ul>
+  <li>Mac OS X:
+    <ul>
+      <li>You just have to double click on the <em>.gpg</em> file and it will prompt for the password.</li>
+      <li>Alternatively, you may decrypt it via <em>right click &gt; Services &gt; OpenPGP: Decrypt file</em>.</li>
+      <li>You will be asked for the passphrase.</li>
+      <li>You can find the decrypted file in the same folder; the name may have been extended with a number in order to prevent overwriting the original file.</li>
+    </ul>
+  </li>
+  <li>Windows:
+    <ul>
+      <li>You may decrypt by right clicking on the file and selecting <em>Decrypt and verify</em>.</li>
+      <li>You will be asked for the passphrase.</li>
+      <li><em>Note:</em> it is best if you change the <em>output folder</em> in order to prevent the original file to be overwritten.</li>
+      <li>You can find the decrypted file in the same folder (or specified output folder).</li>
+    </ul>
+  </li>
+  <li>Linux:
+    <ul>
+      <li>Similar to encryption of a file, using the command line.   <br />
+  <code>gpg --output &lt;decrypted-file.gpg&gt; --decrypt &lt;file-to-decrypt&gt;</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p>You can find more useful information about file encryption on the <a href="https://www.gnupg.org/gph/en/manual/x110.html">GnuPG manual pages</a>.</p>
+
+<h4 id="a-nameaescrypta-aescrypt"><a name="AESCrypt"></a> AESCrypt</h4>
+
+<p><a href="https://www.aescrypt.com/">AESCrypt</a> is a free, open-source tool which is available for Mac, Linux and Windows. It provides a secure way to <strong>encrypt individual files</strong>, using the industry standard Advanced Encryption Standard (AES).</p>
+
+<p><em>AESCrypt</em> is easy to use: On <strong>Windows</strong>, you only right-click on a file, select AES Encrypt (or Decrypt) and enter a password. On a <strong>Mac</strong>, you drag the file into the <em>AESCrypt</em> program and type in the password. On the <strong>Linux</strong> command line, you may use the command <em>aescrypt</em> along with the name of the file and the password.</p>
+
+<p>The <a href="https://www.aescrypt.com/">AESCrypt website</a> provides an excellent documentation on how to set up and use <em>AESCrypt</em>.</p>
+
+<h4 id="a-nameencryptedzipa-encrypted-zip-file"><a name="EncryptedZIP"></a> Encrypted zip file</h4>
+
+<p>Zip files can be password-protected, but the standard Zip encryption scheme is extremely weak. If your operating system has a built-in way to encrypt zip files, you probably shouldn’t use it. You should use <em>AES-256</em> encryption. The tools discussed in the following do support <em>AES-256</em> encryption.</p>
+
+<p>Zip files are archives containing individual files, so this cannot be used to encrypt entire volumes.</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p>The older zip encryption is not secure! Several tools can create encrypted zip files (the older, insecure version).</p>
+
+<p>For example,</p>
+
+<ul>
+  <li>
+    <p>On <strong>Windows</strong>, you can right-click on a file and select <strong>Compress…</strong> to create a zip archive.</p>
+  </li>
+  <li>
+    <p>On <strong>Linux or Mac</strong>, this can be done via command line:  <br />
+  <code>zip -0 -e backup.zip &lt;yourfile&gt;</code>  <br />
+  The option <strong>-0</strong> means “store only” and don’t compress — this is faster. <strong>-e</strong> means encrypt archive.  <br />
+It will ask for the password.</p>
+  </li>
+</ul>
+
+<p>This is <strong><em>not secure!</em></strong></p>
+
+<p>Use the more secure methods described in this section.</p>
+
+
+				</div>
+
+<p><strong>Windows: 7-zip</strong></p>
+
+<p><a href="http://www.7-zip.org/">7-zip</a> is great for compressing files and is also a strong file encryption tool. It’s free even for commercial use and supports <em>256-bit AES</em> encryption. The official download is Windows only, but there are also unofficial Linux and OS X versions.</p>
+
+<p>In <em>7-Zip</em>, you can select files in the Windows Explorer window, right-click and select <strong>7-Zip &gt; Add to archive</strong>. You should make sure to select the <em>Add to archive</em> option in order to encrypt the file. You will be given the option to set a password, make sure you select one! Alternatively, you can open the <em>7-Zip</em> application and create the archive from there.</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><em>7-Zip</em> will create a <em>7z</em> archive by default, but you can also choose <em>Zip</em>. If you <em>do</em> opt to go with Zip, be sure to select the <em>AES-256</em> encryption method instead of the weaker <em>ZipCrypto</em> method.</p>
+
+				</div>
+
+<p><strong>Mac: Keka</strong></p>
+
+<p>With <a href="http://www.kekaosx.com/">Keka</a>, you compress individual files by dragging and dropping them to <em>Keka</em> in the Dock. You may drop multiple files at once, and they will be compressed as one zip file. You can get <em>Keka</em> from the Mac App Store, here is good documentation on the website on how to use it.</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><em>Keka</em> creates encrypted <em>7z</em> files.By default, the <em>7z *files will be encrypted using *AES-256</em>, which is secure. If the selected format is <em>Zip</em>, <em>Zip 2.0</em> legacy encryption will be used, so this is not recommended!</p>
+
+				</div>
+
+<p><strong>Linux: p7zip</strong></p>
+
+<p>The file explorer on your Linux desktop can be used to create encrypted <em>7z</em> archives. You first need to install the <em>p7zip-full</em> package (it may also simply be called <em>p7zip</em> on some Linux distributions). Installing <em>p7zip-full</em> allows your file explorer encrypt your files or folders in the <em>7z</em> compression format. You may find it in your package manager, e.g. on Ubuntu</p>
+
+<p><code>sudo apt-get install p7zip-full</code></p>
+
+<p>Then, open your file explorer, right click on the file and select <strong>Compress…</strong>. Be sure to select <em>7z</em> as a format! In the window that comes up, expand <strong>Other Options</strong>, tick <strong>encrypt the file list too</strong> and type in your password.</p>
+
+<p>You may also use <em>p7zip</em> in the command line. The command is simply called <em>7z</em>. Refer to the man pages for usage.</p>
+
+<div class="bgImportant">
+					<img src="/images/glyphicons-197-circle-exclamation-mark.png" alt="image" align="left" style="width:26px; height:26px; 
+					  margin:0px; margin-right:10px; margin-bottom:5px;" />
+					
+<p><em>p7zip</em> does not store the owner and group of a file. So if you want to use it for backup purposes (or for other reasons want to preserve owner/group), you should pack your files in a <em>tar</em> archive first, and then encrypt the tar archive with <em>p7zip</em>.</p>
+
+<p>To create a tar archive:</p>
+
+<p><code>tar -cf &lt;tar-file-name&gt;.tar &lt;list of your files or folders&gt;</code></p>
+
+<p>To extract a tar archive:</p>
+
+<p><code>tar -xf &lt;tar-file-name.tar&gt;</code></p>
+
+<p>Then, compress the tar archive file with <em>p7zip</em> as described.</p>
+
+				</div>
+
+
+  </article>
+
+
+  
+  <!--
+  Previous section / Next section links. Very simple design to start with.
+  -->
+  <p>
+  
+  	
+    <a href="/package08/sections/encryption.html">Previous section</a>
+  
+  &nbsp; &nbsp; &nbsp;
+  
+  	
+    <a href="/package08/sections/volumeEncryption.html">Next section</a>
+  
+  </p>
+   <!-- endif for pagedata_avail -->
+
+</div>
+
+      </div>
+    </div>
+
+    <div style="background-color: #0E0E0E; padding: 20px 20px 20px 60px; color: white; font-size: 12px">
+  <p>Copyright &copy;2015 NeCTAR</p>
+  <img src="/images/NCRIS_PROVIDER_rev.png" alt="NCRIS_PROVIDER_rev" width="132" height="63" />
+  <p><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png">
+  This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a></p>
+</div>
+
+
+  </body>
+
+</html>
